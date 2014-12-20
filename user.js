@@ -237,7 +237,7 @@ user_pref("security.enable_ssl3",			false);
 // pinning
 // https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning#How_to_use_pinning
 // "2. Strict. Pinning is always enforced."
-user_pref("security.cert_pinning.enforcement_level ",	2);
+user_pref("security.cert_pinning.enforcement_level",	2);
 
 // https://developer.mozilla.org/en/Preferences/Mozilla_preferences_for_uber-geeks
 // see also CVE-2009-3555
