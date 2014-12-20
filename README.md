@@ -8,7 +8,7 @@ This is a [user.js][1] configuration file for Mozilla Firefox that's supposed to
 
 ### Main goals
 
-* Limit the possibilities to track the user [web analytics](https://en.wikipedia.org/wiki/Web_analytics)
+* Limit the possibilities to track the user through [web analytics](https://en.wikipedia.org/wiki/Web_analytics)
 * Harden the browser, so it doesn't spill it's guts when asked (have you seen what [BeEF](http://beefproject.com/) can do?)
 * Limit the browser from storing anything even remotely sensitive persistently (mostly just making sure private browsing is always on)
 * Make sure the browser doesn't reveal too much information to [shoulder surfers](https://en.wikipedia.org/wiki/Shoulder_surfing_%28computer_security%29)
