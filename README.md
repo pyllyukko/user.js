@@ -66,7 +66,7 @@ Hardens the used cipher suites and protocols.
 
 * TLS v1.[012] only
 * Require [OCSP](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol)
-  * Notice that this setting has some privacy implications
+  * Notice that this setting has some [privacy implications](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol#Privacy_concerns)
 * [OCSP stapling](https://blog.mozilla.org/security/2013/07/29/ocsp-stapling-in-firefox/) (enabled by default anyway)
 * Disable [TLS session tickets](https://www.blackhat.com/us-13/archives.html#NextGen)
 * Enforces [pinning](https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning)
