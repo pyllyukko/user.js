@@ -200,6 +200,8 @@ cas.sh -p  ~/.mozilla/firefox/XXXXXXXX.reference_profile -P ~/.mozilla/firefox/X
 
 ### The default list
 
+This is the default CA list, that you can use. It should be enough for basic use for the most biggest/popular sites. Of course this still depends on where you are located and what sites/services/etc. you use. If you know some popular site, that is not accessible with this root CA list, please let me know and I'll consider adding it to the list.
+
 <table>
   <tr>
     <th>Root CA</th><th>Used by</th>
@@ -227,6 +229,14 @@ cas.sh -p  ~/.mozilla/firefox/XXXXXXXX.reference_profile -P ~/.mozilla/firefox/X
 <tr><td>thawte Primary Root CA</td>				<td></td></tr>
 <tr><td>SecureTrust CA</td>					<td></td></tr>
 </table>
+
+#### How to use the default list
+
+Import the default CA list with:
+
+````
+cas.sh -C -P ~/.mozilla/firefox/XXXXXXXX.new_profile -a
+````
 
 
 TODO
