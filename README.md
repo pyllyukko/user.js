@@ -46,7 +46,7 @@ There's a whole lot of settings that this modifies and here are the main parts:
   * [network.prefetch-next](http://kb.mozillazine.org/Network.prefetch-next)
   * [network.dns.disablePrefetch](http://kb.mozillazine.org/Network.dns.disablePrefetch)
 
-Some of the settings in this [user.js][1] file might seem redundant, as some of them are already set to the same values by default. However, the [user.js][1] file has this nice property, that even if you go change any of these settings through [about:config](http://kb.mozillazine.org/About:config), they're reset to the [user.js][1] defined values after you restart Firefox. So [user.js][1] makes sure they're back at the secure default values always when you start your browser. That way, it also makes experimenting with different settings easier.
+Some of the settings in this [user.js][1] file might seem redundant, as some of them are already set to the same values by default. However, the [user.js][1] file has this nice property, that even if you go change any of these settings through [about:config][6], they're reset to the [user.js][1] defined values after you restart Firefox. So [user.js][1] makes sure they're back at the secure default values always when you start your browser. That way, it also makes experimenting with different settings easier.
 
 ### HTTP headers
 
