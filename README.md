@@ -23,6 +23,10 @@ There are several parts to all this and they are:
 * Using the user.js settings file itself
 * Using the **cas.sh** script to limit the CAs
 
+#### How to use the user.js file
+
+Just drop the [user.js][1] file to your Firefox profile directory at ````~/.mozilla/firefox/XXXXXXXX.your_profile_name```` and verify that they are effective from [about:config][6].
+
 What does it do?
 ----------------
 
@@ -246,3 +250,4 @@ References
 [3]: http://kb.mozillazine.org/Dom.storage.enabled
 [4]: http://patrol.psyced.org/
 [5]: https://blog.torproject.org/blog/life-without-ca
+[6]: http://kb.mozillazine.org/About:config
