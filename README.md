@@ -208,34 +208,30 @@ After you have run the script, verify from Firefox's [certificate settings](http
 
 This is the default CA list, that you can use. It should be enough for basic use for the most biggest/popular sites. Of course this still depends on where you are located and what sites/services/etc. you use. If you know some popular site, that is not accessible with this root CA list, please let me know and I'll consider adding it to the list.
 
-<table>
-  <tr>
-    <th>Root CA</th><th>Used by</th>
-
-  </tr>
-<tr><td>AddTrust External CA Root</td>				<td>https://www.debian.org/</td></tr>
-<tr><td>Baltimore CyberTrust Root</td>				<td></td></tr>
-<tr><td>COMODO Certification Authority</td>			<td></td></tr>
-<tr><td>Deutsche Telekom Root CA 2</td>				<td></td></tr>
-<tr><td>DigiCert High Assurance EV Root CA</td>			<td>https://www.facebook.com/</td></tr>
-<tr><td>DigiCert Global Root CA</td>				<td>https://duckduckgo.com/</td></tr>
-<tr><td>Entrust.net Secure Server Certification Authority</td>	<td></td></tr>
-<tr><td>Entrust.net Certification Authority (2048)</td>		<td></td></tr>
-<tr><td>Equifax Secure Certificate Authority</td>		<td></td></tr>
-<tr><td>GTE CyberTrust Global Root</td>				<td></td></tr>
-<tr><td>GeoTrust Global CA</td>					<td>https://www.google.com/</td></tr>
-<tr><td>GlobalSign Root CA</td>					<td>https://www.wikipedia.org/</td></tr>
-<tr><td>Go Daddy Class 2 Certification Authority</td>		<td></td></tr>
-<tr><td>Go Daddy Root Certificate Authority - G2</td>		<td></td></tr>
-<tr><td>Starfield Class 2 Certification Authority</td>		<td>https://tools.ietf.org/</td></tr>
-<tr><td>StartCom Certification Authority</td>			<td></td></tr>
-<tr><td>UTN-USERFirst-Hardware</td>				<td></td></tr>
-<tr><td>ValiCert Class 2 Policy Validation Authority</td>	<td></td></tr>
-<tr><td>VeriSign Class 3 Public Primary Certification Authority - G5</td><td>https://twitter.com/</td></tr>
-<tr><td>thawte Primary Root CA</td>				<td></td></tr>
-<tr><td>thawte Primary Root CA - G3</td>			<td></td></tr>
-<tr><td>SecureTrust CA</td>					<td></td></tr>
-</table>
+| Root CA							| Used by			|
+| ------------------------------------------------------------- | ----------------------------- |
+| AddTrust External CA Root					| https://www.debian.org/	|
+| Baltimore CyberTrust Root					|				|
+| COMODO Certification Authority				|				|
+| Deutsche Telekom Root CA 2					|				|
+| DigiCert High Assurance EV Root CA				| https://www.facebook.com/	|
+| DigiCert Global Root CA					| https://duckduckgo.com/	|
+| Entrust.net Secure Server Certification Authority		|				|
+| Entrust.net Certification Authority (2048)			|				|
+| Equifax Secure Certificate Authority				|				|
+| GTE CyberTrust Global Root					|				|
+| GeoTrust Global CA						| https://www.google.com/	|
+| GlobalSign Root CA						| https://www.wikipedia.org/	|
+| Go Daddy Class 2 Certification Authority			|				|
+| Go Daddy Root Certificate Authority - G2			|				|
+| Starfield Class 2 Certification Authority			| https://tools.ietf.org/	|
+| StartCom Certification Authority				|				|
+| UTN-USERFirst-Hardware					|				|
+| ValiCert Class 2 Policy Validation Authority			|				|
+| VeriSign Class 3 Public Primary Certification Authority - G5	| https://twitter.com/		|
+| thawte Primary Root CA					|				|
+| thawte Primary Root CA - G3					|				|
+| SecureTrust CA						|				|
 
 #### How to use the default list
 
