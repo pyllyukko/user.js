@@ -229,8 +229,8 @@ This is the default CA list, that you can use. It should be enough for basic use
 | UTN-USERFirst-Hardware					|				|
 | ValiCert Class 2 Policy Validation Authority			|				|
 | VeriSign Class 3 Public Primary Certification Authority - G5	| https://twitter.com/		|
-| thawte Primary Root CA					|				|
-| thawte Primary Root CA - G3					|				|
+| [thawte Primary Root CA][7]					|				|
+| [thawte Primary Root CA - G3][7]				|				|
 | SecureTrust CA						|				|
 
 #### How to use the default list
@@ -264,3 +264,4 @@ References
 [4]: http://patrol.psyced.org/
 [5]: https://blog.torproject.org/blog/life-without-ca
 [6]: http://kb.mozillazine.org/About:config
+[7]: https://www.thawte.com/roots/
