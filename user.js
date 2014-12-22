@@ -172,6 +172,9 @@ user_pref("media.webspeech.recognition.enable",			false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=855326
 user_pref("security.csp.experimentalEnabled",			true);
 
+// CSP https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy
+user_pref("security.csp.enable",				true);
+
 // https://wiki.mozilla.org/Privacy/Reviews/New_Tab
 user_pref("browser.newtabpage.enabled",				false);
 
