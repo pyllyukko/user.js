@@ -186,7 +186,7 @@ user_pref("browser.send_pings",					false);
 user_pref("dom.indexedDB.enabled",				false);
 
 // http://kb.mozillazine.org/Network.dns.disablePrefetch
-user_pref("network.dns.disablePrefetch",			false);
+user_pref("network.dns.disablePrefetch",			true);
 
 // http://kb.mozillazine.org/Browser.sessionstore.postdata
 // NOTE: relates to CIS 2.5.7
