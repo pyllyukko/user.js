@@ -122,6 +122,7 @@ Here's some other tips how you can further harden Firefox:
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 * [NoScript](http://noscript.net/)
 * [Ghostery](https://www.ghostery.com/)
+* [Privacy Badger](https://www.eff.org/privacybadger)
 * [DuckDuckGo Plus](https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/) (instead of Google)
 * [Mozilla Lightbeam](https://www.mozilla.org/en-US/lightbeam/)
 * Create different [profiles](http://mzl.la/NYhKHH) for different purposes
