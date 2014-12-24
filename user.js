@@ -100,6 +100,10 @@ user_pref("network.cookie.lifetimePolicy",		2);
 // https://en.wikipedia.org/wiki/Do_not_track_header
 user_pref("privacy.donottrackheader.enabled",		true);
 
+// https://wiki.mozilla.org/Polaris#Tracking_protection
+// Commented out by default since it contacts a remote server to download the blocklist
+//user_pref("privacy.trackingprotection.enabled",		true);
+
 // clear history when firefox closes
 // https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically
 user_pref("privacy.sanitize.sanitizeOnShutdown",	true);
