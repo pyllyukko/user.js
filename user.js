@@ -78,8 +78,12 @@ user_pref("browser.urlbar.autocomplete.enabled",	false);
 
 // http://kb.mozillazine.org/Signon.autofillForms
 // https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
-// TODO: browser.urlbar.autoFill & browser.urlbar.autoFill.typed
 user_pref("signon.autofillForms",			false);
+
+// http://kb.mozillazine.org/About:config_entries#Browser
+// http://kb.mozillazine.org/Inline_autocomplete
+user_pref("browser.urlbar.autoFill",            false);
+user_pref("browser.urlbar.autoFill.typed",            false);
 
 // http://kb.mozillazine.org/Browser.cache.disk.enable
 user_pref("browser.cache.disk.enable",			false);
