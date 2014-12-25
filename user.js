@@ -461,6 +461,13 @@ user_pref("security.ask_for_password",			0);
 
 // CIS 2.5.4 Delete History and Form Data
 // http://kb.mozillazine.org/Browser.history_expire_days
+user_pref("browser.history_expire_days",            0);
+
+// http://kb.mozillazine.org/Browser.history_expire_sites
+user_pref("browser.history_expire_sites",            0);
+
+// http://kb.mozillazine.org/Browser.history_expire_visits
+user_pref("browser.history_expire_visits",            0);
 
 // CIS 2.5.5 Delete Download History
 // Zero (0) is an indication that no download history is retained for the current profile.
