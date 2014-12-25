@@ -27,6 +27,16 @@ There are several parts to all this and they are:
 
 Just drop the [user.js][1] file to your Firefox profile directory at ````~/.mozilla/firefox/XXXXXXXX.your_profile_name```` and verify that the settings are effective from [about:config][6].
 
+If you want to be able to keep your [user.js][1] up-to-date with this repository, you can clone the latter in the main mozilla directory and create a link to the [user.js][1] file from your profile:
+````
+cd ~/.mozilla/firefox
+git clone 'https://github.com/pyllyukko/user.js.git'
+cd XXXXXXXX.your_profile_name
+ln -s ../user.js/user.js user.js
+````
+
+Whenever you want to update your local copy of the repository, just use ````git pull```` and restart firefox.
+
 What does it do?
 ----------------
 
