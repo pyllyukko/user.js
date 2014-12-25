@@ -56,10 +56,11 @@ user_pref("network.prefetch-next",		false);
 
 // disable Location-Aware Browsing
 // http://www.mozilla.org/en-US/firefox/geolocation/
-// TODO: geo.wifi.uri?
 user_pref("geo.enabled",			false);
+user_pref("geo.wifi.uri",			"localhost");
 
 // http://kb.mozillazine.org/Breakpad.reportURL
+user_pref("breakpad.reportURL",         "localhost");
 
 // https://wiki.mozilla.org/Platform/Features/Telemetry
 // https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry
@@ -79,6 +80,8 @@ user_pref("browser.urlbar.autocomplete.enabled",	false);
 // http://kb.mozillazine.org/Signon.autofillForms
 // https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
 user_pref("signon.autofillForms",			false);
+user_pref("browser.urlbar.autoFill",            false);
+user_pref("browser.urlbar.autoFill.typed",            false);
 
 // http://kb.mozillazine.org/About:config_entries#Browser
 // http://kb.mozillazine.org/Inline_autocomplete
@@ -473,8 +476,8 @@ user_pref("browser.history_expire_visits",            0);
 user_pref("browser.download.manager.retention",		0);
 
 // CIS 2.5.6 Delete Search and Form History
-// TODO: browser.formfill.saveHttpsForms?
 user_pref("browser.formfill.enable",			false);
+user_pref("browser.formfill.saveHttpsForms",			false);
 
 // CIS 2.5.7 Clear SSL Form Session Data
 // http://kb.mozillazine.org/Browser.sessionstore.privacy_level#2
