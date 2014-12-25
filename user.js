@@ -60,6 +60,7 @@ user_pref("geo.enabled",			false);
 user_pref("geo.wifi.uri",			"");
 
 // http://kb.mozillazine.org/Breakpad.reportURL
+user_pref("breakpad.reportURL",         "");
 
 // https://wiki.mozilla.org/Platform/Features/Telemetry
 // https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry
