@@ -474,8 +474,8 @@ user_pref("browser.history_expire_visits",            0);
 user_pref("browser.download.manager.retention",		0);
 
 // CIS 2.5.6 Delete Search and Form History
-// TODO: browser.formfill.saveHttpsForms?
 user_pref("browser.formfill.enable",			false);
+user_pref("browser.formfill.saveHttpsForms",			false);
 
 // CIS 2.5.7 Clear SSL Form Session Data
 // http://kb.mozillazine.org/Browser.sessionstore.privacy_level#2
