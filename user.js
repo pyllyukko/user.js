@@ -56,8 +56,8 @@ user_pref("network.prefetch-next",		false);
 
 // disable Location-Aware Browsing
 // http://www.mozilla.org/en-US/firefox/geolocation/
-// TODO: geo.wifi.uri?
 user_pref("geo.enabled",			false);
+user_pref("geo.wifi.uri",			"");
 
 // http://kb.mozillazine.org/Breakpad.reportURL
 
