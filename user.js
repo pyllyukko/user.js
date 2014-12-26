@@ -41,6 +41,10 @@
 // Never send the Referer header or set document.referrer.
 user_pref("network.http.sendRefererHeader",	0);
 
+// https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/
+// http://dbaron.org/mozilla/visited-privacy
+user_pref("layout.css.visited_links_enabled",	false);
+
 // disable HTML frames
 // WARNING: might make your life difficult!
 //user_pref("browser.frames.enabled",		false);
