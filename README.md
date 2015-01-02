@@ -61,9 +61,9 @@ Some of the settings in this [user.js][1] file might seem redundant, as some of 
 ### HTTP headers
 
 * Enables [DNT](https://en.wikipedia.org/wiki/Do_Not_Track) (like it matters)
-* Disables referer headers:
-  * [Network.http.sendRefererHeader](http://kb.mozillazine.org/Network.http.sendRefererHeader#0)
-  * [Network.http.sendSecureXSiteReferrer](http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer)
+* Referer header:
+  * Spoofs the referer header with [network.http.referer.spoofSource](https://bugzilla.mozilla.org/show_bug.cgi?id=822869) &  [Network.http.sendRefererHeader](http://kb.mozillazine.org/Network.http.sendRefererHeader#1)
+  * "[Don't send the Referer header when navigating from a https site to another https site.](http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer#false)"
 
 ### HTML5 related
 
