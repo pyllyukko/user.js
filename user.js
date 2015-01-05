@@ -205,6 +205,8 @@ user_pref("network.dns.disablePrefetch",			true);
 // http://kb.mozillazine.org/Browser.sessionstore.postdata
 // NOTE: relates to CIS 2.5.7
 user_pref("browser.sessionstore.postdata",			0);
+// http://kb.mozillazine.org/Browser.sessionstore.enabled
+user_pref("browser.sessionstore.enabled",			false);
 
 // http://kb.mozillazine.org/Browser.search.suggest.enabled
 user_pref("browser.search.suggest.enabled",			false);
