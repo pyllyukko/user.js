@@ -10,7 +10,7 @@ This is a [user.js][1] configuration file for Mozilla Firefox that's supposed to
 
 * Limit the possibilities to track the user through [web analytics](https://en.wikipedia.org/wiki/Web_analytics)
 * Harden the browser, so it doesn't spill it's guts when asked (have you seen what [BeEF](http://beefproject.com/) can do?)
-* Limit the browser from storing anything even remotely sensitive persistently (mostly just making sure private browsing is always on)
+* Limit the browser from storing anything even remotely sensitive persistently (mostly just making sure [private browsing][8] is always on)
 * Make sure the browser doesn't reveal too much information to [shoulder surfers](https://en.wikipedia.org/wiki/Shoulder_surfing_%28computer_security%29)
 * Harden the browser's encryption (cipher suites, protocols, trusted CAs)
 * Still be at least somewhat usable in daily use
@@ -44,7 +44,7 @@ What does it do?
 
 There's a whole lot of settings that this modifies and here are the main parts:
 
-* Permanently enables [private browsing mode](https://support.mozilla.org/en-US/kb/Private%20Browsing)
+* Permanently enables [private browsing][8] mode
 * Enables Firefox's [mixed content blocking](https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/) (also for "display" content)
 * Disables various your-browser-knows-better-let-me-guess-what-you-were-trying features
   * Disable this [keyword thingie](http://kb.mozillazine.org/Keyword.enabled)
@@ -129,7 +129,7 @@ Here's some other tips how you can further harden Firefox:
 
 * Disable all unnecessary extensions and plugins!
 * [Certificate Patrol][4]
-  * I recommend setting the 'Store certificates even when in Private Browsing Mode' to get full benefit out of certpatrol, even though it stores information about the sites you visit
+  * I recommend setting the 'Store certificates even when in [Private Browsing][8] Mode' to get full benefit out of certpatrol, even though it stores information about the sites you visit
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 * [NoScript](http://noscript.net/)
 * [Ghostery](https://www.ghostery.com/)
@@ -277,3 +277,4 @@ References
 [5]: https://blog.torproject.org/blog/life-without-ca
 [6]: http://kb.mozillazine.org/About:config
 [7]: https://www.thawte.com/roots/
+[8]: https://support.mozilla.org/en-US/kb/Private%20Browsing
