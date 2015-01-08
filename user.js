@@ -495,3 +495,7 @@ user_pref("browser.cache.disk_cache_ssl",		false);
 
 // CIS 2.7.4 Disable Scripting of Plugins by JavaScript
 user_pref("security.xpconnect.plugin.unrestricted",	false);
+
+// CIS Mozilla Firefox 24 ESR v1.0.0 - 3.6 Enable IDN Show Punycode
+// http://kb.mozillazine.org/Network.IDN_show_punycode
+user_pref("network.IDN_show_punycode",			true);
