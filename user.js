@@ -499,3 +499,7 @@ user_pref("security.xpconnect.plugin.unrestricted",	false);
 // CIS Mozilla Firefox 24 ESR v1.0.0 - 3.6 Enable IDN Show Punycode
 // http://kb.mozillazine.org/Network.IDN_show_punycode
 user_pref("network.IDN_show_punycode",			true);
+
+// CIS Mozilla Firefox 24 ESR v1.0.0 - 3.8 Set File URI Origin Policy
+// http://kb.mozillazine.org/Security.fileuri.strict_origin_policy
+user_pref("security.fileuri.strict_origin_policy",	true);
