@@ -192,6 +192,12 @@ user_pref("security.csp.enable",				true);
 // https://wiki.mozilla.org/Privacy/Reviews/New_Tab
 user_pref("browser.newtabpage.enabled",				false);
 
+// Disable new tab tile ads & preload
+// http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
+// http://forums.mozillazine.org/viewtopic.php?p=13876331&sid=811f876b0a8869c2e5b81e059d72f264#p13876331
+user_pref("browser.newtabpage.enhanced",			false);
+user_pref("browser.newtab.preload",				false);
+
 // http://kb.mozillazine.org/Browser.send_pings
 user_pref("browser.send_pings",					false);
 
