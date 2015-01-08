@@ -13,11 +13,6 @@
  *
  * TODO:
  *   - https://support.mozilla.org/en-US/kb/how-stop-firefox-automatically-making-connections
- *   - HTML5 canvas:
- *     - https://developer.mozilla.org/en-US/docs/HTML/Canvas
- *     - https://www.torproject.org/projects/torbrowser/design/#fingerprinting-linkability
- *     - https://bugzilla.mozilla.org/show_bug.cgi?id=967895
- *     - http://www.w2spconf.com/2012/papers/w2sp12-final4.pdf
  *     - security.ssl.false_start.require-npn
  *     - network.http.spdy.enabled
  *
