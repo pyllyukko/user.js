@@ -1,16 +1,6 @@
 /*
  * user.js
  *
- * tested with:
- *   - firefox 10.0.2
- *   - firefox 12.0
- *   - firefox 14.0.1
- *   - firefox 15.0.1
- *   - firefox 18.0.1
- *   - firefox ESR 17.0.8
- *   - firefox 23.0.1
- *   - firefox 32
- *
  * TODO:
  *   - https://support.mozilla.org/en-US/kb/how-stop-firefox-automatically-making-connections
  *     - security.ssl.false_start.require-npn
