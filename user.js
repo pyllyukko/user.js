@@ -188,7 +188,9 @@ user_pref("browser.send_pings",					false);
 
 // https://developer.mozilla.org/en-US/docs/IndexedDB
 // TODO: find out why html5test still reports this as available
-user_pref("dom.indexedDB.enabled",				false);
+// NOTE: this is enabled for now, as disabling this seems to break some plugins.
+//       see: http://forums.mozillazine.org/viewtopic.php?p=13842047&sid=041e5edcae225759b7cfffd43fc518d0#p13842047
+user_pref("dom.indexedDB.enabled",				true);
 
 // http://kb.mozillazine.org/Network.dns.disablePrefetch
 user_pref("network.dns.disablePrefetch",			true);
