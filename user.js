@@ -168,6 +168,10 @@ user_pref("media.peerconnection.enabled",			false);
 
 user_pref("media.webspeech.recognition.enable",			false);
 
+// Disable getUserMedia screen sharing
+// https://mozilla.github.io/webrtc-landing/gum_test.html
+user_pref("media.getusermedia.screensharing.enabled",		false);
+
 // https://bugzilla.mozilla.org/show_bug.cgi?id=855326
 user_pref("security.csp.experimentalEnabled",			true);
 
