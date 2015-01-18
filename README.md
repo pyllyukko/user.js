@@ -170,6 +170,11 @@ There are plenty! Hardening your browser will break your interwebs. Here's some 
 * If you get "ssl\_error\_unsafe\_negotiation", it means the server is vulnerable to [CVE-2009-3555](http://www.cvedetails.com/cve/CVE-2009-3555) and you need to disable [security.ssl.require\_safe\_negotiation][2]
 * If you set browser.frames.enabled to false, probably a whole bunch of websites will break
 * Some sites require the [referer](https://en.wikipedia.org/wiki/HTTP_referer) header
+* The [IndexedDB](https://en.wikipedia.org/wiki/Indexed_Database_API) is something that could potentially be used to track users, but it is also required by some browser add-ons in recent versions of Firefox. It would be best to disable this feature just to be on the safe side, but it is currently enabled, so that add-ons would work. See the following links for further info:
+  * [Issue #8](https://github.com/pyllyukko/user.js/issues/8)
+  * [IndexedDB Security Review](https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review) (this document also states that "IndexedDB is completely disabled in private browsing mode.", but this should still be verified)
+  * [This discussion](http://forums.mozillazine.org/viewtopic.php?p=13842047&sid=041e5edcae225759b7cfffd43fc518d0#p13842047) on mozillaZine Forums
+  * [IndexedDB page at MDN](https://developer.mozilla.org/en-US/docs/IndexedDB)
 
 The [web console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console) is your friend, **when** websites start to break.
 

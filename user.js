@@ -187,6 +187,7 @@ user_pref("browser.newtab.preload",				false);
 user_pref("browser.send_pings",					false);
 
 // https://developer.mozilla.org/en-US/docs/IndexedDB
+// https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review
 // TODO: find out why html5test still reports this as available
 // NOTE: this is enabled for now, as disabling this seems to break some plugins.
 //       see: http://forums.mozillazine.org/viewtopic.php?p=13842047&sid=041e5edcae225759b7cfffd43fc518d0#p13842047
