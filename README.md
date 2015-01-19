@@ -167,7 +167,7 @@ There are plenty! Hardening your browser will break your interwebs. Here's some 
 
 * If you get "TypeError: localStorage is null", you probably need to enable [local storage][3]
 * If you get "sec\_error\_ocsp\_invalid\_signing\_cert", it probably means that you don't have the required CA
-* If you get "ssl\_error\_unsafe\_negotiation", it means the server is vulnerable to [CVE-2009-3555](http://www.cvedetails.com/cve/CVE-2009-3555) and you need to disable [security.ssl.require\_safe\_negotiation][2]
+* If you get "ssl\_error\_unsafe\_negotiation", it means the server is vulnerable to [CVE-2009-3555](http://www.cvedetails.com/cve/CVE-2009-3555) and you need to disable [security.ssl.require\_safe\_negotiation][2] (not enabled currently)
 * If you set browser.frames.enabled to false, probably a whole bunch of websites will break
 * Some sites require the [referer](https://en.wikipedia.org/wiki/HTTP_referer) header
 * The [IndexedDB](https://en.wikipedia.org/wiki/Indexed_Database_API) is something that could potentially be used to track users, but it is also required by some browser add-ons in recent versions of Firefox. It would be best to disable this feature just to be on the safe side, but it is currently enabled, so that add-ons would work. See the following links for further info:
