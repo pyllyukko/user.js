@@ -25,7 +25,7 @@ There are several parts to all this and they are:
 
 #### How to use the user.js file
 
-Just drop the [user.js][1] file to your Firefox profile directory at ````~/.mozilla/firefox/XXXXXXXX.your_profile_name```` and verify that the settings are effective from [about:config][6].
+Just drop the [user.js][1] file to your Firefox profile directory at ````~/.mozilla/firefox/XXXXXXXX.your_profile_name```` and verify that the settings are effective from [about:support](http://kb.mozillazine.org/Troubleshooting_Information_report#Modified_Preferences) (check the "Important Modified Preferences" and "user.js Preferences" sections).
 
 If you want to be able to keep your [user.js][1] up-to-date with this repository, you can clone the latter in the main mozilla directory and create a link to the [user.js][1] file from your profile:
 ````
