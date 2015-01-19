@@ -175,6 +175,8 @@ There are plenty! Hardening your browser will break your interwebs. Here's some 
   * [IndexedDB Security Review](https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review) (this document also states that "IndexedDB is completely disabled in private browsing mode.", but this should still be verified)
   * [This discussion](http://forums.mozillazine.org/viewtopic.php?p=13842047&sid=041e5edcae225759b7cfffd43fc518d0#p13842047) on mozillaZine Forums
   * [IndexedDB page at MDN](https://developer.mozilla.org/en-US/docs/IndexedDB)
+* It would be nice to get completely rid of [RC4](https://en.wikipedia.org/wiki/RC4#Security), but it doesn't seem quite possible currently
+  * ([CVE-2013-2566](http://www.cvedetails.com/cve/CVE-2013-2566))
 
 The [web console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console) is your friend, **when** websites start to break.
 
