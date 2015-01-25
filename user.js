@@ -97,7 +97,10 @@ user_pref("privacy.donottrackheader.enabled",		true);
 
 // https://wiki.mozilla.org/Polaris#Tracking_protection
 // Commented out by default since it contacts a remote server to download the blocklist
+// TODO: are these two the same?
 //user_pref("privacy.trackingprotection.enabled",		true);
+
+user_pref("browser.polaris.enabled",			true);
 
 // clear history when firefox closes
 // https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically
