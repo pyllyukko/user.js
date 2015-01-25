@@ -95,6 +95,11 @@ user_pref("network.cookie.lifetimePolicy",		2);
 // https://en.wikipedia.org/wiki/Do_not_track_header
 user_pref("privacy.donottrackheader.enabled",		true);
 
+// Polaris tracking protection
+// https://wiki.mozilla.org/Polaris#Tracking_protection
+// http://www.ghacks.net/2014/11/10/mozilla-launches-tracking-protection-feature-in-firefox-nightly/
+user_pref("browser.polaris.enabled",			true);
+
 // https://wiki.mozilla.org/Polaris#Tracking_protection
 // Commented out by default since it contacts a remote server to download the blocklist
 //user_pref("privacy.trackingprotection.enabled",		true);
