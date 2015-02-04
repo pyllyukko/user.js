@@ -69,6 +69,7 @@ Some of the settings in this [user.js][1] file might seem redundant, as some of 
 ### HTML5 related
 
 * Don't reveal internal [IP addresses](http://net.ipcalf.com/) ([media.peerconnection.enabled](https://blog.mozilla.org/futurereleases/2013/01/12/capture-local-camera-and-microphone-streams-with-getusermedia-now-enabled-in-firefox/))
+  * [BeEF Module: Get Internal IP WebRTC](https://github.com/beefproject/beef/wiki/Module%3A-Get-Internal-IP-WebRTC)
 * [browser.send_pings](http://kb.mozillazine.org/Browser.send_pings)
 
 ### Ciphers
