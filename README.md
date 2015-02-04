@@ -283,6 +283,7 @@ References
 * [Bulletproof SSL and TLS](https://www.feistyduck.com/books/bulletproof-ssl-and-tls/)
 * [Polaris](https://wiki.mozilla.org/Polaris)
 * [Mozilla Included CA Certificate List](http://www.mozilla.org/projects/security/certs/included)
+* [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/)
 
 [1]: http://kb.mozillazine.org/User.js_file
 [2]: https://wiki.mozilla.org/Security:Renegotiation#security.ssl.require_safe_negotiation
