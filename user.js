@@ -276,20 +276,7 @@ user_pref("security.ssl.treat_unsafe_negotiation_as_broken",	true);
 /*
  * CIPHERS
  *
- * the following setup should leave us with the following ciphers (updated 15.10.2014 Firefox 32.0.3):
- *
- * Cipher Suites (9 suites)
- *     Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b)
- *     Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)
- *     Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a)
- *     Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
- *     Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA (0x0039)
- *     Cipher Suite: TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA (0x0088)
- *     Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
- *     Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
- *     Cipher Suite: TLS_RSA_WITH_RC4_128_SHA (0x0005)
- *
- *   you can debug the SSL handshake with tshark: tshark -t ad -n -i wlan0 -T text -V -R ssl.handshake
+ * you can debug the SSL handshake with tshark: tshark -t ad -n -i wlan0 -T text -V -R ssl.handshake
  */
 
 // disable null ciphers
