@@ -129,6 +129,12 @@ This is not enough!
 Here's some other tips how you can further harden Firefox:
 
 * Disable all unnecessary extensions and plugins!
+* Create different [profiles](http://mzl.la/NYhKHH) for different purposes
+
+### Add-ons
+
+Here is a list of the most essential security and privacy enhancing add-ons that you should consider using:
+
 * [Certificate Patrol][4]
   * I recommend setting the 'Store certificates even when in [Private Browsing][8] Mode' to get full benefit out of certpatrol, even though it stores information about the sites you visit
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
@@ -137,7 +143,6 @@ Here's some other tips how you can further harden Firefox:
 * [Privacy Badger](https://www.eff.org/privacybadger)
 * [DuckDuckGo Plus](https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/) (instead of Google)
 * [Mozilla Lightbeam](https://www.mozilla.org/en-US/lightbeam/)
-* Create different [profiles](http://mzl.la/NYhKHH) for different purposes
 
 Online tests
 ------------
