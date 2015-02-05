@@ -52,19 +52,9 @@ user_pref("geo.enabled",			false);
 // https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
 user_pref("toolkit.telemetry.enabled",			false);
 
-// http://kb.mozillazine.org/Browser.cache.disk.enable
-user_pref("browser.cache.disk.enable",			false);
-
-// http://kb.mozillazine.org/Browser.cache.memory.enable
-//user_pref("browser.cache.memory.enable",		false);
-
 // always ask the user where to download
 // https://developer.mozilla.org/en/Download_Manager_preferences
 user_pref("browser.download.useDownloadDir",		false);
-
-// The cookie expires at the end of the session (when the browser closes).
-// http://kb.mozillazine.org/Network.cookie.lifetimePolicy#2
-user_pref("network.cookie.lifetimePolicy",		2);
 
 // DNT HTTP header
 // http://dnt.mozilla.org/
@@ -77,28 +67,6 @@ user_pref("privacy.donottrackheader.enabled",		true);
 //user_pref("privacy.trackingprotection.enabled",		true);
 
 user_pref("browser.polaris.enabled",			true);
-
-// clear history when firefox closes
-// https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically
-user_pref("privacy.sanitize.sanitizeOnShutdown",	true);
-user_pref("privacy.clearOnShutdown.cache",		true);
-user_pref("privacy.clearOnShutdown.cookies",		true);
-user_pref("privacy.clearOnShutdown.downloads",		true);
-user_pref("privacy.clearOnShutdown.formdata",		true);
-user_pref("privacy.clearOnShutdown.history",		true);
-user_pref("privacy.clearOnShutdown.offlineApps",	true);
-user_pref("privacy.clearOnShutdown.passwords",		true);
-user_pref("privacy.clearOnShutdown.sessions",		true);
-user_pref("privacy.clearOnShutdown.siteSettings",	true);
-
-// don't remember browsing history
-user_pref("places.history.enabled",			false);
-
-// always use private browsing
-// https://support.mozilla.org/en-US/kb/Private-Browsing
-// https://wiki.mozilla.org/PrivateBrowsing
-user_pref("browser.privatebrowsing.autostart",		true);
-user_pref("extensions.ghostery.privateBrowsing",	true);
 
 // don't try to guess where i'm trying to go!!!
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
@@ -126,9 +94,6 @@ user_pref("browser.safebrowsing.remoteLookups",		false);
 // disable sending of the health report
 // https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
 user_pref("datareporting.healthreport.uploadEnabled",	false);
-
-// http://kb.mozillazine.org/Browser.cache.offline.enable
-user_pref("browser.cache.offline.enable",		false);
 
 // flash - ask to activate
 user_pref("plugin.state.flash",				1);
@@ -173,12 +138,6 @@ user_pref("dom.indexedDB.enabled",				true);
 // http://kb.mozillazine.org/Network.dns.disablePrefetch
 user_pref("network.dns.disablePrefetch",			true);
 
-// http://kb.mozillazine.org/Browser.sessionstore.postdata
-// NOTE: relates to CIS 2.5.7
-user_pref("browser.sessionstore.postdata",			0);
-// http://kb.mozillazine.org/Browser.sessionstore.enabled
-user_pref("browser.sessionstore.enabled",			false);
-
 // http://kb.mozillazine.org/Browser.search.suggest.enabled
 user_pref("browser.search.suggest.enabled",			false);
 
@@ -195,6 +154,83 @@ user_pref("network.negotiate-auth.allow-insecure-ntlm-v1",	false);
 user_pref("security.mixed_content.block_active_content",	true);
 // Mixed Passive Content (a.k.a. Mixed Display Content).
 user_pref("security.mixed_content.block_display_content",	true);
+
+/******************************************************************************
+ * caching                                                                    *
+ *                                                                            *
+ ******************************************************************************/
+
+// http://kb.mozillazine.org/Browser.sessionstore.postdata
+// NOTE: relates to CIS 2.5.7
+user_pref("browser.sessionstore.postdata",		0);
+// http://kb.mozillazine.org/Browser.sessionstore.enabled
+user_pref("browser.sessionstore.enabled",		false);
+
+// http://kb.mozillazine.org/Browser.cache.offline.enable
+user_pref("browser.cache.offline.enable",		false);
+
+// always use private browsing
+// https://support.mozilla.org/en-US/kb/Private-Browsing
+// https://wiki.mozilla.org/PrivateBrowsing
+user_pref("browser.privatebrowsing.autostart",		true);
+user_pref("extensions.ghostery.privateBrowsing",	true);
+
+// clear history when firefox closes
+// https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically
+user_pref("privacy.sanitize.sanitizeOnShutdown",	true);
+user_pref("privacy.clearOnShutdown.cache",		true);
+user_pref("privacy.clearOnShutdown.cookies",		true);
+user_pref("privacy.clearOnShutdown.downloads",		true);
+user_pref("privacy.clearOnShutdown.formdata",		true);
+user_pref("privacy.clearOnShutdown.history",		true);
+user_pref("privacy.clearOnShutdown.offlineApps",	true);
+user_pref("privacy.clearOnShutdown.passwords",		true);
+user_pref("privacy.clearOnShutdown.sessions",		true);
+user_pref("privacy.clearOnShutdown.siteSettings",	true);
+
+// don't remember browsing history
+user_pref("places.history.enabled",			false);
+
+// The cookie expires at the end of the session (when the browser closes).
+// http://kb.mozillazine.org/Network.cookie.lifetimePolicy#2
+user_pref("network.cookie.lifetimePolicy",		2);
+
+// http://kb.mozillazine.org/Browser.cache.disk.enable
+user_pref("browser.cache.disk.enable",			false);
+
+// http://kb.mozillazine.org/Browser.cache.memory.enable
+//user_pref("browser.cache.memory.enable",		false);
+
+// CIS Version 1.2.0 October 21st, 2011 2.5.8 Disable Caching of SSL Pages
+user_pref("browser.cache.disk_cache_ssl",		false);
+
+// CIS Version 1.2.0 October 21st, 2011 2.5.2 Disallow Credential Storage
+user_pref("signon.rememberSignons",			false);
+
+// CIS Version 1.2.0 October 21st, 2011 2.5.4 Delete History and Form Data
+// http://kb.mozillazine.org/Browser.history_expire_days
+user_pref("browser.history_expire_days",		0);
+
+// http://kb.mozillazine.org/Browser.history_expire_sites
+user_pref("browser.history_expire_sites",		0);
+
+// http://kb.mozillazine.org/Browser.history_expire_visits
+user_pref("browser.history_expire_visits",		0);
+
+// CIS Version 1.2.0 October 21st, 2011 2.5.5 Delete Download History
+// Zero (0) is an indication that no download history is retained for the current profile.
+user_pref("browser.download.manager.retention",		0);
+
+// CIS Version 1.2.0 October 21st, 2011 2.5.6 Delete Search and Form History
+// TODO: browser.formfill.saveHttpsForms?
+user_pref("browser.formfill.enable",			false);
+user_pref("browser.formfill.expire_days",		0);
+
+// CIS Version 1.2.0 October 21st, 2011 2.5.7 Clear SSL Form Session Data
+// http://kb.mozillazine.org/Browser.sessionstore.privacy_level#2
+// Store extra session data for unencrypted (non-HTTPS) sites only.
+// NOTE: CIS says 1, we use 2
+user_pref("browser.sessionstore.privacy_level",		2);
 
 /******************************************************************************
  * UI related                                                                 *
@@ -472,37 +508,6 @@ user_pref("network.http.sendSecureXSiteReferrer",	false);
 // CIS 2.5.1 Accept Only 1st Party Cookies
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior#1
 user_pref("network.cookie.cookieBehavior",		1);
-
-// CIS 2.5.2 Disallow Credential Storage
-user_pref("signon.rememberSignons",			false);
-
-// CIS 2.5.4 Delete History and Form Data
-// http://kb.mozillazine.org/Browser.history_expire_days
-user_pref("browser.history_expire_days",            0);
-
-// http://kb.mozillazine.org/Browser.history_expire_sites
-user_pref("browser.history_expire_sites",            0);
-
-// http://kb.mozillazine.org/Browser.history_expire_visits
-user_pref("browser.history_expire_visits",            0);
-
-// CIS 2.5.5 Delete Download History
-// Zero (0) is an indication that no download history is retained for the current profile.
-user_pref("browser.download.manager.retention",		0);
-
-// CIS 2.5.6 Delete Search and Form History
-// TODO: browser.formfill.saveHttpsForms?
-user_pref("browser.formfill.enable",			false);
-user_pref("browser.formfill.expire_days",		0);
-
-// CIS 2.5.7 Clear SSL Form Session Data
-// http://kb.mozillazine.org/Browser.sessionstore.privacy_level#2
-// Store extra session data for unencrypted (non-HTTPS) sites only.
-// NOTE: CIS says 1, we use 2
-user_pref("browser.sessionstore.privacy_level",		2);
-
-// CIS 2.5.8 Disable Caching of SSL Pages
-user_pref("browser.cache.disk_cache_ssl",		false);
 
 /*
  * 2.6 Applications Settings
