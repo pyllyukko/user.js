@@ -252,6 +252,9 @@ user_pref("browser.shell.checkDefaultBrowser",		false);
 // see also CVE-2009-3555
 user_pref("security.ssl.warn_missing_rfc5746",		1);
 
+// CIS Version 1.2.0 October 21st, 2011 2.5.3 Disable Prompting for Credential Storage
+user_pref("security.ask_for_password",			0);
+
 /******************************************************************************
  * TLS / HTTPS / OCSP related stuff                                           *
  *                                                                            *
@@ -467,9 +470,6 @@ user_pref("network.cookie.cookieBehavior",		1);
 
 // CIS 2.5.2 Disallow Credential Storage
 user_pref("signon.rememberSignons",			false);
-
-// CIS 2.5.3 Disable Prompting for Credential Storage
-user_pref("security.ask_for_password",			0);
 
 // CIS 2.5.4 Delete History and Form Data
 // http://kb.mozillazine.org/Browser.history_expire_days
