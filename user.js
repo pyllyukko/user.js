@@ -24,8 +24,10 @@
 // http://kb.mozillazine.org/Network.http.sendRefererHeader#0
 // https://bugzilla.mozilla.org/show_bug.cgi?id=822869
 // Send a referer header with the target URI as the source
-user_pref("network.http.sendRefererHeader",	1);
-user_pref("network.http.referer.spoofSource",	1);
+user_pref("network.http.sendRefererHeader",		1);
+user_pref("network.http.referer.spoofSource",		1);
+// CIS Version 1.2.0 October 21st, 2011 2.4.3 Disable Referer from an SSL Website
+user_pref("network.http.sendSecureXSiteReferrer",	false);
 
 // disable HTML frames
 // WARNING: might make your life difficult!
@@ -493,13 +495,6 @@ user_pref("browser.safebrowsing.malware.enabled",	true);
 
 // CIS 2.3.6 Disable Displaying Javascript in History URLs
 user_pref("browser.urlbar.filter.javascript",		true);
-
-/*
- * 2.4 Network Settings
- */
-
-// CIS 2.4.3 Disable Referer from an SSL Website
-user_pref("network.http.sendSecureXSiteReferrer",	false);
 
 /*
  * 2.5 Privacy Settings
