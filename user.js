@@ -226,21 +226,26 @@ user_pref("security.mixed_content.block_active_content",	true);
 // Mixed Passive Content (a.k.a. Mixed Display Content).
 user_pref("security.mixed_content.block_display_content",	true);
 
-// https://blog.mozilla.org/security/2013/07/29/ocsp-stapling-in-firefox/
-user_pref("security.ssl.enable_ocsp_stapling",			true);
-
 // CIS 2.2.2 Enable Warning of Loading Mixed Content
 user_pref("security.warn_viewing_mixed",		true);
 
 // CIS 2.2.3 Enable Warning of Using Weak Encryption
 user_pref("security.warn_entering_weak",		true);
 
+/******************************************************************************
+ * TLS / HTTPS / OCSP related stuff                                           *
+ *                                                                            *
+ ******************************************************************************/
+
 // CIS 2.2.4 Enable Online Certificate Status Protocol
 user_pref("security.OCSP.enabled",			true);
 
+// https://blog.mozilla.org/security/2013/07/29/ocsp-stapling-in-firefox/
+user_pref("security.ssl.enable_ocsp_stapling",		true);
+
 // require certificate revocation check through OCSP protocol.
 // NOTICE: this leaks information about the sites you visit to the CA.
-user_pref("security.OCSP.require",		true);
+user_pref("security.OCSP.require",			true);
 
 // https://www.blackhat.com/us-13/briefings.html#NextGen
 user_pref("security.enable_tls_session_tickets",	false);
@@ -252,6 +257,7 @@ user_pref("security.enable_tls_session_tickets",	false);
 user_pref("security.tls.version.min",			1);
 user_pref("security.tls.version.max",			3);
 
+// disable SSLv3 (CVE-2014-3566)
 user_pref("security.enable_ssl3",			false);
 
 // pinning
@@ -273,11 +279,11 @@ user_pref("security.ssl.treat_unsafe_negotiation_as_broken",	true);
 // see also CVE-2009-3555
 //user_pref("security.ssl.require_safe_negotiation",	true);
 
-/*
- * CIPHERS
- *
+/******************************************************************************
+ * CIPHERS                                                                    *
+ *                                                                            *
  * you can debug the SSL handshake with tshark: tshark -t ad -n -i wlan0 -T text -V -R ssl.handshake
- */
+ ******************************************************************************/
 
 // disable null ciphers
 user_pref("security.ssl3.rsa_null_sha",		false);
