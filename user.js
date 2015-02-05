@@ -134,6 +134,10 @@ user_pref("security.mixed_content.block_active_content",	true);
 // Mixed Passive Content (a.k.a. Mixed Display Content).
 user_pref("security.mixed_content.block_display_content",	true);
 
+// disable gamepad input
+// http://www.w3.org/TR/gamepad/
+user_pref("dom.gamepad.enabled",				false);
+
 /******************************************************************************
  * HTTP                                                                       *
  *                                                                            *
