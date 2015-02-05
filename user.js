@@ -21,14 +21,6 @@
 // https://wiki.mozilla.org/FIPS_Validation
 // https://www.mozilla.org/projects/security/pki/nss/nss-3.11/nss-3.11-algorithms.html
 
-// http://kb.mozillazine.org/Network.http.sendRefererHeader#0
-// https://bugzilla.mozilla.org/show_bug.cgi?id=822869
-// Send a referer header with the target URI as the source
-user_pref("network.http.sendRefererHeader",		1);
-user_pref("network.http.referer.spoofSource",		1);
-// CIS Version 1.2.0 October 21st, 2011 2.4.3 Disable Referer from an SSL Website
-user_pref("network.http.sendSecureXSiteReferrer",	false);
-
 // disable HTML frames
 // WARNING: might make your life difficult!
 //user_pref("browser.frames.enabled",		false);
@@ -57,11 +49,6 @@ user_pref("toolkit.telemetry.enabled",			false);
 // always ask the user where to download
 // https://developer.mozilla.org/en/Download_Manager_preferences
 user_pref("browser.download.useDownloadDir",		false);
-
-// DNT HTTP header
-// http://dnt.mozilla.org/
-// https://en.wikipedia.org/wiki/Do_not_track_header
-user_pref("privacy.donottrackheader.enabled",		true);
 
 // https://wiki.mozilla.org/Polaris#Tracking_protection
 // Commented out by default since it contacts a remote server to download the blocklist
@@ -115,12 +102,6 @@ user_pref("media.webspeech.recognition.enable",			false);
 // https://mozilla.github.io/webrtc-landing/gum_test.html
 user_pref("media.getusermedia.screensharing.enabled",		false);
 
-// https://bugzilla.mozilla.org/show_bug.cgi?id=855326
-user_pref("security.csp.experimentalEnabled",			true);
-
-// CSP https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy
-user_pref("security.csp.enable",				true);
-
 // Disable new tab tile ads & preload
 // http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
 // http://forums.mozillazine.org/viewtopic.php?p=13876331&sid=811f876b0a8869c2e5b81e059d72f264#p13876331
@@ -145,10 +126,6 @@ user_pref("browser.search.suggest.enabled",			false);
 
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
 
-// disallow NTLMv1
-// https://bugzilla.mozilla.org/show_bug.cgi?id=828183
-user_pref("network.negotiate-auth.allow-insecure-ntlm-v1",	false);
-
 /* mixed content stuff
  *   - https://developer.mozilla.org/en-US/docs/Site_Compatibility_for_Firefox_23#Non-SSL_contents_on_SSL_pages_are_blocked_by_default
  *   - https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/
@@ -156,6 +133,34 @@ user_pref("network.negotiate-auth.allow-insecure-ntlm-v1",	false);
 user_pref("security.mixed_content.block_active_content",	true);
 // Mixed Passive Content (a.k.a. Mixed Display Content).
 user_pref("security.mixed_content.block_display_content",	true);
+
+/******************************************************************************
+ * HTTP                                                                       *
+ *                                                                            *
+ ******************************************************************************/
+
+// disallow NTLMv1
+// https://bugzilla.mozilla.org/show_bug.cgi?id=828183
+user_pref("network.negotiate-auth.allow-insecure-ntlm-v1",	false);
+
+// https://bugzilla.mozilla.org/show_bug.cgi?id=855326
+user_pref("security.csp.experimentalEnabled",			true);
+
+// CSP https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy
+user_pref("security.csp.enable",				true);
+
+// DNT HTTP header
+// http://dnt.mozilla.org/
+// https://en.wikipedia.org/wiki/Do_not_track_header
+user_pref("privacy.donottrackheader.enabled",			true);
+
+// http://kb.mozillazine.org/Network.http.sendRefererHeader#0
+// https://bugzilla.mozilla.org/show_bug.cgi?id=822869
+// Send a referer header with the target URI as the source
+user_pref("network.http.sendRefererHeader",			1);
+user_pref("network.http.referer.spoofSource",			1);
+// CIS Version 1.2.0 October 21st, 2011 2.4.3 Disable Referer from an SSL Website
+user_pref("network.http.sendSecureXSiteReferrer",		false);
 
 /******************************************************************************
  * caching                                                                    *
