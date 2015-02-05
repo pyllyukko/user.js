@@ -28,10 +28,6 @@
 user_pref("network.http.sendRefererHeader",	1);
 user_pref("network.http.referer.spoofSource",	1);
 
-// https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/
-// http://dbaron.org/mozilla/visited-privacy
-user_pref("layout.css.visited_links_enabled",	false);
-
 // disable HTML frames
 // WARNING: might make your life difficult!
 //user_pref("browser.frames.enabled",		false);
@@ -56,25 +52,6 @@ user_pref("geo.enabled",			false);
 // https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry
 // https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
 user_pref("toolkit.telemetry.enabled",			false);
-
-// http://www.labnol.org/software/browsers/prevent-firefox-showing-bookmarks-address-location-bar/3636/
-// http://kb.mozillazine.org/Browser.urlbar.maxRichResults
-// "Setting the preference to 0 effectively disables the Location Bar dropdown entirely."
-user_pref("browser.urlbar.maxRichResults",		0);
-
-// http://kb.mozillazine.org/Places.frecency.unvisited%28place_type%29Bonus
-
-// http://kb.mozillazine.org/Disabling_autocomplete_-_Firefox#Firefox_3.5
-user_pref("browser.urlbar.autocomplete.enabled",	false);
-
-// http://kb.mozillazine.org/Signon.autofillForms
-// https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
-user_pref("signon.autofillForms",			false);
-
-// http://kb.mozillazine.org/About:config_entries#Browser
-// http://kb.mozillazine.org/Inline_autocomplete
-user_pref("browser.urlbar.autoFill",            false);
-user_pref("browser.urlbar.autoFill.typed",            false);
 
 // http://kb.mozillazine.org/Browser.cache.disk.enable
 user_pref("browser.cache.disk.enable",			false);
@@ -151,9 +128,6 @@ user_pref("browser.safebrowsing.remoteLookups",		false);
 // https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
 user_pref("datareporting.healthreport.uploadEnabled",	false);
 
-// do not check if firefox is the default browser
-user_pref("browser.shell.checkDefaultBrowser",		false);
-
 // http://kb.mozillazine.org/Browser.cache.offline.enable
 user_pref("browser.cache.offline.enable",		false);
 
@@ -180,9 +154,6 @@ user_pref("security.csp.experimentalEnabled",			true);
 
 // CSP https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy
 user_pref("security.csp.enable",				true);
-
-// https://wiki.mozilla.org/Privacy/Reviews/New_Tab
-user_pref("browser.newtabpage.enabled",				false);
 
 // Disable new tab tile ads & preload
 // http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
@@ -226,18 +197,67 @@ user_pref("security.mixed_content.block_active_content",	true);
 // Mixed Passive Content (a.k.a. Mixed Display Content).
 user_pref("security.mixed_content.block_display_content",	true);
 
-// CIS 2.2.2 Enable Warning of Loading Mixed Content
+/******************************************************************************
+ * UI related                                                                 *
+ *                                                                            *
+ ******************************************************************************/
+
+// https://wiki.mozilla.org/Privacy/Reviews/New_Tab
+user_pref("browser.newtabpage.enabled",			false);
+
+// CIS Version 1.2.0 October 21st, 2011 2.1.2 Enable Auto Notification of Outdated Plugins
+// https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review
+user_pref("plugins.update.notifyUser",			true);
+
+// CIS Version 1.2.0 October 21st, 2011 2.1.3 Enable Information Bar for Outdated Plugins
+user_pref("plugins.hide_infobar_for_outdated_plugin",	false);
+
+// CIS Version 1.2.0 October 21st, 2011 2.2.2 Enable Warning of Loading Mixed Content
 user_pref("security.warn_viewing_mixed",		true);
 
-// CIS 2.2.3 Enable Warning of Using Weak Encryption
+// CIS Version 1.2.0 October 21st, 2011 2.2.3 Enable Warning of Using Weak Encryption
 user_pref("security.warn_entering_weak",		true);
+
+// CIS Mozilla Firefox 24 ESR v1.0.0 - 3.6 Enable IDN Show Punycode
+// http://kb.mozillazine.org/Network.IDN_show_punycode
+user_pref("network.IDN_show_punycode",			true);
+
+// http://kb.mozillazine.org/About:config_entries#Browser
+// http://kb.mozillazine.org/Inline_autocomplete
+user_pref("browser.urlbar.autoFill",			false);
+user_pref("browser.urlbar.autoFill.typed",		false);
+
+// http://www.labnol.org/software/browsers/prevent-firefox-showing-bookmarks-address-location-bar/3636/
+// http://kb.mozillazine.org/Browser.urlbar.maxRichResults
+// "Setting the preference to 0 effectively disables the Location Bar dropdown entirely."
+user_pref("browser.urlbar.maxRichResults",		0);
+
+// https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/
+// http://dbaron.org/mozilla/visited-privacy
+user_pref("layout.css.visited_links_enabled",		false);
+
+// http://kb.mozillazine.org/Places.frecency.unvisited%28place_type%29Bonus
+
+// http://kb.mozillazine.org/Disabling_autocomplete_-_Firefox#Firefox_3.5
+user_pref("browser.urlbar.autocomplete.enabled",	false);
+
+// http://kb.mozillazine.org/Signon.autofillForms
+// https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
+user_pref("signon.autofillForms",			false);
+
+// do not check if firefox is the default browser
+user_pref("browser.shell.checkDefaultBrowser",		false);
+
+// https://developer.mozilla.org/en/Preferences/Mozilla_preferences_for_uber-geeks
+// see also CVE-2009-3555
+user_pref("security.ssl.warn_missing_rfc5746",		1);
 
 /******************************************************************************
  * TLS / HTTPS / OCSP related stuff                                           *
  *                                                                            *
  ******************************************************************************/
 
-// CIS 2.2.4 Enable Online Certificate Status Protocol
+// CIS Version 1.2.0 October 21st, 2011 2.2.4 Enable Online Certificate Status Protocol
 user_pref("security.OCSP.enabled",			true);
 
 // https://blog.mozilla.org/security/2013/07/29/ocsp-stapling-in-firefox/
@@ -264,10 +284,6 @@ user_pref("security.enable_ssl3",			false);
 // https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning#How_to_use_pinning
 // "2. Strict. Pinning is always enforced."
 user_pref("security.cert_pinning.enforcement_level",	2);
-
-// https://developer.mozilla.org/en/Preferences/Mozilla_preferences_for_uber-geeks
-// see also CVE-2009-3555
-user_pref("security.ssl.warn_missing_rfc5746",	1);
 
 // https://wiki.mozilla.org/Security:Renegotiation#security.ssl.treat_unsafe_negotiation_as_broken
 // see also CVE-2009-3555
@@ -411,13 +427,6 @@ user_pref("security.ssl3.rsa_aes_128_sha",		true);
 // this is disabled for now. it is better to patch through package management.
 //user_pref("app.update.auto", true);
 
-// CIS 2.1.2 Enable Auto Notification of Outdated Plugins
-// https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review
-user_pref("plugins.update.notifyUser",			true);
-
-// CIS 2.1.3 Enable Information Bar for Outdated Plugins
-user_pref("plugins.hide_infobar_for_outdated_plugin",	false);
-
 /*
  * 2.3 Dynamic Content Settings
  */
@@ -498,10 +507,6 @@ user_pref("browser.cache.disk_cache_ssl",		false);
 
 // CIS 2.7.4 Disable Scripting of Plugins by JavaScript
 user_pref("security.xpconnect.plugin.unrestricted",	false);
-
-// CIS Mozilla Firefox 24 ESR v1.0.0 - 3.6 Enable IDN Show Punycode
-// http://kb.mozillazine.org/Network.IDN_show_punycode
-user_pref("network.IDN_show_punycode",			true);
 
 // CIS Mozilla Firefox 24 ESR v1.0.0 - 3.8 Set File URI Origin Policy
 // http://kb.mozillazine.org/Security.fileuri.strict_origin_policy
