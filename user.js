@@ -401,27 +401,29 @@ user_pref("security.ssl3.rsa_rc4_128_sha",		true);
 // CloudFront
 user_pref("security.ssl3.rsa_aes_128_sha",		true);
 
-// user-agent...
-//
-// https://panopticlick.eff.org/
-//
-// you can copy the value from extensions.torbutton.useragent_override
-//
-// default: "Mozilla/5.0 (X11; Linux i686 on x86_64; rv:9.0.1) Gecko/20100101 Firefox/9.0.1"
-// before: 15.53 / 47249.6
-//
-// https://github.com/ioerror/crlwatch/blob/master/src/fetch-crls.sh
-// "Mozilla/5.0 (Windows; U; Windows NT 6.1; LANG; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3"
-// after: 12.15 bits of identifying information
-//
-// "Mozilla/5.0 (Windows NT 6.1; rv:5.0) Gecko/20100101 Firefox/5.0"
-// after: 6.73 / 106.43
+/******************************************************************************
+ * user-agent...
+ *
+ * https://panopticlick.eff.org/
+ *
+ * you can copy the value from extensions.torbutton.useragent_override
+ *
+ * default: "Mozilla/5.0 (X11; Linux i686 on x86_64; rv:9.0.1) Gecko/20100101 Firefox/9.0.1"
+ * before: 15.53 / 47249.6
+ *
+ * https://github.com/ioerror/crlwatch/blob/master/src/fetch-crls.sh
+ * "Mozilla/5.0 (Windows; U; Windows NT 6.1; LANG; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3"
+ * after: 12.15 bits of identifying information
+ *
+ * "Mozilla/5.0 (Windows NT 6.1; rv:5.0) Gecko/20100101 Firefox/5.0"
+ * after: 6.73 / 106.43
+ ******************************************************************************/
 //user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 6.1; rv:5.0) Gecko/20100101 Firefox/5.0");
 
-/*
- * CIS Security Configuration Benchmark For Mozilla Firefox
- * Version 1.2.0 October 21st, 2011
- */
+/******************************************************************************
+ * CIS Security Configuration Benchmark For Mozilla Firefox                   *
+ * Version 1.2.0 October 21st, 2011                                           *
+ ******************************************************************************/
 
 // CIS 2.1.1 Enable Auto Update
 // this is disabled for now. it is better to patch through package management.
