@@ -505,10 +505,6 @@ user_pref("browser.urlbar.filter.javascript",		true);
 user_pref("network.cookie.cookieBehavior",		1);
 
 /*
- * 2.6 Applications Settings
- */
-
-/*
  * 2.7 Advanced JavaScript Settings
  */
 
