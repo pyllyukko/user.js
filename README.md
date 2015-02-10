@@ -291,6 +291,7 @@ References
 * [Polaris](https://wiki.mozilla.org/Polaris)
 * [Mozilla Included CA Certificate List](http://www.mozilla.org/projects/security/certs/included)
 * [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/)
+* [Mozilla Security Blog](https://blog.mozilla.org/security/category/security/)
 
 [1]: http://kb.mozillazine.org/User.js_file
 [2]: https://wiki.mozilla.org/Security:Renegotiation#security.ssl.require_safe_negotiation
