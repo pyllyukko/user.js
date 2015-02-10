@@ -145,6 +145,10 @@ user_pref("network.jar.open-unsafe-types",			false);
 // https://blog.mozilla.org/security/2012/10/11/click-to-play-plugins-blocklist-style/
 user_pref("plugins.click_to_play",				true);
 
+// disable webGL
+// http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
+user_pref("webgl.disabled",					true);
+
 /******************************************************************************
  * HTTP                                                                       *
  *                                                                            *
