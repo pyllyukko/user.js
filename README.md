@@ -292,6 +292,7 @@ References
 * [Bulletproof SSL and TLS](https://www.feistyduck.com/books/bulletproof-ssl-and-tls/)
 * [Polaris](https://wiki.mozilla.org/Polaris)
 * [Mozilla Included CA Certificate List](http://www.mozilla.org/projects/security/certs/included)
+  * https://wiki.mozilla.org/CA:Problematic_Practices
 * [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/)
 * [Mozilla Security Blog](https://blog.mozilla.org/security/category/security/)
 
