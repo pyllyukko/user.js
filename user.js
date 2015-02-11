@@ -149,6 +149,10 @@ user_pref("plugins.click_to_play",				true);
 // http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled",					true);
 
+// update add-ons automatically
+// https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/
+user_pref("extensions.update.enabled",				true);
+
 /******************************************************************************
  * HTTP                                                                       *
  *                                                                            *
