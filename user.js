@@ -76,6 +76,7 @@ user_pref("dom.storage.enabled",				false);
 user_pref("media.peerconnection.enabled",			false);
 // getUserMedia
 // https://wiki.mozilla.org/Media/getUserMedia
+// https://developer.mozilla.org/en-US/docs/Web/API/Navigator
 user_pref("media.navigator.enabled",				false);
 // https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
 user_pref("dom.battery.enabled",				false);
