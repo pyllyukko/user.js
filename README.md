@@ -71,6 +71,7 @@ Some of the settings in this [user.js][1] file might seem redundant, as some of 
 * Don't reveal internal [IP addresses](http://net.ipcalf.com/) ([media.peerconnection.enabled](https://blog.mozilla.org/futurereleases/2013/01/12/capture-local-camera-and-microphone-streams-with-getusermedia-now-enabled-in-firefox/))
   * [BeEF Module: Get Internal IP WebRTC](https://github.com/beefproject/beef/wiki/Module%3A-Get-Internal-IP-WebRTC)
 * [browser.send_pings](http://kb.mozillazine.org/Browser.send_pings)
+* Disable [WebGL](https://en.wikipedia.org/wiki/WebGL)
 
 ### Ciphers
 
@@ -165,6 +166,7 @@ Online tests
 * [Firefox Addon Detector](http://thehackerblog.com/addon_scanner/)
   * [Blog post](http://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)
 * [browserrecon](http://www.computec.ch/projekte/browserrecon/)??
+* http://get.webgl.org/
 
 Known problems
 --------------
