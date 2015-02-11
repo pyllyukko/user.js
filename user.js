@@ -79,6 +79,8 @@ user_pref("media.peerconnection.enabled",			false);
 user_pref("media.navigator.enabled",				false);
 // https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
 user_pref("dom.battery.enabled",				false);
+// https://wiki.mozilla.org/WebAPI/Security/WebTelephony
+user_pref("dom.telephony.enabled",				false);
 
 user_pref("media.webspeech.recognition.enable",			false);
 
