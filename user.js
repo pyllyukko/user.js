@@ -3,12 +3,6 @@
  * https://github.com/pyllyukko/user.js                                       *
  ******************************************************************************/
 
-// http://kb.mozillazine.org/About:config_entries
-// http://kb.mozillazine.org/User.js_file
-// https://www.mozilla.org/projects/security/pki/nss/fips/
-// https://wiki.mozilla.org/FIPS_Validation
-// https://www.mozilla.org/projects/security/pki/nss/nss-3.11/nss-3.11-algorithms.html
-
 // disable HTML frames
 // WARNING: might make your life difficult!
 //user_pref("browser.frames.enabled",		false);
