@@ -167,6 +167,7 @@ Online tests
   * [Blog post](http://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)
 * [browserrecon](http://www.computec.ch/projekte/browserrecon/)??
 * http://get.webgl.org/
+* [battery.js](https://pstadler.sh/battery.js/)
 
 Known problems
 --------------
