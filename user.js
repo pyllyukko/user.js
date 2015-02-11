@@ -74,6 +74,9 @@ user_pref("dom.storage.enabled",				false);
 // don't reveal internal IPs
 // http://net.ipcalf.com/
 user_pref("media.peerconnection.enabled",			false);
+// getUserMedia
+// https://wiki.mozilla.org/Media/getUserMedia
+user_pref("media.navigator.enabled",				false);
 
 user_pref("media.webspeech.recognition.enable",			false);
 
