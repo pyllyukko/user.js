@@ -1,10 +1,6 @@
 /*
  * user.js
  *
- * TODO:
- *   - https://support.mozilla.org/en-US/kb/how-stop-firefox-automatically-making-connections
- *     - security.ssl.false_start.require-npn
- *
  * NOTES:
  *   - this config should also work against evercookies ( http://samy.pl/evercookie/ )
  *   - Attack Site test page: https://mozilla.org/firefox/its-an-attack.html
@@ -36,10 +32,7 @@ user_pref("network.prefetch-next",		false);
 
 // disable Location-Aware Browsing
 // http://www.mozilla.org/en-US/firefox/geolocation/
-// TODO: geo.wifi.uri?
 user_pref("geo.enabled",			false);
-
-// http://kb.mozillazine.org/Breakpad.reportURL
 
 // https://wiki.mozilla.org/Platform/Features/Telemetry
 // https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry
@@ -248,7 +241,6 @@ user_pref("browser.history_expire_visits",		0);
 user_pref("browser.download.manager.retention",		0);
 
 // CIS Version 1.2.0 October 21st, 2011 2.5.6 Delete Search and Form History
-// TODO: browser.formfill.saveHttpsForms?
 user_pref("browser.formfill.enable",			false);
 user_pref("browser.formfill.expire_days",		0);
 
