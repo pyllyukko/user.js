@@ -1,15 +1,7 @@
-/*
- * user.js
- *
- * NOTES:
- *   - this config should also work against evercookies ( http://samy.pl/evercookie/ )
- *   - Attack Site test page: https://mozilla.org/firefox/its-an-attack.html
- *   - Web Forgery test page: https://mozilla.org/firefox/its-a-trap.html
- *   - https://lists.mozilla.org/listinfo/privacy
- *   - https://wiki.mozilla.org/CA:Problematic_Practices
- *   - https://developer.mozilla.org/en-US/docs/Web/Security/HTTP_strict_transport_security
- *
- */
+/******************************************************************************
+ * user.js                                                                    *
+ * https://github.com/pyllyukko/user.js                                       *
+ ******************************************************************************/
 
 // http://kb.mozillazine.org/About:config_entries
 // http://kb.mozillazine.org/User.js_file
