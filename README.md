@@ -63,7 +63,7 @@ Some of the settings in this [user.js][1] file might seem redundant, as some of 
 
 * Enables [DNT](https://en.wikipedia.org/wiki/Do_Not_Track) (like it matters)
 * Referer header:
-  * Spoofs the referer header with [network.http.referer.spoofSource](https://bugzilla.mozilla.org/show_bug.cgi?id=822869) &  [Network.http.sendRefererHeader](http://kb.mozillazine.org/Network.http.sendRefererHeader#1)
+  * Spoofs the referer header with [network.http.referer.spoofSource][9] & [Network.http.sendRefererHeader](http://kb.mozillazine.org/Network.http.sendRefererHeader#1)
   * "[Don't send the Referer header when navigating from a https site to another https site.](http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer#false)"
 
 ### HTML5 related
@@ -178,7 +178,7 @@ There are plenty! Hardening your browser will break your interwebs. Here's some 
 * If you get "sec\_error\_ocsp\_invalid\_signing\_cert", it probably means that you don't have the required CA
 * If you get "ssl\_error\_unsafe\_negotiation", it means the server is vulnerable to [CVE-2009-3555](http://www.cvedetails.com/cve/CVE-2009-3555) and you need to disable [security.ssl.require\_safe\_negotiation][2] (not enabled currently)
 * If you set browser.frames.enabled to false, probably a whole bunch of websites will break
-* Some sites require the [referer](https://en.wikipedia.org/wiki/HTTP_referer) header
+* Some sites require the [referer](https://en.wikipedia.org/wiki/HTTP_referer) header (usually setting ``network.http.sendRefererHeader == 2`` is enough to overcome this and the referer is still "[spoofed][9]")
 * The [IndexedDB](https://en.wikipedia.org/wiki/Indexed_Database_API) is something that could potentially be used to track users, but it is also required by some browser add-ons in recent versions of Firefox. It would be best to disable this feature just to be on the safe side, but it is currently enabled, so that add-ons would work. See the following links for further info:
   * [Issue #8](https://github.com/pyllyukko/user.js/issues/8)
   * [IndexedDB Security Review](https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review) (this document also states that "IndexedDB is completely disabled in private browsing mode.", but this should still be verified)
@@ -305,3 +305,4 @@ References
 [6]: http://kb.mozillazine.org/About:config
 [7]: https://www.thawte.com/roots/
 [8]: https://support.mozilla.org/en-US/kb/Private%20Browsing
+[9]: https://bugzilla.mozilla.org/show_bug.cgi?id=822869
