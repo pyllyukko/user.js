@@ -174,7 +174,7 @@ Known problems
 
 There are plenty! Hardening your browser will break your interwebs. Here's some examples:
 
-* If you get "TypeError: localStorage is null", you probably need to enable [local storage][3]
+* If you get "TypeError: localStorage is null", you probably need to enable [local storage][3] (``dom.storage.enabled == true``)
 * If you get "sec\_error\_ocsp\_invalid\_signing\_cert", it probably means that you don't have the required CA
 * If you get "ssl\_error\_unsafe\_negotiation", it means the server is vulnerable to [CVE-2009-3555](http://www.cvedetails.com/cve/CVE-2009-3555) and you need to disable [security.ssl.require\_safe\_negotiation][2] (not enabled currently)
 * If you set browser.frames.enabled to false, probably a whole bunch of websites will break
