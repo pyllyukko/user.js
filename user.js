@@ -140,6 +140,9 @@ user_pref("webgl.disabled",					true);
 // https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/
 user_pref("extensions.update.enabled",				true);
 
+// http://kb.mozillazine.org/Extensions.blocklist.enabled
+user_pref("extensions.blocklist.enabled",			true);
+
 /******************************************************************************
  * HTTP                                                                       *
  *                                                                            *
