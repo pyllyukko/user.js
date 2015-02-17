@@ -314,6 +314,10 @@ user_pref("security.ask_for_password",			0);
  *                                                                            *
  ******************************************************************************/
 
+// https://blog.mozilla.org/security/2012/11/01/preloading-hsts/
+// https://wiki.mozilla.org/Privacy/Features/HSTS_Preload_List
+user_pref("network.stricttransportsecurity.preloadlist",	true);
+
 // enable SPDY
 // https://en.wikipedia.org/wiki/SPDY
 user_pref("network.http.spdy.enabled",			true);
