@@ -153,6 +153,8 @@ user_pref("extensions.blocklist.enabled",			true);
 // disallow NTLMv1
 // https://bugzilla.mozilla.org/show_bug.cgi?id=828183
 user_pref("network.negotiate-auth.allow-insecure-ntlm-v1",	false);
+// it is still allowed through HTTPS. uncomment the following to disable it completely.
+//user_pref("network.negotiate-auth.allow-insecure-ntlm-v1-https",	false);
 
 // https://bugzilla.mozilla.org/show_bug.cgi?id=855326
 user_pref("security.csp.experimentalEnabled",			true);
