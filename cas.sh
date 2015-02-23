@@ -70,6 +70,7 @@ declare -a BASIC_LIST=(
   "mozilla/StartCom_Certification_Authority.crt"
   "mozilla/UTN_USERFirst_Hardware_Root_CA.crt"
   "mozilla/ValiCert_Class_2_VA.crt"
+  "mozilla/Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.crt"
   "mozilla/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.crt"
   "mozilla/thawte_Primary_Root_CA.crt"
   "mozilla/thawte_Primary_Root_CA_-_G3.crt"

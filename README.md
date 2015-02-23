@@ -200,7 +200,7 @@ Then I came up with an better idea. I'd use [certpatrol][4] to record the certs 
 
 So I wrapped up a script that uses the certpatrol's SQLite DB and Mozilla's [certutil](https://developer.mozilla.org/en-US/docs/NSS_security_tools/certutil) to establish a list of required root CAs from the HTTPS sites that you have visited.
 
-There's also a ready made list built in into the script, that has 22 root CAs in it. With this list of CAs you should already be able to browse the web quite freely. Of course there might also be some geographical variations as to what CAs "are required" for normal use.
+There's also a ready made list built in into the script, that has 23 root CAs in it. With this list of CAs you should already be able to browse the web quite freely. Of course there might also be some geographical variations as to what CAs "are required" for normal use.
 
 ### Examples
 
@@ -256,6 +256,7 @@ This is the default CA list, that you can use. It should be enough for basic use
 | StartCom Certification Authority				|				|
 | UTN-USERFirst-Hardware					|				|
 | ValiCert Class 2 Policy Validation Authority			|				|
+| VeriSign Class 3 Public Primary Certification Authority - G3	| https://www.mysql.com/	|
 | VeriSign Class 3 Public Primary Certification Authority - G5	| https://twitter.com/		|
 | [thawte Primary Root CA][7]					|				|
 | [thawte Primary Root CA - G3][7]				|				|
