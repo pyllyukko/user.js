@@ -30,10 +30,9 @@ user_pref("toolkit.telemetry.enabled",			false);
 user_pref("browser.download.useDownloadDir",		false);
 
 // https://wiki.mozilla.org/Polaris#Tracking_protection
-// Commented out by default since it contacts a remote server to download the blocklist
+// https://support.mozilla.org/en-US/kb/tracking-protection-firefox
 // TODO: are these two the same?
-//user_pref("privacy.trackingprotection.enabled",		true);
-
+user_pref("privacy.trackingprotection.enabled",		true);
 user_pref("browser.polaris.enabled",			true);
 
 // don't try to guess where i'm trying to go!!!
