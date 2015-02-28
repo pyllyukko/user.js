@@ -141,6 +141,7 @@ Here is a list of the most essential security and privacy enhancing add-ons that
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 * [NoScript](http://noscript.net/)
 * [Ghostery](https://www.ghostery.com/)
+  * See also: [Are We Private Yet?](http://www.areweprivateyet.com/) site
 * [Privacy Badger](https://www.eff.org/privacybadger)
 * [DuckDuckGo Plus](https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/) (instead of Google)
 * [Mozilla Lightbeam](https://www.mozilla.org/en-US/lightbeam/)
