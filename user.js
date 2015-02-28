@@ -62,8 +62,8 @@ user_pref("browser.safebrowsing.remoteLookups",		false);
 // https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
 user_pref("datareporting.healthreport.uploadEnabled",	false);
 
-// flash - ask to activate
-user_pref("plugin.state.flash",				1);
+// flash - never activate
+user_pref("plugin.state.flash",				0);
 
 // http://kb.mozillazine.org/Dom.storage.enabled
 // http://dev.w3.org/html5/webstorage/#dom-localstorage
