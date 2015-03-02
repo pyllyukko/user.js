@@ -126,6 +126,10 @@ user_pref("security.mixed_content.block_display_content",	true);
 // http://www.w3.org/TR/gamepad/
 user_pref("dom.gamepad.enabled",				false);
 
+// disable virtual reality devices
+// https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
+user_pref("dom.vr.enabled",					false);
+
 // CIS Mozilla Firefox 24 ESR v1.0.0 - 3.7 Disable JAR from opening Unsafe File Types
 // http://kb.mozillazine.org/Network.jar.open-unsafe-types
 user_pref("network.jar.open-unsafe-types",			false);
