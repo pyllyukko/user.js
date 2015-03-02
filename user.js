@@ -391,7 +391,7 @@ user_pref("security.ssl3.rsa_1024_rc4_56_sha",	false);
 user_pref("security.ssl3.rsa_rc4_128_md5",	false);
 
 // 128 bits
-//user_pref("security.ssl3.rsa_rc4_128_sha",		false);
+user_pref("security.ssl3.rsa_rc4_128_sha",		false);
 //user_pref("security.ssl3.rsa_rc4_128_md5",		false);
 user_pref("security.ssl3.rsa_camellia_128_sha",		false);
 //user_pref("security.ssl3.rsa_aes_128_sha",		false);
@@ -459,11 +459,8 @@ user_pref("security.ssl3.dhe_dss_camellia_256_sha",	false);
 user_pref("security.ssl3.dhe_dss_des_ede3_sha",		false);
 
 /* fallbacks
- *
- * unfortunately, the RC4 is still required by some sites
  */
 user_pref("security.ssl3.rsa_aes_256_sha",		true);
-user_pref("security.ssl3.rsa_rc4_128_sha",		true);
 // CloudFront
 user_pref("security.ssl3.rsa_aes_128_sha",		true);
 

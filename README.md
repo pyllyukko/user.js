@@ -113,7 +113,7 @@ Here's a list of the ciphers with default config and Firefox 27.0.1:
 
 Here's the list with this config:
 
-	Cipher Suites (9 suites)
+	Cipher Suites (8 suites)
 	    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b)
 	    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)
 	    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a)
@@ -122,7 +122,7 @@ Here's the list with this config:
 	    Cipher Suite: TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA (0x0088)
 	    Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
 	    Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
-	    Cipher Suite: TLS_RSA_WITH_RC4_128_SHA (0x0005)
+
 
 This is not enough!
 -------------------
@@ -185,8 +185,6 @@ There are plenty! Hardening your browser will break your interwebs. Here's some 
   * [IndexedDB Security Review](https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review) (this document also states that "IndexedDB is completely disabled in private browsing mode.", but this should still be verified)
   * [This discussion](http://forums.mozillazine.org/viewtopic.php?p=13842047&sid=041e5edcae225759b7cfffd43fc518d0#p13842047) on mozillaZine Forums
   * [IndexedDB page at MDN](https://developer.mozilla.org/en-US/docs/IndexedDB)
-* It would be nice to get completely rid of [RC4](https://en.wikipedia.org/wiki/RC4#Security), but it doesn't seem quite possible currently
-  * ([CVE-2013-2566](http://www.cvedetails.com/cve/CVE-2013-2566))
 
 The [web console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console) is your friend, **when** websites start to break.
 
