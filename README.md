@@ -131,6 +131,7 @@ This is not enough!
 
 Here's some other tips how you can further harden Firefox:
 
+* Keep your browser updated! If you check [Firefox's security advisories][10], you'll see that pretty much every new version of Firefox contains some security updates. If you don't keep your browser updated, you've already lost the game.
 * Disable all unnecessary extensions and plugins!
 * Create different [profiles](http://mzl.la/NYhKHH) for different purposes
 
@@ -291,7 +292,7 @@ References
 * [CIS](http://www.cisecurity.org/):
   * [CIS Mozilla Firefox Benchmark v1.2.0 October 21st, 2011](http://benchmarks.cisecurity.org/downloads/show-single/?file=firefox.120)
   * [CIS Mozilla Firefox 24 ESR Benchmark v1.0.0 - 06-29-2014](http://benchmarks.cisecurity.org/downloads/show-single/?file=firefoxesr24.100)
-* [Security Advisories for Firefox](https://www.mozilla.org/security/known-vulnerabilities/firefox.html)
+* [Security Advisories for Firefox][10]
 * [The Design and Implementation of the Tor Browser](https://www.torproject.org/projects/torbrowser/design/)
 * [Bulletproof SSL and TLS](https://www.feistyduck.com/books/bulletproof-ssl-and-tls/)
 * [Polaris](https://wiki.mozilla.org/Polaris)
@@ -309,3 +310,4 @@ References
 [7]: https://www.thawte.com/roots/
 [8]: https://support.mozilla.org/en-US/kb/Private%20Browsing
 [9]: https://bugzilla.mozilla.org/show_bug.cgi?id=822869
+[10]: https://www.mozilla.org/security/known-vulnerabilities/firefox.html
