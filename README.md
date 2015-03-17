@@ -154,7 +154,6 @@ Online tests
 
 * [Panopticlick](https://panopticlick.eff.org/)
 * [www.filldisk.com](http://www.filldisk.com/)
-* [HTML5test](http://html5test.com/)
 * [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
 * [evercookie](http://samy.pl/evercookie/)
 * [Mozilla Plugin Check](https://www.mozilla.org/en-US/plugincheck/)
@@ -172,6 +171,16 @@ Online tests
 * [browserrecon](http://www.computec.ch/projekte/browserrecon/)??
 * http://get.webgl.org/
 * [battery.js](https://pstadler.sh/battery.js/)
+
+### HTML5test
+
+[HTML5test](http://html5test.com/)
+
+Here's a comparison of the various supported HTML5 features between recent Firefox with these settings, stock Firefox and the Tor Browser:
+
+| Comparison                                                                              | user.js version                          | Firefox version | Firefox baseline | Tor Browser |
+| --------------------------------------------------------------------------------------- | ---------------------------------------- | --------------- | ---------------- | ----------- |
+| https://html5test.com/compare/browser/614ecc2640198302/firefox-35/24a094263fa9f301.html | 3041fb7204f2547a34083fba7db2009929ed2326 | 36.0.1          | 35               | 4.0.4       |
 
 Known problems
 --------------
