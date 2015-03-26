@@ -60,6 +60,7 @@ declare -a BASIC_LIST=(
   "mozilla/DigiCert_Global_Root_CA.crt"
   "mozilla/Entrust.net_Secure_Server_CA.crt"
   "mozilla/Entrust.net_Premium_2048_Secure_Server_CA.crt"
+  "mozilla/Entrust_Root_Certification_Authority.crt"
   "mozilla/Equifax_Secure_CA.crt"
   "mozilla/GTE_CyberTrust_Global_Root.crt"
   "mozilla/GeoTrust_Global_CA.crt"

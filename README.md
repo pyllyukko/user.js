@@ -211,7 +211,7 @@ Then I came up with an better idea. I'd use [certpatrol][4] to record the certs 
 
 So I wrapped up a script that uses the certpatrol's SQLite DB and Mozilla's [certutil](https://developer.mozilla.org/en-US/docs/NSS_security_tools/certutil) to establish a list of required root CAs from the HTTPS sites that you have visited.
 
-There's also a ready made list built in into the script, that has 23 root CAs in it. With this list of CAs you should already be able to browse the web quite freely. Of course there might also be some geographical variations as to what CAs "are required" for normal use.
+There's also a ready made list built in into the script, that has 24 root CAs in it. With this list of CAs you should already be able to browse the web quite freely. Of course there might also be some geographical variations as to what CAs "are required" for normal use.
 
 ### Examples
 
@@ -257,6 +257,7 @@ This is the default CA list, that you can use. It should be enough for basic use
 | DigiCert Global Root CA					| https://duckduckgo.com/	|
 | Entrust.net Secure Server Certification Authority		|				|
 | Entrust.net Certification Authority (2048)			|				|
+| [Entrust Root Certification Authority][11]                    | https://www.ssllabs.com/      |
 | Equifax Secure Certificate Authority				|				|
 | GTE CyberTrust Global Root					|				|
 | GeoTrust Global CA						| https://www.google.com/	|
@@ -320,3 +321,4 @@ References
 [8]: https://support.mozilla.org/en-US/kb/Private%20Browsing
 [9]: https://bugzilla.mozilla.org/show_bug.cgi?id=822869
 [10]: https://www.mozilla.org/security/known-vulnerabilities/firefox.html
+[11]: http://www.entrust.net/developer/index.cfm
