@@ -85,6 +85,8 @@ user_pref("dom.telephony.enabled",				false);
 user_pref("beacon.enabled",					false);
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
 user_pref("dom.event.clipboardevents.enabled",			false);
+// Webpages will not be able to affect the right-click menu
+user_pref("dom.event.contextmenu.enabled",			false);
 
 user_pref("media.webspeech.recognition.enable",			false);
 
