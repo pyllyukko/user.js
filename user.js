@@ -152,6 +152,10 @@ user_pref("extensions.update.enabled",				true);
 // http://kb.mozillazine.org/Extensions.blocklist.enabled
 user_pref("extensions.blocklist.enabled",			true);
 
+// disable firefox hello
+// https://wiki.mozilla.org/Loop
+//user_pref("loop.enabled",					false);
+
 /******************************************************************************
  * HTTP                                                                       *
  *                                                                            *
