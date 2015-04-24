@@ -102,6 +102,10 @@ user_pref("media.getusermedia.screensharing.enabled",		false);
 user_pref("browser.newtabpage.enhanced",			false);
 user_pref("browser.newtab.preload",				false);
 
+// disable heartbeat
+// https://wiki.mozilla.org/Advocacy/heartbeat
+user_pref("browser.selfsupport.url",				"");
+
 // http://kb.mozillazine.org/Browser.send_pings
 user_pref("browser.send_pings",					false);
 
