@@ -311,6 +311,7 @@ References
   * https://wiki.mozilla.org/CA:Problematic_Practices
 * [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/)
 * [Mozilla Security Blog](https://blog.mozilla.org/security/category/security/)
+* [Security and privacy-related preferences](http://kb.mozillazine.org/Category:Security_and_privacy-related_preferences)
 
 [1]: http://kb.mozillazine.org/User.js_file
 [2]: https://wiki.mozilla.org/Security:Renegotiation#security.ssl.require_safe_negotiation
