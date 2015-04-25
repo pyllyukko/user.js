@@ -108,6 +108,9 @@ user_pref("browser.selfsupport.url",				"");
 
 // http://kb.mozillazine.org/Browser.send_pings
 user_pref("browser.send_pings",					false);
+// this shouldn't have any effect, since we block pings altogether, but we'll set it anyway.
+// http://kb.mozillazine.org/Browser.send_pings.require_same_host
+user_pref("browser.send_pings.require_same_host",		true);
 
 // https://developer.mozilla.org/en-US/docs/IndexedDB
 // https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review
