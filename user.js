@@ -98,7 +98,7 @@ user_pref("media.getusermedia.screensharing.enabled",		false);
 
 // Disable new tab tile ads & preload
 // http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
-// http://forums.mozillazine.org/viewtopic.php?p=13876331&sid=811f876b0a8869c2e5b81e059d72f264#p13876331
+// http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331
 user_pref("browser.newtabpage.enhanced",			false);
 user_pref("browser.newtab.preload",				false);
 
@@ -116,7 +116,7 @@ user_pref("browser.send_pings.require_same_host",		true);
 // https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review
 // TODO: find out why html5test still reports this as available
 // NOTE: this is enabled for now, as disabling this seems to break some plugins.
-//       see: http://forums.mozillazine.org/viewtopic.php?p=13842047&sid=041e5edcae225759b7cfffd43fc518d0#p13842047
+//       see: http://forums.mozillazine.org/viewtopic.php?p=13842047#p13842047
 user_pref("dom.indexedDB.enabled",				true);
 
 // http://kb.mozillazine.org/Network.dns.disablePrefetch
