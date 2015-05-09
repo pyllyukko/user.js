@@ -156,11 +156,11 @@ Do note, that this user.js also enables Mozilla's built-in [tracking protection]
 So to summarize, pick one between Ghostery and uBlock, depending on your personal preferences.
 
 See also:
-* [\[Talk\] Ghostery Vs. Disconnect.me Vs. uBlock #16](https://github.com/pyllyukko/user.js/issues/16).
-* [Are We Private Yet?](http://www.areweprivateyet.com/) site (made by Ghostery)
+* [Mozilla Lightbeam](https://www.mozilla.org/en-US/lightbeam/) extension
 * [Privacy Badger](https://www.eff.org/privacybadger) extension from EFF (also to be considered as an additional security measure and not a complete solution)
 * [Web Browser Addons](https://prism-break.org/en/subcategories/gnu-linux-web-browser-addons/) section in [PRISM break](https://prism-break.org/)
-* [Mozilla Lightbeam](https://www.mozilla.org/en-US/lightbeam/)
+* [\[Talk\] Ghostery Vs. Disconnect.me Vs. uBlock #16](https://github.com/pyllyukko/user.js/issues/16)
+* [Are We Private Yet?](http://www.areweprivateyet.com/) site (made by Ghostery)
 
 Online tests
 ------------
