@@ -121,7 +121,9 @@ user_pref("browser.send_pings.require_same_host",		true);
 user_pref("dom.indexedDB.enabled",				true);
 
 // http://kb.mozillazine.org/Network.dns.disablePrefetch
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching
 user_pref("network.dns.disablePrefetch",			true);
+user_pref("network.dns.disablePrefetchFromHTTPS",		true);
 
 // http://kb.mozillazine.org/Browser.search.suggest.enabled
 user_pref("browser.search.suggest.enabled",			false);
