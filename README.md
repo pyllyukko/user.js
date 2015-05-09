@@ -147,13 +147,16 @@ Here is a list of the most essential security and privacy enhancing add-ons that
   * See also: [Are We Private Yet?](http://www.areweprivateyet.com/) site
 * [Privacy Badger](https://www.eff.org/privacybadger)
 * [DuckDuckGo Plus](https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/) (instead of Google)
+  * Similar but without Captchas [Disconnect Search](https://search.disconnect.me/)
 * [Mozilla Lightbeam](https://www.mozilla.org/en-US/lightbeam/)
+* [Mozilla Shumway](https://github.com/mozilla/shumway/) (Adbobe Flash replacement)
+* [Random Agent Spoofer](https://github.com/dillbyrne/random-agent-spoofer)
 
 Online tests
 ------------
 
 * [Panopticlick](https://panopticlick.eff.org/)
-* [www.filldisk.com](http://www.filldisk.com/)
+* [FillDisk](http://www.filldisk.com/)
 * [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
 * [evercookie](http://samy.pl/evercookie/)
 * [Mozilla Plugin Check](https://www.mozilla.org/en-US/plugincheck/)
@@ -161,15 +164,15 @@ Online tests
 * [Testing mixed content](https://people.mozilla.org/~tvyas/mixedcontent.html)
   * [Similar from Microsoft](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm)
 * [WebRTC stuff](http://mozilla.github.io/webrtc-landing/)
-* [Flash player version](https://www.adobe.com/software/flash/about/) from Adobe
+* [Detect Adobe Flash Player Version](https://www.adobe.com/software/flash/about/)
 * [Verify Java Version](https://www.java.com/en/download/installed.jsp)
   * Protip: Don't use Java!! But if you do, at least have it updated.
 * [IP check](http://ip-check.info/?lang=en)
-* http://cure53.de/leak/onion.php
+* [Cure53 penetration tests](http://cure53.de/leak/onion.php)
 * [Firefox Addon Detector](http://thehackerblog.com/addon_scanner/)
   * [Blog post](http://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)
 * [browserrecon](http://www.computec.ch/projekte/browserrecon/)??
-* http://get.webgl.org/
+* [WebGL Test](http://get.webgl.org/) (needs JavaScript enabled)
 * [battery.js](https://pstadler.sh/battery.js/)
 
 ### HTML5test
@@ -246,13 +249,13 @@ After you have run the script, verify from Firefox's [certificate settings](http
 
 ### The default list
 
-This is the default CA list, that you can use. It should be enough for basic use for the most biggest/popular sites. Of course this still depends on where you are located and what sites/services/etc. you use. If you know some popular site, that is not accessible with this root CA list, please let me know and I'll consider adding it to the list.
+This is the [default Firefox CA list](https://wiki.mozilla.org/CA:IncludedCAs), that you can use. It should be enough for basic use for the most biggest/popular sites. Of course this still depends on where you are located and what sites/services/etc. you use. If you know some popular site, that is not accessible with this root CA list, please let me know and I'll consider adding it to the list.
 
 | Root CA							| Used by			|
 | ------------------------------------------------------------- | ----------------------------- |
 | AddTrust External CA Root					| https://www.debian.org/	|
-| Baltimore CyberTrust Root					|				|
-| COMODO Certification Authority				|				|
+| Baltimore CyberTrust Root					| https://ssl-tools.net/	|
+| COMODO Certification Authority				| https://www.comodo.com/	|
 | Deutsche Telekom Root CA 2					|				|
 | DigiCert High Assurance EV Root CA				| https://www.facebook.com/	|
 | DigiCert Global Root CA					| https://duckduckgo.com/	|
@@ -266,14 +269,16 @@ This is the default CA list, that you can use. It should be enough for basic use
 | Go Daddy Class 2 Certification Authority			|				|
 | Go Daddy Root Certificate Authority - G2			|				|
 | Starfield Class 2 Certification Authority			| https://tools.ietf.org/	|
-| StartCom Certification Authority				|				|
+| StartCom Certification Authority				| https://cert.startcom.org/    |
 | UTN-USERFirst-Hardware					|				|
 | ValiCert Class 2 Policy Validation Authority			|				|
 | VeriSign Class 3 Public Primary Certification Authority - G3	| https://www.mysql.com/	|
 | VeriSign Class 3 Public Primary Certification Authority - G5	| https://twitter.com/		|
 | [thawte Primary Root CA][7]					|				|
 | [thawte Primary Root CA - G3][7]				|				|
-| SecureTrust CA						|				|
+| SecureTrust CA						| https://ssl.trustwave.com/	|
+
+An small tool called _RCC_ that scans for Windows & Firefox default CAs and list all others that aren't default can be found over [here](http://trax.x10.mx/apps.html).
 
 #### How to use the default list
 
