@@ -211,6 +211,7 @@ There are plenty! Hardening your browser will break your interwebs. Here's some 
   * [This discussion](http://forums.mozillazine.org/viewtopic.php?p=13842047&sid=041e5edcae225759b7cfffd43fc518d0#p13842047) on mozillaZine Forums
   * [IndexedDB page at MDN](https://developer.mozilla.org/en-US/docs/IndexedDB)
 * [Firefox Hello](https://www.mozilla.org/en-US/firefox/hello/) requires [WebRTC](https://en.wikipedia.org/wiki/WebRTC), so you'll need to enable ```media.peerconnection.enabled``` & ```media.getusermedia.screensharing.enabled``` [and apparently](https://github.com/pyllyukko/user.js/issues/9#issuecomment-94526204) disable ```security.OCSP.require```.
+* [Captive portals](https://en.wikipedia.org/wiki/Captive_portal) might not let OCSP requests through before authentication, so setting ```security.OCSP.require == false``` might be required before internet access is granted
 
 The [web console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console) is your friend, **when** websites start to break.
 
