@@ -385,6 +385,15 @@ user_pref("security.ssl.treat_unsafe_negotiation_as_broken",	true);
 // see also CVE-2009-3555
 //user_pref("security.ssl.require_safe_negotiation",	true);
 
+// https://support.mozilla.org/en-US/kb/certificate-pinning-reports
+//
+// we could also disable security.ssl.errorReporting.enabled, but I think it's
+// good to leave the option to report potentially malicious sites if the user
+// chooses to do so.
+//
+// you can test this at https://pinningtest.appspot.com/
+user_pref("security.ssl.errorReporting.automatic",		false);
+
 /******************************************************************************
  * CIPHERS                                                                    *
  *                                                                            *
