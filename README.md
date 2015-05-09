@@ -57,7 +57,7 @@ There's a whole lot of settings that this modifies and here are the main parts:
   * [network.prefetch-next](http://kb.mozillazine.org/Network.prefetch-next)
   * [network.dns.disablePrefetch](http://kb.mozillazine.org/Network.dns.disablePrefetch)
 * Prevents Firefox from storing data filled in web page forms
-* Enables Firefox's built-in [tracking protection](https://support.mozilla.org/en-US/kb/tracking-protection-firefox)
+* Enables Firefox's built-in [tracking protection][12]
 
 Some of the settings in this [user.js][1] file might seem redundant, as some of them are already set to the same values by default. However, the [user.js][1] file has this nice property, that even if you go change any of these settings through [about:config][6], they're reset to the [user.js][1] defined values after you restart Firefox. So [user.js][1] makes sure they're back at the secure default values always when you start your browser. That way, it also makes experimenting with different settings easier.
 
@@ -143,10 +143,23 @@ Here is a list of the most essential security and privacy enhancing add-ons that
   * I recommend setting the 'Store certificates even when in [Private Browsing][8] Mode' to get full benefit out of certpatrol, even though it stores information about the sites you visit
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 * [NoScript](http://noscript.net/)
-* [Ghostery](https://www.ghostery.com/)
-  * See also: [Are We Private Yet?](http://www.areweprivateyet.com/) site
-* [Privacy Badger](https://www.eff.org/privacybadger)
 * [DuckDuckGo Plus](https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/) (instead of Google)
+
+#### Tracking protection
+
+Tracking protection is one of the most important technologies that you need. The usual recommendation has been to run the [Ghostery](https://www.ghostery.com/) extension, but as it is made by a [potentially evim(tm) advertising company](https://en.wikipedia.org/wiki/Ghostery#Criticism), some people feel that is not to be trusted. One notable alternative is to use [uBlock](https://github.com/gorhill/uBlock), but at least currently the installation needs some more work as it's not available in Mozilla's add-on repository.
+
+Ghostery is still viable option, but be sure to disable the [GhostRank](https://www.ghostery.com/en/faq#q5-general) feature.
+
+Do note, that this user.js also enables Mozilla's built-in [tracking protection][12], but as that's quite new feature it is to be considered only as a fallback and not a complete solution. As it utilizes [Disconnect's list](https://support.mozilla.org/en-US/kb/tracking-protection-firefox#w_what-is-tracking-protection), recommending Disconnect seems redundant.
+
+So to summarize, pick one between Ghostery and uBlock, depending on your personal preferences.
+
+See also:
+* [\[Talk\] Ghostery Vs. Disconnect.me Vs. uBlock #16](https://github.com/pyllyukko/user.js/issues/16).
+* [Are We Private Yet?](http://www.areweprivateyet.com/) site (made by Ghostery)
+* [Privacy Badger](https://www.eff.org/privacybadger) extension from EFF (also to be considered as an additional security measure and not a complete solution)
+* [Web Browser Addons](https://prism-break.org/en/subcategories/gnu-linux-web-browser-addons/) section in [PRISM break](https://prism-break.org/)
 * [Mozilla Lightbeam](https://www.mozilla.org/en-US/lightbeam/)
 
 Online tests
@@ -324,3 +337,4 @@ References
 [9]: https://bugzilla.mozilla.org/show_bug.cgi?id=822869
 [10]: https://www.mozilla.org/security/known-vulnerabilities/firefox.html
 [11]: http://www.entrust.net/developer/index.cfm
+[12]: https://support.mozilla.org/en-US/kb/tracking-protection-firefox
