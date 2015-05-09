@@ -5,6 +5,7 @@
 
 // disable HTML frames
 // WARNING: might make your life difficult!
+// NOTE: to be removed(?) see: https://bugzilla.mozilla.org/show_bug.cgi?id=729030
 //user_pref("browser.frames.enabled",		false);
 
 // Display an error message indicating the entered information is not a valid
