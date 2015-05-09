@@ -290,9 +290,6 @@ user_pref("plugins.update.notifyUser",			true);
 // CIS Version 1.2.0 October 21st, 2011 2.1.3 Enable Information Bar for Outdated Plugins
 user_pref("plugins.hide_infobar_for_outdated_plugin",	false);
 
-// CIS Version 1.2.0 October 21st, 2011 2.2.2 Enable Warning of Loading Mixed Content
-user_pref("security.warn_viewing_mixed",		true);
-
 // CIS Version 1.2.0 October 21st, 2011 2.2.3 Enable Warning of Using Weak Encryption
 user_pref("security.warn_entering_weak",		true);
 
