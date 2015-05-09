@@ -102,6 +102,8 @@ user_pref("media.getusermedia.screensharing.enabled",		false);
 // http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331
 user_pref("browser.newtabpage.enhanced",			false);
 user_pref("browser.newtab.preload",				false);
+// https://wiki.mozilla.org/Tiles/Technical_Documentation#Ping
+user_pref("browser.newtabpage.directory.ping",			"");
 
 // disable heartbeat
 // https://wiki.mozilla.org/Advocacy/heartbeat
