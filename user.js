@@ -97,6 +97,10 @@ user_pref("media.webspeech.recognition.enable",			false);
 // https://mozilla.github.io/webrtc-landing/gum_test.html
 user_pref("media.getusermedia.screensharing.enabled",		false);
 
+// disable sensor API
+// https://wiki.mozilla.org/Sensor_API
+user_pref("device.sensors.enabled",				false);
+
 // Disable new tab tile ads & preload
 // http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
 // http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331
