@@ -194,7 +194,9 @@ user_pref("security.csp.enable",				true);
 // DNT HTTP header
 // http://dnt.mozilla.org/
 // https://en.wikipedia.org/wiki/Do_not_track_header
-user_pref("privacy.donottrackheader.enabled",			true);
+// https://dnt-dashboard.mozilla.org
+// https://github.com/pyllyukko/user.js/issues/11
+//user_pref("privacy.donottrackheader.enabled",			true);
 
 // http://kb.mozillazine.org/Network.http.sendRefererHeader#0
 // https://bugzilla.mozilla.org/show_bug.cgi?id=822869

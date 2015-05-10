@@ -63,7 +63,6 @@ Some of the settings in this [user.js][1] file might seem redundant, as some of 
 
 ### HTTP headers
 
-* Enables [DNT](https://en.wikipedia.org/wiki/Do_Not_Track) (like it matters)
 * Referer header:
   * Spoofs the referer header with [network.http.referer.spoofSource][9] & [Network.http.sendRefererHeader](http://kb.mozillazine.org/Network.http.sendRefererHeader#1)
   * "[Don't send the Referer header when navigating from a https site to another https site.](http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer#false)"
@@ -212,6 +211,7 @@ There are plenty! Hardening your browser will break your interwebs. Here's some 
   * [IndexedDB page at MDN](https://developer.mozilla.org/en-US/docs/IndexedDB)
 * [Firefox Hello](https://www.mozilla.org/en-US/firefox/hello/) requires [WebRTC](https://en.wikipedia.org/wiki/WebRTC), so you'll need to enable ```media.peerconnection.enabled``` & ```media.getusermedia.screensharing.enabled``` [and apparently](https://github.com/pyllyukko/user.js/issues/9#issuecomment-94526204) disable ```security.OCSP.require```.
 * [Captive portals](https://en.wikipedia.org/wiki/Captive_portal) might not let OCSP requests through before authentication, so setting ```security.OCSP.require == false``` might be required before internet access is granted
+* [DNT](https://en.wikipedia.org/wiki/Do_Not_Track) is not set, so you need to enable it manually if you want (see the discussion in [issue #11](https://github.com/pyllyukko/user.js/issues/11))
 
 The [web console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console) is your friend, **when** websites start to break.
 
