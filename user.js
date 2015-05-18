@@ -162,6 +162,8 @@ user_pref("plugins.click_to_play",				true);
 // disable webGL
 // http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled",					true);
+// somewhat related...
+//user_pref("pdfjs.enableWebGL",					false);
 
 // update add-ons automatically
 // https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/
