@@ -119,8 +119,6 @@ Here's the list with this config:
 	    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)
 	    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a)
 	    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
-	    Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA (0x0039)
-	    Cipher Suite: TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA (0x0088)
 	    Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
 	    Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
 
