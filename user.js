@@ -487,10 +487,12 @@ user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		true);
 /* ciphers with DHE and > 128bits
  * des-ede3 = 168 bits
  */
-user_pref("security.ssl3.dhe_rsa_camellia_256_sha",	true);
 //user_pref("security.ssl3.dhe_dss_camellia_256_sha",	true);
-user_pref("security.ssl3.dhe_rsa_aes_256_sha",		true);
 //user_pref("security.ssl3.dhe_dss_aes_256_sha",		true);
+
+// susceptible to the logjam attack – https://weakdh.org/
+user_pref("security.ssl3.dhe_rsa_camellia_256_sha",	false);
+user_pref("security.ssl3.dhe_rsa_aes_256_sha",		false);
 
 // ciphers with DSA (max 1024 bits)
 user_pref("security.ssl3.dhe_dss_aes_128_sha",		false);
