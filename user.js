@@ -495,7 +495,6 @@ user_pref("security.ssl3.dhe_dss_des_ede3_sha",		false);
 /* fallbacks
  */
 user_pref("security.ssl3.rsa_aes_256_sha",		true);
-// CloudFront
 user_pref("security.ssl3.rsa_aes_128_sha",		true);
 
 /******************************************************************************
