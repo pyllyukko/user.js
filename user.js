@@ -428,24 +428,23 @@ user_pref("security.ssl3.rsa_rc2_40_md5",	false);
 // 56 bits
 user_pref("security.ssl3.rsa_1024_rc4_56_sha",	false);
 
-// rest with MD5
-user_pref("security.ssl3.rsa_rc4_128_md5",	false);
-
 // 128 bits
-user_pref("security.ssl3.rsa_rc4_128_sha",		false);
-//user_pref("security.ssl3.rsa_rc4_128_md5",		false);
 user_pref("security.ssl3.rsa_camellia_128_sha",		false);
 //user_pref("security.ssl3.rsa_aes_128_sha",		false);
-user_pref("security.ssl3.ecdhe_rsa_rc4_128_sha",	false);
 user_pref("security.ssl3.ecdhe_rsa_aes_128_sha",	false);
-user_pref("security.ssl3.ecdhe_ecdsa_rc4_128_sha",	false);
 user_pref("security.ssl3.ecdhe_ecdsa_aes_128_sha",	false);
-user_pref("security.ssl3.ecdh_rsa_rc4_128_sha",		false);
 user_pref("security.ssl3.ecdh_rsa_aes_128_sha",		false);
-user_pref("security.ssl3.ecdh_ecdsa_rc4_128_sha",	false);
 user_pref("security.ssl3.ecdh_ecdsa_aes_128_sha",	false);
 user_pref("security.ssl3.dhe_rsa_camellia_128_sha",	false);
 user_pref("security.ssl3.dhe_rsa_aes_128_sha",		false);
+
+// RC4 (CVE-2013-2566)
+user_pref("security.ssl3.ecdh_ecdsa_rc4_128_sha",	false);
+user_pref("security.ssl3.ecdh_rsa_rc4_128_sha",		false);
+user_pref("security.ssl3.ecdhe_ecdsa_rc4_128_sha",	false);
+user_pref("security.ssl3.ecdhe_rsa_rc4_128_sha",	false);
+user_pref("security.ssl3.rsa_rc4_128_md5",		false);
+user_pref("security.ssl3.rsa_rc4_128_sha",		false);
 
 /*
  * 3DES -> false because effective key size < 128
