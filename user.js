@@ -463,7 +463,6 @@ user_pref("security.ssl3.ecdhe_rsa_des_ede3_sha",	false);
 user_pref("security.ssl3.rsa_des_ede3_sha",		false);
 user_pref("security.ssl3.rsa_fips_des_ede3_sha",	false);
 
-
 // ciphers with ECDH (without /e$/)
 user_pref("security.ssl3.ecdh_rsa_des_ede3_sha",	false);
 user_pref("security.ssl3.ecdh_rsa_aes_256_sha",		false);
@@ -473,7 +472,6 @@ user_pref("security.ssl3.ecdh_ecdsa_aes_256_sha",	false);
 // 256 bits without PFS
 user_pref("security.ssl3.rsa_camellia_256_sha",		false);
 user_pref("security.ssl3.rsa_aes_256_sha",		false);
-
 
 // ciphers with ECDHE and > 128bits
 user_pref("security.ssl3.ecdhe_rsa_aes_256_sha",	true);
