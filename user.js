@@ -69,7 +69,7 @@ user_pref("plugin.state.flash",				0);
 // http://kb.mozillazine.org/Dom.storage.enabled
 // http://dev.w3.org/html5/webstorage/#dom-localstorage
 // you can also see this with Panopticlick's "DOM localStorage"
-user_pref("dom.storage.enabled",				false);
+//user_pref("dom.storage.enabled",				false);
 
 // don't reveal internal IPs
 // http://net.ipcalf.com/
