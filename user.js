@@ -90,6 +90,8 @@ user_pref("dom.event.clipboardevents.enabled",			false);
 user_pref("clipboard.autocopy",					false);
 // Webpages will not be able to affect the right-click menu
 user_pref("dom.event.contextmenu.enabled",			false);
+// https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
+user_pref("dom.enable_performance",				false);
 
 user_pref("media.webspeech.recognition.enable",			false);
 
