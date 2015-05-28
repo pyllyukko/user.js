@@ -131,6 +131,9 @@ user_pref("dom.indexedDB.enabled",				true);
 user_pref("network.dns.disablePrefetch",			true);
 user_pref("network.dns.disablePrefetchFromHTTPS",		true);
 
+// https://wiki.mozilla.org/Privacy/Reviews/Necko
+user_pref("network.predictor.enabled",				false);
+
 // http://kb.mozillazine.org/Browser.search.suggest.enabled
 user_pref("browser.search.suggest.enabled",			false);
 
