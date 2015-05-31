@@ -158,6 +158,7 @@ See also:
 * [Web Browser Addons](https://prism-break.org/en/subcategories/gnu-linux-web-browser-addons/) section in [PRISM break](https://prism-break.org/)
 * [\[Talk\] Ghostery Vs. Disconnect.me Vs. uBlock #16](https://github.com/pyllyukko/user.js/issues/16)
 * [Are We Private Yet?](http://www.areweprivateyet.com/) site (made by Ghostery)
+* [Tracking Protection in Firefox For Privacy and Performance](https://kontaxis.github.io/trackingprotectionfirefox/#papers) paper
 
 Online tests
 ------------
