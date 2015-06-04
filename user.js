@@ -118,7 +118,7 @@ user_pref("browser.send_pings.require_same_host",		true);
 // TODO: find out why html5test still reports this as available
 // NOTE: this is enabled for now, as disabling this seems to break some plugins.
 //       see: http://forums.mozillazine.org/viewtopic.php?p=13842047#p13842047
-user_pref("dom.indexedDB.enabled",				true);
+//user_pref("dom.indexedDB.enabled",				true);
 
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
 
