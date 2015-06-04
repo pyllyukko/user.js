@@ -26,12 +26,6 @@ user_pref("toolkit.telemetry.enabled",			false);
 // https://developer.mozilla.org/en/Download_Manager_preferences
 user_pref("browser.download.useDownloadDir",		false);
 
-// https://wiki.mozilla.org/Polaris#Tracking_protection
-// https://support.mozilla.org/en-US/kb/tracking-protection-firefox
-// TODO: are these two the same?
-user_pref("privacy.trackingprotection.enabled",		true);
-user_pref("browser.polaris.enabled",			true);
-
 // don't try to guess where i'm trying to go!!!
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
 user_pref("browser.fixup.alternate.enabled",		false);
@@ -47,13 +41,6 @@ user_pref("network.proxy.socks_remote_dns",		true);
 // https://secure.wikimedia.org/wikibooks/en/wiki/Grsecurity/Application-specific_Settings#Firefox_.28or_Iceweasel_in_Debian.29
 user_pref("javascript.options.methodjit.chrome",	false);
 user_pref("javascript.options.methodjit.content",	false);
-
-// disable the built-in PDF viewer
-user_pref("pdfjs.disabled",				true);
-
-// disable sending of the health report
-// https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
-user_pref("datareporting.healthreport.uploadEnabled",	false);
 
 // flash - never activate
 user_pref("plugin.state.flash",				0);
@@ -94,18 +81,6 @@ user_pref("media.getusermedia.screensharing.enabled",		false);
 // disable sensor API
 // https://wiki.mozilla.org/Sensor_API
 user_pref("device.sensors.enabled",				false);
-
-// Disable new tab tile ads & preload
-// http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
-// http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331
-user_pref("browser.newtabpage.enhanced",			false);
-user_pref("browser.newtab.preload",				false);
-// https://wiki.mozilla.org/Tiles/Technical_Documentation#Ping
-user_pref("browser.newtabpage.directory.ping",			"");
-
-// disable heartbeat
-// https://wiki.mozilla.org/Advocacy/heartbeat
-user_pref("browser.selfsupport.url",				"");
 
 // http://kb.mozillazine.org/Browser.send_pings
 user_pref("browser.send_pings",					false);
@@ -157,6 +132,36 @@ user_pref("extensions.update.enabled",				true);
 
 // http://kb.mozillazine.org/Extensions.blocklist.enabled
 user_pref("extensions.blocklist.enabled",			true);
+
+/******************************************************************************
+ * firefox features / components                                              *
+ *                                                                            *
+ ******************************************************************************/
+
+// https://wiki.mozilla.org/Polaris#Tracking_protection
+// https://support.mozilla.org/en-US/kb/tracking-protection-firefox
+// TODO: are these two the same?
+user_pref("privacy.trackingprotection.enabled",		true);
+user_pref("browser.polaris.enabled",			true);
+
+// disable the built-in PDF viewer
+user_pref("pdfjs.disabled",				true);
+
+// disable sending of the health report
+// https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
+user_pref("datareporting.healthreport.uploadEnabled",	false);
+
+// Disable new tab tile ads & preload
+// http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
+// http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331
+user_pref("browser.newtabpage.enhanced",			false);
+user_pref("browser.newtab.preload",				false);
+// https://wiki.mozilla.org/Tiles/Technical_Documentation#Ping
+user_pref("browser.newtabpage.directory.ping",			"");
+
+// disable heartbeat
+// https://wiki.mozilla.org/Advocacy/heartbeat
+user_pref("browser.selfsupport.url",				"");
 
 // disable firefox hello
 // https://wiki.mozilla.org/Loop
