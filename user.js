@@ -51,10 +51,6 @@ user_pref("javascript.options.methodjit.content",	false);
 // disable the built-in PDF viewer
 user_pref("pdfjs.disabled",				true);
 
-// DO NOT consult a third-party provider to determine whether a site is phishy
-// http://kb.mozillazine.org/Browser.safebrowsing.remoteLookups
-user_pref("browser.safebrowsing.remoteLookups",		false);
-
 // disable sending of the health report
 // https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
 user_pref("datareporting.healthreport.uploadEnabled",	false);
