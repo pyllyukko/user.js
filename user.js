@@ -15,6 +15,7 @@ user_pref("keyword.enabled",			false);
 
 // disable link prefetching
 // http://kb.mozillazine.org/Network.prefetch-next
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ#Is_there_a_preference_to_disable_link_prefetching.3F
 user_pref("network.prefetch-next",		false);
 
 // disable Location-Aware Browsing
