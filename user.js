@@ -22,6 +22,9 @@ user_pref("network.prefetch-next",		false);
 // http://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",			false);
 
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine
+user_pref("browser.search.geoip.url",		"");
+
 // https://wiki.mozilla.org/Platform/Features/Telemetry
 // https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry
 // https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
