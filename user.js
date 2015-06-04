@@ -312,6 +312,9 @@ user_pref("browser.sessionstore.privacy_level",		2);
  *                                                                            *
  ******************************************************************************/
 
+// CIS 2.3.2 Disable Downloading on Desktop
+user_pref("browser.download.folderList",		2);
+
 // always ask the user where to download
 // https://developer.mozilla.org/en/Download_Manager_preferences
 user_pref("browser.download.useDownloadDir",		false);
@@ -554,9 +557,6 @@ user_pref("security.ssl3.rsa_aes_128_sha",		true);
 /*
  * 2.3 Dynamic Content Settings
  */
-
-// CIS 2.3.2 Disable Downloading on Desktop
-user_pref("browser.download.folderList",		2);
 
 // CIS 2.3.4 Block Reported Web Forgeries
 // http://kb.mozillazine.org/Browser.safebrowsing.enabled
