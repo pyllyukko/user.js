@@ -17,11 +17,6 @@ user_pref("keyword.enabled",			false);
 // http://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",			false);
 
-// https://wiki.mozilla.org/Platform/Features/Telemetry
-// https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry
-// https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
-user_pref("toolkit.telemetry.enabled",			false);
-
 // don't try to guess where i'm trying to go!!!
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
 user_pref("browser.fixup.alternate.enabled",		false);
@@ -133,6 +128,11 @@ user_pref("extensions.blocklist.enabled",			true);
  * firefox features / components                                              *
  *                                                                            *
  ******************************************************************************/
+
+// https://wiki.mozilla.org/Platform/Features/Telemetry
+// https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry
+// https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
+user_pref("toolkit.telemetry.enabled",			false);
 
 // https://wiki.mozilla.org/Polaris#Tracking_protection
 // https://support.mozilla.org/en-US/kb/tracking-protection-firefox
