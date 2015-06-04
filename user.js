@@ -141,7 +141,7 @@ user_pref("privacy.trackingprotection.enabled",		true);
 user_pref("browser.polaris.enabled",			true);
 
 // disable the built-in PDF viewer
-user_pref("pdfjs.disabled",				true);
+//user_pref("pdfjs.disabled",				true);
 
 // disable sending of the health report
 // https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
