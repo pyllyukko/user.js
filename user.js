@@ -230,6 +230,10 @@ user_pref("network.http.referer.spoofSource",			1);
 // CIS Version 1.2.0 October 21st, 2011 2.4.3 Disable Referer from an SSL Website
 user_pref("network.http.sendSecureXSiteReferrer",		false);
 
+// CIS 2.5.1 Accept Only 1st Party Cookies
+// http://kb.mozillazine.org/Network.cookie.cookieBehavior#1
+user_pref("network.cookie.cookieBehavior",		1);
+
 /******************************************************************************
  * caching                                                                    *
  *                                                                            *
@@ -571,14 +575,6 @@ user_pref("browser.safebrowsing.malware.enabled",	true);
 
 // CIS 2.3.6 Disable Displaying Javascript in History URLs
 user_pref("browser.urlbar.filter.javascript",		true);
-
-/*
- * 2.5 Privacy Settings
- */
-
-// CIS 2.5.1 Accept Only 1st Party Cookies
-// http://kb.mozillazine.org/Network.cookie.cookieBehavior#1
-user_pref("network.cookie.cookieBehavior",		1);
 
 /*
  * 2.7 Advanced JavaScript Settings
