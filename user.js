@@ -143,6 +143,10 @@ user_pref("browser.search.suggest.enabled",			false);
 // https://bugzil.la/1111967
 user_pref("browser.casting.enabled",				false);
 
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_media-capabilities
+// http://andreasgal.com/2014/10/14/openh264-now-in-firefox/
+user_pref("media.gmp-gmpopenh264.enabled",			false);
+
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
 
 /* mixed content stuff
