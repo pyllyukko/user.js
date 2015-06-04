@@ -139,6 +139,10 @@ user_pref("network.predictor.enabled",				false);
 // http://kb.mozillazine.org/Browser.search.suggest.enabled
 user_pref("browser.search.suggest.enabled",			false);
 
+// disable SSDP
+// https://bugzil.la/1111967
+user_pref("browser.casting.enabled",				false);
+
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
 
 /* mixed content stuff
