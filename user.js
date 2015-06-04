@@ -22,10 +22,6 @@ user_pref("geo.enabled",			false);
 // https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
 user_pref("toolkit.telemetry.enabled",			false);
 
-// always ask the user where to download
-// https://developer.mozilla.org/en/Download_Manager_preferences
-user_pref("browser.download.useDownloadDir",		false);
-
 // don't try to guess where i'm trying to go!!!
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
 user_pref("browser.fixup.alternate.enabled",		false);
@@ -315,6 +311,10 @@ user_pref("browser.sessionstore.privacy_level",		2);
  * UI related                                                                 *
  *                                                                            *
  ******************************************************************************/
+
+// always ask the user where to download
+// https://developer.mozilla.org/en/Download_Manager_preferences
+user_pref("browser.download.useDownloadDir",		false);
 
 // https://wiki.mozilla.org/Privacy/Reviews/New_Tab
 user_pref("browser.newtabpage.enabled",			false);
