@@ -13,17 +13,9 @@
 // http://kb.mozillazine.org/Keyword.enabled#Caveats
 user_pref("keyword.enabled",			false);
 
-// disable link prefetching
-// http://kb.mozillazine.org/Network.prefetch-next
-// https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ#Is_there_a_preference_to_disable_link_prefetching.3F
-user_pref("network.prefetch-next",		false);
-
 // disable Location-Aware Browsing
 // http://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",			false);
-
-// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine
-user_pref("browser.search.geoip.url",		"");
 
 // https://wiki.mozilla.org/Platform/Features/Telemetry
 // https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry
@@ -132,28 +124,6 @@ user_pref("browser.send_pings.require_same_host",		true);
 //       see: http://forums.mozillazine.org/viewtopic.php?p=13842047#p13842047
 user_pref("dom.indexedDB.enabled",				true);
 
-// http://kb.mozillazine.org/Network.dns.disablePrefetch
-// https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching
-user_pref("network.dns.disablePrefetch",			true);
-user_pref("network.dns.disablePrefetchFromHTTPS",		true);
-
-// https://wiki.mozilla.org/Privacy/Reviews/Necko
-user_pref("network.predictor.enabled",				false);
-
-// http://kb.mozillazine.org/Browser.search.suggest.enabled
-user_pref("browser.search.suggest.enabled",			false);
-
-// disable SSDP
-// https://bugzil.la/1111967
-user_pref("browser.casting.enabled",				false);
-
-// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_media-capabilities
-// http://andreasgal.com/2014/10/14/openh264-now-in-firefox/
-user_pref("media.gmp-gmpopenh264.enabled",			false);
-
-// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_speculative-pre-connections
-user_pref("network.http.speculative-parallel-limit",		0);
-
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
 
 /* mixed content stuff
@@ -195,6 +165,41 @@ user_pref("extensions.blocklist.enabled",			true);
 // disable firefox hello
 // https://wiki.mozilla.org/Loop
 //user_pref("loop.enabled",					false);
+
+/******************************************************************************
+ * automatic connections                                                      *
+ *                                                                            *
+ ******************************************************************************/
+
+// disable link prefetching
+// http://kb.mozillazine.org/Network.prefetch-next
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ#Is_there_a_preference_to_disable_link_prefetching.3F
+user_pref("network.prefetch-next",		false);
+
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine
+user_pref("browser.search.geoip.url",		"");
+
+// http://kb.mozillazine.org/Network.dns.disablePrefetch
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching
+user_pref("network.dns.disablePrefetch",			true);
+user_pref("network.dns.disablePrefetchFromHTTPS",		true);
+
+// https://wiki.mozilla.org/Privacy/Reviews/Necko
+user_pref("network.predictor.enabled",				false);
+
+// http://kb.mozillazine.org/Browser.search.suggest.enabled
+user_pref("browser.search.suggest.enabled",			false);
+
+// disable SSDP
+// https://bugzil.la/1111967
+user_pref("browser.casting.enabled",				false);
+
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_media-capabilities
+// http://andreasgal.com/2014/10/14/openh264-now-in-firefox/
+user_pref("media.gmp-gmpopenh264.enabled",			false);
+
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_speculative-pre-connections
+user_pref("network.http.speculative-parallel-limit",		0);
 
 /******************************************************************************
  * HTTP                                                                       *
