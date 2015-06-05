@@ -117,7 +117,7 @@ user_pref("webgl.disabled",					true);
  ******************************************************************************/
 
 // flash - never activate
-user_pref("plugin.state.flash",				0);
+user_pref("plugin.state.flash",					0);
 
 // https://wiki.mozilla.org/Firefox/Click_To_Play
 // https://blog.mozilla.org/security/2012/10/11/click-to-play-plugins-blocklist-style/
