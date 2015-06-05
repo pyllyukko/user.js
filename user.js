@@ -33,9 +33,6 @@ user_pref("network.proxy.socks_remote_dns",		true);
 user_pref("javascript.options.methodjit.chrome",	false);
 user_pref("javascript.options.methodjit.content",	false);
 
-// flash - never activate
-user_pref("plugin.state.flash",				0);
-
 // http://kb.mozillazine.org/Dom.storage.enabled
 // http://dev.w3.org/html5/webstorage/#dom-localstorage
 // you can also see this with Panopticlick's "DOM localStorage"
@@ -108,14 +105,23 @@ user_pref("dom.vr.enabled",					false);
 // http://kb.mozillazine.org/Network.jar.open-unsafe-types
 user_pref("network.jar.open-unsafe-types",			false);
 
-// https://blog.mozilla.org/security/2012/10/11/click-to-play-plugins-blocklist-style/
-user_pref("plugins.click_to_play",				true);
-
 // disable webGL
 // http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled",					true);
 // somewhat related...
 //user_pref("pdfjs.enableWebGL",					false);
+
+/******************************************************************************
+ * extensions / plugins                                                       *
+ *                                                                            *
+ ******************************************************************************/
+
+// flash - never activate
+user_pref("plugin.state.flash",				0);
+
+// https://wiki.mozilla.org/Firefox/Click_To_Play
+// https://blog.mozilla.org/security/2012/10/11/click-to-play-plugins-blocklist-style/
+user_pref("plugins.click_to_play",				true);
 
 // update add-ons automatically
 // https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/
