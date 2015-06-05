@@ -111,6 +111,16 @@ user_pref("webgl.disabled",					true);
 // somewhat related...
 //user_pref("pdfjs.enableWebGL",					false);
 
+// CIS 2.3.6 Disable Displaying Javascript in History URLs
+user_pref("browser.urlbar.filter.javascript",		true);
+
+// CIS 2.7.4 Disable Scripting of Plugins by JavaScript
+user_pref("security.xpconnect.plugin.unrestricted",	false);
+
+// CIS Mozilla Firefox 24 ESR v1.0.0 - 3.8 Set File URI Origin Policy
+// http://kb.mozillazine.org/Security.fileuri.strict_origin_policy
+user_pref("security.fileuri.strict_origin_policy",	true);
+
 /******************************************************************************
  * extensions / plugins                                                       *
  *                                                                            *
@@ -168,6 +178,21 @@ user_pref("browser.selfsupport.url",				"");
 // disable firefox hello
 // https://wiki.mozilla.org/Loop
 //user_pref("loop.enabled",					false);
+
+// CIS 2.1.1 Enable Auto Update
+// this is disabled for now. it is better to patch through package management.
+//user_pref("app.update.auto", true);
+
+// CIS 2.3.4 Block Reported Web Forgeries
+// http://kb.mozillazine.org/Browser.safebrowsing.enabled
+// http://kb.mozillazine.org/Safe_browsing
+//
+// "or submit URLs to a third party"
+user_pref("browser.safebrowsing.enabled",		false);
+
+// CIS 2.3.5 Block Reported Attack Sites
+// http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled
+user_pref("browser.safebrowsing.malware.enabled",	true);
 
 /******************************************************************************
  * automatic connections                                                      *
@@ -554,41 +579,3 @@ user_pref("security.ssl3.rsa_aes_128_sha",		true);
  * after: 6.73 / 106.43
  ******************************************************************************/
 //user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 6.1; rv:5.0) Gecko/20100101 Firefox/5.0");
-
-/******************************************************************************
- * CIS Security Configuration Benchmark For Mozilla Firefox                   *
- * Version 1.2.0 October 21st, 2011                                           *
- ******************************************************************************/
-
-// CIS 2.1.1 Enable Auto Update
-// this is disabled for now. it is better to patch through package management.
-//user_pref("app.update.auto", true);
-
-/*
- * 2.3 Dynamic Content Settings
- */
-
-// CIS 2.3.4 Block Reported Web Forgeries
-// http://kb.mozillazine.org/Browser.safebrowsing.enabled
-// http://kb.mozillazine.org/Safe_browsing
-//
-// "or submit URLs to a third party"
-user_pref("browser.safebrowsing.enabled",		false);
-
-// CIS 2.3.5 Block Reported Attack Sites
-// http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled
-user_pref("browser.safebrowsing.malware.enabled",	true);
-
-// CIS 2.3.6 Disable Displaying Javascript in History URLs
-user_pref("browser.urlbar.filter.javascript",		true);
-
-/*
- * 2.7 Advanced JavaScript Settings
- */
-
-// CIS 2.7.4 Disable Scripting of Plugins by JavaScript
-user_pref("security.xpconnect.plugin.unrestricted",	false);
-
-// CIS Mozilla Firefox 24 ESR v1.0.0 - 3.8 Set File URI Origin Policy
-// http://kb.mozillazine.org/Security.fileuri.strict_origin_policy
-user_pref("security.fileuri.strict_origin_policy",	true);
