@@ -88,7 +88,7 @@ user_pref("webgl.disabled",					true);
 // http://kb.mozillazine.org/Keyword.enabled#Caveats
 user_pref("keyword.enabled",			false);
 
-// don't try to guess where i'm trying to go!!!
+// don't try to guess where i'm trying to go!!! e.g.: "http://foo" -> "http://(prefix)foo(suffix)"
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
 user_pref("browser.fixup.alternate.enabled",		false);
 
