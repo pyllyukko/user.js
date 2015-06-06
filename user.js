@@ -8,30 +8,9 @@
 // NOTE: to be removed(?) see: https://bugzilla.mozilla.org/show_bug.cgi?id=729030
 //user_pref("browser.frames.enabled",		false);
 
-// Display an error message indicating the entered information is not a valid
-// URL instead of asking from google.
-// http://kb.mozillazine.org/Keyword.enabled#Caveats
-user_pref("keyword.enabled",			false);
-
 // disable Location-Aware Browsing
 // http://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",			false);
-
-// don't try to guess where i'm trying to go!!!
-// http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
-user_pref("browser.fixup.alternate.enabled",		false);
-
-// https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/WebBrowsers
-user_pref("network.proxy.socks_remote_dns",		true);
-
-// http://kb.mozillazine.org/Network.proxy.type
-// the default in Firefox for Linux is to use system proxy settings.
-// We change it to direct connection
-//user_pref("network.proxy.type", 0);
-
-// https://secure.wikimedia.org/wikibooks/en/wiki/Grsecurity/Application-specific_Settings#Firefox_.28or_Iceweasel_in_Debian.29
-user_pref("javascript.options.methodjit.chrome",	false);
-user_pref("javascript.options.methodjit.content",	false);
 
 // http://kb.mozillazine.org/Dom.storage.enabled
 // http://dev.w3.org/html5/webstorage/#dom-localstorage
@@ -85,14 +64,6 @@ user_pref("browser.send_pings.require_same_host",		true);
 
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
 
-/* mixed content stuff
- *   - https://developer.mozilla.org/en-US/docs/Site_Compatibility_for_Firefox_23#Non-SSL_contents_on_SSL_pages_are_blocked_by_default
- *   - https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/
- */
-user_pref("security.mixed_content.block_active_content",	true);
-// Mixed Passive Content (a.k.a. Mixed Display Content).
-user_pref("security.mixed_content.block_display_content",	true);
-
 // disable gamepad input
 // http://www.w3.org/TR/gamepad/
 user_pref("dom.gamepad.enabled",				false);
@@ -101,18 +72,49 @@ user_pref("dom.gamepad.enabled",				false);
 // https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
 user_pref("dom.vr.enabled",					false);
 
-// CIS Mozilla Firefox 24 ESR v1.0.0 - 3.7 Disable JAR from opening Unsafe File Types
-// http://kb.mozillazine.org/Network.jar.open-unsafe-types
-user_pref("network.jar.open-unsafe-types",			false);
-
 // disable webGL
 // http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled",					true);
 // somewhat related...
 //user_pref("pdfjs.enableWebGL",					false);
 
-// CIS 2.3.6 Disable Displaying Javascript in History URLs
-user_pref("browser.urlbar.filter.javascript",		true);
+/******************************************************************************
+ * misc                                                                       *
+ *                                                                            *
+ ******************************************************************************/
+
+// Display an error message indicating the entered information is not a valid
+// URL instead of asking from google.
+// http://kb.mozillazine.org/Keyword.enabled#Caveats
+user_pref("keyword.enabled",			false);
+
+// don't try to guess where i'm trying to go!!!
+// http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
+user_pref("browser.fixup.alternate.enabled",		false);
+
+// https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/WebBrowsers
+user_pref("network.proxy.socks_remote_dns",		true);
+
+// http://kb.mozillazine.org/Network.proxy.type
+// the default in Firefox for Linux is to use system proxy settings.
+// We change it to direct connection
+//user_pref("network.proxy.type", 0);
+
+/* mixed content stuff
+ *   - https://developer.mozilla.org/en-US/docs/Site_Compatibility_for_Firefox_23#Non-SSL_contents_on_SSL_pages_are_blocked_by_default
+ *   - https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/
+ */
+user_pref("security.mixed_content.block_active_content",	true);
+// Mixed Passive Content (a.k.a. Mixed Display Content).
+user_pref("security.mixed_content.block_display_content",	true);
+
+// https://secure.wikimedia.org/wikibooks/en/wiki/Grsecurity/Application-specific_Settings#Firefox_.28or_Iceweasel_in_Debian.29
+user_pref("javascript.options.methodjit.chrome",	false);
+user_pref("javascript.options.methodjit.content",	false);
+
+// CIS Mozilla Firefox 24 ESR v1.0.0 - 3.7 Disable JAR from opening Unsafe File Types
+// http://kb.mozillazine.org/Network.jar.open-unsafe-types
+user_pref("network.jar.open-unsafe-types",			false);
 
 // CIS 2.7.4 Disable Scripting of Plugins by JavaScript
 user_pref("security.xpconnect.plugin.unrestricted",	false);
@@ -120,6 +122,10 @@ user_pref("security.xpconnect.plugin.unrestricted",	false);
 // CIS Mozilla Firefox 24 ESR v1.0.0 - 3.8 Set File URI Origin Policy
 // http://kb.mozillazine.org/Security.fileuri.strict_origin_policy
 user_pref("security.fileuri.strict_origin_policy",	true);
+
+// CIS 2.3.6 Disable Displaying Javascript in History URLs
+// http://kb.mozillazine.org/Browser.urlbar.filter.javascript
+user_pref("browser.urlbar.filter.javascript",		true);
 
 /******************************************************************************
  * extensions / plugins                                                       *
