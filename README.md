@@ -167,6 +167,11 @@ See also:
 * [Are We Private Yet?](http://www.areweprivateyet.com/) site (made by Ghostery)
 * [Tracking Protection in Firefox For Privacy and Performance](https://kontaxis.github.io/trackingprotectionfirefox/#papers) paper
 
+#### Add-ons for mobile platforms
+
+* [NoScript Anywhere](https://noscript.net/nsa/)
+* [uBlock](https://addons.mozilla.org/en-US/android/addon/ublock-origin/)
+
 Online tests
 ------------
 
