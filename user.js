@@ -353,6 +353,9 @@ user_pref("browser.formfill.expire_days",		0);
 // NOTE: CIS says 1, we use 2
 user_pref("browser.sessionstore.privacy_level",		2);
 
+// https://bugzil.la/238789#c19
+user_pref("browser.helperApps.deleteTempFileOnExit",	true);
+
 /******************************************************************************
  * UI related                                                                 *
  *                                                                            *
