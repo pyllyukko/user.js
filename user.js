@@ -86,14 +86,14 @@ user_pref("webgl.disabled",					true);
 // Display an error message indicating the entered information is not a valid
 // URL instead of asking from google.
 // http://kb.mozillazine.org/Keyword.enabled#Caveats
-user_pref("keyword.enabled",			false);
+user_pref("keyword.enabled",					false);
 
 // don't try to guess where i'm trying to go!!! e.g.: "http://foo" -> "http://(prefix)foo(suffix)"
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
-user_pref("browser.fixup.alternate.enabled",		false);
+user_pref("browser.fixup.alternate.enabled",			false);
 
 // https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/WebBrowsers
-user_pref("network.proxy.socks_remote_dns",		true);
+user_pref("network.proxy.socks_remote_dns",			true);
 
 // http://kb.mozillazine.org/Network.proxy.type
 // the default in Firefox for Linux is to use system proxy settings.
@@ -109,23 +109,23 @@ user_pref("security.mixed_content.block_active_content",	true);
 user_pref("security.mixed_content.block_display_content",	true);
 
 // https://secure.wikimedia.org/wikibooks/en/wiki/Grsecurity/Application-specific_Settings#Firefox_.28or_Iceweasel_in_Debian.29
-user_pref("javascript.options.methodjit.chrome",	false);
-user_pref("javascript.options.methodjit.content",	false);
+user_pref("javascript.options.methodjit.chrome",		false);
+user_pref("javascript.options.methodjit.content",		false);
 
 // CIS Mozilla Firefox 24 ESR v1.0.0 - 3.7 Disable JAR from opening Unsafe File Types
 // http://kb.mozillazine.org/Network.jar.open-unsafe-types
 user_pref("network.jar.open-unsafe-types",			false);
 
 // CIS 2.7.4 Disable Scripting of Plugins by JavaScript
-user_pref("security.xpconnect.plugin.unrestricted",	false);
+user_pref("security.xpconnect.plugin.unrestricted",		false);
 
 // CIS Mozilla Firefox 24 ESR v1.0.0 - 3.8 Set File URI Origin Policy
 // http://kb.mozillazine.org/Security.fileuri.strict_origin_policy
-user_pref("security.fileuri.strict_origin_policy",	true);
+user_pref("security.fileuri.strict_origin_policy",		true);
 
 // CIS 2.3.6 Disable Displaying Javascript in History URLs
 // http://kb.mozillazine.org/Browser.urlbar.filter.javascript
-user_pref("browser.urlbar.filter.javascript",		true);
+user_pref("browser.urlbar.filter.javascript",			true);
 
 /******************************************************************************
  * extensions / plugins                                                       *
