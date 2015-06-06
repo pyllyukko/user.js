@@ -32,13 +32,12 @@ user_pref("dom.telephony.enabled",				false);
 user_pref("beacon.enabled",					false);
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
 user_pref("dom.event.clipboardevents.enabled",			false);
-// http://kb.mozillazine.org/Clipboard.autocopy
-user_pref("clipboard.autocopy",					false);
-// Webpages will not be able to affect the right-click menu
-user_pref("dom.event.contextmenu.enabled",			false);
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
 user_pref("dom.enable_performance",				false);
 
+// speech recognition
+// https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html
+// https://wiki.mozilla.org/HTML5_Speech_API
 user_pref("media.webspeech.recognition.enable",			false);
 
 // Disable getUserMedia screen sharing
@@ -82,6 +81,12 @@ user_pref("webgl.disabled",					true);
  * misc                                                                       *
  *                                                                            *
  ******************************************************************************/
+
+// http://kb.mozillazine.org/Clipboard.autocopy
+user_pref("clipboard.autocopy",					false);
+
+// Webpages will not be able to affect the right-click menu
+user_pref("dom.event.contextmenu.enabled",			false);
 
 // Display an error message indicating the entered information is not a valid
 // URL instead of asking from google.
