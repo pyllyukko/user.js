@@ -24,7 +24,8 @@ There are several parts to all this and they are:
 * Using the user.js settings file itself
 * Using the **cas.sh** script to limit the CAs
 
-#### How to use the user.js file
+How to use the user.js file
+---------------------------
 
 Just drop the [user.js][1] file to your Firefox profile directory at ````~/.mozilla/firefox/XXXXXXXX.your_profile_name```` and verify that the settings are effective from [about:support](http://kb.mozillazine.org/Troubleshooting_Information_report#Modified_Preferences) (check the "Important Modified Preferences" and "user.js Preferences" sections).
 
