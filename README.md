@@ -171,6 +171,7 @@ See also:
 
 * [NoScript Anywhere](https://noscript.net/nsa/)
 * [uBlock](https://addons.mozilla.org/en-US/android/addon/ublock-origin/)
+* [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 
 Online tests
 ------------
