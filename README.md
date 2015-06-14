@@ -160,7 +160,7 @@ Do note, that this user.js also enables Mozilla's built-in [tracking protection]
 So to summarize, pick one between Ghostery and uBlock, depending on your personal preferences.
 
 See also:
-* [Mozilla Lightbeam](https://www.mozilla.org/en-US/lightbeam/) extension
+* [Mozilla Lightbeam][13] extension
 * [Privacy Badger](https://www.eff.org/privacybadger) extension from EFF (also to be considered as an additional security measure and not a complete solution)
 * [Web Browser Addons](https://prism-break.org/en/subcategories/gnu-linux-web-browser-addons/) section in [PRISM break](https://prism-break.org/)
 * [\[Talk\] Ghostery Vs. Disconnect.me Vs. uBlock #16](https://github.com/pyllyukko/user.js/issues/16)
@@ -224,6 +224,7 @@ There are plenty! Hardening your browser will break your interwebs. Here's some 
 * [Firefox Hello](https://www.mozilla.org/en-US/firefox/hello/) requires [WebRTC](https://en.wikipedia.org/wiki/WebRTC), so you'll need to enable ```media.peerconnection.enabled``` & ```media.getusermedia.screensharing.enabled``` [and apparently](https://github.com/pyllyukko/user.js/issues/9#issuecomment-94526204) disable ```security.OCSP.require```.
 * [Captive portals](https://en.wikipedia.org/wiki/Captive_portal) might not let OCSP requests through before authentication, so setting ```security.OCSP.require == false``` might be required before internet access is granted
 * [DNT](https://en.wikipedia.org/wiki/Do_Not_Track) is not set, so you need to enable it manually if you want (see the discussion in [issue #11](https://github.com/pyllyukko/user.js/issues/11))
+* The ```network.http.referer.spoofSource``` and ```network.http.sendRefererHeader``` settings seems to break the visualization of the 3rd party sites on the [Lightbeam][13] extension
 
 The [web console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console) is your friend, **when** websites start to break.
 
@@ -357,3 +358,4 @@ References
 [10]: https://www.mozilla.org/security/known-vulnerabilities/firefox.html
 [11]: http://www.entrust.net/developer/index.cfm
 [12]: https://support.mozilla.org/en-US/kb/tracking-protection-firefox
+[13]: https://www.mozilla.org/en-US/lightbeam/
