@@ -173,6 +173,8 @@ user_pref("browser.polaris.enabled",			true);
 // disable sending of the health report
 // https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
 user_pref("datareporting.healthreport.uploadEnabled",	false);
+// disable collection of the data (the healthreport.sqlite* files)
+user_pref("datareporting.healthreport.service.enabled",	false);
 
 // Disable new tab tile ads & preload
 // http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
