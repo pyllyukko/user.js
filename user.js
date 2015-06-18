@@ -85,9 +85,6 @@ user_pref("webgl.disabled",					true);
 // http://kb.mozillazine.org/Clipboard.autocopy
 user_pref("clipboard.autocopy",					false);
 
-// Webpages will not be able to affect the right-click menu
-user_pref("dom.event.contextmenu.enabled",			false);
-
 // Display an error message indicating the entered information is not a valid
 // URL instead of asking from google.
 // http://kb.mozillazine.org/Keyword.enabled#Caveats
@@ -362,6 +359,9 @@ user_pref("browser.helperApps.deleteTempFileOnExit",	true);
  * UI related                                                                 *
  *                                                                            *
  ******************************************************************************/
+
+// Webpages will not be able to affect the right-click menu
+//user_pref("dom.event.contextmenu.enabled",			false);
 
 // CIS 2.3.2 Disable Downloading on Desktop
 user_pref("browser.download.folderList",		2);
