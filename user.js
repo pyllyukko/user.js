@@ -276,7 +276,7 @@ user_pref("network.http.sendSecureXSiteReferrer",		false);
 user_pref("network.cookie.cookieBehavior",		1);
 
 // user-agent
-//user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 6.1; rv:5.0) Gecko/20100101 Firefox/5.0");
+//user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 6.1; rv:31.0) Gecko/20100101 Firefox/31.0");
 
 /******************************************************************************
  * caching                                                                    *
