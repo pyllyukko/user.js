@@ -3,6 +3,11 @@
  * https://github.com/pyllyukko/user.js                                       *
  ******************************************************************************/
 
+/******************************************************************************
+ * HTML5 / APIs / DOM                                                         *
+ *                                                                            *
+ ******************************************************************************/
+
 // disable Location-Aware Browsing
 // http://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",			false);
