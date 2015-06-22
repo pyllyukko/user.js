@@ -82,6 +82,9 @@ user_pref("webgl.disabled",					true);
  *                                                                            *
  ******************************************************************************/
 
+// default search engine
+//user_pref("browser.search.defaultenginename",			"DuckDcukGo");
+
 // http://kb.mozillazine.org/Clipboard.autocopy
 user_pref("clipboard.autocopy",					false);
 
