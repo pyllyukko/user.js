@@ -52,6 +52,7 @@ There's a whole lot of settings that this modifies and they are divided in the f
 
 * HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / DOM
 * Miscellaneous
+* Extensios / plugins related
 * Firefox (anti-)[features](https://en.wikipedia.org/wiki/Feature_creep) / components
 * [Automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections)
 * HTTP protocol related
@@ -79,6 +80,14 @@ Here are some of the "highlights" from each category. For a full list of setting
   * Disable this [keyword thingie](http://kb.mozillazine.org/Keyword.enabled)
   * Disable [Domain Guessing](http://www-archive.mozilla.org/docs/end-user/domain-guessing.html)
   * Disable [search suggestions](http://kb.mozillazine.org/Browser.search.suggest.enabled)
+
+### Extensios / plugins related
+
+It is common for [client side attacks](https://www.offensive-security.com/metasploit-unleashed/client-side-attacks/) to target [browser extensions][14], instead of the browser itself (just look at all those [Java](https://en.wikipedia.org/wiki/Criticism_of_Java#Security) and [Flash](http://www.cvedetails.com/vulnerability-list/vendor_id-53/product_id-6761/Adobe-Flash-Player.html) vulnerabilities). Make sure your extensions and plugins are always up-to-date.
+
+* Disable flash
+* Enable [click to play](https://wiki.mozilla.org/Firefox/Click_To_Play)
+* Enable [add-on updates](https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/)
 
 ### Firefox features
 
@@ -209,7 +218,7 @@ Online tests
 * [www.filldisk.com](http://www.filldisk.com/)
 * [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
 * [evercookie](http://samy.pl/evercookie/)
-* [Mozilla Plugin Check](https://www.mozilla.org/en-US/plugincheck/)
+* [Mozilla Plugin Check][14]
 * [BrowserSpy.dk](http://browserspy.dk/)
 * [Testing mixed content](https://people.mozilla.org/~tvyas/mixedcontent.html)
   * [Similar from Microsoft](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm)
@@ -389,3 +398,4 @@ References
 [11]: http://www.entrust.net/developer/index.cfm
 [12]: https://support.mozilla.org/en-US/kb/tracking-protection-firefox
 [13]: https://www.mozilla.org/en-US/lightbeam/
+[14]: https://www.mozilla.org/en-US/plugincheck/
