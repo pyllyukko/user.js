@@ -207,6 +207,9 @@ user_pref("browser.safebrowsing.enabled",		false);
 // http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled
 user_pref("browser.safebrowsing.malware.enabled",	true);
 
+// disable pocket
+//user_pref("browser.pocket.enabled",			false);
+
 /******************************************************************************
  * automatic connections                                                      *
  *                                                                            *
