@@ -48,42 +48,66 @@ See [issue #14](https://github.com/pyllyukko/user.js/issues/14) for further deta
 What does it do?
 ----------------
 
-**DISCLAIMER**: This is not a complete list. Read the js file for more details :)
+There's a whole lot of settings that this modifies and they are divided in the following sections or categories:
 
-There's a whole lot of settings that this modifies and here are the main parts:
-
-* Permanently enables [private browsing][8] mode
-* Enables Firefox's [mixed content blocking](https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/) (also for "display" content)
-* Disables various your-browser-knows-better-let-me-guess-what-you-were-trying features
-  * Disable this [keyword thingie](http://kb.mozillazine.org/Keyword.enabled)
-  * Disable [Domain Guessing](http://www-archive.mozilla.org/docs/end-user/domain-guessing.html)
-  * Disable [search suggestions](http://kb.mozillazine.org/Browser.search.suggest.enabled)
-* Disables [telemetry](https://wiki.mozilla.org/Telemetry), [geolocation](https://www.mozilla.org/en-US/firefox/geolocation/), [Crash Reporter](https://support.mozilla.org/en-US/kb/Mozilla%20Crash%20Reporter) and other such privacy invading nonsense
-* Don't [suggest any URLs](http://kb.mozillazine.org/Browser.urlbar.maxRichResults) while typing at the address bar
-* Disables prefetching
-  * [network.prefetch-next](http://kb.mozillazine.org/Network.prefetch-next)
-  * [network.dns.disablePrefetch](http://kb.mozillazine.org/Network.dns.disablePrefetch)
-* Prevents Firefox from storing data filled in web page forms
-* Enables Firefox's built-in [tracking protection][12]
+* HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / DOM
+* Miscellaneous
+* Firefox (anti-)[features](https://en.wikipedia.org/wiki/Feature_creep) / components
+* [Automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections)
+* HTTP protocol related
+* Caching
+* UI related
+* TLS / HTTPS / OCSP related
+* Cipher suites
 
 Some of the settings in this [user.js][1] file might seem redundant, as some of them are already set to the same values by default. However, the [user.js][1] file has this nice property, that even if you go change any of these settings through [about:config][6], they're reset to the [user.js][1] defined values after you restart Firefox. So [user.js][1] makes sure they're back at the secure default values always when you start your browser. That way, it also makes experimenting with different settings easier.
 
-### HTTP headers
+Here are some of the "highlights" from each category. For a full list of settings and references, check the ```user.js``` file itself.
 
-* Referer header:
-  * Spoofs the referer header with [network.http.referer.spoofSource][9] & [Network.http.sendRefererHeader](http://kb.mozillazine.org/Network.http.sendRefererHeader#1)
-  * "[Don't send the Referer header when navigating from a https site to another https site.](http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer#false)"
+### HTML5 / APIs / DOM
 
-### HTML5 related
-
+* Disable [geolocation](https://www.mozilla.org/en-US/firefox/geolocation/)
 * Don't reveal internal [IP addresses](http://net.ipcalf.com/) ([media.peerconnection.enabled](https://blog.mozilla.org/futurereleases/2013/01/12/capture-local-camera-and-microphone-streams-with-getusermedia-now-enabled-in-firefox/))
   * [BeEF Module: Get Internal IP WebRTC](https://github.com/beefproject/beef/wiki/Module%3A-Get-Internal-IP-WebRTC)
 * [browser.send_pings](http://kb.mozillazine.org/Browser.send_pings)
 * Disable [WebGL](https://en.wikipedia.org/wiki/WebGL)
 
-### Ciphers
+### Miscellaneous
 
-Hardens the used cipher suites and protocols.
+* Enables Firefox's [mixed content blocking](https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/) (also for "display" content)
+* Disables various your-browser-knows-better-let-me-guess-what-you-were-trying features
+  * Disable this [keyword thingie](http://kb.mozillazine.org/Keyword.enabled)
+  * Disable [Domain Guessing](http://www-archive.mozilla.org/docs/end-user/domain-guessing.html)
+  * Disable [search suggestions](http://kb.mozillazine.org/Browser.search.suggest.enabled)
+
+### Firefox features
+
+* Enables Firefox's built-in [tracking protection][12]
+* Disables [telemetry](https://wiki.mozilla.org/Telemetry), [Crash Reporter](https://support.mozilla.org/en-US/kb/Mozilla%20Crash%20Reporter), [healt report](https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf), [heartbeat](https://wiki.mozilla.org/Advocacy/heartbeat) and other such privacy invading nonsense
+
+### Automatic connections
+
+* Disables prefetching
+  * [network.prefetch-next](http://kb.mozillazine.org/Network.prefetch-next)
+  * [network.dns.disablePrefetch](http://kb.mozillazine.org/Network.dns.disablePrefetch)
+
+### HTTP
+
+* Referer header:
+  * Spoofs the referer header with [network.http.referer.spoofSource][9] & [Network.http.sendRefererHeader](http://kb.mozillazine.org/Network.http.sendRefererHeader#1)
+  * "[Don't send the Referer header when navigating from a https site to another https site.](http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer#false)"
+* Don't accept [3rd party cookies](http://kb.mozillazine.org/Network.cookie.cookieBehavior#1)
+
+### Caching
+
+* Permanently enables [private browsing][8] mode
+* Prevents Firefox from storing data filled in web page forms
+
+### UI related
+
+* Don't [suggest any URLs](http://kb.mozillazine.org/Browser.urlbar.maxRichResults) while typing at the address bar
+
+### TLS / HTTPS / OCSP related
 
 * TLS v1.[012] only
 * Require [OCSP](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol)
@@ -91,6 +115,11 @@ Hardens the used cipher suites and protocols.
 * [OCSP stapling](https://blog.mozilla.org/security/2013/07/29/ocsp-stapling-in-firefox/) (enabled by default anyway)
 * Disable [TLS session tickets](https://www.blackhat.com/us-13/archives.html#NextGen)
 * Enforces [pinning](https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning)
+
+
+### Ciphers
+
+This section tweaks the cipher suites used by Firefox. The idea is to support only the strongest ones with emphasis on [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy), but without compromising compatibility with all those sites on the internet. As new crypto related flaws are discovered quite often, the cipher suites can be [tweaked to mitigate these newly discovered threats](https://github.com/pyllyukko/user.js/pull/18).
 
 Here's a list of the ciphers with default config and Firefox 27.0.1:
 
