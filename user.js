@@ -3,11 +3,6 @@
  * https://github.com/pyllyukko/user.js                                       *
  ******************************************************************************/
 
-// disable HTML frames
-// WARNING: might make your life difficult!
-// NOTE: to be removed(?) see: https://bugzilla.mozilla.org/show_bug.cgi?id=729030
-//user_pref("browser.frames.enabled",		false);
-
 // disable Location-Aware Browsing
 // http://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",			false);
@@ -131,6 +126,11 @@ user_pref("security.fileuri.strict_origin_policy",		true);
 // CIS 2.3.6 Disable Displaying Javascript in History URLs
 // http://kb.mozillazine.org/Browser.urlbar.filter.javascript
 user_pref("browser.urlbar.filter.javascript",			true);
+
+// disable HTML frames
+// WARNING: might make your life difficult!
+// NOTE: to be removed(?) see: https://bugzilla.mozilla.org/show_bug.cgi?id=729030
+//user_pref("browser.frames.enabled",		false);
 
 /******************************************************************************
  * extensions / plugins                                                       *
