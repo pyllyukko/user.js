@@ -137,6 +137,12 @@ user_pref("browser.urlbar.filter.javascript",			true);
 // NOTE: to be removed(?) see: https://bugzilla.mozilla.org/show_bug.cgi?id=729030
 //user_pref("browser.frames.enabled",		false);
 
+// http://asmjs.org/
+// https://www.mozilla.org/en-US/security/advisories/mfsa2015-29/
+// https://www.mozilla.org/en-US/security/advisories/mfsa2015-50/
+// https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2712
+user_pref("javascript.options.asmjs",				false);
+
 /******************************************************************************
  * extensions / plugins                                                       *
  *                                                                            *
