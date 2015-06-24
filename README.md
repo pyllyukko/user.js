@@ -45,6 +45,10 @@ On [Firefox for Android](https://www.mozilla.org/en-US/firefox/android/) (Fennec
 
 See [issue #14](https://github.com/pyllyukko/user.js/issues/14) for further details on using this ```user.js``` file with Firefox for Android.
 
+### Windows
+
+On Windows, you need to drop the ```user.js``` file to ```%appdata%\Mozilla\Firefox\Profiles\XXXXXXXX.your_profile_name```.
+
 What does it do?
 ----------------
 
