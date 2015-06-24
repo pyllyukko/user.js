@@ -250,6 +250,9 @@ user_pref("media.gmp-gmpopenh264.enabled",			false);
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_speculative-pre-connections
 user_pref("network.http.speculative-parallel-limit",		0);
 
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_mozilla-content
+user_pref("browser.aboutHomeSnippets.updateUrl"			"");
+
 /******************************************************************************
  * HTTP                                                                       *
  *                                                                            *
