@@ -143,6 +143,10 @@ user_pref("browser.urlbar.filter.javascript",			true);
 // https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2712
 user_pref("javascript.options.asmjs",				false);
 
+// https://wiki.mozilla.org/SVGOpenTypeFonts
+// the iSEC Partners Report recommends to disable this
+user_pref("gfx.font_rendering.opentype_svg.enabled",		false);
+
 /******************************************************************************
  * extensions / plugins                                                       *
  *                                                                            *
