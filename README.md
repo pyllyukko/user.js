@@ -85,7 +85,7 @@ Here are some of the "highlights" from each category. For a full list of setting
   * Disable [Domain Guessing](http://www-archive.mozilla.org/docs/end-user/domain-guessing.html)
   * Disable [search suggestions](http://kb.mozillazine.org/Browser.search.suggest.enabled)
 
-### Extensios / plugins related
+### Extensions / plugins related
 
 It is common for [client side attacks](https://www.offensive-security.com/metasploit-unleashed/client-side-attacks/) to target [browser extensions][14], instead of the browser itself (just look at all those [Java](https://en.wikipedia.org/wiki/Criticism_of_Java#Security) and [Flash](http://www.cvedetails.com/vulnerability-list/vendor_id-53/product_id-6761/Adobe-Flash-Player.html) vulnerabilities). Make sure your extensions and plugins are always up-to-date.
 
