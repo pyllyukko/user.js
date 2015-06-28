@@ -83,7 +83,6 @@ Here are some of the "highlights" from each category. For a full list of setting
 * Disables various your-browser-knows-better-let-me-guess-what-you-were-trying features
   * Disable this [keyword thingie](http://kb.mozillazine.org/Keyword.enabled)
   * Disable [Domain Guessing](http://www-archive.mozilla.org/docs/end-user/domain-guessing.html)
-  * Disable [search suggestions](http://kb.mozillazine.org/Browser.search.suggest.enabled)
 
 ### Extensions / plugins related
 
@@ -100,9 +99,21 @@ It is common for [client side attacks](https://www.offensive-security.com/metasp
 
 ### Automatic connections
 
+This section disables some of Firefox's [automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections).
+
 * Disables prefetching
   * [network.prefetch-next](http://kb.mozillazine.org/Network.prefetch-next)
   * [network.dns.disablePrefetch](http://kb.mozillazine.org/Network.dns.disablePrefetch)
+* Disable [Necko](https://wiki.mozilla.org/Privacy/Reviews/Necko)/predictor
+* Disable [search suggestions](http://kb.mozillazine.org/Browser.search.suggest.enabled)
+
+Do note, that some automatic connections are still intentionally left out (as in not disabled), namely the following:
+
+* [browser.safebrowsing.malware.enabled](http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled)
+* [plugins.update.notifyUser](https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review)
+* ```extensions.update.enabled```
+
+See also [#20](https://github.com/pyllyukko/user.js/issues/20).
 
 ### HTTP
 
