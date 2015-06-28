@@ -112,6 +112,7 @@ Do note, that some automatic connections are still intentionally left out (as in
 * [browser.safebrowsing.malware.enabled](http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled)
 * [plugins.update.notifyUser](https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review)
 * ```extensions.update.enabled```
+* [extensions.blocklist.enabled](http://kb.mozillazine.org/Extensions.blocklist.enabled)
 
 See also [#20](https://github.com/pyllyukko/user.js/issues/20).
 
