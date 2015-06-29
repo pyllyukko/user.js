@@ -594,7 +594,7 @@ user_pref("security.ssl3.ecdhe_ecdsa_aes_256_sha",	true);
 user_pref("security.ssl3.ecdhe_ecdsa_aes_128_gcm_sha256",	true);
 user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		true);
 
-// susceptible to the logjam attack – https://weakdh.org/
+// susceptible to the logjam attack - https://weakdh.org/
 user_pref("security.ssl3.dhe_rsa_camellia_256_sha",	false);
 user_pref("security.ssl3.dhe_rsa_aes_256_sha",		false);
 
