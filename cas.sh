@@ -76,6 +76,7 @@ declare -a BASIC_LIST=(
   "mozilla/thawte_Primary_Root_CA.crt"
   "mozilla/thawte_Primary_Root_CA_-_G3.crt"
   "mozilla/SecureTrust_CA.crt"
+  "mozilla/QuoVadis_Root_CA_2.crt"
 )
 CERT_PATH="$( openssl version -a|grep "^OPENSSLDIR:"|cut -d'"' -f2 )/certs"
 WRN=$'\033[1;31m'
