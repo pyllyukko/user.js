@@ -222,6 +222,10 @@ user_pref("browser.safebrowsing.enabled",		true);
 // http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled
 user_pref("browser.safebrowsing.malware.enabled",	true);
 
+// disable safe browsing for downloaded files. this leaks information to google.
+// https://www.mozilla.org/en-US/firefox/39.0/releasenotes/
+user_pref("browser.safebrowsing.downloads.enabled",	false);
+
 // disable pocket
 //user_pref("browser.pocket.enabled",			false);
 
