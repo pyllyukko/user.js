@@ -249,6 +249,7 @@ Online tests
 * [browserrecon](http://www.computec.ch/projekte/browserrecon/)??
 * http://get.webgl.org/
 * [battery.js](https://pstadler.sh/battery.js/)
+* [RC4 fallback test](https://rc4.io/)
 
 ### HTML5test
 

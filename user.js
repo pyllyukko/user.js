@@ -562,6 +562,10 @@ user_pref("security.ssl3.ecdhe_ecdsa_rc4_128_sha",	false);
 user_pref("security.ssl3.ecdhe_rsa_rc4_128_sha",	false);
 user_pref("security.ssl3.rsa_rc4_128_md5",		false);
 user_pref("security.ssl3.rsa_rc4_128_sha",		false);
+// https://developer.mozilla.org/en-US/Firefox/Releases/38#Security
+// https://bugzil.la/1138882
+// https://rc4.io/
+user_pref("security.tls.unrestricted_rc4_fallback",	false);
 
 /*
  * 3DES -> false because effective key size < 128
