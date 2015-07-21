@@ -37,7 +37,7 @@ cd XXXXXXXX.your_profile_name
 ln -s ../user.js/user.js user.js
 ````
 
-Whenever you want to update your local copy of the repository, just use ````git pull```` and restart firefox.
+Whenever you want to update your local copy of the repository, just use ````git pull```` and restart Firefox.
 
 ### Android
 
