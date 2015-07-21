@@ -37,6 +37,8 @@ cd XXXXXXXX.your_profile_name
 ln -s ../user.js/user.js user.js
 ````
 
+Do note that these settings alter your browser behaviour quite a bit, so it is recommended to either create a completely new [profile][15] for Firefox or backup your existing profile directory before putting the ```user.js``` file in place.
+
 Whenever you want to update your local copy of the repository, just use ````git pull```` and restart Firefox.
 
 ### Android
@@ -127,6 +129,7 @@ See also [#20](https://github.com/pyllyukko/user.js/issues/20).
 
 * Permanently enables [private browsing][8] mode
 * Prevents Firefox from storing data filled in web page forms
+* Disables [password manager](https://support.mozilla.org/en-US/kb/Remembering+passwords)
 
 ### UI related
 
@@ -191,7 +194,7 @@ Here's some other tips how you can further harden Firefox:
 
 * Keep your browser updated! If you check [Firefox's security advisories][10], you'll see that pretty much every new version of Firefox contains some security updates. If you don't keep your browser updated, you've already lost the game.
 * Disable all unnecessary extensions and plugins!
-* Create different [profiles](http://mzl.la/NYhKHH) for different purposes
+* Create different [profiles][15] for different purposes
 
 ### Add-ons
 
@@ -281,6 +284,7 @@ There are plenty! Hardening your browser will break your interwebs. Here's some 
 * [DNT](https://en.wikipedia.org/wiki/Do_Not_Track) is not set, so you need to enable it manually if you want (see the discussion in [issue #11](https://github.com/pyllyukko/user.js/issues/11))
 * The ```network.http.referer.spoofSource``` and ```network.http.sendRefererHeader``` settings seems to break the visualization of the 3rd party sites on the [Lightbeam][13] extension
 * You can not view or inspect cookies when in private browsing (see https://bugzil.la/823941)
+* Installation of ```user.js``` causes saved passwords to be removed from the Firefox (see [#27](https://github.com/pyllyukko/user.js/issues/27))
 
 The [web console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console) is your friend, **when** websites start to break.
 
@@ -417,3 +421,4 @@ References
 [12]: https://support.mozilla.org/en-US/kb/tracking-protection-firefox
 [13]: https://www.mozilla.org/en-US/lightbeam/
 [14]: https://www.mozilla.org/en-US/plugincheck/
+[15]: http://mzl.la/NYhKHH
