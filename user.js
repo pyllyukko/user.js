@@ -229,7 +229,8 @@ user_pref("browser.safebrowsing.malware.enabled",	true);
 user_pref("browser.safebrowsing.downloads.enabled",	false);
 
 // disable pocket
-//user_pref("browser.pocket.enabled",			false);
+// https://support.mozilla.org/en-US/kb/save-web-pages-later-pocket-firefox
+user_pref("browser.pocket.enabled",			false);
 
 /******************************************************************************
  * automatic connections                                                      *
