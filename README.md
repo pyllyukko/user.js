@@ -78,6 +78,7 @@ Here are some of the "highlights" from each category. For a full list of setting
   * [BeEF Module: Get Internal IP WebRTC](https://github.com/beefproject/beef/wiki/Module%3A-Get-Internal-IP-WebRTC)
 * [browser.send_pings](http://kb.mozillazine.org/Browser.send_pings)
 * Disable [WebGL](https://en.wikipedia.org/wiki/WebGL)
+* Disable [Battery API](http://mashable.com/2015/08/04/battery-privacy-html5/)
 
 ### Miscellaneous
 
@@ -253,6 +254,7 @@ Online tests
 * http://get.webgl.org/
 * [battery.js](https://pstadler.sh/battery.js/)
 * [RC4 fallback test](https://rc4.io/)
+* [Battery API](https://robnyman.github.io/battery/)
 
 ### HTML5test
 
