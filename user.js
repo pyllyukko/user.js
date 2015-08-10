@@ -182,10 +182,9 @@ user_pref("toolkit.telemetry.enabled",			false);
 user_pref("privacy.trackingprotection.enabled",		true);
 user_pref("browser.polaris.enabled",			true);
 
-// disable the built-in PDF viewer
-// https://www.mozilla.org/en-US/security/advisories/mfsa2015-78/
-// https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/
-//user_pref("pdfjs.disabled",				true);
+// Disable the built-in PDF viewer (CVE-2015-2743)
+// https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2743
+user_pref("pdfjs.disabled",		true);
 
 // disable sending of the health report
 // https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
