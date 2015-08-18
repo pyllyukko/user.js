@@ -244,14 +244,14 @@ Online tests
   * [Similar from Microsoft](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm)
 * [WebRTC stuff](http://mozilla.github.io/webrtc-landing/)
 * [Flash player version](https://www.adobe.com/software/flash/about/) from Adobe
-* [Verify Java Version](https://www.java.com/en/download/installed.jsp)
-  * Protip: Don't use Java!! But if you do, at least have it updated.
+* [Verify your installed Java Version](https://www.java.com/en/download/installed.jsp)
+  * Protip: Don't use Oracle's Java!! But if you really need it, update it regulary!
 * [IP check](http://ip-check.info/?lang=en)
-* http://cure53.de/leak/onion.php
+* [Onion test for CORS and WebSocket](http://cure53.de/leak/onion.php)
 * [Firefox Addon Detector](http://thehackerblog.com/addon_scanner/)
   * [Blog post](http://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)
 * [browserrecon](http://www.computec.ch/projekte/browserrecon/)??
-* http://get.webgl.org/
+* [Official WebGL check](http://get.webgl.org/)
 * [battery.js](https://pstadler.sh/battery.js/)
 * [RC4 fallback test](https://rc4.io/)
 * [Battery API](https://robnyman.github.io/battery/)
@@ -264,7 +264,8 @@ Here's a comparison of the various supported HTML5 features between recent Firef
 
 | Comparison                                                                              | user.js version                          | Firefox version | Firefox baseline | Tor Browser |
 | --------------------------------------------------------------------------------------- | ---------------------------------------- | --------------- | ---------------- | ----------- |
-| https://html5test.com/compare/browser/614ecc2640198302/firefox-35/24a094263fa9f301.html | 3041fb7204f2547a34083fba7db2009929ed2326 | 36.0.1          | 35               | 4.0.4       |
+| [html5test](https://html5test.com/compare/browser/614ecc2640198302/firefox-35/24a094263fa9f301.html) | 3041fb7204f2547a34083fba7db2009929ed2326 | 36.0.1          | 35               | 4.0.4       |
+
 
 Known problems
 --------------
@@ -377,15 +378,15 @@ cas.sh -C -P ~/.mozilla/firefox/XXXXXXXX.new_profile -a
 TODO
 ----
 
-* [HTML5 canvas](https://en.wikipedia.org/wiki/Canvas_element)
-  * [Canvas fingerprinting](https://en.wikipedia.org/wiki/Canvas_fingerprinting)
-  * [BrowserLeaks.com](https://www.browserleaks.com/canvas)
-  * https://developer.mozilla.org/en-US/docs/HTML/Canvas
-  * https://www.torproject.org/projects/torbrowser/design/#fingerprinting-linkability
-  * [Bug 967895](https://bugzilla.mozilla.org/show_bug.cgi?id=967895)
-  * [Pixel Perfect: Fingerprinting Canvas in HTML5](http://www.w2spconf.com/2012/papers/w2sp12-final4.pdf)
-* [Address Sanitizer](https://developer.mozilla.org/en-US/docs/Building_Firefox_with_Address_Sanitizer)
-* Send bogus timezone
+- [ ] [HTML5 canvas](https://en.wikipedia.org/wiki/Canvas_element)
+- [ ] [Canvas fingerprinting](https://en.wikipedia.org/wiki/Canvas_fingerprinting)
+- [ ] [BrowserLeaks.com](https://www.browserleaks.com/canvas)
+- [ ] [Mozilla official Canvas explanation](https://developer.mozilla.org/en-US/docs/HTML/Canvas)
+- [ ] [Tor fingerprinting topic](https://www.torproject.org/projects/torbrowser/design/#fingerprinting-linkability)
+- [ ] [Bug 967895](https://bugzilla.mozilla.org/show_bug.cgi?id=967895)
+- [ ] [Pixel Perfect: Fingerprinting Canvas in HTML5](http://www.w2spconf.com/2012/papers/w2sp12-final4.pdf)
+	- [ ]  [Address Sanitizer](https://developer.mozilla.org/en-US/docs/Building_Firefox_with_Address_Sanitizer)
+	- [ ]  Send bogus timezone
 
 Contributing
 ------------
