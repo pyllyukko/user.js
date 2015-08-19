@@ -8,13 +8,13 @@
  *                                                                            *
  ******************************************************************************/
 
-// disable Location-Aware Browsing
+// Disable Location-Aware Browsing
 // http://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",		false);
 
 // http://kb.mozillazine.org/Dom.storage.enabled
 // http://dev.w3.org/html5/webstorage/#dom-localstorage
-// you can also see this with Panopticlick's "DOM localStorage"
+// you can also see this with Panopticlick's "DOM local storage"
 //user_pref("dom.storage.enabled",		false);
 
 // Don't reveal internal IPs
@@ -81,8 +81,14 @@ user_pref("webgl.disabled",		true);
  * Misc                                                                       *
  *                                                                            *
  ******************************************************************************/
+/* See: https://developer.mozilla.org/en-US/Firefox/Releases/40/Site_Compatibility#Security
+Sub-resources HTTP-authentication:
+   0 - don't allow sub-resources to open HTTP authentication credentials dialogs
+   1 - allow sub-resources to open HTTP authentication credentials dialogs, but don't allow it for cross-origin sub-resources
+   2 - allow the cross-origin authentication as well */
+user_pref("network.auth.allow-subresource-auth", 2);
 
-// Default search engine
+// Set a new secure default search engine
 //user_pref("browser.search.defaultenginename",		"DuckDuckGo");
 
 // http://kb.mozillazine.org/Clipboard.autocopy
