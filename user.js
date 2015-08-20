@@ -4,6 +4,108 @@
  ******************************************************************************/
 
 /******************************************************************************
+ *                                                                            *
+ * Outdated! and only for older FF or ESR versions                             *
+ *                                                                            *
+ ******************************************************************************/
+
+// Disable HTML frames
+// WARNING: might make your life difficult!
+// See: https://bugzilla.mozilla.org/show_bug.cgi?id=729030
+//user_pref("browser.frames.enabled",		false);
+
+// CIS Version 1.2.0 October 21st, 2011 2.5.5 Delete Download History
+// Zero (0) is an indication that no download history is retained for the current profile.
+//user_pref("browser.download.manager.retention",		0);
+
+// CIS Version 1.2.0 October 21st, 2011 2.5.4 Delete History and Form Data
+// http://kb.mozillazine.org/Browser.history_expire_days
+//user_pref("browser.history_expire_days",		0);
+
+// http://kb.mozillazine.org/Browser.history_expire_sites
+//user_pref("browser.history_expire_sites",		0);
+
+// http://kb.mozillazine.org/Browser.history_expire_visits
+//user_pref("browser.history_expire_visits",		0);
+
+// CIS Version 1.2.0 October 21st, 2011 2.1.3 Enable Information Bar for Outdated Plugins
+//user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
+
+// http://kb.mozillazine.org/Browser.sessionstore.postdata
+// NOTE: Relates to CIS 2.5.7
+//user_pref("browser.sessionstore.postdata",		0);
+
+// http://kb.mozillazine.org/Browser.sessionstore.enabled
+//user_pref("browser.sessionstore.enabled",		false);
+
+// https://secure.wikimedia.org/wikibooks/en/wiki/Grsecurity/Application-specific_Settings#Firefox_.28or_Iceweasel_in_Debian.29
+//user_pref("javascript.options.methodjit.chrome",		false);
+//user_pref("javascript.options.methodjit.content",		false);
+
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_media-capabilities
+// http://andreasgal.com/2014/10/14/openh264-now-in-firefox/
+//user_pref("media.gmp-gmpopenh264.enabled",		false);
+
+//user_pref("network.dns.disablePrefetchFromHTTPS",		true);
+
+//user_pref("network.http.spdy.enabled.v3",		true);
+
+// Disallow NTLMv1
+// https://bugzilla.mozilla.org/show_bug.cgi?id=828183
+//user_pref("network.negotiate-auth.allow-insecure-ntlm-v1",		false);
+// it is still allowed through HTTPS. uncomment the following to disable it completely.
+//user_pref("network.negotiate-auth.allow-insecure-ntlm-v1-https",		false);
+
+// Disable SSLv3 (CVE-2014-3566)
+//user_pref("security.enable_ssl3",		false);
+
+// https://www.blackhat.com/us-13/briefings.html#NextGen
+//user_pref("security.enable_tls_session_tickets",		false);
+
+
+//CIPHERS:
+user_pref("security.ssl3.dhe_rsa_camellia_128_sha",		false);
+user_pref("security.ssl3.dhe_rsa_camellia_256_sha",		false);
+user_pref("security.ssl3.dhe_dss_camellia_128_sha",		false);
+user_pref("security.ssl3.dhe_dss_camellia_256_sha",		false);
+user_pref("security.ssl3.rsa_camellia_128_sha",		false);
+// 128 bits
+user_pref("security.ssl3.ecdh_rsa_aes_128_sha",		false);
+// 256 bits without PFS
+user_pref("security.ssl3.rsa_camellia_256_sha",		false);
+// Null ciphers
+user_pref("security.ssl3.rsa_null_md5",		false);
+user_pref("security.ssl3.rsa_null_sha",		false);
+user_pref("security.ssl3.ecdhe_rsa_null_sha",		false);
+user_pref("security.ssl3.ecdhe_ecdsa_null_sha",		false);
+user_pref("security.ssl3.ecdh_rsa_null_sha",		false);
+user_pref("security.ssl3.ecdh_ecdsa_null_sha",		false);
+// Ciphers with DSA (max 1024 bits)
+user_pref("security.ssl3.dhe_dss_aes_128_sha",		false);
+user_pref("security.ssl3.dhe_dss_aes_256_sha",		false);
+// 3DES
+user_pref("security.ssl3.ecdhe_rsa_des_ede3_sha",		false);
+user_pref("security.ssl3.dhe_dss_des_ede3_sha",		false);
+user_pref("security.ssl3.dhe_rsa_des_ede3_sha",		false);
+// RC4
+user_pref("security.ssl3.ecdh_rsa_rc4_128_sha",		false);
+user_pref("security.ssl3.ecdh_ecdsa_rc4_128_sha",		false);
+// SEED: - https://en.wikipedia.org/wiki/SEED
+user_pref("security.ssl3.rsa_seed_sha",		false);
+// 40 Bits
+user_pref("security.ssl3.rsa_rc4_40_md5",		false);
+user_pref("security.ssl3.rsa_rc2_40_md5",		false);
+//
+user_pref("security.ssl3.rsa_fips_des_ede3_sha",		false);
+// 56 Bits
+user_pref("security.ssl3.rsa_1024_rc4_56_sha",		false);
+//
+user_pref("security.ssl3.ecdh_ecdsa_des_ede3_sha",		false);
+user_pref("security.ssl3.ecdh_rsa_des_ede3_sha",		false);
+user_pref("security.ssl3.ecdhe_ecdsa_des_ede3_sha",		false);
+user_pref("security.ssl3.rsa_des_ede3_sha",		false);
+
+/******************************************************************************
  * HTML5 / APIs / DOM                                                         *
  *                                                                            *
  ******************************************************************************/
@@ -113,10 +215,6 @@ user_pref("security.mixed_content.block_active_content",		true);
 // Mixed Passive Content (a.k.a. Mixed Display Content).
 user_pref("security.mixed_content.block_display_content",		true);
 
-// https://secure.wikimedia.org/wikibooks/en/wiki/Grsecurity/Application-specific_Settings#Firefox_.28or_Iceweasel_in_Debian.29
-user_pref("javascript.options.methodjit.chrome",		false);
-user_pref("javascript.options.methodjit.content",		false);
-
 // CIS Mozilla Firefox 24 ESR v1.0.0 - 3.7 Disable JAR from opening Unsafe File Types
 // http://kb.mozillazine.org/Network.jar.open-unsafe-types
 user_pref("network.jar.open-unsafe-types",		false);
@@ -131,11 +229,6 @@ user_pref("security.fileuri.strict_origin_policy",		true);
 // CIS 2.3.6 Disable Displaying Javascript in History URLs
 // http://kb.mozillazine.org/Browser.urlbar.filter.javascript
 user_pref("browser.urlbar.filter.javascript",		true);
-
-// Disable HTML frames
-// WARNING: might make your life difficult!
-// NOTE: to be removed(?) see: https://bugzilla.mozilla.org/show_bug.cgi?id=729030
-//user_pref("browser.frames.enabled",		false);
 
 // http://asmjs.org/
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-29/
@@ -247,7 +340,6 @@ user_pref("browser.search.geoip.url",		"");
 // http://kb.mozillazine.org/Network.dns.disablePrefetch
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching
 user_pref("network.dns.disablePrefetch",		true);
-user_pref("network.dns.disablePrefetchFromHTTPS",		true);
 
 // https://wiki.mozilla.org/Privacy/Reviews/Necko
 user_pref("network.predictor.enabled",		false);
@@ -259,9 +351,7 @@ user_pref("browser.search.suggest.enabled",		false);
 // https://bugzil.la/1111967
 user_pref("browser.casting.enabled",		false);
 
-// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_media-capabilities
-// http://andreasgal.com/2014/10/14/openh264-now-in-firefox/
-user_pref("media.gmp-gmpopenh264.enabled",		false);
+// Media gmp url
 user_pref("media.gmp-manager.url",		"");
 
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_speculative-pre-connections
@@ -277,12 +367,6 @@ user_pref("browser.search.update",		false);
  * HTTP                                                                       *
  *                                                                            *
  ******************************************************************************/
-
-// Disallow NTLMv1
-// https://bugzilla.mozilla.org/show_bug.cgi?id=828183
-user_pref("network.negotiate-auth.allow-insecure-ntlm-v1",		false);
-// it is still allowed through HTTPS. uncomment the following to disable it completely.
-//user_pref("network.negotiate-auth.allow-insecure-ntlm-v1-https",		false);
 
 // https://bugzilla.mozilla.org/show_bug.cgi?id=855326
 user_pref("security.csp.experimentalEnabled",		true);
@@ -316,12 +400,6 @@ user_pref("network.cookie.cookieBehavior",		1);
  * Caching                                                                    *
  *                                                                            *
  ******************************************************************************/
-
-// http://kb.mozillazine.org/Browser.sessionstore.postdata
-// NOTE: relates to CIS 2.5.7
-user_pref("browser.sessionstore.postdata",		0);
-// http://kb.mozillazine.org/Browser.sessionstore.enabled
-user_pref("browser.sessionstore.enabled",		false);
 
 // http://kb.mozillazine.org/Browser.cache.offline.enable
 user_pref("browser.cache.offline.enable",		false);
@@ -365,20 +443,6 @@ user_pref("browser.cache.disk_cache_ssl",		false);
 // CIS Version 1.2.0 October 21st, 2011 2.5.2 Disallow Credential Storage
 user_pref("signon.rememberSignons",		false);
 
-// CIS Version 1.2.0 October 21st, 2011 2.5.4 Delete History and Form Data
-// http://kb.mozillazine.org/Browser.history_expire_days
-user_pref("browser.history_expire_days",		0);
-
-// http://kb.mozillazine.org/Browser.history_expire_sites
-user_pref("browser.history_expire_sites",		0);
-
-// http://kb.mozillazine.org/Browser.history_expire_visits
-user_pref("browser.history_expire_visits",		0);
-
-// CIS Version 1.2.0 October 21st, 2011 2.5.5 Delete Download History
-// Zero (0) is an indication that no download history is retained for the current profile.
-user_pref("browser.download.manager.retention",		0);
-
 // CIS Version 1.2.0 October 21st, 2011 2.5.6 Delete Search and Form History
 user_pref("browser.formfill.enable",		false);
 user_pref("browser.formfill.expire_days",		0);
@@ -415,9 +479,6 @@ user_pref("browser.newtab.url",		"about:blank");
 // CIS Version 1.2.0 October 21st, 2011 2.1.2 Enable Auto Notification of Outdated Plugins
 // https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review
 user_pref("plugins.update.notifyUser",		true);
-
-// CIS Version 1.2.0 October 21st, 2011 2.1.3 Enable Information Bar for Outdated Plugins
-user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
 
 // CIS Version 1.2.0 October 21st, 2011 2.2.3 Enable Warning of Using Weak Encryption
 user_pref("security.warn_entering_weak",		true);
@@ -471,7 +532,6 @@ user_pref("network.stricttransportsecurity.preloadlist",		true);
 // enable SPDY
 // https://en.wikipedia.org/wiki/SPDY
 user_pref("network.http.spdy.enabled",		true);
-user_pref("network.http.spdy.enabled.v3",		true);
 user_pref("network.http.spdy.enabled.v3-1",		true);
 
 // CIS Version 1.2.0 October 21st, 2011 2.2.4 Enable Online Certificate Status Protocol
@@ -484,18 +544,12 @@ user_pref("security.ssl.enable_ocsp_stapling",		true);
 // NOTICE: this leaks information about the sites you visit to the CA.
 user_pref("security.OCSP.require",		true);
 
-// https://www.blackhat.com/us-13/briefings.html#NextGen
-user_pref("security.enable_tls_session_tickets",		false);
-
 // TLS 1.[012]
 // http://kb.mozillazine.org/Security.tls.version.max
 // 1 = TLS 1.0 is the minimum required / maximum supported encryption protocol. (This is the current default for the maximum supported version.)
 // 2 = TLS 1.1 is the minimum required / maximum supported encryption protocol.
 user_pref("security.tls.version.min",		1);
 user_pref("security.tls.version.max",		3);
-
-// disable SSLv3 (CVE-2014-3566)
-user_pref("security.enable_ssl3",		false);
 
 // pinning
 // https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning#How_to_use_pinning
@@ -524,41 +578,17 @@ user_pref("security.ssl.errorReporting.automatic",		false);
 /******************************************************************************
  * CIPHERS                                                                    *
  *                                                                            *
- * you can debug the SSL handshake with tshark: tshark -t ad -n -i wlan0 -T text -V -R ssl.handshake
+ * You can debug the SSL handshake with tshark:                               *
+ * tshark -t ad -n -i wlan0 -T text -V -R ssl.handshake                       *
  ******************************************************************************/
 
-// disable null ciphers
-user_pref("security.ssl3.rsa_null_sha",		false);
-user_pref("security.ssl3.rsa_null_md5",		false);
-user_pref("security.ssl3.ecdhe_rsa_null_sha",		false);
-user_pref("security.ssl3.ecdhe_ecdsa_null_sha",		false);
-user_pref("security.ssl3.ecdh_rsa_null_sha",		false);
-user_pref("security.ssl3.ecdh_ecdsa_null_sha",		false);
-
-/* SEED
- * https://en.wikipedia.org/wiki/SEED
- */
-user_pref("security.ssl3.rsa_seed_sha",		false);
-
-// 40 bits...
-user_pref("security.ssl3.rsa_rc4_40_md5",		false);
-user_pref("security.ssl3.rsa_rc2_40_md5",		false);
-
-// 56 bits
-user_pref("security.ssl3.rsa_1024_rc4_56_sha",		false);
-
 // 128 bits
-user_pref("security.ssl3.rsa_camellia_128_sha",		false);
 user_pref("security.ssl3.ecdhe_rsa_aes_128_sha",		false);
 user_pref("security.ssl3.ecdhe_ecdsa_aes_128_sha",		false);
-user_pref("security.ssl3.ecdh_rsa_aes_128_sha",		false);
 user_pref("security.ssl3.ecdh_ecdsa_aes_128_sha",		false);
-user_pref("security.ssl3.dhe_rsa_camellia_128_sha",		false);
 user_pref("security.ssl3.dhe_rsa_aes_128_sha",		false);
 
 // RC4 (CVE-2013-2566)
-user_pref("security.ssl3.ecdh_ecdsa_rc4_128_sha",		false);
-user_pref("security.ssl3.ecdh_rsa_rc4_128_sha",		false);
 user_pref("security.ssl3.ecdhe_ecdsa_rc4_128_sha",		false);
 user_pref("security.ssl3.ecdhe_rsa_rc4_128_sha",		false);
 user_pref("security.ssl3.rsa_rc4_128_md5",		false);
@@ -575,25 +605,13 @@ user_pref("security.tls.unrestricted_rc4_fallback",		false);
  *   http://en.citizendium.org/wiki/Meet-in-the-middle_attack
  *
  *
- * See also: 
- *
+ * See also:
  * http://www-archive.mozilla.org/projects/security/pki/nss/ssl/fips-ssl-ciphersuites.html
  */
-user_pref("security.ssl3.dhe_dss_des_ede3_sha",		false);
-user_pref("security.ssl3.dhe_rsa_des_ede3_sha",		false);
-user_pref("security.ssl3.ecdh_ecdsa_des_ede3_sha",		false);
-user_pref("security.ssl3.ecdh_rsa_des_ede3_sha",		false);
-user_pref("security.ssl3.ecdhe_ecdsa_des_ede3_sha",		false);
-user_pref("security.ssl3.ecdhe_rsa_des_ede3_sha",		false);
-user_pref("security.ssl3.rsa_des_ede3_sha",		false);
-user_pref("security.ssl3.rsa_fips_des_ede3_sha",		false);
 
 // Ciphers with ECDH (without /e$/)
 user_pref("security.ssl3.ecdh_rsa_aes_256_sha",		false);
 user_pref("security.ssl3.ecdh_ecdsa_aes_256_sha",		false);
-
-// 256 bits without PFS
-user_pref("security.ssl3.rsa_camellia_256_sha",		false);
 
 // Ciphers with ECDHE and > 128bits
 user_pref("security.ssl3.ecdhe_rsa_aes_256_sha",		true);
@@ -604,14 +622,7 @@ user_pref("security.ssl3.ecdhe_ecdsa_aes_128_gcm_sha256",		true);
 user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		true);
 
 // Susceptible to the logjam attack - https://weakdh.org/
-user_pref("security.ssl3.dhe_rsa_camellia_256_sha",		false);
 user_pref("security.ssl3.dhe_rsa_aes_256_sha",		false);
-
-// Ciphers with DSA (max 1024 bits)
-user_pref("security.ssl3.dhe_dss_aes_128_sha",		false);
-user_pref("security.ssl3.dhe_dss_aes_256_sha",		false);
-user_pref("security.ssl3.dhe_dss_camellia_128_sha",		false);
-user_pref("security.ssl3.dhe_dss_camellia_256_sha",		false);
 
 // Fallbacks due compatibility reasons
 user_pref("security.ssl3.rsa_aes_256_sha",		true);
