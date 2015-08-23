@@ -227,7 +227,7 @@ See also:
 
 #### Add-ons for mobile platforms
 
-* [NoScript Anywhere](https://noscript.net/nsa/)
+* [NoScript Anywhere](https://noscript.net/nsa/) - will not work anymore after FireFox 42+, [due addons and signature changes](https://github.com/pyllyukko/user.js#issuecomment-130116288)
 * [uBlock](https://addons.mozilla.org/en-US/android/addon/ublock-origin/)
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 
