@@ -410,7 +410,7 @@ References
 * [Mozilla Security Blog](https://blog.mozilla.org/security/category/security/)
 * [Security and privacy-related preferences](http://kb.mozillazine.org/Category:Security_and_privacy-related_preferences)
 * [How to stop Firefox from making automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections)
-* [Diff between various Firefox .js configurations in upcoming releases](http://cat-in-136.github.io/]
+* [Diff between various Firefox .js configurations in upcoming releases](http://cat-in-136.github.io/)
 
 [1]: http://kb.mozillazine.org/User.js_file
 [2]: https://wiki.mozilla.org/Security:Renegotiation#security.ssl.require_safe_negotiation
