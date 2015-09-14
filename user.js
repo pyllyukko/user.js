@@ -343,7 +343,7 @@ user_pref("privacy.clearOnShutdown.history",		true);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
 user_pref("privacy.clearOnShutdown.passwords",		true);
 user_pref("privacy.clearOnShutdown.sessions",		true);
-user_pref("privacy.clearOnShutdown.siteSettings",		true);
+user_pref("privacy.clearOnShutdown.siteSettings",		false);
 
 // don't remember browsing history
 user_pref("places.history.enabled",		false);
