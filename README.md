@@ -58,7 +58,7 @@ There's a whole lot of settings that this modifies and they are divided in the f
 
 * HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / DOM
 * Miscellaneous
-* Extensios / plugins related
+* Extensions / plugins related
 * Firefox (anti-)[features](https://en.wikipedia.org/wiki/Feature_creep) / components
 * [Automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections)
 * HTTP protocol related
