@@ -150,6 +150,11 @@ user_pref("javascript.options.asmjs",		false);
 // the iSEC Partners Report recommends to disable this
 user_pref("gfx.font_rendering.opentype_svg.enabled",		false);
 
+// https://bugzil.la/654550
+// https://github.com/pyllyukko/user.js/issues/9#issuecomment-100468785
+// https://github.com/pyllyukko/user.js/issues/9#issuecomment-148922065
+user_pref("media.video_stats.enabled",		false);
+
 /******************************************************************************
  * extensions / plugins                                                       *
  *                                                                            *
