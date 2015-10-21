@@ -231,9 +231,11 @@ user_pref("browser.safebrowsing.enabled",		true);
 // http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled
 user_pref("browser.safebrowsing.malware.enabled",		true);
 
-// Disable safe browsing for downloaded files. this leaks information to google.
+// Disable safe browsing remote lookups for downloaded files.
+// This leaks information to google.
 // https://www.mozilla.org/en-US/firefox/39.0/releasenotes/
-user_pref("browser.safebrowsing.downloads.enabled",		false);
+// https://wiki.mozilla.org/Security/Application_Reputation
+user_pref("browser.safebrowsing.downloads.remote.enabled",	false);
 
 // Disable pocket
 // https://support.mozilla.org/en-US/kb/save-web-pages-later-pocket-firefox
