@@ -300,6 +300,11 @@ user_pref("security.csp.experimentalEnabled",		true);
 // CSP https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy
 user_pref("security.csp.enable",		true);
 
+// Subresource integrity
+// https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity
+// https://wiki.mozilla.org/Security/Subresource_Integrity
+user_pref("security.sri.enable",		true);
+
 // DNT HTTP header
 // http://dnt.mozilla.org/
 // https://en.wikipedia.org/wiki/Do_not_track_header
