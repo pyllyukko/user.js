@@ -183,6 +183,8 @@ user_pref("extensions.blocklist.enabled",		true);
 // https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry
 // https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
 user_pref("toolkit.telemetry.enabled",		false);
+// https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html
+user_pref("toolkit.telemetry.unified",		false);
 
 // https://wiki.mozilla.org/Polaris#Tracking_protection
 // https://support.mozilla.org/en-US/kb/tracking-protection-firefox
