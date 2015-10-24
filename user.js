@@ -199,6 +199,8 @@ user_pref("pdfjs.disabled",		true);
 user_pref("datareporting.healthreport.uploadEnabled",		false);
 // disable collection of the data (the healthreport.sqlite* files)
 user_pref("datareporting.healthreport.service.enabled",		false);
+// https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html
+user_pref("datareporting.policy.dataSubmissionEnabled",		false);
 
 // Disable new tab tile ads & preload
 // http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
