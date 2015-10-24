@@ -185,6 +185,9 @@ user_pref("extensions.blocklist.enabled",		true);
 user_pref("toolkit.telemetry.enabled",		false);
 // https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html
 user_pref("toolkit.telemetry.unified",		false);
+// https://wiki.mozilla.org/Telemetry/Experiments
+user_pref("experiments.supported",		false);
+user_pref("experiments.enabled",		false);
 
 // https://wiki.mozilla.org/Security/Tracking_protection
 // https://support.mozilla.org/en-US/kb/tracking-protection-firefox
