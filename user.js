@@ -7,8 +7,12 @@
  * HTML5 / APIs / DOM                                                         *
  *                                                                            *
  ******************************************************************************/
+ 
+// Prevent CSS History Leak
+// https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/
+user_pref("layout.css.visited_links_enabled",		false);
 
-// disable Location-Aware Browsing
+// Disable Location-Aware Browsing
 // http://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",		false);
 
@@ -17,7 +21,7 @@ user_pref("geo.enabled",		false);
 // you can also see this with Panopticlick's "DOM localStorage"
 //user_pref("dom.storage.enabled",		false);
 
-// Don't reveal internal IPs
+// Don't reveal the internal IP
 // http://net.ipcalf.com/
 user_pref("media.peerconnection.enabled",		false);
 // getUserMedia
