@@ -4,6 +4,28 @@
  ******************************************************************************/
 
 /******************************************************************************
+ * Update hardening                                                           *
+ * Since FF never updates url's i about:config we ensure we get the latest    *
+ * software, updates and ressources.                                          *
+ ******************************************************************************/
+
+user_pref("app.update.url",		"https://aus5.mozilla.org/update/3/%PRODUCT%/%VERSION%/%BUILD_ID%/%BUILD_TARGET%/%LOCALE%/%CHANNEL%/%OS_VERSION%/%DISTRIBUTION%/%DISTRIBUTION_VERSION%/update.xml");
+user_pref("browser.trackingprotection.gethashURL",		"https://shavar.services.mozilla.com/gethash?client=SAFEBROWSING_ID&appver=%VERSION%&pver=2.2");
+user_pref("browser.trackingprotection.updateURL",		"https://shavar.services.mozilla.com/downloads?client=SAFEBROWSING_ID&appver=%VERSION%&pver=2.2");
+user_pref("media.gmp-manager.certs.1.commonName",		"aus5.mozilla.org");
+user_pref("media.gmp-manager.certs.1.issuerName",		"CN=DigiCert SHA2 Secure Server CA,O=DigiCert Inc,C=US");
+user_pref("media.gmp-manager.certs.2.commonName",		"aus5.mozilla.org");
+user_pref("media.gmp-manager.certs.2.issuerName",		"CN=thawte SSL CA - G2,O="thawte, Inc.",C=US");
+user_pref("media.gmp-manager.url",		"https://aus5.mozilla.org/update/3/GMP/%VERSION%/%BUILD_ID%/%BUILD_TARGET%/%LOCALE%/%CHANNEL%/%OS_VERSION%/%DISTRIBUTION%/%DISTRIBUTION_VERSION%/update.xml");
+user_pref("privacy.trackingprotection.introURL",		"https://www.mozilla.org/%LOCALE%/firefox/%VERSION%/tracking-protection/start/");
+user_pref("signon.recipes.path",		"chrome://passwordmgr/content/recipes.json");
+user_pref("browser.safebrowsing.reportMalwareMistakeURL",		"https://%LOCALE%.malware-error.mozilla.com/?hl=%LOCALE%&url=");
+user_pref("browser.safebrowsing.reportPhishMistakeURL",		"https://%LOCALE%.phish-error.mozilla.com/?hl=%LOCALE%&url=");
+user_pref("browser.safebrowsing.reportPhishURL",		"https://%LOCALE%.phish-report.mozilla.com/?hl=%LOCALE%&url=");
+user_pref("media.peerconnection.default_iceservers",		"[]");
+
+
+/******************************************************************************
  * HTML5 / APIs / DOM                                                         *
  *                                                                            *
  ******************************************************************************/
