@@ -488,12 +488,6 @@ user_pref("security.ask_for_password",		0);
 // https://wiki.mozilla.org/Privacy/Features/HSTS_Preload_List
 user_pref("network.stricttransportsecurity.preloadlist",		true);
 
-// enable SPDY
-// https://en.wikipedia.org/wiki/SPDY
-user_pref("network.http.spdy.enabled",		true);
-user_pref("network.http.spdy.enabled.v3",		true);
-user_pref("network.http.spdy.enabled.v3-1",		true);
-
 // CIS Version 1.2.0 October 21st, 2011 2.2.4 Enable Online Certificate Status Protocol
 user_pref("security.OCSP.enabled",		1);
 
