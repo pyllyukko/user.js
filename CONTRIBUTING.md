@@ -11,6 +11,7 @@ General
   * References need to be from trusted sources (e.g. Mozilla bug tracker, or other Mozilla documentation). Or it needs to be somehow verifiable.
 * One issue/feature set in one commit, so it's easy to track the changes in the log and process the pull requests
   * Preferably in separate pull requests. This way it's also easier to discuss about different settings/features.
+* Cosmetic changes (wording, typos, etc.) in their own pull requests
 
 Removing settings
 -----------------
