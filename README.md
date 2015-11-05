@@ -14,7 +14,7 @@ This is a [user.js][1] configuration file for Mozilla Firefox that's supposed to
 * Make sure the browser doesn't reveal too much information to [shoulder surfers](https://en.wikipedia.org/wiki/Shoulder_surfing_%28computer_security%29)
 * Harden the browser's encryption (cipher suites, protocols, trusted CAs)
 * Hopefully limit the attack surface by disabling various features
-* Still be at least somewhat usable in daily use
+* Still be usable in daily use
 
 ### How to achieve this?
 
