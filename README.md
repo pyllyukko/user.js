@@ -398,6 +398,8 @@ Contributing
 
 Yes please! All issues and pull requests are more than welcome. Please try to break down your pull requests or commits into small / manageable entities, so they are easier to process. All the settings in the ```user.js``` file should have some official references to them, so the effect of those settings can be easily verified from Mozilla's documentation.
 
+For more information, see <https://github.com/pyllyukko/user.js/blob/master/CONTRIBUTING.md>.
+
 References
 ----------
 
