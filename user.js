@@ -412,6 +412,10 @@ user_pref("browser.sessionstore.privacy_level",		2);
 // https://bugzil.la/238789#c19
 user_pref("browser.helperApps.deleteTempFileOnExit",		true);
 
+// https://support.mozilla.org/en-US/questions/973320
+// https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/browser.pagethumbnails.capturing_disabled
+user_pref("browser.pagethumbnails.capturing_disabled",		false);
+
 /******************************************************************************
  * UI related                                                                 *
  *                                                                            *
