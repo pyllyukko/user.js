@@ -7,7 +7,7 @@ General
 -------
 
 * Write descriptive commit messages
-* Add proper references (links) to both the user.js file and the commit message
+* Add proper references (links) to at least the user.js file itself and preferably to the commit message also
   * References need to be from trusted sources (e.g. Mozilla bug tracker, or other Mozilla documentation). Or it needs to be somehow verifiable.
 * One issue/feature set in one commit, so it's easy to track the changes in the log and process the pull requests
   * Preferably in separate pull requests. This way it's also easier to discuss about different settings/features.
