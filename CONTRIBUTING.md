@@ -12,6 +12,9 @@ General
 * One issue/feature set in one commit, so it's easy to track the changes in the log and process the pull requests
   * Preferably in separate pull requests. This way it's also easier to discuss about different settings/features.
 * Cosmetic changes (wording, typos, etc.) in their own pull requests
+* Doublecheck, that the JavaScript syntax is correct
+  * Pay attention to quotes
+  * Make sure that the value is of correct type
 
 Removing settings
 -----------------
