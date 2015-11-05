@@ -5,8 +5,15 @@ Considering about contributing? Great! Contributions are very welcome indeed.
 
 Here are some guidelines to contributing to this project.
 
-General
--------
+Issues
+------
+
+* Try to provide as much information about the issue as possible
+* Feel free to ask questions, we try to answer to the best of our ability
+* One issue per issue, so we have the possibility to stay on the topic :)
+
+Pull requests
+-------------
 
 * Write descriptive commit messages
 * Add proper references (links) to at least the user.js file itself and preferably to the commit message also
