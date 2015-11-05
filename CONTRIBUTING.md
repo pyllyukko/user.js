@@ -1,7 +1,9 @@
 Contributing
 ============
 
-Guidelines to contributing to this project.
+Considering about contributing? Great! Contributions are very welcome indeed.
+
+Here are some guidelines to contributing to this project.
 
 General
 -------
