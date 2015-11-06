@@ -163,6 +163,9 @@ user_pref("media.video_stats.enabled",		false);
 // Flash plugin state - never activate
 user_pref("plugin.state.flash",		0);
 
+// disable Gnome Shell Integration
+user_pref("plugin.state.libgnome-shell-browser-plugin",	0);
+
 // https://wiki.mozilla.org/Firefox/Click_To_Play
 // https://blog.mozilla.org/security/2012/10/11/click-to-play-plugins-blocklist-style/
 user_pref("plugins.click_to_play",		true);
