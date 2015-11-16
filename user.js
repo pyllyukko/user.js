@@ -644,3 +644,11 @@ user_pref("security.ssl3.dhe_dss_camellia_256_sha",		false);
 // Fallbacks due compatibility reasons
 user_pref("security.ssl3.rsa_aes_256_sha",		true);
 user_pref("security.ssl3.rsa_aes_128_sha",		true);
+
+/******************************************************************************
+ * User's extra settings / overrides                                          *
+ *                                                                            *
+ ******************************************************************************/
+ 
+ 
+ 
