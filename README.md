@@ -126,6 +126,14 @@ See also [#20](https://github.com/pyllyukko/user.js/issues/20).
   * "[Don't send the Referer header when navigating from a https site to another https site.](http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer#false)"
 * Don't accept [3rd party cookies](http://kb.mozillazine.org/Network.cookie.cookieBehavior#1)
 
+### How can I whitelist specific websites?
+
+* Open 'Options' -> 'General' -> 'Connection Settings'
+* Select 'Manual Proxy Configuration'
+* Check 'Use the same proxy for all protocols'
+* Type in any bogus URL you want e.g. like 0.0.0.0 fot the HTTP-Proxy
+* Under 'No proxy for list' you need to type in you site your want to whitelist.
+
 ### Caching
 
 * Permanently enables [private browsing][8] mode
