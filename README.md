@@ -259,6 +259,14 @@ Online tests
 * [AmIUnique](https://amiunique.org/) ([Source](https://github.com/DIVERSIFY-project/amiunique))
 
 
+
+Offline tests
+-------------
+
+* [IIS Crypto](https://www.nartac.com/Products/IISCrypto) - for Windows Server 2003-2012  
+
+
+
 ### HTML5test
 
 [HTML5test](http://html5test.com/)
