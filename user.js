@@ -160,6 +160,9 @@ user_pref("media.video_stats.enabled",		false);
  *                                                                            *
  ******************************************************************************/
 
+// Opt-out of add-on metadata updates
+user_pref("extensions.getAddons.cache.enabled",   false);
+
 // Flash plugin state - never activate
 user_pref("plugin.state.flash",		0);
 
