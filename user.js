@@ -161,6 +161,7 @@ user_pref("media.video_stats.enabled",		false);
  ******************************************************************************/
 
 // Opt-out of add-on metadata updates
+// https://blog.mozilla.org/addons/how-to-opt-out-of-add-on-metadata-updates/
 user_pref("extensions.getAddons.cache.enabled",   false);
 
 // Flash plugin state - never activate
