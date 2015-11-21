@@ -86,7 +86,7 @@ user_pref("webgl.disabled",		true);
  ******************************************************************************/
 
 // Disable face detection by default
-user_pref("camera.control.face_detection.enabled";    false);
+user_pref("camera.control.face_detection.enabled",    false);
 
 // Default search engine
 //user_pref("browser.search.defaultenginename",		"DuckDuckGo");
