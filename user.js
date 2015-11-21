@@ -17,9 +17,11 @@ user_pref("geo.enabled",		false);
 // you can also see this with Panopticlick's "DOM localStorage"
 //user_pref("dom.storage.enabled",		false);
 
-// Don't reveal internal IPs
+// Don't reveal internal IPs and reduce fingerprinting
 // http://net.ipcalf.com/
 user_pref("media.peerconnection.enabled",		false);
+//user_pref("plugin.scan.plid.all", false);
+
 // getUserMedia
 // https://wiki.mozilla.org/Media/getUserMedia
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigator
