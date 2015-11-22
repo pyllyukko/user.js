@@ -19,7 +19,8 @@ user_pref("geo.enabled",		false);
 
 // Don't reveal internal IPs
 // http://net.ipcalf.com/
-user_pref("media.peerconnection.enabled",		false);
+// https://wiki.mozilla.org/Media/WebRTC/Privacy
+user_pref("media-peerconnection.ice.default_address_only",		true);
 // getUserMedia
 // https://wiki.mozilla.org/Media/getUserMedia
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigator
