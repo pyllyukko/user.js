@@ -21,7 +21,7 @@ user_pref("geo.enabled",		false);
 // Check the settings with: http://net.ipcalf.com/
 // https://wiki.mozilla.org/Media/WebRTC/Privacy
 user_pref("media-peerconnection.ice.default_address_only",		true);
-//user_pref("media.peerconnection.enabled",		false);
+user_pref("media.peerconnection.enabled",		false);
 
 // getUserMedia
 // https://wiki.mozilla.org/Media/getUserMedia
