@@ -259,6 +259,12 @@ Online tests
 * [AmIUnique](https://amiunique.org/) ([Source](https://github.com/DIVERSIFY-project/amiunique))
 
 
+Certificate Checks
+------------------
+
+* [Check for dangerous eDellRoot certificate](https://edell.tlsfun.de)
+
+
 ### HTML5test
 
 [HTML5test](http://html5test.com/)
