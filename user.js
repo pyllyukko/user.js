@@ -17,9 +17,12 @@ user_pref("geo.enabled",		false);
 // you can also see this with Panopticlick's "DOM localStorage"
 //user_pref("dom.storage.enabled",		false);
 
-// Don't reveal internal IPs
-// http://net.ipcalf.com/
+// Don't reveal your internal IP
+// Check the settings with: http://net.ipcalf.com/
+// https://wiki.mozilla.org/Media/WebRTC/Privacy
+user_pref("media-peerconnection.ice.default_address_only",		true);
 user_pref("media.peerconnection.enabled",		false);
+
 // getUserMedia
 // https://wiki.mozilla.org/Media/getUserMedia
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigator
