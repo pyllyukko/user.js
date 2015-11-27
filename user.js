@@ -434,7 +434,7 @@ user_pref("browser.helperApps.deleteTempFileOnExit",		true);
 
 // https://support.mozilla.org/en-US/questions/973320
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/browser.pagethumbnails.capturing_disabled
-user_pref("browser.pagethumbnails.capturing_disabled",		false);
+user_pref("browser.pagethumbnails.capturing_disabled",		true);
 
 /******************************************************************************
  * UI related                                                                 *
