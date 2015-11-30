@@ -232,6 +232,12 @@ See also:
 * [uBlock](https://addons.mozilla.org/en-US/android/addon/ublock-origin/)
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 
+
+#### Identifying Preferences Names in Firefox
+
+* [Pref Helper](https://mike.kaply.com/2015/11/11/identifying-preferences-names-in-firefox/)
+
+
 Online tests
 ------------
 
