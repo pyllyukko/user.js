@@ -257,6 +257,7 @@ Online tests
 * [RC4 fallback test](https://rc4.io/)
 * [Battery API](https://robnyman.github.io/battery/)
 * [AmIUnique](https://amiunique.org/) ([Source](https://github.com/DIVERSIFY-project/amiunique))
+* [Firefox Addon Detector](https://thehackerblog.com/addon_scanner/index.html) (unofficial)
 
 
 ### HTML5test
