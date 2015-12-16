@@ -166,6 +166,9 @@ user_pref("media.video_stats.enabled",		false);
  *                                                                            *
  ******************************************************************************/
 
+// Require signatures
+//user_pref("xpinstall.signatures.required",   true);
+
 // Opt-out of add-on metadata updates
 // https://blog.mozilla.org/addons/how-to-opt-out-of-add-on-metadata-updates/
 user_pref("extensions.getAddons.cache.enabled",   false);
