@@ -212,6 +212,8 @@ user_pref("experiments.enabled",		false);
 // https://wiki.mozilla.org/Security/Tracking_protection
 // https://support.mozilla.org/en-US/kb/tracking-protection-firefox
 user_pref("privacy.trackingprotection.enabled",		true);
+// https://support.mozilla.org/en-US/kb/tracking-protection-pbm
+user_pref("privacy.trackingprotection.pbmode.enabled",		true);
 
 // Disable the built-in PDF viewer (CVE-2015-2743)
 // https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2743
