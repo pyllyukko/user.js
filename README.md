@@ -258,6 +258,7 @@ Online tests
 * [RC4 fallback test](https://rc4.io/)
 * [Battery API](https://robnyman.github.io/battery/)
 * [AmIUnique](https://amiunique.org/) ([Source](https://github.com/DIVERSIFY-project/amiunique))
+* [Whoer](http://whoer.net/extended)
 
 
 ### HTML5test
