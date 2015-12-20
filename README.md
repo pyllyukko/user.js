@@ -259,7 +259,11 @@ Online tests
 * [RC4 fallback test](https://rc4.io/)
 * [Battery API](https://robnyman.github.io/battery/)
 * [AmIUnique](https://amiunique.org/) ([Source](https://github.com/DIVERSIFY-project/amiunique))
-
+* itisatrap.org:
+  * [Test page for Firefox's built-in Tracking Protection](https://itisatrap.org/firefox/its-a-tracker.html)
+  * [Test page for Firefox's built-in Phishing Protection](http://itisatrap.org/firefox/its-a-trap.html) ("Web forgeries")
+  * [Test page for Firefox's built-in Malware Protection](http://itisatrap.org/firefox/its-an-attack.html) (attack page)
+  * [Test page for Firefox's built-in Malware Protection](http://itisatrap.org/firefox/unwanted.html) (unwanted software)
 
 ### HTML5test
 
