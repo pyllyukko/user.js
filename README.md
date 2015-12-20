@@ -226,6 +226,7 @@ See also:
 * [Ghostery sneaks in new promotional messaging system #47](https://github.com/pyllyukko/user.js/issues/47)
 * [Are We Private Yet?](http://www.areweprivateyet.com/) site (made by Ghostery)
 * [Tracking Protection in Firefox For Privacy and Performance](https://kontaxis.github.io/trackingprotectionfirefox/#papers) paper
+* [How Tracking Protection works in Firefox](https://feeding.cloud.geek.nz/posts/how-tracking-protection-works-in-firefox/)
 
 #### Add-ons for mobile platforms
 
