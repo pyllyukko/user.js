@@ -24,6 +24,7 @@ Pull requests
 * Doublecheck, that the JavaScript syntax is correct
   * Pay attention to quotes
   * Make sure that the value is of correct type
+* Doublecheck, that it's not already there (e.g. ```grep``` for the stuff you are about to include)
 
 Removing settings
 -----------------
