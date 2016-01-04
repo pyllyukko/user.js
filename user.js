@@ -356,6 +356,8 @@ user_pref("network.http.sendSecureXSiteReferrer",		false);
 user_pref("network.cookie.cookieBehavior",		1);
 // Make sure that third-party cookies (if enabled) never persist beyond the session.
 // https://feeding.cloud.geek.nz/posts/tweaking-cookies-for-privacy-in-firefox/
+// http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
+// https://developer.mozilla.org/en-US/docs/Cookies_Preferences_in_Mozilla#network.cookie.thirdparty.sessionOnly
 user_pref("network.cookie.thirdparty.sessionOnly",      true);
 
 // user-agent
