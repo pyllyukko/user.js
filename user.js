@@ -352,7 +352,11 @@ user_pref("network.http.sendSecureXSiteReferrer",		false);
 
 // CIS 2.5.1 Accept Only 1st Party Cookies
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior#1
+// This breaks a number of payment gateways so you may need to comment it out.
 user_pref("network.cookie.cookieBehavior",		1);
+// Make sure that third-party cookies (if enabled) never persist beyond the session.
+// https://feeding.cloud.geek.nz/posts/tweaking-cookies-for-privacy-in-firefox/
+user_pref("network.cookie.thirdparty.sessionOnly",      true);
 
 // user-agent
 //user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 6.1; rv:31.0) Gecko/20100101 Firefox/31.0");
