@@ -43,7 +43,7 @@ Whenever you want to update your local copy of the repository, just use ````git 
 
 ### Android
 
-On [Firefox for Android](https://www.mozilla.org/en-US/firefox/android/) (Fennec), you need to drop the file to ```/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name```. If you use Jolla and run Firefox through Alien Dalvik, the location needs to be prefixed with ```/opt/alien```.
+On [Firefox for Android](https://www.mozilla.org/en-US/firefox/android/) (Fennec), you need to drop the file to ```/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name```. If you use [Jolla](https://jolla.com/) and run Firefox through Alien Dalvik, the location needs to be prefixed with ```/opt/alien```.
 
 See [issue #14](https://github.com/pyllyukko/user.js/issues/14) for further details on using this ```user.js``` file with Firefox for Android.
 
