@@ -307,6 +307,7 @@ user_pref("media.gmp-gmpopenh264.enabled",		false);
 user_pref("media.gmp-manager.url",		"");
 
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_speculative-pre-connections
+// https://bugzil.la/814169
 user_pref("network.http.speculative-parallel-limit",		0);
 
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_mozilla-content
