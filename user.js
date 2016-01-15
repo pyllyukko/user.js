@@ -296,6 +296,8 @@ user_pref("network.seer.enabled",		false);
 
 // http://kb.mozillazine.org/Browser.search.suggest.enabled
 user_pref("browser.search.suggest.enabled",		false);
+// Disable "Show search suggestions in location bar results"
+user_pref("browser.urlbar.suggest.searches",		false);
 
 // Disable SSDP
 // https://bugzil.la/1111967
