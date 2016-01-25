@@ -91,7 +91,7 @@ Here are some of the "highlights" from each category. For a full list of setting
 
 It is common for [client side attacks](https://www.offensive-security.com/metasploit-unleashed/client-side-attacks/) to target [browser extensions][14], instead of the browser itself (just look at all those [Java](https://en.wikipedia.org/wiki/Criticism_of_Java#Security) and [Flash](http://www.cvedetails.com/vulnerability-list/vendor_id-53/product_id-6761/Adobe-Flash-Player.html) vulnerabilities). Make sure your extensions and plugins are always up-to-date.
 
-* Disable flash
+* Disable Adobe Flash
 * Enable [click to play](https://wiki.mozilla.org/Firefox/Click_To_Play)
 * Enable [add-on updates](https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/)
 
@@ -425,6 +425,7 @@ References
 * [Security and privacy-related preferences](http://kb.mozillazine.org/Category:Security_and_privacy-related_preferences)
 * [How to stop Firefox from making automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections)
 * [Diff between various Firefox .js configurations in upcoming releases](http://cat-in-136.github.io/)
+* [Mozilla Firefox Release Plan](https://wiki.mozilla.org/RapidRelease/Calendar)
 
 [1]: http://kb.mozillazine.org/User.js_file
 [2]: https://wiki.mozilla.org/Security:Renegotiation#security.ssl.require_safe_negotiation
