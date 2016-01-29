@@ -271,6 +271,14 @@ user_pref("browser.safebrowsing.downloads.remote.enabled",	false);
 // https://support.mozilla.org/en-US/kb/save-web-pages-later-pocket-firefox
 user_pref("browser.pocket.enabled",		false);
 
+// Kill all social related addons
+user_pref("social.whitelist", "");
+user_pref("social.manifest.facebook", false);
+// Do not allow remote installation in the background without permissions
+user_pref("social.remote-install.enabled", false);
+// Kills the share it button
+user_pref("social.share.activationPanelEnabled", false)
+
 /******************************************************************************
  * automatic connections                                                      *
  *                                                                            *
