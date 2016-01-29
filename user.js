@@ -102,7 +102,7 @@ user_pref("clipboard.autocopy",		false);
 // URL instead of asking from google.
 // http://kb.mozillazine.org/Keyword.enabled#Caveats
 user_pref("keyword.enabled",		false);
-//user_pref("keyword.URL", "https://duckduckgo.com/html/?q=!+"");
+//user_pref("keyword.URL", "https://duckduckgo.com/html/?q=!+");
 
 // Don't try to guess where i'm trying to go!!! e.g.: "http://foo" -> "http://(prefix)foo(suffix)"
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
