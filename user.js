@@ -452,6 +452,23 @@ user_pref("browser.helperApps.deleteTempFileOnExit",		true);
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/browser.pagethumbnails.capturing_disabled
 user_pref("browser.pagethumbnails.capturing_disabled",		true);
 
+// Remove default website protocol handlers
+// http://kb.mozillazine.org/Gecko.handlerService.schemes.%28protocol%29.*.uriTemplate
+// Mibbit
+user_pref("gecko.handlerService.schemes.irc.0.name", "");
+user_pref("gecko.handlerService.schemes.irc.0.uriTemplate", "");
+user_pref("gecko.handlerService.schemes.ircs.0.name", "");
+user_pref("gecko.handlerService.schemes.ircs.0.uriTemplate", "");
+// Yahoo Mail
+user_pref("gecko.handlerService.schemes.mailto.0.name", "");
+user_pref("gecko.handlerService.schemes.mailto.0.uriTemplate", "");
+// Gmail (optional)
+//user_pref("gecko.handlerService.schemes.mailto.1.name", "");
+// user_pref("gecko.handlerService.schemes.mailto.1.uriTemplate", "");
+// 30 Boxes
+user_pref("gecko.handlerService.schemes.webcal.0.name", "");
+user_pref("gecko.handlerService.schemes.webcal.0.uriTemplate", "");
+
 /******************************************************************************
  * UI related                                                                 *
  *                                                                            *
