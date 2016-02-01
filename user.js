@@ -575,6 +575,11 @@ user_pref("security.ssl.treat_unsafe_negotiation_as_broken",		true);
 // you can test this at https://pinningtest.appspot.com/
 user_pref("security.ssl.errorReporting.automatic",		false);
 
+// Kill SHA1 certificates
+// https://bugzilla.mozilla.org/show_bug.cgi?id=942515#c32
+// http://www.scmagazine.com/mozilla-pulls-back-on-rejecting-sha-1-certs-outright/article/463913/
+//user_pref("security.pki.sha1_enforcement_level", 1);
+
 /******************************************************************************
  * CIPHERS                                                                    *
  *                                                                            *
