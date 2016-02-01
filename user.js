@@ -236,7 +236,8 @@ user_pref("browser.newtab.preload",		false);
 // https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-ping
 user_pref("browser.newtabpage.directory.ping",		"");
 // https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source
-user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
+user_pref("browser.newtabpage.directory.source",		"");
+user_pref("browser.newtabpage.introShown", true);
 
 // disable heartbeat
 // https://wiki.mozilla.org/Advocacy/heartbeat
