@@ -558,7 +558,7 @@ user_pref("security.cert_pinning.enforcement_level",		2);
 
 // Kill SHA1 certificates
 // https://bugzilla.mozilla.org/show_bug.cgi?id=942515#c32
-//user_pref("security.pki.sha1_enforcement_level", 1);
+user_pref("security.pki.sha1_enforcement_level", 2);
 
 // https://wiki.mozilla.org/Security:Renegotiation#security.ssl.treat_unsafe_negotiation_as_broken
 // see also CVE-2009-3555
