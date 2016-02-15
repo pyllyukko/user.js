@@ -161,6 +161,11 @@ user_pref("gfx.font_rendering.opentype_svg.enabled",		false);
 // https://github.com/pyllyukko/user.js/issues/9#issuecomment-148922065
 user_pref("media.video_stats.enabled",		false);
 
+// Don't reveal build ID
+// Value taken from Tor Browser
+// https://bugzil.la/583181
+user_pref("general.buildID.override",		"20100101");
+
 /******************************************************************************
  * extensions / plugins                                                       *
  *                                                                            *
