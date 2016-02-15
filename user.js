@@ -242,6 +242,10 @@ user_pref("browser.newtab.preload",		false);
 user_pref("browser.newtabpage.directory.ping",		"");
 // https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source
 user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
+// Disable the UI tour at startup
+user_pref("browser.uitour.enabled", false);
+user_pre("browser.uitour.url",  "");
+
 
 // disable heartbeat
 // https://wiki.mozilla.org/Advocacy/heartbeat
