@@ -166,6 +166,11 @@ user_pref("media.video_stats.enabled",		false);
 // https://bugzil.la/583181
 user_pref("general.buildID.override",		"20100101");
 
+// Prevent font fingerprinting
+// http://www.browserleaks.com/fonts
+// https://github.com/pyllyukko/user.js/issues/120
+user_pref("browser.display.use_document_fonts", 0);
+
 /******************************************************************************
  * extensions / plugins                                                       *
  *                                                                            *
