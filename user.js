@@ -2,7 +2,7 @@
  * user.js                                                                    *
  * https://github.com/pyllyukko/user.js                                       *
  ******************************************************************************/
- 
+
  /******************************************************************************
  * Avoid hardware based fingerprintings                                       *
  * Canvas/Font's/Plugins                                                      *
@@ -12,7 +12,7 @@
 // https://github.com/dillbyrne/random-agent-spoofer/issues/74
  user_pref("gfx.direct2d.disabled",		true);
  user_pref("layers.acceleration.disabled",		true);
- 
+
 
 /******************************************************************************
  * HTML5 / APIs / DOM                                                         *
@@ -654,7 +654,7 @@ user_pref("security.tls.unrestricted_rc4_fallback",		false);
  *   http://en.citizendium.org/wiki/Meet-in-the-middle_attack
  *
  *
- * See also: 
+ * See also:
  *
  * http://www-archive.mozilla.org/projects/security/pki/nss/ssl/fips-ssl-ciphersuites.html
  */
