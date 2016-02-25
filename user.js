@@ -2,17 +2,17 @@
  * user.js                                                                    *
  * https://github.com/pyllyukko/user.js                                       *
  ******************************************************************************/
- 
- /******************************************************************************
+
+ /*****************************************************************************
  * Avoid hardware based fingerprintings                                       *
- * Canvas/Font's/Plugins                                                                           *
+ * Canvas/Font's/Plugins                                                      *
  ******************************************************************************/
 // https://wiki.mozilla.org/Platform/GFX/HardwareAcceleration
 // https://www.macromedia.com/support/documentation/en/flashplayer/help/help01.html
-//https://github.com/dillbyrne/random-agent-spoofer/issues/74
+// https://github.com/dillbyrne/random-agent-spoofer/issues/74
  user_pref("gfx.direct2d.disabled",		true);
  user_pref("layers.acceleration.disabled",		true);
- 
+
 
 /******************************************************************************
  * HTML5 / APIs / DOM                                                         *
@@ -100,7 +100,7 @@ user_pref("webgl.disabled",		true);
  ******************************************************************************/
 
 // Disable face detection by default
-user_pref("camera.control.face_detection.enabled",    false);
+user_pref("camera.control.face_detection.enabled",		false);
 
 // Default search engine
 //user_pref("browser.search.defaultenginename",		"DuckDuckGo");
@@ -123,12 +123,11 @@ user_pref("network.proxy.socks_remote_dns",		true);
 // http://kb.mozillazine.org/Network.proxy.type
 // the default in Firefox for Linux is to use system proxy settings.
 // We change it to direct connection
-//user_pref("network.proxy.type", 0);
+//user_pref("network.proxy.type",		0);
 
-/* Mixed content stuff
- * https://developer.mozilla.org/en-US/docs/Site_Compatibility_for_Firefox_23#Non-SSL_contents_on_SSL_pages_are_blocked_by_default
- * https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/
- */
+// Mixed content stuff
+// https://developer.mozilla.org/en-US/docs/Site_Compatibility_for_Firefox_23#Non-SSL_contents_on_SSL_pages_are_blocked_by_default
+// https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/
 user_pref("security.mixed_content.block_active_content",		true);
 // Mixed Passive Content (a.k.a. Mixed Display Content).
 user_pref("security.mixed_content.block_display_content",		true);
@@ -180,7 +179,7 @@ user_pref("general.buildID.override",		"20100101");
 // Prevent font fingerprinting
 // http://www.browserleaks.com/fonts
 // https://github.com/pyllyukko/user.js/issues/120
-user_pref("browser.display.use_document_fonts", 0);
+user_pref("browser.display.use_document_fonts",		0);
 
 /******************************************************************************
  * extensions / plugins                                                       *
@@ -188,17 +187,17 @@ user_pref("browser.display.use_document_fonts", 0);
  ******************************************************************************/
 
 // Require signatures
-//user_pref("xpinstall.signatures.required",   true);
+//user_pref("xpinstall.signatures.required",		true);
 
 // Opt-out of add-on metadata updates
 // https://blog.mozilla.org/addons/how-to-opt-out-of-add-on-metadata-updates/
-user_pref("extensions.getAddons.cache.enabled",   false);
+user_pref("extensions.getAddons.cache.enabled",		false);
 
 // Flash plugin state - never activate
 user_pref("plugin.state.flash",		0);
 
 // disable Gnome Shell Integration
-user_pref("plugin.state.libgnome-shell-browser-plugin",	0);
+user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
 
 // disable the bundled OpenH264 video codec
 // http://forums.mozillazine.org/viewtopic.php?p=13845077&sid=28af2622e8bd8497b9113851676846b1#p13845077
@@ -269,7 +268,7 @@ user_pref("browser.selfsupport.url",		"");
 
 // CIS 2.1.1 Enable Auto Update
 // This is disabled for now. it is better to patch through package management.
-//user_pref("app.update.auto", true);
+//user_pref("app.update.auto",		true);
 
 // CIS 2.3.4 Block Reported Web Forgeries
 // http://kb.mozillazine.org/Browser.safebrowsing.enabled
@@ -286,7 +285,7 @@ user_pref("browser.safebrowsing.malware.enabled",		true);
 // This leaks information to google.
 // https://www.mozilla.org/en-US/firefox/39.0/releasenotes/
 // https://wiki.mozilla.org/Security/Application_Reputation
-user_pref("browser.safebrowsing.downloads.remote.enabled",	false);
+user_pref("browser.safebrowsing.downloads.remote.enabled",		false);
 
 // Disable pocket
 // https://support.mozilla.org/en-US/kb/save-web-pages-later-pocket-firefox
@@ -384,10 +383,10 @@ user_pref("network.cookie.cookieBehavior",		1);
 // https://feeding.cloud.geek.nz/posts/tweaking-cookies-for-privacy-in-firefox/
 // http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
 // https://developer.mozilla.org/en-US/docs/Cookies_Preferences_in_Mozilla#network.cookie.thirdparty.sessionOnly
-user_pref("network.cookie.thirdparty.sessionOnly",      true);
+user_pref("network.cookie.thirdparty.sessionOnly",		true);
 
 // user-agent
-//user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 6.1; rv:31.0) Gecko/20100101 Firefox/31.0");
+//user_pref("general.useragent.override",		"Mozilla/5.0 (Windows NT 6.1; rv:31.0) Gecko/20100101 Firefox/31.0");
 
 /******************************************************************************
  * Caching                                                                    *
@@ -603,7 +602,8 @@ user_pref("security.ssl.errorReporting.automatic",		false);
 /******************************************************************************
  * CIPHERS                                                                    *
  *                                                                            *
- * you can debug the SSL handshake with tshark: tshark -t ad -n -i wlan0 -T text -V -R ssl.handshake
+ * you can debug the SSL handshake with tshark:                               *
+ *     tshark -t ad -n -i wlan0 -T text -V -R ssl.handshake                   *
  ******************************************************************************/
 
 // disable null ciphers
@@ -614,9 +614,8 @@ user_pref("security.ssl3.ecdhe_ecdsa_null_sha",		false);
 user_pref("security.ssl3.ecdh_rsa_null_sha",		false);
 user_pref("security.ssl3.ecdh_ecdsa_null_sha",		false);
 
-/* SEED
- * https://en.wikipedia.org/wiki/SEED
- */
+// SEED
+// https://en.wikipedia.org/wiki/SEED
 user_pref("security.ssl3.rsa_seed_sha",		false);
 
 // 40 bits...
@@ -647,17 +646,10 @@ user_pref("security.ssl3.rsa_rc4_128_sha",		false);
 // https://rc4.io/
 user_pref("security.tls.unrestricted_rc4_fallback",		false);
 
-/*
- * 3DES -> false because effective key size < 128
- *
- *   https://en.wikipedia.org/wiki/3des#Security
- *   http://en.citizendium.org/wiki/Meet-in-the-middle_attack
- *
- *
- * See also: 
- *
- * http://www-archive.mozilla.org/projects/security/pki/nss/ssl/fips-ssl-ciphersuites.html
- */
+// 3DES -> false because effective key size < 128
+// https://en.wikipedia.org/wiki/3des#Security
+// http://en.citizendium.org/wiki/Meet-in-the-middle_attack
+// http://www-archive.mozilla.org/projects/security/pki/nss/ssl/fips-ssl-ciphersuites.html
 user_pref("security.ssl3.dhe_dss_des_ede3_sha",		false);
 user_pref("security.ssl3.dhe_rsa_des_ede3_sha",		false);
 user_pref("security.ssl3.ecdh_ecdsa_des_ede3_sha",		false);
