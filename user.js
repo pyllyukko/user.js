@@ -5,11 +5,11 @@
  
  /******************************************************************************
  * Avoid hardware based fingerprintings                                       *
- * Canvas/Font's/Plugins                                                                           *
+ * Canvas/Font's/Plugins                                                      *
  ******************************************************************************/
 // https://wiki.mozilla.org/Platform/GFX/HardwareAcceleration
 // https://www.macromedia.com/support/documentation/en/flashplayer/help/help01.html
-//https://github.com/dillbyrne/random-agent-spoofer/issues/74
+// https://github.com/dillbyrne/random-agent-spoofer/issues/74
  user_pref("gfx.direct2d.disabled",		true);
  user_pref("layers.acceleration.disabled",		true);
  
