@@ -24,6 +24,47 @@ There are several parts to all this and they are:
 * Using the user.js settings file itself
 * Using the **cas.sh** script to limit the CAs
 
+----------------------------------------------
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+  - [How to use the user.js file](#how-to-use-the-userjs-file)
+    - [Android](#android)
+    - [Windows](#windows)
+  - [What does it do?](#what-does-it-do)
+    - [HTML5 / APIs / DOM](#html5--apis--dom)
+    - [Miscellaneous](#miscellaneous)
+    - [Extensions / plugins related](#extensions--plugins-related)
+    - [Firefox features](#firefox-features)
+    - [Automatic connections](#automatic-connections)
+    - [HTTP](#http)
+    - [Caching](#caching)
+    - [UI related](#ui-related)
+    - [TLS / HTTPS / OCSP related](#tls--https--ocsp-related)
+    - [Ciphers](#ciphers)
+  - [This is not enough!](#this-is-not-enough)
+    - [Add-ons](#add-ons)
+      - [Tracking protection](#tracking-protection)
+      - [Add-ons for mobile platforms](#add-ons-for-mobile-platforms)
+  - [Online tests](#online-tests)
+    - [HTML5test](#html5test)
+  - [Known problems](#known-problems)
+  - [CAs](#cas)
+    - [Examples](#examples)
+      - [Check the current list of CAs in cert8.db](#check-the-current-list-of-cas-in-cert8db)
+      - [Import CAs](#import-cas)
+      - [Verify that it worked](#verify-that-it-worked)
+    - [The default list](#the-default-list)
+      - [How to use the default list](#how-to-use-the-default-list)
+  - [TODO](#todo)
+  - [Contributing](#contributing)
+  - [References](#references)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
+
 How to use the user.js file
 ---------------------------
 
