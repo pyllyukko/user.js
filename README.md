@@ -398,6 +398,7 @@ TODO
   - [Bug 967895](https://bugzilla.mozilla.org/show_bug.cgi?id=967895)
   - [Pixel Perfect: Fingerprinting Canvas in HTML5](http://www.w2spconf.com/2012/papers/w2sp12-final4.pdf)
   - https://addons.mozilla.org/en-US/firefox/addon/canvasblocker/, https://github.com/kkapsner/CanvasBlocker/issues/
+  - https://addons.mozilla.org/de/firefox/addon/anticanvasfingerprinting/
 - [ ] [Address Sanitizer](https://developer.mozilla.org/en-US/docs/Building_Firefox_with_Address_Sanitizer)
 - [ ] Send bogus timezone
 
