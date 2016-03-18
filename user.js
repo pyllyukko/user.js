@@ -309,6 +309,9 @@ user_pref("browser.search.geoip.url",		"");
 user_pref("network.dns.disablePrefetch",		true);
 user_pref("network.dns.disablePrefetchFromHTTPS",		true);
 
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1228457
+user_pref("network.dns.blockDotOnion",      true);
+
 // https://wiki.mozilla.org/Privacy/Reviews/Necko
 user_pref("network.predictor.enabled",		false);
 // https://wiki.mozilla.org/Privacy/Reviews/Necko#Principle:_Real_Choice
