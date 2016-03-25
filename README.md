@@ -391,15 +391,10 @@ TODO
 ----
 
 - [ ] [HTML5 canvas](https://en.wikipedia.org/wiki/Canvas_element)
-  - [Canvas fingerprinting](https://en.wikipedia.org/wiki/Canvas_fingerprinting)
-  - [BrowserLeaks.com](https://www.browserleaks.com/canvas)
-  - [Mozilla official Canvas explanation](https://developer.mozilla.org/en-US/docs/HTML/Canvas)
-  - [Tor fingerprinting topic](https://www.torproject.org/projects/torbrowser/design/#fingerprinting-linkability)
-  - [Bug 967895](https://bugzilla.mozilla.org/show_bug.cgi?id=967895)
-  - [Pixel Perfect: Fingerprinting Canvas in HTML5](http://www.w2spconf.com/2012/papers/w2sp12-final4.pdf)
   - https://addons.mozilla.org/en-US/firefox/addon/canvasblocker/, https://github.com/kkapsner/CanvasBlocker/issues/
 - [ ] [Address Sanitizer](https://developer.mozilla.org/en-US/docs/Building_Firefox_with_Address_Sanitizer)
 - [ ] Send bogus timezone
+  - https://addons.mozilla.org/en-US/firefox/addon/random-agent-spoofer/, https://github.com/dillbyrne/random-agent-spoofer
 
 Contributing
 ------------
