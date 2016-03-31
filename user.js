@@ -571,9 +571,6 @@ user_pref("security.enable_tls_session_tickets",		false);
 user_pref("security.tls.version.min",		1);
 user_pref("security.tls.version.max",		3);
 
-// disable SSLv3 (CVE-2014-3566)
-user_pref("security.enable_ssl3",		false);
-
 // pinning
 // https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning#How_to_use_pinning
 // "2. Strict. Pinning is always enforced."
