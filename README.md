@@ -41,6 +41,8 @@ Do note that these settings alter your browser behaviour quite a bit, so it is r
 
 Whenever you want to update your local copy of the repository, just use ````git pull```` and restart Firefox.
 
+In case you want to have some customizations that contradict settings in this user.js, you can follow the advice on [this comment](https://github.com/pyllyukko/user.js/issues/75#issuecomment-204705081).
+
 ### Android
 
 On [Firefox for Android](https://www.mozilla.org/en-US/firefox/android/) (Fennec), you need to drop the file to ```/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name```. If you use [Jolla](https://jolla.com/) and run Firefox through Alien Dalvik, the location needs to be prefixed with ```/opt/alien```.
