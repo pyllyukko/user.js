@@ -265,6 +265,8 @@ user_pref("browser.selfsupport.url",		"");
 // Disable firefox hello
 // https://wiki.mozilla.org/Loop
 //user_pref("loop.enabled",		false);
+// https://groups.google.com/d/topic/mozilla.dev.platform/nyVkCx-_sFw/discussion
+user_pref("loop.logDomains",		false);
 
 // CIS 2.1.1 Enable Auto Update
 // This is disabled for now. it is better to patch through package management.
