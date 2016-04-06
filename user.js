@@ -11,6 +11,8 @@
 // https://www.macromedia.com/support/documentation/en/flashplayer/help/help01.html
 // https://github.com/dillbyrne/random-agent-spoofer/issues/74
  user_pref("gfx.direct2d.disabled",		true);
+ 
+ // On Android turning this on will make all the pages blank.
  user_pref("layers.acceleration.disabled",		true);
 
 
