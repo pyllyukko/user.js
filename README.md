@@ -343,6 +343,7 @@ There are plenty! Hardening your browser will break your interwebs. Here's some 
 * You can not view or inspect cookies when in private browsing (see https://bugzil.la/823941)
 * Installation of ```user.js``` causes saved passwords to be removed from the Firefox (see [#27](https://github.com/pyllyukko/user.js/issues/27))
 * Some payment gateways require third-party cookies to be fully enabled before you can make purchases on sites that use them (`network.cookie.cookieBehavior == 0`). Enabling `network.cookie.thirdparty.sessionOnly` will limit their lifetime to the length of the session no matter what.
+* On some Android devices, all the pages might be blank (as seen [here](https://github.com/pyllyukko/user.js/pull/136#issuecomment-206812337)) if the setting ```layers.acceleration.disabled``` is set to ```true```. For more information, see [#136](https://github.com/pyllyukko/user.js/pull/136).
 
 The [web console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console) is your friend, **when** websites start to break.
 
