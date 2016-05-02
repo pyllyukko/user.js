@@ -219,6 +219,13 @@ user_pref("extensions.blocklist.enabled",		true);
  *                                                                            *
  ******************************************************************************/
 
+// disable remote debugging
+// https://developer.mozilla.org/docs/Tools/Remote_Debugging/Debugging_Firefox_Desktop#Enable_remote_debugging
+// https://developer.mozilla.org/en-US/docs/Tools/Tools_Toolbox#Advanced_settings
+user_pref("devtools.debugger.remote-enabled",		false);
+// "to use developer tools in the context of the browser itself, and not only web content"
+user_pref("devtools.chrome.enabled",		false);
+
 // https://wiki.mozilla.org/Platform/Features/Telemetry
 // https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry
 // https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
