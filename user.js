@@ -225,6 +225,8 @@ user_pref("extensions.blocklist.enabled",		true);
 user_pref("devtools.debugger.remote-enabled",		false);
 // "to use developer tools in the context of the browser itself, and not only web content"
 user_pref("devtools.chrome.enabled",		false);
+// https://developer.mozilla.org/en-US/docs/Tools/Remote_Debugging/Debugging_Firefox_Desktop#Firefox_37_onwards
+user_pref("devtools.debugger.force-local",		true);
 
 // https://wiki.mozilla.org/Platform/Features/Telemetry
 // https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry
