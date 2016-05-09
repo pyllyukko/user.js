@@ -219,6 +219,12 @@ user_pref("extensions.blocklist.enabled",		true);
  *                                                                            *
  ******************************************************************************/
 
+// WebIDE
+// https://trac.torproject.org/projects/tor/ticket/16222
+user_pref("devtools.webide.enabled",		false);
+user_pref("devtools.webide.autoinstallADBHelper",		false);
+user_pref("devtools.webide.autoinstallFxdtAdapters",		false);
+
 // disable remote debugging
 // https://developer.mozilla.org/docs/Tools/Remote_Debugging/Debugging_Firefox_Desktop#Enable_remote_debugging
 // https://developer.mozilla.org/en-US/docs/Tools/Tools_Toolbox#Advanced_settings
