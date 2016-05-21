@@ -283,25 +283,24 @@ Online tests
 ------------
 
 * [Panopticlick](https://panopticlick.eff.org/)
-* [www.filldisk.com](http://www.filldisk.com/)
+* [Filldisk](http://www.filldisk.com/)
 * [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
-* [evercookie](http://samy.pl/evercookie/)
+* [Evercookie](http://samy.pl/evercookie/)
 * [Mozilla Plugin Check][14]
 * [BrowserSpy.dk](http://browserspy.dk/)
 * [Testing mixed content](https://people.mozilla.org/~tvyas/mixedcontent.html)
   * [Similar from Microsoft](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm)
 * [WebRTC stuff](http://mozilla.github.io/webrtc-landing/)
-* [Flash player version](https://www.adobe.com/software/flash/about/) from Adobe
+* [Flash Player Version](https://www.adobe.com/software/flash/about/) from Adobe
 * [Verify your installed Java Version](https://www.java.com/en/download/installed.jsp)
   * Protip: Don't use Oracle's Java!! But if you really need it, update it regulary!
-* [IP check](http://ip-check.info/?lang=en)
+* [IP Check](http://ip-check.info/?lang=en)
 * [Onion test for CORS and WebSocket](http://cure53.de/leak/onion.php)
 * [Firefox Addon Detector](http://thehackerblog.com/addon_scanner/)
   * [Blog post](http://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)
-* [browserrecon](http://www.computec.ch/projekte/browserrecon/)??
 * [Official WebGL check](http://get.webgl.org/)
+* [AudioContext Fingerprint Test Page based on fingerprintjs2](https://audiofingerprint.openwpm.com/)
 * [battery.js](https://pstadler.sh/battery.js/)
-* [RC4 fallback test](https://rc4.io/)
 * [Battery API](https://robnyman.github.io/battery/)
 * [AmIUnique](https://amiunique.org/) ([Source](https://github.com/DIVERSIFY-project/amiunique))
 * itisatrap.org:
