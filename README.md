@@ -47,7 +47,7 @@ There are several parts to all this and they are:
     - [Add-ons](#add-ons)
       - [Tracking protection](#tracking-protection)
       - [Add-ons for mobile platforms](#add-ons-for-mobile-platforms)
-  - [Online tests](#online-tests)
+  - [Test suites](#test-suites)
     - [HTML5test](#html5test)
   - [Known problems](#known-problems)
   - [CAs](#cas)
@@ -170,7 +170,6 @@ See also [#20](https://github.com/pyllyukko/user.js/issues/20).
   * Spoofs the referer header with [network.http.referer.spoofSource][9] (see: [#2](https://github.com/pyllyukko/user.js/pull/2))
   * "[Don't send the Referer header when navigating from a https site to another https site.](http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer#false)"
 * Don't accept [3rd party cookies](http://kb.mozillazine.org/Network.cookie.cookieBehavior#1)
-* An HTTP GET test can be found over [here](https://github.com/TheTorProject/ooni-probe/blob/master/docs/source/tests/http_requests.rst).
 
 ### Caching
 
@@ -284,9 +283,9 @@ See also:
 * [uBlock](https://addons.mozilla.org/android/addon/ublock-origin/)
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 
-Online tests
+Test suites
 ------------
-
+* [ooni-probe](https://github.com/TheTorProject/ooni-probe/) - framework aimed at detecting network interference (DNS, HTTP, and more)
 * [Panopticlick](https://panopticlick.eff.org/)
 * [www.filldisk.com](http://www.filldisk.com/)
 * [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
