@@ -184,7 +184,7 @@ See also [#20](https://github.com/pyllyukko/user.js/issues/20).
 
 ### DNS related
 * network.dnsCacheExpiration which should be set to 0 to turn off Firefox internal DNS Cache.
-* An DNS consistency test can be found over [here](https://github.com/TheTorProject/ooni-probe/blob/master/docs/source/tests/dnsconsistency.rst)
+* An DNS consistency test can be found over [here](https://github.com/TheTorProject/ooni-probe/)
 
 ### TLS / HTTPS / OCSP related
 
