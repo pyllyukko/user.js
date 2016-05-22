@@ -170,6 +170,7 @@ See also [#20](https://github.com/pyllyukko/user.js/issues/20).
   * Spoofs the referer header with [network.http.referer.spoofSource][9] (see: [#2](https://github.com/pyllyukko/user.js/pull/2))
   * "[Don't send the Referer header when navigating from a https site to another https site.](http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer#false)"
 * Don't accept [3rd party cookies](http://kb.mozillazine.org/Network.cookie.cookieBehavior#1)
+* An HTTP GT test can be found over [here](https://github.com/TheTorProject/ooni-probe/blob/master/docs/source/tests/http_requests.rst).
 
 ### Caching
 
@@ -180,6 +181,10 @@ See also [#20](https://github.com/pyllyukko/user.js/issues/20).
 ### UI related
 
 * Don't [suggest any URLs](http://kb.mozillazine.org/Browser.urlbar.maxRichResults) while typing at the address bar
+
+### DNS related
+* network.dnsCacheExpiration which shoudl be set to 0 to turn off Firefox internal DNS Cache.
+* An DNS consistency test can be found over [here](https://github.com/TheTorProject/ooni-probe/blob/master/docs/source/tests/dnsconsistency.rst)
 
 ### TLS / HTTPS / OCSP related
 
