@@ -183,7 +183,7 @@ See also [#20](https://github.com/pyllyukko/user.js/issues/20).
 * Don't [suggest any URLs](http://kb.mozillazine.org/Browser.urlbar.maxRichResults) while typing at the address bar
 
 ### DNS related
-* network.dnsCacheExpiration which shoudl be set to 0 to turn off Firefox internal DNS Cache.
+* network.dnsCacheExpiration which should be set to 0 to turn off Firefox internal DNS Cache.
 * An DNS consistency test can be found over [here](https://github.com/TheTorProject/ooni-probe/blob/master/docs/source/tests/dnsconsistency.rst)
 
 ### TLS / HTTPS / OCSP related
