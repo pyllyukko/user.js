@@ -257,11 +257,10 @@ Here is a list of the most essential security and privacy enhancing add-ons that
 
 Tracking protection is one of the most important technologies that you need. The usual recommendation has been to run the [Ghostery](https://www.ghostery.com/) extension, but as it is made by a [potentially evim(tm) advertising company](https://en.wikipedia.org/wiki/Ghostery#Criticism), some people feel that is not to be trusted. One notable alternative is to use [uBlock](https://github.com/gorhill/uBlock), which can also be found at [Mozilla AMO](https://addons.mozilla.org/firefox/addon/ublock-origin/).
 
-Ghostery is still viable option, but be sure to disable the [GhostRank](https://www.ghostery.com/en/faq#q5-general) feature.
-
 Do note, that this user.js also enables Mozilla's built-in [tracking protection][12], but as that's quite new feature it is to be considered only as a fallback and not a complete solution. As it utilizes [Disconnect's list](https://support.mozilla.org/en-US/kb/tracking-protection-firefox#w_what-is-tracking-protection), recommending Disconnect seems redundant.
 
-So to summarize, pick one between Ghostery and uBlock, depending on your personal preferences.
+On Content Delivery Network site we can fake the output with [Decentraleyes](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/) addon, it's optional and emulates CDNs by intercepting the requests. It may helps to reduce your fingerprint. 
+
 
 See also:
 * [Mozilla Lightbeam][13] extension
