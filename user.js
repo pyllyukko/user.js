@@ -120,6 +120,9 @@ user_pref("browser.fixup.alternate.enabled",		false);
 // https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/WebBrowsers
 user_pref("network.proxy.socks_remote_dns",		true);
 
+// We not want to monitoring the connection state of users 
+user_pref("network.manage-offline-status",		false);
+
 // http://kb.mozillazine.org/Network.proxy.type
 // the default in Firefox for Linux is to use system proxy settings.
 // We change it to direct connection
