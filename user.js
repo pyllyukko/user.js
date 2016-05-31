@@ -23,6 +23,9 @@
 // http://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",		false);
 
+// Disable dom.mozTCPSocket.enabled on ESR
+user_pref("dom.mozTCPSocket.enabled",		false);
+
 // http://kb.mozillazine.org/Dom.storage.enabled
 // http://dev.w3.org/html5/webstorage/#dom-localstorage
 // you can also see this with Panopticlick's "DOM localStorage"
