@@ -244,6 +244,10 @@ user_pref("toolkit.telemetry.unified",		false);
 user_pref("experiments.supported",		false);
 user_pref("experiments.enabled",		false);
 
+// Disable the UITour backend so there is no chance that a remote page
+// can use it to confuse Tor Browser users.
+user_pref("browser.uitour.enabled", false);
+
 // https://wiki.mozilla.org/Security/Tracking_protection
 // https://support.mozilla.org/en-US/kb/tracking-protection-firefox
 user_pref("privacy.trackingprotection.enabled",		true);
