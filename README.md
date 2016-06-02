@@ -42,7 +42,6 @@ There are several parts to all this and they are:
     - [Caching](#caching)
     - [UI related](#ui-related)
     - [TLS / HTTPS / OCSP related](#tls--https--ocsp-related)
-    - [Ciphers](#ciphers)
   - [This is not enough!](#this-is-not-enough)
     - [Add-ons](#add-ons)
       - [Tracking protection](#tracking-protection)
@@ -189,48 +188,6 @@ See also [#20](https://github.com/pyllyukko/user.js/issues/20).
 * [OCSP stapling](https://blog.mozilla.org/security/2013/07/29/ocsp-stapling-in-firefox/) (enabled by default anyway)
 * Disable [TLS session tickets](https://www.blackhat.com/us-13/archives.html#NextGen)
 * Enforces [pinning](https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning)
-
-
-### Ciphers
-
-This section tweaks the cipher suites used by Firefox. The idea is to support only the strongest ones with emphasis on [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy), but without compromising compatibility with all those sites on the internet. As new crypto related flaws are discovered quite often, the cipher suites can be [tweaked to mitigate these newly discovered threats](https://github.com/pyllyukko/user.js/pull/18).
-
-Here's a list of the ciphers with default config and Firefox 27.0.1:
-
-	Cipher Suites (23 suites)
-	    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b)
-	    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)
-	    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a)
-	    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA (0xc009)
-	    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013)
-	    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
-	    Cipher Suite: TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA (0xc012)
-	    Cipher Suite: TLS_ECDHE_ECDSA_WITH_RC4_128_SHA (0xc007)
-	    Cipher Suite: TLS_ECDHE_RSA_WITH_RC4_128_SHA (0xc011)
-	    Cipher Suite: TLS_DHE_RSA_WITH_AES_128_CBC_SHA (0x0033)
-	    Cipher Suite: TLS_DHE_DSS_WITH_AES_128_CBC_SHA (0x0032)
-	    Cipher Suite: TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA (0x0045)
-	    Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA (0x0039)
-	    Cipher Suite: TLS_DHE_DSS_WITH_AES_256_CBC_SHA (0x0038)
-	    Cipher Suite: TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA (0x0088)
-	    Cipher Suite: TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA (0x0016)
-	    Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
-	    Cipher Suite: TLS_RSA_WITH_CAMELLIA_128_CBC_SHA (0x0041)
-	    Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
-	    Cipher Suite: TLS_RSA_WITH_CAMELLIA_256_CBC_SHA (0x0084)
-	    Cipher Suite: TLS_RSA_WITH_3DES_EDE_CBC_SHA (0x000a)
-	    Cipher Suite: TLS_RSA_WITH_RC4_128_SHA (0x0005)
-	    Cipher Suite: TLS_RSA_WITH_RC4_128_MD5 (0x0004)
-
-Here's the list with this config:
-
-	Cipher Suites (8 suites)
-	    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b)
-	    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)
-	    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a)
-	    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
-	    Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
-	    Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
 
 
 This is not enough!
