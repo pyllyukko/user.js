@@ -299,7 +299,7 @@ Online tests
 * [Firefox Addon Detector](http://thehackerblog.com/addon_scanner/)
   * [Blog post](http://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)
 * [Official WebGL check](http://get.webgl.org/)
-* [AudioContext Fingerprint Test Page based on fingerprintjs2](https://audiofingerprint.openwpm.com/)
+* [AudioContext Fingerprint Test Page](https://audiofingerprint.openwpm.com/)
 * [battery.js](https://pstadler.sh/battery.js/)
 * [Battery API](https://robnyman.github.io/battery/)
 * [AmIUnique](https://amiunique.org/) ([Source](https://github.com/DIVERSIFY-project/amiunique))
