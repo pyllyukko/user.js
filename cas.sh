@@ -65,6 +65,7 @@ declare -a BASIC_LIST=(
   "mozilla/GTE_CyberTrust_Global_Root.crt"
   "mozilla/GeoTrust_Global_CA.crt"
   "mozilla/GeoTrust_Primary_Certification_Authority.crt"
+  "mozilla/GeoTrust_Primary_Certification_Authority_-_G3.crt"
   "mozilla/GlobalSign_Root_CA.crt"
   "mozilla/Go_Daddy_Class_2_CA.crt"
   "mozilla/Go_Daddy_Root_Certificate_Authority_-_G2.crt"
