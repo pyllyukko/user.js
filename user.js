@@ -33,7 +33,7 @@ user_pref("geo.enabled",		false);
 // https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API
 // https://wicg.github.io/netinfo/#privacy-considerations
 // https://bugzilla.mozilla.org/show_bug.cgi?id=960426
-//user_pref("dom.netinfo.enabled",		false);
+user_pref("dom.netinfo.enabled",		false);
 
 // Don't reveal your internal IP
 // Check the settings with: http://net.ipcalf.com/
