@@ -31,7 +31,7 @@ user_pref("geo.enabled",		false);
 // Whether JS can get information about the network/browser connection
 // Network Information API provides general information about the system's connection type (WiFi, cellar, etc.)
 // https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API
-// https://wicg.github.io/netinfo/
+// https://wicg.github.io/netinfo/#privacy-considerations
 // https://bugzilla.mozilla.org/show_bug.cgi?id=960426
 //user_pref("dom.netinfo.enabled"",		false);
 
