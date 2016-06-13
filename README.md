@@ -242,6 +242,7 @@ Here is a list of the most essential security and privacy enhancing add-ons that
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 * [NoScript](http://noscript.net/)
 * [DuckDuckGo Plus](https://addons.mozilla.org/firefox/addon/duckduckgo-for-firefox/) (instead of Google)
+* [No Resource URI Leak](https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/) (see [#163](https://github.com/pyllyukko/user.js/issues/163))
 
 #### Tracking protection
 
@@ -298,6 +299,7 @@ Online tests
   * [Test page for Firefox's built-in Phishing Protection](http://itisatrap.org/firefox/its-a-trap.html) ("Web forgeries")
   * [Test page for Firefox's built-in Malware Protection](http://itisatrap.org/firefox/its-an-attack.html) (attack page)
   * [Test page for Firefox's built-in Malware Protection](http://itisatrap.org/firefox/unwanted.html) (unwanted software)
+* [Firefox Resources Reader - BrowserLeaks.com](https://www.browserleaks.com/firefox) (see [#163](https://github.com/pyllyukko/user.js/issues/163))
 
 ### HTML5test
 
