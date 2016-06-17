@@ -522,7 +522,10 @@ user_pref("browser.download.useDownloadDir",		false);
 
 // https://wiki.mozilla.org/Privacy/Reviews/New_Tab
 user_pref("browser.newtabpage.enabled",		false);
-// https://support.mozilla.org/en-US/kb/new-tab-page-show-hide-and-customize-top-sites#w_how-do-i-turn-the-new-tab-page-off
+
+/* Open a new tab with your prefs
+See: https://support.mozilla.org/en-US/kb/new-tab-page-show-hide-and-customize-top-sites#w_how-do-i-turn-the-new-tab-page-off
+Examples: "about:blank" = empty  | "about:home" = Firefox Startpage | "google.com/" = Google */
 user_pref("browser.newtab.url",		"about:blank");
 
 // CIS Version 1.2.0 October 21st, 2011 2.1.2 Enable Auto Notification of Outdated Plugins
