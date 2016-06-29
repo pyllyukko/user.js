@@ -261,6 +261,12 @@ user_pref("privacy.trackingprotection.enabled",		true);
 // https://support.mozilla.org/en-US/kb/tracking-protection-pbm
 user_pref("privacy.trackingprotection.pbmode.enabled",		true);
 
+// Resist fingerprinting via window.screen and CSS media queries and other techniques
+// https://bugzil.la/418986
+// https://bugzil.la/1281949
+// https://bugzil.la/1281963
+user_pref("privacy.resistFingerprinting",		true);
+
 // Disable the built-in PDF viewer (CVE-2015-2743)
 // https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2743
 user_pref("pdfjs.disabled",		true);
