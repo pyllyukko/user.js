@@ -710,6 +710,15 @@ user_pref("security.ssl3.ecdhe_ecdsa_aes_256_sha",		true);
 user_pref("security.ssl3.ecdhe_ecdsa_aes_128_gcm_sha256",	true);
 user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		true);
 
+// ChaCha20 and Poly1305. Supported since Firefox 47.
+// https://www.mozilla.org/en-US/firefox/47.0/releasenotes/
+// https://tools.ietf.org/html/rfc7905
+// https://bugzil.la/917571
+// https://bugzil.la/1247860
+// https://cr.yp.to/chacha.html
+user_pref("security.ssl3.ecdhe_ecdsa_chacha20_poly1305_sha256",	true);
+user_pref("security.ssl3.ecdhe_rsa_chacha20_poly1305_sha256",	true);
+
 // Susceptible to the logjam attack - https://weakdh.org/
 user_pref("security.ssl3.dhe_rsa_camellia_256_sha",		false);
 user_pref("security.ssl3.dhe_rsa_aes_256_sha",			false);
