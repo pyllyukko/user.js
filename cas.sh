@@ -451,6 +451,12 @@ do
       REQUIRED_CAs=( "${OPTARG}" )
     ;;
     "C")
+      if [ ! -d /usr/share/ca-certificates ]
+      then
+	echo "error: directory \`/usr/share/ca-certificates' does not exist!"									1>&2
+	echo "       you might be running RH/CentOS, which has different system for CAs. see https://github.com/pyllyukko/user.js/issues/140"	1>&2
+	exit 1
+      fi
       REQUIRED_CAs=( ${BASIC_LIST[*]/#/\/usr\/share\/ca-certificates\/} )
     ;;
     "a") ACTION="import_cas" ;;
