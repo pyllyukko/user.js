@@ -128,6 +128,7 @@ user_pref("browser.fixup.alternate.enabled",			false);
 user_pref("network.proxy.socks_remote_dns",			true);
 
 // We not want to monitoring the connection state of users 
+// https://trac.torproject.org/projects/tor/ticket/18945
 user_pref("network.manage-offline-status",		false);
 
 // http://kb.mozillazine.org/Network.proxy.type
