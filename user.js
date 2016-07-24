@@ -602,7 +602,11 @@ user_pref("security.ssl.enable_ocsp_stapling",			true);
 user_pref("security.OCSP.require",				true);
 
 // https://www.blackhat.com/us-13/briefings.html#NextGen
-user_pref("security.enable_tls_session_tickets",		false);
+// https://media.blackhat.com/us-13/US-13-Daigniere-TLS-Secrets-Slides.pdf
+// https://media.blackhat.com/us-13/US-13-Daigniere-TLS-Secrets-WP.pdf
+// https://bugzil.la/917049
+// https://bugzil.la/967977
+user_pref("security.ssl.disable_session_identifiers",		true);
 
 // TLS 1.[012]
 // http://kb.mozillazine.org/Security.tls.version.max
