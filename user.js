@@ -638,6 +638,10 @@ user_pref("security.ssl.treat_unsafe_negotiation_as_broken",	true);
 // you can test this at https://pinningtest.appspot.com/
 user_pref("security.ssl.errorReporting.automatic",		false);
 
+// http://kb.mozillazine.org/Browser.ssl_override_behavior
+// Pre-populate the current URL but do not pre-fetch the certificate.
+user_pref("browser.ssl_override_behavior",			1);
+
 /******************************************************************************
  * CIPHERS                                                                    *
  *                                                                            *
