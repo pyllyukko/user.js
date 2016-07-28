@@ -131,11 +131,6 @@ user_pref("network.proxy.socks_remote_dns",			true);
 // https://trac.torproject.org/projects/tor/ticket/18945
 user_pref("network.manage-offline-status",		false);
 
-// http://kb.mozillazine.org/Network.proxy.type
-// the default in Firefox for Linux is to use system proxy settings.
-// We change it to direct connection
-//user_pref("network.proxy.type",		0);
-
 // Mixed content stuff
 // https://developer.mozilla.org/en-US/docs/Site_Compatibility_for_Firefox_23#Non-SSL_contents_on_SSL_pages_are_blocked_by_default
 // https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/
