@@ -537,9 +537,6 @@ user_pref("plugins.update.notifyUser",				true);
 // CIS Version 1.2.0 October 21st, 2011 2.1.3 Enable Information Bar for Outdated Plugins
 user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
 
-// CIS Version 1.2.0 October 21st, 2011 2.2.3 Enable Warning of Using Weak Encryption
-user_pref("security.warn_entering_weak",			true);
-
 // CIS Mozilla Firefox 24 ESR v1.0.0 - 3.6 Enable IDN Show Punycode
 // http://kb.mozillazine.org/Network.IDN_show_punycode
 user_pref("network.IDN_show_punycode",				true);
@@ -569,10 +566,6 @@ user_pref("signon.autofillForms",				false);
 
 // do not check if firefox is the default browser
 user_pref("browser.shell.checkDefaultBrowser",			false);
-
-// https://developer.mozilla.org/en/Preferences/Mozilla_preferences_for_uber-geeks
-// see also CVE-2009-3555
-user_pref("security.ssl.warn_missing_rfc5746",			1);
 
 // CIS Version 1.2.0 October 21st, 2011 2.5.3 Disable Prompting for Credential Storage
 user_pref("security.ask_for_password",				0);
