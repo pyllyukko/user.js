@@ -243,6 +243,7 @@ Here is a list of the most essential security and privacy enhancing add-ons that
 * [NoScript](http://noscript.net/)
 * [DuckDuckGo Plus](https://addons.mozilla.org/firefox/addon/duckduckgo-for-firefox/) (instead of Google)
 * [No Resource URI Leak](https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/) (see [#163](https://github.com/pyllyukko/user.js/issues/163))
+* [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
 
 #### Tracking protection
 
