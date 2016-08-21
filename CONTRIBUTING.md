@@ -25,6 +25,7 @@ Pull requests
   * Pay attention to quotes
   * Make sure that the value is of correct type
 * Doublecheck, that it's not already there (e.g. ```grep``` for the stuff you are about to include)
+* When disabling Firefox features/funcionality, try to do it with minimal amount of switches (e.g. if there's a "main on-off" switch for something, it's enough to use that and not to tweak every parameter related to the feature in question)
 
 Removing settings
 -----------------
