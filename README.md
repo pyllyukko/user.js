@@ -67,12 +67,64 @@ There are several parts to all this and they are:
 
 
 
-How to use the user.js file
----------------------------
 
-Just drop the [user.js][1] file to your Firefox profile directory at ````~/.mozilla/firefox/XXXXXXXX.your_profile_name```` and verify that the settings are effective from [about:support](http://kb.mozillazine.org/Troubleshooting_Information_report#Modified_Preferences) (check the "Important Modified Preferences" and "user.js Preferences" sections).
+# How to use the user.js file
 
-If you want to be able to keep your [user.js][1] up-to-date with this repository, you can clone the latter in the main mozilla directory and create a link to the [user.js][1] file from your profile:
+
+## Download
+
+
+Different download methods are available:
+
+ * Clone using git: `git clone https://github.com/pyllyukko/user.js`
+ * Download and extract the [ZIP file](https://github.com/pyllyukko/user.js/archive/master.zip) containing the latest version.
+ * Download the latest `user.js` [directly](https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js)
+
+## Installation
+
+### Install for a single profile
+
+Copy `user.js` in your current user profile, or (recommended) to a fresh, newly created Firefox profile directory.
+
+The file should be located at:
+  * Windows: `%APPDATA%\Roaming\Mozilla\Firefox\*.profilename\user.js`
+  * Linux: `~/.mozilla/firefox/*.profilename/user.js`
+  * Mac: ???
+  * Android: `/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name` and see 
+[issue #14](https://github.com/pyllyukko/user.js/issues/14)
+  * Jolla + Alien Dalvik: `/opt/alien/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name`
+
+Do note that these settings alter your browser behaviour quite a bit, so it is recommended to either create a completely new [profile][15] for Firefox or backup your existing profile directory before putting the ```user.js``` file in place.
+
+### Install system-wide
+
+Create `local-settings.js` in Firefox installation directory, with the following contents:
+
+```
+pref("general.config.obscure_value", 0);
+pref("general.config.filename", "mozilla.cfg");
+```
+
+This file should be located at:
+ * Win: `C:\Program Files (x86)\Mozilla Firefox\default\pref\`
+ * Linux: **This file is not required**
+ * Mac: ???
+
+
+In `user.js`, Change `user_pref(` to  one of:
+ * `pref(` (the value will be used as default value on Firefox profile creation, it can be changed in about:config)
+ * `lockPref(` (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings. 
+
+Copy `user.js` to the Firefox installation directory. The file should be located at:
+
+  * Win: `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`
+  * Linux: `/etc/firefox/firefox.js`
+  * Mac: ???
+
+### Updating using git
+
+For any of the above methods, you can keep your browser's `user.js` with the latest version available here: Clone the repository, and create a symoblic link from the appropriate location to the `user.js` file in the repository. Just run `git pull` in the repository when you want to update, then restart Firefox:
+
 ````
 cd ~/.mozilla/firefox
 git clone 'https://github.com/pyllyukko/user.js.git'
@@ -80,23 +132,11 @@ cd XXXXXXXX.your_profile_name
 ln -s ../user.js/user.js user.js
 ````
 
-Do note that these settings alter your browser behaviour quite a bit, so it is recommended to either create a completely new [profile][15] for Firefox or backup your existing profile directory before putting the ```user.js``` file in place.
+### Verifying
 
-Whenever you want to update your local copy of the repository, just use ````git pull```` and restart Firefox.
+Verify that the settings are effective from [about:support](http://kb.mozillazine.org/Troubleshooting_Information_report#Modified_Preferences) (check the "Important Modified Preferences" and "user.js Preferences" sections).
 
-In case you want to have some customizations that contradict settings in this user.js, you can follow the advice on [this comment](https://github.com/pyllyukko/user.js/issues/75#issuecomment-204705081).
-
-For an alternative method to deploy these settings and "locking them", see [issue #134](https://github.com/pyllyukko/user.js/issues/134).
-
-### Android
-
-On [Firefox for Android](https://www.mozilla.org/en-US/firefox/android/) (Fennec), you need to drop the file to ```/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name```. If you use [Jolla](https://jolla.com/) and run Firefox through Alien Dalvik, the location needs to be prefixed with ```/opt/alien```.
-
-See [issue #14](https://github.com/pyllyukko/user.js/issues/14) for further details on using this ```user.js``` file with Firefox for Android.
-
-### Windows
-
-On Windows, you need to drop the ```user.js``` file to ```%appdata%\Mozilla\Firefox\Profiles\XXXXXXXX.your_profile_name```.
+--------------------------------------------
 
 What does it do?
 ----------------
