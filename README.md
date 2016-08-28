@@ -111,7 +111,7 @@ This file should be located at:
 
 | OS      | Path                                                   |
 | ------- | ------------------------------------------------------ |
-| Windown | `C:\Program Files (x86)\Mozilla Firefox\default\pref\` |
+| Windows | `C:\Program Files (x86)\Mozilla Firefox\default\pref\` |
 | Linux   |**This file is not required**                           |
 | Mac     | ???                                                    |
 
