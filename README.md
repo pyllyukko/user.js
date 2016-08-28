@@ -90,7 +90,7 @@ The file should be located at:
 
 | OS                         | Path                                                                                                                                          |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| Windows                    | `%APPDATA%\Roaming\Mozilla\Firefox\XXXXXXXX.your_profile_name\user.js`                                                                        |
+| Windows 7                  | `%APPDATA%\Mozilla\Firefox\Profiles\XXXXXXXX.your_profile_name\user.js`                                                                       |
 | Linux                      | `~/.mozilla/firefox/XXXXXXXX.your_profile_name/user.js`                                                                                       |
 | OS X                       | ???                                                                                                                                           |
 | Android                    | `/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name` and see [issue #14](https://github.com/pyllyukko/user.js/issues/14) |
