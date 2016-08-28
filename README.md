@@ -87,12 +87,14 @@ Different download methods are available:
 Copy `user.js` in your current user profile, or (recommended) to a fresh, newly created Firefox profile directory.
 
 The file should be located at:
-  * Windows: `%APPDATA%\Roaming\Mozilla\Firefox\*.profilename\user.js`
-  * Linux: `~/.mozilla/firefox/*.profilename/user.js`
-  * Mac: ???
-  * Android: `/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name` and see 
-[issue #14](https://github.com/pyllyukko/user.js/issues/14)
-  * Jolla + Alien Dalvik: `/opt/alien/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name`
+
+| OS                   | Path                                                                                                                                          |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Windows              | `%APPDATA%\Roaming\Mozilla\Firefox\*.profilename\user.js`                                                                                     |
+| Linux                | `~/.mozilla/firefox/*.profilename/user.js`                                                                                                    |
+| Mac                  | ???                                                                                                                                           |
+| Android              | `/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name` and see [issue #14](https://github.com/pyllyukko/user.js/issues/14) |
+| Jolla + Alien Dalvik | `/opt/alien/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name`                                                           |
 
 Do note that these settings alter your browser behaviour quite a bit, so it is recommended to either create a completely new [profile][15] for Firefox or backup your existing profile directory before putting the ```user.js``` file in place.
 
@@ -106,9 +108,12 @@ pref("general.config.filename", "mozilla.cfg");
 ```
 
 This file should be located at:
- * Win: `C:\Program Files (x86)\Mozilla Firefox\default\pref\`
- * Linux: **This file is not required**
- * Mac: ???
+
+| OS      | Path                                                   |
+| ------- | ------------------------------------------------------ |
+| Windown | `C:\Program Files (x86)\Mozilla Firefox\default\pref\` |
+| Linux   |**This file is not required**                           |
+| Mac     | ???                                                    |
 
 
 In `user.js`, Change `user_pref(` to  one of:
@@ -117,9 +122,11 @@ In `user.js`, Change `user_pref(` to  one of:
 
 Copy `user.js` to the Firefox installation directory. The file should be located at:
 
-  * Win: `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`
-  * Linux: `/etc/firefox/firefox.js`
-  * Mac: ???
+| OS      | Path                                                   |
+| ------- | ------------------------------------------------------ |
+| Windows | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`   |
+| Linux   | `/etc/firefox/firefox.js`                              |
+| Mac     | ???                                                    |
 
 ### Updating using git
 
