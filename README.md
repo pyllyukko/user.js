@@ -92,7 +92,7 @@ The file should be located at:
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | Windows 7                  | `%APPDATA%\Mozilla\Firefox\Profiles\XXXXXXXX.your_profile_name\user.js`                                                                       |
 | Linux                      | `~/.mozilla/firefox/XXXXXXXX.your_profile_name/user.js`                                                                                       |
-| OS X                       | ???                                                                                                                                           |
+| OS X                       | `~/Library/Application Support/Firefox/Profiles/XXXXXXXX.your_profile_name`                                                                   |
 | Android                    | `/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name` and see [issue #14](https://github.com/pyllyukko/user.js/issues/14) |
 | Sailfish OS + Alien Dalvik | `/opt/alien/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name`                                                           |
 
@@ -109,24 +109,24 @@ pref("general.config.filename", "mozilla.cfg");
 
 This file should be located at:
 
-| OS      | Path                                                   |
-| ------- | ------------------------------------------------------ |
-| Windows | `C:\Program Files (x86)\Mozilla Firefox\default\pref\` |
-| Linux   |**This file is not required**                           |
-| OS X    | ???                                                    |
+| OS      | Path                                                         |
+| ------- | ------------------------------------------------------------ |
+| Windows | `C:\Program Files (x86)\Mozilla Firefox\default\pref\`       |
+| Linux   |**This file is not required**                                 |
+| OS X    | `/Applications/Firefox.app/Contents/Resources/defaults/pref` |
 
 
 In `user.js`, Change `user_pref(` to  one of:
  * `pref(` (the value will be used as default value on Firefox profile creation, it can be changed in about:config)
- * `lockPref(` (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings. 
+ * `lockPref(` (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings.
 
 Copy `user.js` to the Firefox installation directory. The file should be located at:
 
-| OS      | Path                                                   |
-| ------- | ------------------------------------------------------ |
-| Windows | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`   |
-| Linux   | `/etc/firefox/firefox.js`                              |
-| OS X    | ???                                                    |
+| OS      | Path                                                       |
+| ------- | ---------------------------------------------------------- |
+| Windows | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`       |
+| Linux   | `/etc/firefox/firefox.js`                                  |
+| OS X    | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
 
 ### Updating using git
 
