@@ -157,11 +157,6 @@ user_pref("security.fileuri.strict_origin_policy",		true);
 // http://kb.mozillazine.org/Browser.urlbar.filter.javascript
 user_pref("browser.urlbar.filter.javascript",			true);
 
-// Disable HTML frames
-// WARNING: might make your life difficult!
-// NOTE: to be removed(?) see: https://bugzilla.mozilla.org/show_bug.cgi?id=729030
-//user_pref("browser.frames.enabled",		false);
-
 // http://asmjs.org/
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-29/
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-50/
