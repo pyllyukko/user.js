@@ -99,6 +99,7 @@ user_pref("dom.webnotifications.enabled",			false);
 // http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled",					true);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1171228
+// https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_debug_renderer_info
 user_pref("webgl.enable-debug-renderer-info",			false);
 // somewhat related...
 //user_pref("pdfjs.enableWebGL",		false);
