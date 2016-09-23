@@ -40,6 +40,7 @@ user_pref("dom.netinfo.enabled",				false);
 // https://wiki.mozilla.org/Media/WebRTC/Privacy
 user_pref("media.peerconnection.ice.default_address_only",	true); // Firefox < 51
 user_pref("media.peerconnection.ice.no_host",			true); // Firefox >= 51
+// Disable WebRTC entirely
 user_pref("media.peerconnection.enabled",			false);
 
 // getUserMedia
