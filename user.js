@@ -35,6 +35,10 @@ user_pref("geo.enabled",					false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=960426
 user_pref("dom.netinfo.enabled",				false);
 
+// disable Web Audio API
+// https://bugzil.la/1288359
+user_pref("dom.netinfo.enabled",				false);
+
 // Don't reveal your internal IP
 // Check the settings with: http://net.ipcalf.com/
 // https://wiki.mozilla.org/Media/WebRTC/Privacy
