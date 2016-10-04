@@ -291,6 +291,7 @@ Here is a list of the most essential security and privacy enhancing add-ons that
 * [Certificate Patrol][4]
   * I recommend setting the 'Store certificates even when in [Private Browsing][8] Mode' to get full benefit out of certpatrol, even though it stores information about the sites you visit
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
+* [Smart HTTPS](https://addons.mozilla.org/firefox/addon/smart-https/)
 * [NoScript](http://noscript.net/)
 * [DuckDuckGo Plus](https://addons.mozilla.org/firefox/addon/duckduckgo-for-firefox/) (instead of Google)
 * [No Resource URI Leak](https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/) (see [#163](https://github.com/pyllyukko/user.js/issues/163))
