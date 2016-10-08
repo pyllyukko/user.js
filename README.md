@@ -405,7 +405,7 @@ There's also a ready made list built in into the script, that has 28 root CAs in
 
 ### Examples
 
-**Do note**, that in order for all this to work, you **MUST** remove or rename Firefox's default CA list that is stored inside *libnssckbi.so* as described [here][5].
+**Do note**, that in order for all this to work, you **MUST** remove or rename Firefox's default CA list that is stored inside ```libnssckbi.so``` as described [here][5].
 
 #### Check the current list of CAs in cert8.db
 
