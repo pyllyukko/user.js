@@ -123,11 +123,12 @@ In `user.js`, Change `user_pref(` to  one of:
 
 Copy `user.js` to the Firefox installation directory. The file should be located at:
 
-| OS      | Path                                                       |
-| ------- | ---------------------------------------------------------- |
-| Windows | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`       |
-| Linux   | `/etc/firefox/firefox.js`                                  |
-| OS X    | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
+| OS             | Path                                                       |
+| -------------- | ---------------------------------------------------------- |
+| Windows        | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`       |
+| Linux          | `/etc/firefox/firefox.js`                                  |
+| Linux (Debian) | `/etc/firefox-esr/firefox-esr.js`                          |
+| OS X           | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
 
 ### Updating using git
 
