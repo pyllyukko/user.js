@@ -118,7 +118,7 @@ This file should be located at:
 
 
 In `user.js`, Change `user_pref(` to  one of:
- * `pref(` (the value will be used as default value on Firefox profile creation, it can be changed in about:config)
+ * `pref(` (the value will be used as default value on Firefox profile creation, it can be changed in `about:config`)
  * `lockPref(` (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings.
 
 Copy `user.js` to the Firefox installation directory. The file should be located at:
