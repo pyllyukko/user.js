@@ -23,8 +23,11 @@
 // http://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",					false);
 
-// Disable dom.mozTCPSocket.enabled on ESR
-user_pref("dom.mozTCPSocket.enabled",		false);
+// Disable dom.mozTCPSocket.enabled (raw TCP socket support)
+// https://trac.torproject.org/projects/tor/ticket/18863
+// https://www.mozilla.org/en-US/security/advisories/mfsa2015-97/
+// https://developer.mozilla.org/docs/Mozilla/B2G_OS/API/TCPSocket
+user_pref("dom.mozTCPSocket.enabled",				false);
 
 // http://kb.mozillazine.org/Dom.storage.enabled
 // http://dev.w3.org/html5/webstorage/#dom-localstorage
