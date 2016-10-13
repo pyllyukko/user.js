@@ -420,8 +420,6 @@ user_pref("security.sri.enable",				true);
 // Send a referer header with the target URI as the source
 //user_pref("network.http.sendRefererHeader",			1);
 user_pref("network.http.referer.spoofSource",			true);
-// CIS Version 1.2.0 October 21st, 2011 2.4.3 Disable Referer from an SSL Website
-user_pref("network.http.sendSecureXSiteReferrer",		false);
 
 // CIS 2.5.1 Accept Only 1st Party Cookies
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior#1
