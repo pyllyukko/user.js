@@ -135,6 +135,10 @@ user_pref("clipboard.autocopy",					false);
 // http://kb.mozillazine.org/Keyword.enabled#Caveats
 user_pref("keyword.enabled",					false);
 
+// Don't trim HTTP off of URLs in the address bar.
+// https://bugzilla.mozilla.org/show_bug.cgi?id=665580
+user_pref("browser.urlbar.trimURLs",				false);
+
 // Don't try to guess where i'm trying to go!!! e.g.: "http://foo" -> "http://(prefix)foo(suffix)"
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
 user_pref("browser.fixup.alternate.enabled",			false);
