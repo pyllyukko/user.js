@@ -610,7 +610,7 @@ user_pref("security.tls.version.max",				3);
 // "2. Strict. Pinning is always enforced."
 user_pref("security.cert_pinning.enforcement_level",		2);
 
-// Kill SHA1 certificates
+// allow SHA-1 only if notBefore < 2016-01-01
 // https://bugzilla.mozilla.org/show_bug.cgi?id=942515#c32
 user_pref("security.pki.sha1_enforcement_level",		2);
 
