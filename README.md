@@ -284,6 +284,7 @@ Here's some other tips how you can further harden Firefox:
 * Create different [profiles][15] for different purposes
 * Change the Firefox's built-in tracking protection to use the [strict list](https://support.mozilla.org/en-US/kb/tracking-protection-pbm?as=u#w_change-your-block-list)
 * Change the timezone for Firefox by using the ```TZ``` environment variable (see [here](https://wiki.archlinux.org/index.php/Firefox_privacy#Change_browser_time_zone)) to reduce it's value in browser fingerprinting
+* Completely block unencrypted communications using the `HTTPS Everywhere` toolbar button > `Block all unencrypted requests`.
 
 ### Add-ons
 
