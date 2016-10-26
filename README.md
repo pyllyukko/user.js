@@ -353,6 +353,7 @@ Online tests
   * [Test page for Firefox's built-in Malware Protection](http://itisatrap.org/firefox/its-an-attack.html) (attack page)
   * [Test page for Firefox's built-in Malware Protection](http://itisatrap.org/firefox/unwanted.html) (unwanted software)
 * [Firefox Resources Reader - BrowserLeaks.com](https://www.browserleaks.com/firefox) (see [#163](https://github.com/pyllyukko/user.js/issues/163))
+* [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp)
 
 ### HTML5test
 
