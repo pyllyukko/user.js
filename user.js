@@ -610,9 +610,9 @@ user_pref("security.tls.version.max",				3);
 // "2. Strict. Pinning is always enforced."
 user_pref("security.cert_pinning.enforcement_level",		2);
 
-// allow SHA-1 only if notBefore < 2016-01-01
-// https://bugzilla.mozilla.org/show_bug.cgi?id=942515#c32
-user_pref("security.pki.sha1_enforcement_level",		2);
+// disallow SHA-1
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1302140
+//user_pref("security.pki.sha1_enforcement_level",		1);
 
 // https://wiki.mozilla.org/Security:Renegotiation#security.ssl.treat_unsafe_negotiation_as_broken
 // see also CVE-2009-3555
