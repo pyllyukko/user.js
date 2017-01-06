@@ -9,7 +9,7 @@ This is a [user.js][1] configuration file for Mozilla Firefox that's supposed to
 ### Main goals
 
 * Limit the possibilities to track the user through [web analytics](https://en.wikipedia.org/wiki/Web_analytics)
-* Harden the browser, so it doesn't spill its guts when asked (have you seen what [BeEF](http://beefproject.com/) can do?)
+* Harden the browser, so it doesn't spill its guts when asked (have you seen what [BeEF](https://beefproject.com/) can do?)
 * Limit the browser from storing anything even remotely sensitive persistently (mostly just making sure [private browsing][8] is always on)
 * Make sure the browser doesn't reveal too much information to [shoulder surfers](https://en.wikipedia.org/wiki/Shoulder_surfing_%28computer_security%29)
 * Harden the browser's encryption (cipher suites, protocols, trusted CAs)
@@ -185,7 +185,7 @@ Here are some of the "highlights" from each category. For a full list of setting
 
 ### Extensions / plugins related
 
-It is common for [client side attacks](https://www.offensive-security.com/metasploit-unleashed/client-side-attacks/) to target [browser extensions][14], instead of the browser itself (just look at all those [Java](https://en.wikipedia.org/wiki/Criticism_of_Java#Security) and [Flash](http://www.cvedetails.com/vulnerability-list/vendor_id-53/product_id-6761/Adobe-Flash-Player.html) vulnerabilities). Make sure your extensions and plugins are always up-to-date.
+It is common for [client side attacks](https://www.offensive-security.com/metasploit-unleashed/client-side-attacks/) to target [browser extensions][14], instead of the browser itself (just look at all those [Java](https://en.wikipedia.org/wiki/Criticism_of_Java#Security) and [Flash](https://www.cvedetails.com/vulnerability-list/vendor_id-53/product_id-6761/Adobe-Flash-Player.html) vulnerabilities). Make sure your extensions and plugins are always up-to-date.
 
 * Disable Adobe Flash
 * Enable [click to play](https://wiki.mozilla.org/Firefox/Click_To_Play)
@@ -293,7 +293,7 @@ Here is a list of the most essential security and privacy enhancing add-ons that
 * [Certificate Patrol][4]
   * I recommend setting the 'Store certificates even when in [Private Browsing][8] Mode' to get full benefit out of certpatrol, even though it stores information about the sites you visit
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere) and [HTTPS by default](https://addons.mozilla.org/firefox/addon/https-by-default/)
-* [NoScript](http://noscript.net/)
+* [NoScript](https://noscript.net/)
 * [DuckDuckGo Plus](https://addons.mozilla.org/firefox/addon/duckduckgo-for-firefox/) (instead of Google)
 * [No Resource URI Leak](https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/) (see [#163](https://github.com/pyllyukko/user.js/issues/163))
 * [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
@@ -314,7 +314,7 @@ See also:
 * [Web Browser Addons](https://prism-break.org/en/subcategories/gnu-linux-web-browser-addons/) section in [PRISM break](https://prism-break.org/)
 * [\[Talk\] Ghostery Vs. Disconnect.me Vs. uBlock #16](https://github.com/pyllyukko/user.js/issues/16)
 * [Ghostery sneaks in new promotional messaging system #47](https://github.com/pyllyukko/user.js/issues/47)
-* [Are We Private Yet?](http://www.areweprivateyet.com/) site (made by Ghostery)
+* [Are We Private Yet?](https://web.archive.org/web/20150801031411/http://www.areweprivateyet.com/) site (made by Ghostery, archived)
 * [Tracking Protection in Firefox For Privacy and Performance](https://kontaxis.github.io/trackingprotectionfirefox/#papers) paper
 * [How Tracking Protection works in Firefox](https://feeding.cloud.geek.nz/posts/how-tracking-protection-works-in-firefox/)
 
@@ -330,35 +330,35 @@ Online tests
 * [Panopticlick](https://panopticlick.eff.org/)
 * [Filldisk](http://www.filldisk.com/)
 * [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
-* [Evercookie](http://samy.pl/evercookie/)
+* [Evercookie](https://samy.pl/evercookie/)
 * [Mozilla Plugin Check][14]
 * [BrowserSpy.dk](http://browserspy.dk/)
 * [Testing mixed content](https://people.mozilla.org/~tvyas/mixedcontent.html)
   * [Similar from Microsoft](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm)
-* [WebRTC stuff](http://mozilla.github.io/webrtc-landing/)
+* [WebRTC stuff](https://mozilla.github.io/webrtc-landing/)
 * [Flash Player Version](https://www.adobe.com/software/flash/about/) from Adobe
 * [Verify your installed Java Version](https://www.java.com/en/download/installed.jsp)
   * Protip: Don't use Oracle's Java!! But if you really need it, update it regulary!
 * [IP Check](http://ip-check.info/?lang=en)
-* [Onion test for CORS and WebSocket](http://cure53.de/leak/onion.php)
-* [Firefox Addon Detector](http://thehackerblog.com/addon_scanner/)
-  * [Blog post](http://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)
-* [Official WebGL check](http://get.webgl.org/)
+* [Onion test for CORS and WebSocket](https://cure53.de/leak/onion.php)
+* [Firefox Addon Detector](https://thehackerblog.com/addon_scanner/)
+  * [Blog post](https://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)
+* [Official WebGL check](https://get.webgl.org/)
 * [AudioContext Fingerprint Test Page](https://audiofingerprint.openwpm.com/)
 * [battery.js](https://pstadler.sh/battery.js/)
 * [Battery API](https://robnyman.github.io/battery/)
 * [AmIUnique](https://amiunique.org/) ([Source](https://github.com/DIVERSIFY-project/amiunique))
 * itisatrap.org:
   * [Test page for Firefox's built-in Tracking Protection](https://itisatrap.org/firefox/its-a-tracker.html)
-  * [Test page for Firefox's built-in Phishing Protection](http://itisatrap.org/firefox/its-a-trap.html) ("Web forgeries")
-  * [Test page for Firefox's built-in Malware Protection](http://itisatrap.org/firefox/its-an-attack.html) (attack page)
-  * [Test page for Firefox's built-in Malware Protection](http://itisatrap.org/firefox/unwanted.html) (unwanted software)
+  * [Test page for Firefox's built-in Phishing Protection](https://itisatrap.org/firefox/its-a-trap.html) ("Web forgeries")
+  * [Test page for Firefox's built-in Malware Protection](https://itisatrap.org/firefox/its-an-attack.html) (attack page)
+  * [Test page for Firefox's built-in Malware Protection](https://itisatrap.org/firefox/unwanted.html) (unwanted software)
 * [Firefox Resources Reader - BrowserLeaks.com](https://www.browserleaks.com/firefox) (see [#163](https://github.com/pyllyukko/user.js/issues/163))
 * [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp)
 
 ### HTML5test
 
-[HTML5test](http://html5test.com/)
+[HTML5test](https://html5test.com/)
 
 Here's a comparison of the various supported HTML5 features between recent Firefox with these settings, stock Firefox and the Tor Browser:
 
@@ -374,7 +374,7 @@ There are plenty! Hardening your browser will break your interwebs. Here's some 
 
 * If you get "TypeError: localStorage is null", you probably need to enable [local storage][3] (``dom.storage.enabled == true``)
 * If you get "sec\_error\_ocsp\_invalid\_signing\_cert", it probably means that you don't have the required CA
-* If you get "ssl\_error\_unsafe\_negotiation", it means the server is vulnerable to [CVE-2009-3555](http://www.cvedetails.com/cve/CVE-2009-3555) and you need to disable [security.ssl.require\_safe\_negotiation][2] (not enabled currently)
+* If you get "ssl\_error\_unsafe\_negotiation", it means the server is vulnerable to [CVE-2009-3555](https://www.cvedetails.com/cve/CVE-2009-3555) and you need to disable [security.ssl.require\_safe\_negotiation][2] (not enabled currently)
 * If you set browser.frames.enabled to false, probably a whole bunch of websites will break
 * Some sites require the [referer](https://en.wikipedia.org/wiki/HTTP_referer) header (usually setting ``network.http.sendRefererHeader == 2`` is enough to overcome this and the referer is still "[spoofed][9]")
 * The [IndexedDB](https://en.wikipedia.org/wiki/Indexed_Database_API) is something that could potentially be used to track users, but it is also required by some browser add-ons in recent versions of Firefox. It would be best to disable this feature just to be on the safe side, but it is currently enabled, so that add-ons would work. See the following links for further info:
@@ -506,20 +506,20 @@ For more information, see <https://github.com/pyllyukko/user.js/blob/master/CONT
 References
 ----------
 
-* [CIS](http://www.cisecurity.org/):
-  * [CIS Mozilla Firefox Benchmark v1.2.0 October 21st, 2011](http://benchmarks.cisecurity.org/downloads/show-single/?file=firefox.120)
-  * [CIS Mozilla Firefox 24 ESR Benchmark v1.0.0 - 06-29-2014](http://benchmarks.cisecurity.org/downloads/show-single/?file=firefoxesr24.100)
+* [CIS](https://www.cisecurity.org/):
+  * [CIS Mozilla Firefox Benchmark v1.2.0 October 21st, 2011](https://benchmarks.cisecurity.org/downloads/show-single/?file=firefox.120)
+  * [CIS Mozilla Firefox 24 ESR Benchmark v1.0.0 - 06-29-2014](https://benchmarks.cisecurity.org/downloads/show-single/?file=firefoxesr24.100)
 * [Security Advisories for Firefox][10]
 * [The Design and Implementation of the Tor Browser](https://www.torproject.org/projects/torbrowser/design/)
 * [Bulletproof SSL and TLS](https://www.feistyduck.com/books/bulletproof-ssl-and-tls/)
 * [Polaris](https://wiki.mozilla.org/Polaris)
-* [Mozilla Included CA Certificate List](http://www.mozilla.org/projects/security/certs/included)
+* [Mozilla Included CA Certificate List](https://wiki.mozilla.org/CA:IncludedCAs)
   * https://wiki.mozilla.org/CA:Problematic_Practices
 * [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/)
 * [Mozilla Security Blog](https://blog.mozilla.org/security/category/security/)
 * [Security and privacy-related preferences](http://kb.mozillazine.org/Category:Security_and_privacy-related_preferences)
 * [How to stop Firefox from making automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections)
-* [Diff between various Firefox .js configurations in upcoming releases](http://cat-in-136.github.io/)
+* [Diff between various Firefox .js configurations in upcoming releases](https://cat-in-136.github.io/)
 * [Mozilla Firefox Release Plan](https://wiki.mozilla.org/RapidRelease/Calendar)
 * [Advices from Mozilla Firefox on privacy and government surveillance](https://www.mozilla.org/en-US/teach/smarton/surveillance/)
 
@@ -533,8 +533,8 @@ References
 [8]: https://support.mozilla.org/en-US/kb/Private%20Browsing
 [9]: https://bugzilla.mozilla.org/show_bug.cgi?id=822869
 [10]: https://www.mozilla.org/security/known-vulnerabilities/firefox.html
-[11]: http://www.entrust.net/developer/index.cfm
+[11]: https://www.entrust.com/products/developer-api-standards/
 [12]: https://support.mozilla.org/en-US/kb/tracking-protection-firefox
 [13]: https://www.mozilla.org/en-US/lightbeam/
 [14]: https://www.mozilla.org/en-US/plugincheck/
-[15]: http://mzl.la/NYhKHH
+[15]: https://mzl.la/NYhKHH
