@@ -20,7 +20,7 @@
  ******************************************************************************/
 
 // disable Location-Aware Browsing
-// http://www.mozilla.org/en-US/firefox/geolocation/
+// https://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",					false);
 
 // Disable dom.mozTCPSocket.enabled (raw TCP socket support)
@@ -30,7 +30,7 @@ user_pref("geo.enabled",					false);
 user_pref("dom.mozTCPSocket.enabled",				false);
 
 // http://kb.mozillazine.org/Dom.storage.enabled
-// http://dev.w3.org/html5/webstorage/#dom-localstorage
+// https://html.spec.whatwg.org/multipage/webstorage.html
 // you can also see this with Panopticlick's "DOM localStorage"
 //user_pref("dom.storage.enabled",		false);
 
@@ -97,7 +97,7 @@ user_pref("browser.send_pings.require_same_host",		true);
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
 
 // Disable gamepad input
-// http://www.w3.org/TR/gamepad/
+// https://www.w3.org/TR/gamepad/
 user_pref("dom.gamepad.enabled",				false);
 
 // Disable virtual reality devices
@@ -108,7 +108,7 @@ user_pref("dom.vr.enabled",					false);
 user_pref("dom.webnotifications.enabled",			false);
 
 // disable webGL
-// http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
+// https://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled",					true);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1171228
 // https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_debug_renderer_info
@@ -197,7 +197,7 @@ user_pref("media.video_stats.enabled",				false);
 user_pref("general.buildID.override",				"20100101");
 
 // Prevent font fingerprinting
-// http://www.browserleaks.com/fonts
+// https://browserleaks.com/fonts
 // https://github.com/pyllyukko/user.js/issues/120
 user_pref("browser.display.use_document_fonts",			0);
 
@@ -376,7 +376,7 @@ user_pref("browser.urlbar.suggest.searches",			false);
 user_pref("browser.casting.enabled",				false);
 
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_media-capabilities
-// http://andreasgal.com/2014/10/14/openh264-now-in-firefox/
+// https://andreasgal.com/2014/10/14/openh264-now-in-firefox/
 user_pref("media.gmp-gmpopenh264.enabled",			false);
 user_pref("media.gmp-manager.url",				"");
 
@@ -413,7 +413,7 @@ user_pref("security.csp.enable",				true);
 user_pref("security.sri.enable",				true);
 
 // DNT HTTP header
-// http://dnt.mozilla.org/
+// https://www.mozilla.org/en-US/firefox/dnt/
 // https://en.wikipedia.org/wiki/Do_not_track_header
 // https://dnt-dashboard.mozilla.org
 // https://github.com/pyllyukko/user.js/issues/11
@@ -548,13 +548,13 @@ user_pref("network.IDN_show_punycode",				true);
 user_pref("browser.urlbar.autoFill",				false);
 user_pref("browser.urlbar.autoFill.typed",			false);
 
-// http://www.labnol.org/software/browsers/prevent-firefox-showing-bookmarks-address-location-bar/3636/
+// https://www.labnol.org/software/browsers/prevent-firefox-showing-bookmarks-address-location-bar/3636/
 // http://kb.mozillazine.org/Browser.urlbar.maxRichResults
 // "Setting the preference to 0 effectively disables the Location Bar dropdown entirely."
 user_pref("browser.urlbar.maxRichResults",			0);
 
 // https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/
-// http://dbaron.org/mozilla/visited-privacy
+// https://dbaron.org/mozilla/visited-privacy
 user_pref("layout.css.visited_links_enabled",			false);
 
 // http://kb.mozillazine.org/Places.frecency.unvisited%28place_type%29Bonus
