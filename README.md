@@ -330,6 +330,7 @@ Online tests
 * [Panopticlick](https://panopticlick.eff.org/)
 * [Filldisk](http://www.filldisk.com/)
 * [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
+* [How's My SSL](https://www.howsmyssl.com/)
 * [Evercookie](https://samy.pl/evercookie/)
 * [Mozilla Plugin Check][14]
 * [BrowserSpy.dk](http://browserspy.dk/)
