@@ -19,6 +19,13 @@
  *                                                                            *
  ******************************************************************************/
 
+// Protection against Javascript exploits to block eval() 
+// See: https://hackademix.net/2011/09/29/script-surrogates-quick-reference/
+//noscript.surrogate.noeval.replacement,		window.eval = null;document.eval=null;
+//noscript.surrogate.noeval.sources,		@^http://[a-z]+[^/]+\.[a-z]+(?:/|$);
+//noscript.surrogate.noeval.exceptions;
+
+
 // disable Location-Aware Browsing
 // https://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",					false);
