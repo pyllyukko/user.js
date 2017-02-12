@@ -357,6 +357,12 @@ Online tests
 * [Firefox Resources Reader - BrowserLeaks.com](https://www.browserleaks.com/firefox) (see [#163](https://github.com/pyllyukko/user.js/issues/163))
 * [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp)
 
+Certificate Checks
+------------------
+
+* [Check for dangerous eDellRoot certificate](https://edell.tlsfun.de)
+
+
 ### HTML5test
 
 [HTML5test](https://html5test.com/)
