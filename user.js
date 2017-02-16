@@ -606,7 +606,7 @@ user_pref("security.tls.version.min",				1);
 user_pref("security.tls.version.max",				4);
 
 // TLS version fallback
-user_pref("security.tls.version.fallback-limit", 3);
+user_pref("security.tls.version.fallback-limit",		3);
 
 // pinning
 // https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning#How_to_use_pinning
