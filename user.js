@@ -19,6 +19,9 @@
  *                                                                            *
  ******************************************************************************/
 
+// Disable DOM Push additional URL
+user_pref("dom.push.serverURL", "")
+
 // disable Location-Aware Browsing
 // https://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",					false);
