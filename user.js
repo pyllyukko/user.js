@@ -214,6 +214,11 @@ user_pref("browser.display.use_document_fonts",			0);
  *                                                                            *
  ******************************************************************************/
 
+// Ensure you have a security delay when installing add-ons (milliseconds)
+// http://kb.mozillazine.org/Disable_extension_install_delay_-_Firefox
+// http://www.squarefree.com/2004/07/01/race-conditions-in-security-dialogs/
+user_pref("security.dialog_enable_delay",			1000);
+
 // Require signatures
 //user_pref("xpinstall.signatures.required",		true);
 
