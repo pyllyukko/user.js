@@ -19,6 +19,10 @@
  *                                                                            *
  ******************************************************************************/
 
+// Disable "Are you sure you want to leave this page?" popups
+// https://support.mozilla.org/en-US/questions/1043508
+user_pref("dom.disable_beforeunload",				true);
+
 // disable Location-Aware Browsing
 // https://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",					false);
