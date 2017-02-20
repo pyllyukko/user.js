@@ -19,6 +19,10 @@
  *                                                                            *
  ******************************************************************************/
 
+// Make sure the User Timing API does not provide a new high resolution timestamp
+// https://trac.torproject.org/projects/tor/ticket/16336
+user_pref("dom.enable_user_timing",				false);
+
 // Disable "Are you sure you want to leave this page?" popups
 // https://support.mozilla.org/en-US/questions/1043508
 user_pref("dom.disable_beforeunload",				true);
