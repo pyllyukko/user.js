@@ -23,10 +23,6 @@
 // https://trac.torproject.org/projects/tor/ticket/16336
 user_pref("dom.enable_user_timing",				false);
 
-// Disable "Are you sure you want to leave this page?" popups
-// https://support.mozilla.org/en-US/questions/1043508
-user_pref("dom.disable_beforeunload",				true);
-
 // disable Location-Aware Browsing
 // https://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",					false);
@@ -532,6 +528,12 @@ user_pref("browser.pagethumbnails.capturing_disabled",		true);
 
 // Webpages will not be able to affect the right-click menu
 //user_pref("dom.event.contextmenu.enabled",		false);
+
+// Disable "Are you sure you want to leave this page?" popups on page close
+// https://support.mozilla.org/en-US/questions/1043508
+// Does not prevent JS leaks of the page close event.
+// https://developer.mozilla.org/en-US/docs/Web/Events/beforeunload
+//user_pref("dom.disable_beforeunload",    true);
 
 // CIS 2.3.2 Disable Downloading on Desktop
 user_pref("browser.download.folderList",			2);
