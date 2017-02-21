@@ -500,6 +500,10 @@ user_pref("browser.cache.disk_cache_ssl",			false);
 // CIS Version 1.2.0 October 21st, 2011 2.5.2 Disallow Credential Storage
 user_pref("signon.rememberSignons",				false);
 
+// OWASP ASVS V9.1
+// https://bugzilla.mozilla.org/show_bug.cgi?id=956906
+user_pref("signon.storeWhenAutocompleteOff",			false);
+
 // CIS Version 1.2.0 October 21st, 2011 2.5.5 Delete Download History
 // Zero (0) is an indication that no download history is retained for the current profile.
 user_pref("browser.download.manager.retention",			0);
