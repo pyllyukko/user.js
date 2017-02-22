@@ -80,6 +80,7 @@ user_pref("media.webspeech.recognition.enable",			false);
 // Disable getUserMedia screen sharing
 // https://mozilla.github.io/webrtc-landing/gum_test.html
 user_pref("media.getusermedia.screensharing.enabled",		false);
+user_pref("media.getusermedia.audiocapture.enabled",		false);
 
 // Disable sensor API
 // https://wiki.mozilla.org/Sensor_API
