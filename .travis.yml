@@ -4,3 +4,9 @@ node_js:
 before_script:
   - npm install -g acorn
 script: acorn user.js
+notifications:
+  irc:
+    channels:
+      - "chat.freenode.net#user.js"
+    on_success: always
+    on_failure: always
