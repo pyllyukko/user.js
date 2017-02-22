@@ -530,6 +530,12 @@ user_pref("browser.pagethumbnails.capturing_disabled",		true);
  *                                                                            *
  ******************************************************************************/
 
+// Enable insecure password warnings (login forms in non-HTTPS pages)
+// https://blog.mozilla.org/tanvi/2016/01/28/no-more-passwords-over-http-please/
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1319119
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1217156
+user_pref("security.insecure_password.ui.enabled",		true);
+
 // Webpages will not be able to affect the right-click menu
 //user_pref("dom.event.contextmenu.enabled",		false);
 
