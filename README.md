@@ -358,6 +358,14 @@ Online tests
 * [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp)
 * [Unique Machine](http://www.uniquemachine.org/)
 
+
+Offline tests
+-------------
+
+* [IIS Crypto](https://www.nartac.com/Products/IISCrypto) - for Windows Server 2003-2012  
+
+
+
 ### HTML5test
 
 [HTML5test](https://html5test.com/)
