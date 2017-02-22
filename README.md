@@ -1,6 +1,8 @@
 Firefox hardening
 =================
 
+[![Build Status](https://travis-ci.org/pyllyukko/user.js.svg?branch=master)](https://travis-ci.org/pyllyukko/user.js)
+
 What's all this then?
 ---------------------
 
