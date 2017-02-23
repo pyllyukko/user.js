@@ -19,6 +19,11 @@ user_pref("layers.acceleration.disabled",			true);
  *                                                                            *
  ******************************************************************************/
 
+// https://developer.mozilla.org/en-US/docs/Web/API/Worker
+// https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker_API
+// https://wiki.mozilla.org/Firefox/Push_Notifications#Service_Workers
+user_pref("dom.serviceWorkers.enabled",				false);
+
 // Make sure the User Timing API does not provide a new high resolution timestamp
 // https://trac.torproject.org/projects/tor/ticket/16336
 user_pref("dom.enable_user_timing",				false);
