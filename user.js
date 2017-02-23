@@ -500,17 +500,25 @@ user_pref("browser.cache.disk_cache_ssl",			false);
 
 // CIS Version 1.2.0 October 21st, 2011 2.5.2 Disallow Credential Storage
 user_pref("signon.rememberSignons",				false);
-
-// OWASP ASVS V9.1
-// https://bugzilla.mozilla.org/show_bug.cgi?id=956906
-user_pref("signon.storeWhenAutocompleteOff",			false);
-
 // CIS Version 1.2.0 October 21st, 2011 2.5.5 Delete Download History
 // Zero (0) is an indication that no download history is retained for the current profile.
 user_pref("browser.download.manager.retention",			0);
 
-// CIS Version 1.2.0 October 21st, 2011 2.5.6 Delete Search and Form History
+// http://kb.mozillazine.org/Signon.autofillForms
+// Do not automatically fill sign-in forms with known usernames and passwords; 
+// instead allow selecting username/password from a list.
+// https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
+user_pref("signon.autofillForms",				false);
+
+// Don't save information entered in web page forms and the Search Bar, disable form autofill
 user_pref("browser.formfill.enable",				false);
+
+// Disable the password manager for pages with autocomplete=off
+// Does not prevent any kind of auto-completion (see browser.formfill.enable, signon.autofillForms)
+// OWASP ASVS V9.1, https://bugzilla.mozilla.org/show_bug.cgi?id=956906
+//user_pref("signon.storeWhenAutocompleteOff",			false);
+          
+// CIS Version 1.2.0 October 21st, 2011 2.5.6 Delete Search and Form History
 user_pref("browser.formfill.expire_days",			0);
 
 // CIS Version 1.2.0 October 21st, 2011 2.5.7 Clear SSL Form Session Data
@@ -587,10 +595,6 @@ user_pref("layout.css.visited_links_enabled",			false);
 
 // http://kb.mozillazine.org/Disabling_autocomplete_-_Firefox#Firefox_3.5
 user_pref("browser.urlbar.autocomplete.enabled",		false);
-
-// http://kb.mozillazine.org/Signon.autofillForms
-// https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
-user_pref("signon.autofillForms",				false);
 
 // do not check if firefox is the default browser
 user_pref("browser.shell.checkDefaultBrowser",			false);
