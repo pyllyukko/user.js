@@ -508,7 +508,7 @@ user_pref("browser.download.manager.retention",			0);
 // Do not automatically fill sign-in forms with known usernames and passwords; 
 // instead allow selecting username/password from a list.
 // https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
-user_pref("signon.autofillForms", 
+user_pref("signon.autofillForms",				false);
 
 // Don't save information entered in web page forms and the Search Bar, disable form autofill
 user_pref("browser.formfill.enable",				false);
