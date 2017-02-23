@@ -115,11 +115,17 @@ user_pref("dom.webnotifications.enabled",			false);
 // disable webGL
 // https://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled",					true);
+// If you absolutely have to use webGL you can use the minimum capability mode
+user_pref("webgl.min_capability_mode",				true);
+// https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API#WebGL_debugging_and_testing
+user_pref("webgl.disable-extensions",				true);
+// https://trac.torproject.org/projects/tor/ticket/18603
+user_pref("webgl.disable-fail-if-major-performance-caveat",	true);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1171228
 // https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_debug_renderer_info
 user_pref("webgl.enable-debug-renderer-info",			false);
 // somewhat related...
-//user_pref("pdfjs.enableWebGL",		false);
+//user_pref("pdfjs.enableWebGL",					false);
 
 /******************************************************************************
  * Misc                                                                       *
