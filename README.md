@@ -49,7 +49,7 @@ There are several parts to all this and they are:
     - [Add-ons](#add-ons)
       - [Tracking protection](#tracking-protection)
       - [Add-ons for mobile platforms](#add-ons-for-mobile-platforms)
-  - [Online tests](#online-tests)
+  - [Test suites](#test-suites)
     - [HTML5test](#html5test)
   - [Known problems](#known-problems)
   - [CAs](#cas)
@@ -234,6 +234,10 @@ See also [#20](https://github.com/pyllyukko/user.js/issues/20).
 
 * Don't [suggest any URLs](http://kb.mozillazine.org/Browser.urlbar.maxRichResults) while typing at the address bar
 
+### DNS related
+* network.dnsCacheExpiration which should be set to 0 to turn off Firefox internal DNS Cache.
+* An DNS consistency test can be found over [here](https://github.com/TheTorProject/ooni-probe/)
+
 ### TLS / HTTPS / OCSP related
 
 * TLS v1.[012] only
@@ -326,9 +330,9 @@ See also:
 * [uBlock](https://addons.mozilla.org/android/addon/ublock-origin/)
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 
-Online tests
+Test suites
 ------------
-
+* [ooni-probe](https://github.com/TheTorProject/ooni-probe/) - framework aimed at detecting network interference (DNS, HTTP, and more)
 * [Panopticlick](https://panopticlick.eff.org/)
 * [Filldisk](http://www.filldisk.com/)
 * [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
