@@ -639,7 +639,7 @@ user_pref("security.OCSP.require",				true);
 // https://bugzil.la/967977
 user_pref("security.ssl.disable_session_identifiers",		true);
 
-// TLS 1.[012]
+// TLS 1.[0-3]
 // http://kb.mozillazine.org/Security.tls.version.max
 // 1 = TLS 1.0 is the minimum required / maximum supported encryption protocol. (This is the current default for the maximum supported version.)
 // 2 = TLS 1.1 is the minimum required / maximum supported encryption protocol.
