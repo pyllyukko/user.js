@@ -500,8 +500,10 @@ user_pref("places.history.enabled",				false);
 user_pref("network.cookie.lifetimePolicy",			2);
 
 // http://kb.mozillazine.org/Browser.cache.disk.enable
-user_pref("browser.cache.disk.enable",				false);
-
+user_pref("browser.cache.disk.enable",				false
+// user_pref("browser.cache.disk.smart_size.enabled", false);
+// user_pref("browser.cache.disk.smart_size.first_run", false);
+          
 // http://kb.mozillazine.org/Browser.cache.memory.enable
 //user_pref("browser.cache.memory.enable",		false);
 
