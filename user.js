@@ -22,6 +22,8 @@ user_pref("layers.acceleration.disabled",			true);
 // https://developer.mozilla.org/en-US/docs/Web/API/Worker
 // https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker_API
 // https://wiki.mozilla.org/Firefox/Push_Notifications#Service_Workers
+// Unknown security implications
+// CVE-2016-5259, CVE-2016-2812, CVE-2016-1949, CVE-2016-5287 (fixed)
 user_pref("dom.serviceWorkers.enabled",				false);
 
 // Make sure the User Timing API does not provide a new high resolution timestamp
@@ -79,13 +81,8 @@ user_pref("dom.enable_performance",				false);
 
 // Speech recognition
 // https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html
-// https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
 // https://wiki.mozilla.org/HTML5_Speech_API
 user_pref("media.webspeech.recognition.enable",			false);
-
-// Speech synthesis
-// https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
-user_pref("media.webspeech.synth.enabled", false);
 
 // Disable getUserMedia screen sharing
 // https://mozilla.github.io/webrtc-landing/gum_test.html
