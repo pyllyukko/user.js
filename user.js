@@ -178,10 +178,6 @@ user_pref("security.mixed_content.block_active_content",	true);
 // Mixed Passive Content (a.k.a. Mixed Display Content).
 user_pref("security.mixed_content.block_display_content",	true);
 
-// https://secure.wikimedia.org/wikibooks/en/wiki/Grsecurity/Application-specific_Settings#Firefox_.28or_Iceweasel_in_Debian.29
-user_pref("javascript.options.methodjit.chrome",		false);
-user_pref("javascript.options.methodjit.content",		false);
-
 // CIS Mozilla Firefox 24 ESR v1.0.0 - 3.7 Disable JAR from opening Unsafe File Types
 // http://kb.mozillazine.org/Network.jar.open-unsafe-types
 user_pref("network.jar.open-unsafe-types",			false);
