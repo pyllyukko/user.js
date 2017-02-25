@@ -613,6 +613,9 @@ user_pref("browser.shell.checkDefaultBrowser",			false);
 // CIS Version 1.2.0 October 21st, 2011 2.5.3 Disable Prompting for Credential Storage
 user_pref("security.ask_for_password",				0);
 
+// If password manager/master password is enabled, lock password storage every 5 minutes (default is 30)
+user_pref("security.password_lifetime", 5);
+
 /******************************************************************************
  * TLS / HTTPS / OCSP related stuff                                           *
  *                                                                            *
