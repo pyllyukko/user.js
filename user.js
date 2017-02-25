@@ -617,6 +617,18 @@ user_pref("security.ask_for_password",				0);
 // If password manager/master password is enabled, lock password storage every 5 minutes (default is 30)
 user_pref("security.password_lifetime", 5);
 
+// Set homepage at browser startup to empty page
+// user_pref("browser.startup.homepage", "about:blank");
+
+// Don't show information page after upgrades
+// http://kb.mozillazine.org/Startup.homepage_override_url
+// user_pref("startup.homepage_override_url", "about:blank");
+
+// Disable first-run welcome page
+// http://kb.mozillazine.org/Startup.homepage_welcome_url
+// user_pref("startup.homepage_welcome_url", "about:blank");
+// user_pref("startup.homepage_welcome_url.additional", "about:blank");
+
 /******************************************************************************
  * TLS / HTTPS / OCSP related stuff                                           *
  *                                                                            *
