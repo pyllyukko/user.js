@@ -464,7 +464,9 @@ user_pref("network.cookie.cookieBehavior",			1);
 user_pref("network.cookie.thirdparty.sessionOnly",		true);
 
 // user-agent
-//user_pref("general.useragent.override",		"Mozilla/5.0 (Windows NT 6.1; rv:31.0) Gecko/20100101 Firefox/31.0");
+//user_pref("general.useragent.override",				"Mozilla/5.0 (Windows NT 6.1; rv:31.0) Gecko/20100101 Firefox/31.0");
+//user_pref("general.platform.override",				"Win32");
+//user_pref("general.oscpu.override",				"Windows NT 6.1");
 
 /******************************************************************************
  * Caching                                                                    *
