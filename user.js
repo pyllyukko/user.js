@@ -87,7 +87,7 @@ user_pref("media.webspeech.recognition.enable",			false);
 
 // Speech synthesis
 // https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
-user_pref("media.webspeech.synth.enabled", false);
+user_pref("media.webspeech.synth.enabled",			false);
 
 // Disable getUserMedia screen sharing
 // https://mozilla.github.io/webrtc-landing/gum_test.html
@@ -181,7 +181,7 @@ user_pref("network.proxy.socks_remote_dns",			true);
 
 // We not want to monitoring the connection state of users 
 // https://trac.torproject.org/projects/tor/ticket/18945
-user_pref("network.manage-offline-status",		false);
+user_pref("network.manage-offline-status",			false);
 
 // Mixed content stuff
 // https://developer.mozilla.org/en-US/docs/Site_Compatibility_for_Firefox_23#Non-SSL_contents_on_SSL_pages_are_blocked_by_default
@@ -626,7 +626,7 @@ user_pref("browser.shell.checkDefaultBrowser",			false);
 user_pref("security.ask_for_password",				0);
 
 // When security.ask_for_password is 2 (every n minutes), lock password storage every 5 minutes (default is 30)
-user_pref("security.password_lifetime", 5);
+user_pref("security.password_lifetime",				5);
 
 /******************************************************************************
  * TLS / HTTPS / OCSP related stuff                                           *
