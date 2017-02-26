@@ -150,6 +150,13 @@ user_pref("camera.control.face_detection.enabled",		false);
 // Default search engine
 //user_pref("browser.search.defaultenginename",		"DuckDuckGo");
 
+// GeoIP-based search
+// https://trac.torproject.org/projects/tor/ticket/16254
+user_pref("browser.search.countryCode",				"US");
+user_pref("browser.search.region",				"US");
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine
+user_pref("browser.search.geoip.url",				"");
+
 // http://kb.mozillazine.org/Clipboard.autocopy
 user_pref("clipboard.autocopy",					false);
 
@@ -373,9 +380,6 @@ user_pref("extensions.pocket.enabled",				false);
 // http://kb.mozillazine.org/Network.prefetch-next
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ#Is_there_a_preference_to_disable_link_prefetching.3F
 user_pref("network.prefetch-next",				false);
-
-// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine
-user_pref("browser.search.geoip.url",				"");
 
 // http://kb.mozillazine.org/Network.dns.disablePrefetch
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching
