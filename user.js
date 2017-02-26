@@ -157,6 +157,9 @@ user_pref("browser.search.region",				"US");
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine
 user_pref("browser.search.geoip.url",				"");
 
+// Set locale to en-US (if you are using localized version of FF)
+user_pref("intl.accept_languages",				"en-US, en");
+
 // http://kb.mozillazine.org/Clipboard.autocopy
 user_pref("clipboard.autocopy",					false);
 
