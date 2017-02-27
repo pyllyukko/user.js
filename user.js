@@ -416,6 +416,7 @@ user_pref("media.gmp-manager.url",				"");
 user_pref("network.http.speculative-parallel-limit",		0);
 
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_mozilla-content
+// https://wiki.mozilla.org/Firefox/Projects/Firefox_Start/Snippet_Service
 user_pref("browser.aboutHomeSnippets.updateUrl",		"");
 
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_auto-update-checking
