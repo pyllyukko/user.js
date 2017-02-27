@@ -12,3 +12,6 @@ notifications:
       - "chat.freenode.net#user.js"
     on_success: always
     on_failure: always
+    template:
+      - "Build #%{build_number} | %{commit} | \"%{commit_subject}\" | %{message}"
+      - "Build details : %{build_url}"
