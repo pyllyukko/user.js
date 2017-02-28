@@ -50,7 +50,6 @@ There are several parts to all this and they are:
       - [Tracking protection](#tracking-protection)
       - [Add-ons for mobile platforms](#add-ons-for-mobile-platforms)
   - [Online tests](#online-tests)
-    - [HTML5test](#html5test)
   - [Known problems](#known-problems)
   - [CAs](#cas)
     - [Examples](#examples)
@@ -191,7 +190,7 @@ A full list of Firefox preferences and default values can be found at [DXR](http
 
 ### Extensions / plugins related
 
-It is common for [client side attacks](https://www.offensive-security.com/metasploit-unleashed/client-side-attacks/) to target [browser extensions][14], instead of the browser itself (just look at all those [Java](https://en.wikipedia.org/wiki/Criticism_of_Java#Security) and [Flash](https://www.cvedetails.com/vulnerability-list/vendor_id-53/product_id-6761/Adobe-Flash-Player.html) vulnerabilities). Make sure your extensions and plugins are always up-to-date.
+It is common for [client side attacks](https://www.offensive-security.com/metasploit-unleashed/client-side-attacks/) to target [browser extensions](https://www.mozilla.org/en-US/plugincheck/), instead of the browser itself (just look at all those [Java](https://en.wikipedia.org/wiki/Criticism_of_Java#Security) and [Flash](https://www.cvedetails.com/vulnerability-list/vendor_id-53/product_id-6761/Adobe-Flash-Player.html) vulnerabilities). Make sure your extensions and plugins are always up-to-date.
 
 * Disable Adobe Flash
 * Enable [click to play](https://wiki.mozilla.org/Firefox/Click_To_Play)
@@ -285,12 +284,13 @@ This is not enough!
 
 Here's some other tips how you can further harden Firefox:
 
-* Keep your browser updated! If you check [Firefox's security advisories][10], you'll see that pretty much every new version of Firefox contains some security updates. If you don't keep your browser updated, you've already lost the game.
+* Keep your browser updated! If you check [Firefox's security advisories][https://www.mozilla.org/security/known-vulnerabilities/firefox.html], you'll see that pretty much every new version of Firefox contains some security updates. If you don't keep your browser updated, you've already lost the game.
 * Disable all unnecessary extensions and plugins!
 * Create different [profiles][15] for different purposes
 * Change the Firefox's built-in tracking protection to use the [strict list](https://support.mozilla.org/en-US/kb/tracking-protection-pbm?as=u#w_change-your-block-list)
 * Change the timezone for Firefox by using the ```TZ``` environment variable (see [here](https://wiki.archlinux.org/index.php/Firefox_privacy#Change_browser_time_zone)) to reduce it's value in browser fingerprinting
 * Completely block unencrypted communications using the `HTTPS Everywhere` toolbar button > `Block all unencrypted requests`. This will break websites where HTTPS is not available.
+* [Firefox builds with Address Sanitizer](https://developer.mozilla.org/en-US/docs/Building_Firefox_with_Address_Sanitizer)
 
 ### Add-ons
 
@@ -303,6 +303,7 @@ Here is a list of the most essential security and privacy enhancing add-ons that
 * [DuckDuckGo Plus](https://addons.mozilla.org/firefox/addon/duckduckgo-for-firefox/) (instead of Google)
 * [No Resource URI Leak](https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/) (see [#163](https://github.com/pyllyukko/user.js/issues/163))
 * [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
+* [Canvas Blocker](https://addons.mozilla.org/firefox/addon/canvasblocker/) ([Source code](https://github.com/kkapsner/CanvasBlocker))
 
 #### Tracking protection
 
@@ -333,23 +334,22 @@ See also:
 Online tests
 ------------
 
+* **[Mozilla Plugin Check](https://www.mozilla.org/en-US/plugincheck/)**
 * [Panopticlick](https://panopticlick.eff.org/)
 * [Filldisk](http://www.filldisk.com/)
 * [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
 * [How's My SSL](https://www.howsmyssl.com/)
 * [Evercookie](https://samy.pl/evercookie/)
-* [Mozilla Plugin Check][14]
 * [BrowserSpy.dk](http://browserspy.dk/)
-* [Testing mixed content](https://people.mozilla.org/~tvyas/mixedcontent.html)
-  * [Similar from Microsoft](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm)
+* [Mixed content tests (Mozilla)](https://people.mozilla.org/~tvyas/mixedcontent.html)
+* [Mixed cotent tests (Microsoft)](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm)
 * [WebRTC stuff](https://mozilla.github.io/webrtc-landing/)
 * [Flash Player Version](https://www.adobe.com/software/flash/about/) from Adobe
 * [Verify your installed Java Version](https://www.java.com/en/download/installed.jsp)
-  * Protip: Don't use Oracle's Java!! But if you really need it, update it regulary!
+  * Don't install the Java browser plugin! If you really need it, keep it updated.
 * [IP Check](http://ip-check.info/?lang=en)
 * [Onion test for CORS and WebSocket](https://cure53.de/leak/onion.php)
-* [Firefox Addon Detector](https://thehackerblog.com/addon_scanner/)
-  * [Blog post](https://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)
+* [Firefox Addon Detector](https://thehackerblog.com/addon_scanner/) [[1](https://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)]
 * [Official WebGL check](https://get.webgl.org/)
 * [AudioContext Fingerprint Test Page](https://audiofingerprint.openwpm.com/)
 * [battery.js](https://pstadler.sh/battery.js/)
@@ -363,20 +363,10 @@ Online tests
 * [Firefox Resources Reader - BrowserLeaks.com](https://www.browserleaks.com/firefox) (see [#163](https://github.com/pyllyukko/user.js/issues/163))
 * [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp)
 * [Unique Machine](http://www.uniquemachine.org/)
-
-### HTML5test
-
-[HTML5test](https://html5test.com/)
-
-Here's a comparison of the various supported HTML5 features between recent Firefox with these settings, stock Firefox and the Tor Browser:
-
-| Comparison                                                                              | user.js version                          | Firefox version | Firefox baseline | Tor Browser |
-| --------------------------------------------------------------------------------------- | ---------------------------------------- | --------------- | ---------------- | ----------- |
-| [html5test](https://html5test.com/compare/browser/614ecc2640198302/firefox-35/24a094263fa9f301.html) | 3041fb7204f2547a34083fba7db2009929ed2326 | 36.0.1          | 35               | 4.0.4       |
+* [HTML5test](https://html5test.com/) - Comparison of supported HTML5 features in various browsers/versions
 
 
-Known problems
---------------
+## Known problems
 
 There are plenty! Hardening your browser will break your interwebs. Here's some examples:
 
@@ -489,21 +479,6 @@ Import the default CA list with:
 cas.sh -C -P ~/.mozilla/firefox/XXXXXXXX.new_profile -a
 ````
 
-
-TODO
-----
-
-- [ ] [HTML5 canvas](https://en.wikipedia.org/wiki/Canvas_element)
-  - [Canvas fingerprinting](https://en.wikipedia.org/wiki/Canvas_fingerprinting)
-  - [BrowserLeaks.com](https://www.browserleaks.com/canvas)
-  - [Mozilla official Canvas explanation](https://developer.mozilla.org/en-US/docs/HTML/Canvas)
-  - [Tor fingerprinting topic](https://www.torproject.org/projects/torbrowser/design/#fingerprinting-linkability)
-  - [Bug 967895](https://bugzilla.mozilla.org/show_bug.cgi?id=967895)
-  - [Pixel Perfect: Fingerprinting Canvas in HTML5](http://www.w2spconf.com/2012/papers/w2sp12-final4.pdf)
-  - https://addons.mozilla.org/firefox/addon/canvasblocker/, https://github.com/kkapsner/CanvasBlocker/issues/
-  - https://addons.mozilla.org/firefox/addon/anticanvasfingerprinting/
-- [ ] [Address Sanitizer](https://developer.mozilla.org/en-US/docs/Building_Firefox_with_Address_Sanitizer)
-
 Contributing
 ------------
 
@@ -517,7 +492,7 @@ References
 * [CIS](https://www.cisecurity.org/):
   * [CIS Mozilla Firefox Benchmark v1.2.0 October 21st, 2011](https://benchmarks.cisecurity.org/downloads/show-single/?file=firefox.120)
   * [CIS Mozilla Firefox 24 ESR Benchmark v1.0.0 - 06-29-2014](https://benchmarks.cisecurity.org/downloads/show-single/?file=firefoxesr24.100)
-* [Security Advisories for Firefox][10]
+* [Security Advisories for Firefox][]
 * [The Design and Implementation of the Tor Browser](https://www.torproject.org/projects/torbrowser/design/)
 * [Bulletproof SSL and TLS](https://www.feistyduck.com/books/bulletproof-ssl-and-tls/)
 * [Polaris](https://wiki.mozilla.org/Polaris)
@@ -540,9 +515,7 @@ References
 [7]: https://www.thawte.com/roots/
 [8]: https://support.mozilla.org/en-US/kb/Private%20Browsing
 [9]: https://bugzilla.mozilla.org/show_bug.cgi?id=822869
-[10]: https://www.mozilla.org/security/known-vulnerabilities/firefox.html
 [11]: https://www.entrust.com/products/developer-api-standards/
 [12]: https://support.mozilla.org/en-US/kb/tracking-protection-firefox
 [13]: https://www.mozilla.org/en-US/lightbeam/
-[14]: https://www.mozilla.org/en-US/plugincheck/
 [15]: https://mzl.la/NYhKHH
