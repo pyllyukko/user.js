@@ -202,6 +202,18 @@ It is common for [client side attacks](https://www.offensive-security.com/metasp
 * Enables Firefox's built-in [tracking protection][12]
 * Disables [telemetry](https://wiki.mozilla.org/Telemetry), [Crash Reporter](https://support.mozilla.org/en-US/kb/Mozilla%20Crash%20Reporter), [healt report](https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf), [heartbeat](https://wiki.mozilla.org/Advocacy/heartbeat) and other such privacy invading nonsense
 
+### Profiles
+
+You can start Firefox with [different profiles](http://kb.mozillazine.org/Profile_folder_-_Firefox) for [different reasons](https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data?redirectlocale=en-US&redirectslug=Profiles), e.g. to test a page without extensions or for use  it for online-banking. An benefit is that you can Sandbox these profiles with LXC/Akrose and/or combine it with AppAmor/SELinux to start this in it's own instance. 
+
+| Profile | Description | 
+| :--- | :----: | 
+| firefox -P <profile-name> -no-remote  | Start the profile in it's own instance  | 
+| firefox -P <profile-name> -no-remote -safe-mode  | + deactivates themes and extensions | 
+| firefox -P <profile-name> -no-remote -private  | + private mode (alias incognito mode) |
+| firefox -P <profile-name> -no-remote -safe-mode -private | + secure/private mode |
+
+
 ### Automatic connections
 
 This section disables some of Firefox's [automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections).
