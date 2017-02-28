@@ -26,6 +26,9 @@ user_pref("layers.acceleration.disabled",			true);
 // CVE-2016-5259, CVE-2016-2812, CVE-2016-1949, CVE-2016-5287 (fixed)
 user_pref("dom.serviceWorkers.enabled",				false);
 
+// disable notifications
+user_pref("dom.webnotifications.enabled",			false);
+
 // Make sure the User Timing API does not provide a new high resolution timestamp
 // https://trac.torproject.org/projects/tor/ticket/16336
 user_pref("dom.enable_user_timing",				false);
@@ -120,9 +123,6 @@ user_pref("dom.gamepad.enabled",				false);
 // Disable virtual reality devices
 // https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
 user_pref("dom.vr.enabled",					false);
-
-// disable notifications
-user_pref("dom.webnotifications.enabled",			false);
 
 // disable webGL
 // https://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
