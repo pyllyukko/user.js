@@ -492,7 +492,7 @@ References
 * [CIS](https://www.cisecurity.org/):
   * [CIS Mozilla Firefox Benchmark v1.2.0 October 21st, 2011](https://benchmarks.cisecurity.org/downloads/show-single/?file=firefox.120)
   * [CIS Mozilla Firefox 24 ESR Benchmark v1.0.0 - 06-29-2014](https://benchmarks.cisecurity.org/downloads/show-single/?file=firefoxesr24.100)
-* [Security Advisories for Firefox][]
+* [Security Advisories for Firefox][https://www.mozilla.org/security/known-vulnerabilities/firefox.html]
 * [The Design and Implementation of the Tor Browser](https://www.torproject.org/projects/torbrowser/design/)
 * [Bulletproof SSL and TLS](https://www.feistyduck.com/books/bulletproof-ssl-and-tls/)
 * [Polaris](https://wiki.mozilla.org/Polaris)
