@@ -768,12 +768,12 @@ user_pref("security.ssl3.ecdh_ecdsa_aes_256_sha",		false);
 user_pref("security.ssl3.rsa_camellia_256_sha",			false);
 
 // Ciphers with ECDHE and > 128bits
-user_pref("security.ssl3.ecdhe_rsa_aes_256_sha",		true);
-user_pref("security.ssl3.ecdhe_ecdsa_aes_256_sha",		true);
+user_pref("security.ssl3.ecdhe_rsa_aes_256_sha",		true); // 0xc014
+user_pref("security.ssl3.ecdhe_ecdsa_aes_256_sha",		true); // 0xc00a
 
-// GCM, yes please!
-user_pref("security.ssl3.ecdhe_ecdsa_aes_128_gcm_sha256",	true);
-user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		true);
+// GCM, yes please! (TLSv1.2 only)
+user_pref("security.ssl3.ecdhe_ecdsa_aes_128_gcm_sha256",	true); // 0xc02b
+user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		true); // 0xc02f
 
 // ChaCha20 and Poly1305. Supported since Firefox 47.
 // https://www.mozilla.org/en-US/firefox/47.0/releasenotes/
@@ -795,5 +795,5 @@ user_pref("security.ssl3.dhe_dss_camellia_128_sha",		false);
 user_pref("security.ssl3.dhe_dss_camellia_256_sha",		false);
 
 // Fallbacks due compatibility reasons
-user_pref("security.ssl3.rsa_aes_256_sha",			true);
-user_pref("security.ssl3.rsa_aes_128_sha",			true);
+user_pref("security.ssl3.rsa_aes_256_sha",			true); // 0x35
+user_pref("security.ssl3.rsa_aes_128_sha",			true); // 0x2f
