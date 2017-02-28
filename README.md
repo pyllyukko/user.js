@@ -169,6 +169,8 @@ Some of the settings in this [user.js][1] file might seem redundant, as some of 
 
 Here are some of the "highlights" from each category. For a full list of settings and references, check the ```user.js``` file itself.
 
+A full list of Firefox preferences and default values can be found at [DXR](https://dxr.mozilla.org/mozilla-central/source/modules/libpref/init/all.js)
+
 ### HTML5 / APIs / DOM
 
 * Disable [geolocation](https://www.mozilla.org/en-US/firefox/geolocation/)
