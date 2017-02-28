@@ -239,7 +239,7 @@ See also [#20](https://github.com/pyllyukko/user.js/issues/20).
 
 ### TLS / HTTPS / OCSP related
 
-* TLS v1.[012] only
+* TLS 1.[0-3] only
 * Require [OCSP](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol)
   * Notice that this setting has some [privacy implications](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol#Privacy_concerns)
 * [OCSP stapling](https://blog.mozilla.org/security/2013/07/29/ocsp-stapling-in-firefox/) (enabled by default anyway)
