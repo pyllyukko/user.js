@@ -490,7 +490,6 @@ user_pref("browser.cache.offline.enable",			false);
 // https://support.mozilla.org/en-US/kb/Private-Browsing
 // https://wiki.mozilla.org/PrivateBrowsing
 user_pref("browser.privatebrowsing.autostart",			true);
-user_pref("extensions.ghostery.privateBrowsing",		true);
 
 // Clear history when Firefox closes
 // https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically
