@@ -284,7 +284,7 @@ This is not enough!
 
 Here's some other tips how you can further harden Firefox:
 
-* Keep your browser updated! If you check [Firefox's security advisories][https://www.mozilla.org/security/known-vulnerabilities/firefox.html], you'll see that pretty much every new version of Firefox contains some security updates. If you don't keep your browser updated, you've already lost the game.
+* Keep your browser updated! If you check [Firefox's security advisories](https://www.mozilla.org/security/known-vulnerabilities/firefox.html), you'll see that pretty much every new version of Firefox contains some security updates. If you don't keep your browser updated, you've already lost the game.
 * Disable all unnecessary extensions and plugins!
 * Create different [profiles][15] for different purposes
 * Change the Firefox's built-in tracking protection to use the [strict list](https://support.mozilla.org/en-US/kb/tracking-protection-pbm?as=u#w_change-your-block-list)
@@ -342,7 +342,7 @@ Online tests
 * [Evercookie](https://samy.pl/evercookie/)
 * [BrowserSpy.dk](http://browserspy.dk/)
 * [Mixed content tests (Mozilla)](https://people.mozilla.org/~tvyas/mixedcontent.html)
-* [Mixed cotent tests (Microsoft)](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm)
+* [Mixed content tests (Microsoft)](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm)
 * [WebRTC stuff](https://mozilla.github.io/webrtc-landing/)
 * [Flash Player Version](https://www.adobe.com/software/flash/about/) from Adobe
 * [Verify your installed Java Version](https://www.java.com/en/download/installed.jsp)
