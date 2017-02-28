@@ -9,7 +9,10 @@
  ******************************************************************************/
 // https://wiki.mozilla.org/Platform/GFX/HardwareAcceleration
 // https://www.macromedia.com/support/documentation/en/flashplayer/help/help01.html
-// https://github.com/dillbyrne/random-agent-spoofer/issues/74
+// https://en.wikipedia.org/wiki/Canvas_fingerprinting
+// https://www.torproject.org/projects/torbrowser/design/#fingerprinting-linkability
+// https://bugzilla.mozilla.org/show_bug.cgi?id=967895
+// http://www.w2spconf.com/2012/papers/w2sp12-final4.pdf
 user_pref("gfx.direct2d.disabled",				true);
 user_pref("layers.acceleration.disabled",			true);
 
