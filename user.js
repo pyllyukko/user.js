@@ -144,13 +144,14 @@ user_pref("webgl.enable-debug-renderer-info",			false);
 
 /******************************************************************************
  * Misc                                                                       *
- *                                                                            *
+ * Settings that do not belong to other sections or are user specific prefs   *                                                                            *
  ******************************************************************************/
 
 // Disable face detection by default
 user_pref("camera.control.face_detection.enabled",		false);
 
 // Default search engine
+// https://support.mozilla.org/en-US/questions/948134
 //user_pref("browser.search.defaultenginename",		"DuckDuckGo");
 
 // GeoIP-based search
@@ -166,9 +167,8 @@ user_pref("intl.accept_languages",				"en-US, en");
 // http://kb.mozillazine.org/Clipboard.autocopy
 user_pref("clipboard.autocopy",					false);
 
-// Display an error message indicating the entered information is not a valid
-// URL instead of asking from google.
-// http://kb.mozillazine.org/Keyword.enabled#Caveats
+// Do not submit invalid URIs entered in the address bar to the default search engine
+// http://kb.mozillazine.org/Keyword.enabled
 user_pref("keyword.enabled",					false);
 
 // Don't trim HTTP off of URLs in the address bar.
@@ -186,7 +186,8 @@ user_pref("network.proxy.socks_remote_dns",			true);
 // https://trac.torproject.org/projects/tor/ticket/18945
 user_pref("network.manage-offline-status",			false);
 
-// Mixed content stuff
+// Enforce Mixed Content Blocking
+// https://support.mozilla.org/t5/Protect-your-privacy/Mixed-content-blocking-in-Firefox/ta-p/10990
 // https://developer.mozilla.org/en-US/docs/Site_Compatibility_for_Firefox_23#Non-SSL_contents_on_SSL_pages_are_blocked_by_default
 // https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/
 user_pref("security.mixed_content.block_active_content",	true);
@@ -198,6 +199,7 @@ user_pref("security.mixed_content.block_display_content",	true);
 user_pref("network.jar.open-unsafe-types",			false);
 
 // CIS 2.7.4 Disable Scripting of Plugins by JavaScript
+// http://forums.mozillazine.org/viewtopic.php?f=7&t=153889
 user_pref("security.xpconnect.plugin.unrestricted",		false);
 
 // CIS Mozilla Firefox 24 ESR v1.0.0 - 3.8 Set File URI Origin Policy
@@ -218,7 +220,8 @@ user_pref("javascript.options.asmjs",				false);
 // the iSEC Partners Report recommends to disable this
 user_pref("gfx.font_rendering.opentype_svg.enabled",		false);
 
-// https://bugzil.la/654550
+// Disable video stats to reduce fingerprinting threat
+// https://bugzilla.mozilla.org/show_bug.cgi?id=654550
 // https://github.com/pyllyukko/user.js/issues/9#issuecomment-100468785
 // https://github.com/pyllyukko/user.js/issues/9#issuecomment-148922065
 user_pref("media.video_stats.enabled",				false);

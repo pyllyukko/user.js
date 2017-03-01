@@ -501,6 +501,7 @@ For more information, see <https://github.com/pyllyukko/user.js/blob/master/CONT
 * [Mozilla Firefox Release Plan](https://wiki.mozilla.org/RapidRelease/Calendar)
 * [Advices from Mozilla Firefox on privacy and government surveillance](https://www.mozilla.org/en-US/teach/smarton/surveillance/)
 * [Polaris - advance privacy technnology for the web](https://wiki.mozilla.org/Polaris)
+* [Mozilla Privacy Principles](https://wiki.mozilla.org/Privacy/Principles)
 * [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/) ([RSS](https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/format:rss?sort=featured))
 
 #### Other
