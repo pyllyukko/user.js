@@ -665,24 +665,33 @@ user_pref("security.ask_for_password",				0);
 user_pref("security.password_lifetime",				5);
 
 /******************************************************************************
- * TLS / HTTPS / OCSP related stuff                                           *
+ * Cryptography (TLS / HTTPS / OCSP / HSTS / HPKP ...)                        *
  *                                                                            *
+ * https://en.wikipedia.org/wiki/Transport_Layer_Security                     *
+ * https://en.wikipedia.org/wiki/HTTPS                                        *
  ******************************************************************************/
 
 // https://blog.mozilla.org/security/2012/11/01/preloading-hsts/
 // https://wiki.mozilla.org/Privacy/Features/HSTS_Preload_List
+// https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security
 user_pref("network.stricttransportsecurity.preloadlist",	true);
 
-// CIS Version 1.2.0 October 21st, 2011 2.2.4 Enable Online Certificate Status Protocol
+// Enable Online Certificate Status Protocol
+// CIS Version 1.2.0 October 21st, 2011 2.2.4
+// https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol
 user_pref("security.OCSP.enabled",				1);
 
+// Enable OCSP Stapling
+// https://en.wikipedia.org/wiki/OCSP_stapling
 // https://blog.mozilla.org/security/2013/07/29/ocsp-stapling-in-firefox/
 user_pref("security.ssl.enable_ocsp_stapling",			true);
 
-// require certificate revocation check through OCSP protocol.
+// Require certificate revocation check through OCSP protocol.
 // NOTICE: this leaks information about the sites you visit to the CA.
+// https://groups.google.com/forum/#!topic/mozilla.dev.security/n1G-N2-HTVA
 user_pref("security.OCSP.require",				true);
 
+// Disable TLS Session Tickets
 // https://www.blackhat.com/us-13/briefings.html#NextGen
 // https://media.blackhat.com/us-13/US-13-Daigniere-TLS-Secrets-Slides.pdf
 // https://media.blackhat.com/us-13/US-13-Daigniere-TLS-Secrets-WP.pdf
@@ -690,8 +699,8 @@ user_pref("security.OCSP.require",				true);
 // https://bugzil.la/967977
 user_pref("security.ssl.disable_session_identifiers",		true);
 
-// TLS 1.[0-3]
-// http://kb.mozillazine.org/Security.tls.version.max
+// Only allow TLS 1.[0-3]
+// http://kb.mozillazine.org/Security.tls.version.*
 // 1 = TLS 1.0 is the minimum required / maximum supported encryption protocol. (This is the current default for the maximum supported version.)
 // 2 = TLS 1.1 is the minimum required / maximum supported encryption protocol.
 user_pref("security.tls.version.min",				1);
@@ -700,8 +709,9 @@ user_pref("security.tls.version.max",				4);
 // TLS version fallback
 user_pref("security.tls.version.fallback-limit",		3);
 
-// pinning
-// https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning#How_to_use_pinning
+// Enfore Public Key Pinning
+// https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning
+// https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning
 // "2. Strict. Pinning is always enforced."
 user_pref("security.cert_pinning.enforcement_level",		2);
 
@@ -721,11 +731,9 @@ user_pref("security.ssl.treat_unsafe_negotiation_as_broken",	true);
 //user_pref("security.ssl.require_safe_negotiation",		true);
 
 // https://support.mozilla.org/en-US/kb/certificate-pinning-reports
-//
 // we could also disable security.ssl.errorReporting.enabled, but I think it's
 // good to leave the option to report potentially malicious sites if the user
 // chooses to do so.
-//
 // you can test this at https://pinningtest.appspot.com/
 user_pref("security.ssl.errorReporting.automatic",		false);
 
