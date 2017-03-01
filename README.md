@@ -478,32 +478,49 @@ Import the default CA list with:
 cas.sh -C -P ~/.mozilla/firefox/XXXXXXXX.new_profile -a
 ````
 
-Contributing
-------------
+## Contributing
 
-Yes please! All issues and pull requests are more than welcome. Please try to break down your pull requests or commits into small / manageable entities, so they are easier to process. All the settings in the ```user.js``` file should have some official references to them, so the effect of those settings can be easily verified from Mozilla's documentation.
+Yes please! All issues and pull requests are more than welcome. Please try 
+to break down your pull requests or commits into small / manageable entities,
+so they are easier to process. All the settings in the ```user.js``` file
+should have some official references to them, so the effect of those settings
+can be easily verified from Mozilla's documentation.
+
+Feel free to follow the latests commits [RSS feed](https://github.com/pyllyukko/user.js/commits/master.atom)
+and other interesting feeds from the [References](#references) section.
 
 For more information, see <https://github.com/pyllyukko/user.js/blob/master/CONTRIBUTING.md>.
 
-References
-----------
+## References
 
-* [CIS](https://www.cisecurity.org/):
-  * [CIS Mozilla Firefox Benchmark v1.2.0 October 21st, 2011](https://benchmarks.cisecurity.org/downloads/show-single/?file=firefox.120)
-  * [CIS Mozilla Firefox 24 ESR Benchmark v1.0.0 - 06-29-2014](https://benchmarks.cisecurity.org/downloads/show-single/?file=firefoxesr24.100)
-* [Security Advisories for Firefox](https://www.mozilla.org/security/known-vulnerabilities/firefox.html)
-* [The Design and Implementation of the Tor Browser](https://www.torproject.org/projects/torbrowser/design/)
-* [Bulletproof SSL and TLS](https://www.feistyduck.com/books/bulletproof-ssl-and-tls/)
-* [Polaris](https://wiki.mozilla.org/Polaris)
-* [Mozilla Included CA Certificate List](https://wiki.mozilla.org/CA:IncludedCAs)
-  * https://wiki.mozilla.org/CA:Problematic_Practices
-* [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/)
-* [Mozilla Security Blog](https://blog.mozilla.org/security/category/security/)
-* [Security and privacy-related preferences](http://kb.mozillazine.org/Category:Security_and_privacy-related_preferences)
-* [How to stop Firefox from making automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections)
-* [Diff between various Firefox .js configurations in upcoming releases](https://cat-in-136.github.io/)
+#### Mozilla
+
+* **[Security Advisories for Firefox](https://www.mozilla.org/security/known-vulnerabilities/firefox.html)**
+* **[Known Vulnerabilities for Firefox](https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/)
+* **[Mozilla Security Blog](https://blog.mozilla.org/security/category/security/) ([RSS](https://blog.mozilla.org/security/feed/))**
 * [Mozilla Firefox Release Plan](https://wiki.mozilla.org/RapidRelease/Calendar)
 * [Advices from Mozilla Firefox on privacy and government surveillance](https://www.mozilla.org/en-US/teach/smarton/surveillance/)
+* [Polaris - advance privacy technnology for the web](https://wiki.mozilla.org/Polaris)
+* [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/) ([RSS](https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/format:rss?sort=featured))
+
+#### Other
+
+* **[CVEs for Firefox - mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=firefox)**
+* [CVEs for Firefox - cvedetails.com](https://www.cvedetails.com/vulnerability-list/vendor_id-452/product_id-3264/Mozilla-Firefox.html) 
+* [Security and privacy-related preferences](http://kb.mozillazine.org/Category:Security_and_privacy-related_preferences)
+* [Diff between various Firefox .js configurations in upcoming releases](https://cat-in-136.github.io/) **([RSS](https://cat-in-136.github.io/feed.xml)**
+* [Center for Internet Security - Mozilla Firefox benchmarks](https://benchmarks.cisecurity.org/downloads/browse/index.cfm?category=benchmarks.desktop.browsers.firefox) ([RSS](https://benchmarks.cisecurity.org/downloads/rss/))
+* [iSEC Tor Browser evaluation](https://github.com/iSECPartners/publications/tree/master/reports/Tor%20Browser%20Bundle)
+* [The Design and Implementation of the Tor Browser](https://www.torproject.org/projects/torbrowser/design/)
+* [shadow - Firefox jemalloc heap exploitation framework](https://github.com/CENSUS/shadow)
+
+#### TLS/SSL
+
+* [Mozilla Included CA Certificate List](https://wiki.mozilla.org/CA:IncludedCAs)
+* [Potentially problematic CA practices]https://wiki.mozilla.org/CA:Problematic_Practices
+* [Bulletproof SSL and TLS](https://www.feistyduck.com/books/bulletproof-ssl-and-tls/)
+
+--------------------------------------------------------------------------
 
 [1]: http://kb.mozillazine.org/User.js_file
 [2]: https://wiki.mozilla.org/Security:Renegotiation#security.ssl.require_safe_negotiation
