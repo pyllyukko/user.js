@@ -18,10 +18,11 @@ user_pref("layers.acceleration.disabled",			true);
 
 
 /******************************************************************************
- * HTML5 / APIs / DOM                                                         *
- *                                                                            *
+ * HTML5/DOM APIs                                                             *
+ * Disable HTML5/DOM media/p2p/geo/sensors APIs                               *
  ******************************************************************************/
 
+// Disable Service Workers
 // https://developer.mozilla.org/en-US/docs/Web/API/Worker
 // https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker_API
 // https://wiki.mozilla.org/Firefox/Push_Notifications#Service_Workers
@@ -36,6 +37,10 @@ user_pref("dom.webnotifications.enabled",			false);
 // https://trac.torproject.org/projects/tor/ticket/16336
 user_pref("dom.enable_user_timing",				false);
 
+// Disable Web Audio API
+// https://bugzil.la/1288359
+user_pref("dom.webaudio.enabled",				false);
+
 // disable Location-Aware Browsing
 // https://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",					false);
@@ -45,6 +50,7 @@ user_pref("geo.enabled",					false);
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-97/
 // https://developer.mozilla.org/docs/Mozilla/B2G_OS/API/TCPSocket
 user_pref("dom.mozTCPSocket.enabled",				false);
+
 
 // http://kb.mozillazine.org/Dom.storage.enabled
 // https://html.spec.whatwg.org/multipage/webstorage.html
@@ -58,15 +64,13 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=960426
 user_pref("dom.netinfo.enabled",				false);
 
-// Disable Web Audio API
-// https://bugzil.la/1288359
-user_pref("dom.webaudio.enabled",				false);
 
 // Don't reveal your internal IP
 // Check the settings with: http://net.ipcalf.com/
 // https://wiki.mozilla.org/Media/WebRTC/Privacy
 user_pref("media.peerconnection.ice.default_address_only",	true); // Firefox < 51
 user_pref("media.peerconnection.ice.no_host",			true); // Firefox >= 51
+
 // Disable WebRTC entirely
 user_pref("media.peerconnection.enabled",			false);
 
@@ -74,24 +78,34 @@ user_pref("media.peerconnection.enabled",			false);
 // https://wiki.mozilla.org/Media/getUserMedia
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigator
 user_pref("media.navigator.enabled",				false);
+
+// Disable battery API
 // https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
 user_pref("dom.battery.enabled",				false);
+
+// Disable telephony API
 // https://wiki.mozilla.org/WebAPI/Security/WebTelephony
 user_pref("dom.telephony.enabled",				false);
-// https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon
-user_pref("beacon.enabled",					false);
-// https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
-user_pref("dom.event.clipboardevents.enabled",			false);
+
+// Disable DOM timing API
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
 user_pref("dom.enable_performance",				false);
 
-// Speech recognition
+// Disable "beacon" asynchronous HTTP transfers (used for analytics)
+// https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon
+user_pref("beacon.enabled",					false);
+
+// Disable clipboard manipulation via JavaScript
+// https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
+user_pref("dom.event.clipboardevents.enabled",			false);
+
+// Disable speech recognition
 // https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html
 // https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
 // https://wiki.mozilla.org/HTML5_Speech_API
 user_pref("media.webspeech.recognition.enable",			false);
 
-// Speech synthesis
+// Disable speech synthesis
 // https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
 user_pref("media.webspeech.synth.enabled",			false);
 
@@ -127,7 +141,7 @@ user_pref("dom.gamepad.enabled",				false);
 // https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
 user_pref("dom.vr.enabled",					false);
 
-// disable webGL
+// Disable webGL
 // https://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disabled",					true);
 // If you absolutely have to use webGL you can use the minimum capability mode
