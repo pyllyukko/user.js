@@ -113,8 +113,7 @@ Verify that the settings are effective from [about:support](http://kb.mozillazin
 
 --------------------------------------------
 
-What does it do?
-----------------
+## What does it do?
 
 There's a whole lot of settings that this modifies and they are divided in the following sections or categories:
 
@@ -140,7 +139,7 @@ Here are some of the "highlights" from each category. For a full list of setting
 references, check the ```user.js``` file itself.
 
 
-### HTML5 / APIs / DOM
+#### HTML5 / APIs / DOM
 
 * Disable [geolocation](https://www.mozilla.org/en-US/firefox/geolocation/)
 * Don't reveal internal [IP addresses](http://net.ipcalf.com/) ([media.peerconnection.enabled](https://blog.mozilla.org/futurereleases/2013/01/12/capture-local-camera-and-microphone-streams-with-getusermedia-now-enabled-in-firefox/))
@@ -149,14 +148,14 @@ references, check the ```user.js``` file itself.
 * Disable [WebGL](https://en.wikipedia.org/wiki/WebGL)
 * Disable [Battery API](http://mashable.com/2015/08/04/battery-privacy-html5/)
 
-### Miscellaneous
+#### Miscellaneous
 
 * Enables Firefox's [mixed content blocking](https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/) (also for "display" content)
 * Disables various your-browser-knows-better-let-me-guess-what-you-were-trying features
   * Disable this [keyword thingie](http://kb.mozillazine.org/Keyword.enabled)
   * Disable [Domain Guessing](http://www-archive.mozilla.org/docs/end-user/domain-guessing.html)
 
-### Extensions / plugins related
+#### Extensions / plugins related
 
 It is common for [client side attacks](https://www.offensive-security.com/metasploit-unleashed/client-side-attacks/) to target [browser extensions](https://www.mozilla.org/en-US/plugincheck/), instead of the browser itself (just look at all those [Java](https://en.wikipedia.org/wiki/Criticism_of_Java#Security) and [Flash](https://www.cvedetails.com/vulnerability-list/vendor_id-53/product_id-6761/Adobe-Flash-Player.html) vulnerabilities). Make sure your extensions and plugins are always up-to-date.
 
@@ -164,12 +163,12 @@ It is common for [client side attacks](https://www.offensive-security.com/metasp
 * Enable [click to play](https://wiki.mozilla.org/Firefox/Click_To_Play)
 * Enable [add-on updates](https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/)
 
-### Firefox features
+#### Firefox features
 
 * Enables Firefox's built-in [tracking protection][12]
 * Disables [telemetry](https://wiki.mozilla.org/Telemetry), [Crash Reporter](https://support.mozilla.org/en-US/kb/Mozilla%20Crash%20Reporter), [healt report](https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf), [heartbeat](https://wiki.mozilla.org/Advocacy/heartbeat) and other such privacy invading nonsense
 
-### Automatic connections
+#### Automatic connections
 
 This section disables some of Firefox's [automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections).
 
@@ -188,24 +187,24 @@ Do note, that some automatic connections are still intentionally left out (as in
 
 See also [#20](https://github.com/pyllyukko/user.js/issues/20).
 
-### HTTP
+#### HTTP
 
 * Referer header:
   * Spoofs the referer header with [network.http.referer.spoofSource][9] (see: [#2](https://github.com/pyllyukko/user.js/pull/2))
   * "[Don't send the Referer header when navigating from a https site to another https site.](http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer#false)"
 * Don't accept [3rd party cookies](http://kb.mozillazine.org/Network.cookie.cookieBehavior#1)
 
-### Caching
+#### Caching
 
 * Permanently enables [private browsing][8] mode
 * Prevents Firefox from storing data filled in web page forms
 * Disables [password manager](https://support.mozilla.org/en-US/kb/Remembering+passwords)
 
-### UI related
+#### UI related
 
 * Don't [suggest any URLs](http://kb.mozillazine.org/Browser.urlbar.maxRichResults) while typing at the address bar
 
-### TLS / HTTPS / OCSP related
+#### TLS / HTTPS / OCSP related
 
 * TLS 1.[0-3] only
 * Require [OCSP](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol)
@@ -214,7 +213,7 @@ See also [#20](https://github.com/pyllyukko/user.js/issues/20).
 * Disable [TLS session tickets](https://www.blackhat.com/us-13/archives.html#NextGen)
 * Enforces [pinning](https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning)
 
-### Ciphers
+#### Ciphers
 
 This section tweaks the cipher suites used by Firefox. The idea is to support only the strongest ones with emphasis on [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy), but without compromising compatibility with all those sites on the internet. As new crypto related flaws are discovered quite often, the cipher suites can be [tweaked to mitigate these newly discovered threats](https://github.com/pyllyukko/user.js/pull/18).
 
@@ -247,10 +246,9 @@ Cipher Suites (6 suites)
     Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
 ```
 
-This is not enough!
--------------------
+## Further hardening
 
-Here's some other tips how you can further harden Firefox:
+This is not enough! Here's some other tips how you can further harden Firefox:
 
 * Keep your browser updated! If you check [Firefox's security advisories](https://www.mozilla.org/security/known-vulnerabilities/firefox.html), you'll see that pretty much every new version of Firefox contains some security updates. If you don't keep your browser updated, you've already lost the game.
 * Disable/uninstall all unnecessary extensions and plugins!
@@ -273,7 +271,7 @@ Here is a list of the most essential security and privacy enhancing add-ons that
 * [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
 * [Canvas Blocker](https://addons.mozilla.org/firefox/addon/canvasblocker/) ([Source code](https://github.com/kkapsner/CanvasBlocker))
 
-#### Tracking protection
+### Tracking protection
 
 Tracking protection is one of the most important technologies that you need. The usual recommendation has been to run the [Ghostery](https://www.ghostery.com/) extension, but as it is made by a [potentially evim(tm) advertising company](https://en.wikipedia.org/wiki/Ghostery#Criticism), some people feel that is not to be trusted. One notable alternative is to use [uBlock](https://github.com/gorhill/uBlock), which can also be found at [Mozilla AMO](https://addons.mozilla.org/firefox/addon/ublock-origin/).
 
@@ -293,7 +291,7 @@ See also:
 * [Tracking Protection in Firefox For Privacy and Performance](https://kontaxis.github.io/trackingprotectionfirefox/#papers) paper
 * [How Tracking Protection works in Firefox](https://feeding.cloud.geek.nz/posts/how-tracking-protection-works-in-firefox/)
 
-#### Add-ons for mobile platforms
+### Add-ons for mobile platforms
 
 * [NoScript Anywhere](https://noscript.net/nsa/)
 * [uBlock](https://addons.mozilla.org/android/addon/ublock-origin/)
@@ -324,8 +322,8 @@ There are plenty! Hardening your browser will break your interwebs. Here's some 
 
 The [web console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console) is your friend, **when** websites start to break.
 
-CAs
----
+## CAs
+
 
 It all started when I read [this blog post][5]...
 
