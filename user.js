@@ -292,8 +292,9 @@ user_pref("extensions.update.enabled",				true);
 user_pref("extensions.blocklist.enabled",			true);
 
 /******************************************************************************
- * firefox features / components                                              *
- *                                                                            *
+ * Firefox features / components                                              *
+ * Disable Firefox integrated metrics/reporting/experiments, disable some     *
+ * features (PDF reader, New Tab Page, UI tour...), enable Tracking Protection*
  ******************************************************************************/
 
 // WebIDE
@@ -366,7 +367,7 @@ user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 // https://wiki.mozilla.org/Advocacy/heartbeat
 user_pref("browser.selfsupport.url",				"");
 
-// Disable firefox hello
+// Disable Firefox Hello (disabled)
 // https://wiki.mozilla.org/Loop
 //user_pref("loop.enabled",		false);
 // https://groups.google.com/d/topic/mozilla.dev.platform/nyVkCx-_sFw/discussion
@@ -376,14 +377,16 @@ user_pref("loop.logDomains",					false);
 // This is disabled for now. it is better to patch through package management.
 //user_pref("app.update.auto",		true);
 
-// CIS 2.3.4 Block Reported Web Forgeries
+// Enable blocking reported web forgeries
+// CIS 2.3.4 
 // http://kb.mozillazine.org/Browser.safebrowsing.enabled
 // http://kb.mozillazine.org/Safe_browsing
 // https://support.mozilla.org/en-US/kb/how-does-phishing-and-malware-protection-work
 // http://forums.mozillazine.org/viewtopic.php?f=39&t=2711237&p=12896849#p12896849
 user_pref("browser.safebrowsing.enabled",			true);
 
-// CIS 2.3.5 Block Reported Attack Sites
+// Enable blocking reported attack sites
+// CIS 2.3.5 
 // http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled
 user_pref("browser.safebrowsing.malware.enabled",		true);
 
@@ -393,7 +396,7 @@ user_pref("browser.safebrowsing.malware.enabled",		true);
 // https://wiki.mozilla.org/Security/Application_Reputation
 user_pref("browser.safebrowsing.downloads.remote.enabled",	false);
 
-// Disable pocket
+// Disable Pocket
 // https://support.mozilla.org/en-US/kb/save-web-pages-later-pocket-firefox
 user_pref("browser.pocket.enabled",				false);
 // https://github.com/pyllyukko/user.js/issues/143
