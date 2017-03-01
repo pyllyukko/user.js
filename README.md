@@ -98,7 +98,7 @@ Copy `user.js` to the Firefox installation directory. The file should be located
 
 ### Updating using git
 
-For any of the above methods, you can keep your browser's `user.js` with the latest version available here: Clone the repository, and create a symoblic link from the appropriate location to the `user.js` file in the repository. Just run `git pull` in the repository when you want to update, then restart Firefox:
+For any of the above methods, you can keep your browser's `user.js` with the latest version available here: Clone the repository, and create a symbolic link from the appropriate location to the `user.js` file in the repository. Just run `git pull` in the repository when you want to update, then restart Firefox:
 
 ````
 cd ~/.mozilla/firefox
@@ -482,7 +482,7 @@ can be easily verified from Mozilla's documentation.
 Feel free to follow the latests commits [RSS feed](https://github.com/pyllyukko/user.js/commits/master.atom)
 and other interesting feeds from the [References](#references) section.
 
-For more information, see <https://github.com/pyllyukko/user.js/blob/master/CONTRIBUTING.md>.
+For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/blob/master/CONTRIBUTING.md)
 
 ## References
 
@@ -506,7 +506,7 @@ For more information, see <https://github.com/pyllyukko/user.js/blob/master/CONT
 * [CVEs for Firefox - cvedetails.com](https://www.cvedetails.com/vulnerability-list/vendor_id-452/product_id-3264/Mozilla-Firefox.html) 
 * [About:config entries - MozillaZine](http://kb.mozillazine.org/About:config_entries)
 * [Security and privacy-related preferences - MozillaZine](http://kb.mozillazine.org/Category:Security_and_privacy-related_preferences)
-* [Diff between various Firefox .js configurations in upcoming releases](https://cat-in-136.github.io/) **([RSS](https://cat-in-136.github.io/feed.xml)**
+* [Diff between various Firefox .js configurations in upcoming releases](https://cat-in-136.github.io/) **([RSS](https://cat-in-136.github.io/feed.xml))**
 * [Center for Internet Security - Mozilla Firefox benchmarks](https://benchmarks.cisecurity.org/downloads/browse/index.cfm?category=benchmarks.desktop.browsers.firefox) ([RSS](https://benchmarks.cisecurity.org/downloads/rss/))
 * [iSEC Tor Browser evaluation](https://github.com/iSECPartners/publications/tree/master/reports/Tor%20Browser%20Bundle)
 * [The Design and Implementation of the Tor Browser](https://www.torproject.org/projects/torbrowser/design/)
@@ -516,7 +516,7 @@ For more information, see <https://github.com/pyllyukko/user.js/blob/master/CONT
 #### TLS/SSL
 
 * [Mozilla Included CA Certificate List](https://wiki.mozilla.org/CA:IncludedCAs)
-* [Potentially problematic CA practices]https://wiki.mozilla.org/CA:Problematic_Practices
+* [Potentially problematic CA practices](https://wiki.mozilla.org/CA:Problematic_Practices)
 * [Bulletproof SSL and TLS](https://www.feistyduck.com/books/bulletproof-ssl-and-tls/)
 * [TLS Cipher Suite Discovery](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/TLS_Cipher_Suite_Discovery)
 * [Server-side TLS configuration](https://wiki.mozilla.org/Security/Server_Side_TLS)
