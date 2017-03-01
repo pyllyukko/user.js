@@ -3,20 +3,6 @@
  * https://github.com/pyllyukko/user.js                                       *
  ******************************************************************************/
 
- /*****************************************************************************
- * Avoid hardware based fingerprintings                                       *
- * Canvas/Font's/Plugins                                                      *
- ******************************************************************************/
-// https://wiki.mozilla.org/Platform/GFX/HardwareAcceleration
-// https://www.macromedia.com/support/documentation/en/flashplayer/help/help01.html
-// https://en.wikipedia.org/wiki/Canvas_fingerprinting
-// https://www.torproject.org/projects/torbrowser/design/#fingerprinting-linkability
-// https://bugzilla.mozilla.org/show_bug.cgi?id=967895
-// http://www.w2spconf.com/2012/papers/w2sp12-final4.pdf
-user_pref("gfx.direct2d.disabled",				true);
-user_pref("layers.acceleration.disabled",			true);
-
-
 /******************************************************************************
  * HTML5/DOM APIs                                                             *
  * Disable HTML5/DOM media/p2p/geo/sensors APIs                               *
@@ -269,7 +255,8 @@ user_pref("security.dialog_enable_delay",			1000);
 // https://blog.mozilla.org/addons/how-to-opt-out-of-add-on-metadata-updates/
 user_pref("extensions.getAddons.cache.enabled",			false);
 
-// Flash plugin state - never activate
+// Never activate Adobe Flash plugin
+// https://www.cvedetails.com/vulnerability-list/vendor_id-53/product_id-6761/Adobe-Flash-Player.html
 // http://kb.mozillazine.org/Flash_plugin
 user_pref("plugin.state.flash",					0);
 // Java plugin state - never activate
@@ -347,7 +334,7 @@ user_pref("privacy.resistFingerprinting",			true);
 user_pref("pdfjs.disabled",					true);
 
 // Disable sending of the health report
-// https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
+// https://support.mozilla.org/t5/Fix-slowness-crashing-error/Firefox-Health-Report-understand-your-browser-performance/ta-p/14967
 user_pref("datareporting.healthreport.uploadEnabled",		false);
 // disable collection of the data (the healthreport.sqlite* files)
 user_pref("datareporting.healthreport.service.enabled",		false);
