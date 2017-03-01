@@ -299,49 +299,6 @@ See also:
 * [uBlock](https://addons.mozilla.org/android/addon/ublock-origin/)
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 
-## Online tests
-
-#### Version checks
-
-* **[Mozilla Plugin Check](https://www.mozilla.org/en-US/plugincheck/)**
-* [Adobe Flash Player Version Check](https://www.adobe.com/software/flash/about/)
-* [Java Version Check](https://www.java.com/en/download/installed.jsp)
-
-#### Fingerprinting tests
-
-* [BrowserSpy.dk](http://browserspy.dk/)
-* [BrowserLeaks.com](https://www.browserleaks.com/firefox)
-* [IP Check](http://ip-check.info/?lang=en)
-* [Panopticlick](https://panopticlick.eff.org/)
-* [Unique Machine](http://www.uniquemachine.org/)
-* [Firefox Addon Detector](https://thehackerblog.com/addon_scanner/) [[1](https://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)]
-* [AudioContext Fingerprint Test Page](https://audiofingerprint.openwpm.com/)
-* [Evercookie](https://samy.pl/evercookie/)
-* [WebRTC Test Landing Page](https://mozilla.github.io/webrtc-landing/)
-* [Onion test for CORS and WebSocket](https://cure53.de/leak/onion.php)
-* [Official WebGL check](https://get.webgl.org/)
-* [Battery API](https://robnyman.github.io/battery/) [[1](https://pstadler.sh/battery.js/)]
-* [AmIUnique](https://amiunique.org/) ([1](https://github.com/DIVERSIFY-project/amiunique))
-
-#### SSL tests
-
-* [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
-* [How's My SSL](https://www.howsmyssl.com/)
-* [Mixed content tests (Mozilla)](https://people.mozilla.org/~tvyas/mixedcontent.html) 
-* [Mixed content tests (Microsoft)](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm) 
-* [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp) 
-
-
-#### Other tests
-
-* [Test page for Firefox's built-in Tracking Protection](https://itisatrap.org/firefox/its-a-tracker.html)
-* [Test page for Firefox's built-in Phishing Protection](https://itisatrap.org/firefox/its-a-trap.html) ("Web forgeries")
-* [Test page for Firefox's built-in Malware Protection](https://itisatrap.org/firefox/its-an-attack.html) (attack page)
-* [Test page for Firefox's built-in Malware Protection](https://itisatrap.org/firefox/unwanted.html) (unwanted software)
-* [HTML5test](https://html5test.com/) - Comparison of supported HTML5 features in various browsers/versions
-* [Filldisk](http://www.filldisk.com/)
-
-
 ## Known problems
 
 There are plenty! Hardening your browser will break your interwebs. Here's some examples:
@@ -492,9 +449,57 @@ and other interesting feeds from the [References](#references) section.
 
 For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/blob/master/CONTRIBUTING.md)
 
+
+-------------------------------------------------------------------------
+
+## Online tests
+
+#### Version checks
+
+* **[Mozilla Plugin Check](https://www.mozilla.org/en-US/plugincheck/)**
+* [Adobe Flash Player Version Check](https://www.adobe.com/software/flash/about/)
+* [Java Version Check](https://www.java.com/en/download/installed.jsp)
+
+#### Fingerprinting tests
+
+* [BrowserSpy.dk](http://browserspy.dk/)
+* [BrowserLeaks.com](https://www.browserleaks.com/firefox)
+* [IP Check](http://ip-check.info/?lang=en)
+* [Panopticlick](https://panopticlick.eff.org/)
+* [Unique Machine](http://www.uniquemachine.org/)
+* [Firefox Addon Detector](https://thehackerblog.com/addon_scanner/) [[1](https://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)]
+* [AudioContext Fingerprint Test Page](https://audiofingerprint.openwpm.com/)
+* [Evercookie](https://samy.pl/evercookie/)
+* [WebRTC Test Landing Page](https://mozilla.github.io/webrtc-landing/)
+* [Onion test for CORS and WebSocket](https://cure53.de/leak/onion.php)
+* [Official WebGL check](https://get.webgl.org/)
+* [Battery API](https://robnyman.github.io/battery/) [[1](https://pstadler.sh/battery.js/)]
+* [AmIUnique](https://amiunique.org/) ([1](https://github.com/DIVERSIFY-project/amiunique))
+
+#### SSL tests
+
+* [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
+* [How's My SSL](https://www.howsmyssl.com/)
+* [Mixed content tests (Mozilla)](https://people.mozilla.org/~tvyas/mixedcontent.html) 
+* [Mixed content tests (Microsoft)](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm) 
+* [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp) 
+
+
+#### Other tests
+
+* [Test page for Firefox's built-in Tracking Protection](https://itisatrap.org/firefox/its-a-tracker.html)
+* [Test page for Firefox's built-in Phishing Protection](https://itisatrap.org/firefox/its-a-trap.html) ("Web forgeries")
+* [Test page for Firefox's built-in Malware Protection](https://itisatrap.org/firefox/its-an-attack.html) (attack page)
+* [Test page for Firefox's built-in Malware Protection](https://itisatrap.org/firefox/unwanted.html) (unwanted software)
+* [HTML5test](https://html5test.com/) - Comparison of supported HTML5 features in various browsers/versions
+* [Filldisk](http://www.filldisk.com/)
+
+
+---------------------------------------------------------------------------
+
 ## References
 
-#### Mozilla
+#### Mozilla documentation
 
 * **[Security Advisories for Firefox](https://www.mozilla.org/security/known-vulnerabilities/firefox.html)**
 * **[Known Vulnerabilities for Firefox](https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/)**
@@ -508,7 +513,7 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 * [Mozilla preferences for uber-geeks](https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Mozilla_preferences_for_uber-geeks)
 * [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/) ([RSS](https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/format:rss?sort=featured))
 
-#### Other
+#### Other documentation
 
 * **[CVEs for Firefox - mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=firefox)**
 * [CVEs for Firefox - cvedetails.com](https://www.cvedetails.com/vulnerability-list/vendor_id-452/product_id-3264/Mozilla-Firefox.html) 
@@ -521,7 +526,7 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 * [Browser Exploitation Framework](https://beefproject.com/) [[1](http://blog.beefproject.com/) [2](https://github.com/beefproject/beef/wiki) [3](https://github.com/beefproject/beef)]
 * [shadow - Firefox jemalloc heap exploitation framework](https://github.com/CENSUS/shadow)
 
-#### TLS/SSL
+#### TLS/SSL documentation
 
 * [Mozilla Included CA Certificate List](https://wiki.mozilla.org/CA:IncludedCAs)
 * [Potentially problematic CA practices](https://wiki.mozilla.org/CA:Problematic_Practices)
