@@ -378,8 +378,9 @@ user_pref("browser.pocket.enabled",				false);
 user_pref("extensions.pocket.enabled",				false);
 
 /******************************************************************************
- * automatic connections                                                      *
- *                                                                            *
+ * Automatic connections                                                      *
+ * Prevents the browser from auto-connecting to some Mozilla services, and    *
+ * from predictively opening connections to websites during browsing.         *
  ******************************************************************************/
 
 // Disable link prefetching
@@ -406,7 +407,7 @@ user_pref("browser.search.suggest.enabled",			false);
 user_pref("browser.urlbar.suggest.searches",			false);
 
 // Disable SSDP
-// https://bugzil.la/1111967
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1111967
 user_pref("browser.casting.enabled",				false);
 
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_media-capabilities
