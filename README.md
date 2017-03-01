@@ -1,18 +1,17 @@
-Firefox hardening
-=================
+# user.js
+
+**Firefox configuration hardening**
+
+A [user.js][1] configuration file for Mozilla Firefox designed to harden Firefox settings and
+make it more secure.
 
 [![Build Status](https://travis-ci.org/pyllyukko/user.js.svg?branch=master)](https://travis-ci.org/pyllyukko/user.js)
 
-What's all this then?
----------------------
-
-This is a [user.js][1] configuration file for Mozilla Firefox that's supposed to harden Firefox's settings and make it more secure.
-
 ### Main goals
 
-* Limit the possibilities to track the user through [web analytics](https://en.wikipedia.org/wiki/Web_analytics)
-* Harden the browser, so it doesn't spill its guts when asked (have you seen what [BeEF](https://beefproject.com/) can do?)
-* Limit the browser from storing anything even remotely sensitive persistently (mostly just making sure [private browsing][8] is always on)
+* Limit the possibilities to track the user through [web analytics](https://en.wikipedia.org/wiki/Web_analytics).
+* Harden the browser against known data disclosure or code execution vulnerabilities.
+* Limit the browser from storing anything even remotely sensitive persistently
 * Make sure the browser doesn't reveal too much information to [shoulder surfers](https://en.wikipedia.org/wiki/Shoulder_surfing_%28computer_security%29)
 * Harden the browser's encryption (cipher suites, protocols, trusted CAs)
 * Hopefully limit the attack surface by disabling various features
@@ -22,58 +21,16 @@ This is a [user.js][1] configuration file for Mozilla Firefox that's supposed to
 
 There are several parts to all this and they are:
 
-* Running a selected list of browser extensions
 * Using the user.js settings file itself
+* Running a selected list of browser extensions
+* Maintaining good security practices
 * Using the **cas.sh** script to limit the CAs
 
 ----------------------------------------------
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-  - [How to use the user.js file](#how-to-use-the-userjs-file)
-    - [Android](#android)
-    - [Windows](#windows)
-  - [What does it do?](#what-does-it-do)
-    - [HTML5 / APIs / DOM](#html5--apis--dom)
-    - [Miscellaneous](#miscellaneous)
-    - [Extensions / plugins related](#extensions--plugins-related)
-    - [Firefox features](#firefox-features)
-    - [Automatic connections](#automatic-connections)
-    - [HTTP](#http)
-    - [Caching](#caching)
-    - [UI related](#ui-related)
-    - [TLS / HTTPS / OCSP related](#tls--https--ocsp-related)
-    - [Ciphers](#ciphers)
-  - [This is not enough!](#this-is-not-enough)
-    - [Add-ons](#add-ons)
-      - [Tracking protection](#tracking-protection)
-      - [Add-ons for mobile platforms](#add-ons-for-mobile-platforms)
-  - [Online tests](#online-tests)
-  - [Known problems](#known-problems)
-  - [CAs](#cas)
-    - [Examples](#examples)
-      - [Check the current list of CAs in cert8.db](#check-the-current-list-of-cas-in-cert8db)
-      - [Import CAs](#import-cas)
-      - [Verify that it worked](#verify-that-it-worked)
-    - [The default list](#the-default-list)
-      - [How to use the default list](#how-to-use-the-default-list)
-  - [TODO](#todo)
-  - [Contributing](#contributing)
-  - [References](#references)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-----------------------------------------------
-
-
-
-
-# How to use the user.js file
-
+TODO insert toc
 
 ## Download
-
 
 Different download methods are available:
 
@@ -83,9 +40,10 @@ Different download methods are available:
 
 ## Installation
 
-### Install for a single profile
+### Single profile installation
 
-Copy `user.js` in your current user profile, or (recommended) to a fresh, newly created Firefox profile directory.
+Copy `user.js` in your current user profile directory, or (recommended) to a fresh, newly
+created Firefox profile directory.
 
 The file should be located at:
 
@@ -98,11 +56,16 @@ The file should be located at:
 | Sailfish OS + Alien Dalvik | `/opt/alien/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name`                                                           |
 | Windows (portable)         | `[firefox directory]\Data\profile\`                                       |
 
-Do note that these settings alter your browser behaviour quite a bit, so it is recommended to either create a completely new [profile][15] for Firefox or backup your existing [profile directory](http://kb.mozillazine.org/Profile_folder_-_Firefox) before putting the ```user.js``` file in place.
+Do note that these settings alter your browser behaviour quite a bit, so it is recommended to
+either create a completely new [profile][15] for Firefox or backup your existing 
+[profile directory](http://kb.mozillazine.org/Profile_folder_-_Firefox) before putting the
+```user.js``` file in place.
 
-To enable the Profile Manager, run Firefox with [command-line arguments](http://kb.mozillazine.org/Command_line_arguments): `firefox --no-remote -P`
+To enable the Profile Manager, run Firefox with
+[command-line arguments](http://kb.mozillazine.org/Command_line_arguments):
+`firefox --no-remote -P`
 
-### Install system-wide
+### System-wide installation
 
 Create `local-settings.js` in Firefox installation directory, with the following contents:
 
@@ -166,9 +129,15 @@ There's a whole lot of settings that this modifies and they are divided in the f
 * TLS / HTTPS / OCSP related
 * Cipher suites
 
-Some of the settings in this [user.js][1] file might seem redundant, as some of them are already set to the same values by default. However, the [user.js][1] file has this nice property, that even if you go change any of these settings through [about:config][6], they're reset to the [user.js][1] defined values after you restart Firefox. So [user.js][1] makes sure they're back at the secure default values always when you start your browser. That way, it also makes experimenting with different settings easier.
+Some of the settings in this [user.js][1] file might seem redundant, as some of them are
+already set to the same values by default. However, the [user.js][1] file has this nice
+property, that even if you go change any of these settings through [about:config][6], they're
+reset to the [user.js][1] defined values after you restart Firefox. So [user.js][1] makes
+sure they're back at the secure default values always when you start your browser. That way,
+it also makes experimenting with different settings easier.
 
-Here are some of the "highlights" from each category. For a full list of settings and references, check the ```user.js``` file itself.
+Here are some of the "highlights" from each category. For a full list of settings and 
+references, check the ```user.js``` file itself.
 
 
 ### HTML5 / APIs / DOM
@@ -284,7 +253,8 @@ This is not enough!
 Here's some other tips how you can further harden Firefox:
 
 * Keep your browser updated! If you check [Firefox's security advisories](https://www.mozilla.org/security/known-vulnerabilities/firefox.html), you'll see that pretty much every new version of Firefox contains some security updates. If you don't keep your browser updated, you've already lost the game.
-* Disable all unnecessary extensions and plugins!
+* Disable/uninstall all unnecessary extensions and plugins!
+* If a plugin is absolutely required, [check for plugin updates](https://www.mozilla.org/en-US/plugincheck/)
 * Create different [profiles][15] for different purposes
 * Change the Firefox's built-in tracking protection to use the [strict list](https://support.mozilla.org/en-US/kb/tracking-protection-pbm?as=u#w_change-your-block-list)
 * Change the timezone for Firefox by using the ```TZ``` environment variable (see [here](https://wiki.archlinux.org/index.php/Firefox_privacy#Change_browser_time_zone)) to reduce it's value in browser fingerprinting
@@ -477,6 +447,30 @@ Import the default CA list with:
 cas.sh -C -P ~/.mozilla/firefox/XXXXXXXX.new_profile -a
 ````
 
+## FAQ
+
+**Why are obsolete/deprecated entries included in the user.js file?**
+
+In case you want to use an older Firefox version (e.g. for test reasons) and normally it 
+doesn't hurt your browser if there are old about:config preferences present.
+
+**Installing the user.js file breaks xyz plugin/addon/extension, how can I fix it?**
+
+See https://github.com/pyllyukko/user.js/issues/100
+
+**Does this user.js file fix all security problems?**
+
+No. Please report problems on the project's
+[issue](https://github.com/pyllyukko/user.js/issues?q=is%3Aissue) tracker.
+
+**Will there be an official addon/an android version/feature xyz?**
+
+Search the project [issues](https://github.com/pyllyukko/user.js/issues?q=is%3Aissue).
+
+**How can I lock my preferences to prevent Firefox overwriting them?**
+
+See `lockPref` in [System-wide installation](#system-wide-installation).
+
 ## Contributing
 
 Yes please! All issues and pull requests are more than welcome. Please try 
@@ -516,6 +510,7 @@ For more information, see <https://github.com/pyllyukko/user.js/blob/master/CONT
 * [Center for Internet Security - Mozilla Firefox benchmarks](https://benchmarks.cisecurity.org/downloads/browse/index.cfm?category=benchmarks.desktop.browsers.firefox) ([RSS](https://benchmarks.cisecurity.org/downloads/rss/))
 * [iSEC Tor Browser evaluation](https://github.com/iSECPartners/publications/tree/master/reports/Tor%20Browser%20Bundle)
 * [The Design and Implementation of the Tor Browser](https://www.torproject.org/projects/torbrowser/design/)
+* [Browser Exploitation Framework](https://beefproject.com/) [[1](http://blog.beefproject.com/) [2](https://github.com/beefproject/beef/wiki) [3](https://github.com/beefproject/beef)]
 * [shadow - Firefox jemalloc heap exploitation framework](https://github.com/CENSUS/shadow)
 
 #### TLS/SSL
