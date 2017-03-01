@@ -603,7 +603,7 @@ user_pref("browser.pagethumbnails.capturing_disabled",		true);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1217156
 user_pref("security.insecure_password.ui.enabled",		true);
 
-// Webpages will not be able to affect the right-click menu
+// Disable right-click menu manipulation via JavaScript (disabled)
 //user_pref("dom.event.contextmenu.enabled",		false);
 
 // Disable "Are you sure you want to leave this page?" popups on page close
@@ -615,8 +615,8 @@ user_pref("security.insecure_password.ui.enabled",		true);
 // CIS 2.3.2 Disable Downloading on Desktop
 user_pref("browser.download.folderList",			2);
 
-// always ask the user where to download
-// https://developer.mozilla.org/en/Download_Manager_preferences
+// Always ask the user where to download
+// https://developer.mozilla.org/en/Download_Manager_preferences (obsolete)
 user_pref("browser.download.useDownloadDir",			false);
 
 // https://wiki.mozilla.org/Privacy/Reviews/New_Tab
@@ -628,7 +628,9 @@ user_pref("browser.newtab.url",					"about:blank");
 // https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review
 user_pref("plugins.update.notifyUser",				true);
 
-// CIS Version 1.2.0 October 21st, 2011 2.1.3 Enable Information Bar for Outdated Plugins
+// Enable Information Bar for Outdated Plugins
+// CIS Version 1.2.0 October 21st, 2011 2.1.3 
+// http://forums.mozillazine.org/viewtopic.php?f=8&t=2490287
 user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
 
 // CIS Mozilla Firefox 24 ESR v1.0.0 - 3.6 Enable IDN Show Punycode
@@ -639,6 +641,7 @@ user_pref("network.IDN_show_punycode",				true);
 user_pref("browser.urlbar.autoFill",				false);
 user_pref("browser.urlbar.autoFill.typed",			false);
 
+// Don't suggest any URLs while typing at the address bar
 // https://www.labnol.org/software/browsers/prevent-firefox-showing-bookmarks-address-location-bar/3636/
 // http://kb.mozillazine.org/Browser.urlbar.maxRichResults
 // "Setting the preference to 0 effectively disables the Location Bar dropdown entirely."
@@ -650,12 +653,16 @@ user_pref("layout.css.visited_links_enabled",			false);
 
 // http://kb.mozillazine.org/Places.frecency.unvisited%28place_type%29Bonus
 
+// Disable URL bar autocomplete
 // http://kb.mozillazine.org/Disabling_autocomplete_-_Firefox#Firefox_3.5
 user_pref("browser.urlbar.autocomplete.enabled",		false);
 
 // do not check if firefox is the default browser
 user_pref("browser.shell.checkDefaultBrowser",			false);
 
+// Ask for the master password only the first time it's needed, unlock it for the rest of the session
+// (when password manager is enabled)
+// NOTICE: this actually lessens security, but is more convenient
 // CIS Version 1.2.0 October 21st, 2011 2.5.3 Disable Prompting for Credential Storage
 user_pref("security.ask_for_password",				0);
 
