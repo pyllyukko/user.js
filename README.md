@@ -499,6 +499,7 @@ For more information, see <https://github.com/pyllyukko/user.js/blob/master/CONT
 * **[Known Vulnerabilities for Firefox](https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/)
 * **[Mozilla Security Blog](https://blog.mozilla.org/security/category/security/) ([RSS](https://blog.mozilla.org/security/feed/))**
 * [Mozilla Firefox Release Plan](https://wiki.mozilla.org/RapidRelease/Calendar)
+* [Mozilla Firefox developer release notes](https://developer.mozilla.org/en-US/Firefox/Releases)
 * [Advices from Mozilla Firefox on privacy and government surveillance](https://www.mozilla.org/en-US/teach/smarton/surveillance/)
 * [Polaris - advance privacy technnology for the web](https://wiki.mozilla.org/Polaris)
 * [Mozilla Privacy Principles](https://wiki.mozilla.org/Privacy/Principles)
@@ -520,6 +521,8 @@ For more information, see <https://github.com/pyllyukko/user.js/blob/master/CONT
 * [Mozilla Included CA Certificate List](https://wiki.mozilla.org/CA:IncludedCAs)
 * [Potentially problematic CA practices]https://wiki.mozilla.org/CA:Problematic_Practices
 * [Bulletproof SSL and TLS](https://www.feistyduck.com/books/bulletproof-ssl-and-tls/)
+* [TLS Cipher Suite Discovery](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/TLS_Cipher_Suite_Discovery)
+* [Server-side TLS configuration](https://wiki.mozilla.org/Security/Server_Side_TLS)
 
 --------------------------------------------------------------------------
 

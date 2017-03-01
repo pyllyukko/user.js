@@ -735,7 +735,9 @@ user_pref("browser.ssl_override_behavior",			1);
 
 /******************************************************************************
  * CIPHERS                                                                    *
- *                                                                            *
+ * Since Firefox 32 most of the weak ciphers are removed which makes most of  *
+ * the changes obsolete and are only persistent in case of you use an outdated*
+ * release https://bugzilla.mozilla.org/show_bug.cgi?id=934663                *
  * you can debug the SSL handshake with tshark:                               *
  *     tshark -t ad -n -i wlan0 -T text -V -R ssl.handshake                   *
  ******************************************************************************/
