@@ -170,7 +170,6 @@ Some of the settings in this [user.js][1] file might seem redundant, as some of 
 
 Here are some of the "highlights" from each category. For a full list of settings and references, check the ```user.js``` file itself.
 
-A full list of Firefox preferences and default values can be found at [DXR](https://dxr.mozilla.org/mozilla-central/source/modules/libpref/init/all.js)
 
 ### HTML5 / APIs / DOM
 
@@ -496,7 +495,8 @@ For more information, see <https://github.com/pyllyukko/user.js/blob/master/CONT
 #### Mozilla
 
 * **[Security Advisories for Firefox](https://www.mozilla.org/security/known-vulnerabilities/firefox.html)**
-* **[Known Vulnerabilities for Firefox](https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/)
+* **[Known Vulnerabilities for Firefox](https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/)**
+* **[DXR - All Firefox preferences](https://dxr.mozilla.org/mozilla-central/source/modules/libpref/init/all.js) ([RSS](https://dxr.mozilla.org/mozilla-central/source/modules/libpref/init/all.js))**
 * **[Mozilla Security Blog](https://blog.mozilla.org/security/category/security/) ([RSS](https://blog.mozilla.org/security/feed/))**
 * [Mozilla Firefox Release Plan](https://wiki.mozilla.org/RapidRelease/Calendar)
 * [Mozilla Firefox developer release notes](https://developer.mozilla.org/en-US/Firefox/Releases)
@@ -509,7 +509,8 @@ For more information, see <https://github.com/pyllyukko/user.js/blob/master/CONT
 
 * **[CVEs for Firefox - mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=firefox)**
 * [CVEs for Firefox - cvedetails.com](https://www.cvedetails.com/vulnerability-list/vendor_id-452/product_id-3264/Mozilla-Firefox.html) 
-* [Security and privacy-related preferences](http://kb.mozillazine.org/Category:Security_and_privacy-related_preferences)
+* [About:config entries - MozillaZine](http://kb.mozillazine.org/About:config_entries)
+* [Security and privacy-related preferences - MozillaZine](http://kb.mozillazine.org/Category:Security_and_privacy-related_preferences)
 * [Diff between various Firefox .js configurations in upcoming releases](https://cat-in-136.github.io/) **([RSS](https://cat-in-136.github.io/feed.xml)**
 * [Center for Internet Security - Mozilla Firefox benchmarks](https://benchmarks.cisecurity.org/downloads/browse/index.cfm?category=benchmarks.desktop.browsers.firefox) ([RSS](https://benchmarks.cisecurity.org/downloads/rss/))
 * [iSEC Tor Browser evaluation](https://github.com/iSECPartners/publications/tree/master/reports/Tor%20Browser%20Bundle)

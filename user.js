@@ -497,8 +497,7 @@ user_pref("network.cookie.cookieBehavior",			1);
 // https://developer.mozilla.org/en-US/docs/Cookies_Preferences_in_Mozilla#network.cookie.thirdparty.sessionOnly
 user_pref("network.cookie.thirdparty.sessionOnly",		true);
 
-// user-agent
-// http://kb.mozillazine.org/About:config_entries#General.
+// User-agent
 //user_pref("general.useragent.override",				"Mozilla/5.0 (Windows NT 6.1; rv:31.0) Gecko/20100101 Firefox/31.0");
 //user_pref("general.platform.override",				"Win32");
 //user_pref("general.oscpu.override",				"Windows NT 6.1");
@@ -636,7 +635,6 @@ user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
 // http://kb.mozillazine.org/Network.IDN_show_punycode
 user_pref("network.IDN_show_punycode",				true);
 
-// http://kb.mozillazine.org/About:config_entries#Browser
 // http://kb.mozillazine.org/Inline_autocomplete
 user_pref("browser.urlbar.autoFill",				false);
 user_pref("browser.urlbar.autoFill.typed",			false);
