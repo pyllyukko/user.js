@@ -514,9 +514,15 @@ user_pref("places.history.enabled",				false);
 // http://kb.mozillazine.org/Network.cookie.lifetimePolicy#2
 user_pref("network.cookie.lifetimePolicy",			2);
 
+// Disable disk cache
 // http://kb.mozillazine.org/Browser.cache.disk.enable
 user_pref("browser.cache.disk.enable",				false);
 
+// When disk cache is enabled, set the disk cache size according to the available disk space (default: true)
+// https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Mozilla_networking_preferences
+// user_pref("browser.cache.disk.smart_size.enabled", true);
+// user_pref("browser.cache.disk.smart_size.first_run", true);
+          
 // http://kb.mozillazine.org/Browser.cache.memory.enable
 //user_pref("browser.cache.memory.enable",		false);
 
