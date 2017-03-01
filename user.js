@@ -234,8 +234,9 @@ user_pref("general.buildID.override",				"20100101");
 user_pref("browser.display.use_document_fonts",			0);
 
 /******************************************************************************
- * extensions / plugins                                                       *
- *                                                                            *
+ * Extensions / plugins                                                       *
+ * Harden preferences related to external plugins (Adobe Flash, Microsoft     *
+ * Silverlight, OpenH264 codec...)                                            *
  ******************************************************************************/
 
 // Ensure you have a security delay when installing add-ons (milliseconds)
@@ -244,6 +245,7 @@ user_pref("browser.display.use_document_fonts",			0);
 user_pref("security.dialog_enable_delay",			1000);
 
 // Require signatures
+// https://wiki.mozilla.org/Addons/Extension_Signing
 //user_pref("xpinstall.signatures.required",		true);
 
 // Opt-out of add-on metadata updates
@@ -251,6 +253,7 @@ user_pref("security.dialog_enable_delay",			1000);
 user_pref("extensions.getAddons.cache.enabled",			false);
 
 // Flash plugin state - never activate
+// http://kb.mozillazine.org/Flash_plugin
 user_pref("plugin.state.flash",					0);
 
 // disable Gnome Shell Integration
