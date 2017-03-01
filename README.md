@@ -457,25 +457,25 @@ cas.sh -C -P ~/.mozilla/firefox/XXXXXXXX.new_profile -a
 
 ## FAQ
 
-**Why are obsolete/deprecated entries included in the user.js file?**
+> Why are obsolete/deprecated entries included in the user.js file?
 
 In case you want to use an older Firefox version (e.g. for test reasons) and normally it 
 doesn't hurt your browser if there are old about:config preferences present.
 
-**Installing the user.js file breaks xyz plugin/addon/extension, how can I fix it?**
+> Installing the user.js file breaks xyz plugin/addon/extension, how can I fix it?
 
 See https://github.com/pyllyukko/user.js/issues/100
 
-**Does this user.js file fix all security problems?**
+> Does this user.js file fix all security problems?
 
 No. Please report problems on the project's
 [issue](https://github.com/pyllyukko/user.js/issues?q=is%3Aissue) tracker.
 
-**Will there be an official addon/an android version/feature xyz?**
+> Will there be an official addon/an android version/feature xyz?
 
 Search the project [issues](https://github.com/pyllyukko/user.js/issues?q=is%3Aissue).
 
-**How can I lock my preferences to prevent Firefox overwriting them?**
+> How can I lock my preferences to prevent Firefox overwriting them?
 
 See `lockPref` in [System-wide installation](#system-wide-installation).
 
