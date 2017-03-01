@@ -28,6 +28,8 @@ There are several parts to all this and they are:
 
 ----------------------------------------------
 
+TODO insert toc
+
 ## Download
 
 Different download methods are available:
@@ -113,18 +115,7 @@ Verify that the settings are effective from [about:support](http://kb.mozillazin
 
 ## What does it do?
 
-There's a whole lot of settings that this modifies and they are divided in the following sections or categories:
-
-* HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / DOM
-* Miscellaneous
-* Extensions / plugins related
-* Firefox (anti-)[features](https://en.wikipedia.org/wiki/Feature_creep) / components
-* [Automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections)
-* HTTP protocol related
-* Caching
-* UI related
-* TLS / HTTPS / OCSP related
-* Cipher suites
+There's a whole lot of settings that this modifies and they are divided in the following sections.
 
 Some of the settings in this [user.js][1] file might seem redundant, as some of them are
 already set to the same values by default. However, the [user.js][1] file has this nice
@@ -133,116 +124,9 @@ reset to the [user.js][1] defined values after you restart Firefox. So [user.js]
 sure they're back at the secure default values always when you start your browser. That way,
 it also makes experimenting with different settings easier.
 
-Here are some of the "highlights" from each category. For a full list of settings and 
-references, check the ```user.js``` file itself.
+<!-- BEGIN SECTION -->
 
-
-#### HTML5 / APIs / DOM
-
-* Disable [geolocation](https://www.mozilla.org/en-US/firefox/geolocation/)
-* Don't reveal internal [IP addresses](http://net.ipcalf.com/) ([media.peerconnection.enabled](https://blog.mozilla.org/futurereleases/2013/01/12/capture-local-camera-and-microphone-streams-with-getusermedia-now-enabled-in-firefox/))
-  * [BeEF Module: Get Internal IP WebRTC](https://github.com/beefproject/beef/wiki/Module%3A-Get-Internal-IP-WebRTC)
-* [browser.send_pings](http://kb.mozillazine.org/Browser.send_pings)
-* Disable [WebGL](https://en.wikipedia.org/wiki/WebGL)
-* Disable [Battery API](http://mashable.com/2015/08/04/battery-privacy-html5/)
-
-#### Miscellaneous
-
-* Enables Firefox's [mixed content blocking](https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/) (also for "display" content)
-* Disables various your-browser-knows-better-let-me-guess-what-you-were-trying features
-  * Disable this [keyword thingie](http://kb.mozillazine.org/Keyword.enabled)
-  * Disable [Domain Guessing](http://www-archive.mozilla.org/docs/end-user/domain-guessing.html)
-
-#### Extensions / plugins related
-
-It is common for [client side attacks](https://www.offensive-security.com/metasploit-unleashed/client-side-attacks/) to target [browser extensions](https://www.mozilla.org/en-US/plugincheck/), instead of the browser itself (just look at all those [Java](https://en.wikipedia.org/wiki/Criticism_of_Java#Security) and [Flash](https://www.cvedetails.com/vulnerability-list/vendor_id-53/product_id-6761/Adobe-Flash-Player.html) vulnerabilities). Make sure your extensions and plugins are always up-to-date.
-
-* Disable Adobe Flash
-* Enable [click to play](https://wiki.mozilla.org/Firefox/Click_To_Play)
-* Enable [add-on updates](https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/)
-
-#### Firefox features
-
-* Enables Firefox's built-in [tracking protection][12]
-* Disables [telemetry](https://wiki.mozilla.org/Telemetry), [healt report](https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf), [heartbeat](https://wiki.mozilla.org/Advocacy/heartbeat) and other such privacy invading nonsense
-
-#### Automatic connections
-
-This section disables some of Firefox's [automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections).
-
-* Disables prefetching
-  * [network.prefetch-next](http://kb.mozillazine.org/Network.prefetch-next)
-  * [network.dns.disablePrefetch](http://kb.mozillazine.org/Network.dns.disablePrefetch)
-* Disable [Necko](https://wiki.mozilla.org/Privacy/Reviews/Necko)/predictor
-* Disable [search suggestions](http://kb.mozillazine.org/Browser.search.suggest.enabled)
-
-Do note, that some automatic connections are still intentionally left out (as in not disabled), namely the following:
-
-* [browser.safebrowsing.malware.enabled](http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled)
-* [plugins.update.notifyUser](https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review)
-* ```extensions.update.enabled```
-* [extensions.blocklist.enabled](http://kb.mozillazine.org/Extensions.blocklist.enabled)
-
-See also [#20](https://github.com/pyllyukko/user.js/issues/20).
-
-#### HTTP
-
-* Referer header:
-  * Spoofs the referer header with [network.http.referer.spoofSource][9] (see: [#2](https://github.com/pyllyukko/user.js/pull/2))
-  * "[Don't send the Referer header when navigating from a https site to another https site.](http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer#false)"
-* Don't accept [3rd party cookies](http://kb.mozillazine.org/Network.cookie.cookieBehavior#1)
-
-#### Caching
-
-* Permanently enables [private browsing][8] mode
-* Prevents Firefox from storing data filled in web page forms
-* Disables [password manager](https://support.mozilla.org/en-US/kb/Remembering+passwords)
-
-#### UI related
-
-* Don't [suggest any URLs](http://kb.mozillazine.org/Browser.urlbar.maxRichResults) while typing at the address bar
-
-#### TLS / HTTPS / OCSP related
-
-* TLS 1.[0-3] only
-* Require [OCSP](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol)
-  * Notice that this setting has some [privacy implications](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol#Privacy_concerns)
-* [OCSP stapling](https://blog.mozilla.org/security/2013/07/29/ocsp-stapling-in-firefox/) (enabled by default anyway)
-* Disable [TLS session tickets](https://www.blackhat.com/us-13/archives.html#NextGen)
-* Enforces [pinning](https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning)
-
-#### Ciphers
-
-This section tweaks the cipher suites used by Firefox. The idea is to support only the strongest ones with emphasis on [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy), but without compromising compatibility with all those sites on the internet. As new crypto related flaws are discovered quite often, the cipher suites can be [tweaked to mitigate these newly discovered threats](https://github.com/pyllyukko/user.js/pull/18).
-
-Here's a list of the ciphers with default config and Firefox 38.8.0 ESR:
-
-```
-Cipher Suites (11 suites)
-    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b)
-    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)
-    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a)
-    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA (0xc009)
-    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013)
-    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
-    Cipher Suite: TLS_DHE_RSA_WITH_AES_128_CBC_SHA (0x0033)
-    Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA (0x0039)
-    Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
-    Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
-    Cipher Suite: TLS_RSA_WITH_3DES_EDE_CBC_SHA (0x000a)
-```
-
-Here's the list with this config:
-
-```
-Cipher Suites (6 suites)
-    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b)
-    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)
-    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a)
-    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
-    Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
-    Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
-```
+<!-- END SECTION -->
 
 ## Further hardening
 
@@ -460,17 +344,20 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 
 * [BrowserSpy.dk](http://browserspy.dk/)
 * [BrowserLeaks.com](https://www.browserleaks.com/firefox)
-* [IP Check](http://ip-check.info/?lang=en)
+* [AmIUnique](https://amiunique.org/) ([1](https://github.com/DIVERSIFY-project/amiunique))
 * [Panopticlick](https://panopticlick.eff.org/)
 * [Unique Machine](http://www.uniquemachine.org/)
 * [Firefox Addon Detector](https://thehackerblog.com/addon_scanner/) [[1](https://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)]
 * [AudioContext Fingerprint Test Page](https://audiofingerprint.openwpm.com/)
 * [Evercookie](https://samy.pl/evercookie/)
 * [WebRTC Test Landing Page](https://mozilla.github.io/webrtc-landing/)
+* [getUserMedia Test Page](https://mozilla.github.io/webrtc-landing/gum_test.html)
 * [Onion test for CORS and WebSocket](https://cure53.de/leak/onion.php)
 * [Official WebGL check](https://get.webgl.org/)
 * [Battery API](https://robnyman.github.io/battery/) [[1](https://pstadler.sh/battery.js/)]
-* [AmIUnique](https://amiunique.org/) ([1](https://github.com/DIVERSIFY-project/amiunique))
+* [WebRTC LAN address leak test](http://net.ipcalf.com/)
+* [IP Check](http://ip-check.info/?lang=en)
+
 
 #### SSL tests
 
@@ -479,7 +366,6 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 * [Mixed content tests (Mozilla)](https://people.mozilla.org/~tvyas/mixedcontent.html) 
 * [Mixed content tests (Microsoft)](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm) 
 * [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp) 
-
 
 #### Other tests
 
