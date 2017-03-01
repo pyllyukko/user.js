@@ -1,18 +1,17 @@
-Firefox hardening
-=================
+# user.js
+
+**Firefox configuration hardening**
+
+A [user.js][1] configuration file for Mozilla Firefox designed to harden Firefox settings and
+make it more secure.
 
 [![Build Status](https://travis-ci.org/pyllyukko/user.js.svg?branch=master)](https://travis-ci.org/pyllyukko/user.js)
 
-What's all this then?
----------------------
-
-This is a [user.js][1] configuration file for Mozilla Firefox that's supposed to harden Firefox's settings and make it more secure.
-
 ### Main goals
 
-* Limit the possibilities to track the user through [web analytics](https://en.wikipedia.org/wiki/Web_analytics)
-* Harden the browser, so it doesn't spill its guts when asked (have you seen what [BeEF](https://beefproject.com/) can do?)
-* Limit the browser from storing anything even remotely sensitive persistently (mostly just making sure [private browsing][8] is always on)
+* Limit the possibilities to track the user through [web analytics](https://en.wikipedia.org/wiki/Web_analytics).
+* Harden the browser against known data disclosure or code execution vulnerabilities.
+* Limit the browser from storing anything even remotely sensitive persistently
 * Make sure the browser doesn't reveal too much information to [shoulder surfers](https://en.wikipedia.org/wiki/Shoulder_surfing_%28computer_security%29)
 * Harden the browser's encryption (cipher suites, protocols, trusted CAs)
 * Hopefully limit the attack surface by disabling various features
@@ -22,58 +21,16 @@ This is a [user.js][1] configuration file for Mozilla Firefox that's supposed to
 
 There are several parts to all this and they are:
 
-* Running a selected list of browser extensions
 * Using the user.js settings file itself
+* Running a selected list of browser extensions
+* Maintaining good security practices
 * Using the **cas.sh** script to limit the CAs
 
 ----------------------------------------------
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-  - [How to use the user.js file](#how-to-use-the-userjs-file)
-    - [Android](#android)
-    - [Windows](#windows)
-  - [What does it do?](#what-does-it-do)
-    - [HTML5 / APIs / DOM](#html5--apis--dom)
-    - [Miscellaneous](#miscellaneous)
-    - [Extensions / plugins related](#extensions--plugins-related)
-    - [Firefox features](#firefox-features)
-    - [Automatic connections](#automatic-connections)
-    - [HTTP](#http)
-    - [Caching](#caching)
-    - [UI related](#ui-related)
-    - [TLS / HTTPS / OCSP related](#tls--https--ocsp-related)
-    - [Ciphers](#ciphers)
-  - [This is not enough!](#this-is-not-enough)
-    - [Add-ons](#add-ons)
-      - [Tracking protection](#tracking-protection)
-      - [Add-ons for mobile platforms](#add-ons-for-mobile-platforms)
-  - [Online tests](#online-tests)
-  - [Known problems](#known-problems)
-  - [CAs](#cas)
-    - [Examples](#examples)
-      - [Check the current list of CAs in cert8.db](#check-the-current-list-of-cas-in-cert8db)
-      - [Import CAs](#import-cas)
-      - [Verify that it worked](#verify-that-it-worked)
-    - [The default list](#the-default-list)
-      - [How to use the default list](#how-to-use-the-default-list)
-  - [TODO](#todo)
-  - [Contributing](#contributing)
-  - [References](#references)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-----------------------------------------------
-
-
-
-
-# How to use the user.js file
-
+TODO insert toc
 
 ## Download
-
 
 Different download methods are available:
 
@@ -83,9 +40,10 @@ Different download methods are available:
 
 ## Installation
 
-### Install for a single profile
+### Single profile installation
 
-Copy `user.js` in your current user profile, or (recommended) to a fresh, newly created Firefox profile directory.
+Copy `user.js` in your current user profile directory, or (recommended) to a fresh, newly
+created Firefox profile directory.
 
 The file should be located at:
 
@@ -98,11 +56,16 @@ The file should be located at:
 | Sailfish OS + Alien Dalvik | `/opt/alien/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name`                                                           |
 | Windows (portable)         | `[firefox directory]\Data\profile\`                                       |
 
-Do note that these settings alter your browser behaviour quite a bit, so it is recommended to either create a completely new [profile][15] for Firefox or backup your existing [profile directory](http://kb.mozillazine.org/Profile_folder_-_Firefox) before putting the ```user.js``` file in place.
+Do note that these settings alter your browser behaviour quite a bit, so it is recommended to
+either create a completely new [profile][15] for Firefox or backup your existing 
+[profile directory](http://kb.mozillazine.org/Profile_folder_-_Firefox) before putting the
+```user.js``` file in place.
 
-To enable the Profile Manager, run Firefox with [command-line arguments](http://kb.mozillazine.org/Command_line_arguments): `firefox --no-remote -P`
+To enable the Profile Manager, run Firefox with
+[command-line arguments](http://kb.mozillazine.org/Command_line_arguments):
+`firefox --no-remote -P`
 
-### Install system-wide
+### System-wide installation
 
 Create `local-settings.js` in Firefox installation directory, with the following contents:
 
@@ -135,7 +98,7 @@ Copy `user.js` to the Firefox installation directory. The file should be located
 
 ### Updating using git
 
-For any of the above methods, you can keep your browser's `user.js` with the latest version available here: Clone the repository, and create a symoblic link from the appropriate location to the `user.js` file in the repository. Just run `git pull` in the repository when you want to update, then restart Firefox:
+For any of the above methods, you can keep your browser's `user.js` with the latest version available here: Clone the repository, and create a symbolic link from the appropriate location to the `user.js` file in the repository. Just run `git pull` in the repository when you want to update, then restart Firefox:
 
 ````
 cd ~/.mozilla/firefox
@@ -150,8 +113,7 @@ Verify that the settings are effective from [about:support](http://kb.mozillazin
 
 --------------------------------------------
 
-What does it do?
-----------------
+## What does it do?
 
 There's a whole lot of settings that this modifies and they are divided in the following sections or categories:
 
@@ -166,13 +128,18 @@ There's a whole lot of settings that this modifies and they are divided in the f
 * TLS / HTTPS / OCSP related
 * Cipher suites
 
-Some of the settings in this [user.js][1] file might seem redundant, as some of them are already set to the same values by default. However, the [user.js][1] file has this nice property, that even if you go change any of these settings through [about:config][6], they're reset to the [user.js][1] defined values after you restart Firefox. So [user.js][1] makes sure they're back at the secure default values always when you start your browser. That way, it also makes experimenting with different settings easier.
+Some of the settings in this [user.js][1] file might seem redundant, as some of them are
+already set to the same values by default. However, the [user.js][1] file has this nice
+property, that even if you go change any of these settings through [about:config][6], they're
+reset to the [user.js][1] defined values after you restart Firefox. So [user.js][1] makes
+sure they're back at the secure default values always when you start your browser. That way,
+it also makes experimenting with different settings easier.
 
-Here are some of the "highlights" from each category. For a full list of settings and references, check the ```user.js``` file itself.
+Here are some of the "highlights" from each category. For a full list of settings and 
+references, check the ```user.js``` file itself.
 
-A full list of Firefox preferences and default values can be found at [DXR](https://dxr.mozilla.org/mozilla-central/source/modules/libpref/init/all.js)
 
-### HTML5 / APIs / DOM
+#### HTML5 / APIs / DOM
 
 * Disable [geolocation](https://www.mozilla.org/en-US/firefox/geolocation/)
 * Don't reveal internal [IP addresses](http://net.ipcalf.com/) ([media.peerconnection.enabled](https://blog.mozilla.org/futurereleases/2013/01/12/capture-local-camera-and-microphone-streams-with-getusermedia-now-enabled-in-firefox/))
@@ -181,14 +148,14 @@ A full list of Firefox preferences and default values can be found at [DXR](http
 * Disable [WebGL](https://en.wikipedia.org/wiki/WebGL)
 * Disable [Battery API](http://mashable.com/2015/08/04/battery-privacy-html5/)
 
-### Miscellaneous
+#### Miscellaneous
 
 * Enables Firefox's [mixed content blocking](https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/) (also for "display" content)
 * Disables various your-browser-knows-better-let-me-guess-what-you-were-trying features
   * Disable this [keyword thingie](http://kb.mozillazine.org/Keyword.enabled)
   * Disable [Domain Guessing](http://www-archive.mozilla.org/docs/end-user/domain-guessing.html)
 
-### Extensions / plugins related
+#### Extensions / plugins related
 
 It is common for [client side attacks](https://www.offensive-security.com/metasploit-unleashed/client-side-attacks/) to target [browser extensions](https://www.mozilla.org/en-US/plugincheck/), instead of the browser itself (just look at all those [Java](https://en.wikipedia.org/wiki/Criticism_of_Java#Security) and [Flash](https://www.cvedetails.com/vulnerability-list/vendor_id-53/product_id-6761/Adobe-Flash-Player.html) vulnerabilities). Make sure your extensions and plugins are always up-to-date.
 
@@ -196,12 +163,12 @@ It is common for [client side attacks](https://www.offensive-security.com/metasp
 * Enable [click to play](https://wiki.mozilla.org/Firefox/Click_To_Play)
 * Enable [add-on updates](https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/)
 
-### Firefox features
+#### Firefox features
 
 * Enables Firefox's built-in [tracking protection][12]
 * Disables [telemetry](https://wiki.mozilla.org/Telemetry), [Crash Reporter](https://support.mozilla.org/en-US/kb/Mozilla%20Crash%20Reporter), [healt report](https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf), [heartbeat](https://wiki.mozilla.org/Advocacy/heartbeat) and other such privacy invading nonsense
 
-### Automatic connections
+#### Automatic connections
 
 This section disables some of Firefox's [automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections).
 
@@ -220,24 +187,24 @@ Do note, that some automatic connections are still intentionally left out (as in
 
 See also [#20](https://github.com/pyllyukko/user.js/issues/20).
 
-### HTTP
+#### HTTP
 
 * Referer header:
   * Spoofs the referer header with [network.http.referer.spoofSource][9] (see: [#2](https://github.com/pyllyukko/user.js/pull/2))
   * "[Don't send the Referer header when navigating from a https site to another https site.](http://kb.mozillazine.org/Network.http.sendSecureXSiteReferrer#false)"
 * Don't accept [3rd party cookies](http://kb.mozillazine.org/Network.cookie.cookieBehavior#1)
 
-### Caching
+#### Caching
 
 * Permanently enables [private browsing][8] mode
 * Prevents Firefox from storing data filled in web page forms
 * Disables [password manager](https://support.mozilla.org/en-US/kb/Remembering+passwords)
 
-### UI related
+#### UI related
 
 * Don't [suggest any URLs](http://kb.mozillazine.org/Browser.urlbar.maxRichResults) while typing at the address bar
 
-### TLS / HTTPS / OCSP related
+#### TLS / HTTPS / OCSP related
 
 * TLS 1.[0-3] only
 * Require [OCSP](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol)
@@ -246,7 +213,7 @@ See also [#20](https://github.com/pyllyukko/user.js/issues/20).
 * Disable [TLS session tickets](https://www.blackhat.com/us-13/archives.html#NextGen)
 * Enforces [pinning](https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning)
 
-### Ciphers
+#### Ciphers
 
 This section tweaks the cipher suites used by Firefox. The idea is to support only the strongest ones with emphasis on [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy), but without compromising compatibility with all those sites on the internet. As new crypto related flaws are discovered quite often, the cipher suites can be [tweaked to mitigate these newly discovered threats](https://github.com/pyllyukko/user.js/pull/18).
 
@@ -279,13 +246,13 @@ Cipher Suites (6 suites)
     Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
 ```
 
-This is not enough!
--------------------
+## Further hardening
 
-Here's some other tips how you can further harden Firefox:
+This is not enough! Here's some other tips how you can further harden Firefox:
 
 * Keep your browser updated! If you check [Firefox's security advisories](https://www.mozilla.org/security/known-vulnerabilities/firefox.html), you'll see that pretty much every new version of Firefox contains some security updates. If you don't keep your browser updated, you've already lost the game.
-* Disable all unnecessary extensions and plugins!
+* Disable/uninstall all unnecessary extensions and plugins!
+* If a plugin is absolutely required, [check for plugin updates](https://www.mozilla.org/en-US/plugincheck/)
 * Create different [profiles][15] for different purposes
 * Change the Firefox's built-in tracking protection to use the [strict list](https://support.mozilla.org/en-US/kb/tracking-protection-pbm?as=u#w_change-your-block-list)
 * Change the timezone for Firefox by using the ```TZ``` environment variable (see [here](https://wiki.archlinux.org/index.php/Firefox_privacy#Change_browser_time_zone)) to reduce it's value in browser fingerprinting
@@ -304,7 +271,7 @@ Here is a list of the most essential security and privacy enhancing add-ons that
 * [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
 * [Canvas Blocker](https://addons.mozilla.org/firefox/addon/canvasblocker/) ([Source code](https://github.com/kkapsner/CanvasBlocker))
 
-#### Tracking protection
+### Tracking protection
 
 Tracking protection is one of the most important technologies that you need. The usual recommendation has been to run the [Ghostery](https://www.ghostery.com/) extension, but as it is made by a [potentially evim(tm) advertising company](https://en.wikipedia.org/wiki/Ghostery#Criticism), some people feel that is not to be trusted. One notable alternative is to use [uBlock](https://github.com/gorhill/uBlock), which can also be found at [Mozilla AMO](https://addons.mozilla.org/firefox/addon/ublock-origin/).
 
@@ -324,46 +291,11 @@ See also:
 * [Tracking Protection in Firefox For Privacy and Performance](https://kontaxis.github.io/trackingprotectionfirefox/#papers) paper
 * [How Tracking Protection works in Firefox](https://feeding.cloud.geek.nz/posts/how-tracking-protection-works-in-firefox/)
 
-#### Add-ons for mobile platforms
+### Add-ons for mobile platforms
 
 * [NoScript Anywhere](https://noscript.net/nsa/)
 * [uBlock](https://addons.mozilla.org/android/addon/ublock-origin/)
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
-
-Online tests
-------------
-
-* **[Mozilla Plugin Check](https://www.mozilla.org/en-US/plugincheck/)**
-* [Panopticlick](https://panopticlick.eff.org/)
-* [Filldisk](http://www.filldisk.com/)
-* [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
-* [How's My SSL](https://www.howsmyssl.com/)
-* [Evercookie](https://samy.pl/evercookie/)
-* [BrowserSpy.dk](http://browserspy.dk/)
-* [Mixed content tests (Mozilla)](https://people.mozilla.org/~tvyas/mixedcontent.html)
-* [Mixed content tests (Microsoft)](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm)
-* [WebRTC stuff](https://mozilla.github.io/webrtc-landing/)
-* [Flash Player Version](https://www.adobe.com/software/flash/about/) from Adobe
-* [Verify your installed Java Version](https://www.java.com/en/download/installed.jsp)
-  * Don't install the Java browser plugin! If you really need it, keep it updated.
-* [IP Check](http://ip-check.info/?lang=en)
-* [Onion test for CORS and WebSocket](https://cure53.de/leak/onion.php)
-* [Firefox Addon Detector](https://thehackerblog.com/addon_scanner/) [[1](https://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)]
-* [Official WebGL check](https://get.webgl.org/)
-* [AudioContext Fingerprint Test Page](https://audiofingerprint.openwpm.com/)
-* [battery.js](https://pstadler.sh/battery.js/)
-* [Battery API](https://robnyman.github.io/battery/)
-* [AmIUnique](https://amiunique.org/) ([Source](https://github.com/DIVERSIFY-project/amiunique))
-* itisatrap.org:
-  * [Test page for Firefox's built-in Tracking Protection](https://itisatrap.org/firefox/its-a-tracker.html)
-  * [Test page for Firefox's built-in Phishing Protection](https://itisatrap.org/firefox/its-a-trap.html) ("Web forgeries")
-  * [Test page for Firefox's built-in Malware Protection](https://itisatrap.org/firefox/its-an-attack.html) (attack page)
-  * [Test page for Firefox's built-in Malware Protection](https://itisatrap.org/firefox/unwanted.html) (unwanted software)
-* [Firefox Resources Reader - BrowserLeaks.com](https://www.browserleaks.com/firefox) (see [#163](https://github.com/pyllyukko/user.js/issues/163))
-* [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp)
-* [Unique Machine](http://www.uniquemachine.org/)
-* [HTML5test](https://html5test.com/) - Comparison of supported HTML5 features in various browsers/versions
-
 
 ## Known problems
 
@@ -390,8 +322,8 @@ There are plenty! Hardening your browser will break your interwebs. Here's some 
 
 The [web console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console) is your friend, **when** websites start to break.
 
-CAs
----
+## CAs
+
 
 It all started when I read [this blog post][5]...
 
@@ -478,32 +410,129 @@ Import the default CA list with:
 cas.sh -C -P ~/.mozilla/firefox/XXXXXXXX.new_profile -a
 ````
 
-Contributing
-------------
+## FAQ
 
-Yes please! All issues and pull requests are more than welcome. Please try to break down your pull requests or commits into small / manageable entities, so they are easier to process. All the settings in the ```user.js``` file should have some official references to them, so the effect of those settings can be easily verified from Mozilla's documentation.
+> Why are obsolete/deprecated entries included in the user.js file?
 
-For more information, see <https://github.com/pyllyukko/user.js/blob/master/CONTRIBUTING.md>.
+In case you want to use an older Firefox version (e.g. for test reasons) and normally it 
+doesn't hurt your browser if there are old about:config preferences present.
 
-References
-----------
+> Installing the user.js file breaks xyz plugin/addon/extension, how can I fix it?
 
-* [CIS](https://www.cisecurity.org/):
-  * [CIS Mozilla Firefox Benchmark v1.2.0 October 21st, 2011](https://benchmarks.cisecurity.org/downloads/show-single/?file=firefox.120)
-  * [CIS Mozilla Firefox 24 ESR Benchmark v1.0.0 - 06-29-2014](https://benchmarks.cisecurity.org/downloads/show-single/?file=firefoxesr24.100)
-* [Security Advisories for Firefox](https://www.mozilla.org/security/known-vulnerabilities/firefox.html)
-* [The Design and Implementation of the Tor Browser](https://www.torproject.org/projects/torbrowser/design/)
-* [Bulletproof SSL and TLS](https://www.feistyduck.com/books/bulletproof-ssl-and-tls/)
-* [Polaris](https://wiki.mozilla.org/Polaris)
-* [Mozilla Included CA Certificate List](https://wiki.mozilla.org/CA:IncludedCAs)
-  * https://wiki.mozilla.org/CA:Problematic_Practices
-* [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/)
-* [Mozilla Security Blog](https://blog.mozilla.org/security/category/security/)
-* [Security and privacy-related preferences](http://kb.mozillazine.org/Category:Security_and_privacy-related_preferences)
-* [How to stop Firefox from making automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections)
-* [Diff between various Firefox .js configurations in upcoming releases](https://cat-in-136.github.io/)
+See https://github.com/pyllyukko/user.js/issues/100
+
+> Does this user.js file fix all security problems?
+
+No. Please report problems on the project's
+[issue](https://github.com/pyllyukko/user.js/issues?q=is%3Aissue) tracker.
+
+> Will there be an official addon/an android version/feature xyz?
+
+Search the project [issues](https://github.com/pyllyukko/user.js/issues?q=is%3Aissue).
+
+> How can I lock my preferences to prevent Firefox overwriting them?
+
+See `lockPref` in [System-wide installation](#system-wide-installation).
+
+## Contributing
+
+Yes please! All issues and pull requests are more than welcome. Please try 
+to break down your pull requests or commits into small / manageable entities,
+so they are easier to process. All the settings in the ```user.js``` file
+should have some official references to them, so the effect of those settings
+can be easily verified from Mozilla's documentation.
+
+Feel free to follow the latests commits [RSS feed](https://github.com/pyllyukko/user.js/commits/master.atom)
+and other interesting feeds from the [References](#references) section.
+
+For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/blob/master/CONTRIBUTING.md)
+
+
+-------------------------------------------------------------------------
+
+## Online tests
+
+#### Version checks
+
+* **[Mozilla Plugin Check](https://www.mozilla.org/en-US/plugincheck/)**
+* [Adobe Flash Player Version Check](https://www.adobe.com/software/flash/about/)
+* [Java Version Check](https://www.java.com/en/download/installed.jsp)
+
+#### Fingerprinting tests
+
+* [BrowserSpy.dk](http://browserspy.dk/)
+* [BrowserLeaks.com](https://www.browserleaks.com/firefox)
+* [IP Check](http://ip-check.info/?lang=en)
+* [Panopticlick](https://panopticlick.eff.org/)
+* [Unique Machine](http://www.uniquemachine.org/)
+* [Firefox Addon Detector](https://thehackerblog.com/addon_scanner/) [[1](https://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)]
+* [AudioContext Fingerprint Test Page](https://audiofingerprint.openwpm.com/)
+* [Evercookie](https://samy.pl/evercookie/)
+* [WebRTC Test Landing Page](https://mozilla.github.io/webrtc-landing/)
+* [Onion test for CORS and WebSocket](https://cure53.de/leak/onion.php)
+* [Official WebGL check](https://get.webgl.org/)
+* [Battery API](https://robnyman.github.io/battery/) [[1](https://pstadler.sh/battery.js/)]
+* [AmIUnique](https://amiunique.org/) ([1](https://github.com/DIVERSIFY-project/amiunique))
+
+#### SSL tests
+
+* [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
+* [How's My SSL](https://www.howsmyssl.com/)
+* [Mixed content tests (Mozilla)](https://people.mozilla.org/~tvyas/mixedcontent.html) 
+* [Mixed content tests (Microsoft)](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm) 
+* [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp) 
+
+
+#### Other tests
+
+* [Test page for Firefox's built-in Tracking Protection](https://itisatrap.org/firefox/its-a-tracker.html)
+* [Test page for Firefox's built-in Phishing Protection](https://itisatrap.org/firefox/its-a-trap.html) ("Web forgeries")
+* [Test page for Firefox's built-in Malware Protection](https://itisatrap.org/firefox/its-an-attack.html) (attack page)
+* [Test page for Firefox's built-in Malware Protection](https://itisatrap.org/firefox/unwanted.html) (unwanted software)
+* [HTML5test](https://html5test.com/) - Comparison of supported HTML5 features in various browsers/versions
+* [Filldisk](http://www.filldisk.com/)
+
+
+---------------------------------------------------------------------------
+
+## References
+
+#### Mozilla documentation
+
+* **[Security Advisories for Firefox](https://www.mozilla.org/security/known-vulnerabilities/firefox.html)**
+* **[Known Vulnerabilities for Firefox](https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/)**
+* **[DXR - All Firefox preferences](https://dxr.mozilla.org/mozilla-central/source/modules/libpref/init/all.js) ([RSS](https://dxr.mozilla.org/mozilla-central/source/modules/libpref/init/all.js))**
+* **[Mozilla Security Blog](https://blog.mozilla.org/security/category/security/) ([RSS](https://blog.mozilla.org/security/feed/))**
 * [Mozilla Firefox Release Plan](https://wiki.mozilla.org/RapidRelease/Calendar)
+* [Mozilla Firefox developer release notes](https://developer.mozilla.org/en-US/Firefox/Releases)
 * [Advices from Mozilla Firefox on privacy and government surveillance](https://www.mozilla.org/en-US/teach/smarton/surveillance/)
+* [Polaris - advance privacy technnology for the web](https://wiki.mozilla.org/Polaris)
+* [Mozilla Privacy Principles](https://wiki.mozilla.org/Privacy/Principles)
+* [Mozilla preferences for uber-geeks](https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Mozilla_preferences_for_uber-geeks)
+* [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/) ([RSS](https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/format:rss?sort=featured))
+
+#### Other documentation
+
+* **[CVEs for Firefox - mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=firefox)**
+* [CVEs for Firefox - cvedetails.com](https://www.cvedetails.com/vulnerability-list/vendor_id-452/product_id-3264/Mozilla-Firefox.html) 
+* [About:config entries - MozillaZine](http://kb.mozillazine.org/About:config_entries)
+* [Security and privacy-related preferences - MozillaZine](http://kb.mozillazine.org/Category:Security_and_privacy-related_preferences)
+* [Diff between various Firefox .js configurations in upcoming releases](https://cat-in-136.github.io/) **([RSS](https://cat-in-136.github.io/feed.xml))**
+* [Center for Internet Security - Mozilla Firefox benchmarks](https://benchmarks.cisecurity.org/downloads/browse/index.cfm?category=benchmarks.desktop.browsers.firefox) ([RSS](https://benchmarks.cisecurity.org/downloads/rss/))
+* [iSEC Tor Browser evaluation](https://github.com/iSECPartners/publications/tree/master/reports/Tor%20Browser%20Bundle)
+* [The Design and Implementation of the Tor Browser](https://www.torproject.org/projects/torbrowser/design/)
+* [Browser Exploitation Framework](https://beefproject.com/) [[1](http://blog.beefproject.com/) [2](https://github.com/beefproject/beef/wiki) [3](https://github.com/beefproject/beef)]
+* [shadow - Firefox jemalloc heap exploitation framework](https://github.com/CENSUS/shadow)
+
+#### TLS/SSL documentation
+
+* [Mozilla Included CA Certificate List](https://wiki.mozilla.org/CA:IncludedCAs)
+* [Potentially problematic CA practices](https://wiki.mozilla.org/CA:Problematic_Practices)
+* [Bulletproof SSL and TLS](https://www.feistyduck.com/books/bulletproof-ssl-and-tls/)
+* [TLS Cipher Suite Discovery](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/TLS_Cipher_Suite_Discovery)
+* [Server-side TLS configuration](https://wiki.mozilla.org/Security/Server_Side_TLS)
+
+--------------------------------------------------------------------------
 
 [1]: http://kb.mozillazine.org/User.js_file
 [2]: https://wiki.mozilla.org/Security:Renegotiation#security.ssl.require_safe_negotiation
