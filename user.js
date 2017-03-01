@@ -74,8 +74,6 @@ user_pref("media.peerconnection.enabled",			false);
 // https://wiki.mozilla.org/Media/getUserMedia
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigator
 user_pref("media.navigator.enabled",				false);
-// https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
-user_pref("dom.battery.enabled",				false);
 // https://wiki.mozilla.org/WebAPI/Security/WebTelephony
 user_pref("dom.telephony.enabled",				false);
 // https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon
