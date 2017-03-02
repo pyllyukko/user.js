@@ -164,7 +164,7 @@ It is common for [client side attacks](https://www.offensive-security.com/metasp
 #### Firefox features
 
 * Enables Firefox's built-in [tracking protection][12]
-* Disables [telemetry](https://wiki.mozilla.org/Telemetry), [Crash Reporter](https://support.mozilla.org/en-US/kb/Mozilla%20Crash%20Reporter), [healt report](https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf), [heartbeat](https://wiki.mozilla.org/Advocacy/heartbeat) and other such privacy invading nonsense
+* Disables [telemetry](https://wiki.mozilla.org/Telemetry), [healt report](https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf), [heartbeat](https://wiki.mozilla.org/Advocacy/heartbeat) and other such privacy invading nonsense
 
 #### Automatic connections
 
