@@ -423,8 +423,6 @@ user_pref("network.dns.blockDotOnion",				true);
 
 // https://wiki.mozilla.org/Privacy/Reviews/Necko
 user_pref("network.predictor.enabled",				false);
-// https://wiki.mozilla.org/Privacy/Reviews/Necko#Principle:_Real_Choice
-user_pref("network.seer.enabled",				false);
 
 // http://kb.mozillazine.org/Browser.search.suggest.enabled
 user_pref("browser.search.suggest.enabled",			false);
