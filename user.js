@@ -272,6 +272,8 @@ user_pref("extensions.getAddons.cache.enabled",			false);
 // Flash plugin state - never activate
 // http://kb.mozillazine.org/Flash_plugin
 user_pref("plugin.state.flash",					0);
+// Java plugin state - never activate
+user_pref("plugin.state.java",					0);
 
 // disable Gnome Shell Integration
 user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
