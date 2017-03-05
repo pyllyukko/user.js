@@ -675,7 +675,7 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
 // NOTICE: When Javascript is enabled, Websites can detect use of Private Browsing mode
 // NOTICE: Private browsing breaks Kerberos authentication
 // NOTICE: Disables "Containers" functionality (see below)
-user_pref("browser.privatebrowsing.autostart",			true);
+//user_pref("browser.privatebrowsing.autostart",			true);
 
 // PREF: Do not store POST data in saved sessions
 // http://kb.mozillazine.org/Browser.sessionstore.postdata
