@@ -468,10 +468,8 @@ user_pref("security.sri.enable",				true);
 // https://github.com/pyllyukko/user.js/issues/11
 //user_pref("privacy.donottrackheader.enabled",		true);
 
-// http://kb.mozillazine.org/Network.http.sendRefererHeader#0
-// https://bugzilla.mozilla.org/show_bug.cgi?id=822869
 // Send a referer header with the target URI as the source
-//user_pref("network.http.sendRefererHeader",			1);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=822869
 user_pref("network.http.referer.spoofSource",			true);
 
 // CIS 2.5.1 Accept Only 1st Party Cookies
