@@ -285,10 +285,19 @@ user_pref("plugins.click_to_play",				true);
 // https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/
 user_pref("extensions.update.enabled",				true);
 
-// PREF: Enable downloading add-on blocklists from Mozilla
+// PREF: Enable add-on and certificate blocklists (OneCRL) from Mozilla
+// https://wiki.mozilla.org/Blocklisting
+// https://blocked.cdn.mozilla.net/
 // http://kb.mozillazine.org/Extensions.blocklist.enabled
 // http://kb.mozillazine.org/Extensions.blocklist.url
+// https://blog.mozilla.org/security/2015/03/03/revoking-intermediate-certificates-introducing-onecrl/
+// Updated at interval defined in extensions.blocklist.interval (default: 86400)
 user_pref("extensions.blocklist.enabled",			true);
+user_pref("services.blocklist.update_enabled", 		true);
+
+// PREF: Decrease system information leakage to Mozilla blocklist update servers
+// https://trac.torproject.org/projects/tor/ticket/16931
+user_pref("extensions.blocklist.url",	"https://blocklist.addons.mozilla.org/blocklist/3/%APP_ID%/%APP_VERSION%/");
 
 /******************************************************************************
  * SECTION: Firefox (anti-)features / components                              *                            *
@@ -705,19 +714,38 @@ user_pref("security.password_lifetime",				5);
 user_pref("network.stricttransportsecurity.preloadlist",	true);
 
 // PREF: Enable Online Certificate Status Protocol
-// CIS Version 1.2.0 October 21st, 2011 2.2.4
 // https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol
-// NOTICE: https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol#Privacy_concerns
+// https://www.imperialviolet.org/2014/04/19/revchecking.html
+// https://www.maikel.pro/blog/current-state-certificate-revocation-crls-ocsp/
+// https://wiki.mozilla.org/CA:RevocationPlan
+// https://wiki.mozilla.org/CA:ImprovingRevocation
+// https://wiki.mozilla.org/CA:OCSP-HardFail
+// https://news.netcraft.com/archives/2014/04/24/certificate-revocation-why-browsers-remain-affected-by-heartbleed.html
+// https://news.netcraft.com/archives/2013/04/16/certificate-revocation-and-the-performance-of-ocsp.html
+// NOTICE: Leaks your IP and domains you visit to the CA when OCSP Stapling is not available on visited host
+// NOTICE: Vulnerable to replay attacks when nonce is not configured on the OCSP responder
+// NOTICE: Adds latency (performance)
+// NOTICE: Short-lived certificates are not checked for revocation (security.pki.cert_short_lifetime_in_days, default:10)
+// CIS Version 1.2.0 October 21st, 2011 2.2.4
 user_pref("security.OCSP.enabled",				1);
 
-// PREF: Enable OCSP Stapling
+// PREF: Enable OCSP Stapling support
 // https://en.wikipedia.org/wiki/OCSP_stapling
 // https://blog.mozilla.org/security/2013/07/29/ocsp-stapling-in-firefox/
+// https://www.digitalocean.com/community/tutorials/how-to-configure-ocsp-stapling-on-apache-and-nginx
 user_pref("security.ssl.enable_ocsp_stapling",			true);
 
-// PREF: Require certificate revocation check through OCSP protocol.
-// NOTICE: this leaks information about the sites you visit to the CA.
+// PREF: Enable OCSP Must-Staple support (45+)
+// https://blog.mozilla.org/security/2015/11/23/improving-revocation-ocsp-must-staple-and-short-lived-certificates/
+// https://www.entrust.com/ocsp-must-staple/
+// https://github.com/schomery/privacy-settings/issues/40
+// NOTICE: Falls back on plain OCSP when must-staple is not configured on the host certificate
+user_pref("security.ssl.enable_ocsp_must_staple", true);
+
+// PREF: Require a valid OCSP response for OCSP enabled certificates
 // https://groups.google.com/forum/#!topic/mozilla.dev.security/n1G-N2-HTVA
+// Disabling this will make OCSP bypassable by MitM attacks suppressing OCSP responses
+// NOTICE: Will make the connection fail when the OCSP responder is unavailable
 user_pref("security.OCSP.require",				true);
 
 // PREF: Disable TLS Session Tickets
