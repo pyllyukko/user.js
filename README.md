@@ -561,7 +561,10 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 
 * **[Security Advisories for Firefox](https://www.mozilla.org/security/known-vulnerabilities/firefox.html)**
 * **[Known Vulnerabilities for Firefox](https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox/)**
-* **[DXR - All Firefox preferences](https://dxr.mozilla.org/mozilla-central/source/modules/libpref/init/all.js) ([RSS](https://dxr.mozilla.org/mozilla-central/source/modules/libpref/init/all.js))**
+* **[DXR - Firefox General preferences](https://dxr.mozilla.org/mozilla-central/source/modules/libpref/init/all.js) ([RSS](https://hg.mozilla.org/mozilla-central/atom-log/tip/modules/libpref/init/all.js))**
+* [DXR - Firefox Security preferences](https://dxr.mozilla.org/mozilla-central/source/security/manager/ssl/security-prefs.js) ([RSS](https://hg.mozilla.org/mozilla-central/atom-log/tip/security/manager/ssl/security-prefs.js))
+* [DXR - Firefox Datareporting preferences](https://dxr.mozilla.org/mozilla-central/source/toolkit/components/telemetry/datareporting-prefs.js) ([RSS](https://hg.mozilla.org/mozilla-central/atom-log/tip/toolkit/components/telemetry/datareporting-prefs.js))
+* [DXR - Firefox Healthreport preferences](https://dxr.mozilla.org/mozilla-central/source/toolkit/components/telemetry/healthreport-prefs.js) ([RSS](https://hg.mozilla.org/mozilla-central/atom-log/tip/toolkit/components/telemetry/healthreport-prefs.js))
 * **[Mozilla Security Blog](https://blog.mozilla.org/security/category/security/) ([RSS](https://blog.mozilla.org/security/feed/))**
 * [Mozilla Firefox Release Plan](https://wiki.mozilla.org/RapidRelease/Calendar)
 * [Mozilla Firefox developer release notes](https://developer.mozilla.org/en-US/Firefox/Releases)
