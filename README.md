@@ -188,7 +188,8 @@ it also makes experimenting with different settings easier.
  * Disable the bundled OpenH264 video codec [ [1](http://forums.mozillazine.org/viewtopic.php?p=13845077&sid=28af2622e8bd8497b9113851676846b1#p13845077) ]
  * Enable plugins click-to-play [ [1](https://wiki.mozilla.org/Firefox/Click_To_Play) [2](https://blog.mozilla.org/security/2012/10/11/click-to-play-plugins-blocklist-style/) ]
  * Updates addons automatically [ [1](https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/) ]
- * Enable downloading add-on blocklists from Mozilla [ [1](http://kb.mozillazine.org/Extensions.blocklist.enabled) [2](http://kb.mozillazine.org/Extensions.blocklist.url) ]
+ * Enable add-on and certificate blocklists (OneCRL) from Mozilla [ [1](https://wiki.mozilla.org/Blocklisting) [2](https://blocked.cdn.mozilla.net/) [3](http://kb.mozillazine.org/Extensions.blocklist.enabled) [4](http://kb.mozillazine.org/Extensions.blocklist.url) [5](https://blog.mozilla.org/security/2015/03/03/revoking-intermediate-certificates-introducing-onecrl/) ]
+ * Decrease system information leakage to Mozilla blocklist update servers [ [1](https://trac.torproject.org/projects/tor/ticket/16931) ]
 
 **Firefox (anti-)features / components:** Disable Firefox integrated metrics/reporting/experiments, disable potentially insecure/invasive/[undesirable](https://en.wikipedia.org/wiki/Feature_creep) features (PDF reader, New Tab Page, UI tour...), enable Tracking Protection.
  * WebIDE [ [1](https://trac.torproject.org/projects/tor/ticket/16222) ]
@@ -276,9 +277,10 @@ it also makes experimenting with different settings easier.
 
 **Cryptography:** Enforce strong cryptography where possible, enable additional cryptography mechanisms ([SSL/TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security), [HTTPS](https://en.wikipedia.org/wiki/HTTPS), [OCSP](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol), [HSTS](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security), [HPKP](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning) ...)
  * ?? [ [1](https://blog.mozilla.org/security/2012/11/01/preloading-hsts/) [2](https://wiki.mozilla.org/Privacy/Features/HSTS_Preload_List) [3](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) ]
- * Enable Online Certificate Status Protocol
- * Enable OCSP Stapling [ [1](https://en.wikipedia.org/wiki/OCSP_stapling) [2](https://blog.mozilla.org/security/2013/07/29/ocsp-stapling-in-firefox/) ]
- * Require certificate revocation check through OCSP protocol.
+ * Enable Online Certificate Status Protocol [ [1](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol) [2](https://www.imperialviolet.org/2014/04/19/revchecking.html) [3](https://www.maikel.pro/blog/current-state-certificate-revocation-crls-ocsp/) [4](https://wiki.mozilla.org/CA:RevocationPlan) [5](https://wiki.mozilla.org/CA:ImprovingRevocation) [6](https://wiki.mozilla.org/CA:OCSP-HardFail) [7](https://news.netcraft.com/archives/2014/04/24/certificate-revocation-why-browsers-remain-affected-by-heartbleed.html) [8](https://news.netcraft.com/archives/2013/04/16/certificate-revocation-and-the-performance-of-ocsp.html) ]
+ * Enable OCSP Stapling support [ [1](https://en.wikipedia.org/wiki/OCSP_stapling) [2](https://blog.mozilla.org/security/2013/07/29/ocsp-stapling-in-firefox/) [3](https://www.digitalocean.com/community/tutorials/how-to-configure-ocsp-stapling-on-apache-and-nginx) ]
+ * Enable OCSP Must-Staple support (45+) [ [1](https://blog.mozilla.org/security/2015/11/23/improving-revocation-ocsp-must-staple-and-short-lived-certificates/) [2](https://www.entrust.com/ocsp-must-staple/) [3](https://github.com/schomery/privacy-settings/issues/40) ]
+ * Require a valid OCSP response for OCSP enabled certificates [ [1](https://groups.google.com/forum/#!topic/mozilla.dev.security/n1G-N2-HTVA) ]
  * Disable TLS Session Tickets [ [1](https://www.blackhat.com/us-13/briefings.html#NextGen) [2](https://media.blackhat.com/us-13/US-13-Daigniere-TLS-Secrets-Slides.pdf) [3](https://media.blackhat.com/us-13/US-13-Daigniere-TLS-Secrets-WP.pdf) [4](https://bugzil.la/917049) [5](https://bugzil.la/967977) ]
  * Only allow TLS 1.[0-3] [ [1](http://kb.mozillazine.org/Security.tls.version.*) ]
  * ??
