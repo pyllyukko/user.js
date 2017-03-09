@@ -502,7 +502,7 @@ so they are easier to process. All the settings in the ```user.js``` file
 should have some official references to them, so the effect of those settings
 can be easily verified from Mozilla's documentation.
 
-Feel free to follow the latests commits [RSS feed](https://github.com/pyllyukko/user.js/commits/master.atom)
+Feel free to follow the latest commits [RSS feed](https://github.com/pyllyukko/user.js/commits/master.atom)
 and other interesting feeds from the [References](#references) section.
 
 For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/blob/master/CONTRIBUTING.md)
@@ -535,7 +535,8 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 * [Battery API](https://robnyman.github.io/battery/) [[1](https://pstadler.sh/battery.js/)]
 * [WebRTC LAN address leak test](http://net.ipcalf.com/)
 * [IP Check](http://ip-check.info/?lang=en)
-
+* [Intermediate CA fingerprinting test](https://fiprinca.0x90.eu/poc/)
+* [OONI Internet censorship tests](https://ooni.torproject.org/nettest/)
 
 #### SSL tests
 
