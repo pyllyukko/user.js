@@ -520,6 +520,18 @@ user_pref("privacy.clearOnShutdown.passwords",			true);
 user_pref("privacy.clearOnShutdown.sessions",			true);
 //user_pref("privacy.clearOnShutdown.siteSettings",		false);
 
+// Everything as default in "Clear Recent History"
+user_pref("privacy.sanitize.timeSpan",				0);
+
+// Clear everything but "Site Preferences" by default
+user_pref("privacy.cpd.offlineApps",				true);
+user_pref("privacy.cpd.cache",					true);
+user_pref("privacy.cpd.cookies",				true);
+user_pref("privacy.cpd.downloads",				true);
+user_pref("privacy.cpd.formdata",				true);
+user_pref("privacy.cpd.history",				true);
+user_pref("privacy.cpd.sessions",				true);
+
 // Don't remember browsing history
 user_pref("places.history.enabled",				false);
 
