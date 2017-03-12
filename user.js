@@ -418,6 +418,9 @@ user_pref("browser.search.suggest.enabled",			false);
 // Disable "Show search suggestions in location bar results"
 user_pref("browser.urlbar.suggest.searches",			false);
 
+// Disable additional Welcome URL in ESR/FF 
+user_pref("startup.homepage_welcome_url.additional",		"");
+
 // Disable SSDP
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1111967
 user_pref("browser.casting.enabled",				false);
