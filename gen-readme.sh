@@ -84,16 +84,16 @@ function _gen_section_header() {
     # in markdown format (configurable above)
     SECTION_NAME="$@"
     case "$SECTION_NAME" in
-    "$SECTION_HTML5_ID")        echo -e "\n**${SECTION_HTML5_ID}:** ${SECTION_HTML5_MDOWN}\n" ;;
-    "$SECTION_MISC_ID")         echo -e "\n**${SECTION_MISC_ID}:** ${SECTION_MISC_MDOWN}\n" ;;
-    "$SECTION_EXTENSIONS_ID")   echo -e "\n**${SECTION_EXTENSIONS_ID}:** ${SECTION_EXTENSIONS_MDOWN}\n" ;;
-    "$SECTION_FEATURES_ID")     echo -e "\n**${SECTION_FEATURES_ID}:** ${SECTION_FEATURES_MDOWN}\n" ;;
-    "$SECTION_AUTOCONNECT_ID")  echo -e "\n**${SECTION_AUTOCONNECT_ID}:** ${SECTION_AUTOCONNECT_MDOWN}\n" ;;
-    "$SECTION_HTTP_ID")         echo -e "\n**${SECTION_HTTP_ID}:** ${SECTION_HTTP_MDOWN}\n" ;;
-    "$SECTION_CACHING_ID")      echo -e "\n**${SECTION_CACHING_ID}:** ${SECTION_CACHING_MDOWN}\n" ;;
-    "$SECTION_UI_ID")           echo -e "\n**${SECTION_UI_ID}:** ${SECTION_UI_MDOWN}\n" ;;
-    "$SECTION_CRYPTO_ID")       echo -e "\n**${SECTION_CRYPTO_ID}:** ${SECTION_CRYPTO_MDOWN}\n" ;;
-    "$SECTION_CIPHERS_ID")      echo -e "\n**${SECTION_CIPHERS_ID}:** ${SECTION_CIPHERS_MDOWN}\n" ;;
+    "$SECTION_HTML5_ID")        echo -e "\n### ${SECTION_HTML5_ID}\n\n${SECTION_HTML5_MDOWN}\n" ;;
+    "$SECTION_MISC_ID")         echo -e "\n### ${SECTION_MISC_ID}\n\n${SECTION_MISC_MDOWN}\n" ;;
+    "$SECTION_EXTENSIONS_ID")   echo -e "\n### ${SECTION_EXTENSIONS_ID}\n\n${SECTION_EXTENSIONS_MDOWN}\n" ;;
+    "$SECTION_FEATURES_ID")     echo -e "\n### ${SECTION_FEATURES_ID}\n\n${SECTION_FEATURES_MDOWN}\n" ;;
+    "$SECTION_AUTOCONNECT_ID")  echo -e "\n### ${SECTION_AUTOCONNECT_ID}\n\n${SECTION_AUTOCONNECT_MDOWN}\n" ;;
+    "$SECTION_HTTP_ID")         echo -e "\n### ${SECTION_HTTP_ID}\n\n${SECTION_HTTP_MDOWN}\n" ;;
+    "$SECTION_CACHING_ID")      echo -e "\n### ${SECTION_CACHING_ID}\n\n${SECTION_CACHING_MDOWN}\n" ;;
+    "$SECTION_UI_ID")           echo -e "\n### ${SECTION_UI_ID}\n\n${SECTION_UI_MDOWN}\n" ;;
+    "$SECTION_CRYPTO_ID")       echo -e "\n### ${SECTION_CRYPTO_ID}\n\n${SECTION_CRYPTO_MDOWN}\n" ;;
+    "$SECTION_CIPHERS_ID")      echo -e "\n### ${SECTION_CIPHERS_ID}\n\n${SECTION_CIPHERS_MDOWN}\n" ;;
     "*")                        echo -e "ERROR: unsupported section $SECTION_NAME"; exit 1 ;;
     esac
 }
