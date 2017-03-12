@@ -673,6 +673,10 @@ user_pref("security.password_lifetime",				5);
  * https://en.wikipedia.org/wiki/HTTPS                                        *
  ******************************************************************************/
 
+// Disable SSL Certification error reporting, since we use HTTPSE we not need both
+//See: https://gecko.readthedocs.org/en/latest/browser/base/sslerrorreport/preferences.html
+//user_pref("security.ssl.errorReporting.enabled,		false);
+
 // https://blog.mozilla.org/security/2012/11/01/preloading-hsts/
 // https://wiki.mozilla.org/Privacy/Features/HSTS_Preload_List
 // https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security
