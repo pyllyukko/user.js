@@ -27,7 +27,7 @@ SECTION_AUTOCONNECT_ID='Automatic connections'
 SECTION_AUTOCONNECT_MDOWN="Prevents the browser from auto-connecting to some Mozilla services, and from predictively opening connections to websites during browsing."
 
 SECTION_HTTP_ID='HTTP'
-SECTION_HTTP_MDOWN="HTTP (plain text connection) security related entries. This affects cookies, the user agent, referer and others."
+SECTION_HTTP_MDOWN="HTTP protocol related entries. This affects cookies, the user agent, referer and others."
 
 SECTION_CACHING_ID='Caching'
 SECTION_CACHING_MDOWN="Enable and configure private browsing mode, don't store information locally during the browsing session (history/caches/downloads/passwords...)"
