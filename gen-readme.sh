@@ -71,7 +71,7 @@ function _gen_entries() {
             if [ ! "$REF_LIST" = "" ]; then
                 REF_LIST=" [ ${REF_LIST}]"
             fi
-            INDENT=' * '; SECTIONDESC=''
+            INDENT='* '; SECTIONDESC=''
         fi
         MARKDOWNLINE="${INDENT}${LINENAME}${REF_LIST}"
         echo "$MARKDOWNLINE"
