@@ -160,6 +160,7 @@ It is common for [client side attacks](https://www.offensive-security.com/metasp
 * Disable Adobe Flash
 * Enable [click to play](https://wiki.mozilla.org/Firefox/Click_To_Play)
 * Enable [add-on updates](https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/)
+* [Allow Chrome extensions](http://www.ghacks.net/2016/05/23/install-google-chrome-extensions-firefox/) without break the functions
 
 #### Firefox features
 
