@@ -825,7 +825,8 @@ user_pref("security.ssl3.ecdhe_ecdsa_null_sha",			false);
 user_pref("security.ssl3.ecdh_rsa_null_sha",			false);
 user_pref("security.ssl3.ecdh_ecdsa_null_sha",			false);
 
-// PREF: Disable [SEED](https://en.wikipedia.org/wiki/SEED) cipher
+// PREF: Disable SEED cipher
+// https://en.wikipedia.org/wiki/SEED
 user_pref("security.ssl3.rsa_seed_sha",				false);
 
 // PREF: Disable 40/56/128-bit ciphers
