@@ -11,14 +11,14 @@ set -o errexit
 # Configuration:
 # Text used to generate/replace subsection headers
 
-SECTION_HTML5_ID='HTML5/DOM APIs'
-SECTION_HTML5_MDOWN="Disable HTML5/DOM media/p2p/geo/sensors/... [APIs](https://wiki.mozilla.org/WebAPI)."
+SECTION_HTML5_ID='HTML5 / APIs / DOM'
+SECTION_HTML5_MDOWN="HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / [DOM](https://en.wikipedia.org/wiki/Document_Object_Model) related settings. Mozilla is keen to implement every new HTML5 feature, which have had unforeseen security or privacy implications. This section disables many of those new and yet to be proven technologies."
 
 SECTION_MISC_ID='Misc'
 SECTION_MISC_MDOWN="Settings that do not belong to other sections or are user specific preferences."
 
 SECTION_EXTENSIONS_ID='Extensions / plugins'
-SECTION_EXTENSIONS_MDOWN="Harden preferences related to external plugins (Adobe Flash, Microsoft Silverlight, OpenH264, Java ...)"
+SECTION_EXTENSIONS_MDOWN="Harden preferences related to external plugins"
 
 SECTION_FEATURES_ID='Firefox (anti-)features / components'
 SECTION_FEATURES_MDOWN="Disable Firefox integrated metrics/reporting/experiments, disable potentially insecure/invasive/[undesirable](https://en.wikipedia.org/wiki/Feature_creep) features (PDF reader, New Tab Page, UI tour...), enable Tracking Protection."
