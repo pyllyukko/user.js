@@ -15,7 +15,7 @@
 // CVE-2016-5259, CVE-2016-2812, CVE-2016-1949, CVE-2016-5287 (fixed)
 user_pref("dom.serviceWorkers.enabled",				false);
 
-// PREF: Disable notifications
+// PREF: Disable web notifications
 // ??
 user_pref("dom.webnotifications.enabled",			false);
 
@@ -31,7 +31,7 @@ user_pref("dom.webaudio.enabled",				false);
 // https://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",					false);
 
-// PREF: Disable dom.mozTCPSocket.enabled (raw TCP socket support)
+// PREF: Disable raw TCP socket support (mozTCPSocket)
 // https://trac.torproject.org/projects/tor/ticket/18863
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-97/
 // https://developer.mozilla.org/docs/Mozilla/B2G_OS/API/TCPSocket
@@ -184,10 +184,11 @@ user_pref("browser.urlbar.trimURLs",				false);
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
 user_pref("browser.fixup.alternate.enabled",			false);
 
-// PREF: https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/WebBrowsers
+// PREF: Send DNS request through SOCKS when SOCKS proxying is in use
+// https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/WebBrowsers
 user_pref("network.proxy.socks_remote_dns",			true);
 
-// PREF: Don't monitor OS online/offline connection state 
+// PREF: Don't monitor OS online/offline connection state
 // https://trac.torproject.org/projects/tor/ticket/18945
 user_pref("network.manage-offline-status",			false);
 
@@ -225,9 +226,9 @@ user_pref("browser.urlbar.filter.javascript",			true);
 // https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2712
 user_pref("javascript.options.asmjs",				false);
 
-// PREF: gfx.font_rendering.opentype_svg.enabled
+// PREF: Disable SVG in OpenType fonts
 // https://wiki.mozilla.org/SVGOpenTypeFonts
-// the iSEC Partners Report recommends to disable this
+// https://github.com/iSECPartners/publications/tree/master/reports/Tor%20Browser%20Bundle
 user_pref("gfx.font_rendering.opentype_svg.enabled",		false);
 
 // PREF: Disable video stats to reduce fingerprinting threat
@@ -459,7 +460,7 @@ user_pref("browser.casting.enabled",				false);
 user_pref("media.gmp-gmpopenh264.enabled",			false);
 user_pref("media.gmp-manager.url",				"");
 
-// PREF: network.http.speculative-parallel-limit
+// PREF: Disable speculative pre-connections
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_speculative-pre-connections
 // https://bugzil.la/814169
 user_pref("network.http.speculative-parallel-limit",		0);
@@ -533,16 +534,16 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
 // https://wiki.mozilla.org/PrivateBrowsing
 user_pref("browser.privatebrowsing.autostart",			true);
 
-// PREF: browser.sessionstore.postdata
+// PREF: Do not store POST data in saved sessions
 // http://kb.mozillazine.org/Browser.sessionstore.postdata
 // relates to CIS 2.5.7
 user_pref("browser.sessionstore.postdata",			0);
 
-// PREF: browser.sessionstore.enabled
+// PREF: Disable the Session Restore service
 // http://kb.mozillazine.org/Browser.sessionstore.enabled
 user_pref("browser.sessionstore.enabled",			false);
 
-// PREF: browser.cache.offline.enable
+// PREF: Do not download URLs for the offline cache
 // http://kb.mozillazine.org/Browser.cache.offline.enable
 user_pref("browser.cache.offline.enable",			false);
 
@@ -624,11 +625,11 @@ user_pref("browser.formfill.expire_days",			0);
 // NOTE: CIS says 1, we use 2
 user_pref("browser.sessionstore.privacy_level",			2);
 
-// PREF: browser.helperApps.deleteTempFileOnExit
+// PREF: Delete temporary files on exit
 // https://bugzil.la/238789#c19
 user_pref("browser.helperApps.deleteTempFileOnExit",		true);
 
-// PREF: browser.pagethumbnails.capturing_disabled
+// PREF: Do not create screenshots of visited pages (relates to the "new tab page" feature)
 // https://support.mozilla.org/en-US/questions/973320
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/browser.pagethumbnails.capturing_disabled
 user_pref("browser.pagethumbnails.capturing_disabled",		true);
@@ -692,7 +693,7 @@ user_pref("browser.urlbar.autoFill.typed",			false);
 // "Setting the preference to 0 effectively disables the Location Bar dropdown entirely."
 user_pref("browser.urlbar.maxRichResults",			0);
 
-// PREF: layout.css.visited_links_enabled
+// PREF: Disable CSS :visited selectors
 // https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/
 // https://dbaron.org/mozilla/visited-privacy
 user_pref("layout.css.visited_links_enabled",			false);
