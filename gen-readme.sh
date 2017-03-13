@@ -39,7 +39,7 @@ SECTION_CRYPTO_ID='Cryptography'
 SECTION_CRYPTO_MDOWN="Enforce strong cryptography where possible, enable additional cryptography mechanisms ([SSL/TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security), [HTTPS](https://en.wikipedia.org/wiki/HTTPS), [OCSP](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol), [HSTS](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security), [HPKP](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning) ...)"
 
 SECTION_CIPHERS_ID='Ciphers'
-SECTION_CIPHERS_MDOWN="Disable known [weak](https://weakdh.org/) ciphers, enforce ciphers with [Forward Secrecy](https://en.wikipedia.org/wiki/Forward_secrecy). Since Firefox 32 most of the weak ciphers are removed which makes most of the changes obsolete and are only persistent in case of you use an outdated release https://bugzilla.mozilla.org/show_bug.cgi?id=934663"
+SECTION_CIPHERS_MDOWN="Disable known weak ciphers, emphasize ciphers with [Forward Secrecy](https://en.wikipedia.org/wiki/Forward_secrecy). Since Firefox 32 most of the weak ciphers are removed which makes most of the changes obsolete and are only persistent in case of you use an outdated release https://bugzilla.mozilla.org/show_bug.cgi?id=934663"
 
 ###################################
 
