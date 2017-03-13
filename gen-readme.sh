@@ -21,7 +21,7 @@ SECTION_EXTENSIONS_ID='Extensions / plugins'
 SECTION_EXTENSIONS_MDOWN="Harden preferences related to external plugins"
 
 SECTION_FEATURES_ID='Firefox (anti-)features / components'
-SECTION_FEATURES_MDOWN="Disable Firefox integrated metrics/reporting/experiments, disable potentially insecure/invasive/[undesirable](https://en.wikipedia.org/wiki/Feature_creep) features (PDF reader, New Tab Page, UI tour...), enable Tracking Protection."
+SECTION_FEATURES_MDOWN="Disable Firefox integrated metrics/reporting/experiments, disable potentially insecure/invasive/[undesirable](https://en.wikipedia.org/wiki/Feature_creep) features"
 
 SECTION_AUTOCONNECT_ID='Automatic connections'
 SECTION_AUTOCONNECT_MDOWN="Prevents the browser from [auto-connecting](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections) to some Mozilla services, and from predictively opening connections to websites during browsing."
