@@ -110,7 +110,7 @@ user_pref("browser.send_pings",					false);
 // http://kb.mozillazine.org/Browser.send_pings.require_same_host
 user_pref("browser.send_pings.require_same_host",		true);
 
-// PREF: ??
+// PREF: ?? (disabled)
 // https://developer.mozilla.org/en-US/docs/IndexedDB
 // https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review
 // TODO: find out why html5test still reports this as available
@@ -134,13 +134,13 @@ user_pref("dom.vr.enabled",					false);
 user_pref("webgl.disabled",					true);
 // PREF: When webGL is enabled, use the minimum capability mode
 user_pref("webgl.min_capability_mode",				true);
-// PREF: ??
+// PREF: webgl.disable-extensions
 // https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API#WebGL_debugging_and_testing
 user_pref("webgl.disable-extensions",				true);
-// PREF: ??
+// PREF: webgl.disable-fail-if-major-performance-caveat
 // https://trac.torproject.org/projects/tor/ticket/18603
 user_pref("webgl.disable-fail-if-major-performance-caveat",	true);
-// PREF: ??
+// PREF: webgl.enable-debug-renderer-info
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1171228
 // https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_debug_renderer_info
 user_pref("webgl.enable-debug-renderer-info",			false);
@@ -218,14 +218,14 @@ user_pref("security.fileuri.strict_origin_policy",		true);
 // CIS 2.3.6 
 user_pref("browser.urlbar.filter.javascript",			true);
 
-// PREF: ??
+// PREF: Disable asm.js
 // http://asmjs.org/
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-29/
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-50/
 // https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2712
 user_pref("javascript.options.asmjs",				false);
 
-// PREF: ??
+// PREF: gfx.font_rendering.opentype_svg.enabled
 // https://wiki.mozilla.org/SVGOpenTypeFonts
 // the iSEC Partners Report recommends to disable this
 user_pref("gfx.font_rendering.opentype_svg.enabled",		false);
@@ -453,23 +453,23 @@ user_pref("browser.urlbar.suggest.searches",			false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1111967
 user_pref("browser.casting.enabled",				false);
 
-// PREF: ??
+// PREF: media.gmp-
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_media-capabilities
 // https://andreasgal.com/2014/10/14/openh264-now-in-firefox/
 user_pref("media.gmp-gmpopenh264.enabled",			false);
 user_pref("media.gmp-manager.url",				"");
 
-// PREF: ??
+// PREF: network.http.speculative-parallel-limit
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_speculative-pre-connections
 // https://bugzil.la/814169
 user_pref("network.http.speculative-parallel-limit",		0);
 
-// PREF: ??
+// PREF: browser.aboutHomeSnippets.updateUrl
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_mozilla-content
 // https://wiki.mozilla.org/Firefox/Projects/Firefox_Start/Snippet_Service
 user_pref("browser.aboutHomeSnippets.updateUrl",		"");
 
-// PREF: ??
+// PREF: Never check updates for search engines
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_auto-update-checking
 user_pref("browser.search.update",				false);
 
@@ -483,7 +483,7 @@ user_pref("network.negotiate-auth.allow-insecure-ntlm-v1",	false);
 // it is still allowed through HTTPS. uncomment the following to disable it completely.
 //user_pref("network.negotiate-auth.allow-insecure-ntlm-v1-https",		false);
 
-// PREF: ??
+// PREF: Enable CSP 1.1 script-nonce directive support
 // https://bugzilla.mozilla.org/show_bug.cgi?id=855326
 user_pref("security.csp.experimentalEnabled",			true);
 
@@ -533,16 +533,16 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
 // https://wiki.mozilla.org/PrivateBrowsing
 user_pref("browser.privatebrowsing.autostart",			true);
 
-// PREF: ??
+// PREF: browser.sessionstore.postdata
 // http://kb.mozillazine.org/Browser.sessionstore.postdata
 // relates to CIS 2.5.7
 user_pref("browser.sessionstore.postdata",			0);
 
-// PREF: ??
+// PREF: browser.sessionstore.enabled
 // http://kb.mozillazine.org/Browser.sessionstore.enabled
 user_pref("browser.sessionstore.enabled",			false);
 
-// PREF: ??
+// PREF: browser.cache.offline.enable
 // http://kb.mozillazine.org/Browser.cache.offline.enable
 user_pref("browser.cache.offline.enable",			false);
 
@@ -624,11 +624,11 @@ user_pref("browser.formfill.expire_days",			0);
 // NOTE: CIS says 1, we use 2
 user_pref("browser.sessionstore.privacy_level",			2);
 
-// PREF: ??
+// PREF: browser.helperApps.deleteTempFileOnExit
 // https://bugzil.la/238789#c19
 user_pref("browser.helperApps.deleteTempFileOnExit",		true);
 
-// PREF: ??
+// PREF: browser.pagethumbnails.capturing_disabled
 // https://support.mozilla.org/en-US/questions/973320
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/browser.pagethumbnails.capturing_disabled
 user_pref("browser.pagethumbnails.capturing_disabled",		true);
@@ -660,7 +660,7 @@ user_pref("browser.download.folderList",			2);
 // https://developer.mozilla.org/en/Download_Manager_preferences (obsolete)
 user_pref("browser.download.useDownloadDir",			false);
 
-// PREF: ??
+// PREF: Disable the "new tab page" feature and show a blank tab instead
 // https://wiki.mozilla.org/Privacy/Reviews/New_Tab
 // https://support.mozilla.org/en-US/kb/new-tab-page-show-hide-and-customize-top-sites#w_how-do-i-turn-the-new-tab-page-off
 user_pref("browser.newtabpage.enabled",				false);
@@ -681,7 +681,7 @@ user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
 // http://kb.mozillazine.org/Network.IDN_show_punycode
 user_pref("network.IDN_show_punycode",				true);
 
-// PREF: ??
+// PREF: browser.urlbar.autoFill
 // http://kb.mozillazine.org/Inline_autocomplete
 user_pref("browser.urlbar.autoFill",				false);
 user_pref("browser.urlbar.autoFill.typed",			false);
@@ -692,12 +692,12 @@ user_pref("browser.urlbar.autoFill.typed",			false);
 // "Setting the preference to 0 effectively disables the Location Bar dropdown entirely."
 user_pref("browser.urlbar.maxRichResults",			0);
 
-// PREF: ??
+// PREF: layout.css.visited_links_enabled
 // https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/
 // https://dbaron.org/mozilla/visited-privacy
 user_pref("layout.css.visited_links_enabled",			false);
 
-// PREF: ??
+// PREF: ?? (disabled)
 // http://kb.mozillazine.org/Places.frecency.unvisited%28place_type%29Bonus
 
 // PREF: Disable URL bar autocomplete
@@ -719,7 +719,7 @@ user_pref("security.password_lifetime",				5);
  * SECTION: Cryptography                                                      *
  ******************************************************************************/
 
-// PREF: ??
+// PREF: network.stricttransportsecurity.preloadlist
 // https://blog.mozilla.org/security/2012/11/01/preloading-hsts/
 // https://wiki.mozilla.org/Privacy/Features/HSTS_Preload_List
 // https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security
@@ -775,7 +775,7 @@ user_pref("security.ssl.disable_session_identifiers",		true);
 user_pref("security.tls.version.min",				1);
 user_pref("security.tls.version.max",				4);
 
-// PREF: ??
+// PREF: security.tls.version.fallback-limit
 // TLS version fallback
 user_pref("security.tls.version.fallback-limit",		3);
 
@@ -790,7 +790,7 @@ user_pref("security.cert_pinning.enforcement_level",		2);
 // https://shattered.io/
 user_pref("security.pki.sha1_enforcement_level",		1);
 
-// PREF: ??
+// PREF: Warn the user when server doesn't support RFC 5746 ("safe" renegotiation)
 // https://wiki.mozilla.org/Security:Renegotiation#security.ssl.treat_unsafe_negotiation_as_broken
 // see also CVE-2009-3555
 user_pref("security.ssl.treat_unsafe_negotiation_as_broken",	true);
@@ -802,7 +802,7 @@ user_pref("security.ssl.treat_unsafe_negotiation_as_broken",	true);
 // see also CVE-2009-3555
 //user_pref("security.ssl.require_safe_negotiation",		true);
 
-// PREF: ??
+// PREF: Disable automatic reporting of TLS connection errors
 // https://support.mozilla.org/en-US/kb/certificate-pinning-reports
 // we could also disable security.ssl.errorReporting.enabled, but I think it's
 // good to leave the option to report potentially malicious sites if the user
@@ -810,7 +810,7 @@ user_pref("security.ssl.treat_unsafe_negotiation_as_broken",	true);
 // you can test this at https://pinningtest.appspot.com/
 user_pref("security.ssl.errorReporting.automatic",		false);
 
-// PREF: ??
+// PREF: browser.ssl_override_behavior
 // http://kb.mozillazine.org/Browser.ssl_override_behavior
 // Pre-populate the current URL but do not pre-fetch the certificate.
 user_pref("browser.ssl_override_behavior",			1);
