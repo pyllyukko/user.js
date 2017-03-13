@@ -430,9 +430,6 @@ user_pref("network.prefetch-next",				false);
 user_pref("network.dns.disablePrefetch",			true);
 user_pref("network.dns.disablePrefetchFromHTTPS",		true);
 
-// PREF: https://bugzilla.mozilla.org/show_bug.cgi?id=1228457
-user_pref("network.dns.blockDotOnion",				true);
-
 // PREF: Disable the predictive service (Necko)
 // https://wiki.mozilla.org/Privacy/Reviews/Necko
 user_pref("network.predictor.enabled",				false);
