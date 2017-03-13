@@ -705,7 +705,7 @@ user_pref("layout.css.visited_links_enabled",			false);
 // http://kb.mozillazine.org/Disabling_autocomplete_-_Firefox#Firefox_3.5
 user_pref("browser.urlbar.autocomplete.enabled",		false);
 
-// PREF: Do not check if firefox is the default browser
+// PREF: Do not check if Firefox is the default browser
 user_pref("browser.shell.checkDefaultBrowser",			false);
 
 // PREF: When password manager is enabled, only ask for the master password once
@@ -776,8 +776,9 @@ user_pref("security.ssl.disable_session_identifiers",		true);
 user_pref("security.tls.version.min",				1);
 user_pref("security.tls.version.max",				4);
 
-// PREF: security.tls.version.fallback-limit
-// TLS version fallback
+// PREF: Disable insecure TLS version fallback
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1084025
+// https://github.com/pyllyukko/user.js/pull/206#issuecomment-280229645
 user_pref("security.tls.version.fallback-limit",		3);
 
 // PREF: Enfore Public Key Pinning
@@ -811,9 +812,9 @@ user_pref("security.ssl.treat_unsafe_negotiation_as_broken",	true);
 // you can test this at https://pinningtest.appspot.com/
 user_pref("security.ssl.errorReporting.automatic",		false);
 
-// PREF: browser.ssl_override_behavior
+// PREF: Pre-populate the current URL but do not pre-fetch the certificate in the "Add Security Exception" dialog
 // http://kb.mozillazine.org/Browser.ssl_override_behavior
-// Pre-populate the current URL but do not pre-fetch the certificate.
+// https://github.com/pyllyukko/user.js/issues/210
 user_pref("browser.ssl_override_behavior",			1);
 
 /******************************************************************************
