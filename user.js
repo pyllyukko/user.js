@@ -64,7 +64,7 @@ user_pref("media.peerconnection.ice.no_host",			true); // Firefox >= 51
 // https://blog.mozilla.org/futurereleases/2013/01/12/capture-local-camera-and-microphone-streams-with-getusermedia-now-enabled-in-firefox/
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigator
 user_pref("media.navigator.enabled",				false);
-user_pref("media.navigator.video.enabled", 			false);
+user_pref("media.navigator.video.enabled",			false);
 user_pref("media.getusermedia.screensharing.enabled",		false);
 user_pref("media.getusermedia.audiocapture.enabled",		false);
 
@@ -294,11 +294,11 @@ user_pref("extensions.update.enabled",				true);
 // https://blog.mozilla.org/security/2015/03/03/revoking-intermediate-certificates-introducing-onecrl/
 // Updated at interval defined in extensions.blocklist.interval (default: 86400)
 user_pref("extensions.blocklist.enabled",			true);
-user_pref("services.blocklist.update_enabled", 		true);
+user_pref("services.blocklist.update_enabled",			true);
 
 // PREF: Decrease system information leakage to Mozilla blocklist update servers
 // https://trac.torproject.org/projects/tor/ticket/16931
-user_pref("extensions.blocklist.url",	"https://blocklist.addons.mozilla.org/blocklist/3/%APP_ID%/%APP_VERSION%/");
+user_pref("extensions.blocklist.url",				"https://blocklist.addons.mozilla.org/blocklist/3/%APP_ID%/%APP_VERSION%/");
 
 /******************************************************************************
  * SECTION: Firefox (anti-)features / components                              *                            *
@@ -366,12 +366,12 @@ user_pref("datareporting.policy.dataSubmissionEnabled",		false);
 // https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source
 // https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-ping
 // TODO: deprecated? not in DXR, some dead links
-user_pref("browser.newtabpage.enhanced",				false);
-user_pref("browser.newtab.preload",						false);
+user_pref("browser.newtabpage.enhanced",			false);
+user_pref("browser.newtab.preload",				false);
 user_pref("browser.newtabpage.directory.ping",			"");
 user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 
-// PREF: disable heartbeat
+// PREF: Disable heartbeat
 // https://wiki.mozilla.org/Advocacy/heartbeat
 user_pref("browser.selfsupport.url",				"");
 
@@ -386,7 +386,7 @@ user_pref("browser.selfsupport.url",				"");
 user_pref("loop.logDomains",					false);
 
 // PREF: Enable Auto Update (disabled)
-// CIS 2.1.1 
+// CIS 2.1.1
 // This is disabled for now. it is better to patch through package management.
 //user_pref("app.update.auto",		true);
 
@@ -395,12 +395,12 @@ user_pref("loop.logDomains",					false);
 // http://kb.mozillazine.org/Safe_browsing
 // https://support.mozilla.org/en-US/kb/how-does-phishing-and-malware-protection-work
 // http://forums.mozillazine.org/viewtopic.php?f=39&t=2711237&p=12896849#p12896849
-// CIS 2.3.4 
+// CIS 2.3.4
 user_pref("browser.safebrowsing.enabled",			true);
 
 // PREF: Enable blocking reported attack sites
 // http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled
-// CIS 2.3.5 
+// CIS 2.3.5
 user_pref("browser.safebrowsing.malware.enabled",		true);
 
 // PREF: Disable safe browsing remote lookups for downloaded files.
@@ -413,7 +413,7 @@ user_pref("browser.safebrowsing.downloads.remote.enabled",	false);
 // https://support.mozilla.org/en-US/kb/save-web-pages-later-pocket-firefox
 // https://github.com/pyllyukko/user.js/issues/143
 user_pref("browser.pocket.enabled",				false);
-user_pref("extensions.pocket.enabled",			false);
+user_pref("extensions.pocket.enabled",				false);
 
 /******************************************************************************
  * SECTION: Automatic connections                                             *
@@ -580,16 +580,16 @@ user_pref("browser.cache.disk.enable",				false);
 //user_pref("browser.cache.memory.enable",		false);
 
 // PREF: Disable Caching of SSL Pages
-// CIS Version 1.2.0 October 21st, 2011 2.5.8 
+// CIS Version 1.2.0 October 21st, 2011 2.5.8
 // http://kb.mozillazine.org/Browser.cache.disk_cache_ssl
 user_pref("browser.cache.disk_cache_ssl",			false);
 
 // PREF: Disable download history
-// CIS Version 1.2.0 October 21st, 2011 2.5.5 
+// CIS Version 1.2.0 October 21st, 2011 2.5.5
 user_pref("browser.download.manager.retention",			0);
 
 // PREF: Disable password manager
-// CIS Version 1.2.0 October 21st, 2011 2.5.2 
+// CIS Version 1.2.0 October 21st, 2011 2.5.2
 user_pref("signon.rememberSignons",				false);
 
 // PREF: Disable form autofill, don't save information entered in web page forms and the Search Bar
@@ -609,9 +609,9 @@ user_pref("signon.autofillForms",				false);
 // OWASP ASVS V9.1
 // Does not prevent any kind of auto-completion (see browser.formfill.enable, signon.autofillForms)
 //user_pref("signon.storeWhenAutocompleteOff",			false);
-          
+
 // PREF: Delete Search and Form History
-// CIS Version 1.2.0 October 21st, 2011 2.5.6 
+// CIS Version 1.2.0 October 21st, 2011 2.5.6
 user_pref("browser.formfill.expire_days",			0);
 
 // PREF: Clear SSL Form Session Data
@@ -670,7 +670,7 @@ user_pref("plugins.update.notifyUser",				true);
 
 // PREF: Enable Information Bar for Outdated Plugins
 // http://forums.mozillazine.org/viewtopic.php?f=8&t=2490287
-// CIS Version 1.2.0 October 21st, 2011 2.1.3 
+// CIS Version 1.2.0 October 21st, 2011 2.1.3
 user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
 
 // PREF: Enable IDN Show Punycode
@@ -749,7 +749,7 @@ user_pref("security.ssl.enable_ocsp_stapling",			true);
 // https://www.entrust.com/ocsp-must-staple/
 // https://github.com/schomery/privacy-settings/issues/40
 // NOTICE: Falls back on plain OCSP when must-staple is not configured on the host certificate
-user_pref("security.ssl.enable_ocsp_must_staple", true);
+user_pref("security.ssl.enable_ocsp_must_staple",		true);
 
 // PREF: Require a valid OCSP response for OCSP enabled certificates
 // https://groups.google.com/forum/#!topic/mozilla.dev.security/n1G-N2-HTVA
