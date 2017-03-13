@@ -30,7 +30,7 @@ SECTION_HTTP_ID='HTTP'
 SECTION_HTTP_MDOWN="HTTP protocol related entries. This affects cookies, the user agent, referer and others."
 
 SECTION_CACHING_ID='Caching'
-SECTION_CACHING_MDOWN="Enable and configure private browsing mode, don't store information locally during the browsing session (history/caches/downloads/passwords...)"
+SECTION_CACHING_MDOWN="Enable and configure private browsing mode, don't store information locally during the browsing session"
 
 SECTION_UI_ID='UI related'
 SECTION_UI_MDOWN="Improve visibility of security-related elements, mitigate shoulder-surfing"
