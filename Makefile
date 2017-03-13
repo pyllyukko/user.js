@@ -1,0 +1,2 @@
+whatdoesitdo:
+	@./gen-readme.sh
