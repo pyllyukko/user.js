@@ -304,8 +304,9 @@ user_pref("extensions.blocklist.url",				"https://blocklist.addons.mozilla.org/b
  * SECTION: Firefox (anti-)features / components                              *                            *
  ******************************************************************************/
 
-// PREF: WebIDE
+// PREF: Disable WebIDE
 // https://trac.torproject.org/projects/tor/ticket/16222
+// https://developer.mozilla.org/docs/Tools/WebIDE
 user_pref("devtools.webide.enabled",				false);
 user_pref("devtools.webide.autoinstallADBHelper",		false);
 user_pref("devtools.webide.autoinstallFxdtAdapters",		false);
