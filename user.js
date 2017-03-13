@@ -816,7 +816,7 @@ user_pref("security.ssl.errorReporting.automatic",		false);
 user_pref("browser.ssl_override_behavior",			1);
 
 /******************************************************************************
- * SECTION: Ciphers                                                           *
+ * SECTION: Cipher suites                                                     *
  ******************************************************************************/
 
 // PREF: Disable null ciphers

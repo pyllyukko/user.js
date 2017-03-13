@@ -36,9 +36,9 @@ SECTION_UI_ID='UI related'
 SECTION_UI_MDOWN="Improve visibility of security-related elements, mitigate shoulder-surfing"
 
 SECTION_CRYPTO_ID='Cryptography'
-SECTION_CRYPTO_MDOWN="Enforce strong cryptography where possible, enable additional cryptography mechanisms ([SSL/TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security), [HTTPS](https://en.wikipedia.org/wiki/HTTPS), [OCSP](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol), [HSTS](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security), [HPKP](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning) ...)"
+SECTION_CRYPTO_MDOWN="[TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) protocol related settings"
 
-SECTION_CIPHERS_ID='Ciphers'
+SECTION_CIPHERS_ID='Cipher suites'
 SECTION_CIPHERS_MDOWN="This section tweaks the cipher suites used by Firefox. The idea is to support only the strongest ones with emphasis on [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy), but without compromising compatibility with all those sites on the internet. As new crypto related flaws are discovered quite often, the cipher suites can be [tweaked to mitigate these newly discovered threats](https://github.com/pyllyukko/user.js/pull/18)."
 
 ###################################
