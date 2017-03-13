@@ -331,7 +331,8 @@ user_pref("toolkit.telemetry.unified",				false);
 user_pref("experiments.supported",				false);
 user_pref("experiments.enabled",				false);
 
-// PREF: Disable the UITour backend so there is no chance that a remote page can use it to confuse Tor Browser users.
+// PREF: Disable the UITour backend
+// https://trac.torproject.org/projects/tor/ticket/19047#comment:3
 user_pref("browser.uitour.enabled",				false);
 
 // PREF: Enable Firefox Tracking Protection
@@ -374,6 +375,7 @@ user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 
 // PREF: Disable heartbeat
 // https://wiki.mozilla.org/Advocacy/heartbeat
+// https://trac.torproject.org/projects/tor/ticket/19047
 user_pref("browser.selfsupport.url",				"");
 
 // PREF: Disable Firefox Hello (disabled)
