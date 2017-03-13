@@ -848,7 +848,7 @@ user_pref("security.ssl3.dhe_rsa_aes_128_sha",			false);
 // https://developer.mozilla.org/en-US/Firefox/Releases/38#Security
 // https://bugzil.la/1138882
 // https://rc4.io/
-// CVE-2013-2566
+// https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2566
 user_pref("security.ssl3.ecdh_ecdsa_rc4_128_sha",		false);
 user_pref("security.ssl3.ecdh_rsa_rc4_128_sha",			false);
 user_pref("security.ssl3.ecdhe_ecdsa_rc4_128_sha",		false);
@@ -870,18 +870,19 @@ user_pref("security.ssl3.ecdhe_rsa_des_ede3_sha",		false);
 user_pref("security.ssl3.rsa_des_ede3_sha",			false);
 user_pref("security.ssl3.rsa_fips_des_ede3_sha",		false);
 
-// DISABLE: Ciphers with ECDH (without /e$/)
+// PREF: Disable ciphers with ECDH (non-ephemeral)
 user_pref("security.ssl3.ecdh_rsa_aes_256_sha",			false);
 user_pref("security.ssl3.ecdh_ecdsa_aes_256_sha",		false);
 
 // PREF: Disable 256 bits ciphers without PFS
 user_pref("security.ssl3.rsa_camellia_256_sha",			false);
 
-// PREF: Disable ciphers with ECDHE and > 128bits
+// PREF: Enable ciphers with ECDHE and key size > 128bits
 user_pref("security.ssl3.ecdhe_rsa_aes_256_sha",		true); // 0xc014
 user_pref("security.ssl3.ecdhe_ecdsa_aes_256_sha",		true); // 0xc00a
 
 // PREF: Enable GCM ciphers (TLSv1.2 only)
+// https://en.wikipedia.org/wiki/Galois/Counter_Mode
 user_pref("security.ssl3.ecdhe_ecdsa_aes_128_gcm_sha256",	true); // 0xc02b
 user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		true); // 0xc02f
 

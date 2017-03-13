@@ -305,11 +305,12 @@ This section tweaks the cipher suites used by Firefox. The idea is to support on
 * Disable null ciphers
 * Disable SEED cipher [ [1](https://en.wikipedia.org/wiki/SEED) ]
 * Disable 40/56/128-bit ciphers
-* Disable RC4 [ [1](https://developer.mozilla.org/en-US/Firefox/Releases/38#Security) [2](https://bugzil.la/1138882) [3](https://rc4.io/) ]
+* Disable RC4 [ [1](https://developer.mozilla.org/en-US/Firefox/Releases/38#Security) [2](https://bugzil.la/1138882) [3](https://rc4.io/) [4](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2566) ]
 * Disable 3DES (effective key size is < 128) [ [1](https://en.wikipedia.org/wiki/3des#Security) [2](http://en.citizendium.org/wiki/Meet-in-the-middle_attack) [3](http://www-archive.mozilla.org/projects/security/pki/nss/ssl/fips-ssl-ciphersuites.html) ]
+* Disable ciphers with ECDH (non-ephemeral)
 * Disable 256 bits ciphers without PFS
-* Disable ciphers with ECDHE and > 128bits
-* Enable GCM ciphers (TLSv1.2 only)
+* Enable ciphers with ECDHE and key size > 128bits
+* Enable GCM ciphers (TLSv1.2 only) [ [1](https://en.wikipedia.org/wiki/Galois/Counter_Mode) ]
 * Enable ChaCha20 and Poly1305 (47+) [ [1](https://www.mozilla.org/en-US/firefox/47.0/releasenotes/) [2](https://tools.ietf.org/html/rfc7905) [3](https://bugzil.la/917571) [4](https://bugzil.la/1247860) [5](https://cr.yp.to/chacha.html) ]
 * Disable ciphers susceptible to the logjam attack [ [1](https://weakdh.org/) ]
 * Disable ciphers with DSA (max 1024 bits)
