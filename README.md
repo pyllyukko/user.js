@@ -133,7 +133,6 @@ it also makes experimenting with different settings easier.
  * Disable Web Audio API [ [1](https://bugzil.la/1288359) ]
  * Disable Location-Aware Browsing (geolocation) [ [1](https://www.mozilla.org/en-US/firefox/geolocation/) ]
  * Disable dom.mozTCPSocket.enabled (raw TCP socket support) [ [1](https://trac.torproject.org/projects/tor/ticket/18863) [2](https://www.mozilla.org/en-US/security/advisories/mfsa2015-97/) [3](https://developer.mozilla.org/docs/Mozilla/B2G_OS/API/TCPSocket) ]
- * Disable DOM storage (disabled) [ [1](http://kb.mozillazine.org/Dom.storage.enabled) [2](https://html.spec.whatwg.org/multipage/webstorage.html) ]
  * Whether JS can get information about the network/browser connection
  * Disable WebRTC entirely
  * Don't reveal your internal IP when WebRTC is enabled [ [1](https://wiki.mozilla.org/Media/WebRTC/Privacy) [2](https://github.com/beefproject/beef/wiki/Module%3A-Get-Internal-IP-WebRTC) ]
@@ -159,7 +158,6 @@ it also makes experimenting with different settings easier.
 
 **Misc:** Settings that do not belong to other sections or are user specific preferences.
  * Disable face detection
- * Set the default search engine to DuckDuckGo (disabled) [ [1](https://support.mozilla.org/en-US/questions/948134) ]
  * Disable GeoIP lookup on your address to set default search engine region [ [1](https://trac.torproject.org/projects/tor/ticket/16254) [2](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine) ]
  * Set locale to en-US (if you are using localized version of FF)
  * Do not automatically send selection to clipboard on some Linux platforms [ [1](http://kb.mozillazine.org/Clipboard.autocopy) ]
@@ -202,9 +200,7 @@ it also makes experimenting with different settings easier.
  * Disable collection/sending of the health report (healthreport.sqlite*) [ [1](https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf) [2](https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html) ]
  * Disable new tab tile ads & preload [ [1](http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox) [2](http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331) [3](https://wiki.mozilla.org/Tiles/Technical_Documentation#Ping) [4](https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source) [5](https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-ping) ]
  * disable heartbeat [ [1](https://wiki.mozilla.org/Advocacy/heartbeat) ]
- * Disable Firefox Hello (disabled) [ [1](https://wiki.mozilla.org/Loop) ]
  * Disable Firefox Hello metrics collection [ [1](https://groups.google.com/d/topic/mozilla.dev.platform/nyVkCx-_sFw/discussion) ]
- * Enable Auto Update (disabled)
  * Enable blocking reported web forgeries [ [1](http://kb.mozillazine.org/Browser.safebrowsing.enabled) [2](http://kb.mozillazine.org/Safe_browsing) [3](https://support.mozilla.org/en-US/kb/how-does-phishing-and-malware-protection-work) [4](http://forums.mozillazine.org/viewtopic.php?f=39&t=2711237&p=12896849#p12896849) ]
  * Enable blocking reported attack sites [ [1](http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled) ]
  * Disable safe browsing remote lookups for downloaded files. [ [1](https://www.mozilla.org/en-US/firefox/39.0/releasenotes/) [2](https://wiki.mozilla.org/Security/Application_Reputation) ]
@@ -229,11 +225,9 @@ it also makes experimenting with different settings easier.
  * ?? [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=855326) ]
  * Enable Content Security Policy
  * Enable Subresource Integrity [ [1](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) [2](https://wiki.mozilla.org/Security/Subresource_Integrity) ]
- * DNT HTTP header (disabled) [ [1](https://www.mozilla.org/en-US/firefox/dnt/) [2](https://en.wikipedia.org/wiki/Do_not_track_header) [3](https://dnt-dashboard.mozilla.org) [4](https://github.com/pyllyukko/user.js/issues/11) ]
  * Send a referer header with the target URI as the source [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=822869) ]
  * Accept Only 1st Party Cookies [ [1](http://kb.mozillazine.org/Network.cookie.cookieBehavior#1) ]
  * Make sure that third-party cookies (if enabled) never persist beyond the session. [ [1](https://feeding.cloud.geek.nz/posts/tweaking-cookies-for-privacy-in-firefox/) [2](http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly) [3](https://developer.mozilla.org/en-US/docs/Cookies_Preferences_in_Mozilla#network.cookie.thirdparty.sessionOnly) ]
- * Spoof User-agent (disabled)
 
 **Caching:** Enable and configure private browsing mode, don't store information locally during the browsing session (history/caches/downloads/passwords...)
  * Permanently enable private browsing mode [ [1](https://support.mozilla.org/en-US/kb/Private-Browsing) [2](https://wiki.mozilla.org/PrivateBrowsing) ]
@@ -241,9 +235,10 @@ it also makes experimenting with different settings easier.
  * ?? [ [1](http://kb.mozillazine.org/Browser.sessionstore.enabled) ]
  * ?? [ [1](http://kb.mozillazine.org/Browser.cache.offline.enable) ]
  * Clear history when Firefox closes [ [1](https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically) ]
+ * Set time range to "Everything" as default in "Clear Recent History"
+ * Clear everything but "Site Preferences" in "Clear Recent History"
  * Don't remember browsing history
  * Disable disk cache [ [1](http://kb.mozillazine.org/Browser.cache.disk.enable) ]
- * Disable memory cache (disabled) [ [1](http://kb.mozillazine.org/Browser.cache.memory.enable) ]
  * Disable Caching of SSL Pages
  * Disable download history
  * Disable password manager
@@ -258,7 +253,6 @@ it also makes experimenting with different settings easier.
 
 **UI related:** Improve visibility of security-related elements, mitigate shoulder-surfing
  * Enable insecure password warnings (login forms in non-HTTPS pages) [ [1](https://blog.mozilla.org/tanvi/2016/01/28/no-more-passwords-over-http-please/) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1319119) [3](https://bugzilla.mozilla.org/show_bug.cgi?id=1217156) ]
- * Disable right-click menu manipulation via JavaScript (disabled)
  * Disable "Are you sure you want to leave this page?" popups on page close [ [1](https://support.mozilla.org/en-US/questions/1043508) ]
  * Disable Downloading on Desktop
  * Always ask the user where to download [ [1](https://developer.mozilla.org/en/Download_Manager_preferences (obsolete)) ]
@@ -287,7 +281,6 @@ it also makes experimenting with different settings easier.
  * Enfore Public Key Pinning [ [1](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning) [2](https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning) ]
  * Disallow SHA-1 [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=1302140) [2](https://shattered.io/) ]
  * ?? [ [1](https://wiki.mozilla.org/Security:Renegotiation#security.ssl.treat_unsafe_negotiation_as_broken) ]
- * ?? (disabled) [ [1](https://wiki.mozilla.org/Security:Renegotiation#security.ssl.require_safe_negotiation) ]
  * ?? [ [1](https://support.mozilla.org/en-US/kb/certificate-pinning-reports) ]
  * ?? [ [1](http://kb.mozillazine.org/Browser.ssl_override_behavior) ]
 

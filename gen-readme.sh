@@ -45,7 +45,7 @@ SECTION_CIPHERS_MDOWN="Disable known [weak](https://weakdh.org/) ciphers, enforc
 
 function _gen_entries() {
     # generate the "What does it do" README section from user.js PREF/SECTION fields and adjacent links
-    egrep --line-number "SECTION\:|PREF\:" user.js | sed -e 's/  \+\*//g' | \
+    egrep --line-number "SECTION\:|PREF\:" user.js | egrep -v '\(disabled\)' | sed -e 's/  \+\*//g' | \
     while read LINE; do
         LINENUM=$(echo "$LINE" | awk -F ':' '{ print $1 }')
         LINETYPE=$(echo "$LINE" | awk -F '[:/\*\ ]*' '{ print $2 }' 2>/dev/null)
