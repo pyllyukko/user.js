@@ -433,7 +433,6 @@ user_pref("network.dns.disablePrefetchFromHTTPS",		true);
 // PREF: Disable the predictive service (Necko)
 // https://wiki.mozilla.org/Privacy/Reviews/Necko
 user_pref("network.predictor.enabled",				false);
-user_pref("network.seer.enabled",					false);
 
 // PREF: Reject .onion hostnames before passing the to DNS
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1228457
