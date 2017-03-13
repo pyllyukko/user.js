@@ -895,7 +895,7 @@ user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		true); // 0xc02f
 user_pref("security.ssl3.ecdhe_ecdsa_chacha20_poly1305_sha256",	true);
 user_pref("security.ssl3.ecdhe_rsa_chacha20_poly1305_sha256",	true);
 
-// PREF: Disable ciphers Susceptible to the logjam attack
+// PREF: Disable ciphers susceptible to the logjam attack
 // https://weakdh.org/
 user_pref("security.ssl3.dhe_rsa_camellia_256_sha",		false);
 user_pref("security.ssl3.dhe_rsa_aes_256_sha",			false);
