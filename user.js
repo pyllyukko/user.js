@@ -678,7 +678,7 @@ user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
 // http://kb.mozillazine.org/Network.IDN_show_punycode
 user_pref("network.IDN_show_punycode",				true);
 
-// PREF: browser.urlbar.autoFill
+// PREF: Disable inline autocomplete in URL bar
 // http://kb.mozillazine.org/Inline_autocomplete
 user_pref("browser.urlbar.autoFill",				false);
 user_pref("browser.urlbar.autoFill.typed",			false);
