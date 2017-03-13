@@ -716,7 +716,7 @@ user_pref("security.password_lifetime",				5);
  * SECTION: Cryptography                                                      *
  ******************************************************************************/
 
-// PREF: network.stricttransportsecurity.preloadlist
+// PREF: Enable HSTS preload list (pre-set HSTS sites list provided by Mozilla)
 // https://blog.mozilla.org/security/2012/11/01/preloading-hsts/
 // https://wiki.mozilla.org/Privacy/Features/HSTS_Preload_List
 // https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security
