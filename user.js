@@ -40,7 +40,7 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 // PREF: Disable DOM storage (disabled)
 // http://kb.mozillazine.org/Dom.storage.enabled
 // https://html.spec.whatwg.org/multipage/webstorage.html
-// NOTICE: Known to cause`TypeError: localStorage is null` errors
+// NOTICE: Disabling DOM storage is known to cause`TypeError: localStorage is null` errors
 //user_pref("dom.storage.enabled",		false);
 
 // PREF: Whether JS can get information about the network/browser connection
@@ -117,7 +117,7 @@ user_pref("browser.send_pings.require_same_host",		true);
 // https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review
 // http://forums.mozillazine.org/viewtopic.php?p=13842047
 // https://github.com/pyllyukko/user.js/issues/8
-// NOTICE: Could be used for tracking purposes, but is required for some add-ons to work (notably uBlock)
+// NOTICE: IndexedDB could be used for tracking purposes, but is required for some add-ons to work (notably uBlock), so is left enabled
 //user_pref("dom.indexedDB.enabled",		true);
 
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
@@ -506,19 +506,19 @@ user_pref("security.sri.enable",				true);
 // https://en.wikipedia.org/wiki/Do_not_track_header
 // https://dnt-dashboard.mozilla.org
 // https://github.com/pyllyukko/user.js/issues/11
-// NOTICE: DNT must be enabled manually
+// NOTICE: Do No Track must be enabled manually
 //user_pref("privacy.donottrackheader.enabled",		true);
 
 // PREF: Send a referer header with the target URI as the source
 // https://bugzilla.mozilla.org/show_bug.cgi?id=822869
-// NOTICE: Breaks functionality on websites relying on authentic referer headers
-// NOTICE: Breaks visualisation of 3rd-party sites on the Lightbeam addon
+// NOTICE: Spoofing referers breaks functionality on websites relying on authentic referer headers
+// NOTICE: Spoofing referers breaks visualisation of 3rd-party sites on the Lightbeam addon
 // TODO: https://github.com/pyllyukko/user.js/issues/94, commented-out XOriginPolicy/XOriginTrimmingPolicy = 2 prefs
 user_pref("network.http.referer.spoofSource",			true);
 
 // PREF: Accept Only 1st Party Cookies
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior#1
-// NOTICE: Breaks a number of payment gateways
+// NOTICE: Blocking 3rd-party cookies breaks a number of payment gateways
 // CIS 2.5.1
 user_pref("network.cookie.cookieBehavior",			1);
 
@@ -558,7 +558,7 @@ user_pref("browser.cache.offline.enable",			false);
 
 // PREF: Clear history when Firefox closes
 // https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically
-// NOTICE: Will **remove your saved passwords** (https://github.com/pyllyukko/user.js/issues/27)
+// NOTICE: Installing user.js will **remove your saved passwords** (https://github.com/pyllyukko/user.js/issues/27)
 user_pref("privacy.sanitize.sanitizeOnShutdown",		true);
 user_pref("privacy.clearOnShutdown.cache",			true);
 user_pref("privacy.clearOnShutdown.cookies",			true);
@@ -744,9 +744,9 @@ user_pref("network.stricttransportsecurity.preloadlist",	true);
 // https://wiki.mozilla.org/CA:OCSP-HardFail
 // https://news.netcraft.com/archives/2014/04/24/certificate-revocation-why-browsers-remain-affected-by-heartbleed.html
 // https://news.netcraft.com/archives/2013/04/16/certificate-revocation-and-the-performance-of-ocsp.html
-// NOTICE: Leaks your IP and domains you visit to the CA when OCSP Stapling is not available on visited host
-// NOTICE: Vulnerable to replay attacks when nonce is not configured on the OCSP responder
-// NOTICE: Adds latency (performance)
+// NOTICE: OCSP leaks your IP and domains you visit to the CA when OCSP Stapling is not available on visited host
+// NOTICE: OCSP is vulnerable to replay attacks when nonce is not configured on the OCSP responder
+// NOTICE: OCSP adds latency (performance)
 // NOTICE: Short-lived certificates are not checked for revocation (security.pki.cert_short_lifetime_in_days, default:10)
 // CIS Version 1.2.0 October 21st, 2011 2.2.4
 user_pref("security.OCSP.enabled",				1);
@@ -761,14 +761,14 @@ user_pref("security.ssl.enable_ocsp_stapling",			true);
 // https://blog.mozilla.org/security/2015/11/23/improving-revocation-ocsp-must-staple-and-short-lived-certificates/
 // https://www.entrust.com/ocsp-must-staple/
 // https://github.com/schomery/privacy-settings/issues/40
-// NOTICE: Falls back on plain OCSP when must-staple is not configured on the host certificate
+// NOTICE: Firefox falls back on plain OCSP when must-staple is not configured on the host certificate
 user_pref("security.ssl.enable_ocsp_must_staple",		true);
 
 // PREF: Require a valid OCSP response for OCSP enabled certificates
 // https://groups.google.com/forum/#!topic/mozilla.dev.security/n1G-N2-HTVA
 // Disabling this will make OCSP bypassable by MitM attacks suppressing OCSP responses
-// NOTICE: Will make the connection fail when the OCSP responder is unavailable
-// NOTICE: Known to break browsing on some [captive portals](https://en.wikipedia.org/wiki/Captive_portal)
+// NOTICE: `security.OCSP.require` will make the connection fail when the OCSP responder is unavailable
+// NOTICE: `security.OCSP.require` is known to break browsing on some [captive portals](https://en.wikipedia.org/wiki/Captive_portal)
 user_pref("security.OCSP.require",				true);
 
 // PREF: Disable TLS Session Tickets
@@ -810,7 +810,7 @@ user_pref("security.ssl.treat_unsafe_negotiation_as_broken",	true);
 // PREF: Disallow connection to servers not supporting safe renegotiation
 // https://wiki.mozilla.org/Security:Renegotiation#security.ssl.require_safe_negotiation
 // https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3555
-// NOTICE: Makes browsing next to impossible (2012-2014-... - `ssl_error_unsafe_negotiation` error)
+// TODO: `security.ssl.require_safe_negotiation` is more secure but makes browsing next to impossible (2012-2014-... - `ssl_error_unsafe_negotiation` errors), so is left disabled
 //user_pref("security.ssl.require_safe_negotiation",		true);
 
 // PREF: Disable automatic reporting of TLS connection errors
