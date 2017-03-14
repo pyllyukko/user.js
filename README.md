@@ -28,7 +28,6 @@ There are several parts to all this and they are:
 
 ----------------------------------------------
 
-TODO insert toc
 
 ## Download
 
