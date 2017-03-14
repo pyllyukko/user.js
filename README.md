@@ -468,19 +468,19 @@ cas.sh -C -P ~/.mozilla/firefox/XXXXXXXX.new_profile -a
 
 ## FAQ
 
+> Does this user.js file fix all security problems?
+
+No. Please read [Known problems and limitations](#known-problems-and-limitations), the project's
+[issue](https://github.com/pyllyukko/user.js/issues) tracker, and report new issues there.
+
 > Why are obsolete/deprecated entries included in the user.js file?
 
-In case you want to use an older Firefox version (e.g. for test reasons) and normally it 
-doesn't hurt your browser if there are old about:config preferences present.
+In case you want to use an older Firefox version (e.g. [ESR](https://www.mozilla.org/en-US/firefox/organizations/),
+or for test reasons) and normally it doesn't hurt your browser if there are deprecated about:config preferences present.
 
 > Installing the user.js file breaks xyz plugin/addon/extension, how can I fix it?
 
 See https://github.com/pyllyukko/user.js/issues/100
-
-> Does this user.js file fix all security problems?
-
-No. Please report problems on the project's
-[issue](https://github.com/pyllyukko/user.js/issues?q=is%3Aissue) tracker.
 
 > Will there be an official addon/an android version/feature xyz?
 
