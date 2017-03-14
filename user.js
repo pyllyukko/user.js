@@ -710,13 +710,12 @@ user_pref("browser.urlbar.autocomplete.enabled",		false);
 // PREF: Do not check if Firefox is the default browser
 user_pref("browser.shell.checkDefaultBrowser",			false);
 
-// PREF: When password manager is enabled, only ask for the master password once
-// NOTICE: this actually lessens security, but is more convenient
+// PREF: When password manager is enabled, lock the password storage periodically
 // CIS Version 1.2.0 October 21st, 2011 2.5.3 Disable Prompting for Credential Storage
-user_pref("security.ask_for_password",				0);
+user_pref("security.ask_for_password",				2);
 
-// PREF: When security.ask_for_password is 2 (every n minutes), lock password storage every 5 minutes (default: 30)
-user_pref("security.password_lifetime",				5);
+// PREF: Lock the password storage every 1 minutes (default: 30)
+user_pref("security.password_lifetime",				1);
 
 /******************************************************************************
  * SECTION: Cryptography                                                      *

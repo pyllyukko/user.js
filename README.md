@@ -278,8 +278,8 @@ Improve visibility of security-related elements, mitigate shoulder-surfing
 * Disable CSS :visited selectors [ [1](https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/) [2](https://dbaron.org/mozilla/visited-privacy) ]
 * Disable URL bar autocomplete [ [1](http://kb.mozillazine.org/Disabling_autocomplete_-_Firefox#Firefox_3.5) ]
 * Do not check if Firefox is the default browser
-* When password manager is enabled, only ask for the master password once
-* When security.ask_for_password is 2 (every n minutes), lock password storage every 5 minutes (default: 30)
+* When password manager is enabled, lock the password storage periodically
+* Lock the password storage every 1 minutes (default: 30)
 
 ### Cryptography
 
