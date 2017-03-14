@@ -372,8 +372,22 @@ See also:
 Hardening your often implies a trade-off with ease-of-use and comes with reduced functionality. Here is a list of known problems/limitations:
 
 <!-- BEGIN PROBLEMS-LIMITATIONS -->
-
-
+* Disabling DOM storage is known to cause`TypeError: localStorage is null` errors
+* IndexedDB could be used for tracking purposes, but is required for some add-ons to work (notably uBlock), so is left enabled
+* Firefox Hello requires setting `media.peerconnection.enabled` and `media.getusermedia.screensharing.enabled` to true, `security.OCSP.require` to false to work.
+* Do No Track must be enabled manually
+* Spoofing referers breaks functionality on websites relying on authentic referer headers
+* Spoofing referers breaks visualisation of 3rd-party sites on the Lightbeam addon
+* Blocking 3rd-party cookies breaks a number of payment gateways
+* You can not view or inspect cookies when in private browsing: https://bugzilla.mozilla.org/show_bug.cgi?id=823941
+* Installing user.js will **remove your saved passwords** (https://github.com/pyllyukko/user.js/issues/27)
+* OCSP leaks your IP and domains you visit to the CA when OCSP Stapling is not available on visited host
+* OCSP is vulnerable to replay attacks when nonce is not configured on the OCSP responder
+* OCSP adds latency (performance)
+* Short-lived certificates are not checked for revocation (security.pki.cert_short_lifetime_in_days, default:10)
+* Firefox falls back on plain OCSP when must-staple is not configured on the host certificate
+* `security.OCSP.require` will make the connection fail when the OCSP responder is unavailable
+* `security.OCSP.require` is known to break browsing on some [captive portals](https://en.wikipedia.org/wiki/Captive_portal)
 <!-- END PROBLEMS-LIMITATIONS -->
 
 In addition see the current [issues](https://github.com/pyllyukko/user.js/issues). You can use the [web console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console) to investigate what causes websites to break.
