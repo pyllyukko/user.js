@@ -21,13 +21,10 @@ make it more secure.
 
 There are several parts to all this and they are:
 
-* Using the user.js settings file itself
-* Running a selected list of browser extensions
-* Maintaining good security practices
-* Using the **cas.sh** script to limit the CAs
+* [Downloading](#download) and [installing](#installation) the `user.js` file.
+* Reading about and applying [further hardening](#further-hardening) techniques.
 
 ----------------------------------------------
-
 
 ## Download
 
@@ -315,10 +312,13 @@ This section tweaks the cipher suites used by Firefox. The idea is to support on
 * Fallbacks due compatibility reasons
 <!-- END SECTION -->
 
+-------------------------------------------------------------------------
+
 ## Further hardening
 
-This is not enough! Here's some other tips how you can further harden Firefox:
+**This is not enough!** Here's some other tips how you can further harden Firefox:
 
+* By default **your browser trusts 100's of [Certificate Authorities](https://en.wikipedia.org/wiki/Certificate_authority)** (CAs) from various organizations to guarantee privacy of your encrypted communications with websites. Some CAs have been known for misusing or deliberately abusing this power in the past, and **a single malicious CA can compromise all** your encrypted communications! Follow [this document](CAs.md) to only trust a selected, trimmed-down list of CAs.
 * Keep your browser updated! If you check [Firefox's security advisories](https://www.mozilla.org/security/known-vulnerabilities/firefox.html), you'll see that pretty much every new version of Firefox contains some security updates. If you don't keep your browser updated, you've already lost the game.
 * Disable/uninstall all unnecessary extensions and plugins!
 * If a plugin is absolutely required, [check for plugin updates](https://www.mozilla.org/en-US/plugincheck/)
@@ -331,7 +331,7 @@ This is not enough! Here's some other tips how you can further harden Firefox:
 
 Here is a list of the most essential security and privacy enhancing add-ons that you should consider using:
 
-* [Certificate Patrol][4]
+* [Certificate Patrol](http://patrol.psyced.org/)
   * I recommend setting the 'Store certificates even when in [Private Browsing][8] Mode' to get full benefit out of certpatrol, even though it stores information about the sites you visit
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere) and [HTTPS by default](https://addons.mozilla.org/firefox/addon/https-by-default/)
 * [NoScript](https://noscript.net/)
@@ -393,93 +393,7 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 
 In addition see the current [issues](https://github.com/pyllyukko/user.js/issues). You can use the [web console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console) to investigate what causes websites to break.
 
-## CAs
-
-
-It all started when I read [this blog post][5]...
-
-So another part of my browser hardening was to somehow reduce the number of CAs trusted by my browser. First I thought I would sniff all the HTTPS connections and extract the certificates from there, to get the list of CAs I **really** need.
-
-Then I came up with an better idea. I'd use [certpatrol][4] to record the certs from the HTTPS sites I visit. There was just one problem, certpatrol only stores the fingerprint of the issuer cert, which is usually a [intermediate CA](https://en.wikipedia.org/wiki/Intermediate_certificate_authorities). So I needed to get the root CA of the intermediate CA. The solution for this to use Firefox's *cert8.db* to extract the intermediate CAs and get the issuer (root CA) from there.
-
-So I wrapped up a script that uses the certpatrol's SQLite DB and Mozilla's [certutil](https://developer.mozilla.org/en-US/docs/NSS_security_tools/certutil) to establish a list of required root CAs from the HTTPS sites that you have visited.
-
-There's also a ready made list built in into the script, that has 28 root CAs in it. With this list of CAs you should already be able to browse the web quite freely. Of course there might also be some geographical variations as to what CAs "are required" for normal use.
-
-This script requires that you have the CA certificates in ```/usr/share/ca-certificates/mozilla``` (see <https://packages.debian.org/search?keywords=ca-certificates>). Red Hat based systems have a different model for this, so the script doesn't currently work on those (see [#140](https://github.com/pyllyukko/user.js/issues/140)).
-
-### Examples
-
-**Do note**, that in order for all this to work, you **MUST** remove or rename Firefox's default CA list that is stored inside ```libnssckbi.so``` as described [here][5].
-
-#### Check the current list of CAs in cert8.db
-
-````
-cas.sh -P ~/.mozilla/firefox/XXXXXXXX.current_profile -r
-````
-
-#### Import CAs
-
-First check which CAs would be imported (dry-run):
-
-````
-cas.sh -p ~/.mozilla/firefox/XXXXXXXX.reference_profile -A
-````
-
-Then import the required CAs to new profile:
-
-````
-cas.sh -p  ~/.mozilla/firefox/XXXXXXXX.reference_profile -P ~/.mozilla/firefox/XXXXXXXX.new_profile -a
-````
-
-#### Verify that it worked
-
-After you have run the script, verify from Firefox's [certificate settings](https://support.mozilla.org/en-US/kb/advanced-settings-browsing-network-updates-encryption?redirectlocale=en-US&redirectslug=Options+window+-+Advanced+panel#w_certificates-tab), that the list is indeed limited:
-
-![Firefox certificates](./screenshots/firefox_certificate_settings-1.png)
-
-### The default list
-
-This is the default CA list, that you can use. It should be enough for basic use for the most biggest/popular sites. Of course this still depends on where you are located and what sites/services/etc. you use. If you know some popular site, that is not accessible with this root CA list, please let me know and I'll consider adding it to the list.
-
-| Root CA							| Used by			|
-| ------------------------------------------------------------- | ----------------------------- |
-| AddTrust External CA Root					| https://www.debian.org/	|
-| Baltimore CyberTrust Root					|				|
-| COMODO Certification Authority				|				|
-| Deutsche Telekom Root CA 2					|				|
-| DigiCert High Assurance EV Root CA				| https://www.facebook.com/	|
-| DigiCert Global Root CA					| https://duckduckgo.com/	|
-| Entrust.net Secure Server Certification Authority		|				|
-| Entrust.net Certification Authority (2048)			|				|
-| [Entrust Root Certification Authority][11]                    | https://www.ssllabs.com/      |
-| Equifax Secure Certificate Authority				|				|
-| GTE CyberTrust Global Root					|				|
-| GeoTrust Global CA						| https://www.google.com/	|
-| GeoTrust Primary Certification Authority			| https://www.robtex.com/	|
-| GeoTrust Primary Certification Authority - G3			|				|
-| GlobalSign Root CA						| https://www.wikipedia.org/	|
-| Go Daddy Class 2 Certification Authority			|				|
-| Go Daddy Root Certificate Authority - G2			|				|
-| Starfield Class 2 Certification Authority			| https://tools.ietf.org/	|
-| StartCom Certification Authority				|				|
-| UTN-USERFirst-Hardware					|				|
-| ValiCert Class 2 Policy Validation Authority			|				|
-| VeriSign Class 3 Public Primary Certification Authority - G3	| https://www.mysql.com/	|
-| VeriSign Class 3 Public Primary Certification Authority - G5	| https://twitter.com/		|
-| [thawte Primary Root CA][7]					|				|
-| [thawte Primary Root CA - G3][7]				|				|
-| SecureTrust CA						|				|
-| QuoVadis Root CA 2						| https://supportforums.cisco.com/ |
-| DST Root CA X3						| [Let's Encrypt](https://letsencrypt.org/) |
-
-#### How to use the default list
-
-Import the default CA list with:
-
-````
-cas.sh -C -P ~/.mozilla/firefox/XXXXXXXX.new_profile -a
-````
+-------------------------------------------------------------------------
 
 ## FAQ
 
@@ -615,13 +529,9 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 [1]: http://kb.mozillazine.org/User.js_file
 [2]: https://wiki.mozilla.org/Security:Renegotiation#security.ssl.require_safe_negotiation
 [3]: http://kb.mozillazine.org/Dom.storage.enabled
-[4]: http://patrol.psyced.org/
-[5]: https://blog.torproject.org/blog/life-without-ca
 [6]: http://kb.mozillazine.org/About:config
-[7]: https://www.thawte.com/roots/
 [8]: https://support.mozilla.org/en-US/kb/Private%20Browsing
 [9]: https://bugzilla.mozilla.org/show_bug.cgi?id=822869
-[11]: https://www.entrust.com/products/developer-api-standards/
 [12]: https://support.mozilla.org/en-US/kb/tracking-protection-firefox
 [13]: https://www.mozilla.org/en-US/lightbeam/
 [15]: https://mzl.la/NYhKHH
