@@ -111,12 +111,13 @@ user_pref("browser.send_pings",					false);
 // http://kb.mozillazine.org/Browser.send_pings.require_same_host
 user_pref("browser.send_pings.require_same_host",		true);
 
-// PREF: ?? (disabled)
+// PREF: Disable IndexedDB (disabled)
 // https://developer.mozilla.org/en-US/docs/IndexedDB
+// https://en.wikipedia.org/wiki/Indexed_Database_API
 // https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review
-// TODO: find out why html5test still reports this as available
-// NOTE: this is enabled for now, as disabling this seems to break some plugins.
-//       see: http://forums.mozillazine.org/viewtopic.php?p=13842047#p13842047
+// http://forums.mozillazine.org/viewtopic.php?p=13842047
+// https://github.com/pyllyukko/user.js/issues/8
+// NOTICE: Could be used for tracking purposes, but is required for some add-ons to work (notably uBlock)
 //user_pref("dom.indexedDB.enabled",		true);
 
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
@@ -381,9 +382,10 @@ user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 // https://trac.torproject.org/projects/tor/ticket/19047
 user_pref("browser.selfsupport.url",				"");
 
-// PREF: Disable Firefox Hello (disabled)
+// PREF: Disable Firefox Hello (disabled) (<49)
 // https://wiki.mozilla.org/Loop
-// TODO: deprecated? not in DXR
+// https://support.mozilla.org/t5/Chat-and-share/Support-for-Hello-discontinued-in-Firefox-49/ta-p/37946
+// NOTICE: Firefox Hello requires setting `media.peerconnection.enabled` and `media.getusermedia.screensharing.enabled` to true, `security.OCSP.require` to false to work.
 //user_pref("loop.enabled",		false);
 
 // PREF: Disable Firefox Hello metrics collection
@@ -504,17 +506,19 @@ user_pref("security.sri.enable",				true);
 // https://en.wikipedia.org/wiki/Do_not_track_header
 // https://dnt-dashboard.mozilla.org
 // https://github.com/pyllyukko/user.js/issues/11
+// NOTICE: DNT must be enabled manually
 //user_pref("privacy.donottrackheader.enabled",		true);
 
 // PREF: Send a referer header with the target URI as the source
 // https://bugzilla.mozilla.org/show_bug.cgi?id=822869
 // NOTICE: Breaks functionality on websites relying on authentic referer headers
+// NOTICE: Breaks visualisation of 3rd-party sites on the Lightbeam addon
 // TODO: https://github.com/pyllyukko/user.js/issues/94, commented-out XOriginPolicy/XOriginTrimmingPolicy = 2 prefs
 user_pref("network.http.referer.spoofSource",			true);
 
 // PREF: Accept Only 1st Party Cookies
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior#1
-// NOTICE: This breaks a number of payment gateways so you may need to comment it out.
+// NOTICE: Breaks a number of payment gateways
 // CIS 2.5.1
 user_pref("network.cookie.cookieBehavior",			1);
 
@@ -536,6 +540,7 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
 // PREF: Permanently enable private browsing mode
 // https://support.mozilla.org/en-US/kb/Private-Browsing
 // https://wiki.mozilla.org/PrivateBrowsing
+// NOTICE: You can not view or inspect cookies when in private browsing: https://bugzilla.mozilla.org/show_bug.cgi?id=823941
 user_pref("browser.privatebrowsing.autostart",			true);
 
 // PREF: Do not store POST data in saved sessions
@@ -553,6 +558,7 @@ user_pref("browser.cache.offline.enable",			false);
 
 // PREF: Clear history when Firefox closes
 // https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically
+// NOTICE: Will **remove your saved passwords** (https://github.com/pyllyukko/user.js/issues/27)
 user_pref("privacy.sanitize.sanitizeOnShutdown",		true);
 user_pref("privacy.clearOnShutdown.cache",			true);
 user_pref("privacy.clearOnShutdown.cookies",			true);
@@ -762,6 +768,7 @@ user_pref("security.ssl.enable_ocsp_must_staple",		true);
 // https://groups.google.com/forum/#!topic/mozilla.dev.security/n1G-N2-HTVA
 // Disabling this will make OCSP bypassable by MitM attacks suppressing OCSP responses
 // NOTICE: Will make the connection fail when the OCSP responder is unavailable
+// NOTICE: Known to break browsing on some [captive portals](https://en.wikipedia.org/wiki/Captive_portal)
 user_pref("security.OCSP.require",				true);
 
 // PREF: Disable TLS Session Tickets

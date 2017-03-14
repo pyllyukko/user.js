@@ -371,24 +371,12 @@ See also:
 
 Hardening your often implies a trade-off with ease-of-use and comes with reduced functionality. Here is a list of known problems/limitations:
 
-TODO: generate this section from `NOTICE:` fields in user.js (#238)
+<!-- BEGIN PROBLEMS-LIMITATIONS -->
 
-* If you get "sec\_error\_ocsp\_invalid\_signing\_cert", it probably means that you don't have the required CA (TODO: details/workaround/??)
-* The [IndexedDB](https://en.wikipedia.org/wiki/Indexed_Database_API) is something that could potentially be used to track users, but it is also required by some browser add-ons in recent versions of Firefox. It would be best to disable this feature just to be on the safe side, but it is currently enabled, so that add-ons would work. See the following links for further info:
-  * [Issue #8](https://github.com/pyllyukko/user.js/issues/8)
-  * [IndexedDB Security Review](https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review) (this document also states that "IndexedDB is completely disabled in private browsing mode.", but this should still be verified)
-  * [This discussion](http://forums.mozillazine.org/viewtopic.php?p=13842047&sid=041e5edcae225759b7cfffd43fc518d0#p13842047) on mozillaZine Forums
-  * [IndexedDB page at MDN](https://developer.mozilla.org/en-US/docs/IndexedDB)
-* [Firefox Hello](https://www.mozilla.org/en-US/firefox/hello/) requires [WebRTC](https://en.wikipedia.org/wiki/WebRTC), so you'll need to enable ```media.peerconnection.enabled``` & ```media.getusermedia.screensharing.enabled``` [and apparently](https://github.com/pyllyukko/user.js/issues/9#issuecomment-94526204) disable ```security.OCSP.require```.
-* [Captive portals](https://en.wikipedia.org/wiki/Captive_portal) might not let OCSP requests through before authentication, so setting ```security.OCSP.require == false``` might be required before internet access is granted
-* [DNT](https://en.wikipedia.org/wiki/Do_Not_Track) is not set, so you need to enable it manually if you want (see the discussion in [issue #11](https://github.com/pyllyukko/user.js/issues/11))
-* The ```network.http.referer.spoofSource``` and ```network.http.sendRefererHeader``` settings seems to break the visualization of the 3rd party sites on the [Lightbeam][13] extension
-* You can not view or inspect cookies when in private browsing (see https://bugzil.la/823941)
-* Installation of ```user.js``` causes saved passwords to be removed from the Firefox (see [#27](https://github.com/pyllyukko/user.js/issues/27))
-* Some payment gateways require third-party cookies to be fully enabled before you can make purchases on sites that use them (`network.cookie.cookieBehavior == 0`). Enabling `network.cookie.thirdparty.sessionOnly` will limit their lifetime to the length of the session no matter what.
-* On some Android devices, all the pages might be blank (as seen [here](https://github.com/pyllyukko/user.js/pull/136#issuecomment-206812337)) if the setting ```layers.acceleration.disabled``` is set to ```true```. For more information, see [#136](https://github.com/pyllyukko/user.js/pull/136).
 
-The [web console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console) is your friend, **when** websites start to break.
+<!-- END PROBLEMS-LIMITATIONS -->
+
+In addition see the current [issues](https://github.com/pyllyukko/user.js/issues). You can use the [web console](https://developer.mozilla.org/en-US/docs/Tools/Web_Console) to investigate what causes websites to break.
 
 ## CAs
 
