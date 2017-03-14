@@ -596,6 +596,12 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 
 --------------------------------------------------------------------------
 
+## License
+
+Files in this repository are licensed under the [MIT](LICENSE) License.
+
+--------------------------------------------------------------------------
+
 [1]: http://kb.mozillazine.org/User.js_file
 [2]: https://wiki.mozilla.org/Security:Renegotiation#security.ssl.require_safe_negotiation
 [3]: http://kb.mozillazine.org/Dom.storage.enabled
