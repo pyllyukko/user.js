@@ -367,7 +367,7 @@ See also:
 * [uBlock](https://addons.mozilla.org/android/addon/ublock-origin/)
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 
-## Known problems
+## Known problems and limitations
 
 Hardening your often implies a trade-off with ease-of-use and comes with reduced functionality. Here is a list of known problems/limitations:
 
