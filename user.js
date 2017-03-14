@@ -40,7 +40,7 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 // PREF: Disable DOM storage (disabled)
 // http://kb.mozillazine.org/Dom.storage.enabled
 // https://html.spec.whatwg.org/multipage/webstorage.html
-// you can also see this with Panopticlick's "DOM localStorage"
+// NOTICE: Known to cause`TypeError: localStorage is null` errors
 //user_pref("dom.storage.enabled",		false);
 
 // PREF: Whether JS can get information about the network/browser connection
@@ -508,6 +508,8 @@ user_pref("security.sri.enable",				true);
 
 // PREF: Send a referer header with the target URI as the source
 // https://bugzilla.mozilla.org/show_bug.cgi?id=822869
+// NOTICE: Breaks functionality on websites relying on authentic referer headers
+// TODO: https://github.com/pyllyukko/user.js/issues/94, commented-out XOriginPolicy/XOriginTrimmingPolicy = 2 prefs
 user_pref("network.http.referer.spoofSource",			true);
 
 // PREF: Accept Only 1st Party Cookies
@@ -795,14 +797,13 @@ user_pref("security.pki.sha1_enforcement_level",		1);
 
 // PREF: Warn the user when server doesn't support RFC 5746 ("safe" renegotiation)
 // https://wiki.mozilla.org/Security:Renegotiation#security.ssl.treat_unsafe_negotiation_as_broken
-// see also CVE-2009-3555
+// https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3555
 user_pref("security.ssl.treat_unsafe_negotiation_as_broken",	true);
 
-// PREF: ?? (disabled)
+// PREF: Disallow connection to servers not supporting safe renegotiation
 // https://wiki.mozilla.org/Security:Renegotiation#security.ssl.require_safe_negotiation
-// this makes browsing next to impossible=) (13.2.2012)
-// update: the world is not ready for this! (6.5.2014)
-// see also CVE-2009-3555
+// https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3555
+// NOTICE: Makes browsing next to impossible (2012-2014-... - `ssl_error_unsafe_negotiation` error)
 //user_pref("security.ssl.require_safe_negotiation",		true);
 
 // PREF: Disable automatic reporting of TLS connection errors
