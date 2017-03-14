@@ -16,7 +16,7 @@
 user_pref("dom.serviceWorkers.enabled",				false);
 
 // PREF: Disable web notifications
-// ??
+// https://support.mozilla.org/t5/Firefox/I-can-t-find-Firefox-menu-I-m-trying-to-opt-out-of-Web-Push-and/m-p/1317495#M1006501
 user_pref("dom.webnotifications.enabled",			false);
 
 // PREF: Make sure the User Timing API does not provide a new high resolution timestamp
