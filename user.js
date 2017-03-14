@@ -135,13 +135,13 @@ user_pref("dom.vr.enabled",					false);
 user_pref("webgl.disabled",					true);
 // PREF: When webGL is enabled, use the minimum capability mode
 user_pref("webgl.min_capability_mode",				true);
-// PREF: webgl.disable-extensions
+// PREF: When webGL is enabled, disable webGL extensions
 // https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API#WebGL_debugging_and_testing
 user_pref("webgl.disable-extensions",				true);
-// PREF: webgl.disable-fail-if-major-performance-caveat
+// PREF: When webGL is enabled, force enabling it even when layer acceleration is not supported
 // https://trac.torproject.org/projects/tor/ticket/18603
 user_pref("webgl.disable-fail-if-major-performance-caveat",	true);
-// PREF: webgl.enable-debug-renderer-info
+// PREF: When webGL is enabled, do not expose information about the graphics driver
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1171228
 // https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_debug_renderer_info
 user_pref("webgl.enable-debug-renderer-info",			false);
@@ -276,7 +276,7 @@ user_pref("plugin.state.java",					0);
 // PREF: Disable Gnome Shell Integration
 user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
 
-// PREF: Disable the bundled OpenH264 video codec
+// PREF: Disable the bundled OpenH264 video codec (disabled)
 // http://forums.mozillazine.org/viewtopic.php?p=13845077&sid=28af2622e8bd8497b9113851676846b1#p13845077
 //user_pref("media.gmp-provider.enabled",		false);
 
@@ -456,7 +456,7 @@ user_pref("browser.urlbar.suggest.searches",			false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1111967
 user_pref("browser.casting.enabled",				false);
 
-// PREF: media.gmp-
+// PREF: Disable automatic downloading of OpenH264 codec
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_media-capabilities
 // https://andreasgal.com/2014/10/14/openh264-now-in-firefox/
 user_pref("media.gmp-gmpopenh264.enabled",			false);
@@ -467,7 +467,7 @@ user_pref("media.gmp-manager.url",				"");
 // https://bugzil.la/814169
 user_pref("network.http.speculative-parallel-limit",		0);
 
-// PREF: browser.aboutHomeSnippets.updateUrl
+// PREF: Disable downloading homepage snippets/messages from Mozilla
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_mozilla-content
 // https://wiki.mozilla.org/Firefox/Projects/Firefox_Start/Snippet_Service
 user_pref("browser.aboutHomeSnippets.updateUrl",		"");
