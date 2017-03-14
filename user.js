@@ -68,8 +68,9 @@ user_pref("media.navigator.video.enabled",			false);
 user_pref("media.getusermedia.screensharing.enabled",		false);
 user_pref("media.getusermedia.audiocapture.enabled",		false);
 
-// PREF: Disable battery API
+// PREF: Disable battery API (<52)
 // https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1313580
 user_pref("dom.battery.enabled",				false);
 
 // PREF: Disable telephony API
