@@ -87,9 +87,6 @@ Import the default CA list with:
 cas.sh -C -P ~/.mozilla/firefox/XXXXXXXX.new_profile -a
 ````
 
-
---------------------------------------------------------------------------------
-
 [5]: https://blog.torproject.org/blog/life-without-ca
 [7]: https://www.thawte.com/roots/
 [11]: https://www.entrust.com/products/developer-api-standards/
