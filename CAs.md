@@ -13,17 +13,17 @@ There's also a ready made list built in into the script, that has 28 root CAs in
 
 This script requires that you have the CA certificates in ```/usr/share/ca-certificates/mozilla``` (see <https://packages.debian.org/search?keywords=ca-certificates>). Red Hat based systems have a different model for this, so the script doesn't currently work on those (see [#140](https://github.com/pyllyukko/user.js/issues/140)).
 
-### Examples
+## Examples
 
 **Do note**, that in order for all this to work, you **MUST** remove or rename Firefox's default CA list that is stored inside ```libnssckbi.so``` as described [here][5].
 
-#### Check the current list of CAs in cert8.db
+### Check the current list of CAs in cert8.db
 
 ````
 cas.sh -P ~/.mozilla/firefox/XXXXXXXX.current_profile -r
 ````
 
-#### Import CAs
+### Import CAs
 
 First check which CAs would be imported (dry-run):
 
@@ -37,13 +37,13 @@ Then import the required CAs to new profile:
 cas.sh -p  ~/.mozilla/firefox/XXXXXXXX.reference_profile -P ~/.mozilla/firefox/XXXXXXXX.new_profile -a
 ````
 
-#### Verify that it worked
+### Verify that it worked
 
 After you have run the script, verify from Firefox's [certificate settings](https://support.mozilla.org/en-US/kb/advanced-settings-browsing-network-updates-encryption?redirectlocale=en-US&redirectslug=Options+window+-+Advanced+panel#w_certificates-tab), that the list is indeed limited:
 
 ![Firefox certificates](./screenshots/firefox_certificate_settings-1.png)
 
-### The default list
+## The default list
 
 This is the default CA list, that you can use. It should be enough for basic use for the most biggest/popular sites. Of course this still depends on where you are located and what sites/services/etc. you use. If you know some popular site, that is not accessible with this root CA list, please let me know and I'll consider adding it to the list.
 
@@ -79,7 +79,7 @@ This is the default CA list, that you can use. It should be enough for basic use
 | DST Root CA X3						| [Let's Encrypt](https://letsencrypt.org/) |
 
 
-#### How to use the default list
+### How to use the default list
 
 Import the default CA list with:
 
