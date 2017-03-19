@@ -98,22 +98,35 @@ function _gen_section_header() {
     esac
 }
 
+function _gen_problems() {
+    grep 'NOTICE:' user.js | sed 's|// NOTICE: |* |g'
+}
+
 function _write_readme() {
-    # write the generated section to README.md (section delimited by html comments BEGIN/END SECTION)
+    # write generated sections to README.md (section delimited by html comments BEGIN/END SECTION)
     # https://stackoverflow.com/questions/21876431
     echo "$README_SECTION" > whatdoesitdo.tmp.md
     awk '
-    BEGIN               {p=1}
+    BEGIN             {p=1}
     /BEGIN SECTION/   {print;system("cat whatdoesitdo.tmp.md");p=0}
     /END SECTION/     {p=1}
     p' README.md > README-new.md
     mv README-new.md README.md
     rm whatdoesitdo.tmp.md
 
-    #sed --silent "/BEGIN SECTION/{:a;N;/END SECTION/!ba;N;s/.*\n${README_SECTION}\n/};p" README.md
+
+    echo "$PROBLEMS_SECTION" > knownproblems.tmp.md
+    awk '
+    BEGIN                          {p=1}
+    /BEGIN PROBLEMS-LIMITATIONS/   {print;system("cat knownproblems.tmp.md");p=0}
+    /END PROBLEMS-LIMITATIONS/     {p=1}
+    p' README.md > README-new.md
+    mv README-new.md README.md
+    rm knownproblems.tmp.md
 }
 
 ###################################
 
 README_SECTION=$(_gen_entries)
+PROBLEMS_SECTION=$(_gen_problems)
 _write_readme

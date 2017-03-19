@@ -11,12 +11,13 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/Worker
 // https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker_API
 // https://wiki.mozilla.org/Firefox/Push_Notifications#Service_Workers
+// NOTICE: Disabling ServiceWorkers breaks functionality on some sites (Google Street View...)
 // Unknown security implications
 // CVE-2016-5259, CVE-2016-2812, CVE-2016-1949, CVE-2016-5287 (fixed)
 user_pref("dom.serviceWorkers.enabled",				false);
 
 // PREF: Disable web notifications
-// ??
+// https://support.mozilla.org/t5/Firefox/I-can-t-find-Firefox-menu-I-m-trying-to-opt-out-of-Web-Push-and/m-p/1317495#M1006501
 user_pref("dom.webnotifications.enabled",			false);
 
 // PREF: Make sure the User Timing API does not provide a new high resolution timestamp
@@ -40,7 +41,7 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 // PREF: Disable DOM storage (disabled)
 // http://kb.mozillazine.org/Dom.storage.enabled
 // https://html.spec.whatwg.org/multipage/webstorage.html
-// you can also see this with Panopticlick's "DOM localStorage"
+// NOTICE: Disabling DOM storage is known to cause`TypeError: localStorage is null` errors
 //user_pref("dom.storage.enabled",		false);
 
 // PREF: Whether JS can get information about the network/browser connection
@@ -68,8 +69,9 @@ user_pref("media.navigator.video.enabled",			false);
 user_pref("media.getusermedia.screensharing.enabled",		false);
 user_pref("media.getusermedia.audiocapture.enabled",		false);
 
-// PREF: Disable battery API
+// PREF: Disable battery API (<52)
 // https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1313580
 user_pref("dom.battery.enabled",				false);
 
 // PREF: Disable telephony API
@@ -110,12 +112,13 @@ user_pref("browser.send_pings",					false);
 // http://kb.mozillazine.org/Browser.send_pings.require_same_host
 user_pref("browser.send_pings.require_same_host",		true);
 
-// PREF: ?? (disabled)
+// PREF: Disable IndexedDB (disabled)
 // https://developer.mozilla.org/en-US/docs/IndexedDB
+// https://en.wikipedia.org/wiki/Indexed_Database_API
 // https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review
-// TODO: find out why html5test still reports this as available
-// NOTE: this is enabled for now, as disabling this seems to break some plugins.
-//       see: http://forums.mozillazine.org/viewtopic.php?p=13842047#p13842047
+// http://forums.mozillazine.org/viewtopic.php?p=13842047
+// https://github.com/pyllyukko/user.js/issues/8
+// NOTICE: IndexedDB could be used for tracking purposes, but is required for some add-ons to work (notably uBlock), so is left enabled
 //user_pref("dom.indexedDB.enabled",		true);
 
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
@@ -134,13 +137,13 @@ user_pref("dom.vr.enabled",					false);
 user_pref("webgl.disabled",					true);
 // PREF: When webGL is enabled, use the minimum capability mode
 user_pref("webgl.min_capability_mode",				true);
-// PREF: webgl.disable-extensions
+// PREF: When webGL is enabled, disable webGL extensions
 // https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API#WebGL_debugging_and_testing
 user_pref("webgl.disable-extensions",				true);
-// PREF: webgl.disable-fail-if-major-performance-caveat
+// PREF: When webGL is enabled, force enabling it even when layer acceleration is not supported
 // https://trac.torproject.org/projects/tor/ticket/18603
 user_pref("webgl.disable-fail-if-major-performance-caveat",	true);
-// PREF: webgl.enable-debug-renderer-info
+// PREF: When webGL is enabled, do not expose information about the graphics driver
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1171228
 // https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_debug_renderer_info
 user_pref("webgl.enable-debug-renderer-info",			false);
@@ -157,6 +160,8 @@ user_pref("camera.control.face_detection.enabled",		false);
 // PREF: Set the default search engine to DuckDuckGo (disabled)
 // https://support.mozilla.org/en-US/questions/948134
 //user_pref("browser.search.defaultenginename",		"DuckDuckGo");
+//user_pref("browser.search.order.1",				"DuckDuckGo");
+//user_pref("keyword.URL", 							"https://duckduckgo.com/html/?q=!+");  
 
 // PREF: Disable GeoIP lookup on your address to set default search engine region
 // https://trac.torproject.org/projects/tor/ticket/16254
@@ -273,7 +278,7 @@ user_pref("plugin.state.java",					0);
 // PREF: Disable Gnome Shell Integration
 user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
 
-// PREF: Disable the bundled OpenH264 video codec
+// PREF: Disable the bundled OpenH264 video codec (disabled)
 // http://forums.mozillazine.org/viewtopic.php?p=13845077&sid=28af2622e8bd8497b9113851676846b1#p13845077
 //user_pref("media.gmp-provider.enabled",		false);
 
@@ -378,9 +383,10 @@ user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 // https://trac.torproject.org/projects/tor/ticket/19047
 user_pref("browser.selfsupport.url",				"");
 
-// PREF: Disable Firefox Hello (disabled)
+// PREF: Disable Firefox Hello (disabled) (<49)
 // https://wiki.mozilla.org/Loop
-// TODO: deprecated? not in DXR
+// https://support.mozilla.org/t5/Chat-and-share/Support-for-Hello-discontinued-in-Firefox-49/ta-p/37946
+// NOTICE: Firefox Hello requires setting `media.peerconnection.enabled` and `media.getusermedia.screensharing.enabled` to true, `security.OCSP.require` to false to work.
 //user_pref("loop.enabled",		false);
 
 // PREF: Disable Firefox Hello metrics collection
@@ -453,7 +459,7 @@ user_pref("browser.urlbar.suggest.searches",			false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1111967
 user_pref("browser.casting.enabled",				false);
 
-// PREF: media.gmp-
+// PREF: Disable automatic downloading of OpenH264 codec
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_media-capabilities
 // https://andreasgal.com/2014/10/14/openh264-now-in-firefox/
 user_pref("media.gmp-gmpopenh264.enabled",			false);
@@ -464,7 +470,7 @@ user_pref("media.gmp-manager.url",				"");
 // https://bugzil.la/814169
 user_pref("network.http.speculative-parallel-limit",		0);
 
-// PREF: browser.aboutHomeSnippets.updateUrl
+// PREF: Disable downloading homepage snippets/messages from Mozilla
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_mozilla-content
 // https://wiki.mozilla.org/Firefox/Projects/Firefox_Start/Snippet_Service
 user_pref("browser.aboutHomeSnippets.updateUrl",		"");
@@ -501,15 +507,25 @@ user_pref("security.sri.enable",				true);
 // https://en.wikipedia.org/wiki/Do_not_track_header
 // https://dnt-dashboard.mozilla.org
 // https://github.com/pyllyukko/user.js/issues/11
+// NOTICE: Do No Track must be enabled manually
 //user_pref("privacy.donottrackheader.enabled",		true);
 
 // PREF: Send a referer header with the target URI as the source
 // https://bugzilla.mozilla.org/show_bug.cgi?id=822869
+// https://github.com/pyllyukko/user.js/issues/227
+// NOTICE: Spoofing referers breaks functionality on websites relying on authentic referer headers
+// NOTICE: Spoofing referers breaks visualisation of 3rd-party sites on the Lightbeam addon
+// NOTICE: Spoofing referers disables CSRF protection on some login pages not implementing origin-header/cookie+token based CSRF protection
+// TODO: https://github.com/pyllyukko/user.js/issues/94, commented-out XOriginPolicy/XOriginTrimmingPolicy = 2 prefs
 user_pref("network.http.referer.spoofSource",			true);
+
+// PREF: Don't send referer headers when following links across different domains (disabled)
+// https://github.com/pyllyukko/user.js/issues/227
+// user_pref("network.http.referer.XOriginPolicy",		2);
 
 // PREF: Accept Only 1st Party Cookies
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior#1
-// NOTICE: This breaks a number of payment gateways so you may need to comment it out.
+// NOTICE: Blocking 3rd-party cookies breaks a number of payment gateways
 // CIS 2.5.1
 user_pref("network.cookie.cookieBehavior",			1);
 
@@ -531,6 +547,7 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
 // PREF: Permanently enable private browsing mode
 // https://support.mozilla.org/en-US/kb/Private-Browsing
 // https://wiki.mozilla.org/PrivateBrowsing
+// NOTICE: You can not view or inspect cookies when in private browsing: https://bugzilla.mozilla.org/show_bug.cgi?id=823941
 user_pref("browser.privatebrowsing.autostart",			true);
 
 // PREF: Do not store POST data in saved sessions
@@ -548,6 +565,7 @@ user_pref("browser.cache.offline.enable",			false);
 
 // PREF: Clear history when Firefox closes
 // https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically
+// NOTICE: Installing user.js will **remove your saved passwords** (https://github.com/pyllyukko/user.js/issues/27)
 user_pref("privacy.sanitize.sanitizeOnShutdown",		true);
 user_pref("privacy.clearOnShutdown.cache",			true);
 user_pref("privacy.clearOnShutdown.cookies",			true);
@@ -707,13 +725,12 @@ user_pref("browser.urlbar.autocomplete.enabled",		false);
 // PREF: Do not check if Firefox is the default browser
 user_pref("browser.shell.checkDefaultBrowser",			false);
 
-// PREF: When password manager is enabled, only ask for the master password once
-// NOTICE: this actually lessens security, but is more convenient
+// PREF: When password manager is enabled, lock the password storage periodically
 // CIS Version 1.2.0 October 21st, 2011 2.5.3 Disable Prompting for Credential Storage
-user_pref("security.ask_for_password",				0);
+user_pref("security.ask_for_password",				2);
 
-// PREF: When security.ask_for_password is 2 (every n minutes), lock password storage every 5 minutes (default: 30)
-user_pref("security.password_lifetime",				5);
+// PREF: Lock the password storage every 1 minutes (default: 30)
+user_pref("security.password_lifetime",				1);
 
 /******************************************************************************
  * SECTION: Cryptography                                                      *
@@ -734,9 +751,9 @@ user_pref("network.stricttransportsecurity.preloadlist",	true);
 // https://wiki.mozilla.org/CA:OCSP-HardFail
 // https://news.netcraft.com/archives/2014/04/24/certificate-revocation-why-browsers-remain-affected-by-heartbleed.html
 // https://news.netcraft.com/archives/2013/04/16/certificate-revocation-and-the-performance-of-ocsp.html
-// NOTICE: Leaks your IP and domains you visit to the CA when OCSP Stapling is not available on visited host
-// NOTICE: Vulnerable to replay attacks when nonce is not configured on the OCSP responder
-// NOTICE: Adds latency (performance)
+// NOTICE: OCSP leaks your IP and domains you visit to the CA when OCSP Stapling is not available on visited host
+// NOTICE: OCSP is vulnerable to replay attacks when nonce is not configured on the OCSP responder
+// NOTICE: OCSP adds latency (performance)
 // NOTICE: Short-lived certificates are not checked for revocation (security.pki.cert_short_lifetime_in_days, default:10)
 // CIS Version 1.2.0 October 21st, 2011 2.2.4
 user_pref("security.OCSP.enabled",				1);
@@ -751,13 +768,14 @@ user_pref("security.ssl.enable_ocsp_stapling",			true);
 // https://blog.mozilla.org/security/2015/11/23/improving-revocation-ocsp-must-staple-and-short-lived-certificates/
 // https://www.entrust.com/ocsp-must-staple/
 // https://github.com/schomery/privacy-settings/issues/40
-// NOTICE: Falls back on plain OCSP when must-staple is not configured on the host certificate
+// NOTICE: Firefox falls back on plain OCSP when must-staple is not configured on the host certificate
 user_pref("security.ssl.enable_ocsp_must_staple",		true);
 
 // PREF: Require a valid OCSP response for OCSP enabled certificates
 // https://groups.google.com/forum/#!topic/mozilla.dev.security/n1G-N2-HTVA
 // Disabling this will make OCSP bypassable by MitM attacks suppressing OCSP responses
-// NOTICE: Will make the connection fail when the OCSP responder is unavailable
+// NOTICE: `security.OCSP.require` will make the connection fail when the OCSP responder is unavailable
+// NOTICE: `security.OCSP.require` is known to break browsing on some [captive portals](https://en.wikipedia.org/wiki/Captive_portal)
 user_pref("security.OCSP.require",				true);
 
 // PREF: Disable TLS Session Tickets
@@ -793,14 +811,13 @@ user_pref("security.pki.sha1_enforcement_level",		1);
 
 // PREF: Warn the user when server doesn't support RFC 5746 ("safe" renegotiation)
 // https://wiki.mozilla.org/Security:Renegotiation#security.ssl.treat_unsafe_negotiation_as_broken
-// see also CVE-2009-3555
+// https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3555
 user_pref("security.ssl.treat_unsafe_negotiation_as_broken",	true);
 
-// PREF: ?? (disabled)
+// PREF: Disallow connection to servers not supporting safe renegotiation (disabled)
 // https://wiki.mozilla.org/Security:Renegotiation#security.ssl.require_safe_negotiation
-// this makes browsing next to impossible=) (13.2.2012)
-// update: the world is not ready for this! (6.5.2014)
-// see also CVE-2009-3555
+// https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3555
+// TODO: `security.ssl.require_safe_negotiation` is more secure but makes browsing next to impossible (2012-2014-... - `ssl_error_unsafe_negotiation` errors), so is left disabled
 //user_pref("security.ssl.require_safe_negotiation",		true);
 
 // PREF: Disable automatic reporting of TLS connection errors
