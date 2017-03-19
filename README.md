@@ -556,6 +556,7 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 * [Mixed content tests (Mozilla)](https://people.mozilla.org/~tvyas/mixedcontent.html) 
 * [Mixed content tests (Microsoft)](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm) 
 * [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp) 
+* [Bad SSL](https://badssl.com/)
 
 #### Other tests
 
