@@ -51,8 +51,8 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=960426
 user_pref("dom.netinfo.enabled",				false);
 
-// PREF: Disable WebRTC entirely
-user_pref("media.peerconnection.enabled",			false);
+// PREF: Disable WebRTC entirely (disabled)
+// user_pref("media.peerconnection.enabled",			false);
 
 // PREF: Don't reveal your internal IP when WebRTC is enabled
 // https://wiki.mozilla.org/Media/WebRTC/Privacy
