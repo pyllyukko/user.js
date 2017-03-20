@@ -400,12 +400,13 @@ user_pref("loop.logDomains",					false);
 //user_pref("app.update.auto",		true);
 
 // PREF: Enable blocking reported web forgeries
-// http://kb.mozillazine.org/Browser.safebrowsing.enabled
+// https://wiki.mozilla.org/Security/Safe_Browsing
 // http://kb.mozillazine.org/Safe_browsing
 // https://support.mozilla.org/en-US/kb/how-does-phishing-and-malware-protection-work
 // http://forums.mozillazine.org/viewtopic.php?f=39&t=2711237&p=12896849#p12896849
 // CIS 2.3.4
-user_pref("browser.safebrowsing.enabled",			true);
+user_pref("browser.safebrowsing.enabled",			true); // Firefox < 50
+user_pref("browser.safebrowsing.phishing.enabled",		true); // firefox >= 50
 
 // PREF: Enable blocking reported attack sites
 // http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled
