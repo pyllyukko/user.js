@@ -25,7 +25,7 @@ user_pref("dom.webnotifications.enabled",			false);
 user_pref("dom.enable_user_timing",				false);
 
 // PREF: Disable Web Audio API
-// https://bugzil.la/1288359
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1288359
 user_pref("dom.webaudio.enabled",				false);
 
 // PREF: Disable Location-Aware Browsing (geolocation)
@@ -244,7 +244,7 @@ user_pref("media.video_stats.enabled",				false);
 
 // PREF: Don't reveal build ID
 // Value taken from Tor Browser
-// https://bugzil.la/583181
+// https://bugzilla.mozilla.org/show_bug.cgi?id=583181
 user_pref("general.buildID.override",				"20100101");
 
 // PREF: Prevent font fingerprinting
@@ -348,9 +348,9 @@ user_pref("privacy.trackingprotection.enabled",			true);
 user_pref("privacy.trackingprotection.pbmode.enabled",		true);
 
 // PREF: Resist fingerprinting via window.screen and CSS media queries and other techniques
-// https://bugzil.la/418986
-// https://bugzil.la/1281949
-// https://bugzil.la/1281963
+// https://bugzilla.mozilla.org/show_bug.cgi?id=418986
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1281949
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1281963
 user_pref("privacy.resistFingerprinting",			true);
 
 // PREF: Disable the built-in PDF viewer
@@ -467,7 +467,7 @@ user_pref("media.gmp-manager.url",				"");
 
 // PREF: Disable speculative pre-connections
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_speculative-pre-connections
-// https://bugzil.la/814169
+// https://bugzilla.mozilla.org/show_bug.cgi?id=814169
 user_pref("network.http.speculative-parallel-limit",		0);
 
 // PREF: Disable downloading homepage snippets/messages from Mozilla
@@ -643,7 +643,7 @@ user_pref("browser.formfill.expire_days",			0);
 user_pref("browser.sessionstore.privacy_level",			2);
 
 // PREF: Delete temporary files on exit
-// https://bugzil.la/238789#c19
+// https://bugzilla.mozilla.org/show_bug.cgi?id=238789
 user_pref("browser.helperApps.deleteTempFileOnExit",		true);
 
 // PREF: Do not create screenshots of visited pages (relates to the "new tab page" feature)
@@ -782,8 +782,8 @@ user_pref("security.OCSP.require",				true);
 // https://www.blackhat.com/us-13/briefings.html#NextGen
 // https://media.blackhat.com/us-13/US-13-Daigniere-TLS-Secrets-Slides.pdf
 // https://media.blackhat.com/us-13/US-13-Daigniere-TLS-Secrets-WP.pdf
-// https://bugzil.la/917049
-// https://bugzil.la/967977
+// https://bugzilla.mozilla.org/show_bug.cgi?id=917049
+// https://bugzilla.mozilla.org/show_bug.cgi?id=967977
 user_pref("security.ssl.disable_session_identifiers",		true);
 
 // PREF: Only allow TLS 1.[0-3]
@@ -866,7 +866,7 @@ user_pref("security.ssl3.dhe_rsa_aes_128_sha",			false);
 
 // PREF: Disable RC4
 // https://developer.mozilla.org/en-US/Firefox/Releases/38#Security
-// https://bugzil.la/1138882
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1138882
 // https://rc4.io/
 // https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2566
 user_pref("security.ssl3.ecdh_ecdsa_rc4_128_sha",		false);
@@ -909,8 +909,8 @@ user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		true); // 0xc02f
 // PREF: Enable ChaCha20 and Poly1305 (47+)
 // https://www.mozilla.org/en-US/firefox/47.0/releasenotes/
 // https://tools.ietf.org/html/rfc7905
-// https://bugzil.la/917571
-// https://bugzil.la/1247860
+// https://bugzilla.mozilla.org/show_bug.cgi?id=917571
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1247860
 // https://cr.yp.to/chacha.html
 user_pref("security.ssl3.ecdhe_ecdsa_chacha20_poly1305_sha256",	true);
 user_pref("security.ssl3.ecdhe_rsa_chacha20_poly1305_sha256",	true);
