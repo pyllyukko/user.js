@@ -171,7 +171,7 @@ user_pref("browser.search.region",				"US");
 user_pref("browser.search.geoip.url",				"");
 
 // PREF: Set locale to en-US (if you are using localized version of FF)
-user_pref("intl.accept_languages",				"en-US, en");
+user_pref("intl.accept_languages",				"en-us, en");
 
 // PREF: Do not automatically send selection to clipboard on some Linux platforms
 // http://kb.mozillazine.org/Clipboard.autocopy
