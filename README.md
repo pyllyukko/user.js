@@ -431,6 +431,8 @@ can be easily verified from Mozilla's documentation.
 Feel free to follow the latest commits [RSS feed](https://github.com/pyllyukko/user.js/commits/master.atom)
 and other interesting feeds from the [References](#references) section.
 
+You may also reach other contributors through [IRC](http://webchat.freenode.net?channels=%23user.js) (`#user.js` on Freenode) or [Gitter](https://gitter.im/user-js/Lobby).
+
 For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/blob/master/CONTRIBUTING.md)
 
 
