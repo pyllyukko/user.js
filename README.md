@@ -381,6 +381,7 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 * Spoofing referers disables CSRF protection on some login pages not implementing origin-header/cookie+token based CSRF protection
 * Blocking 3rd-party cookies breaks a number of payment gateways
 * You can not view or inspect cookies when in private browsing: https://bugzilla.mozilla.org/show_bug.cgi?id=823941
+* Private browsing breaks Kerberos authentication
 * Installing user.js will **remove your saved passwords** (https://github.com/pyllyukko/user.js/issues/27)
 * OCSP leaks your IP and domains you visit to the CA when OCSP Stapling is not available on visited host
 * OCSP is vulnerable to replay attacks when nonce is not configured on the OCSP responder
