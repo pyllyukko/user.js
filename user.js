@@ -51,13 +51,13 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=960426
 user_pref("dom.netinfo.enabled",				false);
 
-// PREF: Disable WebRTC entirely to prevent leaking internal IP addresses (Firefox <52)
+// PREF: Disable WebRTC entirely to prevent leaking internal IP addresses (Firefox < 42)
 user_pref("media.peerconnection.enabled",			false);
 
-// PREF: Don't reveal your internal IP when WebRTC is enabled
+// PREF: Don't reveal your internal IP when WebRTC is enabled (Firefox >= 42)
 // https://wiki.mozilla.org/Media/WebRTC/Privacy
 // https://github.com/beefproject/beef/wiki/Module%3A-Get-Internal-IP-WebRTC
-user_pref("media.peerconnection.ice.default_address_only",	true); // Firefox < 52
+user_pref("media.peerconnection.ice.default_address_only",	true); // Firefox 42-51
 user_pref("media.peerconnection.ice.no_host",			true); // Firefox >= 52
 
 // PREF: Disable WebRTC getUserMedia, screen sharing, audio capture, video capture
@@ -549,6 +549,7 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
 // https://support.mozilla.org/en-US/kb/Private-Browsing
 // https://wiki.mozilla.org/PrivateBrowsing
 // NOTICE: You can not view or inspect cookies when in private browsing: https://bugzilla.mozilla.org/show_bug.cgi?id=823941
+// NOTICE: Private browsing breaks Kerberos authentication
 user_pref("browser.privatebrowsing.autostart",			true);
 
 // PREF: Do not store POST data in saved sessions
