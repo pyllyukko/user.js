@@ -333,11 +333,12 @@ This section tweaks the cipher suites used by Firefox. The idea is to support on
 Here is a list of the most essential security and privacy enhancing add-ons that you should consider using:
 
 * [uBlock Origin](https://addons.mozilla.org/firefox/addon/ublock-origin/)
-  * For additional protection against cross-site requests, set it to [Hard mode](https://github.com/gorhill/uBlock/wiki/Blocking-mode:-hard-mode) (experienced users) - the default is [Easy mode](https://github.com/gorhill/uBlock/wiki/Blocking-mode:-easy-mode)
+  * For additional protection, enable more blocklists in the addon dashboard.
+  * For additional protection, set it to [Hard mode](https://github.com/gorhill/uBlock/wiki/Blocking-mode:-hard-mode) (experienced users) - the default is [Easy mode](https://github.com/gorhill/uBlock/wiki/Blocking-mode:-easy-mode)
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
   * For additional protection, enable `Block all unencrypted requests` in the toolbar button menu. This will break websites where HTTPS is not available.
 * [Certificate Patrol](http://patrol.psyced.org/) (experienced users)
-  * Setting `Store certificates even when in Private Browsing mode` improves usability (but stores information about the sites you visit)
+  * Setting `Store certificates even when in Private Browsing mode` improves usability. This will store information about sites you visit.
 * [HTTPS by default](https://addons.mozilla.org/firefox/addon/https-by-default/)
 * [NoScript](https://noscript.net/)
 * [No Resource URI Leak](https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/)
