@@ -344,6 +344,8 @@ user_pref("browser.uitour.enabled",				false);
 // https://wiki.mozilla.org/Security/Tracking_protection
 // https://support.mozilla.org/en-US/kb/tracking-protection-firefox
 // https://support.mozilla.org/en-US/kb/tracking-protection-pbm
+// https://kontaxis.github.io/trackingprotectionfirefox/
+// https://feeding.cloud.geek.nz/posts/how-tracking-protection-works-in-firefox/
 user_pref("privacy.trackingprotection.enabled",			true);
 user_pref("privacy.trackingprotection.pbmode.enabled",		true);
 

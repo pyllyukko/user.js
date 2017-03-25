@@ -196,8 +196,8 @@ Disable Firefox integrated metrics/reporting/experiments, disable potentially in
 * Disable remote debugging [ [1](https://developer.mozilla.org/en-US/docs/Tools/Remote_Debugging/Debugging_Firefox_Desktop) [2](https://developer.mozilla.org/en-US/docs/Tools/Tools_Toolbox#Advanced_settings) ]
 * Disable Mozilla telemetry/experiments [ [1](https://wiki.mozilla.org/Platform/Features/Telemetry) [2](https://wiki.mozilla.org/Telemetry/) [3](https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry) [4](https://support.mozilla.org/t5/Firefox-crashes/Mozilla-Crash-Reporter/ta-p/1715) [5](https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry) [6](https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html) [7](https://wiki.mozilla.org/Telemetry/Experiments) ]
 * Disable the UITour backend [ [1](https://trac.torproject.org/projects/tor/ticket/19047#comment:3) ]
-* Enable Firefox Tracking Protection [ [1](https://wiki.mozilla.org/Security/Tracking_protection) [2](https://support.mozilla.org/en-US/kb/tracking-protection-firefox) [3](https://support.mozilla.org/en-US/kb/tracking-protection-pbm) ]
-* Resist fingerprinting via window.screen and CSS media queries and other techniques [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=418986) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1281949) [3](https://bugzilla.mozilla.org/show_bug.cgi?id=1281963) ]
+* Enable Firefox Tracking Protection [ [1](https://wiki.mozilla.org/Security/Tracking_protection) [2](https://support.mozilla.org/en-US/kb/tracking-protection-firefox) [3](https://support.mozilla.org/en-US/kb/tracking-protection-pbm) [4](https://kontaxis.github.io/trackingprotectionfirefox/) [5](https://feeding.cloud.geek.nz/posts/how-tracking-protection-works-in-firefox/) ]
+* Enable hardening against various fingerprinting vectors (Tor Uplift project) [ [1](https://wiki.mozilla.org/Security/Tor_Uplift/Tracking) ]
 * Disable the built-in PDF viewer [ [1](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2743) [2](https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/) [3](https://www.mozilla.org/en-US/security/advisories/mfsa2015-69/) ]
 * Disable collection/sending of the health report (healthreport.sqlite*) [ [1](https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf) [2](https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html) ]
 * Disable new tab tile ads & preload [ [1](http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox) [2](http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331) [3](https://wiki.mozilla.org/Tiles/Technical_Documentation#Ping) [4](https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source) [5](https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-ping) ]
@@ -321,50 +321,36 @@ This section tweaks the cipher suites used by Firefox. The idea is to support on
 * By default **your browser trusts 100's of [Certificate Authorities](https://en.wikipedia.org/wiki/Certificate_authority)** (CAs) from various organizations to guarantee privacy of your encrypted communications with websites. Some CAs have been known for misusing or deliberately abusing this power in the past, and **a single malicious CA can compromise all** your encrypted communications! Follow [this document](CAs.md) to only trust a selected, trimmed-down list of CAs.
 * Keep your browser updated! If you check [Firefox's security advisories](https://www.mozilla.org/security/known-vulnerabilities/firefox.html), you'll see that pretty much every new version of Firefox contains some security updates. If you don't keep your browser updated, you've already lost the game.
 * Disable/uninstall all unnecessary extensions and plugins!
+* Use a search engine that doesn't track its users, and set it as default search engine.
 * If a plugin is absolutely required, [check for plugin updates](https://www.mozilla.org/en-US/plugincheck/)
 * Create different [profiles][15] for different purposes
 * Change the Firefox's built-in tracking protection to use the [strict list](https://support.mozilla.org/en-US/kb/tracking-protection-pbm?as=u#w_change-your-block-list)
 * Change the timezone for Firefox by using the ```TZ``` environment variable (see [here](https://wiki.archlinux.org/index.php/Firefox_privacy#Change_browser_time_zone)) to reduce it's value in browser fingerprinting
-* Completely block unencrypted communications using the `HTTPS Everywhere` toolbar button > `Block all unencrypted requests`. This will break websites where HTTPS is not available.
+
 
 ### Add-ons
 
 Here is a list of the most essential security and privacy enhancing add-ons that you should consider using:
 
-* [Certificate Patrol](http://patrol.psyced.org/)
-  * I recommend setting the 'Store certificates even when in [Private Browsing][8] Mode' to get full benefit out of certpatrol, even though it stores information about the sites you visit
-* [HTTPS Everywhere](https://www.eff.org/https-everywhere) and [HTTPS by default](https://addons.mozilla.org/firefox/addon/https-by-default/)
-* [NoScript](https://noscript.net/)
-* [DuckDuckGo Plus](https://addons.mozilla.org/firefox/addon/duckduckgo-for-firefox/) (instead of Google)
-* [No Resource URI Leak](https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/) (see [#163](https://github.com/pyllyukko/user.js/issues/163))
-* [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
-* [Canvas Blocker](https://addons.mozilla.org/firefox/addon/canvasblocker/) ([Source code](https://github.com/kkapsner/CanvasBlocker))
-
-### Tracking protection
-
-Tracking protection is one of the most important technologies that you need. The usual recommendation has been to run the [Ghostery](https://www.ghostery.com/) extension, but as it is made by a [potentially evim(tm) advertising company](https://en.wikipedia.org/wiki/Ghostery#Criticism), some people feel that is not to be trusted. One notable alternative is to use [uBlock](https://github.com/gorhill/uBlock), which can also be found at [Mozilla AMO](https://addons.mozilla.org/firefox/addon/ublock-origin/).
-
-Ghostery is still viable option, but be sure to disable the [GhostRank](https://www.ghostery.com/en/faq#q5-general) feature.
-
-Do note, that this user.js also enables Mozilla's built-in [tracking protection][12], but as that's quite new feature it is to be considered only as a fallback and not a complete solution. As it utilizes [Disconnect's list](https://support.mozilla.org/en-US/kb/tracking-protection-firefox#w_what-is-tracking-protection), recommending Disconnect seems redundant.
-
-So to summarize, pick one between Ghostery and uBlock, depending on your personal preferences.
-
-See also:
-* [Mozilla Lightbeam][13] extension
-* [Privacy Badger](https://www.eff.org/privacybadger) extension from EFF (also to be considered as an additional security measure and not a complete solution)
-* [Web Browser Addons](https://prism-break.org/en/subcategories/gnu-linux-web-browser-addons/) section in [PRISM break](https://prism-break.org/)
-* [\[Talk\] Ghostery Vs. Disconnect.me Vs. uBlock #16](https://github.com/pyllyukko/user.js/issues/16)
-* [Ghostery sneaks in new promotional messaging system #47](https://github.com/pyllyukko/user.js/issues/47)
-* [Are We Private Yet?](https://web.archive.org/web/20150801031411/http://www.areweprivateyet.com/) site (made by Ghostery, archived)
-* [Tracking Protection in Firefox For Privacy and Performance](https://kontaxis.github.io/trackingprotectionfirefox/#papers) paper
-* [How Tracking Protection works in Firefox](https://feeding.cloud.geek.nz/posts/how-tracking-protection-works-in-firefox/)
-
-### Add-ons for mobile platforms
-
-* [NoScript Anywhere](https://noscript.net/nsa/)
-* [uBlock](https://addons.mozilla.org/android/addon/ublock-origin/)
+* [uBlock Origin](https://addons.mozilla.org/firefox/addon/ublock-origin/)
+  * For additional protection against cross-site requests, set it to [Hard mode](https://github.com/gorhill/uBlock/wiki/Blocking-mode:-hard-mode) (experienced users) - the default is [Easy mode](https://github.com/gorhill/uBlock/wiki/Blocking-mode:-easy-mode)
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
+  * For additional protection, enable `Block all unencrypted requests` in the toolbar button menu. This will break websites where HTTPS is not available.
+* [Certificate Patrol](http://patrol.psyced.org/) (experienced users)
+  * Setting `Store certificates even when in Private Browsing mode` improves usability (but stores information about the sites you visit)
+* [HTTPS by default](https://addons.mozilla.org/firefox/addon/https-by-default/)
+* [NoScript](https://noscript.net/)
+* [No Resource URI Leak](https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/)
+* [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
+* [Canvas Blocker](https://addons.mozilla.org/firefox/addon/canvasblocker/)
+
+Additional add-ons that you might consider using or reading about:
+
+* [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/) (experienced users) 
+* [Privacy Badger](https://www.eff.org/privacybadger)
+* [Mozilla Lightbeam](https://www.mozilla.org/en-US/lightbeam/)
+* [PRISM Break Web Browser Addons section](https://prism-break.org/en/subcategories/gnu-linux-web-browser-addons/)
+* [Ghostery](https://www.ghostery.com/) (proprietary software, maintained by [an advertising company](https://en.wikipedia.org/wiki/Ghostery))
 
 ## Known problems and limitations
 
@@ -538,5 +524,4 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 [8]: https://support.mozilla.org/en-US/kb/Private%20Browsing
 [9]: https://bugzilla.mozilla.org/show_bug.cgi?id=822869
 [12]: https://support.mozilla.org/en-US/kb/tracking-protection-firefox
-[13]: https://www.mozilla.org/en-US/lightbeam/
 [15]: https://mzl.la/NYhKHH
