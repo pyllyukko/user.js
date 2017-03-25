@@ -537,9 +537,14 @@ user_pref("network.cookie.cookieBehavior",			1);
 user_pref("network.cookie.thirdparty.sessionOnly",		true);
 
 // PREF: Spoof User-agent (disabled)
-//user_pref("general.useragent.override",				"Mozilla/5.0 (Windows NT 6.1; rv:31.0) Gecko/20100101 Firefox/31.0");
-//user_pref("general.platform.override",				"Win32");
-//user_pref("general.oscpu.override",				"Windows NT 6.1");
+// Spoofing referer has no real security/privacy advantages, real UA might be derived by other means, might break functionality on some sites.
+// Left commented out for reference purposes, ESR/TBB values.
+//user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0");
+//user_pref("general.buildID.override", "20100101");
+//user_pref("general.appname.override", "Netscape");
+//user_pref("general.appversion.override", "5.0 (Windows)");
+//user_pref("general.platform.override", "Win32");
+//user_pref("general.oscpu.override", "Windows NT 6.1");
 
 /*******************************************************************************
  * SECTION: Caching                                                            *
