@@ -347,10 +347,8 @@ user_pref("browser.uitour.enabled",				false);
 user_pref("privacy.trackingprotection.enabled",			true);
 user_pref("privacy.trackingprotection.pbmode.enabled",		true);
 
-// PREF: Resist fingerprinting via window.screen and CSS media queries and other techniques
-// https://bugzilla.mozilla.org/show_bug.cgi?id=418986
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1281949
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1281963
+// PREF: Enable hardening against various fingerprinting vectors (Tor Uplift project)
+// https://wiki.mozilla.org/Security/Tor_Uplift/Tracking
 user_pref("privacy.resistFingerprinting",			true);
 
 // PREF: Disable the built-in PDF viewer
