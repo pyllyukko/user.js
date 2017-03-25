@@ -405,8 +405,10 @@ No. Please read [Known problems and limitations](#known-problems-and-limitations
 
 > Why are obsolete/deprecated entries included in the user.js file?
 
-In case you want to use an older Firefox version (e.g. [ESR](https://www.mozilla.org/en-US/firefox/organizations/),
-or for test reasons) and normally it doesn't hurt your browser if there are deprecated about:config preferences present.
+This project is aimed at Firefox versions between the current [ESR](https://www.mozilla.org/en-US/firefox/organizations/)
+and the latest Firefox release. We will wait for widespread deployment of the current ESR
+(eg. adoption in major Linux distributions) before removing deprecated/obsolete preferences.
+Presence of deprecated entries causes no known problems.
 
 > Installing the user.js file breaks xyz plugin/addon/extension, how can I fix it?
 
