@@ -381,6 +381,13 @@ user_pref("breakpad.reportURL",			"");
 user_pref("browser.tabs.crashReporting.sendReport",			false);
 user_pref("browser.crashReports.unsubmittedCheck.enabled",	false);
 
+// PREF: Disable FlyWeb (discovery of LAN/proximity IoT devices that expose a Web interface)
+// https://wiki.mozilla.org/FlyWeb
+// https://wiki.mozilla.org/FlyWeb/Security_scenarios
+// https://docs.google.com/document/d/1eqLb6cGjDL9XooSYEEo7mE-zKQ-o-AuDTcEyNhfBMBM/edit
+// http://www.ghacks.net/2016/07/26/firefox-flyweb
+user_pref("dom.flyweb.enabled",	false);
+
 // PREF: Disable the UITour backend
 // https://trac.torproject.org/projects/tor/ticket/19047#comment:3
 user_pref("browser.uitour.enabled",				false);
