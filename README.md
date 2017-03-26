@@ -158,8 +158,12 @@ HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / [DOM](https://en.wikipedia.org
 Settings that do not belong to other sections or are user specific preferences.
 * Disable face detection
 * Disable GeoIP lookup on your address to set default search engine region [ [1](https://trac.torproject.org/projects/tor/ticket/16254) [2](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine) ]
-* Set locale to en-US (if you are using localized version of FF)
+* Set Accept-Language HTTP header to en-US regardless of Firefox localization [ [1](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) ]
+* Set Firefox locale to en-US
+* Don't use OS values to determine locale, force using Firefox locale setting
+* Don't use Mozilla-provided location-specific search engines
 * Do not automatically send selection to clipboard on some Linux platforms [ [1](http://kb.mozillazine.org/Clipboard.autocopy) ]
+* Prevent leaking application locale/date format using JavaScript [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=867501) [2](https://hg.mozilla.org/mozilla-central/rev/52d635f2b33d) ]
 * Do not submit invalid URIs entered in the address bar to the default search engine [ [1](http://kb.mozillazine.org/Keyword.enabled) ]
 * Don't trim HTTP off of URLs in the address bar. [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=665580) ]
 * Don't try to guess domain names when entering an invalid domain name in URL bar [ [1](http://www-archive.mozilla.org/docs/end-user/domain-guessing.html) ]
@@ -181,8 +185,11 @@ Harden preferences related to external plugins
 * Ensure you have a security delay when installing add-ons (milliseconds) [ [1](http://kb.mozillazine.org/Disable_extension_install_delay_-_Firefox) [2](http://www.squarefree.com/2004/07/01/race-conditions-in-security-dialogs/) ]
 * Require signatures [ [1](https://wiki.mozilla.org/Addons/Extension_Signing) ]
 * Opt-out of add-on metadata updates [ [1](https://blog.mozilla.org/addons/how-to-opt-out-of-add-on-metadata-updates/) ]
-* Flash plugin state - never activate [ [1](http://kb.mozillazine.org/Flash_plugin) ]
+* Opt-out of themes (Persona) updates [ [1](https://support.mozilla.org/t5/Firefox/how-do-I-prevent-autoamtic-updates-in-a-50-user-environment/td-p/144287) ]
+* Flash Player plugin state - never activate [ [1](http://kb.mozillazine.org/Flash_plugin) ]
 * Java plugin state - never activate
+* Disable sending Flash Player crash reports
+* When Flash crash reports are enabled, don't send the visited URL in the crash report
 * Disable Gnome Shell Integration
 * Enable plugins click-to-play [ [1](https://wiki.mozilla.org/Firefox/Click_To_Play) [2](https://blog.mozilla.org/security/2012/10/11/click-to-play-plugins-blocklist-style/) ]
 * Updates addons automatically [ [1](https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/) ]
@@ -194,7 +201,12 @@ Harden preferences related to external plugins
 Disable Firefox integrated metrics/reporting/experiments, disable potentially insecure/invasive/[undesirable](https://en.wikipedia.org/wiki/Feature_creep) features
 * Disable WebIDE [ [1](https://trac.torproject.org/projects/tor/ticket/16222) [2](https://developer.mozilla.org/docs/Tools/WebIDE) ]
 * Disable remote debugging [ [1](https://developer.mozilla.org/en-US/docs/Tools/Remote_Debugging/Debugging_Firefox_Desktop) [2](https://developer.mozilla.org/en-US/docs/Tools/Tools_Toolbox#Advanced_settings) ]
-* Disable Mozilla telemetry/experiments [ [1](https://wiki.mozilla.org/Platform/Features/Telemetry) [2](https://wiki.mozilla.org/Telemetry/) [3](https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry) [4](https://support.mozilla.org/t5/Firefox-crashes/Mozilla-Crash-Reporter/ta-p/1715) [5](https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry) [6](https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html) [7](https://wiki.mozilla.org/Telemetry/Experiments) ]
+* Disable Mozilla telemetry/experiments [ [1](https://wiki.mozilla.org/Platform/Features/Telemetry) [2](https://wiki.mozilla.org/Privacy/Reviews/Telemetry) [3](https://wiki.mozilla.org/Telemetry) [4](https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry) [5](https://support.mozilla.org/t5/Firefox-crashes/Mozilla-Crash-Reporter/ta-p/1715) [6](https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry) [7](https://gecko.readthedocs.io/en/latest/browser/experiments/experiments/manifest.html) [8](https://wiki.mozilla.org/Telemetry/Experiments) ]
+* Disallow Necko to do A/B testing
+* Disable sending Firefox crash reports to Mozilla servers [ [1](https://wiki.mozilla.org/Breakpad) [2](http://kb.mozillazine.org/Breakpad) [3](https://dxr.mozilla.org/mozilla-central/source/toolkit/crashreporter) [4](https://bugzilla.mozilla.org/show_bug.cgi?id=411490) ]
+* Disable sending reports of tab crashes to Mozilla (about:tabcrashed), don't nag user about unsent crash reports [ [1](https://hg.mozilla.org/mozilla-central/file/tip/browser/app/profile/firefox.js) ]
+* Disable FlyWeb (discovery of LAN/proximity IoT devices that expose a Web interface) [ [1](https://wiki.mozilla.org/FlyWeb) [2](https://wiki.mozilla.org/FlyWeb/Security_scenarios) [3](https://docs.google.com/document/d/1eqLb6cGjDL9XooSYEEo7mE-zKQ-o-AuDTcEyNhfBMBM/edit) [4](http://www.ghacks.net/2016/07/26/firefox-flyweb) ]
+* Disable Firefox Sync [ [1](https://wiki.mozilla.org/Services/Sync) ]
 * Disable the UITour backend [ [1](https://trac.torproject.org/projects/tor/ticket/19047#comment:3) ]
 * Enable Firefox Tracking Protection [ [1](https://wiki.mozilla.org/Security/Tracking_protection) [2](https://support.mozilla.org/en-US/kb/tracking-protection-firefox) [3](https://support.mozilla.org/en-US/kb/tracking-protection-pbm) [4](https://kontaxis.github.io/trackingprotectionfirefox/) [5](https://feeding.cloud.geek.nz/posts/how-tracking-protection-works-in-firefox/) ]
 * Enable hardening against various fingerprinting vectors (Tor Uplift project) [ [1](https://wiki.mozilla.org/Security/Tor_Uplift/Tracking) ]
