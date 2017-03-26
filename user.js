@@ -170,8 +170,15 @@ user_pref("browser.search.countryCode",				"US");
 user_pref("browser.search.region",				"US");
 user_pref("browser.search.geoip.url",				"");
 
-// PREF: Set locale to en-US (if you are using localized version of FF)
+// PREF: Set Accept-Language HTTP header to en-US regardless of Firefox localization
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language
 user_pref("intl.accept_languages",				"en-us, en");
+
+// PREF: Set Firefox locale to en-US
+user_pref("general.useragent.locale",			"en-US");
+
+// PREF: Don't use OS values to determine locale, force using Firefox locale setting
+user_pref("intl.locale.matchOS",				false);
 
 // PREF: Do not automatically send selection to clipboard on some Linux platforms
 // http://kb.mozillazine.org/Clipboard.autocopy
