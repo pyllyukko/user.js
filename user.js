@@ -285,6 +285,10 @@ user_pref("security.dialog_enable_delay",			1000);
 // https://blog.mozilla.org/addons/how-to-opt-out-of-add-on-metadata-updates/
 user_pref("extensions.getAddons.cache.enabled",			false);
 
+// PREF: Opt-out of themes (Persona) updates
+// https://support.mozilla.org/t5/Firefox/how-do-I-prevent-autoamtic-updates-in-a-50-user-environment/td-p/144287
+user_pref("lightweightThemes.update.enabled", 			false);
+
 // PREF: Flash plugin state - never activate
 // http://kb.mozillazine.org/Flash_plugin
 user_pref("plugin.state.flash",					0);
