@@ -376,6 +376,11 @@ user_pref("network.allow-experiments",			false);
 // A list of submitted crash reports can be found at about:crashes
 user_pref("breakpad.reportURL",			"");
 
+// PREF: Disable sending reports of tab crashes to Mozilla (about:tabcrashed), don't nag user about unsent crash reports
+// https://hg.mozilla.org/mozilla-central/file/tip/browser/app/profile/firefox.js
+user_pref("browser.tabs.crashReporting.sendReport",			false);
+user_pref("browser.crashReports.unsubmittedCheck.enabled",	false);
+
 // PREF: Disable the UITour backend
 // https://trac.torproject.org/projects/tor/ticket/19047#comment:3
 user_pref("browser.uitour.enabled",				false);
