@@ -289,11 +289,18 @@ user_pref("extensions.getAddons.cache.enabled",			false);
 // https://support.mozilla.org/t5/Firefox/how-do-I-prevent-autoamtic-updates-in-a-50-user-environment/td-p/144287
 user_pref("lightweightThemes.update.enabled", 			false);
 
-// PREF: Flash plugin state - never activate
+// PREF: Flash Player plugin state - never activate
 // http://kb.mozillazine.org/Flash_plugin
 user_pref("plugin.state.flash",					0);
+
 // PREF: Java plugin state - never activate
 user_pref("plugin.state.java",					0);
+
+// PREF: Disable sending Flash Player crash reports
+user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled",	false);
+
+// PREF: When Flash crash reports are enabled, don't send the visited URL in the crash report
+user_pref("dom.ipc.plugins.reportCrashURL",							false);
 
 // PREF: Disable Gnome Shell Integration
 user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
