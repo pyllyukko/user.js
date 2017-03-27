@@ -52,6 +52,7 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 user_pref("dom.netinfo.enabled",				false);
 
 // PREF: Disable WebRTC entirely to prevent leaking internal IP addresses (Firefox < 42)
+// NOTICE: Disabling WebRTC breaks peer-to-peer file sharing tools (reep.io ...)
 user_pref("media.peerconnection.enabled",			false);
 
 // PREF: Don't reveal your internal IP when WebRTC is enabled (Firefox >= 42)
@@ -69,7 +70,7 @@ user_pref("media.navigator.video.enabled",			false);
 user_pref("media.getusermedia.screensharing.enabled",		false);
 user_pref("media.getusermedia.audiocapture.enabled",		false);
 
-// PREF: Disable battery API (<52)
+// PREF: Disable battery API (Firefox < 52)
 // https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1313580
 user_pref("dom.battery.enabled",				false);
@@ -439,7 +440,7 @@ user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 // https://trac.torproject.org/projects/tor/ticket/19047
 user_pref("browser.selfsupport.url",				"");
 
-// PREF: Disable Firefox Hello (disabled) (<49)
+// PREF: Disable Firefox Hello (disabled) (Firefox < 49)
 // https://wiki.mozilla.org/Loop
 // https://support.mozilla.org/t5/Chat-and-share/Support-for-Hello-discontinued-in-Firefox-49/ta-p/37946
 // NOTICE: Firefox Hello requires setting `media.peerconnection.enabled` and `media.getusermedia.screensharing.enabled` to true, `security.OCSP.require` to false to work.

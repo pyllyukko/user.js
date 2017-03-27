@@ -11,11 +11,12 @@ make it more secure.
 
 * Limit the possibilities to track the user through [web analytics](https://en.wikipedia.org/wiki/Web_analytics).
 * Harden the browser against known data disclosure or code execution vulnerabilities.
-* Limit the browser from storing anything even remotely sensitive persistently
-* Make sure the browser doesn't reveal too much information to [shoulder surfers](https://en.wikipedia.org/wiki/Shoulder_surfing_%28computer_security%29)
-* Harden the browser's encryption (cipher suites, protocols, trusted CAs)
-* Hopefully limit the attack surface by disabling various features
-* Still be usable in daily use
+* Limit the browser from storing anything even remotely sensitive persistently.
+* Make sure the browser doesn't reveal too much information to [shoulder surfers](https://en.wikipedia.org/wiki/Shoulder_surfing_%28computer_security%29).
+* Harden the browser's encryption (cipher suites, protocols, trusted CAs).
+* Limit possibilities to uniquely identify the browser/device using [browser fingerpriting](https://en.wikipedia.org/wiki/Device_fingerprint).
+* Hopefully limit the attack surface by disabling various features.
+* Still be usable in daily use.
 
 ### How to achieve this?
 
@@ -23,6 +24,7 @@ There are several parts to all this and they are:
 
 * [Downloading](#download) and [installing](#installation) the `user.js` file.
 * Reading about and applying [further hardening](#further-hardening) techniques.
+* _Optional:_ Modifying `user.js` to adapt it to your web browser usage.
 
 ----------------------------------------------
 
@@ -61,7 +63,22 @@ To enable the Profile Manager, run Firefox with
 [command-line arguments](http://kb.mozillazine.org/Command_line_arguments):
 `firefox --no-remote -P`
 
-### System-wide installation
+### System-wide installation (all platforms)
+
+Copy `user.js` to the Firefox installation directory. The file should be located at:
+
+| OS             | Path                                                       |
+| -------------- | ---------------------------------------------------------- |
+| Windows        | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`       |
+| Linux          | `/etc/firefox/firefox.js`                                  |
+| Linux (Debian) | `/etc/firefox-esr/firefox-esr.js`                          |
+| OS X           | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
+
+In `user.js`, Change `user_pref(` to  one of:
+ * `pref(` (the value will be used as default value on Firefox profile creation, it can be changed in `about:config`)
+ * `lockPref(` (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings.
+
+#### Additional installation steps for Windows/OSX
 
 Create `local-settings.js` in Firefox installation directory, with the following contents:
 
@@ -75,22 +92,7 @@ This file should be located at:
 | OS      | Path                                                         |
 | ------- | ------------------------------------------------------------ |
 | Windows | `C:\Program Files (x86)\Mozilla Firefox\default\pref\`       |
-| Linux   |**This file is not required**                                 |
 | OS X    | `/Applications/Firefox.app/Contents/Resources/defaults/pref` |
-
-
-In `user.js`, Change `user_pref(` to  one of:
- * `pref(` (the value will be used as default value on Firefox profile creation, it can be changed in `about:config`)
- * `lockPref(` (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings.
-
-Copy `user.js` to the Firefox installation directory. The file should be located at:
-
-| OS             | Path                                                       |
-| -------------- | ---------------------------------------------------------- |
-| Windows        | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`       |
-| Linux          | `/etc/firefox/firefox.js`                                  |
-| Linux (Debian) | `/etc/firefox-esr/firefox-esr.js`                          |
-| OS X           | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
 
 ### Updating using git
 
@@ -333,11 +335,15 @@ This section tweaks the cipher suites used by Firefox. The idea is to support on
 * By default **your browser trusts 100's of [Certificate Authorities](https://en.wikipedia.org/wiki/Certificate_authority)** (CAs) from various organizations to guarantee privacy of your encrypted communications with websites. Some CAs have been known for misusing or deliberately abusing this power in the past, and **a single malicious CA can compromise all** your encrypted communications! Follow [this document](CAs.md) to only trust a selected, trimmed-down list of CAs.
 * Keep your browser updated! If you check [Firefox's security advisories](https://www.mozilla.org/security/known-vulnerabilities/firefox.html), you'll see that pretty much every new version of Firefox contains some security updates. If you don't keep your browser updated, you've already lost the game.
 * Disable/uninstall all unnecessary extensions and plugins!
+* Use long and **unique** passwords/passphrases for each website/service.
+* Prefer open-source, reviewed and audited software and operating systems whenever possible.
+* Do not transmit information meant to be private over unencrypted communication channels.
 * Use a search engine that doesn't track its users, and set it as default search engine.
 * If a plugin is absolutely required, [check for plugin updates](https://www.mozilla.org/en-US/plugincheck/)
 * Create different [profiles][15] for different purposes
 * Change the Firefox's built-in tracking protection to use the [strict list](https://support.mozilla.org/en-US/kb/tracking-protection-pbm?as=u#w_change-your-block-list)
 * Change the timezone for Firefox by using the ```TZ``` environment variable (see [here](https://wiki.archlinux.org/index.php/Firefox_privacy#Change_browser_time_zone)) to reduce it's value in browser fingerprinting
+* If you are concerned about more advanced threats, use specialized hardened operating systems and browsers such as [Tails](https://tails.boum.org/) or [Tor Brower Bundle](https://www.torproject.org/projects/torbrowser.html.en)
 
 
 ### Add-ons
@@ -401,6 +407,7 @@ In addition see the current [issues](https://github.com/pyllyukko/user.js/issues
 
 No. Please read [Known problems and limitations](#known-problems-and-limitations), the project's
 [issue](https://github.com/pyllyukko/user.js/issues) tracker, and report new issues there.
+Please open separate issues for each individual problem/question you may have.
 
 > Why are obsolete/deprecated entries included in the user.js file?
 
@@ -504,6 +511,7 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 * [Advices from Mozilla Firefox on privacy and government surveillance](https://www.mozilla.org/en-US/teach/smarton/surveillance/)
 * [Polaris - advance privacy technnology for the web](https://wiki.mozilla.org/Polaris)
 * [Mozilla Privacy Principles](https://wiki.mozilla.org/Privacy/Principles)
+* [List of Firefox "about:" URLs](https://developer.mozilla.org/en-US/Firefox/The_about_protocol)
 * [Mozilla preferences for uber-geeks](https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Mozilla_preferences_for_uber-geeks)
 * [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/) ([RSS](https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/format:rss?sort=featured))
 
