@@ -44,7 +44,7 @@ stats:
 	@echo "$$(egrep "^user_pref" user.js | wc -l | cut -f1) preferences in user.js"
 	@echo "$$(wc -l sourceprefs.js | cut -d" " -f1) preferences in Firefox source"
 
-cleanup:
+cleanup: sourceprefs.js
 	@# remove temporary files
 	@# please comment this out when not needed, to minimize load on Mozilla servers
 	@rm sourceprefs.js
