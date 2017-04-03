@@ -10,3 +10,7 @@
 "social.directories"
 "social.share.activationPanelEnabled"
 "social.enabled"
+
+// Don't disable Firefox Sync, fully opt-in, WONTFIX
+// https://wiki.mozilla.org/Services/Sync
+"services.sync.enabled"
