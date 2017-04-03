@@ -180,6 +180,7 @@ user_pref("intl.accept_languages",				"en-us, en");
 user_pref("general.useragent.locale",			"en-US");
 
 // PREF: Don't use OS values to determine locale, force using Firefox locale setting
+// http://kb.mozillazine.org/Intl.locale.matchOS
 user_pref("intl.locale.matchOS",				false);
 
 // PREF: Don't use Mozilla-provided location-specific search engines
