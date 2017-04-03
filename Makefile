@@ -1,3 +1,5 @@
+MAKEFLAGS := --jobs=1
+
 all: whatdoesitdo tests
 
 whatdoesitdo:
