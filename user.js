@@ -369,6 +369,7 @@ user_pref("experiments.enabled",				false);
 user_pref("experiments.manifest.uri",				"");
 
 // PREF: Disallow Necko to do A/B testing
+// https://trac.torproject.org/projects/tor/ticket/13170
 user_pref("network.allow-experiments",			false);
 
 // PREF: Disable sending Firefox crash reports to Mozilla servers
