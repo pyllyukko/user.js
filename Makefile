@@ -1,4 +1,4 @@
-all: whatdoesitdo tests authors
+all: whatdoesitdo tests
 
 whatdoesitdo:
 	@# generate the README "What does it do?" section
