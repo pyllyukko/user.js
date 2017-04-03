@@ -20,7 +20,7 @@ downloadffprefs:
 	https://hg.mozilla.org/mozilla-central/raw-file/$$SOURCEVERSION/testing/profiles/prefs_general.js \
 	https://hg.mozilla.org/mozilla-central/raw-file/$$SOURCEVERSION/layout/tools/reftest/reftest-preferences.js \
 	https://hg.mozilla.org/mozilla-central/raw-file/$$SOURCEVERSION/js/src/tests/user.js"; \
-	for SOURCEFILE in $$FIREFOX_SOURCE_PREFS; do wget "$$SOURCEFILE" -O - ; done | egrep "(^pref|^user_pref)" | sort --unique >| sourceprefs.js
+	for SOURCEFILE in $$FIREFOX_SOURCE_PREFS; do wget -nv "$$SOURCEFILE" -O - ; done | egrep "(^pref|^user_pref)" | sort --unique >| sourceprefs.js
 
 ######################
 
