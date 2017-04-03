@@ -185,7 +185,6 @@ user_pref("intl.locale.matchOS",				false);
 
 // PREF: Don't use Mozilla-provided location-specific search engines
 user_pref("browser.search.geoSpecificDefaults",			false);
-user_pref("browser.search.geoSpecificDefaults.url",		"");
 
 // PREF: Do not automatically send selection to clipboard on some Linux platforms
 // http://kb.mozillazine.org/Clipboard.autocopy
