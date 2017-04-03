@@ -5,7 +5,7 @@ whatdoesitdo:
 	@./gen-readme.sh
 
 # To decrease tests verbosity, comment out unneeded targets
-tests: downloadffprefs checknotcovered checkdeprecated stats cleanup
+tests: downloadffprefs checkdeprecated stats cleanup
 
 
 downloadffprefs:
