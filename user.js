@@ -389,9 +389,9 @@ user_pref("browser.crashReports.unsubmittedCheck.enabled",	false);
 // http://www.ghacks.net/2016/07/26/firefox-flyweb
 user_pref("dom.flyweb.enabled",	false);
 
-// PREF: Disable Firefox Sync
+// PREF: Disable Firefox Sync (disabled)
 // https://wiki.mozilla.org/Services/Sync
-user_pref("services.sync.enabled",	false);
+//user_pref("services.sync.enabled",	false);
 
 // PREF: Disable the UITour backend
 // https://trac.torproject.org/projects/tor/ticket/19047#comment:3
