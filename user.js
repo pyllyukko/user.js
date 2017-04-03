@@ -52,6 +52,7 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 user_pref("dom.netinfo.enabled",				false);
 
 // PREF: Disable WebRTC entirely to prevent leaking internal IP addresses (Firefox < 42)
+// NOTICE: Disabling WebRTC breaks peer-to-peer file sharing tools (reep.io ...)
 user_pref("media.peerconnection.enabled",			false);
 
 // PREF: Don't reveal your internal IP when WebRTC is enabled (Firefox >= 42)
@@ -69,7 +70,7 @@ user_pref("media.navigator.video.enabled",			false);
 user_pref("media.getusermedia.screensharing.enabled",		false);
 user_pref("media.getusermedia.audiocapture.enabled",		false);
 
-// PREF: Disable battery API (<52)
+// PREF: Disable battery API (Firefox < 52)
 // https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1313580
 user_pref("dom.battery.enabled",				false);
@@ -170,12 +171,29 @@ user_pref("browser.search.countryCode",				"US");
 user_pref("browser.search.region",				"US");
 user_pref("browser.search.geoip.url",				"");
 
-// PREF: Set locale to en-US (if you are using localized version of FF)
+// PREF: Set Accept-Language HTTP header to en-US regardless of Firefox localization
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language
 user_pref("intl.accept_languages",				"en-us, en");
+
+// PREF: Set Firefox locale to en-US
+// http://kb.mozillazine.org/General.useragent.locale
+user_pref("general.useragent.locale",				"en-US");
+
+// PREF: Don't use OS values to determine locale, force using Firefox locale setting
+// http://kb.mozillazine.org/Intl.locale.matchOS
+user_pref("intl.locale.matchOS",				false);
+
+// PREF: Don't use Mozilla-provided location-specific search engines
+user_pref("browser.search.geoSpecificDefaults",			false);
 
 // PREF: Do not automatically send selection to clipboard on some Linux platforms
 // http://kb.mozillazine.org/Clipboard.autocopy
 user_pref("clipboard.autocopy",					false);
+
+// PREF: Prevent leaking application locale/date format using JavaScript
+// https://bugzilla.mozilla.org/show_bug.cgi?id=867501
+// https://hg.mozilla.org/mozilla-central/rev/52d635f2b33d
+user_pref("javascript.use_us_english_locale",			true);
 
 // PREF: Do not submit invalid URIs entered in the address bar to the default search engine
 // http://kb.mozillazine.org/Keyword.enabled
@@ -269,11 +287,22 @@ user_pref("security.dialog_enable_delay",			1000);
 // https://blog.mozilla.org/addons/how-to-opt-out-of-add-on-metadata-updates/
 user_pref("extensions.getAddons.cache.enabled",			false);
 
-// PREF: Flash plugin state - never activate
+// PREF: Opt-out of themes (Persona) updates
+// https://support.mozilla.org/t5/Firefox/how-do-I-prevent-autoamtic-updates-in-a-50-user-environment/td-p/144287
+user_pref("lightweightThemes.update.enabled",			false);
+
+// PREF: Flash Player plugin state - never activate
 // http://kb.mozillazine.org/Flash_plugin
 user_pref("plugin.state.flash",					0);
+
 // PREF: Java plugin state - never activate
 user_pref("plugin.state.java",					0);
+
+// PREF: Disable sending Flash Player crash reports
+user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled",	false);
+
+// PREF: When Flash crash reports are enabled, don't send the visited URL in the crash report
+user_pref("dom.ipc.plugins.reportCrashURL",			false);
 
 // PREF: Disable Gnome Shell Integration
 user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
@@ -325,16 +354,42 @@ user_pref("devtools.debugger.force-local",			true);
 
 // PREF: Disable Mozilla telemetry/experiments
 // https://wiki.mozilla.org/Platform/Features/Telemetry
-// https://wiki.mozilla.org/Telemetry/
+// https://wiki.mozilla.org/Privacy/Reviews/Telemetry
+// https://wiki.mozilla.org/Telemetry
 // https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry
 // https://support.mozilla.org/t5/Firefox-crashes/Mozilla-Crash-Reporter/ta-p/1715
 // https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
-// https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html
+// https://gecko.readthedocs.io/en/latest/browser/experiments/experiments/manifest.html
 // https://wiki.mozilla.org/Telemetry/Experiments
 user_pref("toolkit.telemetry.enabled",				false);
 user_pref("toolkit.telemetry.unified",				false);
 user_pref("experiments.supported",				false);
 user_pref("experiments.enabled",				false);
+user_pref("experiments.manifest.uri",				"");
+
+// PREF: Disallow Necko to do A/B testing
+// https://trac.torproject.org/projects/tor/ticket/13170
+user_pref("network.allow-experiments",				false);
+
+// PREF: Disable sending Firefox crash reports to Mozilla servers
+// https://wiki.mozilla.org/Breakpad
+// http://kb.mozillazine.org/Breakpad
+// https://dxr.mozilla.org/mozilla-central/source/toolkit/crashreporter
+// https://bugzilla.mozilla.org/show_bug.cgi?id=411490
+// A list of submitted crash reports can be found at about:crashes
+user_pref("breakpad.reportURL",					"");
+
+// PREF: Disable sending reports of tab crashes to Mozilla (about:tabcrashed), don't nag user about unsent crash reports
+// https://hg.mozilla.org/mozilla-central/file/tip/browser/app/profile/firefox.js
+user_pref("browser.tabs.crashReporting.sendReport",		false);
+user_pref("browser.crashReports.unsubmittedCheck.enabled",	false);
+
+// PREF: Disable FlyWeb (discovery of LAN/proximity IoT devices that expose a Web interface)
+// https://wiki.mozilla.org/FlyWeb
+// https://wiki.mozilla.org/FlyWeb/Security_scenarios
+// https://docs.google.com/document/d/1eqLb6cGjDL9XooSYEEo7mE-zKQ-o-AuDTcEyNhfBMBM/edit
+// http://www.ghacks.net/2016/07/26/firefox-flyweb
+user_pref("dom.flyweb.enabled",					false);
 
 // PREF: Disable the UITour backend
 // https://trac.torproject.org/projects/tor/ticket/19047#comment:3
@@ -344,13 +399,13 @@ user_pref("browser.uitour.enabled",				false);
 // https://wiki.mozilla.org/Security/Tracking_protection
 // https://support.mozilla.org/en-US/kb/tracking-protection-firefox
 // https://support.mozilla.org/en-US/kb/tracking-protection-pbm
+// https://kontaxis.github.io/trackingprotectionfirefox/
+// https://feeding.cloud.geek.nz/posts/how-tracking-protection-works-in-firefox/
 user_pref("privacy.trackingprotection.enabled",			true);
 user_pref("privacy.trackingprotection.pbmode.enabled",		true);
 
-// PREF: Resist fingerprinting via window.screen and CSS media queries and other techniques
-// https://bugzilla.mozilla.org/show_bug.cgi?id=418986
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1281949
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1281963
+// PREF: Enable hardening against various fingerprinting vectors (Tor Uplift project)
+// https://wiki.mozilla.org/Security/Tor_Uplift/Tracking
 user_pref("privacy.resistFingerprinting",			true);
 
 // PREF: Disable the built-in PDF viewer
@@ -383,7 +438,7 @@ user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 // https://trac.torproject.org/projects/tor/ticket/19047
 user_pref("browser.selfsupport.url",				"");
 
-// PREF: Disable Firefox Hello (disabled) (<49)
+// PREF: Disable Firefox Hello (disabled) (Firefox < 49)
 // https://wiki.mozilla.org/Loop
 // https://support.mozilla.org/t5/Chat-and-share/Support-for-Hello-discontinued-in-Firefox-49/ta-p/37946
 // NOTICE: Firefox Hello requires setting `media.peerconnection.enabled` and `media.getusermedia.screensharing.enabled` to true, `security.OCSP.require` to false to work.
@@ -397,7 +452,7 @@ user_pref("loop.logDomains",					false);
 // PREF: Enable Auto Update (disabled)
 // CIS 2.1.1
 // This is disabled for now. it is better to patch through package management.
-//user_pref("app.update.auto",		true);
+//user_pref("app.update.auto",					true);
 
 // PREF: Enable blocking reported web forgeries
 // https://wiki.mozilla.org/Security/Safe_Browsing
@@ -537,7 +592,9 @@ user_pref("network.cookie.cookieBehavior",			1);
 user_pref("network.cookie.thirdparty.sessionOnly",		true);
 
 // PREF: Spoof User-agent (disabled)
-//user_pref("general.useragent.override",				"Mozilla/5.0 (Windows NT 6.1; rv:31.0) Gecko/20100101 Firefox/31.0");
+//user_pref("general.useragent.override",				"Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0");
+//user_pref("general.appname.override",				"Netscape");
+//user_pref("general.appversion.override",			"5.0 (Windows)");
 //user_pref("general.platform.override",				"Win32");
 //user_pref("general.oscpu.override",				"Windows NT 6.1");
 

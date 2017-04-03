@@ -1,0 +1,19 @@
+// List of preferences to ignore during comparison with Firefox upstream prefs
+// Preference names must use double quotes
+
+// Don't touch Firefox social API preferences, fully opt-in, WONTFIX
+"toolkit.telemetry.unifiedIsOptIn"
+"social.whitelist"
+"social.toast-notifications.enabled"
+"social.shareDirectory"
+"social.remote-install.enabled"
+"social.directories"
+"social.share.activationPanelEnabled"
+"social.enabled"
+
+// Don't disable Firefox Sync, fully opt-in, WONTFIX
+// https://wiki.mozilla.org/Services/Sync
+"services.sync.enabled"
+
+// browser.search.geoSpecificDefaults master switch is false
+"browser.search.geoSpecificDefaults.url"

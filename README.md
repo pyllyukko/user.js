@@ -11,11 +11,12 @@ make it more secure.
 
 * Limit the possibilities to track the user through [web analytics](https://en.wikipedia.org/wiki/Web_analytics).
 * Harden the browser against known data disclosure or code execution vulnerabilities.
-* Limit the browser from storing anything even remotely sensitive persistently
-* Make sure the browser doesn't reveal too much information to [shoulder surfers](https://en.wikipedia.org/wiki/Shoulder_surfing_%28computer_security%29)
-* Harden the browser's encryption (cipher suites, protocols, trusted CAs)
-* Hopefully limit the attack surface by disabling various features
-* Still be usable in daily use
+* Limit the browser from storing anything even remotely sensitive persistently.
+* Make sure the browser doesn't reveal too much information to [shoulder surfers](https://en.wikipedia.org/wiki/Shoulder_surfing_%28computer_security%29).
+* Harden the browser's encryption (cipher suites, protocols, trusted CAs).
+* Limit possibilities to uniquely identify the browser/device using [browser fingerpriting](https://en.wikipedia.org/wiki/Device_fingerprint).
+* Hopefully limit the attack surface by disabling various features.
+* Still be usable in daily use.
 
 ### How to achieve this?
 
@@ -23,6 +24,7 @@ There are several parts to all this and they are:
 
 * [Downloading](#download) and [installing](#installation) the `user.js` file.
 * Reading about and applying [further hardening](#further-hardening) techniques.
+* _Optional:_ Modifying `user.js` to adapt it to your web browser usage.
 
 ----------------------------------------------
 
@@ -61,7 +63,22 @@ To enable the Profile Manager, run Firefox with
 [command-line arguments](http://kb.mozillazine.org/Command_line_arguments):
 `firefox --no-remote -P`
 
-### System-wide installation
+### System-wide installation (all platforms)
+
+Copy `user.js` to the Firefox installation directory. The file should be located at:
+
+| OS             | Path                                                       |
+| -------------- | ---------------------------------------------------------- |
+| Windows        | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`       |
+| Linux          | `/etc/firefox/firefox.js`                                  |
+| Linux (Debian) | `/etc/firefox-esr/firefox-esr.js`                          |
+| OS X           | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
+
+In `user.js`, Change `user_pref(` to  one of:
+ * `pref(` (the value will be used as default value on Firefox profile creation, it can be changed in `about:config`)
+ * `lockPref(` (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings.
+
+#### Additional installation steps for Windows/OSX
 
 Create `local-settings.js` in Firefox installation directory, with the following contents:
 
@@ -75,22 +92,7 @@ This file should be located at:
 | OS      | Path                                                         |
 | ------- | ------------------------------------------------------------ |
 | Windows | `C:\Program Files (x86)\Mozilla Firefox\default\pref\`       |
-| Linux   |**This file is not required**                                 |
 | OS X    | `/Applications/Firefox.app/Contents/Resources/defaults/pref` |
-
-
-In `user.js`, Change `user_pref(` to  one of:
- * `pref(` (the value will be used as default value on Firefox profile creation, it can be changed in `about:config`)
- * `lockPref(` (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings.
-
-Copy `user.js` to the Firefox installation directory. The file should be located at:
-
-| OS             | Path                                                       |
-| -------------- | ---------------------------------------------------------- |
-| Windows        | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`       |
-| Linux          | `/etc/firefox/firefox.js`                                  |
-| Linux (Debian) | `/etc/firefox-esr/firefox-esr.js`                          |
-| OS X           | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
 
 ### Updating using git
 
@@ -135,7 +137,7 @@ HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / [DOM](https://en.wikipedia.org
 * Disable WebRTC entirely to prevent leaking internal IP addresses (Firefox < 42)
 * Don't reveal your internal IP when WebRTC is enabled (Firefox >= 42) [ [1](https://wiki.mozilla.org/Media/WebRTC/Privacy) [2](https://github.com/beefproject/beef/wiki/Module%3A-Get-Internal-IP-WebRTC) ]
 * Disable WebRTC getUserMedia, screen sharing, audio capture, video capture [ [1](https://wiki.mozilla.org/Media/getUserMedia) [2](https://blog.mozilla.org/futurereleases/2013/01/12/capture-local-camera-and-microphone-streams-with-getusermedia-now-enabled-in-firefox/) [3](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) ]
-* Disable battery API (<52) [ [1](https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1313580) ]
+* Disable battery API (Firefox < 52) [ [1](https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1313580) ]
 * Disable telephony API [ [1](https://wiki.mozilla.org/WebAPI/Security/WebTelephony) ]
 * Disable DOM timing API [ [1](https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI) ]
 * Disable "beacon" asynchronous HTTP transfers (used for analytics) [ [1](https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon) ]
@@ -158,8 +160,12 @@ HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / [DOM](https://en.wikipedia.org
 Settings that do not belong to other sections or are user specific preferences.
 * Disable face detection
 * Disable GeoIP lookup on your address to set default search engine region [ [1](https://trac.torproject.org/projects/tor/ticket/16254) [2](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine) ]
-* Set locale to en-US (if you are using localized version of FF)
+* Set Accept-Language HTTP header to en-US regardless of Firefox localization [ [1](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) ]
+* Set Firefox locale to en-US [ [1](http://kb.mozillazine.org/General.useragent.locale) ]
+* Don't use OS values to determine locale, force using Firefox locale setting [ [1](http://kb.mozillazine.org/Intl.locale.matchOS) ]
+* Don't use Mozilla-provided location-specific search engines
 * Do not automatically send selection to clipboard on some Linux platforms [ [1](http://kb.mozillazine.org/Clipboard.autocopy) ]
+* Prevent leaking application locale/date format using JavaScript [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=867501) [2](https://hg.mozilla.org/mozilla-central/rev/52d635f2b33d) ]
 * Do not submit invalid URIs entered in the address bar to the default search engine [ [1](http://kb.mozillazine.org/Keyword.enabled) ]
 * Don't trim HTTP off of URLs in the address bar. [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=665580) ]
 * Don't try to guess domain names when entering an invalid domain name in URL bar [ [1](http://www-archive.mozilla.org/docs/end-user/domain-guessing.html) ]
@@ -181,8 +187,11 @@ Harden preferences related to external plugins
 * Ensure you have a security delay when installing add-ons (milliseconds) [ [1](http://kb.mozillazine.org/Disable_extension_install_delay_-_Firefox) [2](http://www.squarefree.com/2004/07/01/race-conditions-in-security-dialogs/) ]
 * Require signatures [ [1](https://wiki.mozilla.org/Addons/Extension_Signing) ]
 * Opt-out of add-on metadata updates [ [1](https://blog.mozilla.org/addons/how-to-opt-out-of-add-on-metadata-updates/) ]
-* Flash plugin state - never activate [ [1](http://kb.mozillazine.org/Flash_plugin) ]
+* Opt-out of themes (Persona) updates [ [1](https://support.mozilla.org/t5/Firefox/how-do-I-prevent-autoamtic-updates-in-a-50-user-environment/td-p/144287) ]
+* Flash Player plugin state - never activate [ [1](http://kb.mozillazine.org/Flash_plugin) ]
 * Java plugin state - never activate
+* Disable sending Flash Player crash reports
+* When Flash crash reports are enabled, don't send the visited URL in the crash report
 * Disable Gnome Shell Integration
 * Enable plugins click-to-play [ [1](https://wiki.mozilla.org/Firefox/Click_To_Play) [2](https://blog.mozilla.org/security/2012/10/11/click-to-play-plugins-blocklist-style/) ]
 * Updates addons automatically [ [1](https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/) ]
@@ -194,10 +203,14 @@ Harden preferences related to external plugins
 Disable Firefox integrated metrics/reporting/experiments, disable potentially insecure/invasive/[undesirable](https://en.wikipedia.org/wiki/Feature_creep) features
 * Disable WebIDE [ [1](https://trac.torproject.org/projects/tor/ticket/16222) [2](https://developer.mozilla.org/docs/Tools/WebIDE) ]
 * Disable remote debugging [ [1](https://developer.mozilla.org/en-US/docs/Tools/Remote_Debugging/Debugging_Firefox_Desktop) [2](https://developer.mozilla.org/en-US/docs/Tools/Tools_Toolbox#Advanced_settings) ]
-* Disable Mozilla telemetry/experiments [ [1](https://wiki.mozilla.org/Platform/Features/Telemetry) [2](https://wiki.mozilla.org/Telemetry/) [3](https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry) [4](https://support.mozilla.org/t5/Firefox-crashes/Mozilla-Crash-Reporter/ta-p/1715) [5](https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry) [6](https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html) [7](https://wiki.mozilla.org/Telemetry/Experiments) ]
+* Disable Mozilla telemetry/experiments [ [1](https://wiki.mozilla.org/Platform/Features/Telemetry) [2](https://wiki.mozilla.org/Privacy/Reviews/Telemetry) [3](https://wiki.mozilla.org/Telemetry) [4](https://www.mozilla.org/en-US/legal/privacy/firefox.html#telemetry) [5](https://support.mozilla.org/t5/Firefox-crashes/Mozilla-Crash-Reporter/ta-p/1715) [6](https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry) [7](https://gecko.readthedocs.io/en/latest/browser/experiments/experiments/manifest.html) [8](https://wiki.mozilla.org/Telemetry/Experiments) ]
+* Disallow Necko to do A/B testing [ [1](https://trac.torproject.org/projects/tor/ticket/13170) ]
+* Disable sending Firefox crash reports to Mozilla servers [ [1](https://wiki.mozilla.org/Breakpad) [2](http://kb.mozillazine.org/Breakpad) [3](https://dxr.mozilla.org/mozilla-central/source/toolkit/crashreporter) [4](https://bugzilla.mozilla.org/show_bug.cgi?id=411490) ]
+* Disable sending reports of tab crashes to Mozilla (about:tabcrashed), don't nag user about unsent crash reports [ [1](https://hg.mozilla.org/mozilla-central/file/tip/browser/app/profile/firefox.js) ]
+* Disable FlyWeb (discovery of LAN/proximity IoT devices that expose a Web interface) [ [1](https://wiki.mozilla.org/FlyWeb) [2](https://wiki.mozilla.org/FlyWeb/Security_scenarios) [3](https://docs.google.com/document/d/1eqLb6cGjDL9XooSYEEo7mE-zKQ-o-AuDTcEyNhfBMBM/edit) [4](http://www.ghacks.net/2016/07/26/firefox-flyweb) ]
 * Disable the UITour backend [ [1](https://trac.torproject.org/projects/tor/ticket/19047#comment:3) ]
-* Enable Firefox Tracking Protection [ [1](https://wiki.mozilla.org/Security/Tracking_protection) [2](https://support.mozilla.org/en-US/kb/tracking-protection-firefox) [3](https://support.mozilla.org/en-US/kb/tracking-protection-pbm) ]
-* Resist fingerprinting via window.screen and CSS media queries and other techniques [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=418986) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1281949) [3](https://bugzilla.mozilla.org/show_bug.cgi?id=1281963) ]
+* Enable Firefox Tracking Protection [ [1](https://wiki.mozilla.org/Security/Tracking_protection) [2](https://support.mozilla.org/en-US/kb/tracking-protection-firefox) [3](https://support.mozilla.org/en-US/kb/tracking-protection-pbm) [4](https://kontaxis.github.io/trackingprotectionfirefox/) [5](https://feeding.cloud.geek.nz/posts/how-tracking-protection-works-in-firefox/) ]
+* Enable hardening against various fingerprinting vectors (Tor Uplift project) [ [1](https://wiki.mozilla.org/Security/Tor_Uplift/Tracking) ]
 * Disable the built-in PDF viewer [ [1](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2743) [2](https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/) [3](https://www.mozilla.org/en-US/security/advisories/mfsa2015-69/) ]
 * Disable collection/sending of the health report (healthreport.sqlite*) [ [1](https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf) [2](https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html) ]
 * Disable new tab tile ads & preload [ [1](http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox) [2](http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331) [3](https://wiki.mozilla.org/Tiles/Technical_Documentation#Ping) [4](https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source) [5](https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-ping) ]
@@ -321,50 +334,41 @@ This section tweaks the cipher suites used by Firefox. The idea is to support on
 * By default **your browser trusts 100's of [Certificate Authorities](https://en.wikipedia.org/wiki/Certificate_authority)** (CAs) from various organizations to guarantee privacy of your encrypted communications with websites. Some CAs have been known for misusing or deliberately abusing this power in the past, and **a single malicious CA can compromise all** your encrypted communications! Follow [this document](CAs.md) to only trust a selected, trimmed-down list of CAs.
 * Keep your browser updated! If you check [Firefox's security advisories](https://www.mozilla.org/security/known-vulnerabilities/firefox.html), you'll see that pretty much every new version of Firefox contains some security updates. If you don't keep your browser updated, you've already lost the game.
 * Disable/uninstall all unnecessary extensions and plugins!
+* Use long and **unique** passwords/passphrases for each website/service.
+* Prefer open-source, reviewed and audited software and operating systems whenever possible.
+* Do not transmit information meant to be private over unencrypted communication channels.
+* Use a search engine that doesn't track its users, and set it as default search engine.
 * If a plugin is absolutely required, [check for plugin updates](https://www.mozilla.org/en-US/plugincheck/)
 * Create different [profiles][15] for different purposes
 * Change the Firefox's built-in tracking protection to use the [strict list](https://support.mozilla.org/en-US/kb/tracking-protection-pbm?as=u#w_change-your-block-list)
 * Change the timezone for Firefox by using the ```TZ``` environment variable (see [here](https://wiki.archlinux.org/index.php/Firefox_privacy#Change_browser_time_zone)) to reduce it's value in browser fingerprinting
-* Completely block unencrypted communications using the `HTTPS Everywhere` toolbar button > `Block all unencrypted requests`. This will break websites where HTTPS is not available.
+* If you are concerned about more advanced threats, use specialized hardened operating systems and browsers such as [Tails](https://tails.boum.org/) or [Tor Brower Bundle](https://www.torproject.org/projects/torbrowser.html.en)
+
 
 ### Add-ons
 
 Here is a list of the most essential security and privacy enhancing add-ons that you should consider using:
 
-* [Certificate Patrol](http://patrol.psyced.org/)
-  * I recommend setting the 'Store certificates even when in [Private Browsing][8] Mode' to get full benefit out of certpatrol, even though it stores information about the sites you visit
-* [HTTPS Everywhere](https://www.eff.org/https-everywhere) and [HTTPS by default](https://addons.mozilla.org/firefox/addon/https-by-default/)
-* [NoScript](https://noscript.net/)
-* [DuckDuckGo Plus](https://addons.mozilla.org/firefox/addon/duckduckgo-for-firefox/) (instead of Google)
-* [No Resource URI Leak](https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/) (see [#163](https://github.com/pyllyukko/user.js/issues/163))
-* [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
-* [Canvas Blocker](https://addons.mozilla.org/firefox/addon/canvasblocker/) ([Source code](https://github.com/kkapsner/CanvasBlocker))
-
-### Tracking protection
-
-Tracking protection is one of the most important technologies that you need. The usual recommendation has been to run the [Ghostery](https://www.ghostery.com/) extension, but as it is made by a [potentially evim(tm) advertising company](https://en.wikipedia.org/wiki/Ghostery#Criticism), some people feel that is not to be trusted. One notable alternative is to use [uBlock](https://github.com/gorhill/uBlock), which can also be found at [Mozilla AMO](https://addons.mozilla.org/firefox/addon/ublock-origin/).
-
-Ghostery is still viable option, but be sure to disable the [GhostRank](https://www.ghostery.com/en/faq#q5-general) feature.
-
-Do note, that this user.js also enables Mozilla's built-in [tracking protection][12], but as that's quite new feature it is to be considered only as a fallback and not a complete solution. As it utilizes [Disconnect's list](https://support.mozilla.org/en-US/kb/tracking-protection-firefox#w_what-is-tracking-protection), recommending Disconnect seems redundant.
-
-So to summarize, pick one between Ghostery and uBlock, depending on your personal preferences.
-
-See also:
-* [Mozilla Lightbeam][13] extension
-* [Privacy Badger](https://www.eff.org/privacybadger) extension from EFF (also to be considered as an additional security measure and not a complete solution)
-* [Web Browser Addons](https://prism-break.org/en/subcategories/gnu-linux-web-browser-addons/) section in [PRISM break](https://prism-break.org/)
-* [\[Talk\] Ghostery Vs. Disconnect.me Vs. uBlock #16](https://github.com/pyllyukko/user.js/issues/16)
-* [Ghostery sneaks in new promotional messaging system #47](https://github.com/pyllyukko/user.js/issues/47)
-* [Are We Private Yet?](https://web.archive.org/web/20150801031411/http://www.areweprivateyet.com/) site (made by Ghostery, archived)
-* [Tracking Protection in Firefox For Privacy and Performance](https://kontaxis.github.io/trackingprotectionfirefox/#papers) paper
-* [How Tracking Protection works in Firefox](https://feeding.cloud.geek.nz/posts/how-tracking-protection-works-in-firefox/)
-
-### Add-ons for mobile platforms
-
-* [NoScript Anywhere](https://noscript.net/nsa/)
-* [uBlock](https://addons.mozilla.org/android/addon/ublock-origin/)
+* [uBlock Origin](https://addons.mozilla.org/firefox/addon/ublock-origin/)
+  * For additional protection, enable more blocklists in the addon dashboard.
+  * For additional protection, set it to [Hard mode](https://github.com/gorhill/uBlock/wiki/Blocking-mode:-hard-mode) (experienced users) - the default is [Easy mode](https://github.com/gorhill/uBlock/wiki/Blocking-mode:-easy-mode)
 * [HTTPS Everywhere](https://www.eff.org/https-everywhere)
+  * For additional protection, enable `Block all unencrypted requests` in the toolbar button menu. This will break websites where HTTPS is not available.
+* [Certificate Patrol](http://patrol.psyced.org/) (experienced users)
+  * Setting `Store certificates even when in Private Browsing mode` improves usability. This will store information about sites you visit.
+* [HTTPS by default](https://addons.mozilla.org/firefox/addon/https-by-default/)
+* [NoScript](https://noscript.net/)
+* [No Resource URI Leak](https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/)
+* [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
+* [Canvas Blocker](https://addons.mozilla.org/firefox/addon/canvasblocker/)
+
+Additional add-ons that you might consider using or reading about:
+
+* [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/) (experienced users) 
+* [Privacy Badger](https://www.eff.org/privacybadger)
+* [Mozilla Lightbeam](https://www.mozilla.org/en-US/lightbeam/)
+* [PRISM Break Web Browser Addons section](https://prism-break.org/en/subcategories/gnu-linux-web-browser-addons/)
+* [Ghostery](https://www.ghostery.com/) (proprietary software, maintained by [an advertising company](https://en.wikipedia.org/wiki/Ghostery))
 
 ## Known problems and limitations
 
@@ -373,6 +377,7 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 <!-- BEGIN PROBLEMS-LIMITATIONS -->
 * Disabling ServiceWorkers breaks functionality on some sites (Google Street View...)
 * Disabling DOM storage is known to cause`TypeError: localStorage is null` errors
+* Disabling WebRTC breaks peer-to-peer file sharing tools (reep.io ...)
 * IndexedDB could be used for tracking purposes, but is required for some add-ons to work (notably uBlock), so is left enabled
 * Firefox Hello requires setting `media.peerconnection.enabled` and `media.getusermedia.screensharing.enabled` to true, `security.OCSP.require` to false to work.
 * Do No Track must be enabled manually
@@ -402,11 +407,14 @@ In addition see the current [issues](https://github.com/pyllyukko/user.js/issues
 
 No. Please read [Known problems and limitations](#known-problems-and-limitations), the project's
 [issue](https://github.com/pyllyukko/user.js/issues) tracker, and report new issues there.
+Please open separate issues for each individual problem/question you may have.
 
 > Why are obsolete/deprecated entries included in the user.js file?
 
-In case you want to use an older Firefox version (e.g. [ESR](https://www.mozilla.org/en-US/firefox/organizations/),
-or for test reasons) and normally it doesn't hurt your browser if there are deprecated about:config preferences present.
+This project is aimed at Firefox versions between the current [ESR](https://www.mozilla.org/en-US/firefox/organizations/)
+and the latest Firefox release. We will wait for widespread deployment of the current ESR
+(eg. adoption in major Linux distributions) before removing deprecated/obsolete preferences.
+Presence of deprecated entries causes no known problems.
 
 > Installing the user.js file breaks xyz plugin/addon/extension, how can I fix it?
 
@@ -503,6 +511,7 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 * [Advices from Mozilla Firefox on privacy and government surveillance](https://www.mozilla.org/en-US/teach/smarton/surveillance/)
 * [Polaris - advance privacy technnology for the web](https://wiki.mozilla.org/Polaris)
 * [Mozilla Privacy Principles](https://wiki.mozilla.org/Privacy/Principles)
+* [List of Firefox "about:" URLs](https://developer.mozilla.org/en-US/Firefox/The_about_protocol)
 * [Mozilla preferences for uber-geeks](https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Mozilla_preferences_for_uber-geeks)
 * [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/) ([RSS](https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/format:rss?sort=featured))
 
@@ -510,6 +519,7 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 
 * **[CVEs for Firefox - mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=firefox)**
 * [CVEs for Firefox - cvedetails.com](https://www.cvedetails.com/vulnerability-list/vendor_id-452/product_id-3264/Mozilla-Firefox.html) 
+* [ghacksuserjs/ghacks-user.js](https://github.com/ghacksuserjs/ghacks-user.js): a similar project and great source of information, with different goals and methodology
 * [About:config entries - MozillaZine](http://kb.mozillazine.org/About:config_entries)
 * [Security and privacy-related preferences - MozillaZine](http://kb.mozillazine.org/Category:Security_and_privacy-related_preferences)
 * [Diff between various Firefox .js configurations in upcoming releases](https://cat-in-136.github.io/) **([RSS](https://cat-in-136.github.io/feed.xml))**
@@ -536,5 +546,4 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 [8]: https://support.mozilla.org/en-US/kb/Private%20Browsing
 [9]: https://bugzilla.mozilla.org/show_bug.cgi?id=822869
 [12]: https://support.mozilla.org/en-US/kb/tracking-protection-firefox
-[13]: https://www.mozilla.org/en-US/lightbeam/
 [15]: https://mzl.la/NYhKHH

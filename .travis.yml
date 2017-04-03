@@ -6,6 +6,7 @@ before_script:
 script:
   - acorn user.js
   - bash -n cas.sh
+  - make tests
 notifications:
   irc:
     channels:
