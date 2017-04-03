@@ -176,6 +176,7 @@ user_pref("browser.search.geoip.url",				"");
 user_pref("intl.accept_languages",				"en-us, en");
 
 // PREF: Set Firefox locale to en-US
+// http://kb.mozillazine.org/General.useragent.locale
 user_pref("general.useragent.locale",			"en-US");
 
 // PREF: Don't use OS values to determine locale, force using Firefox locale setting
