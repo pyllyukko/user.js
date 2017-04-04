@@ -53,6 +53,5 @@ cleanup: sourceprefs.js
 
 authors:
 	@# generate an AUTHORS file, ordered by number of commits
-	@# TODO: add a .mailmap file to deduplicate authors with multiple email addresses
 	@# to add extra authors/credits, git commit --allow-empty --author="A U Thor <author@example.com>"
 	@git shortlog -sne | cut -f1 --complement >| AUTHORS
