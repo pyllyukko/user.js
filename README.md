@@ -456,11 +456,13 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 
 #### Fingerprinting tests
 
+* [Browser Extension and Login-Leak Experiment](https://extensions.inrialpes.fr/)
 * [BrowserSpy.dk](http://browserspy.dk/)
 * [BrowserLeaks.com](https://www.browserleaks.com/firefox)
 * [AmIUnique](https://amiunique.org/) ([1](https://github.com/DIVERSIFY-project/amiunique))
 * [Panopticlick](https://panopticlick.eff.org/)
 * [Unique Machine](http://www.uniquemachine.org/)
+* [Cross-browser fingerprinting test 2.0](https://fingerprint.pet-portal.eu)
 * [Firefox Addon Detector](https://thehackerblog.com/addon_scanner/) [[1](https://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)]
 * [AudioContext Fingerprint Test Page](https://audiofingerprint.openwpm.com/)
 * [Evercookie](https://samy.pl/evercookie/)
