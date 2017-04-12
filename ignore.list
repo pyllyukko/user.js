@@ -17,3 +17,6 @@
 
 // browser.search.geoSpecificDefaults master switch is false
 "browser.search.geoSpecificDefaults.url"
+
+// Deprecated Do Not Track setting, Firefox <36, https://hg.mozilla.org/mozilla-central/rev/9a16137bc7b4
+"privacy.donottrackheader.value"
