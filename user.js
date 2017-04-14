@@ -606,6 +606,7 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
 // https://support.mozilla.org/en-US/kb/Private-Browsing
 // https://wiki.mozilla.org/PrivateBrowsing
 // NOTICE: You can not view or inspect cookies when in private browsing: https://bugzilla.mozilla.org/show_bug.cgi?id=823941
+// NOTICE: When Javascript is enabled, Websites can detect use of Private Browsing mode
 // NOTICE: Private browsing breaks Kerberos authentication
 user_pref("browser.privatebrowsing.autostart",			true);
 
