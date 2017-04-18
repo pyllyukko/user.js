@@ -282,7 +282,7 @@ Improve visibility of security-related elements, mitigate shoulder-surfing
 * Disable the "new tab page" feature and show a blank tab instead [ [1](https://wiki.mozilla.org/Privacy/Reviews/New_Tab) [2](https://support.mozilla.org/en-US/kb/new-tab-page-show-hide-and-customize-top-sites#w_how-do-i-turn-the-new-tab-page-off) ]
 * Enable Auto Notification of Outdated Plugins [ [1](https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review) ]
 * Enable Information Bar for Outdated Plugins [ [1](http://forums.mozillazine.org/viewtopic.php?f=8&t=2490287) ]
-* Enable IDN Show Punycode
+* Enable IDN Show Punycode [ [1](http://kb.mozillazine.org/Network.IDN_show_punycode) [2](https://www.xudongz.com/blog/2017/idn-phishing/) ]
 * Disable inline autocomplete in URL bar [ [1](http://kb.mozillazine.org/Inline_autocomplete) ]
 * Don't suggest any URLs while typing at the address bar [ [1](https://www.labnol.org/software/browsers/prevent-firefox-showing-bookmarks-address-location-bar/3636/) [2](http://kb.mozillazine.org/Browser.urlbar.maxRichResults) ]
 * Disable CSS :visited selectors [ [1](https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/) [2](https://dbaron.org/mozilla/visited-privacy) ]
