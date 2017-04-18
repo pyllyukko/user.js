@@ -761,8 +761,9 @@ user_pref("plugins.update.notifyUser",				true);
 user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
 
 // PREF: Enable IDN Show Punycode
-// CIS Mozilla Firefox 24 ESR v1.0.0 - 3.6
 // http://kb.mozillazine.org/Network.IDN_show_punycode
+// https://www.xudongz.com/blog/2017/idn-phishing/
+// CIS Mozilla Firefox 24 ESR v1.0.0 - 3.6
 user_pref("network.IDN_show_punycode",				true);
 
 // PREF: Disable inline autocomplete in URL bar
