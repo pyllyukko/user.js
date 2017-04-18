@@ -210,6 +210,7 @@ Disable Firefox integrated metrics/reporting/experiments, disable potentially in
 * Disable FlyWeb (discovery of LAN/proximity IoT devices that expose a Web interface) [ [1](https://wiki.mozilla.org/FlyWeb) [2](https://wiki.mozilla.org/FlyWeb/Security_scenarios) [3](https://docs.google.com/document/d/1eqLb6cGjDL9XooSYEEo7mE-zKQ-o-AuDTcEyNhfBMBM/edit) [4](http://www.ghacks.net/2016/07/26/firefox-flyweb) ]
 * Disable the UITour backend [ [1](https://trac.torproject.org/projects/tor/ticket/19047#comment:3) ]
 * Enable Firefox Tracking Protection [ [1](https://wiki.mozilla.org/Security/Tracking_protection) [2](https://support.mozilla.org/en-US/kb/tracking-protection-firefox) [3](https://support.mozilla.org/en-US/kb/tracking-protection-pbm) [4](https://kontaxis.github.io/trackingprotectionfirefox/) [5](https://feeding.cloud.geek.nz/posts/how-tracking-protection-works-in-firefox/) ]
+* Enable contextual identity Containers feature (Firefox >= 52)
 * Enable hardening against various fingerprinting vectors (Tor Uplift project) [ [1](https://wiki.mozilla.org/Security/Tor_Uplift/Tracking) ]
 * Disable the built-in PDF viewer [ [1](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2743) [2](https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/) [3](https://www.mozilla.org/en-US/security/advisories/mfsa2015-69/) ]
 * Disable collection/sending of the health report (healthreport.sqlite*) [ [1](https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf) [2](https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html) ]
@@ -379,6 +380,7 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 * Disabling DOM storage is known to cause`TypeError: localStorage is null` errors
 * Disabling WebRTC breaks peer-to-peer file sharing tools (reep.io ...)
 * IndexedDB could be used for tracking purposes, but is required for some add-ons to work (notably uBlock), so is left enabled
+* Containers are not available in Private Browsing mode
 * Firefox Hello requires setting `media.peerconnection.enabled` and `media.getusermedia.screensharing.enabled` to true, `security.OCSP.require` to false to work.
 * Do No Track must be enabled manually
 * Spoofing referers breaks functionality on websites relying on authentic referer headers
@@ -386,7 +388,9 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 * Spoofing referers disables CSRF protection on some login pages not implementing origin-header/cookie+token based CSRF protection
 * Blocking 3rd-party cookies breaks a number of payment gateways
 * You can not view or inspect cookies when in private browsing: https://bugzilla.mozilla.org/show_bug.cgi?id=823941
+* When Javascript is enabled, Websites can detect use of Private Browsing mode
 * Private browsing breaks Kerberos authentication
+* Disables "Containers" functionality (see below)
 * Installing user.js will **remove your saved passwords** (https://github.com/pyllyukko/user.js/issues/27)
 * OCSP leaks your IP and domains you visit to the CA when OCSP Stapling is not available on visited host
 * OCSP is vulnerable to replay attacks when nonce is not configured on the OCSP responder
