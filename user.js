@@ -404,7 +404,7 @@ user_pref("browser.uitour.enabled",				false);
 user_pref("privacy.trackingprotection.enabled",			true);
 user_pref("privacy.trackingprotection.pbmode.enabled",		true);
 
-// PREF: enable contextual identity Containers feature (Firefox >= 52)
+// PREF: Enable contextual identity Containers feature (Firefox >= 52)
 // NOTICE: Containers are not available in Private Browsing mode
 // https://wiki.mozilla.org/Security/Contextual_Identity_Project/Containers
 user_pref("privacy.userContext.enabled",			true);
