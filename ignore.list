@@ -153,4 +153,24 @@
 // Don't change redirection limit, default is 20 redirects
 "network.http.redirection-limit"
 
+// don't change backspace key action (0 = previous page, 1 = scroll up, 2 = do nothing) (UI)
+"browser.backspace_action"
 
+// Don't change ctrl-tab previews options (UI)
+"browser.ctrlTab.previews"
+
+// Don't change spellchecking controls options (UI)
+"layout.spellcheckDefault"
+
+// Don't change URL bar selection behaviour (UI)
+"browser.urlbar.clickSelectsAll"
+"browser.urlbar.doubleClickSelectsAll"
+
+// Don't change settings for new tab position in tab bar (UI)
+"browser.tabs.insertRelatedAfterCurrent"
+
+// Don't change setting for switching back to parent tab on tab close (UI)
+"browser.tabs.selectOwnerOnClose"
+
+// Don't change behaviour for switching to new tabs when they are opened (UI)
+"browser.tabs.loadInBackground"
