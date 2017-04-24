@@ -80,10 +80,15 @@
 "media.peerconnection.identity.timeout"
 "media.peerconnection.turn.disable"
 
-// Don't disable full screen API/support
+// Don't disable full screen API/support (relaxed) (usability)
 "full-screen-api.enabled"
 
 // Don't change fine VR API options, VR support is disabled via master switch
 "dom.vr.oculus.enabled"
 "dom.vr.osvr.enabled" // (Firefox >= 49)
 "dom.vr.openvr.enabled" // (Firefox >=51)
+
+// Don't change disk cache settings, disk cache is disabled
+"browser.cache.disk.capacity"
+"browser.cache.disk.smart_size.enabled"
+"browser.cache.disk.smart_size.first_run"
