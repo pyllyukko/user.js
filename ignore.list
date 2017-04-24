@@ -20,3 +20,27 @@
 
 // Deprecated Do Not Track setting, Firefox <36, https://hg.mozilla.org/mozilla-central/rev/9a16137bc7b4
 "privacy.donottrackheader.value"
+
+// Don't alter "Warn me about unwanted and uncommon software" options, safebrowsing.downloads.enabled master switch is off
+"browser.safebrowsing.downloads.remote.block_potentially_unwanted" // (FF48+)
+"browser.safebrowsing.downloads.remote.block_uncommon" // (FF48+)
+"browser.safebrowsing.downloads.remote.block_dangerous" // (FF49+)
+"browser.safebrowsing.downloads.remote.block_dangerous_host" // (FF49+)
+// Don't alter URL for binary downloads check
+"browser.safebrowsing.downloads.remote.url"
+
+// Don't alter update URLs for safebrowsing data, WONTFIX
+"browser.safebrowsing.provider.google.updateURL" // update google lists
+"browser.safebrowsing.provider.google.gethashURL" // list hash check
+"browser.safebrowsing.provider.google4.updateURL" // (FF50+)
+"browser.safebrowsing.provider.google4.gethashURL" // (FF50+)
+
+// Don't alter Mozilla safebrowsing/tracing protection download URLs, WONTFIX
+"browser.safebrowsing.provider.mozilla.gethashURL" // resolves hash conflicts
+"browser.safebrowsing.provider.mozilla.updateURL" // update FF lists
+
+// Do NOT select "clear passwords" in clear private data dialog (relaxed) (usability)
+"privacy.cpd.passwords"
+
+// Do NOT select "site settings" in clear private data dialog (relaxed) (usability)
+"privacy.clearOnShutdown.siteSettings"

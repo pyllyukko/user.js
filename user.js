@@ -32,6 +32,11 @@ user_pref("dom.webaudio.enabled",				false);
 // https://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",					false);
 
+// PREF: when geolocation is enabled, use Mozilla geolocation service instead of Google
+user_pref("geo.wifi.uri", "https://location.services.mozilla.com/v1/geolocate?key=test");
+// PREF: when geolocation is enabled, don't log geolocation requests to the console
+user_pref("geo.wifi.logging.enabled", false);
+
 // PREF: Disable raw TCP socket support (mozTCPSocket)
 // https://trac.torproject.org/projects/tor/ticket/18863
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-97/
@@ -128,9 +133,16 @@ user_pref("browser.send_pings.require_same_host",		true);
 // https://www.w3.org/TR/gamepad/
 user_pref("dom.gamepad.enabled",				false);
 
-// PREF: Disable virtual reality devices
+// PREF: Disable virtual reality devices APIs
 // https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
+// https://developer.mozilla.org/en-US/docs/Web/API/WebVR_API
 user_pref("dom.vr.enabled",					false);
+user_pref("dom.vr.oculus.enabled",          false);
+user_pref("dom.vr.osvr.enabled",            false); // (Firefox >= 49)
+user_pref("dom.vr.openvr.enabled",          false); // (Firefox >=51)
+
+// PREF: Disable vibrator API
+user_pref("dom.vibrator.enabled",           false);
 
 // PREF: Disable webGL
 // https://en.wikipedia.org/wiki/WebGL
@@ -206,6 +218,9 @@ user_pref("browser.urlbar.trimURLs",				false);
 // PREF: Don't try to guess domain names when entering an invalid domain name in URL bar
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
 user_pref("browser.fixup.alternate.enabled",			false);
+
+// PREF: When browser.fixup.alternate.enabled is enabled, do not fix URLs containing 'user:password' data
+user_pref("browser.fixup.hide_user_pass", true);
 
 // PREF: Send DNS request through SOCKS when SOCKS proxying is in use
 // https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/WebBrowsers
@@ -303,6 +318,11 @@ user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled",	false);
 
 // PREF: When Flash crash reports are enabled, don't send the visited URL in the crash report
 user_pref("dom.ipc.plugins.reportCrashURL",			false);
+
+// PREF: When Flash is enabled, download and use Mozilla SWF URIs blocklist
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1237198
+// https://github.com/mozilla-services/shavar-plugin-blocklist
+user_pref("browser.safebrowsing.blockedURIs.enabled", true);
 
 // PREF: Disable Gnome Shell Integration
 user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
@@ -438,9 +458,11 @@ user_pref("browser.newtab.preload",				false);
 user_pref("browser.newtabpage.directory.ping",			"");
 user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 
-// PREF: Disable heartbeat
+// PREF: Disable Heartbeat  (Mozilla user rating telemetry)
 // https://wiki.mozilla.org/Advocacy/heartbeat
 // https://trac.torproject.org/projects/tor/ticket/19047
+// https://trac.torproject.org/projects/tor/ticket/18738
+user_pref("browser.selfsupport.enabled",            false);
 user_pref("browser.selfsupport.url",				"");
 
 // PREF: Disable Firefox Hello (disabled) (Firefox < 49)
@@ -473,10 +495,9 @@ user_pref("browser.safebrowsing.phishing.enabled",		true); // firefox >= 50
 // CIS 2.3.5
 user_pref("browser.safebrowsing.malware.enabled",		true);
 
-// PREF: Disable safe browsing remote lookups for downloaded files.
+// PREF: Disable querying Google Application Reputation database for downloaded binary files
 // https://www.mozilla.org/en-US/firefox/39.0/releasenotes/
 // https://wiki.mozilla.org/Security/Application_Reputation
-// This leaks information to google.
 user_pref("browser.safebrowsing.downloads.remote.enabled",	false);
 
 // PREF: Disable Pocket
@@ -641,7 +662,7 @@ user_pref("privacy.clearOnShutdown.history",			true);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
 user_pref("privacy.clearOnShutdown.passwords",			true);
 user_pref("privacy.clearOnShutdown.sessions",			true);
-//user_pref("privacy.clearOnShutdown.siteSettings",		false);
+user_pref("privacy.clearOnShutdown.openWindows",		true);
 
 // PREF: Set time range to "Everything" as default in "Clear Recent History"
 user_pref("privacy.sanitize.timeSpan",				0);
@@ -690,6 +711,14 @@ user_pref("network.cookie.lifetimePolicy",			2);
 // http://kb.mozillazine.org/Signon.autofillForms
 // https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
 user_pref("signon.autofillForms",				false);
+
+// PREF: When username/password autofill is enabled, still disable it on non-HTTPS sites
+// https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317
+user_pref("signon.autofillForms.http",				false);
+
+// PREF: Show in-content login form warning UI for insecure login fields
+// https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317
+user_pref("security.insecure_field_warning.contextual.enabled", true);
 
 // PREF: Disable the password manager for pages with autocomplete=off
 // https://bugzilla.mozilla.org/show_bug.cgi?id=956906
