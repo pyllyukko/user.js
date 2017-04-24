@@ -16,6 +16,11 @@
 // CVE-2016-5259, CVE-2016-2812, CVE-2016-1949, CVE-2016-5287 (fixed)
 user_pref("dom.serviceWorkers.enabled",				false);
 
+// PREF: Disable Web Workers
+// https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+// https://www.w3schools.com/html/html5_webworkers.asp
+user_pref("dom.workers.enabled",false)
+
 // PREF: Disable web notifications
 // https://support.mozilla.org/t5/Firefox/I-can-t-find-Firefox-menu-I-m-trying-to-opt-out-of-Web-Push-and/m-p/1317495#M1006501
 user_pref("dom.webnotifications.enabled",			false);
