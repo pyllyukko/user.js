@@ -750,6 +750,10 @@ user_pref("browser.pagethumbnails.capturing_disabled",		true);
 // Use a generic icon instead
 user_pref("browser.shell.shortcutFavicons",					false);
 
+// PREF: Disable bookmarks backups (default: 15)
+// http://kb.mozillazine.org/Browser.bookmarks.max_backups
+user_pref("browser.bookmarks.max_backups", 0);
+
 /*******************************************************************************
  * SECTION: UI related                                                         *
  *******************************************************************************/
