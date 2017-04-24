@@ -138,3 +138,8 @@
 "browser.laterrun.enabled"
 "browser.startup.page"
 
+// Don't change tab-related warnings settings (UI) WONTFIX
+"browser.tabs.warnOnClose"
+"browser.tabs.warnOnCloseOtherTabs"
+"browser.tabs.warnOnOpen"
+
