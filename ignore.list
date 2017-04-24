@@ -92,3 +92,25 @@
 "browser.cache.disk.capacity"
 "browser.cache.disk.smart_size.enabled"
 "browser.cache.disk.smart_size.first_run"
+
+// Don't alter default fonts (UI)
+"font.name.monospace.x-unicode"
+"font.name.monospace.x-western"
+"font.name.sans-serif.x-unicode"
+"font.name.sans-serif.x-western"
+"font.name.serif.x-unicode"
+"font.name.serif.x-western"
+
+// Don't touch about:config warning message (UI)
+"general.warnOnAboutConfig"
+
+// Don't try to prevent javascript popup window manipulation (size/toolbars...) (UI)
+"dom.disable_window_flip" // window z-order
+"dom.disable_window_move_resize"
+"dom.disable_window_open_feature.close"
+"dom.disable_window_open_feature.minimizable"
+"dom.disable_window_open_feature.personalbar" //bookmarks toolbar
+"dom.disable_window_open_feature.titlebar"
+"dom.disable_window_status_change"
+"dom.allow_scripts_to_close_windows"
+"dom.disable_window_status_change"
