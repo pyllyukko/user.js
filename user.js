@@ -59,7 +59,7 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 // NOTICE: Disabling DOM storage is known to cause`TypeError: localStorage is null` errors
 //user_pref("dom.storage.enabled",		false);
 
-// PREF: Whether JS can get information about the network/browser connection
+// PREF: Disable leaking network/browser connection information via Javascript
 // Network Information API provides general information about the system's connection type (WiFi, cellular, etc.)
 // https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API
 // https://wicg.github.io/netinfo/#privacy-considerations
@@ -98,9 +98,13 @@ user_pref("dom.telephony.enabled",				false);
 // https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon
 user_pref("beacon.enabled",					false);
 
-// PREF: Disable clipboard manipulation via JavaScript
+// PREF: Disable clipboard event detection (onCut/onCopy/onPaste) via Javascript
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
 user_pref("dom.event.clipboardevents.enabled",			false);
+
+// PREF: Disable "copy to clipboard" functionality via Javascript (Firefox >= 41)
+// https://hg.mozilla.org/mozilla-central/rev/2f9f8ea4b9c3
+user_pref("dom.allow_cut_copy", false);
 
 // PREF: Disable speech recognition
 // https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html
@@ -135,8 +139,9 @@ user_pref("browser.send_pings.require_same_host",		true);
 
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
 
-// PREF: Disable gamepad input
+// PREF: Disable gamepad API to prevent USB device enumeration
 // https://www.w3.org/TR/gamepad/
+// https://trac.torproject.org/projects/tor/ticket/13023
 user_pref("dom.gamepad.enabled",				false);
 
 // PREF: Disable virtual reality devices APIs
@@ -272,7 +277,7 @@ user_pref("javascript.options.asmjs",				false);
 // https://github.com/iSECPartners/publications/tree/master/reports/Tor%20Browser%20Bundle
 user_pref("gfx.font_rendering.opentype_svg.enabled",		false);
 
-// PREF: Disable in-content SVG rendering
+// PREF: Disable in-content SVG rendering (Firefox >= 53)
 // NOTICE: Disabling SVG support breaks many UI elements on many sites
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1216893
 // https://github.com/iSECPartners/publications/raw/master/reports/Tor%20Browser%20Bundle/Tor%20Browser%20Bundle%20-%20iSEC%20Deliverable%201.3.pdf#16
@@ -575,8 +580,9 @@ user_pref("network.negotiate-auth.allow-insecure-ntlm-v1",	false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=855326
 user_pref("security.csp.experimentalEnabled",			true);
 
-// PREF: Enable Content Security Policy
-// CSP https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy
+// PREF: Enable Content Security Policy (CSP)
+// https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 user_pref("security.csp.enable",				true);
 
 // PREF: Enable Subresource Integrity
@@ -809,9 +815,12 @@ user_pref("plugins.update.notifyUser",				true);
 // CIS Version 1.2.0 October 21st, 2011 2.1.3
 user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
 
-// PREF: Enable IDN Show Punycode
+// PREF: Force Punycode for Internationalized Domain Names
 // http://kb.mozillazine.org/Network.IDN_show_punycode
 // https://www.xudongz.com/blog/2017/idn-phishing/
+// https://wiki.mozilla.org/IDN_Display_Algorithm
+// https://en.wikipedia.org/wiki/IDN_homograph_attack
+// https://www.mozilla.org/en-US/security/advisories/mfsa2017-02/
 // CIS Mozilla Firefox 24 ESR v1.0.0 - 3.6
 user_pref("network.IDN_show_punycode",				true);
 

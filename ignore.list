@@ -150,7 +150,7 @@
 "browser.tabs.warnOnCloseOtherTabs"
 "browser.tabs.warnOnOpen"
 
-// Don't change redirection limit, default is 20 redirects
+// Don't change redirection limit, default is 20 redirects (Network)
 "network.http.redirection-limit"
 
 // don't change backspace key action (0 = previous page, 1 = scroll up, 2 = do nothing) (UI)
@@ -174,3 +174,12 @@
 
 // Don't change behaviour for switching to new tabs when they are opened (UI)
 "browser.tabs.loadInBackground"
+
+// Don't change default setting for console warnings about non-e10s-compatible addons (Development)
+"dom.ipc.shims.enabledWarnings"
+
+// Don't change sandboxing level settings
+// https://wiki.mozilla.org/Sandbox
+"security.sandbox.content.level"
+"dom.ipc.plugins.sandbox-level.default"
+"dom.ipc.plugins.sandbox-level.flash"
