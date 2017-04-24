@@ -459,13 +459,15 @@ user_pref("browser.selfsupport.url",				"");
 
 // PREF: Disable Firefox Hello metrics collection
 // https://groups.google.com/d/topic/mozilla.dev.platform/nyVkCx-_sFw/discussion
-// TODO: deprecated? not in DXR
 user_pref("loop.logDomains",					false);
 
 // PREF: Enable Auto Update (disabled)
+// NOTICE: Fully automatic updates are disabled and left to package management systems on Linux. Windows users may want to change this setting.
 // CIS 2.1.1
-// This is disabled for now. it is better to patch through package management.
 //user_pref("app.update.auto",					true);
+
+// PREF: Enforce checking for Firefox updates
+user_pref("app.update.enabled",                 true)
 
 // PREF: Enable blocking reported web forgeries
 // https://wiki.mozilla.org/Security/Safe_Browsing
