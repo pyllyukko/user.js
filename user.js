@@ -138,9 +138,6 @@ user_pref("dom.gamepad.enabled",				false);
 // https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
 // https://developer.mozilla.org/en-US/docs/Web/API/WebVR_API
 user_pref("dom.vr.enabled",					false);
-user_pref("dom.vr.oculus.enabled",          false);
-user_pref("dom.vr.osvr.enabled",            false); // (Firefox >= 49)
-user_pref("dom.vr.openvr.enabled",          false); // (Firefox >=51)
 
 // PREF: Disable vibrator API
 user_pref("dom.vibrator.enabled",           false);
@@ -446,18 +443,6 @@ user_pref("pdfjs.disabled",					true);
 user_pref("datareporting.healthreport.uploadEnabled",		false);
 user_pref("datareporting.healthreport.service.enabled",		false);
 user_pref("datareporting.policy.dataSubmissionEnabled",		false);
-
-// PREF: Disable new tab tile ads & preload
-// http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
-// http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331
-// https://wiki.mozilla.org/Tiles/Technical_Documentation#Ping
-// https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source
-// https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-ping
-// TODO: deprecated? not in DXR, some dead links
-user_pref("browser.newtabpage.enhanced",			false);
-user_pref("browser.newtab.preload",				false);
-user_pref("browser.newtabpage.directory.ping",			"");
-user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 
 // PREF: Disable Heartbeat  (Mozilla user rating telemetry)
 // https://wiki.mozilla.org/Advocacy/heartbeat
@@ -779,6 +764,18 @@ user_pref("browser.download.useDownloadDir",			false);
 // https://support.mozilla.org/en-US/kb/new-tab-page-show-hide-and-customize-top-sites#w_how-do-i-turn-the-new-tab-page-off
 user_pref("browser.newtabpage.enabled",				false);
 user_pref("browser.newtab.url",					"about:blank");
+
+// PREF: Disable new tab tile ads & preload
+// http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
+// http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331
+// https://wiki.mozilla.org/Tiles/Technical_Documentation#Ping
+// https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source
+// https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-ping
+// TODO: deprecated? not in DXR, some dead links
+user_pref("browser.newtabpage.enhanced",			false);
+user_pref("browser.newtab.preload",				false);
+user_pref("browser.newtabpage.directory.ping",			"");
+user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 
 // PREF: Enable Auto Notification of Outdated Plugins
 // https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review
