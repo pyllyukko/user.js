@@ -103,6 +103,7 @@ user_pref("beacon.enabled",					false);
 user_pref("dom.event.clipboardevents.enabled",			false);
 
 // PREF: Disable "copy to clipboard" functionality via Javascript (Firefox >= 41)
+// NOTICE: Disabling clipboard operations will break legitimate JS-based "copy to clipboard" functionality
 // https://hg.mozilla.org/mozilla-central/rev/2f9f8ea4b9c3
 user_pref("dom.allow_cut_copy", false);
 
@@ -753,7 +754,7 @@ user_pref("browser.helperApps.deleteTempFileOnExit",		true);
 user_pref("browser.pagethumbnails.capturing_disabled",		true);
 
 // PREF: Don't fetch and permanently store bookmarks favicons to $profile_dir/shortcutCache
-// Use a generic icon instead
+// NOTICE: Bookmarks will only be shown with a generic icon
 user_pref("browser.shell.shortcutFavicons",					false);
 
 // PREF: Disable bookmarks backups (default: 15)
