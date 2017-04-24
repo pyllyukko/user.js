@@ -10,7 +10,7 @@
 "social.share.activationPanelEnabled"
 "social.enabled"
 
-// Don't disable Firefox Sync, fully opt-in, WONTFIX
+// Don't disable Firefox Sync, fully opt-in
 // https://wiki.mozilla.org/Services/Sync
 "services.sync.enabled"
 
@@ -20,7 +20,7 @@
 // Deprecated Do Not Track setting, Firefox <36, https://hg.mozilla.org/mozilla-central/rev/9a16137bc7b4
 "privacy.donottrackheader.value"
 
-// Don't alter "Warn me about unwanted and uncommon software" options, safebrowsing.downloads.enabled master switch is off
+// Don't alter safebrowsing.downloads.* options, safebrowsing.downloads.enabled master switch is off
 "browser.safebrowsing.downloads.remote.block_potentially_unwanted" // (FF48+)
 "browser.safebrowsing.downloads.remote.block_uncommon" // (FF48+)
 "browser.safebrowsing.downloads.remote.block_dangerous" // (FF49+)
@@ -28,13 +28,20 @@
 // Don't alter URL for binary downloads check
 "browser.safebrowsing.downloads.remote.url"
 
-// Don't alter update URLs for safebrowsing data, WONTFIX
+// Don't alter Mozilla/Google update URLs for safebrowsing data, safebrowsing should stay enabled
 "browser.safebrowsing.provider.google.updateURL" // update google lists
 "browser.safebrowsing.provider.google.gethashURL" // list hash check
 "browser.safebrowsing.provider.google4.updateURL" // (FF50+)
 "browser.safebrowsing.provider.google4.gethashURL" // (FF50+)
-
-// Don't alter Mozilla safebrowsing/tracing protection download URLs, WONTFIX
+"browser.safebrowsing.gethashURL"
+"browser.safebrowsing.malware.reportURL"
+"browser.safebrowsing.provider.google.appRepURL"
+"browser.safebrowsing.reportErrorURL"
+"browser.safebrowsing.reportGenericURL"
+"browser.safebrowsing.reportMalwareErrorURL"
+"browser.safebrowsing.reportMalwareURL"
+"browser.safebrowsing.reportURL"
+"browser.safebrowsing.updateURL"
 "browser.safebrowsing.provider.mozilla.gethashURL" // resolves hash conflicts
 "browser.safebrowsing.provider.mozilla.updateURL" // update FF lists
 
@@ -114,23 +121,23 @@
 "dom.allow_scripts_to_close_windows"
 "dom.disable_window_status_change"
 
-// Show "View source" in a separate window instead of tab (UI) WONTFIX
+// Show "View source" in a separate window instead of tab (UI)
 "view_source.tab"
 
-// Firefox accounts/WebChannels settings WONTFIX
+// Don't change Firefox accounts/WebChannels settings
 // https://dxr.mozilla.org/mozilla-beta/source/services/fxaccounts/FxAccountsConfig.jsm
 // https://mozilla-services.readthedocs.io/en/latest/howtos/run-fxa.html
 "webchannel.allowObject.urlWhitelist"
 
-// Don't change slow startup detection (UI) WONTFIX
+// Don't change slow startup detection (UI)
 "browser.slowStartup.notificationDisabled"
 "browser.slowStartup.maxSamples"
 "browser.slowStartup.samples"
 
-// Don't hide "know your rights" infobar (UI) WONTFIX
+// Don't hide "know your rights" infobar (UI)
 "browser.rights.3.shown"
 
-// Don't change browser startup/homepage/welcome page settings (UI) WONTFIX
+// Don't change browser startup/homepage/welcome page settings (UI)
 "browser.startup.homepage_override.mstone"
 "startup.homepage_welcome_url"
 "startup.homepage_welcome_url.additional"
@@ -138,7 +145,7 @@
 "browser.laterrun.enabled"
 "browser.startup.page"
 
-// Don't change tab-related warnings settings (UI) WONTFIX
+// Don't change tab-related warnings settings (UI)
 "browser.tabs.warnOnClose"
 "browser.tabs.warnOnCloseOtherTabs"
 "browser.tabs.warnOnOpen"
