@@ -2,7 +2,6 @@
 // Preference names must use double quotes
 
 // Don't touch Firefox social API preferences, fully opt-in, WONTFIX
-"toolkit.telemetry.unifiedIsOptIn"
 "social.whitelist"
 "social.toast-notifications.enabled"
 "social.shareDirectory"
@@ -114,3 +113,28 @@
 "dom.disable_window_status_change"
 "dom.allow_scripts_to_close_windows"
 "dom.disable_window_status_change"
+
+// Show "View source" in a separate window instead of tab (UI) WONTFIX
+"view_source.tab"
+
+// Firefox accounts/WebChannels settings WONTFIX
+// https://dxr.mozilla.org/mozilla-beta/source/services/fxaccounts/FxAccountsConfig.jsm
+// https://mozilla-services.readthedocs.io/en/latest/howtos/run-fxa.html
+"webchannel.allowObject.urlWhitelist"
+
+// Don't change slow startup detection (UI) WONTFIX
+"browser.slowStartup.notificationDisabled"
+"browser.slowStartup.maxSamples"
+"browser.slowStartup.samples"
+
+// Don't hide "know your rights" infobar (UI) WONTFIX
+"browser.rights.3.shown"
+
+// Don't change browser startup/homepage/welcome page settings (UI) WONTFIX
+"browser.startup.homepage_override.mstone"
+"startup.homepage_welcome_url"
+"startup.homepage_welcome_url.additional"
+"startup.homepage_override_url" // what's new page after updates
+"browser.laterrun.enabled"
+"browser.startup.page"
+

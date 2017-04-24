@@ -739,6 +739,10 @@ user_pref("browser.helperApps.deleteTempFileOnExit",		true);
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/browser.pagethumbnails.capturing_disabled
 user_pref("browser.pagethumbnails.capturing_disabled",		true);
 
+// PREF: Don't fetch and permanently store bookmarks favicons to $profile_dir/shortcutCache
+// Use a generic icon instead
+user_pref("browser.shell.shortcutFavicons",					false);
+
 /*******************************************************************************
  * SECTION: UI related                                                         *
  *******************************************************************************/
