@@ -2,7 +2,6 @@
 // Preference names must use double quotes
 
 // Don't touch Firefox social API preferences, fully opt-in, WONTFIX
-"toolkit.telemetry.unifiedIsOptIn"
 "social.whitelist"
 "social.toast-notifications.enabled"
 "social.shareDirectory"
@@ -11,7 +10,7 @@
 "social.share.activationPanelEnabled"
 "social.enabled"
 
-// Don't disable Firefox Sync, fully opt-in, WONTFIX
+// Don't disable Firefox Sync, fully opt-in
 // https://wiki.mozilla.org/Services/Sync
 "services.sync.enabled"
 
@@ -20,3 +19,167 @@
 
 // Deprecated Do Not Track setting, Firefox <36, https://hg.mozilla.org/mozilla-central/rev/9a16137bc7b4
 "privacy.donottrackheader.value"
+
+// Don't alter safebrowsing.downloads.* options, safebrowsing.downloads.enabled master switch is off
+"browser.safebrowsing.downloads.remote.block_potentially_unwanted" // (FF48+)
+"browser.safebrowsing.downloads.remote.block_uncommon" // (FF48+)
+"browser.safebrowsing.downloads.remote.block_dangerous" // (FF49+)
+"browser.safebrowsing.downloads.remote.block_dangerous_host" // (FF49+)
+// Don't alter URL for binary downloads check
+"browser.safebrowsing.downloads.remote.url"
+
+// Don't alter Mozilla/Google update URLs for safebrowsing data, safebrowsing should stay enabled
+"browser.safebrowsing.provider.google.updateURL" // update google lists
+"browser.safebrowsing.provider.google.gethashURL" // list hash check
+"browser.safebrowsing.provider.google4.updateURL" // (FF50+)
+"browser.safebrowsing.provider.google4.gethashURL" // (FF50+)
+"browser.safebrowsing.gethashURL"
+"browser.safebrowsing.malware.reportURL"
+"browser.safebrowsing.provider.google.appRepURL"
+"browser.safebrowsing.reportErrorURL"
+"browser.safebrowsing.reportGenericURL"
+"browser.safebrowsing.reportMalwareErrorURL"
+"browser.safebrowsing.reportMalwareURL"
+"browser.safebrowsing.reportURL"
+"browser.safebrowsing.updateURL"
+"browser.safebrowsing.provider.mozilla.gethashURL" // resolves hash conflicts
+"browser.safebrowsing.provider.mozilla.updateURL" // update FF lists
+
+// Do NOT select "clear passwords" in clear private data dialog (relaxed) (usability)
+"privacy.cpd.passwords"
+
+// Do NOT select "site settings" in clear private data dialog (relaxed) (usability)
+"privacy.clearOnShutdown.siteSettings"
+
+// Don't disable featured extensions list in add-ons tab
+"extensions.webservice.discoverURL"
+
+// Don't change fine telemetry options, telemetry is disabled
+"toolkit.telemetry.unifiedIsOptIn"
+"toolkit.telemetry.server"
+"toolkit.telemetry.archive.enabled"
+"toolkit.telemetry.cachedClientID"
+
+// Don't disable local about:healthreport page, remote healthreport submission is disabled. locale/css+js+json for this page are requested from mozilla
+"datareporting.healthreport.about.reportUrl"
+
+// Don't change New Tab page/tiles specific options, new tab page is disabled
+"browser.newtabpage.introShown"
+
+// Don't change per-tab back/forward history retention (default: 50 URLs). Can be queried via JavaScript (relaxed) (usability)
+"browser.sessionhistory.max_entries"
+
+// Don't change Windows-specific taskbar/jumplist options (UI)
+"browser.taskbar.lists.enabled"
+"browser.taskbar.lists.frequent.enabled"
+"browser.taskbar.lists.recent.enabled"
+"browser.taskbar.lists.tasks.enabled"
+"browser.taskbar.previews.enable"
+
+// Don't disable intermediate certificate caching, breaks many sites, fingerprint via intermediate CA caching can be prevented by blocking cross-site requests. (relaxed) (compatibility)
+"security.nocertdb"
+
+// Don't change supported PeerConnection/WebRTC functionality, WebRTC is disabled via master switch.
+"media.peerconnection.use_document_iceservers"
+"media.peerconnection.video.enabled"
+"media.peerconnection.identity.enabled"
+"media.peerconnection.identity.timeout"
+"media.peerconnection.turn.disable"
+
+// Don't disable full screen API/support (relaxed) (usability)
+"full-screen-api.enabled"
+
+// Don't change fine VR API options, VR support is disabled via master switch
+"dom.vr.oculus.enabled"
+"dom.vr.osvr.enabled" // (Firefox >= 49)
+"dom.vr.openvr.enabled" // (Firefox >=51)
+
+// Don't change disk cache settings, disk cache is disabled
+"browser.cache.disk.capacity"
+"browser.cache.disk.smart_size.enabled"
+"browser.cache.disk.smart_size.first_run"
+
+// Don't alter default fonts (UI)
+"font.name.monospace.x-unicode"
+"font.name.monospace.x-western"
+"font.name.sans-serif.x-unicode"
+"font.name.sans-serif.x-western"
+"font.name.serif.x-unicode"
+"font.name.serif.x-western"
+
+// Don't touch about:config warning message (UI)
+"general.warnOnAboutConfig"
+
+// Don't try to prevent javascript popup window manipulation (size/toolbars...) (UI)
+"dom.disable_window_flip" // window z-order
+"dom.disable_window_move_resize"
+"dom.disable_window_open_feature.close"
+"dom.disable_window_open_feature.minimizable"
+"dom.disable_window_open_feature.personalbar" //bookmarks toolbar
+"dom.disable_window_open_feature.titlebar"
+"dom.disable_window_status_change"
+"dom.allow_scripts_to_close_windows"
+"dom.disable_window_status_change"
+
+// Show "View source" in a separate window instead of tab (UI)
+"view_source.tab"
+
+// Don't change Firefox accounts/WebChannels settings
+// https://dxr.mozilla.org/mozilla-beta/source/services/fxaccounts/FxAccountsConfig.jsm
+// https://mozilla-services.readthedocs.io/en/latest/howtos/run-fxa.html
+"webchannel.allowObject.urlWhitelist"
+
+// Don't change slow startup detection (UI)
+"browser.slowStartup.notificationDisabled"
+"browser.slowStartup.maxSamples"
+"browser.slowStartup.samples"
+
+// Don't hide "know your rights" infobar (UI)
+"browser.rights.3.shown"
+
+// Don't change browser startup/homepage/welcome page settings (UI)
+"browser.startup.homepage_override.mstone"
+"startup.homepage_welcome_url"
+"startup.homepage_welcome_url.additional"
+"startup.homepage_override_url" // what's new page after updates
+"browser.laterrun.enabled"
+"browser.startup.page"
+
+// Don't change tab-related warnings settings (UI)
+"browser.tabs.warnOnClose"
+"browser.tabs.warnOnCloseOtherTabs"
+"browser.tabs.warnOnOpen"
+
+// Don't change redirection limit, default is 20 redirects (Network)
+"network.http.redirection-limit"
+
+// don't change backspace key action (0 = previous page, 1 = scroll up, 2 = do nothing) (UI)
+"browser.backspace_action"
+
+// Don't change ctrl-tab previews options (UI)
+"browser.ctrlTab.previews"
+
+// Don't change spellchecking controls options (UI)
+"layout.spellcheckDefault"
+
+// Don't change URL bar selection behaviour (UI)
+"browser.urlbar.clickSelectsAll"
+"browser.urlbar.doubleClickSelectsAll"
+
+// Don't change settings for new tab position in tab bar (UI)
+"browser.tabs.insertRelatedAfterCurrent"
+
+// Don't change setting for switching back to parent tab on tab close (UI)
+"browser.tabs.selectOwnerOnClose"
+
+// Don't change behaviour for switching to new tabs when they are opened (UI)
+"browser.tabs.loadInBackground"
+
+// Don't change default setting for console warnings about non-e10s-compatible addons (Development)
+"dom.ipc.shims.enabledWarnings"
+
+// Don't change sandboxing level settings
+// https://wiki.mozilla.org/Sandbox
+"security.sandbox.content.level"
+"dom.ipc.plugins.sandbox-level.default"
+"dom.ipc.plugins.sandbox-level.flash"

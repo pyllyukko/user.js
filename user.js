@@ -16,9 +16,18 @@
 // CVE-2016-5259, CVE-2016-2812, CVE-2016-1949, CVE-2016-5287 (fixed)
 user_pref("dom.serviceWorkers.enabled",				false);
 
+// PREF: Disable Web Workers
+// https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+// https://www.w3schools.com/html/html5_webworkers.asp
+user_pref("dom.workers.enabled",					false);
+
 // PREF: Disable web notifications
 // https://support.mozilla.org/t5/Firefox/I-can-t-find-Firefox-menu-I-m-trying-to-opt-out-of-Web-Push-and/m-p/1317495#M1006501
 user_pref("dom.webnotifications.enabled",			false);
+
+// PREF: Disable DOM timing API
+// https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
+user_pref("dom.enable_performance",				false);
 
 // PREF: Make sure the User Timing API does not provide a new high resolution timestamp
 // https://trac.torproject.org/projects/tor/ticket/16336
@@ -32,6 +41,12 @@ user_pref("dom.webaudio.enabled",				false);
 // https://www.mozilla.org/en-US/firefox/geolocation/
 user_pref("geo.enabled",					false);
 
+// PREF: When geolocation is enabled, use Mozilla geolocation service instead of Google
+// https://bugzilla.mozilla.org/show_bug.cgi?id=689252
+user_pref("geo.wifi.uri", "https://location.services.mozilla.com/v1/geolocate?key=test");
+// PREF: When geolocation is enabled, don't log geolocation requests to the console
+user_pref("geo.wifi.logging.enabled", false);
+
 // PREF: Disable raw TCP socket support (mozTCPSocket)
 // https://trac.torproject.org/projects/tor/ticket/18863
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-97/
@@ -44,7 +59,7 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 // NOTICE: Disabling DOM storage is known to cause`TypeError: localStorage is null` errors
 //user_pref("dom.storage.enabled",		false);
 
-// PREF: Whether JS can get information about the network/browser connection
+// PREF: Disable leaking network/browser connection information via Javascript
 // Network Information API provides general information about the system's connection type (WiFi, cellular, etc.)
 // https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API
 // https://wicg.github.io/netinfo/#privacy-considerations
@@ -79,17 +94,18 @@ user_pref("dom.battery.enabled",				false);
 // https://wiki.mozilla.org/WebAPI/Security/WebTelephony
 user_pref("dom.telephony.enabled",				false);
 
-// PREF: Disable DOM timing API
-// https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
-user_pref("dom.enable_performance",				false);
-
 // PREF: Disable "beacon" asynchronous HTTP transfers (used for analytics)
 // https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon
 user_pref("beacon.enabled",					false);
 
-// PREF: Disable clipboard manipulation via JavaScript
+// PREF: Disable clipboard event detection (onCut/onCopy/onPaste) via Javascript
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
 user_pref("dom.event.clipboardevents.enabled",			false);
+
+// PREF: Disable "copy to clipboard" functionality via Javascript (Firefox >= 41)
+// NOTICE: Disabling clipboard operations will break legitimate JS-based "copy to clipboard" functionality
+// https://hg.mozilla.org/mozilla-central/rev/2f9f8ea4b9c3
+user_pref("dom.allow_cut_copy", false);
 
 // PREF: Disable speech recognition
 // https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html
@@ -124,13 +140,18 @@ user_pref("browser.send_pings.require_same_host",		true);
 
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
 
-// PREF: Disable gamepad input
+// PREF: Disable gamepad API to prevent USB device enumeration
 // https://www.w3.org/TR/gamepad/
+// https://trac.torproject.org/projects/tor/ticket/13023
 user_pref("dom.gamepad.enabled",				false);
 
-// PREF: Disable virtual reality devices
+// PREF: Disable virtual reality devices APIs
 // https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
+// https://developer.mozilla.org/en-US/docs/Web/API/WebVR_API
 user_pref("dom.vr.enabled",					false);
+
+// PREF: Disable vibrator API
+user_pref("dom.vibrator.enabled",           false);
 
 // PREF: Disable webGL
 // https://en.wikipedia.org/wiki/WebGL
@@ -207,6 +228,9 @@ user_pref("browser.urlbar.trimURLs",				false);
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
 user_pref("browser.fixup.alternate.enabled",			false);
 
+// PREF: When browser.fixup.alternate.enabled is enabled, do not fix URLs containing 'user:password' data
+user_pref("browser.fixup.hide_user_pass", true);
+
 // PREF: Send DNS request through SOCKS when SOCKS proxying is in use
 // https://trac.torproject.org/projects/tor/wiki/doc/TorifyHOWTO/WebBrowsers
 user_pref("network.proxy.socks_remote_dns",			true);
@@ -253,6 +277,13 @@ user_pref("javascript.options.asmjs",				false);
 // https://wiki.mozilla.org/SVGOpenTypeFonts
 // https://github.com/iSECPartners/publications/tree/master/reports/Tor%20Browser%20Bundle
 user_pref("gfx.font_rendering.opentype_svg.enabled",		false);
+
+// PREF: Disable in-content SVG rendering (Firefox >= 53)
+// NOTICE: Disabling SVG support breaks many UI elements on many sites
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1216893
+// https://github.com/iSECPartners/publications/raw/master/reports/Tor%20Browser%20Bundle/Tor%20Browser%20Bundle%20-%20iSEC%20Deliverable%201.3.pdf#16
+user_pref("svg.disabled", true);
+
 
 // PREF: Disable video stats to reduce fingerprinting threat
 // https://bugzilla.mozilla.org/show_bug.cgi?id=654550
@@ -303,6 +334,11 @@ user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled",	false);
 
 // PREF: When Flash crash reports are enabled, don't send the visited URL in the crash report
 user_pref("dom.ipc.plugins.reportCrashURL",			false);
+
+// PREF: When Flash is enabled, download and use Mozilla SWF URIs blocklist
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1237198
+// https://github.com/mozilla-services/shavar-plugin-blocklist
+user_pref("browser.safebrowsing.blockedURIs.enabled", true);
 
 // PREF: Disable Gnome Shell Integration
 user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
@@ -426,21 +462,11 @@ user_pref("datareporting.healthreport.uploadEnabled",		false);
 user_pref("datareporting.healthreport.service.enabled",		false);
 user_pref("datareporting.policy.dataSubmissionEnabled",		false);
 
-// PREF: Disable new tab tile ads & preload
-// http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
-// http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331
-// https://wiki.mozilla.org/Tiles/Technical_Documentation#Ping
-// https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source
-// https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-ping
-// TODO: deprecated? not in DXR, some dead links
-user_pref("browser.newtabpage.enhanced",			false);
-user_pref("browser.newtab.preload",				false);
-user_pref("browser.newtabpage.directory.ping",			"");
-user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
-
-// PREF: Disable heartbeat
+// PREF: Disable Heartbeat  (Mozilla user rating telemetry)
 // https://wiki.mozilla.org/Advocacy/heartbeat
 // https://trac.torproject.org/projects/tor/ticket/19047
+// https://trac.torproject.org/projects/tor/ticket/18738
+user_pref("browser.selfsupport.enabled",            false);
 user_pref("browser.selfsupport.url",				"");
 
 // PREF: Disable Firefox Hello (disabled) (Firefox < 49)
@@ -451,13 +477,15 @@ user_pref("browser.selfsupport.url",				"");
 
 // PREF: Disable Firefox Hello metrics collection
 // https://groups.google.com/d/topic/mozilla.dev.platform/nyVkCx-_sFw/discussion
-// TODO: deprecated? not in DXR
 user_pref("loop.logDomains",					false);
 
 // PREF: Enable Auto Update (disabled)
+// NOTICE: Fully automatic updates are disabled and left to package management systems on Linux. Windows users may want to change this setting.
 // CIS 2.1.1
-// This is disabled for now. it is better to patch through package management.
 //user_pref("app.update.auto",					true);
+
+// PREF: Enforce checking for Firefox updates
+user_pref("app.update.enabled",                 true);
 
 // PREF: Enable blocking reported web forgeries
 // https://wiki.mozilla.org/Security/Safe_Browsing
@@ -473,10 +501,9 @@ user_pref("browser.safebrowsing.phishing.enabled",		true); // firefox >= 50
 // CIS 2.3.5
 user_pref("browser.safebrowsing.malware.enabled",		true);
 
-// PREF: Disable safe browsing remote lookups for downloaded files.
+// PREF: Disable querying Google Application Reputation database for downloaded binary files
 // https://www.mozilla.org/en-US/firefox/39.0/releasenotes/
 // https://wiki.mozilla.org/Security/Application_Reputation
-// This leaks information to google.
 user_pref("browser.safebrowsing.downloads.remote.enabled",	false);
 
 // PREF: Disable Pocket
@@ -554,8 +581,9 @@ user_pref("network.negotiate-auth.allow-insecure-ntlm-v1",	false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=855326
 user_pref("security.csp.experimentalEnabled",			true);
 
-// PREF: Enable Content Security Policy
-// CSP https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy
+// PREF: Enable Content Security Policy (CSP)
+// https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 user_pref("security.csp.enable",				true);
 
 // PREF: Enable Subresource Integrity
@@ -641,7 +669,7 @@ user_pref("privacy.clearOnShutdown.history",			true);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
 user_pref("privacy.clearOnShutdown.passwords",			true);
 user_pref("privacy.clearOnShutdown.sessions",			true);
-//user_pref("privacy.clearOnShutdown.siteSettings",		false);
+user_pref("privacy.clearOnShutdown.openWindows",		true);
 
 // PREF: Set time range to "Everything" as default in "Clear Recent History"
 user_pref("privacy.sanitize.timeSpan",				0);
@@ -691,6 +719,14 @@ user_pref("network.cookie.lifetimePolicy",			2);
 // https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
 user_pref("signon.autofillForms",				false);
 
+// PREF: When username/password autofill is enabled, still disable it on non-HTTPS sites
+// https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317
+user_pref("signon.autofillForms.http",				false);
+
+// PREF: Show in-content login form warning UI for insecure login fields
+// https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317
+user_pref("security.insecure_field_warning.contextual.enabled", true);
+
 // PREF: Disable the password manager for pages with autocomplete=off
 // https://bugzilla.mozilla.org/show_bug.cgi?id=956906
 // OWASP ASVS V9.1
@@ -716,6 +752,14 @@ user_pref("browser.helperApps.deleteTempFileOnExit",		true);
 // https://support.mozilla.org/en-US/questions/973320
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/browser.pagethumbnails.capturing_disabled
 user_pref("browser.pagethumbnails.capturing_disabled",		true);
+
+// PREF: Don't fetch and permanently store bookmarks favicons to $profile_dir/shortcutCache
+// NOTICE: Bookmarks will only be shown with a generic icon
+user_pref("browser.shell.shortcutFavicons",					false);
+
+// PREF: Disable bookmarks backups (default: 15)
+// http://kb.mozillazine.org/Browser.bookmarks.max_backups
+user_pref("browser.bookmarks.max_backups", 0);
 
 /*******************************************************************************
  * SECTION: UI related                                                         *
@@ -750,6 +794,18 @@ user_pref("browser.download.useDownloadDir",			false);
 user_pref("browser.newtabpage.enabled",				false);
 user_pref("browser.newtab.url",					"about:blank");
 
+// PREF: Disable new tab tile ads & preload
+// http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
+// http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331
+// https://wiki.mozilla.org/Tiles/Technical_Documentation#Ping
+// https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source
+// https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-ping
+// TODO: deprecated? not in DXR, some dead links
+user_pref("browser.newtabpage.enhanced",			false);
+user_pref("browser.newtab.preload",				false);
+user_pref("browser.newtabpage.directory.ping",			"");
+user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
+
 // PREF: Enable Auto Notification of Outdated Plugins
 // https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review
 // CIS Version 1.2.0 October 21st, 2011 2.1.2
@@ -760,9 +816,12 @@ user_pref("plugins.update.notifyUser",				true);
 // CIS Version 1.2.0 October 21st, 2011 2.1.3
 user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
 
-// PREF: Enable IDN Show Punycode
+// PREF: Force Punycode for Internationalized Domain Names
 // http://kb.mozillazine.org/Network.IDN_show_punycode
 // https://www.xudongz.com/blog/2017/idn-phishing/
+// https://wiki.mozilla.org/IDN_Display_Algorithm
+// https://en.wikipedia.org/wiki/IDN_homograph_attack
+// https://www.mozilla.org/en-US/security/advisories/mfsa2017-02/
 // CIS Mozilla Firefox 24 ESR v1.0.0 - 3.6
 user_pref("network.IDN_show_punycode",				true);
 
