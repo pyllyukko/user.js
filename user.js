@@ -19,7 +19,7 @@ user_pref("dom.serviceWorkers.enabled",				false);
 // PREF: Disable Web Workers
 // https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
 // https://www.w3schools.com/html/html5_webworkers.asp
-user_pref("dom.workers.enabled",false)
+user_pref("dom.workers.enabled",					false);
 
 // PREF: Disable web notifications
 // https://support.mozilla.org/t5/Firefox/I-can-t-find-Firefox-menu-I-m-trying-to-opt-out-of-Web-Push-and/m-p/1317495#M1006501
@@ -485,7 +485,7 @@ user_pref("loop.logDomains",					false);
 //user_pref("app.update.auto",					true);
 
 // PREF: Enforce checking for Firefox updates
-user_pref("app.update.enabled",                 true)
+user_pref("app.update.enabled",                 true);
 
 // PREF: Enable blocking reported web forgeries
 // https://wiki.mozilla.org/Security/Safe_Browsing
