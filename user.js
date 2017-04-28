@@ -304,7 +304,7 @@ user_pref("network.protocol-handler.warn-external.vnd.youtube", true);
 // http://kb.mozillazine.org/Network.protocol-handler.expose.%28protocol%29
 // NOTICE: Disabling nonessential protocols breaks all interaction with custom protocols such as mailto: irc: magnet: ...
 // TODO: Add more protocols, see TODO for the previous PREF.
-// network.protocol-handler.expose-all == false breaks some javascript links, hence not used.
+// network.protocol-handler.expose-all == false breaks ordinary a href links, hence not used.
 user_pref("network.protocol-handler.expose.irc", 	false);
 user_pref("network.protocol-handler.expose.magnet", 	false);
 user_pref("network.protocol-handler.expose.mailto", 	false);
