@@ -91,6 +91,11 @@ user_pref("beacon.enabled",					false);
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
 user_pref("dom.event.clipboardevents.enabled",			false);
 
+// PREF: Disable "copy to clipboard" functionality via Javascript (Firefox >= 41)
+// NOTICE: Disabling clipboard operations will break legitimate JS-based "copy to clipboard" functionality
+// https://hg.mozilla.org/mozilla-central/rev/2f9f8ea4b9c3
+user_pref("dom.allow_cut_copy", false);
+
 // PREF: Disable speech recognition
 // https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html
 // https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
