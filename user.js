@@ -717,6 +717,14 @@ user_pref("browser.helperApps.deleteTempFileOnExit",		true);
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/browser.pagethumbnails.capturing_disabled
 user_pref("browser.pagethumbnails.capturing_disabled",		true);
 
+// PREF: Don't fetch and permanently store bookmarks favicons to $profile_dir/shortcutCache
+// NOTICE: Bookmarks will only be shown with a generic icon
+user_pref("browser.shell.shortcutFavicons",					false);
+
+// PREF: Disable bookmarks backups (default: 15)
+// http://kb.mozillazine.org/Browser.bookmarks.max_backups
+user_pref("browser.bookmarks.max_backups", 0);
+
 /*******************************************************************************
  * SECTION: UI related                                                         *
  *******************************************************************************/
