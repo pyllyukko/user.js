@@ -20,6 +20,10 @@ user_pref("dom.serviceWorkers.enabled",				false);
 // https://support.mozilla.org/t5/Firefox/I-can-t-find-Firefox-menu-I-m-trying-to-opt-out-of-Web-Push-and/m-p/1317495#M1006501
 user_pref("dom.webnotifications.enabled",			false);
 
+// PREF: Disable DOM timing API
+// https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
+user_pref("dom.enable_performance",				false);
+
 // PREF: Make sure the User Timing API does not provide a new high resolution timestamp
 // https://trac.torproject.org/projects/tor/ticket/16336
 user_pref("dom.enable_user_timing",				false);
@@ -78,10 +82,6 @@ user_pref("dom.battery.enabled",				false);
 // PREF: Disable telephony API
 // https://wiki.mozilla.org/WebAPI/Security/WebTelephony
 user_pref("dom.telephony.enabled",				false);
-
-// PREF: Disable DOM timing API
-// https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
-user_pref("dom.enable_performance",				false);
 
 // PREF: Disable "beacon" asynchronous HTTP transfers (used for analytics)
 // https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon
