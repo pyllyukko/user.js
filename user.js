@@ -459,6 +459,9 @@ user_pref("loop.logDomains",					false);
 // This is disabled for now. it is better to patch through package management.
 //user_pref("app.update.auto",					true);
 
+// PREF: Enforce checking for Firefox updates
+user_pref("app.update.enabled",                 true);
+
 // PREF: Enable blocking reported web forgeries
 // https://wiki.mozilla.org/Security/Safe_Browsing
 // http://kb.mozillazine.org/Safe_browsing
