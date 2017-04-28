@@ -35,6 +35,7 @@ user_pref("geo.enabled",					false);
 // PREF: When geolocation is enabled, use Mozilla geolocation service instead of Google
 // https://bugzilla.mozilla.org/show_bug.cgi?id=689252
 user_pref("geo.wifi.uri", "https://location.services.mozilla.com/v1/geolocate?key=test");
+
 // PREF: When geolocation is enabled, don't log geolocation requests to the console
 user_pref("geo.wifi.logging.enabled", false);
 
