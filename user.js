@@ -132,6 +132,9 @@ user_pref("dom.gamepad.enabled",				false);
 // https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
 user_pref("dom.vr.enabled",					false);
 
+// PREF: Disable vibrator API
+user_pref("dom.vibrator.enabled",           false);
+
 // PREF: Disable webGL
 // https://en.wikipedia.org/wiki/WebGL
 // https://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
