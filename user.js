@@ -307,7 +307,7 @@ user_pref("general.buildID.override",				"20100101");
 // https://github.com/pyllyukko/user.js/issues/120
 user_pref("browser.display.use_document_fonts",			0);
 
-// PREF: Prevent sites from using external links like mailto.
+// PREF: Prevent sites from using links like mailto to launch external applications.
 // http://kb.mozillazine.org/Network.protocol-handler.external-default
 // http://kb.mozillazine.org/Network.protocol-handler.warn-external-default
 // https://news.ycombinator.com/item?id=13047883
@@ -316,20 +316,43 @@ user_pref("browser.display.use_document_fonts",			0);
 // TODO: Add externally-handled protocols from Windows 8.1 and Windows 10 (currently contains protocols only from Linux and Windows 7) that might pose a similar threat (see e.g. https://news.ycombinator.com/item?id=13044991)
 // TODO: Add externally-handled protocols from Mac OS X that might pose a similar threat (see e.g. https://news.ycombinator.com/item?id=13044991)
 user_pref("network.protocol-handler.external-default", 		false);
+user_pref("network.protocol-handler.external.irc", 		false);
+user_pref("network.protocol-handler.external.magnet", 		false);
 user_pref("network.protocol-handler.external.mailto", 		false);
 user_pref("network.protocol-handler.external.ms-windows-store", false);
 user_pref("network.protocol-handler.external.news", 		false);
 user_pref("network.protocol-handler.external.nntp", 		false);
+user_pref("network.protocol-handler.external.sftp", 		false);
 user_pref("network.protocol-handler.external.snews", 		false);
 user_pref("network.protocol-handler.warn-external-default", 	true);
+user_pref("network.protocol-handler.warn-external.irc", 	true);
+user_pref("network.protocol-handler.warn-external.magnet", 	true);
 user_pref("network.protocol-handler.warn-external.mailto", 	true);
 user_pref("network.protocol-handler.warn-external.ms-windows-store", true);
 user_pref("network.protocol-handler.warn-external.news", 	true);
 user_pref("network.protocol-handler.warn-external.nntp", 	true);
+user_pref("network.protocol-handler.warn-external.sftp", 	true);
 user_pref("network.protocol-handler.warn-external.sms", 	true);
 user_pref("network.protocol-handler.warn-external.snews", 	true);
 user_pref("network.protocol-handler.warn-external.tel", 	true);
 user_pref("network.protocol-handler.warn-external.vnd.youtube", true);
+
+// PREF: Disable nonessential protocols from being used altogether.
+// http://kb.mozillazine.org/Network.protocol-handler.expose.%28protocol%29
+// NOTICE: Breaks all interactions and links using these protocols.
+// TODO: Add more protocols, see TODO for the previous PREF.
+// network.protocol-handler.expose-all == false breaks some javascript links, hence not used.
+user_pref("network.protocol-handler.expose.irc", 	false);
+user_pref("network.protocol-handler.expose.magnet", 	false);
+user_pref("network.protocol-handler.expose.mailto", 	false);
+user_pref("network.protocol-handler.expose.ms-windows-store", false);
+user_pref("network.protocol-handler.expose.news", 	false);
+user_pref("network.protocol-handler.expose.nntp", 	false);
+user_pref("network.protocol-handler.expose.sftp", 	false);
+user_pref("network.protocol-handler.expose.sms", 	false);
+user_pref("network.protocol-handler.expose.snews", 	false);
+user_pref("network.protocol-handler.expose.tel", 	false);
+user_pref("network.protocol-handler.expose.vnd.youtube", false);
 
 /******************************************************************************
  * SECTION: Extensions / plugins                                                       *
