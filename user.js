@@ -308,6 +308,8 @@ user_pref("general.buildID.override",				"20100101");
 user_pref("browser.display.use_document_fonts",			0);
 
 // PREF: Prevent sites from using external links like mailto.
+// http://kb.mozillazine.org/Network.protocol-handler.external-default
+// http://kb.mozillazine.org/Network.protocol-handler.warn-external-default
 // https://news.ycombinator.com/item?id=13047883
 // https://bugzilla.mozilla.org/show_bug.cgi?id=167475
 // NOTICE: Breaks mailto links on legit websites, user has to right-click and copy mail address from the link.
@@ -324,7 +326,10 @@ user_pref("network.protocol-handler.warn-external.mailto", 	true);
 user_pref("network.protocol-handler.warn-external.ms-windows-store", true);
 user_pref("network.protocol-handler.warn-external.news", 	true);
 user_pref("network.protocol-handler.warn-external.nntp", 	true);
+user_pref("network.protocol-handler.warn-external.sms", 	true);
 user_pref("network.protocol-handler.warn-external.snews", 	true);
+user_pref("network.protocol-handler.warn-external.tel", 	true);
+user_pref("network.protocol-handler.warn-external.vnd.youtube", true);
 
 /******************************************************************************
  * SECTION: Extensions / plugins                                                       *
