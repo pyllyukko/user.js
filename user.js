@@ -44,7 +44,7 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 // NOTICE: Disabling DOM storage is known to cause`TypeError: localStorage is null` errors
 //user_pref("dom.storage.enabled",		false);
 
-// PREF: Whether JS can get information about the network/browser connection
+// PREF: Disable leaking network/browser connection information via Javascript
 // Network Information API provides general information about the system's connection type (WiFi, cellular, etc.)
 // https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API
 // https://wicg.github.io/netinfo/#privacy-considerations
@@ -87,7 +87,7 @@ user_pref("dom.enable_performance",				false);
 // https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon
 user_pref("beacon.enabled",					false);
 
-// PREF: Disable clipboard manipulation via JavaScript
+// PREF: Disable clipboard event detection (onCut/onCopy/onPaste) via Javascript
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
 user_pref("dom.event.clipboardevents.enabled",			false);
 
@@ -124,12 +124,14 @@ user_pref("browser.send_pings.require_same_host",		true);
 
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
 
-// PREF: Disable gamepad input
+// PREF: Disable gamepad API to prevent USB device enumeration
 // https://www.w3.org/TR/gamepad/
+// https://trac.torproject.org/projects/tor/ticket/13023
 user_pref("dom.gamepad.enabled",				false);
 
-// PREF: Disable virtual reality devices
+// PREF: Disable virtual reality devices APIs
 // https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM
+// https://developer.mozilla.org/en-US/docs/Web/API/WebVR_API
 user_pref("dom.vr.enabled",					false);
 
 // PREF: Disable webGL
@@ -426,19 +428,7 @@ user_pref("datareporting.healthreport.uploadEnabled",		false);
 user_pref("datareporting.healthreport.service.enabled",		false);
 user_pref("datareporting.policy.dataSubmissionEnabled",		false);
 
-// PREF: Disable new tab tile ads & preload
-// http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
-// http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331
-// https://wiki.mozilla.org/Tiles/Technical_Documentation#Ping
-// https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source
-// https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-ping
-// TODO: deprecated? not in DXR, some dead links
-user_pref("browser.newtabpage.enhanced",			false);
-user_pref("browser.newtab.preload",				false);
-user_pref("browser.newtabpage.directory.ping",			"");
-user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
-
-// PREF: Disable heartbeat
+// PREF: Disable Heartbeat  (Mozilla user rating telemetry)
 // https://wiki.mozilla.org/Advocacy/heartbeat
 // https://trac.torproject.org/projects/tor/ticket/19047
 user_pref("browser.selfsupport.url",				"");
@@ -451,12 +441,11 @@ user_pref("browser.selfsupport.url",				"");
 
 // PREF: Disable Firefox Hello metrics collection
 // https://groups.google.com/d/topic/mozilla.dev.platform/nyVkCx-_sFw/discussion
-// TODO: deprecated? not in DXR
 user_pref("loop.logDomains",					false);
 
 // PREF: Enable Auto Update (disabled)
+// NOTICE: Fully automatic updates are disabled and left to package management systems on Linux. Windows users may want to change this setting.
 // CIS 2.1.1
-// This is disabled for now. it is better to patch through package management.
 //user_pref("app.update.auto",					true);
 
 // PREF: Enable blocking reported web forgeries
@@ -473,10 +462,9 @@ user_pref("browser.safebrowsing.phishing.enabled",		true); // firefox >= 50
 // CIS 2.3.5
 user_pref("browser.safebrowsing.malware.enabled",		true);
 
-// PREF: Disable safe browsing remote lookups for downloaded files.
+// PREF: Disable querying Google Application Reputation database for downloaded binary files
 // https://www.mozilla.org/en-US/firefox/39.0/releasenotes/
 // https://wiki.mozilla.org/Security/Application_Reputation
-// This leaks information to google.
 user_pref("browser.safebrowsing.downloads.remote.enabled",	false);
 
 // PREF: Disable Pocket
@@ -554,8 +542,9 @@ user_pref("network.negotiate-auth.allow-insecure-ntlm-v1",	false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=855326
 user_pref("security.csp.experimentalEnabled",			true);
 
-// PREF: Enable Content Security Policy
-// CSP https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy
+// PREF: Enable Content Security Policy (CSP)
+// https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 user_pref("security.csp.enable",				true);
 
 // PREF: Enable Subresource Integrity
@@ -750,6 +739,18 @@ user_pref("browser.download.useDownloadDir",			false);
 user_pref("browser.newtabpage.enabled",				false);
 user_pref("browser.newtab.url",					"about:blank");
 
+// PREF: Disable new tab tile ads & preload
+// http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
+// http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331
+// https://wiki.mozilla.org/Tiles/Technical_Documentation#Ping
+// https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source
+// https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-ping
+// TODO: deprecated? not in DXR, some dead links
+user_pref("browser.newtabpage.enhanced",			false);
+user_pref("browser.newtab.preload",				false);
+user_pref("browser.newtabpage.directory.ping",			"");
+user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
+
 // PREF: Enable Auto Notification of Outdated Plugins
 // https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review
 // CIS Version 1.2.0 October 21st, 2011 2.1.2
@@ -760,9 +761,12 @@ user_pref("plugins.update.notifyUser",				true);
 // CIS Version 1.2.0 October 21st, 2011 2.1.3
 user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
 
-// PREF: Enable IDN Show Punycode
+// PREF: Force Punycode for Internationalized Domain Names
 // http://kb.mozillazine.org/Network.IDN_show_punycode
 // https://www.xudongz.com/blog/2017/idn-phishing/
+// https://wiki.mozilla.org/IDN_Display_Algorithm
+// https://en.wikipedia.org/wiki/IDN_homograph_attack
+// https://www.mozilla.org/en-US/security/advisories/mfsa2017-02/
 // CIS Mozilla Firefox 24 ESR v1.0.0 - 3.6
 user_pref("network.IDN_show_punycode",				true);
 
