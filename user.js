@@ -312,7 +312,7 @@ user_pref("browser.display.use_document_fonts",			0);
 // http://kb.mozillazine.org/Network.protocol-handler.warn-external-default
 // https://news.ycombinator.com/item?id=13047883
 // https://bugzilla.mozilla.org/show_bug.cgi?id=167475
-// NOTICE: Breaks mailto links on legit websites, user has to right-click and copy mail address from the link.
+// NOTICE: Disabling external protocol handlers breaks mailto links on legit websites, user has to right-click and copy mail address from the link.
 // TODO: Add externally-handled protocols from Windows 8.1 and Windows 10 (currently contains protocols only from Linux and Windows 7) that might pose a similar threat (see e.g. https://news.ycombinator.com/item?id=13044991)
 // TODO: Add externally-handled protocols from Mac OS X that might pose a similar threat (see e.g. https://news.ycombinator.com/item?id=13044991)
 user_pref("network.protocol-handler.external-default", 		false);
@@ -339,7 +339,7 @@ user_pref("network.protocol-handler.warn-external.vnd.youtube", true);
 
 // PREF: Disable nonessential protocols from being used altogether.
 // http://kb.mozillazine.org/Network.protocol-handler.expose.%28protocol%29
-// NOTICE: Breaks all interactions and links using these protocols.
+// NOTICE: Disabling nonessential protocols (like mailto, magnet, etc.) breaks all interactions and links using these protocols.
 // TODO: Add more protocols, see TODO for the previous PREF.
 // network.protocol-handler.expose-all == false breaks some javascript links, hence not used.
 user_pref("network.protocol-handler.expose.irc", 	false);
