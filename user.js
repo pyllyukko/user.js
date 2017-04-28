@@ -307,7 +307,7 @@ user_pref("general.buildID.override",				"20100101");
 // https://github.com/pyllyukko/user.js/issues/120
 user_pref("browser.display.use_document_fonts",			0);
 
-// PREF: Prevent sites from using links like mailto to launch external applications.
+// PREF: Prevent sites from using URLs such as mailto:, irc:, magnet:, ... to launch external applications
 // http://kb.mozillazine.org/Network.protocol-handler.external-default
 // http://kb.mozillazine.org/Network.protocol-handler.warn-external-default
 // https://news.ycombinator.com/item?id=13047883
