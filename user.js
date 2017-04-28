@@ -304,6 +304,11 @@ user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled",	false);
 // PREF: When Flash crash reports are enabled, don't send the visited URL in the crash report
 user_pref("dom.ipc.plugins.reportCrashURL",			false);
 
+// PREF: When Flash is enabled, download and use Mozilla SWF URIs blocklist
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1237198
+// https://github.com/mozilla-services/shavar-plugin-blocklist
+user_pref("browser.safebrowsing.blockedURIs.enabled", true);
+
 // PREF: Disable Gnome Shell Integration
 user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
 
