@@ -221,7 +221,7 @@ user_pref("network.manage-offline-status",			false);
 // https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/
 user_pref("security.mixed_content.block_active_content",	true);
 
-// PREF: Enforce Mixed Passive Content (a.k.a. Mixed Display Content)
+// PREF: Enforce Mixed Passive Content blocking (a.k.a. Mixed Display Content)
 // NOTICE: Enabling Mixed Display Content blocking can prevent images/styles... from loading properly when connection to the website is only partially secured
 user_pref("security.mixed_content.block_display_content",	true);
 
