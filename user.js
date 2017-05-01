@@ -88,7 +88,7 @@ user_pref("dom.enable_performance",				false);
 user_pref("beacon.enabled",					false);
 
 // PREF: Disable clipboard manipulation via JavaScript
-// NOTICE: Can break Ctrl+C/X/V copy/cut/paste functionaility in JS-based web applications
+// NOTICE: Disabling clipboard events breaks Ctrl+C/X/V copy/cut/paste functionaility in JS-based web applications (Google Docs...)
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
 user_pref("dom.event.clipboardevents.enabled",			false);
 
