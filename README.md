@@ -2,8 +2,7 @@
 
 **Firefox configuration hardening**
 
-A [user.js](http://kb.mozillazine.org/User.js_file) configuration file for [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/) designed to harden browser settings and
-make it more secure.
+A [user.js](http://kb.mozillazine.org/User.js_file) configuration file for [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/) designed to harden browser settings and make it more secure.
 
 [![Build Status](https://travis-ci.org/pyllyukko/user.js.svg?branch=master)](https://travis-ci.org/pyllyukko/user.js)
 
@@ -40,8 +39,7 @@ Different download methods are available:
 
 ### Single profile installation
 
-Copy `user.js` in your current user profile directory, or (recommended) to a fresh, newly
-created Firefox profile directory.
+Copy `user.js` in your current user profile directory, or (recommended) to a fresh, newly created Firefox profile directory.
 
 The file should be located at:
 
@@ -54,22 +52,11 @@ The file should be located at:
 | Sailfish OS + Alien Dalvik | `/opt/alien/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name`                                                           |
 | Windows (portable)         | `[firefox directory]\Data\profile\`                                       |
 
-Do note that these settings alter your browser behaviour quite a bit, so it is recommended to
-either create a completely new [profile][15] for Firefox or backup your existing 
-[profile directory](http://kb.mozillazine.org/Profile_folder_-_Firefox) before putting the
-`user.js` file in place.
+Do note that these settings alter your browser behaviour quite a bit, so it is recommended to either create a completely new [profile][15] for Firefox or backup your existing [profile directory](http://kb.mozillazine.org/Profile_folder_-_Firefox) before putting the `user.js` file in place.
 
-To enable the Profile Manager, run Firefox with
-[command-line arguments](http://kb.mozillazine.org/Command_line_arguments):
-`firefox --no-remote -P`
+To enable the Profile Manager, run Firefox with [command-line arguments](http://kb.mozillazine.org/Command_line_arguments): `firefox --no-remote -P`
 
-With this installation method, if you change any of `user.js` settings through
-[`about:config`](http://kb.mozillazine.org/About:config) or Firefox preferences
-dialogs, they will be reset to the `user.js` defined values after you restart
-Firefox. This makes sure they're always back to secure defaults when starting
-the browser. However this prevents presistently changing settings you don't
-consider appropriate. Either edit `user`.js directly, or use the system-wide
-installation method described below.
+With this installation method, if you change any of `user.js` settings through [`about:config`](http://kb.mozillazine.org/About:config) or Firefox preferences dialogs, they will be reset to the `user.js` defined values after you restart Firefox. This makes sure they're always back to secure defaults when starting the browser. However this prevents presistently changing settings you don't consider appropriate. Either edit `user`.js directly, or use the system-wide installation method described below.
 
 ### System-wide installation (all platforms)
 
@@ -104,10 +91,7 @@ This file should be located at:
 
 ### Updating using git
 
-For any of the above methods, you can keep your browser's `user.js` with the latest
-version available here: Clone the repository, and create a symbolic link from
-the appropriate location to the `user.js` file in the repository. Just run
-`git pull` in the repository when you want to update, then restart Firefox:
+For any of the above methods, you can keep your browser's `user.js` with the latest version available here: Clone the repository, and create a symbolic link from the appropriate location to the `user.js` file in the repository. Just run `git pull` in the repository when you want to update, then restart Firefox:
 
 ````
 cd ~/.mozilla/firefox
@@ -118,20 +102,15 @@ ln -s ../user.js/user.js user.js
 
 ### Verifying
 
-Verify that the settings are effective from
-[about:support](http://kb.mozillazine.org/Troubleshooting_Information_report#Modified_Preferences)
-(check the "Important Modified Preferences" and "user.js Preferences" sections).
+Verify that the settings are effective from [about:support](http://kb.mozillazine.org/Troubleshooting_Information_report#Modified_Preferences) (check the "Important Modified Preferences" and "user.js Preferences" sections).
 
 --------------------------------------------
 
 ## What does it do?
 
-There's a whole lot of settings that this modifies and they are divided in the following
-sections.
+There's a whole lot of settings that this modifies and they are divided in the following sections.
 
-Some of the settings in this `user.js` file might seem redundant, as some of them are
-already set to the same values by default. We chose to explicitely set their values, which
-ensures these settings are enforced if a future Firefox update change sthe default value.
+Some of the settings in this `user.js` file might seem redundant, as some of them are already set to the same values by default. We chose to explicitely set their values, which ensures these settings are enforced if a future Firefox update change sthe default value.
 
 <!-- BEGIN SECTION -->
 
