@@ -215,12 +215,14 @@ user_pref("network.proxy.socks_remote_dns",			true);
 // https://trac.torproject.org/projects/tor/ticket/18945
 user_pref("network.manage-offline-status",			false);
 
-// PREF: Enforce Mixed Content Blocking
+// PREF: Enforce Mixed Active Content Blocking
 // https://support.mozilla.org/t5/Protect-your-privacy/Mixed-content-blocking-in-Firefox/ta-p/10990
 // https://developer.mozilla.org/en-US/docs/Site_Compatibility_for_Firefox_23#Non-SSL_contents_on_SSL_pages_are_blocked_by_default
 // https://blog.mozilla.org/tanvi/2013/04/10/mixed-content-blocking-enabled-in-firefox-23/
 user_pref("security.mixed_content.block_active_content",	true);
-// Mixed Passive Content (a.k.a. Mixed Display Content).
+
+// PREF: Enforce Mixed Passive Content blocking (a.k.a. Mixed Display Content)
+// NOTICE: Enabling Mixed Display Content blocking can prevent images/styles... from loading properly when connection to the website is only partially secured
 user_pref("security.mixed_content.block_display_content",	true);
 
 // PREF: Disable JAR from opening Unsafe File Types

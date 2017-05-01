@@ -28,6 +28,19 @@ There are several parts to all this and they are:
 
 ----------------------------------------------
 
+* [Download](#download)
+* [Installation](#installation)
+* [What does it do?](#what-does-it-do)
+* [Further hardening](#further-hardening)
+* [Known problems and limitations](#known-problems-and-limitations)
+* [FAQ](#faq)
+* [Contributing](#contributing)
+* [Online tests](#online-tests)
+* [References](#references)
+
+
+----------------------------------------------
+
 ## Download
 
 Different download methods are available:

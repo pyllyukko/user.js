@@ -9,7 +9,6 @@ whatdoesitdo:
 # To decrease tests verbosity, comment out unneeded targets
 tests: downloadffprefs checkdeprecated stats cleanup
 
-
 downloadffprefs:
 	@# download and sort all known preferences files from Firefox (mozilla-central) source
 	@# specify wanted Firefox version/revision below (eg. "tip", "FIREFOX_AURORA_45_BASE", "9577ddeaafd85554c2a855f385a87472a089d5c0"). See https://hg.mozilla.org/mozilla-central/tags
@@ -65,3 +64,10 @@ authors:
 	@# generate an AUTHORS file, ordered by number of commits
 	@# to add extra authors/credits, git commit --allow-empty --author="A U Thor <author@example.com>"
 	@git shortlog -sne | cut -f1 --complement >| AUTHORS
+
+toc:
+	@l2headers=$$(egrep "^## " README.md |cut -d" " -f1 --complement ); \
+	echo "$$l2headers" | while read line; do \
+	anchor=$$(echo "$$line" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g' | sed 's/\?//g'); \
+	echo "* [$$line](#$$anchor)"; \
+	done
