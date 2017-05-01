@@ -697,6 +697,14 @@ user_pref("network.cookie.lifetimePolicy",			2);
 // https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
 user_pref("signon.autofillForms",				false);
 
+// PREF: When username/password autofill is enabled, still disable it on non-HTTPS sites
+// https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317
+user_pref("signon.autofillForms.http",				false);
+
+// PREF: Show in-content login form warning UI for insecure login fields
+// https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317
+user_pref("security.insecure_field_warning.contextual.enabled", true);
+
 // PREF: Disable the password manager for pages with autocomplete=off
 // https://bugzilla.mozilla.org/show_bug.cgi?id=956906
 // OWASP ASVS V9.1
