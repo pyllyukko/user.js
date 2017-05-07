@@ -307,6 +307,51 @@ user_pref("general.buildID.override",				"20100101");
 // https://github.com/pyllyukko/user.js/issues/120
 user_pref("browser.display.use_document_fonts",			0);
 
+// PREF: Prevent sites from using URLs such as mailto:, irc:, magnet:, ... to launch external applications
+// http://kb.mozillazine.org/Network.protocol-handler.external-default
+// http://kb.mozillazine.org/Network.protocol-handler.warn-external-default
+// http://kb.mozillazine.org/Network.protocol-handler.expose.%28protocol%29
+// https://news.ycombinator.com/item?id=13047883
+// https://bugzilla.mozilla.org/show_bug.cgi?id=167475
+// https://github.com/pyllyukko/user.js/pull/285#issuecomment-298124005
+// NOTICE: Disabling nonessential protocols breaks all interaction with custom protocols such as mailto:, irc:, magnet: ... and breaks opening third-party mail/messaging/torrent/... clients when clicking on links with these protocols
+// TODO: Add externally-handled protocols from Windows 8.1 and Windows 10 (currently contains protocols only from Linux and Windows 7) that might pose a similar threat (see e.g. https://news.ycombinator.com/item?id=13044991)
+// TODO: Add externally-handled protocols from Mac OS X that might pose a similar threat (see e.g. https://news.ycombinator.com/item?id=13044991)
+// If you want to enable a protocol, delete all three preferences for the protocol (external.protocolname, warn-external.protocolname, expose.protocolname).
+user_pref("network.protocol-handler.external-default", 		false);
+user_pref("network.protocol-handler.external.irc", 		false);
+user_pref("network.protocol-handler.external.magnet", 		false);
+user_pref("network.protocol-handler.external.mailto", 		false);
+user_pref("network.protocol-handler.external.ms-windows-store", false);
+user_pref("network.protocol-handler.external.news", 		false);
+user_pref("network.protocol-handler.external.nntp", 		false);
+user_pref("network.protocol-handler.external.sftp", 		false);
+user_pref("network.protocol-handler.external.snews", 		false);
+user_pref("network.protocol-handler.warn-external-default", 	true);
+user_pref("network.protocol-handler.warn-external.irc", 	true);
+user_pref("network.protocol-handler.warn-external.magnet", 	true);
+user_pref("network.protocol-handler.warn-external.mailto", 	true);
+user_pref("network.protocol-handler.warn-external.ms-windows-store", true);
+user_pref("network.protocol-handler.warn-external.news", 	true);
+user_pref("network.protocol-handler.warn-external.nntp", 	true);
+user_pref("network.protocol-handler.warn-external.sftp", 	true);
+user_pref("network.protocol-handler.warn-external.sms", 	true);
+user_pref("network.protocol-handler.warn-external.snews", 	true);
+user_pref("network.protocol-handler.warn-external.tel", 	true);
+user_pref("network.protocol-handler.warn-external.vnd.youtube", true);
+// network.protocol-handler.expose-all == false breaks ordinary http, https links, hence not used.
+user_pref("network.protocol-handler.expose.irc", 		false);
+user_pref("network.protocol-handler.expose.magnet", 		false);
+user_pref("network.protocol-handler.expose.mailto", 		false);
+user_pref("network.protocol-handler.expose.ms-windows-store", 	false);
+user_pref("network.protocol-handler.expose.news", 		false);
+user_pref("network.protocol-handler.expose.nntp", 		false);
+user_pref("network.protocol-handler.expose.sftp", 		false);
+user_pref("network.protocol-handler.expose.sms", 		false);
+user_pref("network.protocol-handler.expose.snews", 		false);
+user_pref("network.protocol-handler.expose.tel", 		false);
+user_pref("network.protocol-handler.expose.vnd.youtube", 	false);
+
 /******************************************************************************
  * SECTION: Extensions / plugins                                                       *
  ******************************************************************************/
