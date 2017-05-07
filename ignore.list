@@ -1,8 +1,7 @@
 // List of preferences to ignore during comparison with Firefox upstream prefs
 // Preference names must use double quotes
 
-// Don't touch Firefox social API preferences, fully opt-in, WONTFIX
-"toolkit.telemetry.unifiedIsOptIn"
+// Don't touch Firefox social API preferences, fully opt-in
 "social.whitelist"
 "social.toast-notifications.enabled"
 "social.shareDirectory"
@@ -11,12 +10,385 @@
 "social.share.activationPanelEnabled"
 "social.enabled"
 
-// Don't disable Firefox Sync, fully opt-in, WONTFIX
+// Don't disable Firefox Sync, fully opt-in
 // https://wiki.mozilla.org/Services/Sync
 "services.sync.enabled"
 
-// browser.search.geoSpecificDefaults master switch is false
+// Don't touch other Firefox Sync Settings
+"services.sync.prefs.sync.accessibility.blockautorefresh"
+"services.sync.prefs.sync.accessibility.browsewithcaret"
+"services.sync.prefs.sync.accessibility.typeaheadfind"
+"services.sync.prefs.sync.accessibility.typeaheadfind.linksonly"
+"services.sync.prefs.sync.addons.ignoreUserEnabledChanges"
+"services.sync.prefs.sync.browser.ctrlTab.previews"
+"services.sync.prefs.sync.browser.download.useDownloadDir"
+"services.sync.prefs.sync.browser.formfill.enable"
+"services.sync.prefs.sync.browser.link.open_newwindow"
+"services.sync.prefs.sync.browser.newtabpage.enabled"
+"services.sync.prefs.sync.browser.newtabpage.enhanced"
+"services.sync.prefs.sync.browser.newtabpage.pinned"
+"services.sync.prefs.sync.browser.offline-apps.notify"
+"services.sync.prefs.sync.browser.safebrowsing.malware.enabled"
+"services.sync.prefs.sync.browser.safebrowsing.phishing.enabled"
+"services.sync.prefs.sync.browser.search.update"
+"services.sync.prefs.sync.browser.sessionstore.restore_on_demand"
+"services.sync.prefs.sync.browser.startup.homepage"
+"services.sync.prefs.sync.browser.startup.page"
+"services.sync.prefs.sync.browser.tabs.loadInBackground"
+"services.sync.prefs.sync.browser.tabs.warnOnClose"
+"services.sync.prefs.sync.browser.tabs.warnOnOpen"
+"services.sync.prefs.sync.browser.urlbar.autocomplete.enabled"
+"services.sync.prefs.sync.browser.urlbar.maxRichResults"
+"services.sync.prefs.sync.browser.urlbar.suggest.bookmark"
+"services.sync.prefs.sync.browser.urlbar.suggest.history"
+"services.sync.prefs.sync.browser.urlbar.suggest.history.onlyTyped"
+"services.sync.prefs.sync.browser.urlbar.suggest.openpage"
+"services.sync.prefs.sync.browser.urlbar.suggest.searches"
+"services.sync.prefs.sync.dom.disable_open_during_load"
+"services.sync.prefs.sync.dom.disable_window_flip"
+"services.sync.prefs.sync.dom.disable_window_move_resize"
+"services.sync.prefs.sync.dom.event.contextmenu.enabled"
+"services.sync.prefs.sync.extensions.personas.current"
+"services.sync.prefs.sync.extensions.update.enabled"
+"services.sync.prefs.sync.intl.accept_languages"
+"services.sync.prefs.sync.javascript.enabled"
+"services.sync.prefs.sync.layout.spellcheckDefault"
+"services.sync.prefs.sync.lightweightThemes.selectedThemeID"
+"services.sync.prefs.sync.lightweightThemes.usedThemes"
+"services.sync.prefs.sync.network.cookie.cookieBehavior"
+"services.sync.prefs.sync.network.cookie.lifetime.days"
+"services.sync.prefs.sync.network.cookie.lifetimePolicy"
+"services.sync.prefs.sync.network.cookie.thirdparty.sessionOnly"
+"services.sync.prefs.sync.permissions.default.image"
+"services.sync.prefs.sync.pref.advanced.images.disable_button.view_image"
+"services.sync.prefs.sync.pref.advanced.javascript.disable_button.advanced"
+"services.sync.prefs.sync.pref.downloads.disable_button.edit_actions"
+"services.sync.prefs.sync.pref.privacy.disable_button.cookie_exceptions"
+"services.sync.prefs.sync.privacy.clearOnShutdown.cache"
+"services.sync.prefs.sync.privacy.clearOnShutdown.cookies"
+"services.sync.prefs.sync.privacy.clearOnShutdown.downloads"
+"services.sync.prefs.sync.privacy.clearOnShutdown.formdata"
+"services.sync.prefs.sync.privacy.clearOnShutdown.history"
+"services.sync.prefs.sync.privacy.clearOnShutdown.offlineApps"
+"services.sync.prefs.sync.privacy.clearOnShutdown.sessions"
+"services.sync.prefs.sync.privacy.clearOnShutdown.siteSettings"
+"services.sync.prefs.sync.privacy.donottrackheader.enabled"
+"services.sync.prefs.sync.privacy.sanitize.sanitizeOnShutdown"
+"services.sync.prefs.sync.privacy.trackingprotection.enabled"
+"services.sync.prefs.sync.privacy.trackingprotection.pbmode.enabled"
+"services.sync.prefs.sync.security.default_personal_cert"
+"services.sync.prefs.sync.security.OCSP.enabled"
+"services.sync.prefs.sync.security.OCSP.require"
+"services.sync.prefs.sync.security.tls.version.max"
+"services.sync.prefs.sync.security.tls.version.min"
+"services.sync.prefs.sync.services.sync.syncedTabs.showRemoteIcons"
+"services.sync.prefs.sync.signon.rememberSignons"
+"services.sync.prefs.sync.spellchecker.dictionary"
+"services.sync.prefs.sync.xpinstall.whitelist.required"
+"services.sync.registerEngines"
+"services.sync.sendTabToDevice.enabled"
+"services.sync.syncedTabs.showRemoteIcons"
+
+// Don't touch other geospecific search settings, browser.search.geoSpecificDefaults master switch is false
 "browser.search.geoSpecificDefaults.url"
 
 // Deprecated Do Not Track setting, Firefox <36, https://hg.mozilla.org/mozilla-central/rev/9a16137bc7b4
 "privacy.donottrackheader.value"
+
+// Don't alter safebrowsing.downloads.* options, safebrowsing.downloads.enabled master switch is off
+"browser.safebrowsing.downloads.remote.block_potentially_unwanted" // (FF48+)
+"browser.safebrowsing.downloads.remote.block_uncommon" // (FF48+)
+"browser.safebrowsing.downloads.remote.block_dangerous" // (FF49+)
+"browser.safebrowsing.downloads.remote.block_dangerous_host" // (FF49+)
+// Don't alter URL for binary downloads check
+"browser.safebrowsing.downloads.remote.url"
+
+// Don't alter Mozilla/Google update URLs for safebrowsing data, safebrowsing should stay enabled
+"browser.safebrowsing.provider.google.updateURL" // update google lists
+"browser.safebrowsing.provider.google.gethashURL" // list hash check
+"browser.safebrowsing.provider.google4.updateURL" // (FF50+)
+"browser.safebrowsing.provider.google4.gethashURL" // (FF50+)
+"browser.safebrowsing.gethashURL"
+"browser.safebrowsing.malware.reportURL"
+"browser.safebrowsing.provider.google.appRepURL"
+"browser.safebrowsing.reportErrorURL"
+"browser.safebrowsing.reportGenericURL"
+"browser.safebrowsing.reportMalwareErrorURL"
+"browser.safebrowsing.reportMalwareURL"
+"browser.safebrowsing.reportURL"
+"browser.safebrowsing.updateURL"
+"browser.safebrowsing.provider.mozilla.gethashURL" // resolves hash conflicts
+"browser.safebrowsing.provider.mozilla.updateURL" // update FF lists
+
+// Don't touch Other Safebrowsing blocklist settings
+"urlclassifier.alternate_error_page"
+"urlclassifier.blockedTable"
+"urlclassifier.disallow_completions"
+"urlclassifier.downloadAllowTable"
+"urlclassifier.downloadBlockTable"
+"urlclassifier.flashAllowExceptTable"
+"urlclassifier.flashAllowTable"
+"urlclassifier.flashExceptTable"
+"urlclassifier.flashSubDocExceptTable"
+"urlclassifier.flashSubDocTable"
+"urlclassifier.flashTable"
+"urlclassifier.gethashnoise"
+"urlclassifier.gethash.timeout_ms"
+"urlclassifier.malwareTable"
+"urlclassifier.max-complete-age"
+"urlclassifier.phishTable"
+"urlclassifier.trackingTable"
+"urlclassifier.trackingWhitelistTable"
+"urlclassifier.updateinterval"
+
+// Do NOT select "clear passwords" in clear private data dialog (relaxed) (usability)
+"privacy.cpd.passwords"
+
+// Do NOT select "site settings" in clear private data dialog (relaxed) (usability)
+"privacy.clearOnShutdown.siteSettings"
+
+// Don't disable featured extensions list in add-ons tab
+"extensions.webservice.discoverURL"
+
+// Don't change fine telemetry options, telemetry is disabled
+"toolkit.telemetry.unifiedIsOptIn"
+"toolkit.telemetry.server"
+"toolkit.telemetry.archive.enabled"
+"toolkit.telemetry.cachedClientID"
+"toolkit.telemetry.debugSlowSql"
+"toolkit.telemetry.infoURL"
+"toolkit.telemetry.server_owner"
+
+// Don't change SVG options, SVG is disabled
+"svg.context-properties.content.enabled"
+"svg.display-lists.hit-testing.enabled"
+"svg.display-lists.painting.enabled"
+"svg.marker-improvements.enabled"
+"svg.new-getBBox.enabled"
+"svg.paint-order.enabled"
+"svg.path-caching.enabled"
+"svg.transform-box.enabled"
+
+// Don't disable local about:healthreport page, remote healthreport submission is disabled. locale/css+js+json for this page are requested from mozilla
+"datareporting.healthreport.about.reportUrl"
+
+// Don't change New Tab page/tiles specific options, new tab page is disabled
+"browser.newtabpage.introShown"
+
+// Don't change per-tab back/forward history retention (default: 50 URLs). Can be queried via JavaScript (relaxed) (usability)
+"browser.sessionhistory.max_entries"
+
+// Don't change Windows-specific taskbar/jumplist options (UI)
+"browser.taskbar.lists.enabled"
+"browser.taskbar.lists.frequent.enabled"
+"browser.taskbar.lists.recent.enabled"
+"browser.taskbar.lists.tasks.enabled"
+"browser.taskbar.previews.enable"
+
+// Don't disable intermediate certificate caching, breaks many sites, fingerprint via intermediate CA caching can be prevented by blocking cross-site requests. (relaxed) (compatibility)
+"security.nocertdb"
+
+// Don't change supported PeerConnection/WebRTC functionality, WebRTC is disabled via master switch.
+"media.peerconnection.use_document_iceservers"
+"media.peerconnection.video.enabled"
+"media.peerconnection.identity.enabled"
+"media.peerconnection.identity.timeout"
+"media.peerconnection.turn.disable"
+
+// Don't disable full screen API/support (relaxed) (usability)
+"full-screen-api.enabled""
+
+// Don't change fine VR API options, VR support is disabled via master switch
+"dom.vr.oculus.enabled"
+"dom.vr.osvr.enabled" // (Firefox >= 49)
+"dom.vr.openvr.enabled" // (Firefox >=51)
+
+// Don't change disk cache settings, disk cache is disabled
+"browser.cache.disk.capacity"
+"browser.cache.disk.smart_size.enabled"
+"browser.cache.disk.smart_size.first_run"
+
+// Don't alter default fonts (UI)
+"font.name.monospace.x-unicode"
+"font.name.monospace.x-western"
+"font.name.sans-serif.x-unicode"
+"font.name.sans-serif.x-western"
+"font.name.serif.x-unicode"
+"font.name.serif.x-western"
+
+// Don't touch about:config warning message (UI)
+"general.warnOnAboutConfig"
+
+// Don't try to prevent javascript popup window manipulation (size/toolbars...) (UI)
+"dom.disable_window_flip" // window z-order
+"dom.disable_window_move_resize"
+"dom.disable_window_open_feature.close"
+"dom.disable_window_open_feature.minimizable"
+"dom.disable_window_open_feature.personalbar" //bookmarks toolbar
+"dom.disable_window_open_feature.titlebar"
+"dom.disable_window_status_change"
+"dom.allow_scripts_to_close_windows"
+"dom.disable_window_status_change"
+
+// Show "View source" in a separate window instead of tab (UI)
+"view_source.tab"
+
+// Other "View source" settings
+"view_source.editor.args"
+"view_source.editor.external"
+"view_source.editor.path"
+"view_source.syntax_highlight"
+"view_source.wrap_long_lines"
+
+// Don't change Firefox accounts/WebChannels settings
+// https://dxr.mozilla.org/mozilla-beta/source/services/fxaccounts/FxAccountsConfig.jsm
+// https://mozilla-services.readthedocs.io/en/latest/howtos/run-fxa.html
+"webchannel.allowObject.urlWhitelist"
+
+// Don't change slow startup detection (UI)
+"browser.slowStartup.notificationDisabled"
+"browser.slowStartup.maxSamples"
+"browser.slowStartup.samples"
+
+// Don't hide "know your rights" infobar (UI)
+"browser.rights.3.shown"
+
+// Don't change browser startup/homepage/welcome page settings (UI)
+"browser.startup.homepage_override.mstone"
+"startup.homepage_welcome_url"
+"startup.homepage_welcome_url.additional"
+"startup.homepage_override_url" // what's new page after updates
+"browser.laterrun.enabled"
+"browser.startup.page"
+
+// Don't change tab-related warnings settings (UI)
+"browser.tabs.warnOnClose"
+"browser.tabs.warnOnCloseOtherTabs"
+"browser.tabs.warnOnOpen"
+
+// Don't change redirection limit, default is 20 redirects (Network)
+"network.http.redirection-limit"
+
+// don't change backspace key action (0 = previous page, 1 = scroll up, 2 = do nothing) (UI)
+"browser.backspace_action"
+
+// Don't change ctrl-tab previews options (UI)
+"browser.ctrlTab.previews"
+
+// Don't change spellchecking controls options (UI)
+"layout.spellcheckDefault"
+
+// Don't change URL bar selection behaviour (UI)
+"browser.urlbar.clickSelectsAll"
+"browser.urlbar.doubleClickSelectsAll"
+
+// Don't change settings for new tab position in tab bar (UI)
+"browser.tabs.insertRelatedAfterCurrent"
+
+// Don't change setting for switching back to parent tab on tab close (UI)
+"browser.tabs.selectOwnerOnClose"
+
+// Don't change behaviour for switching to new tabs when they are opened (UI)
+"browser.tabs.loadInBackground"
+
+// Don't change default setting for console warnings about non-e10s-compatible addons (Development)
+"dom.ipc.shims.enabledWarnings"
+
+// Don't change sandboxing level settings
+// https://wiki.mozilla.org/Sandbox
+"security.sandbox.content.level"
+"dom.ipc.plugins.sandbox-level.default"
+"dom.ipc.plugins.sandbox-level.flash"
+
+// Don't touch other UI options
+"ui.key.accelKey"
+"ui.key.chromeAccess"
+"ui.key.contentAccess"
+"ui.key.generalAccessKey"
+"ui.key.menuAccessKey"
+"ui.key.menuAccessKeyFocuses"
+"ui.key.saveLink.shift"
+"ui.menu.incremental_search.timeout"
+"ui.mouse.radius.bottommm"
+"ui.mouse.radius.enabled"
+"ui.mouse.radius.inputSource.touchOnly"
+"ui.mouse.radius.leftmm"
+"ui.mouse.radius.rightmm"
+"ui.mouse.radius.topmm"
+"ui.mouse.radius.visitedWeight"
+"ui.osk.debug.keyboardDisplayReason"
+"ui.osk.detect_physical_keyboard"
+"ui.osk.enabled"
+"ui.osk.on_screen_keyboard_path"
+"ui.osk.require_win10"
+"ui.panel.default_level_parent"
+"ui.plugin.cancel_composition_at_input_source_changed"
+"ui.popup.disable_autohide"
+"ui.scrollToClick"
+"ui.touch_activation.delay_ms"
+"ui.touch_activation.duration_ms"
+"ui.touch.radius.bottommm"
+"ui.touch.radius.enabled"
+"ui.touch.radius.leftmm"
+"ui.touch.radius.rightmm"
+"ui.touch.radius.topmm"
+"ui.touch.radius.visitedWeight"
+"ui.trackpoint_hack.enabled"
+"ui.use_activity_cursor"
+"ui.use_native_colors"
+"ui.window_class_override"
+
+// Don't touch WebGL settings, WebGL is disabled.
+"webgl.allow-fb-invalidation"
+"webgl.angle.force-d3d11"
+"webgl.angle.force-warp"
+"webgl.angle.try-d3d11"
+"webgl.bypass-shader-validation"
+"webgl.can-lose-context-in-foreground"
+"webgl.default-no-alpha"
+"webgl.disable-angle"
+"webgl.disable-DOM-blit-uploads"
+"webgl.disable-wgl"
+"webgl.dxgl.enabled"
+"webgl.dxgl.needs-finish"
+"webgl.enable-draft-extensions"
+"webgl.enable-privileged-extensions"
+"webgl.enable-webgl2"
+"webgl.force-enabled"
+"webgl.force-index-validation"
+"webgl.force-layers-readback"
+"webgl.lose-context-on-memory-pressure"
+"webgl.max-acceptable-fb-status-invals"
+"webgl.max-perf-warnings"
+"webgl.max-warnings-per-context"
+"webgl.msaa-force"
+"webgl.prefer-16bpp"
+"webgl.renderer-string-override"
+"webgl.restore-context-when-visible"
+"webgl.vendor-string-override"
+"webgl.webgl2-compat-mode"
+
+// Don't touch predictive service (Necko) settings, Necko is disabled
+"network.predictor.cleaned-up"
+"network.predictor.enable-hover-on-ssl"
+"network.predictor.enable-prefetch"
+"network.predictor.max-resources-per-entry"
+"network.predictor.max-uri-length"
+"network.predictor.page-degradation.day"
+"network.predictor.page-degradation.max"
+"network.predictor.page-degradation.month"
+"network.predictor.page-degradation.week"
+"network.predictor.page-degradation.year"
+"network.predictor.preconnect-min-confidence"
+"network.predictor.prefetch-force-valid-for"
+"network.predictor.prefetch-min-confidence"
+"network.predictor.prefetch-rolling-load-count"
+"network.predictor.preresolve-min-confidence"
+"network.predictor.redirect-likely-confidence"
+"network.predictor.subresource-degradation.day"
+"network.predictor.subresource-degradation.max"
+"network.predictor.subresource-degradation.month"
+"network.predictor.subresource-degradation.week"
+"network.predictor.subresource-degradation.year"
+
+
