@@ -323,6 +323,7 @@ user_pref("network.protocol-handler.external.https",		false);
 user_pref("network.protocol-handler.expose-all",		false);
 user_pref("network.protocol-handler.expose.http",		true);
 user_pref("network.protocol-handler.expose.https",		true);
+user_pref("network.protocol-handler.expose.javascript",		true);
 
 /******************************************************************************
  * SECTION: Extensions / plugins                                                       *
