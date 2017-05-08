@@ -321,11 +321,13 @@ user_pref("browser.display.use_document_fonts",			0);
 user_pref("network.protocol-handler.external.http",		false);
 user_pref("network.protocol-handler.external.https",		false);
 user_pref("network.protocol-handler.external.moz-extension",	false);
+user_pref("network.protocol-handler.external.ftp",	false);
 user_pref("network.protocol-handler.expose-all",		false);
 user_pref("network.protocol-handler.expose.http",		true);
 user_pref("network.protocol-handler.expose.https",		true);
 user_pref("network.protocol-handler.expose.javascript",		true);
 user_pref("network.protocol-handler.expose.moz-extension",	true);
+user_pref("network.protocol-handler.expose.ftp",		true);
 
 /******************************************************************************
  * SECTION: Extensions / plugins                                                       *
