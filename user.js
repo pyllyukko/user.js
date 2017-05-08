@@ -320,10 +320,12 @@ user_pref("browser.display.use_document_fonts",			0);
 // If you want to enable a protocol, delete all three preferences for the protocol (external.protocolname, warn-external.protocolname, expose.protocolname).
 user_pref("network.protocol-handler.external.http",		false);
 user_pref("network.protocol-handler.external.https",		false);
+user_pref("network.protocol-handler.external.moz-extension",	false);
 user_pref("network.protocol-handler.expose-all",		false);
 user_pref("network.protocol-handler.expose.http",		true);
 user_pref("network.protocol-handler.expose.https",		true);
 user_pref("network.protocol-handler.expose.javascript",		true);
+user_pref("network.protocol-handler.expose.moz-extension",	true);
 
 /******************************************************************************
  * SECTION: Extensions / plugins                                                       *
