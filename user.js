@@ -328,6 +328,7 @@ user_pref("network.protocol-handler.expose.https",		true);
 user_pref("network.protocol-handler.expose.javascript",		true);
 user_pref("network.protocol-handler.expose.moz-extension",	true);
 user_pref("network.protocol-handler.expose.ftp",		true);
+user_pref("network.protocol-handler.expose.file",		true);
 
 /******************************************************************************
  * SECTION: Extensions / plugins                                                       *
