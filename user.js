@@ -318,6 +318,7 @@ user_pref("browser.display.use_document_fonts",			0);
 // TODO: Add externally-handled protocols from Windows 8.1 and Windows 10 (currently contains protocols only from Linux and Windows 7) that might pose a similar threat (see e.g. https://news.ycombinator.com/item?id=13044991)
 // TODO: Add externally-handled protocols from Mac OS X that might pose a similar threat (see e.g. https://news.ycombinator.com/item?id=13044991)
 // If you want to enable a protocol, delete all three preferences for the protocol (external.protocolname, warn-external.protocolname, expose.protocolname).
+user_pref("network.protocol-handler.warn-external-default",	true);
 user_pref("network.protocol-handler.external.http",		false);
 user_pref("network.protocol-handler.external.https",		false);
 user_pref("network.protocol-handler.external.javascript",	false);
