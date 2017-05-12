@@ -397,3 +397,6 @@
 // https://http2.github.io/faq/
 // https://github.com/ghacksuserjs/ghacks-user.js/issues/107
 "network.http.spdy.enabled.http2"
+
+// Don't try to prevent autorefresh of pages (meta http-equiv="refresh")
+"accessibility.blockautorefresh"
