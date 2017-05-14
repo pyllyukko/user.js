@@ -391,4 +391,9 @@
 "network.predictor.subresource-degradation.week"
 "network.predictor.subresource-degradation.year"
 
-
+// Don't alter HTTP/2.0 support
+// http://blog.scottlogic.com/2014/11/07/http-2-a-quick-look.html
+// https://queue.acm.org/detail.cfm?id=2716278
+// https://http2.github.io/faq/
+// https://github.com/ghacksuserjs/ghacks-user.js/issues/107
+"network.http.spdy.enabled.http2"
