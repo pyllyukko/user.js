@@ -391,4 +391,5 @@
 "network.predictor.subresource-degradation.week"
 "network.predictor.subresource-degradation.year"
 
-
+// Don't try to prevent autorefresh of pages (meta http-equiv="refresh")
+"accessibility.blockautorefresh"
