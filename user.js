@@ -307,7 +307,7 @@ user_pref("general.buildID.override",				"20100101");
 // https://github.com/pyllyukko/user.js/issues/120
 user_pref("browser.display.use_document_fonts",			0);
 
-// PREF: Prevent sites from using URLs such as mailto:, irc:, magnet:, ... to launch external applications
+// PREF: Enable only whitelisted URL protocol handlers
 // http://kb.mozillazine.org/Network.protocol-handler.external-default
 // http://kb.mozillazine.org/Network.protocol-handler.warn-external-default
 // http://kb.mozillazine.org/Network.protocol-handler.expose.%28protocol%29
