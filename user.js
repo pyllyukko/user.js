@@ -140,7 +140,7 @@ user_pref("browser.send_pings.require_same_host",		true);
 // http://forums.mozillazine.org/viewtopic.php?p=13842047
 // https://github.com/pyllyukko/user.js/issues/8
 // NOTICE-DISABLED: IndexedDB could be used for tracking purposes, but is required for some add-ons to work (notably uBlock), so is left enabled
-//user_pref("dom.indexedDB.enabled",		true);
+//user_pref("dom.indexedDB.enabled",		false);
 
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
 
