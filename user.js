@@ -59,7 +59,7 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 // PREF: Disable DOM storage (disabled)
 // http://kb.mozillazine.org/Dom.storage.enabled
 // https://html.spec.whatwg.org/multipage/webstorage.html
-// NOTICE: Disabling DOM storage is known to cause`TypeError: localStorage is null` errors
+// NOTICE-DISABLED: Disabling DOM storage is known to cause`TypeError: localStorage is null` errors
 //user_pref("dom.storage.enabled",		false);
 
 // PREF: Disable leaking network/browser connection information via Javascript
@@ -139,7 +139,7 @@ user_pref("browser.send_pings.require_same_host",		true);
 // https://wiki.mozilla.org/Security/Reviews/Firefox4/IndexedDB_Security_Review
 // http://forums.mozillazine.org/viewtopic.php?p=13842047
 // https://github.com/pyllyukko/user.js/issues/8
-// NOTICE: IndexedDB could be used for tracking purposes, but is required for some add-ons to work (notably uBlock), so is left enabled
+// NOTICE-DISABLED: IndexedDB could be used for tracking purposes, but is required for some add-ons to work (notably uBlock), so is left enabled
 //user_pref("dom.indexedDB.enabled",		true);
 
 // TODO: "Access Your Location" "Maintain Offline Storage" "Show Notifications"
@@ -502,7 +502,7 @@ user_pref("browser.selfsupport.url",				"");
 // PREF: Disable Firefox Hello (disabled) (Firefox < 49)
 // https://wiki.mozilla.org/Loop
 // https://support.mozilla.org/t5/Chat-and-share/Support-for-Hello-discontinued-in-Firefox-49/ta-p/37946
-// NOTICE: Firefox Hello requires setting `media.peerconnection.enabled` and `media.getusermedia.screensharing.enabled` to true, `security.OCSP.require` to false to work.
+// NOTICE-DISABLED: Firefox Hello requires setting `media.peerconnection.enabled` and `media.getusermedia.screensharing.enabled` to true, `security.OCSP.require` to false to work.
 //user_pref("loop.enabled",		false);
 
 // PREF: Disable Firefox Hello metrics collection
