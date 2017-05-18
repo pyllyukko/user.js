@@ -761,7 +761,7 @@ user_pref("signon.autofillForms.http",				false);
 // https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317
 user_pref("security.insecure_field_warning.contextual.enabled", true);
 
-// PREF: Disable the password manager for pages with autocomplete=off
+// PREF: Disable the password manager for pages with autocomplete=off (disabled)
 // https://bugzilla.mozilla.org/show_bug.cgi?id=956906
 // OWASP ASVS V9.1
 // Does not prevent any kind of auto-completion (see browser.formfill.enable, signon.autofillForms)
