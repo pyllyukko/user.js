@@ -281,7 +281,6 @@ Enable and configure private browsing mode, don't store information locally duri
 * Require manual intervention to autofill known username/passwords sign-in forms [ [1](http://kb.mozillazine.org/Signon.autofillForms) [2](https://www.torproject.org/projects/torbrowser/design/#identifier-linkability) ]
 * When username/password autofill is enabled, still disable it on non-HTTPS sites [ [1](https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317) ]
 * Show in-content login form warning UI for insecure login fields [ [1](https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317) ]
-* Disable the password manager for pages with autocomplete=off [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=956906) ]
 * Delete Search and Form History
 * Clear SSL Form Session Data [ [1](http://kb.mozillazine.org/Browser.sessionstore.privacy_level#2) ]
 * Delete temporary files on exit [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=238789) ]
