@@ -919,7 +919,7 @@ user_pref("security.OCSP.enabled",				1);
 // https://www.digitalocean.com/community/tutorials/how-to-configure-ocsp-stapling-on-apache-and-nginx
 user_pref("security.ssl.enable_ocsp_stapling",			true);
 
-// PREF: Enable OCSP Must-Staple support (45+)
+// PREF: Enable OCSP Must-Staple support (Firefox >= 45)
 // https://blog.mozilla.org/security/2015/11/23/improving-revocation-ocsp-must-staple-and-short-lived-certificates/
 // https://www.entrust.com/ocsp-must-staple/
 // https://github.com/schomery/privacy-settings/issues/40
@@ -1061,7 +1061,7 @@ user_pref("security.ssl3.ecdhe_ecdsa_aes_256_sha",		true); // 0xc00a
 user_pref("security.ssl3.ecdhe_ecdsa_aes_128_gcm_sha256",	true); // 0xc02b
 user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		true); // 0xc02f
 
-// PREF: Enable ChaCha20 and Poly1305 (47+)
+// PREF: Enable ChaCha20 and Poly1305 (Firefox >= 47)
 // https://www.mozilla.org/en-US/firefox/47.0/releasenotes/
 // https://tools.ietf.org/html/rfc7905
 // https://bugzilla.mozilla.org/show_bug.cgi?id=917571
