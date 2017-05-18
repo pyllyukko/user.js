@@ -482,7 +482,7 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 
 * [BrowserSpy.dk](http://browserspy.dk/)
 * [BrowserLeaks.com](https://www.browserleaks.com/firefox)
-* [AmIUnique](https://amiunique.org/) ([1](https://github.com/DIVERSIFY-project/amiunique))
+* [AmIUnique](https://amiunique.org/) [[1](https://github.com/DIVERSIFY-project/amiunique)]
 * [Panopticlick](https://panopticlick.eff.org/)
 * [Unique Machine](http://www.uniquemachine.org/)
 * [Firefox Addon Detector](https://thehackerblog.com/addon_scanner/) [[1](https://thehackerblog.com/dirty-browser-enumeration-tricks-using-chrome-and-about-to-detect-firefox-plugins/)]
