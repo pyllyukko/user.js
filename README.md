@@ -4,7 +4,9 @@
 
 A [user.js](http://kb.mozillazine.org/User.js_file) configuration file for [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/) designed to harden browser settings and make it more secure.
 
-[![Build Status](https://travis-ci.org/pyllyukko/user.js.svg?branch=master)](https://travis-ci.org/pyllyukko/user.js)
+**This a relaxed variant. [Differences with the original hardened version](https://github.com/pyllyukko/user.js/compare/relaxed)**
+
+[![Build Status](https://travis-ci.org/pyllyukko/user.js.svg?branch=relaxed)](https://travis-ci.org/pyllyukko/user.js)
 
 ### Main goals
 
