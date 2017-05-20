@@ -7,11 +7,11 @@
  * SECTION: HTML5 / APIs / DOM                                                *
  ******************************************************************************/
 
-// PREF: Disable Service Workers
+// PREF: Disable Service Workers (disabled)
 // https://developer.mozilla.org/en-US/docs/Web/API/Worker
 // https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker_API
 // https://wiki.mozilla.org/Firefox/Push_Notifications#Service_Workers
-// NOTICE: Disabling ServiceWorkers breaks functionality on some sites (Google Street View...)
+// NOTICE-DISABLED: Disabling ServiceWorkers breaks functionality on some sites (Google Street View...)
 // Unknown security implications
 // CVE-2016-5259, CVE-2016-2812, CVE-2016-1949, CVE-2016-5287 (fixed)
 //user_pref("dom.serviceWorkers.enabled",				false);
@@ -21,7 +21,7 @@
 // https://www.w3schools.com/html/html5_webworkers.asp
 user_pref("dom.workers.enabled",					false);
 
-// PREF: Disable web notifications
+// PREF: Disable web notifications (disabled)
 // https://support.mozilla.org/t5/Firefox/I-can-t-find-Firefox-menu-I-m-trying-to-opt-out-of-Web-Push-and/m-p/1317495#M1006501
 //user_pref("dom.webnotifications.enabled",			false);
 
@@ -668,13 +668,13 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
  * SECTION: Caching                                                            *
  ******************************************************************************/
 
-// PREF: Permanently enable private browsing mode
+// PREF: Permanently enable private browsing mode (disabled)
 // https://support.mozilla.org/en-US/kb/Private-Browsing
 // https://wiki.mozilla.org/PrivateBrowsing
-// NOTICE: You can not view or inspect cookies when in private browsing: https://bugzilla.mozilla.org/show_bug.cgi?id=823941
-// NOTICE: When Javascript is enabled, Websites can detect use of Private Browsing mode
-// NOTICE: Private browsing breaks Kerberos authentication
-// NOTICE: Disables "Containers" functionality (see below)
+// NOTICE-DISABLED: You can not view or inspect cookies when in private browsing: https://bugzilla.mozilla.org/show_bug.cgi?id=823941
+// NOTICE-DISABLED: When Javascript is enabled, Websites can detect use of Private Browsing mode
+// NOTICE-DISABLED: Private browsing breaks Kerberos authentication
+// NOTICE-DISABLED: Disables "Containers" functionality (see below)
 //user_pref("browser.privatebrowsing.autostart",			true);
 
 // PREF: Do not store POST data in saved sessions
@@ -692,7 +692,7 @@ user_pref("browser.cache.offline.enable",			false);
 
 // PREF: Clear history when Firefox closes
 // https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically
-// NOTICE: Installing user.js will **remove your saved passwords** (https://github.com/pyllyukko/user.js/issues/27)
+// NOTICE-DISABLED: Installing user.js will **remove your saved passwords** (https://github.com/pyllyukko/user.js/issues/27)
 // NOTICE: Clearing open windows on Firefox exit causes 2 windows to open when Firefox starts https://bugzilla.mozilla.org/show_bug.cgi?id=1334945
 user_pref("privacy.sanitize.sanitizeOnShutdown",		true);
 user_pref("privacy.clearOnShutdown.cache",			true);
@@ -744,10 +744,11 @@ user_pref("signon.rememberSignons",				false);
 // PREF: Disable form autofill, don't save information entered in web page forms and the Search Bar
 user_pref("browser.formfill.enable",				false);
 
-// PREF: Cookies expires at the end of the session (when the browser closes)
+// PREF: Cookies expires at the end of the session (when the browser closes) (disabled)
 // http://kb.mozillazine.org/Network.cookie.lifetimePolicy#2
 //user_pref("network.cookie.lifetimePolicy",			2);
-// The cookie's lifetime is supplied by the server
+
+// PREF: The cookie's lifetime is supplied by the server
 user_pref("network.cookie.lifetimePolicy",			0);
 
 // PREF: Require manual intervention to autofill known username/passwords sign-in forms
@@ -858,7 +859,7 @@ user_pref("network.IDN_show_punycode",				true);
 user_pref("browser.urlbar.autoFill",				false);
 user_pref("browser.urlbar.autoFill.typed",			false);
 
-// PREF: Don't suggest any URLs while typing at the address bar
+// PREF: Don't suggest any URLs while typing at the address bar (disabled)
 // https://www.labnol.org/software/browsers/prevent-firefox-showing-bookmarks-address-location-bar/3636/
 // http://kb.mozillazine.org/Browser.urlbar.maxRichResults
 // "Setting the preference to 0 effectively disables the Location Bar dropdown entirely."
@@ -872,7 +873,7 @@ user_pref("layout.css.visited_links_enabled",			false);
 // PREF: ?? (disabled)
 // http://kb.mozillazine.org/Places.frecency.unvisited%28place_type%29Bonus
 
-// PREF: Disable URL bar autocomplete
+// PREF: Disable URL bar autocomplete (disabled)
 // http://kb.mozillazine.org/Disabling_autocomplete_-_Firefox#Firefox_3.5
 //user_pref("browser.urlbar.autocomplete.enabled",		false);
 
