@@ -856,12 +856,6 @@ user_pref("network.IDN_show_punycode",				true);
 user_pref("browser.urlbar.autoFill",				false);
 user_pref("browser.urlbar.autoFill.typed",			false);
 
-// PREF: Don't suggest any URLs while typing at the address bar
-// https://www.labnol.org/software/browsers/prevent-firefox-showing-bookmarks-address-location-bar/3636/
-// http://kb.mozillazine.org/Browser.urlbar.maxRichResults
-// "Setting the preference to 0 effectively disables the Location Bar dropdown entirely."
-user_pref("browser.urlbar.maxRichResults",			0);
-
 // PREF: Disable CSS :visited selectors
 // https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/
 // https://dbaron.org/mozilla/visited-privacy
