@@ -687,10 +687,6 @@ user_pref("browser.privatebrowsing.autostart",			true);
 // relates to CIS 2.5.7
 user_pref("browser.sessionstore.postdata",			0);
 
-// PREF: Disable the Session Restore service
-// http://kb.mozillazine.org/Browser.sessionstore.enabled
-user_pref("browser.sessionstore.enabled",			false);
-
 // PREF: Do not download URLs for the offline cache
 // http://kb.mozillazine.org/Browser.cache.offline.enable
 user_pref("browser.cache.offline.enable",			false);
