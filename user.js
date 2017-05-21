@@ -157,6 +157,10 @@ user_pref("dom.vr.enabled",					false);
 // PREF: Disable vibrator API
 user_pref("dom.vibrator.enabled",           false);
 
+// PREF: Disable Archive API
+// https://wiki.mozilla.org/WebAPI/ArchiveAPI
+user_pref("dom.archivereader.enabled",				false);
+
 // PREF: Disable webGL
 // https://en.wikipedia.org/wiki/WebGL
 // https://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
