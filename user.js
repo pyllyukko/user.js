@@ -157,8 +157,9 @@ user_pref("dom.vr.enabled",					false);
 // PREF: Disable vibrator API
 user_pref("dom.vibrator.enabled",           false);
 
-// PREF: Disable Archive API
+// PREF: Disable Archive API (Firefox < 54)
 // https://wiki.mozilla.org/WebAPI/ArchiveAPI
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1342361
 user_pref("dom.archivereader.enabled",				false);
 
 // PREF: Disable webGL
