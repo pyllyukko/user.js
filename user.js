@@ -237,7 +237,8 @@ user_pref("browser.urlbar.trimURLs",				false);
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
 user_pref("browser.fixup.alternate.enabled",			false);
 
-// PREF: When browser.fixup.alternate.enabled is enabled, do not fix URLs containing 'user:password' data
+// PREF: When browser.fixup.alternate.enabled is enabled, strip password from 'user:password@...' URLs
+// https://github.com/pyllyukko/user.js/issues/290#issuecomment-303560851
 user_pref("browser.fixup.hide_user_pass", true);
 
 // PREF: Send DNS request through SOCKS when SOCKS proxying is in use
