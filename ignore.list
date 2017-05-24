@@ -400,3 +400,10 @@
 
 // Don't try to prevent autorefresh of pages (meta http-equiv="refresh")
 "accessibility.blockautorefresh"
+
+// Number of suggested history/bookmarks items in the URL bar dropdown
+// https://www.labnol.org/software/browsers/prevent-firefox-showing-bookmarks-address-location-bar/3636/
+// http://kb.mozillazine.org/Browser.urlbar.maxRichResults
+// When browser.urlbar.autocomplete.enabled is false, the dropdown is disabled
+// Setting the preference to 0 effectively disables the Location Bar dropdown entirely
+user_pref("browser.urlbar.maxRichResults",			0);
