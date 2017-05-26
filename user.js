@@ -869,7 +869,7 @@ user_pref("layout.css.visited_links_enabled",			false);
 // PREF: ?? (disabled)
 // http://kb.mozillazine.org/Places.frecency.unvisited%28place_type%29Bonus
 
-// PREF: Disable URL bar autocomplete
+// PREF: Disable URL bar autocomplete and history/bookmarks suggestions dropdown
 // http://kb.mozillazine.org/Disabling_autocomplete_-_Firefox#Firefox_3.5
 user_pref("browser.urlbar.autocomplete.enabled",		false);
 
