@@ -717,8 +717,9 @@ user_pref("browser.helperApps.deleteTempFileOnExit",		true);
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/browser.pagethumbnails.capturing_disabled
 user_pref("browser.pagethumbnails.capturing_disabled",		true);
 
-// PREF: Don't fetch and permanently store bookmarks favicons to $profile_dir/shortcutCache
-// NOTICE: Bookmarks will only be shown with a generic icon
+// PREF: Don't fetch and permanently store favicons for Windows .URL shortcuts created by drag and drop
+// NOTICE: .URL shortcut files will be created with a generic icon
+// Favicons are stored as .ico files in $profile_dir\shortcutCache
 user_pref("browser.shell.shortcutFavicons",					false);
 
 // PREF: Disable bookmarks backups (default: 15)
