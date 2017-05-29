@@ -407,3 +407,8 @@
 // When browser.urlbar.autocomplete.enabled is false, the dropdown is disabled
 // Setting the preference to 0 effectively disables the Location Bar dropdown entirely
 user_pref("browser.urlbar.maxRichResults",			0);
+
+
+// privacy.clearOnShutdown.passwords was removed in Firefox 42
+// https://hg.mozilla.org/releases/mozilla-esr45/rev/fb4f42bbeb01
+"privacy.clearOnShutdown.passwords"

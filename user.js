@@ -711,7 +711,6 @@ user_pref("privacy.clearOnShutdown.downloads",			true);
 user_pref("privacy.clearOnShutdown.formdata",			true);
 user_pref("privacy.clearOnShutdown.history",			true);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
-user_pref("privacy.clearOnShutdown.passwords",			true);
 user_pref("privacy.clearOnShutdown.sessions",			true);
 user_pref("privacy.clearOnShutdown.openWindows",		true);
 
