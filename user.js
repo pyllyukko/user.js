@@ -364,11 +364,11 @@ user_pref("extensions.getAddons.cache.enabled",			false);
 // https://support.mozilla.org/t5/Firefox/how-do-I-prevent-autoamtic-updates-in-a-50-user-environment/td-p/144287
 user_pref("lightweightThemes.update.enabled",			false);
 
-// PREF: Flash Player plugin state - never activate
+// PREF: Disable Flash Player NPAPI plugin
 // http://kb.mozillazine.org/Flash_plugin
 user_pref("plugin.state.flash",					0);
 
-// PREF: Java plugin state - never activate
+// PREF: Disable Java NPAPI plugin
 user_pref("plugin.state.java",					0);
 
 // PREF: Disable sending Flash Player crash reports
@@ -386,7 +386,7 @@ user_pref("browser.safebrowsing.blockedURIs.enabled", true);
 // https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Shumway
 pref("shumway.disabled", true);
 
-// PREF: Disable Gnome Shell Integration
+// PREF: Disable Gnome Shell Integration NPAPI plugin
 user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
 
 // PREF: Disable the bundled OpenH264 video codec (disabled)
