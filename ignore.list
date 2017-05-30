@@ -406,7 +406,7 @@
 // http://kb.mozillazine.org/Browser.urlbar.maxRichResults
 // When browser.urlbar.autocomplete.enabled is false, the dropdown is disabled
 // Setting the preference to 0 effectively disables the Location Bar dropdown entirely
-user_pref("browser.urlbar.maxRichResults",			0);
+"browser.urlbar.maxRichResults"
 
 
 // privacy.clearOnShutdown.passwords was removed in Firefox 42
@@ -426,4 +426,4 @@ user_pref("browser.urlbar.maxRichResults",			0);
 // https://hg.mozilla.org/mozilla-central/rev/163997
 // http://kb.mozillazine.org/Browser.sessionstore.postdata
 // relates to CIS 2.5.7
-user_pref("browser.sessionstore.postdata",			0);
+"browser.sessionstore.postdata"
