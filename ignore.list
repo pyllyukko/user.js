@@ -412,3 +412,7 @@ user_pref("browser.urlbar.maxRichResults",			0);
 // privacy.clearOnShutdown.passwords was removed in Firefox 42
 // https://hg.mozilla.org/releases/mozilla-esr45/rev/fb4f42bbeb01
 "privacy.clearOnShutdown.passwords"
+
+// Old Firefox 3.1a2 pref
+// https://hg.mozilla.org/mozilla-central/rev/adb1ef78dd21
+"browser.sessionstore.enabled"
