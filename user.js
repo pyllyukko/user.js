@@ -364,11 +364,11 @@ user_pref("extensions.getAddons.cache.enabled",			false);
 // https://support.mozilla.org/t5/Firefox/how-do-I-prevent-autoamtic-updates-in-a-50-user-environment/td-p/144287
 user_pref("lightweightThemes.update.enabled",			false);
 
-// PREF: Flash Player plugin state - never activate
+// PREF: Disable Flash Player NPAPI plugin
 // http://kb.mozillazine.org/Flash_plugin
 user_pref("plugin.state.flash",					0);
 
-// PREF: Java plugin state - never activate
+// PREF: Disable Java NPAPI plugin
 user_pref("plugin.state.java",					0);
 
 // PREF: Disable sending Flash Player crash reports
@@ -386,7 +386,7 @@ user_pref("browser.safebrowsing.blockedURIs.enabled", true);
 // https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Shumway
 pref("shumway.disabled", true);
 
-// PREF: Disable Gnome Shell Integration
+// PREF: Disable Gnome Shell Integration NPAPI plugin
 user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
 
 // PREF: Disable the bundled OpenH264 video codec (disabled)
@@ -691,11 +691,6 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
 // NOTICE: Disables "Containers" functionality (see below)
 user_pref("browser.privatebrowsing.autostart",			true);
 
-// PREF: Do not store POST data in saved sessions
-// http://kb.mozillazine.org/Browser.sessionstore.postdata
-// relates to CIS 2.5.7
-user_pref("browser.sessionstore.postdata",			0);
-
 // PREF: Do not download URLs for the offline cache
 // http://kb.mozillazine.org/Browser.cache.offline.enable
 user_pref("browser.cache.offline.enable",			false);
@@ -711,7 +706,6 @@ user_pref("privacy.clearOnShutdown.downloads",			true);
 user_pref("privacy.clearOnShutdown.formdata",			true);
 user_pref("privacy.clearOnShutdown.history",			true);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
-user_pref("privacy.clearOnShutdown.passwords",			true);
 user_pref("privacy.clearOnShutdown.sessions",			true);
 user_pref("privacy.clearOnShutdown.openWindows",		true);
 
@@ -842,15 +836,12 @@ user_pref("browser.newtab.preload",				false);
 user_pref("browser.newtabpage.directory.ping",			"");
 user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 
-// PREF: Enable Auto Notification of Outdated Plugins
+// PREF: Enable Auto Notification of Outdated Plugins (Firefox < 50)
 // https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review
 // CIS Version 1.2.0 October 21st, 2011 2.1.2
+// https://hg.mozilla.org/mozilla-central/rev/304560
 user_pref("plugins.update.notifyUser",				true);
 
-// PREF: Enable Information Bar for Outdated Plugins
-// http://forums.mozillazine.org/viewtopic.php?f=8&t=2490287
-// CIS Version 1.2.0 October 21st, 2011 2.1.3
-user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
 
 // PREF: Force Punycode for Internationalized Domain Names
 // http://kb.mozillazine.org/Network.IDN_show_punycode

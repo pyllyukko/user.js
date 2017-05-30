@@ -406,4 +406,24 @@
 // http://kb.mozillazine.org/Browser.urlbar.maxRichResults
 // When browser.urlbar.autocomplete.enabled is false, the dropdown is disabled
 // Setting the preference to 0 effectively disables the Location Bar dropdown entirely
-user_pref("browser.urlbar.maxRichResults",			0);
+"browser.urlbar.maxRichResults"
+
+
+// privacy.clearOnShutdown.passwords was removed in Firefox 42
+// https://hg.mozilla.org/releases/mozilla-esr45/rev/fb4f42bbeb01
+"privacy.clearOnShutdown.passwords"
+
+// Old Firefox 3.1a2 pref
+// https://hg.mozilla.org/mozilla-central/rev/adb1ef78dd21
+"browser.sessionstore.enabled"
+
+// PREF: Enable Information Bar for Outdated Plugins (Firefox < 33)
+// http://forums.mozillazine.org/viewtopic.php?f=8&t=2490287
+// https://hg.mozilla.org/mozilla-central/rev/189803
+"plugins.hide_infobar_for_outdated_plugin"
+
+// PREF: Do not store POST data in saved sessions (Firefox < 29)
+// https://hg.mozilla.org/mozilla-central/rev/163997
+// http://kb.mozillazine.org/Browser.sessionstore.postdata
+// relates to CIS 2.5.7
+"browser.sessionstore.postdata"
