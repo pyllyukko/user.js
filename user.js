@@ -844,12 +844,9 @@ user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 // PREF: Enable Auto Notification of Outdated Plugins
 // https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review
 // CIS Version 1.2.0 October 21st, 2011 2.1.2
+// TODO removed in FF50 ? (#290)
 user_pref("plugins.update.notifyUser",				true);
 
-// PREF: Enable Information Bar for Outdated Plugins
-// http://forums.mozillazine.org/viewtopic.php?f=8&t=2490287
-// CIS Version 1.2.0 October 21st, 2011 2.1.3
-user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
 
 // PREF: Force Punycode for Internationalized Domain Names
 // http://kb.mozillazine.org/Network.IDN_show_punycode

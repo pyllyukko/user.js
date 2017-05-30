@@ -416,3 +416,8 @@ user_pref("browser.urlbar.maxRichResults",			0);
 // Old Firefox 3.1a2 pref
 // https://hg.mozilla.org/mozilla-central/rev/adb1ef78dd21
 "browser.sessionstore.enabled"
+
+// PREF: Enable Information Bar for Outdated Plugins (Firefox < 33)
+// http://forums.mozillazine.org/viewtopic.php?f=8&t=2490287
+// https://hg.mozilla.org/mozilla-central/rev/189803
+"plugins.hide_infobar_for_outdated_plugin"
