@@ -691,11 +691,6 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
 // NOTICE: Disables "Containers" functionality (see below)
 user_pref("browser.privatebrowsing.autostart",			true);
 
-// PREF: Do not store POST data in saved sessions
-// http://kb.mozillazine.org/Browser.sessionstore.postdata
-// relates to CIS 2.5.7
-user_pref("browser.sessionstore.postdata",			0);
-
 // PREF: Do not download URLs for the offline cache
 // http://kb.mozillazine.org/Browser.cache.offline.enable
 user_pref("browser.cache.offline.enable",			false);
