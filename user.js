@@ -334,6 +334,7 @@ user_pref("network.protocol-handler.external.moz-extension",	false);
 user_pref("network.protocol-handler.external.ftp",		false);
 user_pref("network.protocol-handler.external.file",		false);
 user_pref("network.protocol-handler.external.about",		false);
+user_pref("network.protocol-handler.external.chrome",		false);
 user_pref("network.protocol-handler.expose-all",		false);
 user_pref("network.protocol-handler.expose.http",		true);
 user_pref("network.protocol-handler.expose.https",		true);
@@ -342,6 +343,7 @@ user_pref("network.protocol-handler.expose.moz-extension",	true);
 user_pref("network.protocol-handler.expose.ftp",		true);
 user_pref("network.protocol-handler.expose.file",		true);
 user_pref("network.protocol-handler.expose.about",		true);
+user_pref("network.protocol-handler.expose.chrome",		true);
 
 /******************************************************************************
  * SECTION: Extensions / plugins                                                       *
