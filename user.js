@@ -308,7 +308,8 @@ user_pref("media.video_stats.enabled",				false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=583181
 user_pref("general.buildID.override",				"20100101");
 
-// PREF: Prevent font fingerprinting
+// PREF: Don't let websites specify which fonts to use to prevent font fingerprinting
+// NOTICE: Disabling document fonts breaks functionality websites using custom icon fonts
 // https://browserleaks.com/fonts
 // https://github.com/pyllyukko/user.js/issues/120
 user_pref("browser.display.use_document_fonts",			0);
