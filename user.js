@@ -882,6 +882,18 @@ user_pref("security.password_lifetime",				1);
 // http://kb.mozillazine.org/Browser.offline-apps.notify
 user_pref("browser.offline-apps.notify",			true);
 
+// Set homepage at browser startup to empty page
+// user_pref("browser.startup.homepage", "about:blank");
+
+// Don't show information page after upgrades
+// http://kb.mozillazine.org/Startup.homepage_override_url
+// user_pref("startup.homepage_override_url", "about:blank");
+
+// Disable first-run welcome page
+// http://kb.mozillazine.org/Startup.homepage_welcome_url
+// user_pref("startup.homepage_welcome_url", "about:blank");
+// user_pref("startup.homepage_welcome_url.additional", "about:blank");
+
 /******************************************************************************
  * SECTION: Cryptography                                                      *
  ******************************************************************************/
