@@ -6,6 +6,15 @@
 /******************************************************************************
  * SECTION: HTML5 / APIs / DOM                                                *
  ******************************************************************************/
+ 
+// Disable Web push:
+// https://en.wikipedia.org/wiki/Push_technology
+// https://www.ietf.org/mail-archive/web/webpush/current/threads.html#00182
+user_pref("dom.push.connection.enabled", false);
+user_pref("dom.push.enabled", false);
+user_pref("dom.push.serverURL", "");
+user_pref("dom.push.udp.wakeupEnabled", false);
+user_pref("dom.push.userAgentID", "");
 
 // PREF: Disable Service Workers
 // https://developer.mozilla.org/en-US/docs/Web/API/Worker
