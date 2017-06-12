@@ -532,6 +532,7 @@ user_pref("loop.logDomains",					false);
 
 // PREF: Enforce checking for Firefox updates
 // http://kb.mozillazine.org/App.update.enabled
+// NOTICE: Update check page might incorrectly report Firefox ESR as out-of-date
 user_pref("app.update.enabled",                 true);
 
 // PREF: Enable blocking reported web forgeries
