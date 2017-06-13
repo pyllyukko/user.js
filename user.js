@@ -107,7 +107,7 @@ user_pref("beacon.enabled",					false);
 // user_pref("dom.event.clipboardevents.enabled",			false);
 
 // PREF: Disable "copy to clipboard" functionality via Javascript (Firefox >= 41) (disabled)
-// NOTICE: Disabling clipboard operations will break legitimate JS-based "copy to clipboard" functionality
+// NOTICE-DISABLED: Disabling clipboard operations will break legitimate JS-based "copy to clipboard" functionality
 // https://hg.mozilla.org/mozilla-central/rev/2f9f8ea4b9c3
 // user_pref("dom.allow_cut_copy", false);
 
