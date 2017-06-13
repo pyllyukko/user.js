@@ -237,7 +237,8 @@ user_pref("browser.urlbar.trimURLs",				false);
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
 user_pref("browser.fixup.alternate.enabled",			false);
 
-// PREF: When browser.fixup.alternate.enabled is enabled, do not fix URLs containing 'user:password' data
+// PREF: When browser.fixup.alternate.enabled is enabled, strip password from 'user:password@...' URLs
+// https://github.com/pyllyukko/user.js/issues/290#issuecomment-303560851
 user_pref("browser.fixup.hide_user_pass", true);
 
 // PREF: Send DNS request through SOCKS when SOCKS proxying is in use
@@ -322,7 +323,9 @@ user_pref("browser.display.use_document_fonts",			0);
 // NOTICE: Disabling nonessential protocols breaks all interaction with custom protocols such as mailto:, irc:, magnet: ... and breaks opening third-party mail/messaging/torrent/... clients when clicking on links with these protocols
 // TODO: Add externally-handled protocols from Windows 8.1 and Windows 10 (currently contains protocols only from Linux and Windows 7) that might pose a similar threat (see e.g. https://news.ycombinator.com/item?id=13044991)
 // TODO: Add externally-handled protocols from Mac OS X that might pose a similar threat (see e.g. https://news.ycombinator.com/item?id=13044991)
-// If you want to enable a protocol, delete all three preferences for the protocol (external.protocolname, warn-external.protocolname, expose.protocolname).
+// If you want to enable a protocol, set network.protocol-handler.expose.(protocol) to true and network.protocol-handler.external.(protocol) to:
+//   * true, if the protocol should be handled by an external application
+//   * false, if the protocol should be handled internally by Firefox
 user_pref("network.protocol-handler.warn-external-default",	true);
 user_pref("network.protocol-handler.external.http",		false);
 user_pref("network.protocol-handler.external.https",		false);
@@ -330,6 +333,8 @@ user_pref("network.protocol-handler.external.javascript",	false);
 user_pref("network.protocol-handler.external.moz-extension",	false);
 user_pref("network.protocol-handler.external.ftp",		false);
 user_pref("network.protocol-handler.external.file",		false);
+user_pref("network.protocol-handler.external.about",		false);
+user_pref("network.protocol-handler.external.chrome",		false);
 user_pref("network.protocol-handler.expose-all",		false);
 user_pref("network.protocol-handler.expose.http",		true);
 user_pref("network.protocol-handler.expose.https",		true);
@@ -337,6 +342,8 @@ user_pref("network.protocol-handler.expose.javascript",		true);
 user_pref("network.protocol-handler.expose.moz-extension",	true);
 user_pref("network.protocol-handler.expose.ftp",		true);
 user_pref("network.protocol-handler.expose.file",		true);
+user_pref("network.protocol-handler.expose.about",		true);
+user_pref("network.protocol-handler.expose.chrome",		true);
 
 /******************************************************************************
  * SECTION: Extensions / plugins                                                       *
@@ -359,11 +366,11 @@ user_pref("extensions.getAddons.cache.enabled",			false);
 // https://support.mozilla.org/t5/Firefox/how-do-I-prevent-autoamtic-updates-in-a-50-user-environment/td-p/144287
 user_pref("lightweightThemes.update.enabled",			false);
 
-// PREF: Flash Player plugin state - never activate
+// PREF: Disable Flash Player NPAPI plugin
 // http://kb.mozillazine.org/Flash_plugin
 user_pref("plugin.state.flash",					0);
 
-// PREF: Java plugin state - never activate
+// PREF: Disable Java NPAPI plugin
 user_pref("plugin.state.java",					0);
 
 // PREF: Disable sending Flash Player crash reports
@@ -377,7 +384,11 @@ user_pref("dom.ipc.plugins.reportCrashURL",			false);
 // https://github.com/mozilla-services/shavar-plugin-blocklist
 user_pref("browser.safebrowsing.blockedURIs.enabled", true);
 
-// PREF: Disable Gnome Shell Integration
+// PREF: Disable Shumway (Mozilla Flash renderer)
+// https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Shumway
+pref("shumway.disabled", true);
+
+// PREF: Disable Gnome Shell Integration NPAPI plugin
 user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
 
 // PREF: Disable the bundled OpenH264 video codec (disabled)
@@ -521,6 +532,7 @@ user_pref("loop.logDomains",					false);
 
 // PREF: Enforce checking for Firefox updates
 // http://kb.mozillazine.org/App.update.enabled
+// NOTICE: Update check page might incorrectly report Firefox ESR as out-of-date
 user_pref("app.update.enabled",                 true);
 
 // PREF: Enable blocking reported web forgeries
@@ -682,15 +694,6 @@ user_pref("network.cookie.thirdparty.sessionOnly",		true);
 // NOTICE-DISABLED: Disables "Containers" functionality (see below)
 //user_pref("browser.privatebrowsing.autostart",			true);
 
-// PREF: Do not store POST data in saved sessions
-// http://kb.mozillazine.org/Browser.sessionstore.postdata
-// relates to CIS 2.5.7
-user_pref("browser.sessionstore.postdata",			0);
-
-// PREF: Disable the Session Restore service
-// http://kb.mozillazine.org/Browser.sessionstore.enabled
-user_pref("browser.sessionstore.enabled",			false);
-
 // PREF: Do not download URLs for the offline cache
 // http://kb.mozillazine.org/Browser.cache.offline.enable
 user_pref("browser.cache.offline.enable",			false);
@@ -706,7 +709,6 @@ user_pref("privacy.clearOnShutdown.downloads",			true);
 user_pref("privacy.clearOnShutdown.formdata",			true);
 user_pref("privacy.clearOnShutdown.history",			true);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
-//user_pref("privacy.clearOnShutdown.passwords",			true);
 user_pref("privacy.clearOnShutdown.sessions",			true);
 user_pref("privacy.clearOnShutdown.openWindows",		true);
 
@@ -795,6 +797,15 @@ user_pref("browser.helperApps.deleteTempFileOnExit",		true);
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/browser.pagethumbnails.capturing_disabled
 user_pref("browser.pagethumbnails.capturing_disabled",		true);
 
+// PREF: Don't fetch and permanently store favicons for Windows .URL shortcuts created by drag and drop
+// NOTICE: .URL shortcut files will be created with a generic icon
+// Favicons are stored as .ico files in $profile_dir\shortcutCache
+user_pref("browser.shell.shortcutFavicons",					false);
+
+// PREF: Disable bookmarks backups (default: 15)
+// http://kb.mozillazine.org/Browser.bookmarks.max_backups
+user_pref("browser.bookmarks.max_backups", 0);
+
 /*******************************************************************************
  * SECTION: UI related                                                         *
  *******************************************************************************/
@@ -840,15 +851,12 @@ user_pref("browser.newtab.preload",				false);
 user_pref("browser.newtabpage.directory.ping",			"");
 user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 
-// PREF: Enable Auto Notification of Outdated Plugins
+// PREF: Enable Auto Notification of Outdated Plugins (Firefox < 50)
 // https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review
 // CIS Version 1.2.0 October 21st, 2011 2.1.2
+// https://hg.mozilla.org/mozilla-central/rev/304560
 user_pref("plugins.update.notifyUser",				true);
 
-// PREF: Enable Information Bar for Outdated Plugins
-// http://forums.mozillazine.org/viewtopic.php?f=8&t=2490287
-// CIS Version 1.2.0 October 21st, 2011 2.1.3
-user_pref("plugins.hide_infobar_for_outdated_plugin",		false);
 
 // PREF: Force Punycode for Internationalized Domain Names
 // http://kb.mozillazine.org/Network.IDN_show_punycode
@@ -869,10 +877,8 @@ user_pref("browser.urlbar.autoFill.typed",			false);
 // https://dbaron.org/mozilla/visited-privacy
 user_pref("layout.css.visited_links_enabled",			false);
 
-// PREF: ?? (disabled)
-// http://kb.mozillazine.org/Places.frecency.unvisited%28place_type%29Bonus
-
-// PREF: Disable URL bar autocomplete (disabled)
+// PREF: Disable URL bar autocomplete and history/bookmarks suggestions dropdown (disabled)
+// http://kb.mozillazine.org/Disabling_autocomplete_-_Firefox#Firefox_3.5
 // http://kb.mozillazine.org/Disabling_autocomplete_-_Firefox#Firefox_3.5
 //user_pref("browser.urlbar.autocomplete.enabled",		false);
 
@@ -885,6 +891,10 @@ user_pref("security.ask_for_password",				2);
 
 // PREF: Lock the password storage every 1 minutes (default: 30)
 user_pref("security.password_lifetime",				1);
+
+// PREF: Display a notification bar when websites offer data for offline use
+// http://kb.mozillazine.org/Browser.offline-apps.notify
+user_pref("browser.offline-apps.notify",			true);
 
 /******************************************************************************
  * SECTION: Cryptography                                                      *
