@@ -487,3 +487,12 @@
 // PREF: Disable fullscreen/tabs/alerts animations (Firefox >= 54)
 // http://hg.mozilla.org/mozilla-central/rev/77760e0b239f
 "toolkit.cosmeticAnimations.enabled"
+
+// Hide missing plugin notifications (Flash Player) (Firefox <23)
+// https://hg.mozilla.org/mozilla-central/rev/4e55b3a02970
+"plugins.hide_infobar_for_missing_plugin"
+
+// Hide missing plugin notifications (Flash Player) (Firefox <35.0a1)
+// https://hg.mozilla.org/mozilla-central/rev/206139
+"plugins.hideMissingPluginsNotification"
+"plugins.notifyMissingFlash"
