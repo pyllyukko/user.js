@@ -39,9 +39,9 @@ user_pref("dom.enable_user_timing",				false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1288359
 user_pref("dom.webaudio.enabled",				false);
 
-// PREF: Disable Location-Aware Browsing (geolocation)
+// PREF: Disable Location-Aware Browsing (geolocation) (disabled)
 // https://www.mozilla.org/en-US/firefox/geolocation/
-user_pref("geo.enabled",					false);
+// user_pref("geo.enabled",					false);
 
 // PREF: When geolocation is enabled, use Mozilla geolocation service instead of Google
 // https://bugzilla.mozilla.org/show_bug.cgi?id=689252
