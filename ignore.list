@@ -427,3 +427,72 @@
 // http://kb.mozillazine.org/Browser.sessionstore.postdata
 // relates to CIS 2.5.7
 "browser.sessionstore.postdata"
+
+// Force "allow full screen" prompts (UI) (Firefox <42.0a1)
+// https://hg.mozilla.org/mozilla-central/rev/253900
+"full-screen-api.approval-required"
+
+// Delay in seconds before allowing user to install an addon (UI)
+"security.dialog_enable_delay"
+
+// Mouse tweaks (UI)
+"mousewheel.acceleration.start"
+"mousewheel.acceleration.factor"
+"mousewheel.min_line_scroll_amount"
+
+// Force emphasizing second and top-level domains in the URL (Firefox <15)
+// http://kb.mozillazine.org/Browser.identity.ssl_domain_display
+// https://bugzilla.mozilla.org/show_bug.cgi?id=748385
+"browser.identity.ssl_domain_display"
+
+// Prevent DOM from manipulating elements from menu bars, toolbars... 
+"dom.disable_window_open_feature.menubar"
+"dom.disable_window_open_feature.personalbar"
+"dom.disable_window_open_feature.scrollbars"
+"dom.disable_window_open_feature.toolbar"
+
+// Limit images size in memory (performance)
+// http://kb.mozillazine.org/Memory_Leak
+"image.mem.surfacecache.max_size_kb"
+"image.mem.max_decoded_image_kb"
+
+// PREF: Limit duration for which images are kept in memory (performance) (default=120000)
+"image.mem.min_discard_timeout_ms"
+
+// PREF: Limit javascript memory (performance)
+// More frequent javascript garbage collector
+// http://www.computershowto.pro/2014/05/firefox-memory-and-config-tweaks-to-make-firefox-faster/
+"javascript.options.mem.max"
+"javascript.options.mem.gc_frequency"
+
+// PREF: Delay in ms between hovering over a menu option with a submenu and the submenu appearing. (performance)
+// http://kb.mozillazine.org/Firefox_:_FAQs_:_About%3Aconfig_Entries
+"ui.submenuDelay"
+
+// PREF: Lower initial page painting delay (performance)
+// Delay after which the page is painted on the display. The default is 250ms, lowering it makes the page appear earlier, but uses more paint cycles and hogs the CPU. 
+"nglayout.initialpaint.delay"
+
+// Disable "display passwords" button in password manager
+"pref.privacy.disable_button.view_passwords"
+"pref.privacy.disable_button.view_passwords_exceptions"
+
+// Disable IPv6
+"network.dns.disableIPv6"
+
+// PREF: Disable tabs animation (performance) (Firefox < 54)
+"browser.tabs.animate"
+// PREF: Disable fullscreen transition animation (performance) (Firefox < 54)
+"browser.fullscreen.animate"
+// PREF: Disable fullscreen/tabs/alerts animations (Firefox >= 54)
+// http://hg.mozilla.org/mozilla-central/rev/77760e0b239f
+"toolkit.cosmeticAnimations.enabled"
+
+// Hide missing plugin notifications (Flash Player) (Firefox <23)
+// https://hg.mozilla.org/mozilla-central/rev/4e55b3a02970
+"plugins.hide_infobar_for_missing_plugin"
+
+// Hide missing plugin notifications (Flash Player) (Firefox <35.0a1)
+// https://hg.mozilla.org/mozilla-central/rev/206139
+"plugins.hideMissingPluginsNotification"
+"plugins.notifyMissingFlash"
