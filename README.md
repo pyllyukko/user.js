@@ -99,8 +99,13 @@ This file should be located at:
 
 | OS      | Path                                                         |
 | ------- | ------------------------------------------------------------ |
-| Windows | `C:\Program Files (x86)\Mozilla Firefox\default\pref\`       |
+| Windows | `C:\Program Files (x86)\Mozilla Firefox\defaults\pref\`      |
 | OS X    | `/Applications/Firefox.app/Contents/Resources/defaults/pref` |
+
+If mozilla.cfg still fails to load, you must add a blank comment to the top of mozilla.cg like so:
+```
+//
+```
 
 ### Updating using git
 
