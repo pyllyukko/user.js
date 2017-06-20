@@ -102,7 +102,7 @@ This file should be located at:
 | Windows | `C:\Program Files (x86)\Mozilla Firefox\defaults\pref\`      |
 | OS X    | `/Applications/Firefox.app/Contents/Resources/defaults/pref` |
 
-If mozilla.cfg still fails to load, you must add a blank comment to the top of mozilla.cg like so:
+If mozilla.cfg still fails to load, you must add a blank comment to the top of mozilla.cfg like so:
 ```
 //
 ```
