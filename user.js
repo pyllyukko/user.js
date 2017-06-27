@@ -742,9 +742,10 @@ user_pref("browser.cache.disk_cache_ssl",			false);
 // CIS Version 1.2.0 October 21st, 2011 2.5.5
 user_pref("browser.download.manager.retention",			0);
 
-// PREF: Disable password manager
+// PREF: Disable password manager (disabled)
+// NOTICE: Make sure to set a Master password to protect Firefox's password storage against basic malware that could extract your password information
 // CIS Version 1.2.0 October 21st, 2011 2.5.2
-user_pref("signon.rememberSignons",				false);
+// user_pref("signon.rememberSignons",				false);
 
 // PREF: Disable form autofill, don't save information entered in web page forms and the Search Bar
 user_pref("browser.formfill.enable",				false);
