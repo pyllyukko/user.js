@@ -498,6 +498,7 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 * [getUserMedia Test Page](https://mozilla.github.io/webrtc-landing/gum_test.html)
 * [Onion test for CORS and WebSocket](https://cure53.de/leak/onion.php)
 * [Official WebGL check](https://get.webgl.org/)
+* [WebGL Report](http://webglreport.com/)
 * [Battery API](https://robnyman.github.io/battery/) [[1](https://pstadler.sh/battery.js/)]
 * [WebRTC LAN address leak test](http://net.ipcalf.com/)
 * [IP Check](http://ip-check.info/?lang=en)
