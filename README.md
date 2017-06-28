@@ -101,8 +101,13 @@ This file should be located at:
 
 | OS      | Path                                                         |
 | ------- | ------------------------------------------------------------ |
-| Windows | `C:\Program Files (x86)\Mozilla Firefox\default\pref\`       |
+| Windows | `C:\Program Files (x86)\Mozilla Firefox\defaults\pref\`      |
 | OS X    | `/Applications/Firefox.app/Contents/Resources/defaults/pref` |
+
+If mozilla.cfg still fails to load, you must add a blank comment to the top of mozilla.cfg like so:
+```
+//
+```
 
 ### Updating using git
 
@@ -157,6 +162,7 @@ HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / [DOM](https://en.wikipedia.org
 * Disable gamepad API to prevent USB device enumeration [ [1](https://www.w3.org/TR/gamepad/) [2](https://trac.torproject.org/projects/tor/ticket/13023) ]
 * Disable virtual reality devices APIs [ [1](https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM) [2](https://developer.mozilla.org/en-US/docs/Web/API/WebVR_API) ]
 * Disable vibrator API
+* Disable resource timing API [ [1](https://www.w3.org/TR/resource-timing/#privacy-security) ]
 * Disable webGL [ [1](https://en.wikipedia.org/wiki/WebGL) [2](https://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/) ]
 * When webGL is enabled, use the minimum capability mode
 * When webGL is enabled, disable webGL extensions [ [1](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API#WebGL_debugging_and_testing) ]
@@ -224,7 +230,7 @@ Disable Firefox integrated metrics/reporting/experiments, disable potentially in
 * Disable the UITour backend [ [1](https://trac.torproject.org/projects/tor/ticket/19047#comment:3) ]
 * Enable Firefox Tracking Protection [ [1](https://wiki.mozilla.org/Security/Tracking_protection) [2](https://support.mozilla.org/en-US/kb/tracking-protection-firefox) [3](https://support.mozilla.org/en-US/kb/tracking-protection-pbm) [4](https://kontaxis.github.io/trackingprotectionfirefox/) [5](https://feeding.cloud.geek.nz/posts/how-tracking-protection-works-in-firefox/) ]
 * Enable contextual identity Containers feature (Firefox >= 52)
-* Enable hardening against various fingerprinting vectors (Tor Uplift project) [ [1](https://wiki.mozilla.org/Security/Tor_Uplift/Tracking) ]
+* Enable hardening against various fingerprinting vectors (Tor Uplift project) [ [1](https://wiki.mozilla.org/Security/Tor_Uplift/Tracking) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1333933) ]
 * Disable the built-in PDF viewer [ [1](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2743) [2](https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/) [3](https://www.mozilla.org/en-US/security/advisories/mfsa2015-69/) ]
 * Disable collection/sending of the health report (healthreport.sqlite*) [ [1](https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf) [2](https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html) ]
 * Disable Heartbeat  (Mozilla user rating telemetry) [ [1](https://wiki.mozilla.org/Advocacy/heartbeat) [2](https://trac.torproject.org/projects/tor/ticket/19047) ]
@@ -372,7 +378,7 @@ Here is a list of the most essential security and privacy enhancing add-ons that
   * Setting `Store certificates even when in Private Browsing mode` improves usability. This will store information about sites you visit.
 * [HTTPS by default](https://addons.mozilla.org/firefox/addon/https-by-default/)
 * [NoScript](https://noscript.net/)
-* [No Resource URI Leak](https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/)
+* [No Resource URI Leak](https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/) [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=863246) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=903959) [3](https://www.browserleaks.com/firefox) [4](https://cs1.ca/ttest/dump.html) [5](https://trac.torproject.org/projects/tor/ticket/8725) ]
 * [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
 * [Canvas Blocker](https://addons.mozilla.org/firefox/addon/canvasblocker/)
 
@@ -483,6 +489,7 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 * [getUserMedia Test Page](https://mozilla.github.io/webrtc-landing/gum_test.html)
 * [Onion test for CORS and WebSocket](https://cure53.de/leak/onion.php)
 * [Official WebGL check](https://get.webgl.org/)
+* [WebGL Report](http://webglreport.com/)
 * [Battery API](https://robnyman.github.io/battery/) [[1](https://pstadler.sh/battery.js/)]
 * [WebRTC LAN address leak test](http://net.ipcalf.com/)
 * [IP Check](http://ip-check.info/?lang=en)
