@@ -10,7 +10,7 @@ whatdoesitdo:
 
 # To decrease tests verbosity, comment out unneeded targets
 .PHONY: tests
-tests: sourceprefs.js checkdeprecated stats cleanup
+tests: sourceprefs.js checkdeprecated stats clean
 
 sourceprefs.js:
 	@# download and sort all known preferences files from Firefox (mozilla-central) source
