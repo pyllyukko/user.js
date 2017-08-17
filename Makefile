@@ -1,5 +1,3 @@
-MAKEFLAGS := --jobs=1
-
 .PHONY: all
 all: whatdoesitdo tests
 
@@ -10,7 +8,7 @@ whatdoesitdo:
 
 # To decrease tests verbosity, comment out unneeded targets
 .PHONY: tests
-tests: sourceprefs.js checkdeprecated stats clean
+tests: sourceprefs.js checkdeprecated stats
 
 sourceprefs.js:
 	@# download and sort all known preferences files from Firefox (mozilla-central) source
@@ -39,7 +37,7 @@ sourceprefs.js:
 ######################
 
 .PHONY: checknotcovered
-checknotcovered:
+checknotcovered: sourceprefs.js
 	@# check for preferences present in firefox source but not covered by user.js
 	@# configure ignored preferences in ignore.list
 	@SOURCE_PREFS=$$(egrep '(^pref|^user_pref)' sourceprefs.js | awk -F'"' '{print $$2}'); \
@@ -48,7 +46,7 @@ checknotcovered:
 	done | sort --unique
 
 .PHONY: checkdeprecated
-checkdeprecated:
+checkdeprecated: sourceprefs.js
 	@# check for preferences in hardened user.js that are no longer present in firefox source
 	@HARDENED_PREFS=$$(egrep "^user_pref" user.js | cut -d'"' -f2); \
 	for HARDENED_PREF in $$HARDENED_PREFS; do \
@@ -56,7 +54,7 @@ checkdeprecated:
 	done | sort --unique
 
 .PHONY: stats
-stats:
+stats: sourceprefs.js
 	@# count preferences number, various stats
 	@echo "$$(egrep "^user_pref" user.js | wc -l | cut -f1) preferences in user.js"
 	@echo "$$(wc -l sourceprefs.js | cut -d" " -f1) preferences in Firefox source"
