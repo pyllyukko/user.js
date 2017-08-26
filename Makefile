@@ -10,19 +10,18 @@ whatdoesitdo:
 .PHONY: tests
 tests: sourceprefs.js checkdeprecated stats
 
-sourceprefs.js:
-	@# download and sort all known preferences files from Firefox (mozilla-central) source
-	@# specify wanted Firefox version/revision below (eg. "tip", "FIREFOX_AURORA_45_BASE", "9577ddeaafd85554c2a855f385a87472a089d5c0"). See https://hg.mozilla.org/mozilla-central/tags
-	@SOURCEVERSION="tip"; \
-	FIREFOX_SOURCE_PREFS=" \
-	https://hg.mozilla.org/mozilla-central/raw-file/$$SOURCEVERSION/toolkit/components/telemetry/datareporting-prefs.js \
-	https://hg.mozilla.org/mozilla-central/raw-file/$$SOURCEVERSION/toolkit/components/telemetry/healthreport-prefs.js \
-	https://hg.mozilla.org/mozilla-central/raw-file/$$SOURCEVERSION/security/manager/ssl/security-prefs.js \
-	https://hg.mozilla.org/mozilla-central/raw-file/$$SOURCEVERSION/modules/libpref/init/all.js \
-	https://hg.mozilla.org/mozilla-central/raw-file/$$SOURCEVERSION/testing/profiles/prefs_general.js \
-	https://hg.mozilla.org/mozilla-central/raw-file/$$SOURCEVERSION/layout/tools/reftest/reftest-preferences.js \
-	https://hg.mozilla.org/mozilla-central/raw-file/$$SOURCEVERSION/js/src/tests/user.js \
-	https://hg.mozilla.org/mozilla-central/raw-file/$$SOURCEVERSION/browser/app/profile/firefox.js \
+# download and sort all known preferences files from Firefox (mozilla-central) source
+# specify wanted Firefox version/revision below (eg. "tip", "FIREFOX_AURORA_45_BASE", "9577ddeaafd85554c2a855f385a87472a089d5c0"). See https://hg.mozilla.org/mozilla-central/tags
+SOURCEVERSION=tip
+FIREFOX_SOURCE_PREFS= \
+	https://hg.mozilla.org/mozilla-central/raw-file/$(SOURCEVERSION)/toolkit/components/telemetry/datareporting-prefs.js \
+	https://hg.mozilla.org/mozilla-central/raw-file/$(SOURCEVERSION)/toolkit/components/telemetry/healthreport-prefs.js \
+	https://hg.mozilla.org/mozilla-central/raw-file/$(SOURCEVERSION)/security/manager/ssl/security-prefs.js \
+	https://hg.mozilla.org/mozilla-central/raw-file/$(SOURCEVERSION)/modules/libpref/init/all.js \
+	https://hg.mozilla.org/mozilla-central/raw-file/$(SOURCEVERSION)/testing/profiles/prefs_general.js \
+	https://hg.mozilla.org/mozilla-central/raw-file/$(SOURCEVERSION)/layout/tools/reftest/reftest-preferences.js \
+	https://hg.mozilla.org/mozilla-central/raw-file/$(SOURCEVERSION)/js/src/tests/user.js \
+	https://hg.mozilla.org/mozilla-central/raw-file/$(SOURCEVERSION)/browser/app/profile/firefox.js \
 	https://hg.mozilla.org/mozilla-central/raw-file/tip/devtools/client/preferences/debugger.js \
 	https://hg.mozilla.org/mozilla-central/raw-file/tip/devtools/client/preferences/devtools.js \
 	https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/branding/unofficial/pref/firefox-branding.js \
@@ -31,8 +30,9 @@ sourceprefs.js:
 	https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/branding/aurora/pref/firefox-branding.js \
 	https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/locales/en-US/firefox-l10n.js \
 	https://hg.mozilla.org/mozilla-central/raw-file/tip/devtools/client/webide/webide-prefs.js \
-	https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/app/profile/channel-prefs.js"; \
-	for SOURCEFILE in $$FIREFOX_SOURCE_PREFS; do wget -nv "$$SOURCEFILE" -O - ; done | egrep "(^pref|^user_pref)" | sort --unique >| $@
+	https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/app/profile/channel-prefs.js
+sourceprefs.js:
+	@for SOURCEFILE in $(FIREFOX_SOURCE_PREFS); do wget -nv "$$SOURCEFILE" -O - ; done | egrep "(^pref|^user_pref)" | sort --unique >| $@
 
 ######################
 
