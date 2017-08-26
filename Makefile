@@ -40,7 +40,7 @@ sourceprefs.js:
 checknotcovered: sourceprefs.js
 	@# check for preferences present in firefox source but not covered by user.js
 	@# configure ignored preferences in ignore.list
-	@SOURCE_PREFS=$$(egrep '(^pref|^user_pref)' sourceprefs.js | awk -F'"' '{print $$2}'); \
+	@SOURCE_PREFS=$$(egrep '(^pref|^user_pref)' $< | awk -F'"' '{print $$2}'); \
 	for SOURCE_PREF in $$SOURCE_PREFS; do \
 	grep "\"$$SOURCE_PREF\"" user.js ignore.list >/dev/null || echo "Not covered by user.js : $$SOURCE_PREF"; \
 	done | sort --unique
@@ -50,14 +50,14 @@ checkdeprecated: sourceprefs.js
 	@# check for preferences in hardened user.js that are no longer present in firefox source
 	@HARDENED_PREFS=$$(egrep "^user_pref" user.js | cut -d'"' -f2); \
 	for HARDENED_PREF in $$HARDENED_PREFS; do \
-	grep "\"$$HARDENED_PREF\"" sourceprefs.js  >/dev/null || echo "Deprecated : $$HARDENED_PREF"; \
+	grep "\"$$HARDENED_PREF\"" $< >/dev/null || echo "Deprecated : $$HARDENED_PREF"; \
 	done | sort --unique
 
 .PHONY: stats
 stats: sourceprefs.js
 	@# count preferences number, various stats
 	@echo "$$(egrep "^user_pref" user.js | wc -l | cut -f1) preferences in user.js"
-	@echo "$$(wc -l sourceprefs.js | cut -d" " -f1) preferences in Firefox source"
+	@echo "$$(wc -l $< | cut -d" " -f1) preferences in Firefox source"
 
 .PHONY: clean
 clean:
