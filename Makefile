@@ -8,7 +8,11 @@ whatdoesitdo:
 
 # To decrease tests verbosity, comment out unneeded targets
 .PHONY: tests
-tests: sourceprefs.js checkdeprecated stats
+tests: sourceprefs.js checkdeprecated stats acorn
+
+.PHONY: acorn
+acorn:
+	acorn --silent user.js
 
 # download and sort all known preferences files from Firefox (mozilla-central) source
 # specify wanted Firefox version/revision below (eg. "tip", "FIREFOX_AURORA_45_BASE", "9577ddeaafd85554c2a855f385a87472a089d5c0"). See https://hg.mozilla.org/mozilla-central/tags
