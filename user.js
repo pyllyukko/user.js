@@ -19,6 +19,7 @@ user_pref("dom.serviceWorkers.enabled",				false);
 // PREF: Disable Web Workers
 // https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
 // https://www.w3schools.com/html/html5_webworkers.asp
+// NOTICE: disabling Web Workers breaks "Download as ZIP" functionality on https://mega.nz/
 user_pref("dom.workers.enabled",					false);
 
 // PREF: Disable web notifications
