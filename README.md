@@ -69,7 +69,7 @@ Do note that these settings alter your browser behaviour quite a bit, so it is r
 
 To enable the Profile Manager, run Firefox with [command-line arguments](http://kb.mozillazine.org/Command_line_arguments): `firefox --no-remote -P`
 
-With this installation method, if you change any of `user.js` settings through [`about:config`](http://kb.mozillazine.org/About:config) or Firefox preferences dialogs, they will be reset to the `user.js` defined values after you restart Firefox. This makes sure they're always back to secure defaults when starting the browser. However this prevents presistently changing settings you don't consider appropriate. Either edit `user`.js directly, or use the system-wide installation method described below.
+With this installation method, if you change any of `user.js` settings through [`about:config`](http://kb.mozillazine.org/About:config) or Firefox preferences dialogs, they will be reset to the `user.js` defined values after you restart Firefox. This makes sure they're always back to secure defaults when starting the browser. However this prevents persistently changing settings you don't consider appropriate. Either edit `user.js` directly, or use the system-wide installation method described below.
 
 ### System-wide installation (all platforms)
 
@@ -83,10 +83,10 @@ Copy `user.js` to the Firefox installation directory. The file should be located
 | OS X           | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
 
 In `user.js`, Change `user_pref(` to  one of:
- * `pref(` (the value will be used as default value for all Firefox Profiles where it is not explicitely set, it can be changed in `about:config` and is kept acrosse browser sessions)
+ * `pref(` (the value will be used as default value for all Firefox Profiles where it is not explicitly set, it can be changed in `about:config` and is kept across browser sessions)
  * `lockPref(` (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings.
 
-#### Additional installation steps for Windows/OSX
+#### Additional installation steps for Windows/OS X
 
 Create `local-settings.js` in Firefox installation directory, with the following contents:
 
@@ -102,7 +102,7 @@ This file should be located at:
 | Windows | `C:\Program Files (x86)\Mozilla Firefox\defaults\pref\`      |
 | OS X    | `/Applications/Firefox.app/Contents/Resources/defaults/pref` |
 
-If mozilla.cfg still fails to load, you must add a blank comment to the top of mozilla.cfg like so:
+If `mozilla.cfg` still fails to load, you must add a blank comment to the top of `mozilla.cfg` like so:
 ```
 //
 ```
