@@ -4,7 +4,7 @@
 
 A [user.js](http://kb.mozillazine.org/User.js_file) configuration file for [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/) designed to harden browser settings and make it more secure.
 
-**This a relaxed variant. [Differences with the original hardened version](https://github.com/pyllyukko/user.js/compare/relaxed)**
+**This a relaxed variant. [Differences with the original hardened version](https://github.com/pyllyukko/user.js/compare/relaxed#files_bucket)**
 
 [![Build Status](https://travis-ci.org/pyllyukko/user.js.svg?branch=relaxed)](https://travis-ci.org/pyllyukko/user.js)
 
@@ -46,9 +46,9 @@ There are several parts to all this and they are:
 
 Different download methods are available:
 
- * Clone using git: `git clone https://github.com/pyllyukko/user.js`
- * Download and extract the [ZIP file](https://github.com/pyllyukko/user.js/archive/master.zip) containing the latest version.
- * Download the latest `user.js` [directly](https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js)
+ * Clone using git: `git clone -b relaxed https://github.com/pyllyukko/user.js`
+ * Download and extract the [ZIP file](https://github.com/pyllyukko/user.js/archive/relaxed.zip) containing the latest version.
+ * Download the latest `user.js` [directly](https://raw.githubusercontent.com/pyllyukko/user.js/relaxed/user.js)
 
 ## Installation
 
