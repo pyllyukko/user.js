@@ -566,6 +566,12 @@ user_pref("browser.safebrowsing.downloads.remote.enabled",	false);
 user_pref("browser.pocket.enabled",				false);
 user_pref("extensions.pocket.enabled",				false);
 
+// PREF: Disable SHIELD
+// https://support.mozilla.org/en-US/kb/shield
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1370801
+user_pref("extensions.shield-recipe-client.enabled",		false);
+user_pref("app.shield.optoutstudies.enabled",			false);
+
 /******************************************************************************
  * SECTION: Automatic connections                                             *
  ******************************************************************************/

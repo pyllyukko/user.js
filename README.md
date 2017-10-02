@@ -246,6 +246,7 @@ Disable Firefox integrated metrics/reporting/experiments, disable potentially in
 * Enable blocking reported attack sites [ [1](http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled) ]
 * Disable querying Google Application Reputation database for downloaded binary files [ [1](https://www.mozilla.org/en-US/firefox/39.0/releasenotes/) [2](https://wiki.mozilla.org/Security/Application_Reputation) ]
 * Disable Pocket [ [1](https://support.mozilla.org/en-US/kb/save-web-pages-later-pocket-firefox) [2](https://github.com/pyllyukko/user.js/issues/143) ]
+* Disable SHIELD [ [1](https://support.mozilla.org/en-US/kb/shield) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1370801) ]
 
 ### Automatic connections
 
