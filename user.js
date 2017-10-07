@@ -186,6 +186,10 @@ user_pref("webgl.enable-debug-renderer-info",			false);
 // somewhat related...
 //user_pref("pdfjs.enableWebGL",					false);
 
+// PREF: Spoof single-core CPU
+// https://trac.torproject.org/projects/tor/ticket/21675
+user_pref("dom.maxHardwareConcurrency",				false);
+
 /******************************************************************************
  * SECTION: Misc                                                              *
  ******************************************************************************/
