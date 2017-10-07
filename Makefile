@@ -38,6 +38,10 @@ FIREFOX_SOURCE_PREFS= \
 sourceprefs.js:
 	@for SOURCEFILE in $(FIREFOX_SOURCE_PREFS); do wget -nv "$$SOURCEFILE" -O - ; done | egrep "(^pref|^user_pref)" | sort --unique >| $@
 
+TBBBRANCH=tor-browser-52.1.0esr-7.0-2
+000-tor-browser.js:
+	wget -nv "https://gitweb.torproject.org/tor-browser.git/plain/browser/app/profile/000-tor-browser.js?h=$(TBBBRANCH)" -O $@
+
 ######################
 
 .PHONY: checknotcovered
