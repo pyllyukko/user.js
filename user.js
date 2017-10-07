@@ -70,6 +70,11 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=960426
 user_pref("dom.netinfo.enabled",				false);
 
+// PREF: Disable network API
+// https://developer.mozilla.org/en-US/docs/Web/API/Connection/onchange
+// https://www.torproject.org/projects/torbrowser/design/#fingerprinting-defenses
+user_pref("dom.network.enabled",				false);
+
 // PREF: Disable WebRTC entirely to prevent leaking internal IP addresses (Firefox < 42)
 // NOTICE: Disabling WebRTC breaks peer-to-peer file sharing tools (reep.io ...)
 user_pref("media.peerconnection.enabled",			false);
