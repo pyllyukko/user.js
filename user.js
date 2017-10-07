@@ -188,7 +188,8 @@ user_pref("webgl.enable-debug-renderer-info",			false);
 
 // PREF: Spoof single-core CPU
 // https://trac.torproject.org/projects/tor/ticket/21675
-user_pref("dom.maxHardwareConcurrency",				1);
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1360039
+user_pref("dom.maxHardwareConcurrency",				2);
 
 /******************************************************************************
  * SECTION: Misc                                                              *
