@@ -186,7 +186,7 @@ user_pref("webgl.enable-debug-renderer-info",			false);
 // somewhat related...
 //user_pref("pdfjs.enableWebGL",					false);
 
-// PREF: Spoof single-core CPU
+// PREF: Spoof dual-core CPU
 // https://trac.torproject.org/projects/tor/ticket/21675
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1360039
 user_pref("dom.maxHardwareConcurrency",				2);
