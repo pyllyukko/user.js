@@ -583,6 +583,9 @@ user_pref("extensions.pocket.enabled",				false);
 user_pref("extensions.shield-recipe-client.enabled",		false);
 user_pref("app.shield.optoutstudies.enabled",			false);
 
+// PREF: Disable "Recommended by Pocket" in Firefox Quantum
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories",	false);
+
 /******************************************************************************
  * SECTION: Automatic connections                                             *
  ******************************************************************************/
