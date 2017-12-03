@@ -428,6 +428,7 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 * When Javascript is enabled, Websites can detect use of Private Browsing mode
 * Private browsing breaks Kerberos authentication
 * Disables "Containers" functionality (see below)
+* "Always use private browsing mode" (browser.privatebrowsing.autostart) disables the possibility to use password manager: https://support.mozilla.org/en-US/kb/usernames-and-passwords-are-not-saved#w_private-browsing
 * Installing user.js will remove your browsing history, caches and local storage.
 * Installing user.js **will remove your saved passwords** (https://github.com/pyllyukko/user.js/issues/27)
 * Clearing open windows on Firefox exit causes 2 windows to open when Firefox starts https://bugzilla.mozilla.org/show_bug.cgi?id=1334945
