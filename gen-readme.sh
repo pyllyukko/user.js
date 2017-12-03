@@ -45,8 +45,8 @@ SECTION_CIPHERS_MDOWN="This section tweaks the cipher suites used by Firefox. Th
 
 function _gen_entries() {
     # generate the "What does it do" README section from user.js PREF/SECTION fields and adjacent links
-    egrep --line-number "SECTION\:|PREF\:" user.js | egrep -v '\(disabled\)' | sed -e 's/  \+\*//g' | \
-    while read LINE; do
+    grep -E --line-number "SECTION\:|PREF\:" user.js | grep -E -v '\(disabled\)' | sed -e 's/  \+\*//g' | \
+    while read -r LINE; do
         LINENUM=$(echo "$LINE" | awk -F ':' '{ print $1 }')
         LINETYPE=$(echo "$LINE" | awk -F '[:/\*\ ]*' '{ print $2 }' 2>/dev/null)
         LINENAME=$(echo "$LINE" | sed -e 's/.*PREF\: //g; s/.*SECTION\: //g')
@@ -56,22 +56,22 @@ function _gen_entries() {
             LINENAME=$(_gen_section_header "$LINENAME")
         else #if $LINETYPE = PREF
             # Build a list of reference links
-            REF_LINE=$(( $LINENUM + 1 ))
+            REF_LINE=$(( LINENUM + 1 ))
             REF_NUMBER=1
             REF_LIST=''
             # while next lines start with 'http', generate markdown links and append them to the list
-            while sed "${REF_LINE}q;d" user.js | egrep "^// http" >/dev/null; do
+            while sed "${REF_LINE}q;d" user.js | grep -E "^// http" >/dev/null; do
                 REF_URL=$(sed "${REF_LINE}q;d" user.js | cut -c4-) # 
                 REF_MD_LINK="[${REF_NUMBER}](${REF_URL}) "
-                REF_LINE=$(( $REF_LINE + 1 ))
-                REF_NUMBER=$(( $REF_NUMBER + 1 ))
+                REF_LINE=$(( REF_LINE + 1 ))
+                REF_NUMBER=$(( REF_NUMBER + 1 ))
                 REF_LIST="${REF_LIST}${REF_MD_LINK}"
             done
             # if references list is not empty, add decoration chars [ ]
             if [ ! "$REF_LIST" = "" ]; then
                 REF_LIST=" [ ${REF_LIST}]"
             fi
-            INDENT='* '; SECTIONDESC=''
+            INDENT='* '
         fi
         MARKDOWNLINE="${INDENT}${LINENAME}${REF_LIST}"
         echo "$MARKDOWNLINE"
@@ -82,7 +82,7 @@ function _gen_section_header() {
     # generate section headers from a predefined list
     # replace section headers extracted from user.js with more detailed descriptions
     # in markdown format (configurable above)
-    SECTION_NAME="$@"
+    SECTION_NAME="$*"
     case "$SECTION_NAME" in
     "$SECTION_HTML5_ID")        echo -e "\n### ${SECTION_HTML5_ID}\n\n${SECTION_HTML5_MDOWN}\n" ;;
     "$SECTION_MISC_ID")         echo -e "\n### ${SECTION_MISC_ID}\n\n${SECTION_MISC_MDOWN}\n" ;;

@@ -10,7 +10,7 @@ whatdoesitdo:
 
 # To decrease tests verbosity, comment out unneeded targets
 .PHONY: tests
-tests: sourceprefs.js checkdeprecated stats acorn bash_syntax
+tests: sourceprefs.js checkdeprecated stats acorn bash_syntax shellcheck
 
 .PHONY: acorn
 acorn:
@@ -19,6 +19,10 @@ acorn:
 .PHONY: bash_syntax
 bash_syntax:
 	$(foreach i,$(wildcard *.sh),bash -n $(i);)
+
+.PHONY: shellcheck
+shellcheck:
+	shellcheck *.sh
 
 # download and sort all known preferences files from Firefox (mozilla-central) source
 # specify wanted Firefox version/revision below (eg. "tip", "FIREFOX_AURORA_45_BASE", "9577ddeaafd85554c2a855f385a87472a089d5c0"). See https://hg.mozilla.org/mozilla-central/tags

@@ -7,6 +7,10 @@ script:
   - acorn --silent user.js
   - bash -n cas.sh
   - make tests
+addons:
+  apt:
+    packages:
+    - shellcheck
 notifications:
   irc:
     channels:
