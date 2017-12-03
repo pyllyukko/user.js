@@ -46,7 +46,7 @@ sourceprefs.js:
 
 TBBBRANCH=tor-browser-52.1.0esr-7.0-2
 000-tor-browser.js:
-	wget -nv "https://gitweb.torproject.org/tor-browser.git/plain/browser/app/profile/000-tor-browser.js?h=$(TBBBRANCH)" -O $@
+	wget -nv "https://gitweb.torproject.org/tor-browser.git/plain/browser/app/profile/$@?h=$(TBBBRANCH)" -O $@
 
 .PHONY: tbb-diff
 tbb-diff: 000-tor-browser.js
