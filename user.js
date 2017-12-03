@@ -70,7 +70,7 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=960426
 user_pref("dom.netinfo.enabled",				false);
 
-// PREF: Disable network API
+// PREF: Disable network API (Firefox < 32)
 // https://developer.mozilla.org/en-US/docs/Web/API/Connection/onchange
 // https://www.torproject.org/projects/torbrowser/design/#fingerprinting-defenses
 user_pref("dom.network.enabled",				false);
