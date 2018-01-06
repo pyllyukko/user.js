@@ -788,6 +788,10 @@ user_pref("network.cookie.lifetimePolicy",			2);
 // https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
 user_pref("signon.autofillForms",				false);
 
+// PREF: Disable formless login capture
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1166947
+user_pref("signon.formlessCapture.enabled",			false);
+
 // PREF: When username/password autofill is enabled, still disable it on non-HTTPS sites
 // https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317
 user_pref("signon.autofillForms.http",				false);
