@@ -402,7 +402,7 @@ user_pref("browser.safebrowsing.blockedURIs.enabled", true);
 
 // PREF: Disable Shumway (Mozilla Flash renderer)
 // https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Shumway
-pref("shumway.disabled", true);
+user_pref("shumway.disabled", true);
 
 // PREF: Disable Gnome Shell Integration NPAPI plugin
 user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
