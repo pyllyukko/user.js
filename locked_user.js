@@ -1,5 +1,5 @@
 /*******************************************************************************
-// This file has been created by create_locked_pref.sh
+// This file has been created by git hook - pre-commit
 //
 // It's equivalent to the user.js with the only difference that the settings are
 // locked and cannot be changed by the Firefox user or Firefox itself.
