@@ -82,7 +82,7 @@ Copy `user.js` to the Firefox installation directory. The file should be located
 | OS             | Path                                                       |
 | -------------- | ---------------------------------------------------------- |
 | Windows        | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`       |
-| Linux          | `/etc/firefox/firefox.js`                                  |
+| Linux          | `/etc/firefox/syspref.js`, for older versions: `/etc/firefox/firefox.js` |
 | Linux (Debian) | `/etc/firefox-esr/firefox-esr.js`                          |
 | OS X           | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
 
@@ -398,7 +398,7 @@ Here is a list of the most essential security and privacy enhancing add-ons that
 
 Additional add-ons that you might consider using or reading about:
 
-* [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/) (experienced users) 
+* [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/) (experienced users)
 * [Privacy Badger](https://www.eff.org/privacybadger)
 * [Mozilla Lightbeam](https://www.mozilla.org/en-US/lightbeam/)
 * [PRISM Break Web Browser Addons section](https://prism-break.org/en/subcategories/gnu-linux-web-browser-addons/)
@@ -476,7 +476,7 @@ See `lockPref` in [System-wide installation](#system-wide-installation).
 
 ## Contributing
 
-Yes please! All issues and pull requests are more than welcome. Please try 
+Yes please! All issues and pull requests are more than welcome. Please try
 to break down your pull requests or commits into small / manageable entities,
 so they are easier to process. All the settings in the ```user.js``` file
 should have some official references to them, so the effect of those settings
@@ -525,9 +525,9 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 
 * [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
 * [How's My SSL](https://www.howsmyssl.com/)
-* [Mixed content tests (Mozilla)](https://people.mozilla.org/~tvyas/mixedcontent.html) 
-* [Mixed content tests (Microsoft)](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm) 
-* [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp) 
+* [Mixed content tests (Mozilla)](https://people.mozilla.org/~tvyas/mixedcontent.html)
+* [Mixed content tests (Microsoft)](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm)
+* [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp)
 * [Bad SSL](https://badssl.com/)
 
 #### Other tests
@@ -565,7 +565,7 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 #### Other documentation
 
 * **[CVEs for Firefox - mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=firefox)**
-* [CVEs for Firefox - cvedetails.com](https://www.cvedetails.com/vulnerability-list/vendor_id-452/product_id-3264/Mozilla-Firefox.html) 
+* [CVEs for Firefox - cvedetails.com](https://www.cvedetails.com/vulnerability-list/vendor_id-452/product_id-3264/Mozilla-Firefox.html)
 * [ghacksuserjs/ghacks-user.js](https://github.com/ghacksuserjs/ghacks-user.js): a similar project and great source of information, with different goals and methodology
 * [About:config entries - MozillaZine](http://kb.mozillazine.org/About:config_entries)
 * [Security and privacy-related preferences - MozillaZine](http://kb.mozillazine.org/Category:Security_and_privacy-related_preferences)

@@ -1,7 +1,7 @@
 SHELL=/bin/bash
 
 .PHONY: all
-all: whatdoesitdo tests
+all: whatdoesitdo tests hooks
 
 .PHONY: whatdoesitdo
 whatdoesitdo:
@@ -99,3 +99,30 @@ toc:
 	anchor=$$(echo "$$line" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g' | sed 's/\?//g'); \
 	echo "* [$$line](#$$anchor)"; \
 	done
+
+HOOK = .git/hooks/pre-commit
+.PHONY: hooks
+hooks:
+	@echo "Installing git hook - pre-commit (create and add locked_user.js with every commit)"
+	@echo "#!/bin/bash" > $(HOOK)
+	@echo "# Create and add locked_user.js with every commit" >> $(HOOK)
+	@echo "echo \"pre-commit: creating locked_user.js ...\"" >> $(HOOK)
+	@echo "cat > locked_user.js << EOF" >> $(HOOK)
+	@echo "/*******************************************************************************" >> $(HOOK)
+	@echo "// This file has been created by git hook - pre-commit" >> $(HOOK)
+	@echo "//" >> $(HOOK)
+	@echo "// It's equivalent to the user.js with the only difference that the settings are" >> $(HOOK)
+	@echo "// locked and cannot be changed by the Firefox user or Firefox itself." >> $(HOOK)
+	@echo "//" >> $(HOOK)
+	@echo "// NOTE: Use this in the system-wide configuration only and only if you want the" >> $(HOOK)
+	@echo "//       settings to be locked." >> $(HOOK)
+	@echo "//       Take a look here:" >> $(HOOK)
+	@echo "//  https://github.com/pyllyukko/user.js#system-wide-installation-all-platforms" >> $(HOOK)
+	@echo "/*******************************************************************************" >> $(HOOK)
+	@echo "" >> $(HOOK)
+	@echo "" >> $(HOOK)
+	@echo "EOF" >> $(HOOK)
+	@echo "sed 's/user_pref(\"/lockPref(\"/g' user.js >> locked_user.js" >> $(HOOK)
+	@echo "git add locked_user.js" >> $(HOOK)
+	@echo "echo \"pre-commit: added locked_user.js to commit.\"" >> $(HOOK)
+	@chmod u=rwx,g=rwx,o=rx $(HOOK)
