@@ -16,6 +16,9 @@ tests: sourceprefs.js checkdeprecated stats acorn bash_syntax shellcheck
 acorn:
 	acorn --silent user.js
 
+locked_user.js: user.js
+	sed 's/^user_pref/lockPref/' $< >| $@
+
 .PHONY: bash_syntax
 bash_syntax:
 	$(foreach i,$(wildcard *.sh),bash -n $(i);)
