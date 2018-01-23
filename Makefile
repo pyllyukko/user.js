@@ -19,6 +19,9 @@ acorn:
 locked_user.js: user.js
 	sed 's/^user_pref/lockPref/' $< >| $@
 
+systemwide_user.js: user.js
+	sed 's/^user_pref/pref/' $< >| $@
+
 .PHONY: bash_syntax
 bash_syntax:
 	$(foreach i,$(wildcard *.sh),bash -n $(i);)
