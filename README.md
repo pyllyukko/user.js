@@ -77,7 +77,12 @@ With this installation method, if you change any of `user.js` settings through [
 
 ### System-wide installation (all platforms)
 
-Copy `user.js` to the Firefox installation directory. The file should be located at:
+Generate a file suitable for system-wide installation, by running ```make``` with one of the following targets:
+
+* ```systemwide_user.js```: (the value will be used as default value for all Firefox Profiles where it is not explicitly set, it can be changed in `about:config` and is kept across browser sessions)
+* ```locked_user.js```: (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings.
+
+Copy the produced file to the Firefox installation directory. The file should be located at:
 
 | OS             | Path                                                       |
 | -------------- | ---------------------------------------------------------- |
@@ -85,10 +90,6 @@ Copy `user.js` to the Firefox installation directory. The file should be located
 | Linux          | `/etc/firefox/syspref.js`, for older versions: `/etc/firefox/firefox.js` |
 | Linux (Debian) | `/etc/firefox-esr/firefox-esr.js`                          |
 | OS X           | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
-
-In `user.js`, Change `user_pref(` to  one of:
- * `pref(` (the value will be used as default value for all Firefox Profiles where it is not explicitly set, it can be changed in `about:config` and is kept across browser sessions)
- * `lockPref(` (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings.
 
 #### Additional installation steps for Windows/OS X
 
