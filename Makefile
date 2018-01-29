@@ -65,7 +65,7 @@ tbb-diff: 000-tor-browser.js
 
 .PHONY: tbb-diff-2
 tbb-diff-2: 000-tor-browser.js
-	for setting in $$( comm -12 <(sed -n '/$(regex)/\1/p' user.js | sort) <(sed -n '/$(regex)/\1/p' $< | sort)); do diff <(grep "$${setting}" user.js | sed -n '/$(regex)/\1 = \2/p' | sort) <(grep "$${setting}" $< | sed -n '/$(regex)/\1 = \2/p' | sort); done
+	for setting in $$( comm -12 <(sed -n '/$(regex)/\1/p' user.js | sort) <(sed -n '/$(regex)/\1/p' $< | sort)); do diff <(grep "^\(user_\)\?pref(\"$${setting}\"" user.js | sed -n '/$(regex)/\1 = \2/p' | sort) <(grep "^\(user_\)\?pref(\"$${setting}\"" $< | sed -n '/$(regex)/\1 = \2/p' | sort); done
 
 .PHONY: tbb-missing-from-user.js
 tbb-missing-from-user.js: 000-tor-browser.js
