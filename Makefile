@@ -58,9 +58,14 @@ TBBBRANCH=tor-browser-52.6.2esr-7.5-2
 000-tor-browser.js:
 	wget -nv "https://gitweb.torproject.org/tor-browser.git/plain/browser/app/profile/$@?h=$(TBBBRANCH)" -O $@
 
+regex = ^\(user_\)\?pref/s/^.*pref("\([^"]\+\)",\s*\([^)]\+\).*$$
 .PHONY: tbb-diff
 tbb-diff: 000-tor-browser.js
-	diff <(sed -n '/^\(user_\)\?pref/s/^.*pref("\([^"]\+\)",\s*\([^)]\+\).*$$/\1 = \2/p' user.js | sort) <(sed -n '/^\(user_\)\?pref/s/^.*pref("\([^"]\+\)",\s*\([^)]\+\).*$$/\1 = \2/p' 000-tor-browser.js | sort)
+	diff <(sed -n '/$(regex)/\1 = \2/p' user.js | sort) <(sed -n '/$(regex)/\1 = \2/p' $< | sort)
+
+.PHONY: tbb-missing-from-user.js
+tbb-missing-from-user.js: 000-tor-browser.js
+	comm -13 <(sed -n '/$(regex)/\1/p' user.js | sort) <(sed -n '/$(regex)/\1/p' $< | sort)
 
 ######################
 
