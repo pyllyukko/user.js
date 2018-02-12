@@ -325,6 +325,11 @@ user_pref("browser.startup.homepage_override.buildID",		"20100101");
 // https://github.com/pyllyukko/user.js/issues/120
 user_pref("browser.display.use_document_fonts",			0);
 
+// PREF: Disable JavaScript JIT
+// https://trac.torproject.org/projects/tor/ticket/21011
+user_pref("javascript.options.baselinejit.content",		false);
+user_pref("javascript.options.ion.content",			false);
+
 // PREF: Enable only whitelisted URL protocol handlers
 // http://kb.mozillazine.org/Network.protocol-handler.external-default
 // http://kb.mozillazine.org/Network.protocol-handler.warn-external-default
