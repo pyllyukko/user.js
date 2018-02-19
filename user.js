@@ -698,6 +698,12 @@ user_pref("network.http.referer.spoofSource",			true);
 // CIS 2.5.1
 user_pref("network.cookie.cookieBehavior",			1);
 
+// PREF: Enable first-party isolation
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1299996
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1260931
+// https://wiki.mozilla.org/Security/FirstPartyIsolation
+user_pref("privacy.firstparty.isolate",				true);
+
 // PREF: Make sure that third-party cookies (if enabled) never persist beyond the session.
 // https://feeding.cloud.geek.nz/posts/tweaking-cookies-for-privacy-in-firefox/
 // http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
