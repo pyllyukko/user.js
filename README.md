@@ -428,6 +428,7 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 * Spoofing referers breaks visualisation of 3rd-party sites on the Lightbeam addon
 * Spoofing referers disables CSRF protection on some login pages not implementing origin-header/cookie+token based CSRF protection
 * Blocking 3rd-party cookies breaks a number of payment gateways
+* Breaks Firefox addon "Cookie AutoDelete" as of February 2018
 * You can not view or inspect cookies when in private browsing: https://bugzilla.mozilla.org/show_bug.cgi?id=823941
 * When Javascript is enabled, Websites can detect use of Private Browsing mode
 * Private browsing breaks Kerberos authentication
