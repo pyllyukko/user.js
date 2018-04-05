@@ -91,6 +91,30 @@ Copy the produced file to the Firefox installation directory. The file should be
 | Linux (Debian) | `/etc/firefox-esr/firefox-esr.js`                          |
 | OS X           | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
 
+#### System-wide installation for source-based distributions (e.g Archlinux, Gentoo)
+
+Genereate a file as described above.
+
+1. Create `/usr/lib/firefox/defaults/pref/local-settings.js`:
+```javascript
+pref("general.config.obscure_value", 0);    
+pref("general.config.filename", "mozilla.cfg");    
+```
+
+Note: Dependent on the system the path might also be `/usr/lib32/firef..` or `/usr/lib64/firef..`.
+2. Move the generated file to `/usr/lib/firefox/mozilla.cfg` 
+
+##### If you want to create your own config file:
+Create /usr/lib/firefox/mozilla.cfg (this stores the actual configuration):
+```javascript
+//    
+//...your settings...    
+// e.g to disable Pocket, uncomment the following line    
+// lockPref("browser.pocket.enabled", false);    
+```
+Please note that the first line must contain exactly // (generated files have this).    
+The syntax of the file is similar to that of user.js. 
+
 #### Additional installation steps for Windows/OS X
 
 Create `local-settings.js` in Firefox installation directory, with the following contents:
