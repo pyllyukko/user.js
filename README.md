@@ -89,33 +89,10 @@ Copy the produced file to the Firefox installation directory. The file should be
 | Windows        | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`       |
 | Linux          | `/etc/firefox/syspref.js`, for older versions: `/etc/firefox/firefox.js` |
 | Linux (Debian) | `/etc/firefox-esr/firefox-esr.js`                          |
+| Linux (Gentoo, Archlinux) | `/usr/lib/firefox/mozilla.cfg`, might also be `/usr/lib32/` or `/usr/lib64/` |
 | OS X           | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
 
-#### System-wide installation for source-based distributions (e.g Archlinux, Gentoo)
-
-Genereate a file as described above.
-
-1. Create `/usr/lib/firefox/defaults/pref/local-settings.js`:
-```javascript
-pref("general.config.obscure_value", 0);    
-pref("general.config.filename", "mozilla.cfg");    
-```
-
-Note: Dependent on the system the path might also be `/usr/lib32/firef..` or `/usr/lib64/firef..`.
-2. Move the generated file to `/usr/lib/firefox/mozilla.cfg` 
-
-##### If you want to create your own config file:
-Create /usr/lib/firefox/mozilla.cfg (this stores the actual configuration):
-```javascript
-//    
-//...your settings...    
-// e.g to disable Pocket, uncomment the following line    
-// lockPref("browser.pocket.enabled", false);    
-```
-Please note that the first line must contain exactly // (generated files have this).    
-The syntax of the file is similar to that of user.js. 
-
-#### Additional installation steps for Windows/OS X
+#### Additional installation steps for Windows / OS X / Gentoo / Archlinux
 
 Create `local-settings.js` in Firefox installation directory, with the following contents:
 
@@ -130,6 +107,7 @@ This file should be located at:
 | ------- | ------------------------------------------------------------ |
 | Windows | `C:\Program Files (x86)\Mozilla Firefox\defaults\pref\`      |
 | OS X    | `/Applications/Firefox.app/Contents/Resources/defaults/pref` |
+| Linux (Gentoo, Archlinux) | `/usr/lib/firefox/defaults/pref/`, might also be `/usr/lib32/` or `/usr/lib64/` |
 
 If `mozilla.cfg` still fails to load, you must add a blank comment to the top of `mozilla.cfg` like so:
 ```
