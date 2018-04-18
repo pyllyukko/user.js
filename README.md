@@ -89,9 +89,10 @@ Copy the produced file to the Firefox installation directory. The file should be
 | Windows        | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`       |
 | Linux          | `/etc/firefox/syspref.js`, for older versions: `/etc/firefox/firefox.js` |
 | Linux (Debian) | `/etc/firefox-esr/firefox-esr.js`                          |
+| Linux (Gentoo, Archlinux) | `/usr/lib/firefox/mozilla.cfg`, might also be `/usr/lib32/` or `/usr/lib64/` |
 | OS X           | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
 
-#### Additional installation steps for Windows/OS X
+#### Additional installation steps for Windows / OS X / Gentoo / Archlinux
 
 Create `local-settings.js` in Firefox installation directory, with the following contents:
 
@@ -106,6 +107,7 @@ This file should be located at:
 | ------- | ------------------------------------------------------------ |
 | Windows | `C:\Program Files (x86)\Mozilla Firefox\defaults\pref\`      |
 | OS X    | `/Applications/Firefox.app/Contents/Resources/defaults/pref` |
+| Linux (Gentoo, Archlinux) | `/usr/lib/firefox/defaults/pref/`, might also be `/usr/lib32/` or `/usr/lib64/` |
 
 If `mozilla.cfg` still fails to load, you must add a blank comment to the top of `mozilla.cfg` like so:
 ```
