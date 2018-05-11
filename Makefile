@@ -22,6 +22,10 @@ locked_user.js: user.js
 systemwide_user.js: user.js
 	sed 's/^user_pref/pref/' $< >| $@
 
+# https://github.com/mozilla/policy-templates/blob/master/README.md
+policies.json:
+	jq -n -M "{\"policies\": {\"OfferToSaveLogins\": false, \"DisableBuiltinPDFViewer\": true, \"DisablePocket\": true, \"DisableFormHistory\": true, \"SanitizeOnShutdown\": true, \"SearchBar\": \"separate\", \"DisableTelemetry\": true, \"Cookies\": {\"AcceptThirdParty\": \"never\", \"ExpireAtSessionEnd\": true}, \"EnableTrackingProtection\": {\"Value\": true}, \"PopupBlocking\": {\"Default\": true}, \"FlashPlugin\": {\"Default\": false}, \"DisableFirefoxStudies\": true}}" >| $@
+
 .PHONY: bash_syntax
 bash_syntax:
 	$(foreach i,$(wildcard *.sh),bash -n $(i);)
