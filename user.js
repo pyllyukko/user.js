@@ -24,7 +24,7 @@ user_pref("dom.serviceWorkers.enabled",				false);
 user_pref("dom.workers.enabled",					false);
 
 // PREF: Disable web notifications
-// https://support.mozilla.org/t5/Firefox/I-can-t-find-Firefox-menu-I-m-trying-to-opt-out-of-Web-Push-and/m-p/1317495#M1006501
+// https://support.mozilla.org/en-US/questions/1140439
 user_pref("dom.webnotifications.enabled",			false);
 
 // PREF: Disable DOM timing API
