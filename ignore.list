@@ -503,3 +503,11 @@
 // https://bugzilla.mozilla.org/show_bug.cgi?id=448743
 "general.useragent.locale"
 
+// PREF: Set the default search engine to DuckDuckGo
+// https://support.mozilla.org/en-US/questions/948134
+// No longer works in Firefox 52+, results in unexpected default search engine
+// https://github.com/pyllyukko/user.js/issues/396
+user_pref("browser.search.defaultenginename",	"DuckDuckGo");
+user_pref("browser.search.order.1",				"DuckDuckGo");
+user_pref("keyword.URL", 			       	    "https://duckduckgo.com/?q=!+");
+
