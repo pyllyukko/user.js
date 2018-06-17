@@ -585,6 +585,12 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.topstories",	false);
  * SECTION: Automatic connections                                             *
  ******************************************************************************/
 
+// PREF: Limit the connection keep-alive timeout to 15 seconds (disabled)
+// https://github.com/pyllyukko/user.js/issues/387
+// http://kb.mozillazine.org/Network.http.keep-alive.timeout
+// https://httpd.apache.org/docs/current/mod/core.html#keepalivetimeout
+//user_pref("network.http.keep-alive.timeout",			15);
+
 // PREF: Disable prefetching of <link rel="next"> URLs
 // http://kb.mozillazine.org/Network.prefetch-next
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ#Is_there_a_preference_to_disable_link_prefetching.3F
