@@ -901,7 +901,6 @@ user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 // https://hg.mozilla.org/mozilla-central/rev/304560
 user_pref("plugins.update.notifyUser",				true);
 
-
 // PREF: Force Punycode for Internationalized Domain Names
 // http://kb.mozillazine.org/Network.IDN_show_punycode
 // https://www.xudongz.com/blog/2017/idn-phishing/
