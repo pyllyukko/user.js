@@ -197,6 +197,9 @@ user_pref("webgl.enable-debug-renderer-info",			false);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1360039
 user_pref("dom.maxHardwareConcurrency",				2);
 
+// PREF: Disable WebAssembly
+user_pref("javascript.options.wasm",				false);
+
 /******************************************************************************
  * SECTION: Misc                                                              *
  ******************************************************************************/
