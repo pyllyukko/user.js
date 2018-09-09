@@ -1,3 +1,4 @@
+//
 /******************************************************************************
  * user.js                                                                    *
  * https://github.com/pyllyukko/user.js                                       *
@@ -68,6 +69,11 @@ user_pref("dom.mozTCPSocket.enabled",				false);
 // https://wicg.github.io/netinfo/#privacy-considerations
 // https://bugzilla.mozilla.org/show_bug.cgi?id=960426
 user_pref("dom.netinfo.enabled",				false);
+
+// PREF: Disable network API (Firefox < 32)
+// https://developer.mozilla.org/en-US/docs/Web/API/Connection/onchange
+// https://www.torproject.org/projects/torbrowser/design/#fingerprinting-defenses
+user_pref("dom.network.enabled",				false);
 
 // PREF: Disable WebRTC entirely to prevent leaking internal IP addresses (Firefox < 42)
 // NOTICE: Disabling WebRTC breaks peer-to-peer file sharing tools (reep.io ...)
@@ -185,18 +191,20 @@ user_pref("webgl.enable-debug-renderer-info",			false);
 // somewhat related...
 //user_pref("pdfjs.enableWebGL",					false);
 
+// PREF: Spoof dual-core CPU
+// https://trac.torproject.org/projects/tor/ticket/21675
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1360039
+user_pref("dom.maxHardwareConcurrency",				2);
+
+// PREF: Disable WebAssembly
+user_pref("javascript.options.wasm",				false);
+
 /******************************************************************************
  * SECTION: Misc                                                              *
  ******************************************************************************/
 
 // PREF: Disable face detection
 user_pref("camera.control.face_detection.enabled",		false);
-
-// PREF: Set the default search engine to DuckDuckGo (disabled)
-// https://support.mozilla.org/en-US/questions/948134
-//user_pref("browser.search.defaultenginename",		"DuckDuckGo");
-//user_pref("browser.search.order.1",				"DuckDuckGo");
-//user_pref("keyword.URL", 							"https://duckduckgo.com/html/?q=!+");  
 
 // PREF: Disable GeoIP lookup on your address to set default search engine region
 // https://trac.torproject.org/projects/tor/ticket/16254
@@ -207,11 +215,7 @@ user_pref("browser.search.geoip.url",				"");
 
 // PREF: Set Accept-Language HTTP header to en-US regardless of Firefox localization
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language
-user_pref("intl.accept_languages",				"en-us, en");
-
-// PREF: Set Firefox locale to en-US
-// http://kb.mozillazine.org/General.useragent.locale
-user_pref("general.useragent.locale",				"en-US");
+user_pref("intl.accept_languages",				"en-US, en");
 
 // PREF: Don't use OS values to determine locale, force using Firefox locale setting
 // http://kb.mozillazine.org/Intl.locale.matchOS
@@ -311,6 +315,7 @@ user_pref("media.video_stats.enabled",				false);
 // Value taken from Tor Browser
 // https://bugzilla.mozilla.org/show_bug.cgi?id=583181
 user_pref("general.buildID.override",				"20100101");
+user_pref("browser.startup.homepage_override.buildID",		"20100101");
 
 // PREF: Prevent font fingerprinting
 // https://browserleaks.com/fonts
@@ -339,6 +344,8 @@ user_pref("network.protocol-handler.external.ftp",		false);
 user_pref("network.protocol-handler.external.file",		false);
 user_pref("network.protocol-handler.external.about",		false);
 user_pref("network.protocol-handler.external.chrome",		false);
+user_pref("network.protocol-handler.external.blob",		false);
+user_pref("network.protocol-handler.external.data",		false);
 user_pref("network.protocol-handler.expose-all",		false);
 user_pref("network.protocol-handler.expose.http",		true);
 user_pref("network.protocol-handler.expose.https",		true);
@@ -348,6 +355,8 @@ user_pref("network.protocol-handler.expose.ftp",		true);
 user_pref("network.protocol-handler.expose.file",		true);
 user_pref("network.protocol-handler.expose.about",		true);
 user_pref("network.protocol-handler.expose.chrome",		true);
+user_pref("network.protocol-handler.expose.blob",		true);
+user_pref("network.protocol-handler.expose.data",		true);
 
 /******************************************************************************
  * SECTION: Extensions / plugins                                                       *
@@ -390,7 +399,7 @@ user_pref("browser.safebrowsing.blockedURIs.enabled", true);
 
 // PREF: Disable Shumway (Mozilla Flash renderer)
 // https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Shumway
-pref("shumway.disabled", true);
+user_pref("shumway.disabled", true);
 
 // PREF: Disable Gnome Shell Integration NPAPI plugin
 user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
@@ -565,9 +574,24 @@ user_pref("browser.safebrowsing.downloads.remote.enabled",	false);
 user_pref("browser.pocket.enabled",				false);
 user_pref("extensions.pocket.enabled",				false);
 
+// PREF: Disable SHIELD
+// https://support.mozilla.org/en-US/kb/shield
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1370801
+user_pref("extensions.shield-recipe-client.enabled",		false);
+user_pref("app.shield.optoutstudies.enabled",			false);
+
+// PREF: Disable "Recommended by Pocket" in Firefox Quantum
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories",	false);
+
 /******************************************************************************
  * SECTION: Automatic connections                                             *
  ******************************************************************************/
+
+// PREF: Limit the connection keep-alive timeout to 15 seconds (disabled)
+// https://github.com/pyllyukko/user.js/issues/387
+// http://kb.mozillazine.org/Network.http.keep-alive.timeout
+// https://httpd.apache.org/docs/current/mod/core.html#keepalivetimeout
+//user_pref("network.http.keep-alive.timeout",			15);
 
 // PREF: Disable prefetching of <link rel="next"> URLs
 // http://kb.mozillazine.org/Network.prefetch-next
@@ -622,6 +646,10 @@ user_pref("browser.aboutHomeSnippets.updateUrl",		"");
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_auto-update-checking
 user_pref("browser.search.update",				false);
 
+// PREF: Disable automatic captive portal detection (Firefox >= 52.0)
+// https://support.mozilla.org/en-US/questions/1157121
+user_pref("network.captive-portal-service.enabled",		false);
+
 /******************************************************************************
  * SECTION: HTTP                                                              *
  ******************************************************************************/
@@ -672,6 +700,12 @@ user_pref("network.http.referer.spoofSource",			true);
 // NOTICE: Blocking 3rd-party cookies breaks a number of payment gateways
 // CIS 2.5.1
 user_pref("network.cookie.cookieBehavior",			1);
+
+// PREF: Enable first-party isolation
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1299996
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1260931
+// https://wiki.mozilla.org/Security/FirstPartyIsolation
+user_pref("privacy.firstparty.isolate",				true);
 
 // PREF: Make sure that third-party cookies (if enabled) never persist beyond the session.
 // https://feeding.cloud.geek.nz/posts/tweaking-cookies-for-privacy-in-firefox/
@@ -770,6 +804,10 @@ user_pref("network.cookie.lifetimePolicy",			0);
 // https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
 user_pref("signon.autofillForms",				false);
 
+// PREF: Disable formless login capture
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1166947
+user_pref("signon.formlessCapture.enabled",			false);
+
 // PREF: When username/password autofill is enabled, still disable it on non-HTTPS sites
 // https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317
 user_pref("signon.autofillForms.http",				false);
@@ -846,6 +884,10 @@ user_pref("browser.download.useDownloadDir",			false);
 user_pref("browser.newtabpage.enabled",				false);
 user_pref("browser.newtab.url",					"about:blank");
 
+// PREF: Disable Activity Stream
+// https://wiki.mozilla.org/Firefox/Activity_Stream
+user_pref("browser.newtabpage.activity-stream.enabled",		false);
+
 // PREF: Disable new tab tile ads & preload
 // http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
 // http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331
@@ -863,7 +905,6 @@ user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 // CIS Version 1.2.0 October 21st, 2011 2.1.2
 // https://hg.mozilla.org/mozilla-central/rev/304560
 user_pref("plugins.update.notifyUser",				true);
-
 
 // PREF: Force Punycode for Internationalized Domain Names
 // http://kb.mozillazine.org/Network.IDN_show_punycode

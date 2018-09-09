@@ -38,7 +38,7 @@ for PROGRAM in \
 do
   if ! hash "${PROGRAM}" 2>/dev/null
   then
-    printf "error: command not found in PATH: %s\n" "${PROGRAM}" >&2
+    printf "[-] error: command not found in PATH: %s\n" "${PROGRAM}" >&2
     exit 1
   fi
 done
@@ -48,7 +48,7 @@ unset PROGRAM
 export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
 declare -A CAs=()
 declare -A CERT8_CAs=()
-declare -A CERT8_NICKS=()
+#declare -A CERT8_NICKS=()
 # this uses all the available firefox profiles
 INDEX_ALL_CERT8=0
 declare -a BASIC_LIST=(
@@ -92,7 +92,7 @@ function import_cas() {
 
   if [ -z "${FF_HOME}" ]
   then
-    echo "${FUNCNAME}(): error: FF_HOME not defined!" 1>&2
+    echo "[-] error: FF_HOME not defined!" 1>&2
     return 1
   fi
 
@@ -106,14 +106,14 @@ function import_cas() {
     #fi
     if [ ! -f "${REQUIRED_CA}" ]
     then
-      echo "error: file \`${REQUIRED_CA}' not found!" 1>&2
+      echo "[-] error: file \`${REQUIRED_CA}' not found!" 1>&2
       continue
     fi
     echo "  ${REQUIRED_CA}"
     # certutil requires a "nickname", so we'll use the CN or OU
     # TODO: change this?
     NICKNAME=$( openssl x509 -in "${REQUIRED_CA}" -noout -subject | sed 's/^.*\(CN\|OU\)=//' )
-    cat "${REQUIRED_CA}" | certutil -A -n "${NICKNAME}" -t CT,c,c -a -d "${FF_HOME}"
+    certutil -A -n "${NICKNAME}" -t CT,c,c -a -d "${FF_HOME}" 0<"${REQUIRED_CA}"
 
     # TEST!!! allow code signing
     #cat "${REQUIRED_CA}" | certutil -A -n "${NICKNAME}" -t CT,c,C -a -d "${FF_HOME}"
@@ -127,7 +127,7 @@ function expand_cert_path() {
   local FILE="${1}"
   if [ ! -f "${FILE}" ]
   then
-    echo "${FUNCNAME}(): error: file \`${FILE}' not found!" 1>&2
+    echo "[-] error: file \`${FILE}' not found!" 1>&2
     return 1
   fi
   while [ -h "${FILE}" ]
@@ -151,17 +151,17 @@ function get_required_cas_list() {
 
   if [ -z "${CP}" ]
   then
-    echo "error: no CertPatrol path defined!" 1>&2
+    echo "[-] error: no CertPatrol path defined!" 1>&2
     return 1
   elif [ ! -f "${CP}" ]
   then
-    echo "error: certpatrol DB \`${CP}' not found!" 1>&2
+    echo "[-] error: certpatrol DB \`${CP}' not found!" 1>&2
     return 1
   fi
 
   # read all the issuer fingerprints from certificate patrol's DB
   echo "reading issuer fingerprints from certpatrol's DB"
-  FINGERPRINTS=( $( sqlite3 ${CP} 0<<<"select distinct issuerSha1Fingerprint from certificates where issuerSha1Fingerprint is not '';" ) )
+  FINGERPRINTS=( $( sqlite3 "${CP}" 0<<<"select distinct issuerSha1Fingerprint from certificates where issuerSha1Fingerprint is not '';" ) )
   echo -e "${#FINGERPRINTS[*]} issuer fingerprints found\n"
   for FINGERPRINT in ${FINGERPRINTS[*]}
   do
@@ -185,7 +185,7 @@ function get_required_cas_list() {
       if [ -z "${REQUIRED_CA}" ]
       then
 	# TODO: check if the cert actually is root CA
-	echo -e "  ${WRN}WARNING${RST}: no root CA found for this cert -> continue"
+	echo -e "  [${WRN}-${RST}]WARNING: no root CA found for this cert -> continue"
         continue
       fi
       echo "  root CA found on file system: ${REQUIRED_CA}"
@@ -194,13 +194,13 @@ function get_required_cas_list() {
       #certutil -L -n "${CERT8_CAs[${FINGERPRINT}]}" -a -d "${OLD_FF_HOME}" | openssl verify -CAfile "${REQUIRED_CA}"
     else
       # issuer cert not found
-      if (( ${DEBUG} ))
+      if (( DEBUG ))
       then
-        ISSUER_CN=$( sqlite3 ${CP} 0<<<"select distinct issuerCommonName from certificates where issuerSha1Fingerprint is \"${FINGERPRINT}\";" )
+        ISSUER_CN=$( sqlite3 "${CP}" 0<<<"select distinct issuerCommonName from certificates where issuerSha1Fingerprint is \"${FINGERPRINT}\";" )
         echo -e "${FINGERPRINT}: \033[1;31mnot\033[0m found \"${ISSUER_CN}\"!" 1>&2
         # print hosts that use this issuer
 	echo "  sites that use this CA:"
-        sqlite3 ${CP} 0<<<"select host from certificates where issuerSha1Fingerprint is \"${FINGERPRINT}\";" | sed 's/^/    /'
+        sqlite3 "${CP}" 0<<<"select host from certificates where issuerSha1Fingerprint is \"${FINGERPRINT}\";" | sed 's/^/    /'
       fi
     fi
     if [ -n "${REQUIRED_CA}" ]
@@ -223,7 +223,7 @@ function print_required_cas_list() {
     echo "  ${REQUIRED_CA}"
     if [ ! -f "${REQUIRED_CA}" ]
     then
-      echo "    WARNING: not found!" 1>&2
+      echo "    [-] WARNING: not found!" 1>&2
     fi
   done
 
@@ -238,7 +238,7 @@ function print_countries() {
   OIFS=${IFS}
   IFS=$'\n'
   # get the "nicknames", as this is the way certutil handles the certs
-  NICKNAMES=( $( certutil -L -d "${FF_HOME}" | fgrep -v ",," | sed '1,4d' | gawk 'NF--' ) )
+  NICKNAMES=( $( certutil -L -d "${FF_HOME}" | grep -F -v ",," | sed '1,4d' | gawk 'NF--' ) )
   IFS=${OIFS}
   for NICKNAME in "${NICKNAMES[@]}"
   do
@@ -248,7 +248,7 @@ function print_countries() {
     then
       echo "${COUNTRY#C=}"
     else
-      echo "warning: country not found for \`${NICKNAME}'!" 1>&2
+      echo "[-] warning: country not found for \`${NICKNAME}'!" 1>&2
     fi
   done | sort | uniq -c
 
@@ -265,13 +265,13 @@ function reverse_index() {
 
   if [ -z "${FF_HOME}" ]
   then
-    echo "${FUNCNAME}(): error: FF_HOME not defined!" 1>&2
+    echo "[-] error: FF_HOME not defined!" 1>&2
     return 1
   fi
 
   OIFS=${IFS}
   IFS=$'\n'
-  NICKNAMES=( $( certutil -L -d "${FF_HOME}" | sed '1,4d' | fgrep -v ',,' | gawk 'NF--' ) )
+  NICKNAMES=( $( certutil -L -d "${FF_HOME}" | sed '1,4d' | grep -F -v ',,' | gawk 'NF--' ) )
   IFS=${OIFS}
 
   for NICKNAME in "${NICKNAMES[@]}"
@@ -280,7 +280,7 @@ function reverse_index() {
     FP=$( certutil -L -n "${NICKNAME}" -a -d "${FF_HOME}" | openssl x509 -noout -fingerprint -sha1 | sed 's/^.*Fingerprint=//' )
     if [ -z "${FP}" ]
     then
-      echo "WARNING: could not get fingerprint for \`${NICKNAME}'!" 1>&2
+      echo "[-] WARNING: could not get fingerprint for \`${NICKNAME}'!" 1>&2
     fi
     #FPS+=( $( certutil -L -n "${NICKNAME}" -a -d "${FF_HOME}" | openssl x509 -noout -fingerprint -sha1 | sed 's/^.*Fingerprint=//' ) )
     FPS+=( ${FP} )
@@ -294,7 +294,7 @@ function reverse_index() {
     then
       echo "${CAs[${FP}]}"
     else
-      echo "WARNING: \`${NICKNAME}' not found (fp=${FP})!" 1>&2
+      echo "[-] WARNING: \`${NICKNAME}' not found (fp=${FP})!" 1>&2
     fi
   done
 
@@ -342,13 +342,13 @@ function index_cas() {
 
   if [ -z "${OLD_FF_HOME}" ]
   then
-    echo "${FUNCNAME}(): WARNING: OLD_FF_HOME not defined -> returning" 1>&2
+    echo "[-] WARNING: OLD_FF_HOME not defined -> returning" 1>&2
     return 1
   fi
 
   # cert8.db
   # use all available firefox profiles
-  if (( ${INDEX_ALL_CERT8} ))
+  if (( INDEX_ALL_CERT8 ))
   then
     OIFS=${IFS}
     IFS=$'\n'
@@ -374,7 +374,7 @@ function index_cas() {
       then
 	#echo "${NICKNAME}: ${FP}"
 	CERT8_CAs["${FP}"]="${NICKNAME}"
-	CERT8_NICKS["${NICKNAME}"]="${FP}"
+	#CERT8_NICKS["${NICKNAME}"]="${FP}"
       fi
     done
   done
@@ -440,9 +440,9 @@ do
       CP="${OLD_FF_HOME}/CertPatrol.sqlite"
     ;;
     "P")
-      if [ -z "${OPTARG}" -o ! -d "${OPTARG}" ]
+      if [ -z "${OPTARG}" ] || [ ! -d "${OPTARG}" ]
       then
-        echo "error: -P requires an option!" 1>&2
+        echo "[-] error: -P requires an option!" 1>&2
 	exit 1
       fi
       FF_HOME="${OPTARG}"
@@ -453,8 +453,8 @@ do
     "C")
       if [ ! -d /usr/share/ca-certificates ]
       then
-	echo "error: directory \`/usr/share/ca-certificates' does not exist!"									1>&2
-	echo "       you might be running RH/CentOS, which has different system for CAs. see https://github.com/pyllyukko/user.js/issues/140"	1>&2
+	echo "[-] error: directory \`/usr/share/ca-certificates' does not exist!"									1>&2
+	echo "           you might be running RH/CentOS, which has different system for CAs. see https://github.com/pyllyukko/user.js/issues/140"	1>&2
 	exit 1
       fi
       REQUIRED_CAs=( ${BASIC_LIST[*]/#/\/usr\/share\/ca-certificates\/} )
@@ -481,7 +481,7 @@ case "${ACTION}" in
   "rev") reverse_index ;;
   "renamelib") rename_libnssckbi ;;
   *)
-    echo "error: no action defined." 1>&2
+    echo "[-] error: no action defined." 1>&2
     exit 1
   ;;
 esac

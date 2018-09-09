@@ -52,6 +52,12 @@ Different download methods are available:
 
 ## Installation
 
+### Backups
+
+Do note that these settings alter your browser behaviour quite a bit, so it is recommended to either create a completely new [profile][15] for Firefox or backup your existing [profile directory](http://kb.mozillazine.org/Profile_folder_-_Firefox) before putting the `user.js` file in place.
+
+To enable the Profile Manager, run Firefox with [command-line arguments](http://kb.mozillazine.org/Command_line_arguments): `firefox --no-remote -P`
+
 ### Single profile installation
 
 Copy `user.js` in your current user profile directory, or (recommended) to a fresh, newly created Firefox profile directory.
@@ -67,28 +73,26 @@ The file should be located at:
 | Sailfish OS + Alien Dalvik | `/opt/alien/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name`                                                           |
 | Windows (portable)         | `[firefox directory]\Data\profile\`                                       |
 
-Do note that these settings alter your browser behaviour quite a bit, so it is recommended to either create a completely new [profile][15] for Firefox or backup your existing [profile directory](http://kb.mozillazine.org/Profile_folder_-_Firefox) before putting the `user.js` file in place.
-
-To enable the Profile Manager, run Firefox with [command-line arguments](http://kb.mozillazine.org/Command_line_arguments): `firefox --no-remote -P`
-
-With this installation method, if you change any of `user.js` settings through [`about:config`](http://kb.mozillazine.org/About:config) or Firefox preferences dialogs, they will be reset to the `user.js` defined values after you restart Firefox. This makes sure they're always back to secure defaults when starting the browser. However this prevents presistently changing settings you don't consider appropriate. Either edit `user`.js directly, or use the system-wide installation method described below.
+With this installation method, if you change any of `user.js` settings through [`about:config`](http://kb.mozillazine.org/About:config) or Firefox preferences dialogs, they will be reset to the `user.js` defined values after you restart Firefox. This makes sure they're always back to secure defaults when starting the browser. However this prevents persistently changing settings you don't consider appropriate. Either edit `user.js` directly, or use the system-wide installation method described below.
 
 ### System-wide installation (all platforms)
 
-Copy `user.js` to the Firefox installation directory. The file should be located at:
+Generate a file suitable for system-wide installation, by running ```make``` with one of the following targets:
+
+* ```systemwide_user.js```: (the value will be used as default value for all Firefox Profiles where it is not explicitly set, it can be changed in `about:config` and is kept across browser sessions)
+* ```locked_user.js```: (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings.
+
+Copy the produced file to the Firefox installation directory. The file should be located at:
 
 | OS             | Path                                                       |
 | -------------- | ---------------------------------------------------------- |
 | Windows        | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`       |
-| Linux          | `/etc/firefox/firefox.js`                                  |
+| Linux          | `/etc/firefox/syspref.js`, for older versions: `/etc/firefox/firefox.js` |
 | Linux (Debian) | `/etc/firefox-esr/firefox-esr.js`                          |
+| Linux (Gentoo, Archlinux) | `/usr/lib/firefox/mozilla.cfg`, might also be `/usr/lib32/` or `/usr/lib64/` |
 | OS X           | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
 
-In `user.js`, Change `user_pref(` to  one of:
- * `pref(` (the value will be used as default value for all Firefox Profiles where it is not explicitely set, it can be changed in `about:config` and is kept acrosse browser sessions)
- * `lockPref(` (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings.
-
-#### Additional installation steps for Windows/OSX
+#### Additional installation steps for Windows / OS X / Gentoo / Archlinux
 
 Create `local-settings.js` in Firefox installation directory, with the following contents:
 
@@ -103,8 +107,9 @@ This file should be located at:
 | ------- | ------------------------------------------------------------ |
 | Windows | `C:\Program Files (x86)\Mozilla Firefox\defaults\pref\`      |
 | OS X    | `/Applications/Firefox.app/Contents/Resources/defaults/pref` |
+| Linux (Gentoo, Archlinux) | `/usr/lib/firefox/defaults/pref/`, might also be `/usr/lib32/` or `/usr/lib64/` |
 
-If mozilla.cfg still fails to load, you must add a blank comment to the top of mozilla.cfg like so:
+If `mozilla.cfg` still fails to load, you must add a blank comment to the top of `mozilla.cfg` like so:
 ```
 //
 ```
@@ -130,7 +135,7 @@ Verify that the settings are effective from [about:support](http://kb.mozillazin
 
 There's a whole lot of settings that this modifies and they are divided in the following sections.
 
-Some of the settings in this `user.js` file might seem redundant, as some of them are already set to the same values by default. We chose to explicitely set their values, which ensures these settings are enforced if a future Firefox update change sthe default value.
+Some of the settings in this `user.js` file might seem redundant, as some of them are already set to the same values by default. We chose to explicitely set their values, which ensures these settings are enforced if a future Firefox update changes the default value.
 
 <!-- BEGIN SECTION -->
 
@@ -145,6 +150,7 @@ HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / [DOM](https://en.wikipedia.org
 * When geolocation is enabled, don't log geolocation requests to the console
 * Disable raw TCP socket support (mozTCPSocket) [ [1](https://trac.torproject.org/projects/tor/ticket/18863) [2](https://www.mozilla.org/en-US/security/advisories/mfsa2015-97/) [3](https://developer.mozilla.org/docs/Mozilla/B2G_OS/API/TCPSocket) ]
 * Disable leaking network/browser connection information via Javascript
+* Disable network API [ [1](https://developer.mozilla.org/en-US/docs/Web/API/Connection/onchange) [2](https://www.torproject.org/projects/torbrowser/design/#fingerprinting-defenses) ]
 * Disable WebRTC entirely to prevent leaking internal IP addresses (Firefox < 42)
 * Don't reveal your internal IP when WebRTC is enabled (Firefox >= 42) [ [1](https://wiki.mozilla.org/Media/WebRTC/Privacy) [2](https://github.com/beefproject/beef/wiki/Module%3A-Get-Internal-IP-WebRTC) ]
 * Disable WebRTC getUserMedia, screen sharing, audio capture, video capture [ [1](https://wiki.mozilla.org/Media/getUserMedia) [2](https://blog.mozilla.org/futurereleases/2013/01/12/capture-local-camera-and-microphone-streams-with-getusermedia-now-enabled-in-firefox/) [3](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) ]
@@ -166,6 +172,8 @@ HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / [DOM](https://en.wikipedia.org
 * When webGL is enabled, disable webGL extensions [ [1](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API#WebGL_debugging_and_testing) ]
 * When webGL is enabled, force enabling it even when layer acceleration is not supported [ [1](https://trac.torproject.org/projects/tor/ticket/18603) ]
 * When webGL is enabled, do not expose information about the graphics driver [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=1171228) [2](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_debug_renderer_info) ]
+* Spoof dual-core CPU [ [1](https://trac.torproject.org/projects/tor/ticket/21675) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1360039) ]
+* Disable WebAssembly
 
 ### Misc
 
@@ -238,6 +246,8 @@ Disable Firefox integrated metrics/reporting/experiments, disable potentially in
 * Enable blocking reported attack sites [ [1](http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled) ]
 * Disable querying Google Application Reputation database for downloaded binary files [ [1](https://www.mozilla.org/en-US/firefox/39.0/releasenotes/) [2](https://wiki.mozilla.org/Security/Application_Reputation) ]
 * Disable Pocket [ [1](https://support.mozilla.org/en-US/kb/save-web-pages-later-pocket-firefox) [2](https://github.com/pyllyukko/user.js/issues/143) ]
+* Disable SHIELD [ [1](https://support.mozilla.org/en-US/kb/shield) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1370801) ]
+* Disable "Recommended by Pocket" in Firefox Quantum
 
 ### Automatic connections
 
@@ -254,6 +264,7 @@ Prevents the browser from [auto-connecting](https://support.mozilla.org/en-US/kb
 * Disable speculative pre-connections [ [1](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_speculative-pre-connections) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=814169) ]
 * Disable downloading homepage snippets/messages from Mozilla [ [1](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_mozilla-content) [2](https://wiki.mozilla.org/Firefox/Projects/Firefox_Start/Snippet_Service) ]
 * Never check updates for search engines [ [1](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_auto-update-checking) ]
+* Disable automatic captive portal detection (Firefox >= 52.0) [ [1](https://support.mozilla.org/en-US/questions/1157121) ]
 
 ### HTTP
 
@@ -264,6 +275,7 @@ HTTP protocol related entries. This affects cookies, the user agent, referer and
 * Enable Subresource Integrity [ [1](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) [2](https://wiki.mozilla.org/Security/Subresource_Integrity) ]
 * Send a referer header with the target URI as the source [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=822869) [2](https://github.com/pyllyukko/user.js/issues/227) ]
 * Accept Only 1st Party Cookies [ [1](http://kb.mozillazine.org/Network.cookie.cookieBehavior#1) ]
+* Enable first-party isolation [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=1299996) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1260931) [3](https://wiki.mozilla.org/Security/FirstPartyIsolation) ]
 * Make sure that third-party cookies (if enabled) never persist beyond the session. [ [1](https://feeding.cloud.geek.nz/posts/tweaking-cookies-for-privacy-in-firefox/) [2](http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly) [3](https://developer.mozilla.org/en-US/docs/Cookies_Preferences_in_Mozilla#network.cookie.thirdparty.sessionOnly) ]
 
 ### Caching
@@ -280,6 +292,7 @@ Enable and configure private browsing mode, don't store information locally duri
 * Disable form autofill, don't save information entered in web page forms and the Search Bar
 * The cookie's lifetime is supplied by the server
 * Require manual intervention to autofill known username/passwords sign-in forms [ [1](http://kb.mozillazine.org/Signon.autofillForms) [2](https://www.torproject.org/projects/torbrowser/design/#identifier-linkability) ]
+* Disable formless login capture [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=1166947) ]
 * When username/password autofill is enabled, still disable it on non-HTTPS sites [ [1](https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317) ]
 * Show in-content login form warning UI for insecure login fields [ [1](https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317) ]
 * Delete Search and Form History
@@ -297,6 +310,7 @@ Improve visibility of security-related elements, mitigate shoulder-surfing
 * Disable Downloading on Desktop
 * Always ask the user where to download [ [1](https://developer.mozilla.org/en/Download_Manager_preferences (obsolete)) ]
 * Disable the "new tab page" feature and show a blank tab instead [ [1](https://wiki.mozilla.org/Privacy/Reviews/New_Tab) [2](https://support.mozilla.org/en-US/kb/new-tab-page-show-hide-and-customize-top-sites#w_how-do-i-turn-the-new-tab-page-off) ]
+* Disable Activity Stream [ [1](https://wiki.mozilla.org/Firefox/Activity_Stream) ]
 * Disable new tab tile ads & preload [ [1](http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox) [2](http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331) [3](https://wiki.mozilla.org/Tiles/Technical_Documentation#Ping) [4](https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source) [5](https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-ping) ]
 * Enable Auto Notification of Outdated Plugins (Firefox < 50) [ [1](https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review) ]
 * Force Punycode for Internationalized Domain Names [ [1](http://kb.mozillazine.org/Network.IDN_show_punycode) [2](https://www.xudongz.com/blog/2017/idn-phishing/) [3](https://wiki.mozilla.org/IDN_Display_Algorithm) [4](https://en.wikipedia.org/wiki/IDN_homograph_attack) [5](https://www.mozilla.org/en-US/security/advisories/mfsa2017-02/) ]
@@ -381,7 +395,7 @@ Here is a list of the most essential security and privacy enhancing add-ons that
 
 Additional add-ons that you might consider using or reading about:
 
-* [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/) (experienced users) 
+* [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/) (experienced users)
 * [Privacy Badger](https://www.eff.org/privacybadger)
 * [Mozilla Lightbeam](https://www.mozilla.org/en-US/lightbeam/)
 * [PRISM Break Web Browser Addons section](https://prism-break.org/en/subcategories/gnu-linux-web-browser-addons/)
@@ -448,7 +462,7 @@ See `lockPref` in [System-wide installation](#system-wide-installation).
 
 ## Contributing
 
-Yes please! All issues and pull requests are more than welcome. Please try 
+Yes please! All issues and pull requests are more than welcome. Please try
 to break down your pull requests or commits into small / manageable entities,
 so they are easier to process. All the settings in the ```user.js``` file
 should have some official references to them, so the effect of those settings
@@ -497,9 +511,9 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 
 * [SSL Client Test](https://www.ssllabs.com/ssltest/viewMyClient.html)
 * [How's My SSL](https://www.howsmyssl.com/)
-* [Mixed content tests (Mozilla)](https://people.mozilla.org/~tvyas/mixedcontent.html) 
-* [Mixed content tests (Microsoft)](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm) 
-* [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp) 
+* [Mixed content tests (Mozilla)](https://people.mozilla.org/~tvyas/mixedcontent.html)
+* [Mixed content tests (Microsoft)](https://ie.microsoft.com/testdrive/browser/mixedcontent/assets/woodgrove.htm)
+* [SSL Checker | Symantec CryptoReport](https://cryptoreport.websecurity.symantec.com/checker/views/sslCheck.jsp)
 * [Bad SSL](https://badssl.com/)
 
 #### Other tests
@@ -531,13 +545,14 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 * [Polaris - advance privacy technnology for the web](https://wiki.mozilla.org/Polaris)
 * [Mozilla Privacy Principles](https://wiki.mozilla.org/Privacy/Principles)
 * [List of Firefox "about:" URLs](https://developer.mozilla.org/en-US/Firefox/The_about_protocol)
+* [Policy Templates for Firefox](https://github.com/mozilla/policy-templates)
 * [Mozilla preferences for uber-geeks](https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Mozilla_preferences_for_uber-geeks)
 * [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/) ([RSS](https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/format:rss?sort=featured))
 
 #### Other documentation
 
 * **[CVEs for Firefox - mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=firefox)**
-* [CVEs for Firefox - cvedetails.com](https://www.cvedetails.com/vulnerability-list/vendor_id-452/product_id-3264/Mozilla-Firefox.html) 
+* [CVEs for Firefox - cvedetails.com](https://www.cvedetails.com/vulnerability-list/vendor_id-452/product_id-3264/Mozilla-Firefox.html)
 * [ghacksuserjs/ghacks-user.js](https://github.com/ghacksuserjs/ghacks-user.js): a similar project and great source of information, with different goals and methodology
 * [About:config entries - MozillaZine](http://kb.mozillazine.org/About:config_entries)
 * [Security and privacy-related preferences - MozillaZine](http://kb.mozillazine.org/Category:Security_and_privacy-related_preferences)
