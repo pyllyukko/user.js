@@ -432,12 +432,12 @@ user_pref("services.blocklist.update_enabled",			true);
 // https://trac.torproject.org/projects/tor/ticket/16931
 user_pref("extensions.blocklist.url",				"https://blocklist.addons.mozilla.org/blocklist/3/%APP_ID%/%APP_VERSION%/");
 
-// PREF: Disable system add-ons (hidden & always-enabled add-ons from Mozilla)
+// PREF: Disable system add-on updates (hidden & always-enabled add-ons from Mozilla)
 // https://firefox-source-docs.mozilla.org/toolkit/mozapps/extensions/addon-manager/SystemAddons.html
 // https://blog.mozilla.org/data/2018/08/20/effectively-measuring-search-in-firefox/
 // https://github.com/pyllyukko/user.js/issues/419
 // https://dxr.mozilla.org/mozilla-central/source/toolkit/mozapps/extensions/AddonManager.jsm#1248-1257
-// NOTICE: Disabling system add-ons prevents Mozilla from "hotfixing" your browser to patch critical problems (one possible use case from the documentation)
+// NOTICE: Disabling system add-on updates prevents Mozilla from "hotfixing" your browser to patch critical problems (one possible use case from the documentation)
 user_pref("extensions.systemAddon.update.enabled",		false);
 
 /******************************************************************************
