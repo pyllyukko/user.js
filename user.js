@@ -198,6 +198,9 @@ user_pref("webgl.enable-debug-renderer-info",			false);
 user_pref("dom.maxHardwareConcurrency",				2);
 
 // PREF: Disable WebAssembly
+// https://webassembly.org/
+// https://en.wikipedia.org/wiki/WebAssembly
+// https://trac.torproject.org/projects/tor/ticket/21549
 user_pref("javascript.options.wasm",				false);
 
 /******************************************************************************

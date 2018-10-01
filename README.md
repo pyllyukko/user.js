@@ -178,7 +178,7 @@ HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / [DOM](https://en.wikipedia.org
 * When webGL is enabled, force enabling it even when layer acceleration is not supported [ [1](https://trac.torproject.org/projects/tor/ticket/18603) ]
 * When webGL is enabled, do not expose information about the graphics driver [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=1171228) [2](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_debug_renderer_info) ]
 * Spoof dual-core CPU [ [1](https://trac.torproject.org/projects/tor/ticket/21675) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1360039) ]
-* Disable WebAssembly
+* Disable WebAssembly [ [1](https://webassembly.org/) [2](https://en.wikipedia.org/wiki/WebAssembly) [3](https://trac.torproject.org/projects/tor/ticket/21549) ]
 
 ### Misc
 
