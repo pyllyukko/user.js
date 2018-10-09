@@ -416,6 +416,7 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 * Spoofing referers disables CSRF protection on some login pages not implementing origin-header/cookie+token based CSRF protection
 * Blocking 3rd-party cookies breaks a number of payment gateways
 * Clearing open windows on Firefox exit causes 2 windows to open when Firefox starts https://bugzilla.mozilla.org/show_bug.cgi?id=1334945
+* Having either of privacy.clearOnShutdown.history or privacy.clearOnShutdown.offlineApps as true will clear service workers when closing Firefox
 * Make sure to set a Master password to protect Firefox's password storage against basic malware that could extract your password information
 * .URL shortcut files will be created with a generic icon
 * OCSP leaks your IP and domains you visit to the CA when OCSP Stapling is not available on visited host
