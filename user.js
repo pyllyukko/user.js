@@ -470,8 +470,10 @@ user_pref("devtools.debugger.force-local",			true);
 // https://wiki.mozilla.org/Security/Reviews/Firefox6/ReviewNotes/telemetry
 // https://gecko.readthedocs.io/en/latest/browser/experiments/experiments/manifest.html
 // https://wiki.mozilla.org/Telemetry/Experiments
+// https://support.mozilla.org/en-US/questions/1197144
 user_pref("toolkit.telemetry.enabled",				false);
 user_pref("toolkit.telemetry.unified",				false);
+user_pref("toolkit.telemetry.archive.enabled",			false);
 user_pref("experiments.supported",				false);
 user_pref("experiments.enabled",				false);
 user_pref("experiments.manifest.uri",				"");
