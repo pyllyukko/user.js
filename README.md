@@ -81,6 +81,7 @@ Generate a file suitable for system-wide installation, by running ```make``` wit
 
 * ```systemwide_user.js```: (the value will be used as default value for all Firefox Profiles where it is not explicitly set, it can be changed in `about:config` and is kept across browser sessions)
 * ```locked_user.js```: (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings.
+* ```debian_locked.js```: Debian specific. Users are not able to override preferences. See [#415](https://github.com/pyllyukko/user.js/issues/415).
 
 Copy the produced file to the Firefox installation directory. The file should be located at:
 
