@@ -719,6 +719,7 @@ user_pref("network.cookie.cookieBehavior",			1);
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1299996
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1260931
 // https://wiki.mozilla.org/Security/FirstPartyIsolation
+// NOTICE: First-party isolation breaks Microsoft Teams
 user_pref("privacy.firstparty.isolate",				true);
 
 // PREF: Make sure that third-party cookies (if enabled) never persist beyond the session.
