@@ -71,7 +71,7 @@ The file should be located at:
 | OS X                       | `~/Library/Application Support/Firefox/Profiles/XXXXXXXX.your_profile_name`                                                                   |
 | Android                    | `/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name` and see [issue #14](https://github.com/pyllyukko/user.js/issues/14) |
 | Sailfish OS + Alien Dalvik | `/opt/alien/data/data/org.mozilla.firefox/files/mozilla/XXXXXXXX.your_profile_name`                                                           |
-| Windows (portable)         | `[firefox directory]\Data\profile\`                                       |
+| Windows (portable)         | `[firefox directory]\Data\profile\`                                                                                                           |
 
 With this installation method, if you change any of `user.js` settings through [`about:config`](http://kb.mozillazine.org/About:config) or Firefox preferences dialogs, they will be reset to the `user.js` defined values after you restart Firefox. This makes sure they're always back to secure defaults when starting the browser. However this prevents persistently changing settings you don't consider appropriate. Either edit `user.js` directly, or use the system-wide installation method described below.
 
@@ -85,13 +85,13 @@ Generate a file suitable for system-wide installation, by running ```make``` wit
 
 Copy the produced file to the Firefox installation directory. The file should be located at:
 
-| OS             | Path                                                       |
-| -------------- | ---------------------------------------------------------- |
-| Windows        | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`       |
-| Linux          | `/etc/firefox/syspref.js`, for older versions: `/etc/firefox/firefox.js` |
-| Linux (Debian) | `/etc/firefox-esr/firefox-esr.js`                          |
+| OS                        | Path                                                                         |
+| ------------------------- | ---------------------------------------------------------------------------- |
+| Windows                   | `C:\Program Files (x86)\Mozilla Firefox\mozilla.cfg`                         |
+| Linux                     | `/etc/firefox/syspref.js`, for older versions: `/etc/firefox/firefox.js`     |
+| Linux (Debian)            | `/etc/firefox-esr/firefox-esr.js`                                            |
 | Linux (Gentoo, Archlinux) | `/usr/lib/firefox/mozilla.cfg`, might also be `/usr/lib32/` or `/usr/lib64/` |
-| OS X           | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg` |
+| OS X                      | `/Applications/Firefox.app/Contents/Resources/mozilla.cfg`                   |
 
 #### Additional installation steps for Windows / OS X / Gentoo / Archlinux
 
@@ -104,10 +104,10 @@ pref("general.config.filename", "mozilla.cfg");
 
 This file should be located at:
 
-| OS      | Path                                                         |
-| ------- | ------------------------------------------------------------ |
-| Windows | `C:\Program Files (x86)\Mozilla Firefox\defaults\pref\`      |
-| OS X    | `/Applications/Firefox.app/Contents/Resources/defaults/pref` |
+| OS                        | Path                                                                            |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| Windows                   | `C:\Program Files (x86)\Mozilla Firefox\defaults\pref\`                         |
+| OS X                      | `/Applications/Firefox.app/Contents/Resources/defaults/pref`                    |
 | Linux (Gentoo, Archlinux) | `/usr/lib/firefox/defaults/pref/`, might also be `/usr/lib32/` or `/usr/lib64/` |
 
 If `mozilla.cfg` still fails to load, you must add a blank comment to the top of `mozilla.cfg` like so:
