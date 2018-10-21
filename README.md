@@ -77,11 +77,11 @@ With this installation method, if you change any of `user.js` settings through [
 
 ### System-wide installation (all platforms)
 
-Generate a file suitable for system-wide installation, by running ```make``` with one of the following targets:
+Generate a file suitable for system-wide installation, by running `make` with one of the following targets:
 
-* ```systemwide_user.js```: (the value will be used as default value for all Firefox Profiles where it is not explicitly set, it can be changed in `about:config` and is kept across browser sessions)
-* ```locked_user.js```: (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings.
-* ```debian_locked.js```: Debian specific. Users are not able to override preferences. See [#415](https://github.com/pyllyukko/user.js/issues/415).
+* `systemwide_user.js`: (the value will be used as default value for all Firefox Profiles where it is not explicitly set, it can be changed in `about:config` and is kept across browser sessions)
+* `locked_user.js`: (the value will be used as default value on Firefox profile creation, will be locked and can't be changed) in `user.js` or in Firefox's `about:config` or settings.
+* `debian_locked.js`: Debian specific. Users are not able to override preferences. See [#415](https://github.com/pyllyukko/user.js/issues/415).
 
 Copy the produced file to the Firefox installation directory. The file should be located at:
 
@@ -119,12 +119,12 @@ If `mozilla.cfg` still fails to load, you must add a blank comment to the top of
 
 For any of the above methods, you can keep your browser's `user.js` with the latest version available here: Clone the repository, and create a symbolic link from the appropriate location to the `user.js` file in the repository. Just run `git pull` in the repository when you want to update, then restart Firefox:
 
-````
+```
 cd ~/.mozilla/firefox
 git clone 'https://github.com/pyllyukko/user.js.git'
 cd XXXXXXXX.your_profile_name
 ln -s ../user.js/user.js user.js
-````
+```
 
 ### Verifying
 
@@ -382,7 +382,7 @@ This section tweaks the cipher suites used by Firefox. The idea is to support on
 * If a plugin is absolutely required, [check for plugin updates](https://www.mozilla.org/en-US/plugincheck/)
 * Create different [profiles][15] for different purposes
 * Change the Firefox's built-in tracking protection to use the [strict list](https://support.mozilla.org/en-US/kb/tracking-protection-pbm?as=u#w_change-your-block-list)
-* Change the timezone for Firefox by using the ```TZ``` environment variable (see [here](https://wiki.archlinux.org/index.php/Firefox_privacy#Change_browser_time_zone)) to reduce it's value in browser fingerprinting
+* Change the timezone for Firefox by using the `TZ` environment variable (see [here](https://wiki.archlinux.org/index.php/Firefox_privacy#Change_browser_time_zone)) to reduce it's value in browser fingerprinting
 * If you are concerned about more advanced threats, use specialized hardened operating systems and browsers such as [Tails](https://tails.boum.org/) or [Tor Brower Bundle](https://www.torproject.org/projects/torbrowser.html.en)
 
 
@@ -486,7 +486,7 @@ See `lockPref` in [System-wide installation](#system-wide-installation).
 
 Yes please! All issues and pull requests are more than welcome. Please try
 to break down your pull requests or commits into small / manageable entities,
-so they are easier to process. All the settings in the ```user.js``` file
+so they are easier to process. All the settings in the `user.js` file
 should have some official references to them, so the effect of those settings
 can be easily verified from Mozilla's documentation.
 
