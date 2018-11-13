@@ -17,12 +17,6 @@
 // CVE-2016-5259, CVE-2016-2812, CVE-2016-1949, CVE-2016-5287 (fixed)
 user_pref("dom.serviceWorkers.enabled",				false);
 
-// PREF: Disable Web Workers
-// https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
-// https://www.w3schools.com/html/html5_webworkers.asp
-// NOTICE: Disabling Web Workers breaks "Download as ZIP" functionality on https://mega.nz/, WhatsApp Web, upload on https://www.virustotal.com/,  and probably others
-user_pref("dom.workers.enabled",					false);
-
 // PREF: Disable web notifications
 // https://support.mozilla.org/en-US/questions/1140439
 user_pref("dom.webnotifications.enabled",			false);
