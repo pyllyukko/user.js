@@ -105,17 +105,20 @@ user_pref("beacon.enabled",					false);
 // PREF: Disable clipboard event detection (onCut/onCopy/onPaste) via Javascript
 // NOTICE: Disabling clipboard events breaks Ctrl+C/X/V copy/cut/paste functionaility in JS-based web applications (Google Docs...)
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
+// https://www.ghacks.net/2014/01/08/block-websites-reading-modifying-clipboard-contents-firefox/
 user_pref("dom.event.clipboardevents.enabled",			false);
 
 // PREF: Disable "copy to clipboard" functionality via Javascript (Firefox >= 41)
 // NOTICE: Disabling clipboard operations will break legitimate JS-based "copy to clipboard" functionality
 // https://hg.mozilla.org/mozilla-central/rev/2f9f8ea4b9c3
+// https://bugzilla.mozilla.org/1170911
 user_pref("dom.allow_cut_copy", false);
 
 // PREF: Disable speech recognition
 // https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html
 // https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
 // https://wiki.mozilla.org/HTML5_Speech_API
+// https://developer.mozilla.org/docs/Web/API/Web_Speech_API
 user_pref("media.webspeech.recognition.enable",			false);
 
 // PREF: Disable speech synthesis
@@ -124,6 +127,7 @@ user_pref("media.webspeech.synth.enabled",			false);
 
 // PREF: Disable sensor API
 // https://wiki.mozilla.org/Sensor_API
+// https://trac.torproject.org/projects/tor/ticket/15758
 user_pref("device.sensors.enabled",				false);
 
 // PREF: Disable pinging URIs specified in HTML <a> ping= attributes
