@@ -545,6 +545,7 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 * [Test page for Firefox's built-in Malware Protection](https://itisatrap.org/firefox/unwanted.html) (unwanted software)
 * [HTML5test](https://html5test.com/) - Comparison of supported HTML5 features in various browsers/versions
 * [Filldisk](http://www.filldisk.com/)
+* [BrowserAudit](https://browseraudit.com/)
 
 
 ---------------------------------------------------------------------------
