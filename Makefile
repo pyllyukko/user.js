@@ -80,6 +80,13 @@ tbb-missing-from-user.js: 000-tor-browser.js
 
 ######################
 
+.PHONY: checkcommonwithupstream
+checkcommonwithupstream: sourceprefs.js
+	@#check for preferences with common values with default Firefox configuration
+	sed 's/^pref(/user_pref(/' sourceprefs.js | sort | sed -E "s/[[:space:]]+/ /g" > sourceprefs_sorted.js
+	grep "^user_pref" user.js | sort | sed -E "s/[[:space:]]+/ /g" > userjs_sorted.js
+	comm -1 -2  sourceprefs_sorted.js userjs_sorted.js
+
 .PHONY: checknotcovered
 checknotcovered: sourceprefs.js
 	@# check for preferences present in firefox source but not covered by user.js
