@@ -61,9 +61,9 @@ FIREFOX_SOURCE_PREFS= \
 sourceprefs.js:
 	@for SOURCEFILE in $(FIREFOX_SOURCE_PREFS); do wget -nv "$$SOURCEFILE" -O - ; done | egrep "(^pref|^user_pref)" | sort --unique >| $@
 
-TBBBRANCH=tor-browser-52.6.2esr-7.5-2
+TBBBRANCH=tor-browser-60.3.0esr-8.5-1
 000-tor-browser.js:
-	wget -nv "https://gitweb.torproject.org/tor-browser.git/plain/browser/app/profile/$@?h=$(TBBBRANCH)" -O $@
+	wget -nv "https://gitweb.torproject.org/tor-browser.git/plain/browser/app/profile/firefox.js?h=$(TBBBRANCH)" -O $@
 
 regex = ^\(user_\)\?pref/s/^.*pref("\([^"]\+\)",\s*\([^)]\+\).*$$
 .PHONY: tbb-diff
