@@ -441,6 +441,10 @@ user_pref("extensions.systemAddon.update.enabled",		false);
  * SECTION: Firefox (anti-)features / components                              *                            *
  ******************************************************************************/
 
+// PREF: Trusted Recursive Resolver (DNS-over-HTTPS) (disabled)
+// https://wiki.mozilla.org/Trusted_Recursive_Resolver
+//user_pref("network.trr.mode",					0);
+
 // PREF: Disable WebIDE
 // https://trac.torproject.org/projects/tor/ticket/16222
 // https://developer.mozilla.org/docs/Tools/WebIDE
