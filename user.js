@@ -541,6 +541,8 @@ user_pref("pdfjs.disabled",					true);
 user_pref("datareporting.healthreport.uploadEnabled",		false);
 user_pref("datareporting.healthreport.service.enabled",		false);
 user_pref("datareporting.policy.dataSubmissionEnabled",		false);
+// "Allow Firefox to make personalized extension recommendations"
+user_pref("browser.discovery.enabled",				false);
 
 // PREF: Disable Heartbeat  (Mozilla user rating telemetry)
 // https://wiki.mozilla.org/Advocacy/heartbeat
