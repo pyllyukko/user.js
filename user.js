@@ -318,7 +318,7 @@ user_pref("browser.startup.homepage_override.buildID",		"20100101");
 // PREF: Prevent font fingerprinting
 // https://browserleaks.com/fonts
 // https://github.com/pyllyukko/user.js/issues/120
-// NOTE: Will result in almost all webpages being ugly. If you don't want this, but don't want font fingerprinting, use something like FluxFonts.
+// NOTICE: Will result in almost all webpages being ugly. If you don't want this, but don't want font fingerprinting, use something like FluxFonts.
 user_pref("browser.display.use_document_fonts",			0);
 
 // PREF: Enable only whitelisted URL protocol handlers
