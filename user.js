@@ -1030,7 +1030,7 @@ user_pref("security.tls.version.max",				4);
 // https://github.com/pyllyukko/user.js/pull/206#issuecomment-280229645
 user_pref("security.tls.version.fallback-limit",		3);
 
-// PREF: Enfore Public Key Pinning
+// PREF: Enforce Public Key Pinning
 // https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning
 // https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning
 // "2. Strict. Pinning is always enforced."
