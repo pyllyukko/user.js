@@ -445,9 +445,9 @@ user_pref("extensions.systemAddon.update.enabled",		false);
 // https://support.mozilla.org/en-US/kb/extension-recommendations
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr",	false);
 
-// PREF: Trusted Recursive Resolver (DNS-over-HTTPS) (disabled)
+// PREF: Trusted Recursive Resolver (DNS-over-HTTPS) (disabled, avoid cloudflare DNS queries)
 // https://wiki.mozilla.org/Trusted_Recursive_Resolver
-//user_pref("network.trr.mode",					0);
+user_pref("network.trr.mode",					5);
 
 // PREF: Disable WebIDE
 // https://trac.torproject.org/projects/tor/ticket/16222
