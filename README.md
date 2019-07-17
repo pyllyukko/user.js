@@ -120,7 +120,7 @@ For any of the above methods, you can keep your browser's `user.js` with the lat
 
 ````
 cd ~/.mozilla/firefox
-git clone 'https://github.com/pyllyukko/user.js.git'
+git clone -b relaxed 'https://github.com/pyllyukko/user.js.git'
 cd XXXXXXXX.your_profile_name
 ln -s ../user.js/user.js user.js
 ````
