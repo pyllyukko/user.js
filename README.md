@@ -527,7 +527,6 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 * [Battery API](https://robnyman.github.io/battery/) [[1](https://pstadler.sh/battery.js/)]
 * [WebRTC LAN address leak test](http://net.ipcalf.com/)
 * [IP Check](http://ip-check.info/?lang=en)
-* [Intermediate CA fingerprinting test](https://fiprinca.0x90.eu/poc/)
 * [OONI Internet censorship tests](https://ooni.torproject.org/nettest/)
 
 #### SSL tests
