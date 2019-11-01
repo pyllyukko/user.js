@@ -904,6 +904,11 @@ user_pref("browser.download.useDownloadDir",			false);
 user_pref("browser.newtabpage.enabled",				false);
 user_pref("browser.newtab.url",					"about:blank");
 
+// PREF: Disable Snippets
+// https://wiki.mozilla.org/Firefox/Projects/Firefox_Start/Snippet_Service
+// https://support.mozilla.org/en-US/kb/snippets-firefox-faq
+user_pref("browser.newtabpage.activity-stream.feeds.snippets",	false);
+
 // PREF: Disable Activity Stream
 // https://wiki.mozilla.org/Firefox/Activity_Stream
 user_pref("browser.newtabpage.activity-stream.enabled",		false);
