@@ -426,6 +426,7 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 * Disabling system add-on updates prevents Mozilla from "hotfixing" your browser to patch critical problems (one possible use case from the documentation)
 * Containers are not available in Private Browsing mode
 * RFP breaks some keyboard shortcuts used in certain websites (see #443)
+* RFP changes your time zone
 * Fully automatic updates are disabled and left to package management systems on Linux. Windows users may want to change this setting.
 * Update check page might incorrectly report Firefox ESR as out-of-date
 * Do No Track must be enabled manually
