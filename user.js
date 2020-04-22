@@ -1072,6 +1072,12 @@ user_pref("security.ssl.errorReporting.automatic",		false);
 // https://github.com/pyllyukko/user.js/issues/210
 user_pref("browser.ssl_override_behavior",			1);
 
+// PREF: Encrypted SNI (when TRR is enabled)
+// https://www.cloudflare.com/ssl/encrypted-sni/
+// https://wiki.mozilla.org/Trusted_Recursive_Resolver#ESNI
+// https://en.wikipedia.org/wiki/Server_Name_Indication#Security_implications_(ESNI)
+user_pref("network.security.esni.enabled",			true);
+
 /******************************************************************************
  * SECTION: Cipher suites                                                     *
  ******************************************************************************/
