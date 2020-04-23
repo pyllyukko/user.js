@@ -1142,10 +1142,6 @@ user_pref("security.ssl3.ecdh_ecdsa_aes_256_sha",		false);
 // PREF: Disable 256 bits ciphers without PFS
 user_pref("security.ssl3.rsa_camellia_256_sha",			false);
 
-// PREF: Enable ciphers with ECDHE and key size > 128bits
-user_pref("security.ssl3.ecdhe_rsa_aes_256_sha",		true); // 0xc014
-user_pref("security.ssl3.ecdhe_ecdsa_aes_256_sha",		true); // 0xc00a
-
 // PREF: Enable GCM ciphers (TLSv1.2 only)
 // https://en.wikipedia.org/wiki/Galois/Counter_Mode
 user_pref("security.ssl3.ecdhe_ecdsa_aes_128_gcm_sha256",	true); // 0xc02b
@@ -1171,6 +1167,8 @@ user_pref("security.ssl3.dhe_dss_aes_256_sha",			false);
 user_pref("security.ssl3.dhe_dss_camellia_128_sha",		false);
 user_pref("security.ssl3.dhe_dss_camellia_256_sha",		false);
 
-// PREF: Fallbacks due compatibility reasons
-user_pref("security.ssl3.rsa_aes_256_sha",			true); // 0x35
-user_pref("security.ssl3.rsa_aes_128_sha",			true); // 0x2f
+// PREF: Ciphers with CBC & SHA-1 (disabled)
+//user_pref("security.ssl3.rsa_aes_256_sha",			false); // 0x35
+//user_pref("security.ssl3.rsa_aes_128_sha",			false); // 0x2f
+//user_pref("security.ssl3.ecdhe_rsa_aes_256_sha",		false); // 0xc014
+//user_pref("security.ssl3.ecdhe_ecdsa_aes_256_sha",		false); // 0xc00a
