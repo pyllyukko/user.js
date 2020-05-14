@@ -37,14 +37,17 @@ user_pref("dom.webaudio.enabled",				false);
 
 // PREF: Disable Location-Aware Browsing (geolocation)
 // https://www.mozilla.org/en-US/firefox/geolocation/
-user_pref("geo.enabled",					false);
+// NOTICE: Disabling geo breaks functionality on some sites
+//         as it removes `navigator.geolocation` api that
+//         may be expected.
+user_pref("geo.enabled",					true);
+
+// PREF: Automatically Deny geolocation requests
+user_pref("permissions.default.geo", 2);
 
 // PREF: When geolocation is enabled, use Mozilla geolocation service instead of Google
 // https://bugzilla.mozilla.org/show_bug.cgi?id=689252
 user_pref("geo.wifi.uri", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%");
-
-// PREF: When geolocation is enabled, don't log geolocation requests to the console
-user_pref("geo.wifi.logging.enabled", false);
 
 // PREF: Disable raw TCP socket support (mozTCPSocket)
 // https://trac.torproject.org/projects/tor/ticket/18863
