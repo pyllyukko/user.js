@@ -23,7 +23,7 @@ systemwide_user.js: user.js
 	sed 's/^user_pref/pref/' $< >| $@
 
 debian_locked.js: user.js
-	sed 's/^user_pref(\("[^"]\+"\),\s\+\([^)]\+\));$$/pref(\1, \2, locked);/' $< >| $@
+	sed 's/^user_pref(\("[^"]\+"\),\s\+\([^)]\+\));\(\s*\/\/.*\)\?$$/pref(\1, \2, locked);/' $< >| $@
 
 # https://github.com/mozilla/policy-templates/blob/master/README.md
 policies.json:
