@@ -564,10 +564,19 @@ user_pref("datareporting.policy.dataSubmissionEnabled",		false);
 // "Allow Firefox to make personalized extension recommendations"
 user_pref("browser.discovery.enabled",				false);
 
-// PREF: Disable Heartbeat  (Mozilla user rating telemetry)
+// PREF: Disable Shield/Heartbeat/Normandy (Mozilla user rating telemetry)
 // https://wiki.mozilla.org/Advocacy/heartbeat
 // https://trac.torproject.org/projects/tor/ticket/19047
-user_pref("browser.selfsupport.url",				"");
+// https://trac.torproject.org/projects/tor/ticket/18738
+// https://wiki.mozilla.org/Firefox/Shield
+// https://github.com/mozilla/normandy
+// https://support.mozilla.org/en-US/kb/shield
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1370801
+user_pref("app.normandy.enabled", false);
+user_pref("app.normandy.api_url", "");
+user_pref("extensions.shield-recipe-client.enabled",		false);
+user_pref("app.shield.optoutstudies.enabled",			false);
+
 
 // PREF: Disable Firefox Hello (disabled) (Firefox < 49)
 // https://wiki.mozilla.org/Loop
@@ -613,12 +622,6 @@ user_pref("browser.safebrowsing.downloads.remote.enabled",	false);
 // https://github.com/pyllyukko/user.js/issues/143
 user_pref("browser.pocket.enabled",				false);
 user_pref("extensions.pocket.enabled",				false);
-
-// PREF: Disable SHIELD
-// https://support.mozilla.org/en-US/kb/shield
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1370801
-user_pref("extensions.shield-recipe-client.enabled",		false);
-user_pref("app.shield.optoutstudies.enabled",			false);
 
 // PREF: Disable "Recommended by Pocket" in Firefox Quantum
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories",	false);
