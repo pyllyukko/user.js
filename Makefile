@@ -20,7 +20,7 @@ locked_user.js: user.js
 	sed 's/^user_pref/lockPref/' $< >| $@
 
 systemwide_user.js: user.js
-	sed 's/^user_pref/pref/' $< >| $@
+	sed 's/user_pref(/pref(/' $< >| $@
 
 debian_locked.js: user.js
 	sed 's/^user_pref(\("[^"]\+"\),\s\+\([^)]\+\));\(\s*\/\/.*\)\?$$/pref(\1, \2, locked);/' $< >| $@
