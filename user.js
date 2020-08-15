@@ -545,6 +545,10 @@ user_pref("extensions.webextensions.restrictedDomains", "");
 //user_pref("privacy.resistFingerprinting.letterboxing", true);
 //user_pref("privacy.resistFingerprinting.letterboxing.dimensions", "800x600, 1000x1000, 1600x900");
 
+// PREF: disable showing about:blank/maximized window as soon as possible during startup [FF60+]
+// https://bugzilla.mozilla.org/1448423
+user_pref("browser.startup.blankWindow", false);
+
 // PREF: Disable the built-in PDF viewer
 // https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2743
 // https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/
