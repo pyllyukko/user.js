@@ -912,6 +912,7 @@ user_pref("security.insecure_password.ui.enabled",		true);
 //user_pref("dom.event.contextmenu.enabled",		false);
 
 // PREF: Disable "Are you sure you want to leave this page?" popups on page close
+// NOTICE: disabling "beforeunload" events may lead to losing data entered in web forms
 // https://support.mozilla.org/en-US/questions/1043508
 // Does not prevent JS leaks of the page close event.
 // https://developer.mozilla.org/en-US/docs/Web/Events/beforeunload
