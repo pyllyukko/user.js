@@ -726,7 +726,7 @@ user_pref("security.sri.enable",				true);
 // NOTICE: Do No Track must be enabled manually
 //user_pref("privacy.donottrackheader.enabled",		true);
 
-// PREF: Send a referer header with the target URI as the source (DISABLED)
+// PREF: Send a referer header with the target URI as the source (disabled)
 // https://bugzilla.mozilla.org/show_bug.cgi?id=822869
 // https://github.com/pyllyukko/user.js/issues/227
 // NOTICE-DISABLED: Spoofing referers breaks functionality on websites relying on authentic referer headers
@@ -915,8 +915,8 @@ user_pref("security.insecure_password.ui.enabled",		true);
 //user_pref("dom.event.contextmenu.enabled",		false);
 
 // PREF: Disable "Are you sure you want to leave this page?" popups on page close
-// NOTICE: disabling "beforeunload" events may lead to losing data entered in web forms
 // https://support.mozilla.org/en-US/questions/1043508
+// NOTICE: disabling "beforeunload" events may lead to losing data entered in web forms
 // Does not prevent JS leaks of the page close event.
 // https://developer.mozilla.org/en-US/docs/Web/Events/beforeunload
 //user_pref("dom.disable_beforeunload",    true);
