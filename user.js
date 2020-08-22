@@ -537,6 +537,7 @@ user_pref("privacy.resistFingerprinting",			true);
 // https://bugzilla.mozilla.org/buglist.cgi?bug_id=1406795
 // https://bugzilla.mozilla.org/buglist.cgi?bug_id=1415644
 // https://bugzilla.mozilla.org/buglist.cgi?bug_id=1453988
+// https://trac.torproject.org/projects/tor/ticket/26114
 user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
 user_pref("extensions.webextensions.restrictedDomains", "");
 
