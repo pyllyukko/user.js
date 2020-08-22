@@ -737,6 +737,8 @@ user_pref("security.sri.enable",				true);
 
 // PREF: Don't send referer headers when following links across different domains
 // https://github.com/pyllyukko/user.js/issues/227
+// https://github.com/pyllyukko/user.js/issues/328
+// https://feeding.cloud.geek.nz/posts/tweaking-referrer-for-privacy-in-firefox/
 user_pref("network.http.referer.XOriginPolicy",		2);
 
 // PREF: Accept Only 1st Party Cookies
