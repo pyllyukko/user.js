@@ -243,7 +243,7 @@ function print_countries() {
   for NICKNAME in "${NICKNAMES[@]}"
   do
     # print the PEM from the cert8.db and get the FP with openssl
-    COUNTRY=$( certutil -L -n "${NICKNAME}" -a -d "${FF_HOME}" | openssl x509 -noout -subject | grep -o "C=[A-Z]\+" )
+    COUNTRY=$( certutil -L -n "${NICKNAME}" -a -d "${FF_HOME}" | openssl x509 -noout -subject | grep -o "C\s\?=\s\?[A-Z]\+" )
     if [ -n "${COUNTRY}" ]
     then
       echo "${COUNTRY#C=}"
