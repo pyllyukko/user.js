@@ -112,7 +112,7 @@ function import_cas() {
     echo "  ${REQUIRED_CA}"
     # certutil requires a "nickname", so we'll use the CN or OU
     # TODO: change this?
-    NICKNAME=$( openssl x509 -in "${REQUIRED_CA}" -noout -subject | sed 's/^.*\(CN\|OU\)=//' )
+    NICKNAME=$( openssl x509 -in "${REQUIRED_CA}" -noout -subject | sed 's/^.*\(CN\|OU\)\s\?=\s\?//' )
     certutil -A -n "${NICKNAME}" -t CT,c,c -a -d "${FF_HOME}" 0<"${REQUIRED_CA}"
 
     # TEST!!! allow code signing
