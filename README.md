@@ -221,7 +221,6 @@ Harden preferences related to external plugins
 * Disable sending Flash Player crash reports
 * When Flash crash reports are enabled, don't send the visited URL in the crash report
 * When Flash is enabled, download and use Mozilla SWF URIs blocklist [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=1237198) [2](https://github.com/mozilla-services/shavar-plugin-blocklist) ]
-* Disable Shumway (Mozilla Flash renderer) [ [1](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Shumway) ]
 * Disable Gnome Shell Integration NPAPI plugin
 * Enable plugins click-to-play [ [1](https://wiki.mozilla.org/Firefox/Click_To_Play) [2](https://blog.mozilla.org/security/2012/10/11/click-to-play-plugins-blocklist-style/) ]
 * Updates addons automatically [ [1](https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/) ]

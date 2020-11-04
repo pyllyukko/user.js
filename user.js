@@ -396,10 +396,6 @@ user_pref("dom.ipc.plugins.reportCrashURL",			false);
 // https://github.com/mozilla-services/shavar-plugin-blocklist
 user_pref("browser.safebrowsing.blockedURIs.enabled", true);
 
-// PREF: Disable Shumway (Mozilla Flash renderer)
-// https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Shumway
-user_pref("shumway.disabled", true);
-
 // PREF: Disable Gnome Shell Integration NPAPI plugin
 user_pref("plugin.state.libgnome-shell-browser-plugin",		0);
 
