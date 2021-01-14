@@ -81,7 +81,6 @@ FIREFOX_SOURCE_PREFS= \
 	https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/branding/nightly/pref/firefox-branding.js \
 	https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/branding/aurora/pref/firefox-branding.js \
 	https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/locales/en-US/firefox-l10n.js \
-	https://hg.mozilla.org/mozilla-central/raw-file/tip/devtools/client/webide/preferences/webide.js \
 	https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/app/profile/channel-prefs.js
 sourceprefs.js:
     ######## download and sort all known preferences files from Firefox (mozilla-central) source
