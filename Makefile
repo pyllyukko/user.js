@@ -87,8 +87,8 @@ sourceprefs.js:
     ######## download and sort all known preferences files from Firefox (mozilla-central) source
 	@for SOURCEFILE in $(FIREFOX_SOURCE_PREFS); do wget -nv "$$SOURCEFILE" -O - ; done | egrep "(^pref|^user_pref)" | sort --unique >| $@
 
-.PHONY: upstream-common
-upstream-common: sourceprefs.js
+.PHONY: upstream-duplicates
+upstream-duplicates: sourceprefs.js
     ######## preferences with common values with default Firefox configuration
 	sed 's/^pref(/user_pref(/' sourceprefs.js | sort | sed -E "s/[[:space:]]+/ /g" > sourceprefs_sorted.js
 	grep "^user_pref" user.js | sort | sed -E "s/[[:space:]]+/ /g" > userjs_sorted.js
