@@ -125,7 +125,7 @@ whatdoesitdo:
 .PHONY: clean
 clean:
     ######## generate/update the README "What does it do?" section
-	@rm -f sourceprefs.js sourceprefs_sorted.js userjs_sorted.js
+	@rm -f sourceprefs.js sourceprefs_sorted.js userjs_sorted.js 000-tor-browser.js debian_locked.js
 
 .PHONY: toc
 toc:
