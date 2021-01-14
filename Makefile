@@ -125,7 +125,7 @@ whatdoesitdo:
 .PHONY: clean
 clean:
     ######## generate/update the README "What does it do?" section
-	@rm -f sourceprefs.js
+	@rm -f sourceprefs.js sourceprefs_sorted.js userjs_sorted.js
 
 .PHONY: toc
 toc:
