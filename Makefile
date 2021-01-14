@@ -90,8 +90,8 @@ sourceprefs.js:
 .PHONY: upstream-duplicates
 upstream-duplicates: sourceprefs.js
     ######## preferences with common values with default Firefox configuration
-	@sed 's/^pref(/user_pref(/' sourceprefs.js | sort | sed -E "s/[[:space:]]+/ /g" > sourceprefs_sorted.js
-	@grep "^user_pref" user.js | sort | sed -E "s/[[:space:]]+/ /g" > userjs_sorted.js
+	@sed 's/^pref(/user_pref(/' sourceprefs.js | sed -E "s/[[:space:]]+/ /g" | sort > sourceprefs_sorted.js
+	@grep "^user_pref" user.js | sed -E "s/[[:space:]]+/ /g" | sort > userjs_sorted.js
 	@comm -1 -2  sourceprefs_sorted.js userjs_sorted.js
 
 .PHONY: upstream-missing-from-user.js
