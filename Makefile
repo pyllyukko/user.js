@@ -41,9 +41,6 @@ shellcheck:
 # specify wanted Firefox version/revision below (eg. "tip", "FIREFOX_AURORA_45_BASE", "9577ddeaafd85554c2a855f385a87472a089d5c0"). See https://hg.mozilla.org/mozilla-central/tags
 SOURCEVERSION=tip
 FIREFOX_SOURCE_PREFS= \
-	https://hg.mozilla.org/mozilla-central/raw-file/$(SOURCEVERSION)/toolkit/components/telemetry/datareporting-prefs.js \
-	https://hg.mozilla.org/mozilla-central/raw-file/$(SOURCEVERSION)/toolkit/components/telemetry/healthreport-prefs.js \
-	https://hg.mozilla.org/mozilla-central/raw-file/$(SOURCEVERSION)/security/manager/ssl/security-prefs.js \
 	https://hg.mozilla.org/mozilla-central/raw-file/$(SOURCEVERSION)/modules/libpref/init/all.js \
 	https://hg.mozilla.org/mozilla-central/raw-file/$(SOURCEVERSION)/testing/profiles/common/user.js \
 	https://hg.mozilla.org/mozilla-central/raw-file/$(SOURCEVERSION)/testing/profiles/reftest/user.js \
