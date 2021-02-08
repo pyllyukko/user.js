@@ -118,3 +118,60 @@ toc:
 	anchor=$$(echo "$$line" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g' | sed 's/\?//g'); \
 	echo "* [$$line](#$$anchor)"; \
 	done
+
+.PHONY: user.js
+CONFIG_FILES=
+
+define PART_RULES
+.PHONY: u.$(1)
+u.$(1):
+	$$(eval CONFIG_FILES += $$@.js)
+user.js: u.$(1)
+user-work.js: u.$(1)
+endef
+
+PARTS=
+#PARTS=header html5 misc extensions antifeatures autoconn caching  ui cryptography cypher_suites css crandel
+PARTS+=header
+PARTS+=html5 html5.override
+PARTS+=misc
+PARTS+=misc.override
+PARTS+=extensions
+PARTS+=antifeatures
+PARTS+=autoconn
+PARTS+=caching
+PARTS+=caching.override
+PARTS+=ui
+PARTS+=ui.override
+PARTS+=cryptography
+PARTS+=cypher_suites
+PARTS+=css
+PARTS+=crandel
+PARTS+=crandel.override
+PARTS+=footer
+
+$(foreach i,$(PARTS),$(eval $(call PART_RULES,$(i)) ) )
+
+user.js:
+	echo "" > $@
+	for number in $(CONFIG_FILES); do \
+		if test -f $$number; then \
+			cat $$number >> $@; \
+			echo "" >> $@; \
+		else \
+			printf "Copying of $$number \x1b[1;31mskipped\x1b[0m\n"; \
+		fi \
+	done
+
+# WIP version is user.js. Useful for hacking and testing in fresh profiles.
+.PHONY: user-work.js
+user-work.js:
+	echo "" > $@
+	for number in $(CONFIG_FILES); do \
+		if test -f $$number; then \
+			cat $$number >> $@; \
+			echo "" >> $@; \
+		else \
+			printf "Copying of $$number \x1b[1;31mskipped\x1b[0m\n"; \
+		fi \
+	done
