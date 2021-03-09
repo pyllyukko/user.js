@@ -309,6 +309,7 @@ Enable and configure private browsing mode, don't store information locally duri
 * Do not create screenshots of visited pages (relates to the "new tab page" feature) [ [1](https://support.mozilla.org/en-US/questions/973320) [2](https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/browser.pagethumbnails.capturing_disabled) ]
 * Don't fetch and permanently store favicons for Windows .URL shortcuts created by drag and drop
 * Disable bookmarks backups (default: 15) [ [1](http://kb.mozillazine.org/Browser.bookmarks.max_backups) ]
+* Disable downloading of favicons in response to favicon fingerprinting techniques [ [1](https://github.com/jonasstrehle/supercookie) [2](http://kb.mozillazine.org/Browser.chrome.site_icons) [3](https://blog.mozilla.org/security/2021/01/26/supercookie-protections/) ]
 
 ### UI related
 
