@@ -396,7 +396,6 @@ Here is a list of the most essential security and privacy enhancing add-ons that
   * For additional protection, enable `Block all unencrypted requests` in the toolbar button menu. This will break websites where HTTPS is not available.
 * [Certificate Patrol](http://patrol.psyced.org/) (experienced users)
   * Setting `Store certificates even when in Private Browsing mode` improves usability. This will store information about sites you visit.
-* [HTTPS by default](https://addons.mozilla.org/firefox/addon/https-by-default/)
 * [NoScript](https://noscript.net/)
 * [No Resource URI Leak](https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/) [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=863246) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=903959) [3](https://www.browserleaks.com/firefox) [4](https://cs1.ca/ttest/dump.html) [5](https://trac.torproject.org/projects/tor/ticket/8725) ]
 * [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
