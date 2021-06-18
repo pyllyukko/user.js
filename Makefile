@@ -41,7 +41,7 @@ bash_syntax:
 .PHONY: shellcheck
 shellcheck:
     ######## check/lint all shell scripts
-	shellcheck *.sh
+	shellcheck --exclude=SC1117 *.sh
 
 
 ##### MAINTENANCE #####
