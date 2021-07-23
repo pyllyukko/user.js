@@ -14,7 +14,7 @@ A [user.js](http://kb.mozillazine.org/User.js_file) configuration file for [Mozi
 * Harden the browser against known data disclosure or code execution vulnerabilities.
 * Limit the browser from storing anything even remotely sensitive persistently.
 * Make sure the browser doesn't reveal too much information to [shoulder surfers](https://en.wikipedia.org/wiki/Shoulder_surfing_%28computer_security%29).
-* Harden the browser's encryption (cipher suites, protocols, trusted CAs).
+* Harden the browser's encryption (cipher suites, protocols).
 * Limit possibilities to uniquely identify the browser/device using [browser fingerprinting](https://en.wikipedia.org/wiki/Device_fingerprint).
 * Hopefully limit the attack surface by disabling various features.
 * Still be usable in daily use.
@@ -373,10 +373,7 @@ This section tweaks the cipher suites used by Firefox. The idea is to support on
 
 **This is not enough!** Here's some other tips how you can further harden Firefox:
 
-* By default **your browser trusts 100's of [Certificate Authorities](https://en.wikipedia.org/wiki/Certificate_authority)** (CAs) from various organizations to guarantee privacy of your encrypted communications with websites. Some CAs have been known for misusing or deliberately abusing this power in the past, and **a single malicious CA can compromise all** your encrypted communications! To workaround this you may want to [inspect the list of trusted certificates](https://support.mozilla.org/en-US/kb/advanced-panel-settings-in-firefox?#w_certificates-tab).
-
-[[1](https://blog.torproject.org/blog/life-without-ca), [2](https://www.thawte.com/roots/), [3](https://www.entrust.com/products/developer-api-standards/)
-
+* By default **your browser trusts 100's of [Certificate Authorities](https://en.wikipedia.org/wiki/Certificate_authority)** (CAs) from various organizations to guarantee privacy of your encrypted communications with websites. Some CAs have been known for misusing or deliberately abusing this power in the past, and **a single malicious CA can compromise all** your encrypted communications! To workaround this you may want to [inspect the list of trusted certificates](https://support.mozilla.org/en-US/kb/advanced-panel-settings-in-firefox?#w_certificates-tab). [[1](https://blog.torproject.org/blog/life-without-ca)]
 * Keep your browser updated! If you check [Firefox's security advisories](https://www.mozilla.org/security/known-vulnerabilities/firefox.html), you'll see that pretty much every new version of Firefox contains some security updates. If you don't keep your browser updated, you've already lost the game.
 * Disable/uninstall all unnecessary extensions and plugins!
 * Use long and **unique** passwords/passphrases for each website/service.
