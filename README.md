@@ -398,7 +398,6 @@ Here is a list of the most essential security and privacy enhancing add-ons that
   * For additional protection, enable `Block all unencrypted requests` in the toolbar button menu. This will break websites where HTTPS is not available.
 * [NoScript](https://noscript.net/)
 * [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
-* [Canvas Blocker](https://addons.mozilla.org/firefox/addon/canvasblocker/)
 
 Additional add-ons that you might consider using or reading about:
 
