@@ -414,6 +414,7 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 
 <!-- BEGIN PROBLEMS-LIMITATIONS -->
 * Disabling ServiceWorkers breaks functionality on some sites (Google Street View...)
+* Disabling ServiceWorkers breaks Firefox Sync
 * Web Audio API is required for Unity web player/games
 * Disabling WebRTC breaks peer-to-peer file sharing tools (reep.io ...)
 * Disabling clipboard events breaks Ctrl+C/X/V copy/cut/paste functionaility in JS-based web applications (Google Docs...)

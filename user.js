@@ -13,6 +13,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker_API
 // https://wiki.mozilla.org/Firefox/Push_Notifications#Service_Workers
 // NOTICE: Disabling ServiceWorkers breaks functionality on some sites (Google Street View...)
+// NOTICE: Disabling ServiceWorkers breaks Firefox Sync
 // Unknown security implications
 // CVE-2016-5259, CVE-2016-2812, CVE-2016-1949, CVE-2016-5287 (fixed)
 user_pref("dom.serviceWorkers.enabled",				false);
