@@ -664,6 +664,9 @@ user_pref("browser.search.suggest.enabled",			false);
 user_pref("browser.urlbar.suggest.searches",			false);
 // PREF: When using the location bar, don't suggest URLs from browsing history
 user_pref("browser.urlbar.suggest.history",			false);
+// PREF: "Show Firefox Suggest in the address bar (suggested and sponsored results)"
+// https://www.ghacks.net/2021/09/09/how-to-disable-firefox-suggest/
+user_pref("browser.urlbar.groupLabels.enabled", false)
 
 // PREF: Disable SSDP
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1111967
