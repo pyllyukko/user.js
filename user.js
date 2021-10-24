@@ -27,6 +27,11 @@ user_pref("dom.webnotifications.enabled",			false);
 // https://www.w3.org/TR/navigation-timing/#privacy
 user_pref("dom.enable_performance",				false);
 
+// PREF: Disable resource timing API
+// https://www.w3.org/TR/resource-timing/#privacy-security
+// NOTICE: Disabling resource timing API breaks some DDoS protection pages (Cloudflare)
+user_pref("dom.enable_resource_timing",				false);
+
 // PREF: Make sure the User Timing API does not provide a new high resolution timestamp
 // https://trac.torproject.org/projects/tor/ticket/16336
 // https://www.w3.org/TR/2013/REC-user-timing-20131212/#privacy-security
@@ -159,10 +164,6 @@ user_pref("dom.vr.enabled",					false);
 
 // PREF: Disable vibrator API
 user_pref("dom.vibrator.enabled",           false);
-
-// PREF: Disable resource timing API
-// https://www.w3.org/TR/resource-timing/#privacy-security
-user_pref("dom.enable_resource_timing",				false);
 
 // PREF: Disable Archive API (Firefox < 54)
 // https://wiki.mozilla.org/WebAPI/ArchiveAPI
@@ -529,6 +530,7 @@ user_pref("privacy.userContext.enabled",			true);
 // https://wiki.mozilla.org/Security/Fingerprinting
 // NOTICE: RFP breaks some keyboard shortcuts used in certain websites (see #443)
 // NOTICE: RFP changes your time zone
+// NOTICE: RFP breaks some DDoS protection pages (Cloudflare)
 user_pref("privacy.resistFingerprinting",			true);
 
 // PREF: disable mozAddonManager Web API [FF57+]

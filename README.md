@@ -146,6 +146,7 @@ HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / [DOM](https://en.wikipedia.org
 * Disable Service Workers [ [1](https://developer.mozilla.org/en-US/docs/Web/API/Worker) [2](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker_API) [3](https://wiki.mozilla.org/Firefox/Push_Notifications#Service_Workers) ]
 * Disable web notifications [ [1](https://support.mozilla.org/en-US/questions/1140439) ]
 * Disable DOM timing API [ [1](https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI) [2](https://www.w3.org/TR/navigation-timing/#privacy) ]
+* Disable resource timing API [ [1](https://www.w3.org/TR/resource-timing/#privacy-security) ]
 * Make sure the User Timing API does not provide a new high resolution timestamp [ [1](https://trac.torproject.org/projects/tor/ticket/16336) [2](https://www.w3.org/TR/2013/REC-user-timing-20131212/#privacy-security) ]
 * Disable Web Audio API [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=1288359) ]
 * Disable Location-Aware Browsing (geolocation) [ [1](https://www.mozilla.org/en-US/firefox/geolocation/) ]
@@ -170,7 +171,6 @@ HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / [DOM](https://en.wikipedia.org
 * Disable gamepad API to prevent USB device enumeration [ [1](https://www.w3.org/TR/gamepad/) [2](https://trac.torproject.org/projects/tor/ticket/13023) ]
 * Disable virtual reality devices APIs [ [1](https://developer.mozilla.org/en-US/Firefox/Releases/36#Interfaces.2FAPIs.2FDOM) [2](https://developer.mozilla.org/en-US/docs/Web/API/WebVR_API) ]
 * Disable vibrator API
-* Disable resource timing API [ [1](https://www.w3.org/TR/resource-timing/#privacy-security) ]
 * Disable Archive API (Firefox < 54) [ [1](https://wiki.mozilla.org/WebAPI/ArchiveAPI) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1342361) ]
 * Disable webGL [ [1](https://en.wikipedia.org/wiki/WebGL) [2](https://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/) ]
 * When webGL is enabled, use the minimum capability mode
@@ -416,6 +416,7 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 <!-- BEGIN PROBLEMS-LIMITATIONS -->
 * Disabling ServiceWorkers breaks functionality on some sites (Google Street View...)
 * Disabling ServiceWorkers breaks Firefox Sync
+* Disabling resource timing API breaks some DDoS protection pages (Cloudflare)
 * Web Audio API is required for Unity web player/games
 * Disabling WebRTC breaks peer-to-peer file sharing tools (reep.io ...)
 * Disabling clipboard events breaks Ctrl+C/X/V copy/cut/paste functionaility in JS-based web applications (Google Docs...)
@@ -427,6 +428,7 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 * Containers are not available in Private Browsing mode
 * RFP breaks some keyboard shortcuts used in certain websites (see #443)
 * RFP changes your time zone
+* RFP breaks some DDoS protection pages (Cloudflare)
 * Fully automatic updates are disabled and left to package management systems on Linux. Windows users may want to change this setting.
 * Update check page might incorrectly report Firefox ESR as out-of-date
 * Do No Track must be enabled manually
