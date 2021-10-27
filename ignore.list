@@ -95,7 +95,7 @@
 // Deprecated Do Not Track setting, Firefox <36, https://hg.mozilla.org/mozilla-central/rev/9a16137bc7b4
 "privacy.donottrackheader.value"
 
-// Don't alter safebrowsing.downloads.* options, safebrowsing.downloads.enabled master switch is off
+// Don't alter safebrowsing.downloads.* options, safebrowsing.downloads.remote.enabled master switch is off
 "browser.safebrowsing.downloads.remote.block_potentially_unwanted" // (FF48+)
 "browser.safebrowsing.downloads.remote.block_uncommon" // (FF48+)
 "browser.safebrowsing.downloads.remote.block_dangerous" // (FF49+)
