@@ -631,6 +631,11 @@ user_pref("extensions.pocket.enabled",				false);
 // PREF: Disable "Recommended by Pocket" in Firefox Quantum
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories",	false);
 
+// PREF: Disable Firefox VPN ads
+// https://old.reddit.com/r/firefox/comments/iyyrvc/how_to_remove_mozilla_vpn_ad_in_blank_new_tab/
+user_pref("browser.privatebrowsing.vpnpromourl", "");
+user_pref("browser.contentblocking.report.hide_vpn_banner", true);
+
 /******************************************************************************
  * SECTION: Automatic connections                                             *
  ******************************************************************************/
