@@ -1013,6 +1013,11 @@ user_pref("security.password_lifetime",				1);
 // http://kb.mozillazine.org/Browser.offline-apps.notify
 user_pref("browser.offline-apps.notify",			true);
 
+// Remove VPN promotion from content blocker report
+user_pref("browser.contentblocking.report.hide_vpn_banner", true);
+user_pref("browser.contentblocking.report.vpn.enabled", false);
+
+
 /******************************************************************************
  * SECTION: Cryptography                                                      *
  ******************************************************************************/
