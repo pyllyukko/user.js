@@ -5,6 +5,12 @@
  ******************************************************************************/
 
 /******************************************************************************
+ * SECTION: Homepage                                                *
+ ******************************************************************************/
+pref("browser.startup.homepage", "http://www./");
+
+
+/******************************************************************************
  * SECTION: HTML5 / APIs / DOM                                                *
  ******************************************************************************/
 
@@ -700,7 +706,7 @@ user_pref("browser.search.update",				false);
 
 // PREF: Disable automatic captive portal detection (Firefox >= 52.0)
 // https://support.mozilla.org/en-US/questions/1157121
-user_pref("network.captive-portal-service.enabled",		false);
+// user_pref("network.captive-portal-service.enabled",		false);
 
 /******************************************************************************
  * SECTION: HTTP                                                              *
