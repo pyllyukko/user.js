@@ -309,7 +309,6 @@ user_pref("gfx.font_rendering.opentype_svg.enabled",		false);
 // https://github.com/iSECPartners/publications/raw/master/reports/Tor%20Browser%20Bundle/Tor%20Browser%20Bundle%20-%20iSEC%20Deliverable%201.3.pdf#16
 //user_pref("svg.disabled", true);
 
-
 // PREF: Disable video stats to reduce fingerprinting threat
 // https://bugzilla.mozilla.org/show_bug.cgi?id=654550
 // https://github.com/pyllyukko/user.js/issues/9#issuecomment-100468785
