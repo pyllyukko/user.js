@@ -576,6 +576,7 @@ user_pref("browser.discovery.enabled",				false);
 // https://github.com/mozilla/normandy
 // https://support.mozilla.org/en-US/kb/shield
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1370801
+// https://wiki.mozilla.org/Firefox/Normandy/PreferenceRollout
 user_pref("app.normandy.enabled", false);
 user_pref("app.normandy.api_url", "");
 user_pref("extensions.shield-recipe-client.enabled",		false);
