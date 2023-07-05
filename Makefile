@@ -24,15 +24,11 @@ policies.json:
 ##### TESTS #####
 
 .PHONY: tests # run all tests
-tests: diff-sourceprefs.js diff-upstream-deprecated diff-stats test-acorn test-bash-syntax test-shellcheck
+tests: diff-sourceprefs.js diff-upstream-deprecated diff-stats test-acorn test-shellcheck
 
 .PHONY: test-acorn # validate user.js syntax
 test-acorn:
 	acorn --silent user.js
-
-.PHONY: test-bash-syntax # check syntax of all bash scripts
-test-bash-syntax:
-	$(foreach i,$(wildcard *.sh),bash -n $(i);)
 
 .PHONY: test-shellcheck # check/lint shell scripts
 test-shellcheck:
