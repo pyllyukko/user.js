@@ -628,8 +628,8 @@ upstream-duplicates preferences with common values with default Firefox configur
 upstream-missing-from-user.js           preferences present in firefox source but not covered by user.js
 checkdeprecated     preferences in hardened user.js that are no longer present in firefox source
 stats               count preferences number, various stats
+clean               clean automatically generated files/build/test artifacts
 whatdoesitdo        generate the README "What does it do?" section
-clean               generate/update the README "What does it do?" section
 toc                 generate the README table of contents
 help                generate list of targets with descriptions
 ```

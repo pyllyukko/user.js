@@ -105,15 +105,17 @@ stats: sourceprefs.js
 	@echo "$$(wc -l $< | cut -d" " -f1) preferences in Firefox source"
 
 
+##### MISC #####
+
+.PHONY: clean # clean automatically generated files/build/test artifacts
+clean:
+	@rm -f sourceprefs.js sourceprefs_sorted.js userjs_sorted.js 000-tor-browser.js debian_locked.js systemwide_user.js
+
 ##### DOCUMENTATION GENERATION #####
 
 .PHONY: whatdoesitdo # generate the README "What does it do?" section
 whatdoesitdo:
 	@./gen-readme.sh
-
-.PHONY: clean # generate/update the README "What does it do?" section
-clean:
-	@rm -f sourceprefs.js sourceprefs_sorted.js userjs_sorted.js 000-tor-browser.js debian_locked.js
 
 .PHONY: toc # generate the README table of contents
 toc:
