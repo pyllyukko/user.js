@@ -22,6 +22,7 @@ policies.json:
 
 
 ##### TESTS #####
+# Requirements: node-acorn shellcheck
 
 .PHONY: tests # run all tests
 tests: test-acorn test-shellcheck
