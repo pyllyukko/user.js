@@ -6,19 +6,19 @@ all: whatdoesitdo tests
 
 .PHONY: locked_user.js # generate a locked configuration file
 locked_user.js: user.js
-	sed 's/^user_pref/lockPref/' $< >| $@
+	sed 's/^user_pref/lockPref/' $< >| locked_user.js
 
 .PHONY: systemwide_user.js # generate a system-wide configuration file
 systemwide_user.js: user.js
-	sed 's/user_pref(/pref(/' $< >| $@
+	sed 's/user_pref(/pref(/' $< >| systemwide_user.js
 
 .PHONY: debian_locked.js # # generate a locked, system-wide configuration file
 debian_locked.js: user.js
-	sed 's/^user_pref(\("[^"]\+"\),\s\+\([^)]\+\));\(\s*\/\/.*\)\?$$/pref(\1, \2, locked);/' $< >| $@
+	sed 's/^user_pref(\("[^"]\+"\),\s\+\([^)]\+\));\(\s*\/\/.*\)\?$$/pref(\1, \2, locked);/' $< >| debian_locked.js
 
 .PHONY: policies.json # generate policy file (https://github.com/mozilla/policy-templates/blob/master/README.md)
 policies.json:
-	jq -n -M "{\"policies\": {\"OfferToSaveLogins\": false, \"DisableBuiltinPDFViewer\": true, \"DisablePocket\": true, \"DisableFormHistory\": true, \"SanitizeOnShutdown\": true, \"SearchBar\": \"separate\", \"DisableTelemetry\": true, \"Cookies\": {\"AcceptThirdParty\": \"never\", \"ExpireAtSessionEnd\": true}, \"EnableTrackingProtection\": {\"Value\": true}, \"PopupBlocking\": {\"Default\": true}, \"FlashPlugin\": {\"Default\": false}, \"DisableFirefoxStudies\": true}}" >| $@
+	jq -n -M "{\"policies\": {\"OfferToSaveLogins\": false, \"DisableBuiltinPDFViewer\": true, \"DisablePocket\": true, \"DisableFormHistory\": true, \"SanitizeOnShutdown\": true, \"SearchBar\": \"separate\", \"DisableTelemetry\": true, \"Cookies\": {\"AcceptThirdParty\": \"never\", \"ExpireAtSessionEnd\": true}, \"EnableTrackingProtection\": {\"Value\": true}, \"PopupBlocking\": {\"Default\": true}, \"FlashPlugin\": {\"Default\": false}, \"DisableFirefoxStudies\": true}}" >| policies.json
 
 
 ##### TESTS #####
@@ -44,7 +44,7 @@ shellcheck:
 TBBBRANCH=tor-browser-68.8.0esr-9.5-1
 .PHONY: 000-tor-browser.js # download Tor Browser custom configuration reference
 000-tor-browser.js:
-	wget -nv "https://gitweb.torproject.org/tor-browser.git/plain/browser/app/profile/firefox.js?h=$(TBBBRANCH)" -O $@
+	wget -nv "https://gitweb.torproject.org/tor-browser.git/plain/browser/app/profile/firefox.js?h=$(TBBBRANCH)" -O 000-tor-browser.js
 
 PREF_REGEX = ^\(user_\)\?pref/s/^.*pref("\([^"]\+\)",\s*\([^)]\+\).*$$
 .PHONY: tbb-diff # differences between values from this user.js and tor browser's values
@@ -76,7 +76,7 @@ FIREFOX_SOURCE_PREFS= \
 	https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/app/profile/channel-prefs.js
 .PHONY: sourceprefs.js # download and sort all known preferences files from Firefox (mozilla-central) source
 sourceprefs.js:
-	@for SOURCEFILE in $(FIREFOX_SOURCE_PREFS); do wget -nv "$$SOURCEFILE" -O - ; done | egrep "(^pref|^user_pref)" | sort --unique >| $@
+	@for SOURCEFILE in $(FIREFOX_SOURCE_PREFS); do wget -nv "$$SOURCEFILE" -O - ; done | egrep "(^pref|^user_pref)" | sort --unique >| sourceprefs.js
 
 .PHONY: upstream-duplicates # preferences with common values with default Firefox configuration
 upstream-duplicates: sourceprefs.js
