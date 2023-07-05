@@ -6,7 +6,7 @@ A [user.js](http://kb.mozillazine.org/User.js_file) configuration file for [Mozi
 
 **This is a default template with every possible hardening measure enforced. See the [relaxed branch](https://github.com/pyllyukko/user.js/tree/relaxed) for a variant providing more usability**
 
-[![Build Status](https://travis-ci.org/pyllyukko/user.js.svg?branch=master)](https://travis-ci.org/pyllyukko/user.js)
+[![Build Status](https://github.com/pyllyukko/user.js/actions/workflows/ci.yml/badge.svg)](https://github.com/pyllyukko/user.js/actions)
 
 ### Main goals
 
