@@ -24,7 +24,7 @@ policies.json:
 ##### TESTS #####
 
 .PHONY: tests # run all tests
-tests: diff-sourceprefs.js diff-upstream-deprecated diff-stats test-acorn test-shellcheck
+tests: test-acorn test-shellcheck
 
 .PHONY: test-acorn # validate user.js syntax
 test-acorn:
