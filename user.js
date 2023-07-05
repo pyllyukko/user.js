@@ -976,6 +976,13 @@ user_pref("browser.newtab.preload",				false);
 user_pref("browser.newtabpage.directory.ping",			"");
 user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 
+// PREF: Disable Mozilla VPN ads on the about:protections page
+// https://support.mozilla.org/en-US/kb/what-mozilla-vpn-and-how-does-it-work
+// https://en.wikipedia.org/wiki/Mozilla_VPN
+// https://blog.mozilla.org/security/2021/08/31/mozilla-vpn-security-audit/
+// https://www.mozilla.org/en-US/security/advisories/mfsa2021-31/
+user_pref("browser.vpn_promo.enabled"			false);
+
 // PREF: Enable Auto Notification of Outdated Plugins (Firefox < 50)
 // https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review
 // CIS Version 1.2.0 October 21st, 2011 2.1.2
