@@ -981,7 +981,7 @@ user_pref("browser.newtabpage.directory.source",		"data:text/plain,{}");
 // https://en.wikipedia.org/wiki/Mozilla_VPN
 // https://blog.mozilla.org/security/2021/08/31/mozilla-vpn-security-audit/
 // https://www.mozilla.org/en-US/security/advisories/mfsa2021-31/
-user_pref("browser.vpn_promo.enabled"			false);
+user_pref("browser.vpn_promo.enabled",			false);
 
 // PREF: Enable Auto Notification of Outdated Plugins (Firefox < 50)
 // https://wiki.mozilla.org/Firefox3.6/Plugin_Update_Awareness_Security_Review
