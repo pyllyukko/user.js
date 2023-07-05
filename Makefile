@@ -75,13 +75,13 @@ diff-sourceprefs.js:
 	@for SOURCEFILE in $(FIREFOX_SOURCE_PREFS); do wget -nv "$$SOURCEFILE" -O - ; done | egrep "(^pref|^user_pref)" | sort --unique >| sourceprefs.js
 
 .PHONY: diff-upstream-duplicates # preferences with common values with default Firefox configuration
-diff-upstream-duplicates: sourceprefs.js
+diff-upstream-duplicates: diff-sourceprefs.js
 	@sed 's/^pref(/user_pref(/' sourceprefs.js | sed -E "s/[[:space:]]+/ /g" | sort > sourceprefs_sorted.js
 	@grep "^user_pref" user.js | sed -E "s/[[:space:]]+/ /g" | sort > userjs_sorted.js
 	@comm -1 -2  sourceprefs_sorted.js userjs_sorted.js
 
 .PHONY: diff-upstream-missing-from-user.js # preferences present in firefox source but not covered by user.js
-diff-upstream-missing-from-user.js: sourceprefs.js
+diff-upstream-missing-from-user.js: diff-sourceprefs.js
     # configure ignored preferences in ignore.list
 	@SOURCE_PREFS=$$(egrep '(^pref|^user_pref)' $< | awk -F'"' '{print $$2}'); \
 	for SOURCE_PREF in $$SOURCE_PREFS; do \
@@ -89,14 +89,14 @@ diff-upstream-missing-from-user.js: sourceprefs.js
 	done | sort --unique
 
 .PHONY: diff-upstream-deprecated # preferences in hardened user.js that are no longer present in firefox source
-diff-upstream-deprecated: sourceprefs.js
+diff-upstream-deprecated: diff-sourceprefs.js
 	@HARDENED_PREFS=$$(egrep "^user_pref" user.js | cut -d'"' -f2); \
 	for HARDENED_PREF in $$HARDENED_PREFS; do \
 	grep "\"$$HARDENED_PREF\"" $< >/dev/null || echo "Deprecated : $$HARDENED_PREF"; \
 	done | sort --unique
 
 .PHONY: diff-stats # count preferences number, various stats
-diff-stats: sourceprefs.js
+diff-stats: diff-sourceprefs.js
 	@echo "$$(egrep "^user_pref" user.js | wc -l | cut -f1) preferences in user.js"
 	@echo "$$(wc -l $< | cut -d" " -f1) preferences in Firefox source"
 
