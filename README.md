@@ -616,22 +616,23 @@ systemwide_user.js  generate a system-wide configuration file
 debian_locked.js #  generate a locked, system-wide configuration file
 policies.json       generate policy file (https://github.com/mozilla/policy-templates/blob/master/README.md)
 tests               run all tests
-acorn               validate user.js syntax
-bash_syntax         check syntax of all bash scripts
-shellcheck          check/lint shell scripts
-000-tor-browser.js  download Tor Browser custom configuration reference
-tbb-diff            differences between values from this user.js and tor browser's values
-tbb-diff-2          differences between values from this user.js and tor browser's values (alternate method)
-tbb-missing-from-user.js                preferences that are present in tor browser's defaults, but not in this user.js
-sourceprefs.js      download and sort all known preferences files from Firefox (mozilla-central) source
-upstream-duplicates preferences with common values with default Firefox configuration
-upstream-missing-from-user.js           preferences present in firefox source but not covered by user.js
-checkdeprecated     preferences in hardened user.js that are no longer present in firefox source
-stats               count preferences number, various stats
+test-acorn          validate user.js syntax
+test-bash-syntax    check syntax of all bash scripts
+test-shellcheck     check/lint shell scripts
+diff-000-tor-browser.js                 download Tor Browser custom configuration reference
+diff-tbb            differences between values from this user.js and tor browser's values
+diff-tbb-2          differences between values from this user.js and tor browser's values (alternate method)
+diff-tbb-missing-from-user.js           preferences that are present in tor browser's defaults, but not in this user.js
+diff-sourceprefs.js download and sort all known preferences files from Firefox (mozilla-central) source
+diff-upstream-duplicates                preferences with common values with default Firefox configuration
+diff-upstream-missing-from-user.js      preferences present in firefox source but not covered by user.js
+diff-upstream-deprecated                preferences in hardened user.js that are no longer present in firefox source
+diff-stats          count preferences number, various stats
 clean               clean automatically generated files/build/test artifacts
-whatdoesitdo        generate the README "What does it do?" section
-toc                 generate the README table of contents
+doc-whatdoesitdo    generate the README "What does it do?" section
+doc-toc             generate the README table of contents
 help                generate list of targets with descriptions
+
 ```
 
 -----------------------------
