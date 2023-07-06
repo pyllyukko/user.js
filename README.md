@@ -613,13 +613,12 @@ Run `make help` to get a list of makefile targets used for frequent maintenance 
 $ make help 
 locked_user.js      generate a locked configuration file
 systemwide_user.js  generate a system-wide configuration file
-debian_locked.js #  generate a locked, system-wide configuration file
+debian_locked.js    generate a locked, system-wide configuration file
 policies.json       generate policy file (https://github.com/mozilla/policy-templates/blob/master/README.md)
 tests               run all tests
 test-acorn          validate user.js syntax
-test-bash-syntax    check syntax of all bash scripts
 test-shellcheck     check/lint shell scripts
-diff-000-tor-browser.js                 download Tor Browser custom configuration reference
+000-tor-browser.js  download Tor Browser custom configuration reference
 diff-tbb            differences between values from this user.js and tor browser's values
 diff-tbb-2          differences between values from this user.js and tor browser's values (alternate method)
 diff-tbb-missing-from-user.js           preferences that are present in tor browser's defaults, but not in this user.js
