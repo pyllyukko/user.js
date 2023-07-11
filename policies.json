@@ -1,0 +1,12 @@
+{
+  "policies": {
+    "DisableFirefoxStudies": true,
+    "DisableFirefoxStudies_comment": "Disable Firefox studies (Shield).",
+    "PrimaryPassword": true,
+    "PrimaryPassword_comment": "Require using a primary (formerly master) password when Firefox built-in password manager is enabled.",
+    "SearchEngines": {
+      "Default": "DuckDuckGo",
+      "Default_comment": "Set the default search engine to DuckDuckGo instead of Google."
+    }
+  }
+}
