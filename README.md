@@ -147,7 +147,7 @@ ln -s ../user.js/user.js user.js
 
 Verify that the settings are effective from [about:support](http://kb.mozillazine.org/Troubleshooting_Information_report#Modified_Preferences) (check the "Important Modified Preferences" and "user.js Preferences" sections).
 
-Verify that policies are effectve from [about:policies](https://support.mozilla.org/en-US/kb/see-active-policies-firefox-enterprise).
+Verify that policies are effective from [about:policies](https://support.mozilla.org/en-US/kb/see-active-policies-firefox-enterprise).
 
 --------------------------------------------
 
