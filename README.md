@@ -116,6 +116,22 @@ If `mozilla.cfg` still fails to load, you must add a blank comment to the top of
 //
 ```
 
+
+### Additional settings (policies)
+
+Not all Firefox settings can be changed through `user.js` - some must be set in a separate **policies.json** file [[1]](https://support.mozilla.org/en-US/products/firefox-enterprise/policies-customization-enterprise/policies-overview-enterprise). These policies apply system-wide.
+
+To install [policies.json](policies.json) from this repository, simply copy it to the appropriate directory (create it if it does not exist):
+
+| OS                        | Path                                                                            |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| Windows                   | `C:\Program Files (x86)\Mozilla Firefox\distribution\`                          |
+| OS X                      | `/Applications/Firefox.app/distribution\`                                       |
+| Linux (Debian)            | `/etc/firefox-esr/policies/`                                                    |
+
+Note that JSON does not support comments, hence settings are documented in custom `*_comment` keys. Mozilla maintains a list of available policies: [[1]](https://mozilla.github.io/policy-templates/) [[2]](https://github.com/mozilla/policy-templates). The [Enterprise Policy Generator](https://addons.mozilla.org/en-US/firefox/addon/enterprise-policy-generator/) add-on can be used to generate `policies.json` files from a graphical interface.
+
+
 ### Updating using git
 
 For any of the above methods, you can keep your browser's `user.js` with the latest version available here: Clone the repository, and create a symbolic link from the appropriate location to the `user.js` file in the repository. Just run `git pull` in the repository when you want to update, then restart Firefox:
@@ -130,6 +146,8 @@ ln -s ../user.js/user.js user.js
 ### Verifying
 
 Verify that the settings are effective from [about:support](http://kb.mozillazine.org/Troubleshooting_Information_report#Modified_Preferences) (check the "Important Modified Preferences" and "user.js Preferences" sections).
+
+Verify that policies are effective from [about:policies](https://support.mozilla.org/en-US/kb/see-active-policies-firefox-enterprise).
 
 --------------------------------------------
 
@@ -574,11 +592,11 @@ For more information, see [CONTRIBUTING](https://github.com/pyllyukko/user.js/bl
 * [Polaris - advance privacy technology for the web](https://wiki.mozilla.org/Polaris)
 * [Mozilla Privacy Principles](https://wiki.mozilla.org/Privacy/Principles)
 * [List of Firefox "about:" URLs](https://developer.mozilla.org/en-US/Firefox/The_about_protocol)
-* [Policy Templates for Firefox](https://github.com/mozilla/policy-templates)
 * [A brief guide to Mozilla preferences](https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/A_brief_guide_to_Mozilla_preferences)
 * [Mozilla preferences for uber-geeks](https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Mozilla_preferences_for_uber-geeks)
 * [Privacy & Security related add-ons](https://addons.mozilla.org/firefox/extensions/privacy-security/) ([RSS](https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/format:rss?sort=featured))
 * [libpref — Firefox Source Docs documentation](https://firefox-source-docs.mozilla.org/modules/libpref/index.html)
+* [Firefox Source Tree documentation](https://firefox-source-docs.mozilla.org/index.html)
 
 #### Other documentation
 

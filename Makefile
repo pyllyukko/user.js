@@ -17,9 +17,6 @@ systemwide_user.js: user.js FORCE # generate a system-wide configuration file
 debian_locked.js: user.js FORCE # generate a locked, system-wide configuration file
 	sed 's/^user_pref(\("[^"]\+"\),\s\+\([^)]\+\));\(\s*\/\/.*\)\?$$/pref(\1, \2, locked);/' $< >| $@
 
-policies.json: FORCE # generate policy file (https://github.com/mozilla/policy-templates/blob/master/README.md)
-	jq -n -M "{\"policies\": {\"OfferToSaveLogins\": false, \"DisableBuiltinPDFViewer\": true, \"DisablePocket\": true, \"DisableFormHistory\": true, \"SanitizeOnShutdown\": true, \"SearchBar\": \"separate\", \"DisableTelemetry\": true, \"Cookies\": {\"AcceptThirdParty\": \"never\", \"ExpireAtSessionEnd\": true}, \"EnableTrackingProtection\": {\"Value\": true}, \"PopupBlocking\": {\"Default\": true}, \"FlashPlugin\": {\"Default\": false}, \"DisableFirefoxStudies\": true}}" >| $@
-
 
 ##### TESTS #####
 # Requirements: node-acorn shellcheck
