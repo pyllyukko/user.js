@@ -180,8 +180,8 @@ HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / [DOM](https://en.wikipedia.org
 * Disable battery API (Firefox < 52) [ [1](https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1313580) ]
 * Disable telephony API [ [1](https://wiki.mozilla.org/WebAPI/Security/WebTelephony) ]
 * Disable "beacon" asynchronous HTTP transfers (used for analytics) [ [1](https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon) ]
-* Disable clipboard event detection (onCut/onCopy/onPaste) via Javascript
-* Disable "copy to clipboard" functionality via Javascript (Firefox >= 41)
+* Disable clipboard event detection (onCut/onCopy/onPaste) via Javascript [ [1](https://web.archive.org/web/20210416195937/https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled) [2](https://github.com/pyllyukko/user.js/issues/287) ]
+* Disable "copy to clipboard" functionality via Javascript (Firefox >= 41) [ [1](https://hg.mozilla.org/mozilla-central/rev/2f9f8ea4b9c3) [2](https://github.com/pyllyukko/user.js/issues/287) ]
 * Disable speech recognition [ [1](https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html) [2](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition) [3](https://wiki.mozilla.org/HTML5_Speech_API) ]
 * Disable speech synthesis [ [1](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis) ]
 * Disable sensor API [ [1](https://wiki.mozilla.org/Sensor_API) ]

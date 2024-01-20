@@ -110,13 +110,15 @@ user_pref("dom.telephony.enabled",				false);
 user_pref("beacon.enabled",					false);
 
 // PREF: Disable clipboard event detection (onCut/onCopy/onPaste) via Javascript
+// https://web.archive.org/web/20210416195937/https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
+// https://github.com/pyllyukko/user.js/issues/287
 // NOTICE: Disabling clipboard events breaks Ctrl+C/X/V copy/cut/paste functionaility in JS-based web applications (Google Docs...)
-// https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
 user_pref("dom.event.clipboardevents.enabled",			false);
 
 // PREF: Disable "copy to clipboard" functionality via Javascript (Firefox >= 41)
-// NOTICE: Disabling clipboard operations will break legitimate JS-based "copy to clipboard" functionality
 // https://hg.mozilla.org/mozilla-central/rev/2f9f8ea4b9c3
+// https://github.com/pyllyukko/user.js/issues/287
+// NOTICE: Disabling clipboard operations will break legitimate JS-based "copy to clipboard" functionality
 user_pref("dom.allow_cut_copy", false);
 
 // PREF: Disable speech recognition
