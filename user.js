@@ -763,6 +763,14 @@ user_pref("security.sri.enable",				true);
 // NOTICE: Blocking referers across same eTLD sites breaks some login flows relying on them, consider lowering this pref to 1
 user_pref("network.http.referer.XOriginPolicy",		2);
 
+// PREF: Trim HTTP referer headers to only send the scheme, host, and port
+// https://wiki.mozilla.org/Privacy/Privacy_Task_Force/firefox_about_config_privacy_tweeks
+user_pref("network.http.referer.trimmingPolicy",	2);
+
+// PREF: When sending Referer across domains, only send scheme, host, and port in the Referer header
+// https://wiki.mozilla.org/Privacy/Privacy_Task_Force/firefox_about_config_privacy_tweeks
+user_pref("network.http.referer.XOriginTrimmingPolicy",	2);
+
 // PREF: Accept Only 1st Party Cookies
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior#1
 // NOTICE: Blocking 3rd-party cookies breaks a number of payment gateways
