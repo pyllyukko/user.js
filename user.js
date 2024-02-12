@@ -759,6 +759,8 @@ user_pref("security.sri.enable",				true);
 // https://github.com/pyllyukko/user.js/issues/227
 // https://github.com/pyllyukko/user.js/issues/328
 // https://feeding.cloud.geek.nz/posts/tweaking-referrer-for-privacy-in-firefox/
+// https://wiki.mozilla.org/Privacy/Privacy_Task_Force/firefox_about_config_privacy_tweeks
+// NOTICE: Blocking referers across same eTLD sites breaks some login flows relying on them, consider lowering this pref to 1
 user_pref("network.http.referer.XOriginPolicy",		2);
 
 // PREF: Accept Only 1st Party Cookies
