@@ -315,6 +315,7 @@ Enable and configure private browsing mode, don't store information locally duri
 * Set time range to "Everything" as default in "Clear Recent History"
 * Clear everything but "Site Preferences" in "Clear Recent History"
 * Don't remember browsing history
+* Don't remember recently closed tabs
 * Disable disk cache [ [1](http://kb.mozillazine.org/Browser.cache.disk.enable) ]
 * Disable Caching of SSL Pages
 * Disable download history

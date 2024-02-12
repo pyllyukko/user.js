@@ -836,6 +836,9 @@ user_pref("privacy.cpd.sessions",				true);
 // PREF: Don't remember browsing history
 user_pref("places.history.enabled",				false);
 
+// PREF: Don't remember recently closed tabs
+user_pref("browser.sessionstore.max_tabs_undo",		0);
+
 // PREF: Disable disk cache
 // http://kb.mozillazine.org/Browser.cache.disk.enable
 user_pref("browser.cache.disk.enable",				false);
