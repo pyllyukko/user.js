@@ -412,7 +412,7 @@ This section tweaks the cipher suites used by Firefox. The idea is to support on
 * Change the Firefox's built-in tracking protection to use the [strict list](https://support.mozilla.org/en-US/kb/tracking-protection-pbm?as=u#w_change-your-block-list)
 * Change the timezone for Firefox by using the `TZ` environment variable (see [here](https://wiki.archlinux.org/index.php/Firefox_privacy#Change_browser_time_zone)) to reduce it's value in browser fingerprinting
 * If you are concerned about more advanced threats, use specialized hardened operating systems and browsers such as [Tails](https://tails.boum.org/) or [Tor Brower Bundle](https://www.torproject.org/projects/torbrowser.html.en)
-
+* [Do Not Track (DNT)](https://en.wikipedia.org/wiki/Do_Not_Track) is not set in the `user.js` and is left for the user to decide (see [#11](https://github.com/pyllyukko/user.js/issues/11))
 
 ### Add-ons
 
