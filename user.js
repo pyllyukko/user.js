@@ -640,6 +640,7 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.topstories",	false);
 
 // PREF: Enable Global Privacy Control (GPC) (Firefox >= 120)
 // https://support.mozilla.org/1/firefox/126.0/Linux/en-US/global-privacy-control
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-GPC
 user_pref("privacy.globalprivacycontrol.enabled",		true);
 
 /******************************************************************************
