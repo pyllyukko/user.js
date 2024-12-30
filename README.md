@@ -140,7 +140,7 @@ For any of the above methods, you can keep your browser's `user.js` with the lat
 cd ~/.mozilla/firefox
 git clone 'https://github.com/pyllyukko/user.js.git'
 cd XXXXXXXX.your_profile_name
-ln -s ../user.js/user.js user.js
+ln -s ${HOME}/.mozilla/firefox/user.js/user.js user.js
 ```
 
 ### Verifying
