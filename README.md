@@ -431,7 +431,7 @@ Here is a list of the most essential security and privacy enhancing add-ons that
 Additional add-ons that you might consider using or reading about:
 
 * [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/) (experienced users)
-* [Privacy Badger](https://www.eff.org/privacybadger)
+* [Privacy Badger](https://privacybadger.org)
 * [Mozilla Lightbeam](https://www.mozilla.org/en-US/lightbeam/)
 * [PRISM Break Web Browser Addons section](https://prism-break.org/en/subcategories/gnu-linux-web-browser-addons/)
 * [Ghostery](https://www.ghostery.com/) (proprietary software, maintained by [an advertising company](https://en.wikipedia.org/wiki/Ghostery))
