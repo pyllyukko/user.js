@@ -422,8 +422,6 @@ Here is a list of the most essential security and privacy enhancing add-ons that
 * [uBlock Origin](https://addons.mozilla.org/firefox/addon/ublock-origin/)
   * For additional protection, enable more blocklists in the addon dashboard.
   * For additional protection, set it to [Hard mode](https://github.com/gorhill/uBlock/wiki/Blocking-mode:-hard-mode) (experienced users) - the default is [Easy mode](https://github.com/gorhill/uBlock/wiki/Blocking-mode:-easy-mode)
-* [HTTPS Everywhere](https://www.eff.org/https-everywhere)
-  * For additional protection, enable `Block all unencrypted requests` in the toolbar button menu. This will break websites where HTTPS is not available.
 * [Cookie AutoDelete](https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/) - when a tab closes, any cookies not being used are automatically deleted. Whitelist the ones you trust while deleting the rest.
 * [NoScript](https://noscript.net/)
 * [Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/)
