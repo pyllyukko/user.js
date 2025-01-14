@@ -1165,6 +1165,12 @@ user_pref("browser.ssl_override_behavior",			1);
 // https://en.wikipedia.org/wiki/Server_Name_Indication#Security_implications_(ESNI)
 user_pref("network.security.esni.enabled",			true);
 
+// PREF: Disable the Enterprise Roots preference
+// https://support.mozilla.org/en-US/kb/how-disable-enterprise-roots-preference
+// https://github.com/pyllyukko/user.js/issues/560
+user_pref("security.certerrors.mitm.auto_enable_enterprise_roots"	false);
+user_pref("security.enterprise_roots.enabled"				false);
+
 /******************************************************************************
  * SECTION: Cipher suites                                                     *
  ******************************************************************************/

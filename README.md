@@ -377,6 +377,7 @@ Improve visibility of security-related elements, mitigate shoulder-surfing
 * Disable automatic reporting of TLS connection errors [ [1](https://support.mozilla.org/en-US/kb/certificate-pinning-reports) ]
 * Pre-populate the current URL but do not pre-fetch the certificate in the "Add Security Exception" dialog [ [1](http://kb.mozillazine.org/Browser.ssl_override_behavior) [2](https://github.com/pyllyukko/user.js/issues/210) ]
 * Encrypted SNI (when TRR is enabled) [ [1](https://www.cloudflare.com/ssl/encrypted-sni/) [2](https://wiki.mozilla.org/Trusted_Recursive_Resolver#ESNI) [3](https://en.wikipedia.org/wiki/Server_Name_Indication#Security_implications_(ESNI)) ]
+* Disable the Enterprise Roots preference [ [1](https://support.mozilla.org/en-US/kb/how-disable-enterprise-roots-preference) [2](https://github.com/pyllyukko/user.js/issues/560) ]
 
 ### Cipher suites
 
