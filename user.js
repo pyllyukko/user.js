@@ -1095,12 +1095,13 @@ user_pref("security.ssl.enable_ocsp_stapling",			true);
 // NOTICE: Firefox falls back on plain OCSP when must-staple is not configured on the host certificate
 user_pref("security.ssl.enable_ocsp_must_staple",		true);
 
-// PREF: Require a valid OCSP response for OCSP enabled certificates
+// PREF: Require a valid OCSP response for OCSP enabled certificates (disabled)
 // https://groups.google.com/forum/#!topic/mozilla.dev.security/n1G-N2-HTVA
+// https://www.feistyduck.com/newsletter/issue_121_the_slow_death_of_ocsp
 // Disabling this will make OCSP bypassable by MitM attacks suppressing OCSP responses
 // NOTICE: `security.OCSP.require` will make the connection fail when the OCSP responder is unavailable
 // NOTICE: `security.OCSP.require` is known to break browsing on some [captive portals](https://en.wikipedia.org/wiki/Captive_portal)
-user_pref("security.OCSP.require",				true);
+//user_pref("security.OCSP.require",				true);
 
 // PREF: Disable TLS Session Tickets
 // https://www.blackhat.com/us-13/briefings.html#NextGen
