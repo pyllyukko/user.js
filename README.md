@@ -441,6 +441,7 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 <!-- BEGIN PROBLEMS-LIMITATIONS -->
 * Disabling ServiceWorkers breaks functionality on some sites (Google Street View...)
 * Disabling ServiceWorkers breaks Firefox Sync
+* Disabling DOM timing API breaks item pages in AliExpress (https://github.com/pyllyukko/user.js/issues/561)
 * Disabling resource timing API breaks some DDoS protection pages (Cloudflare)
 * Web Audio API is required for Unity web player/games
 * Disabling WebRTC breaks peer-to-peer file sharing tools (reep.io ...)

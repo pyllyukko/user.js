@@ -25,6 +25,7 @@ user_pref("dom.webnotifications.enabled",			false);
 // PREF: Disable DOM timing API
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
 // https://www.w3.org/TR/navigation-timing/#privacy
+// NOTICE: Disabling DOM timing API breaks item pages in AliExpress (https://github.com/pyllyukko/user.js/issues/561)
 user_pref("dom.enable_performance",				false);
 
 // PREF: Disable resource timing API
