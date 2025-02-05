@@ -1,7 +1,7 @@
 SHELL=/bin/bash
 
 .PHONY: all
-all: whatdoesitdo tests
+all: doc-whatdoesitdo tests
 
 .PHONY: FORCE
 FORCE:
