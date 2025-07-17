@@ -645,6 +645,9 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.topstories",	false);
 // https://globalprivacycontrol.org/
 user_pref("privacy.globalprivacycontrol.enabled",		true);
 
+// PREF: Hide weather on New Tab
+user_pref("browser.newtabpage.activity-stream.showWeather",	false);
+
 /******************************************************************************
  * SECTION: Automatic connections                                             *
  ******************************************************************************/

@@ -275,6 +275,7 @@ Disable Firefox integrated metrics/reporting/experiments, disable potentially in
 * Disable Pocket [ [1](https://support.mozilla.org/en-US/kb/save-web-pages-later-pocket-firefox) [2](https://github.com/pyllyukko/user.js/issues/143) ]
 * Disable "Recommended by Pocket" in Firefox Quantum
 * Enable Global Privacy Control (GPC) (Firefox >= 120) [ [1](https://support.mozilla.org/1/firefox/126.0/Linux/en-US/global-privacy-control) [2](https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-GPC) [3](https://globalprivacycontrol.org/) ]
+* Hide weather on New Tab
 
 ### Automatic connections
 
