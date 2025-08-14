@@ -454,7 +454,9 @@ user_pref("extensions.systemAddon.update.enabled",		false);
 
 // PREF: Disable Extension recommendations (Firefox >= 65)
 // https://support.mozilla.org/en-US/kb/extension-recommendations
+// https://brokkr.net/2025/08/10/firefox-aboutconfig-tricks-3-dont-recommend-extensions/
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr",	false);
+user_pref("extensions.htmlaboutaddons.recommendations.enabled",		false);
 
 // PREF: Trusted Recursive Resolver (DNS-over-HTTPS) (disabled)
 // https://wiki.mozilla.org/Trusted_Recursive_Resolver
