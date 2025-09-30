@@ -494,6 +494,10 @@ user_pref("experiments.supported",				false);
 user_pref("experiments.enabled",				false);
 user_pref("experiments.manifest.uri",				"");
 
+// PREF: Disable daily usage ping
+// https://support.mozilla.org/1/firefox/140.2.0/Linux/en-US/usage-ping-settings
+user_pref("datareporting.usage.uploadEnabled",			false);
+
 // PREF: Disallow Necko to do A/B testing
 // https://trac.torproject.org/projects/tor/ticket/13170
 user_pref("network.allow-experiments",				false);
