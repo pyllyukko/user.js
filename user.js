@@ -723,7 +723,9 @@ user_pref("browser.search.update",				false);
 
 // PREF: Disable automatic captive portal detection (Firefox >= 52.0)
 // https://support.mozilla.org/en-US/questions/1157121
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_network-detection
 user_pref("network.captive-portal-service.enabled",		false);
+user_pref("network.connectivity-service.enabled",		false);
 
 // PREF: Disable (parts of?) "TopSites"
 user_pref("browser.topsites.contile.enabled",				false);
