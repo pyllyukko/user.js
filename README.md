@@ -394,6 +394,7 @@ This section tweaks the cipher suites used by Firefox. The idea is to support on
 * Enable ChaCha20 and Poly1305 (Firefox >= 47) [ [1](https://www.mozilla.org/en-US/firefox/47.0/releasenotes/) [2](https://tools.ietf.org/html/rfc7905) [3](https://bugzilla.mozilla.org/show_bug.cgi?id=917571) [4](https://bugzilla.mozilla.org/show_bug.cgi?id=1247860) [5](https://cr.yp.to/chacha.html) ]
 * Disable ciphers susceptible to the logjam attack [ [1](https://weakdh.org/) ]
 * Disable ciphers with DSA (max 1024 bits)
+* Disable ciphers with CBC & SHA-1
 * Enable X25519Kyber768Draft00 (post-quantum key exchange) [FF Nightly 2024-01-18+] [ [1](https://datatracker.ietf.org/doc/draft-tls-westerbaan-xyber768d00/) [2](https://twitter.com/bwesterb/status/1748017372764475519) [3](https://pq.cloudflareresearch.com/) ]
 <!-- END SECTION -->
 
