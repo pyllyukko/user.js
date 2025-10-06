@@ -1131,6 +1131,7 @@ user_pref("security.ssl.disable_session_identifiers",		true);
 // 4 = TLS 1.3 is the minimum required / maximum supported encryption protocol.
 user_pref("security.tls.version.min",				3);
 user_pref("security.tls.version.max",				4);
+user_pref("security.tls.version.enable-deprecated",		false);
 
 // PREF: Disable insecure TLS version fallback
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1084025
