@@ -1254,6 +1254,11 @@ user_pref("security.ssl3.rsa_camellia_256_sha",			false);
 //user_pref("security.ssl3.ecdhe_ecdsa_aes_128_gcm_sha256",	true); // 0xc02b
 //user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		true); // 0xc02f
 
+// PREF: Disable non-ECDHE RSA ciphers
+// https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices#23-use-secure-cipher-suites
+user_pref("security.ssl3.rsa_aes_128_gcm_sha256",		false);
+user_pref("security.ssl3.rsa_aes_256_gcm_sha384",		false);
+
 // PREF: Enable ChaCha20 and Poly1305 (Firefox >= 47)
 // https://www.mozilla.org/en-US/firefox/47.0/releasenotes/
 // https://tools.ietf.org/html/rfc7905
