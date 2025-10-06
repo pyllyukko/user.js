@@ -1249,10 +1249,10 @@ user_pref("security.ssl3.ecdh_ecdsa_aes_256_sha",		false);
 // PREF: Disable 256 bits ciphers without PFS
 user_pref("security.ssl3.rsa_camellia_256_sha",			false);
 
-// PREF: Enable GCM ciphers (TLSv1.2 only)
+// PREF: Enable GCM ciphers (TLSv1.2 only) (disabled)
 // https://en.wikipedia.org/wiki/Galois/Counter_Mode
-user_pref("security.ssl3.ecdhe_ecdsa_aes_128_gcm_sha256",	true); // 0xc02b
-user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		true); // 0xc02f
+//user_pref("security.ssl3.ecdhe_ecdsa_aes_128_gcm_sha256",	true); // 0xc02b
+//user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		true); // 0xc02f
 
 // PREF: Enable ChaCha20 and Poly1305 (Firefox >= 47)
 // https://www.mozilla.org/en-US/firefox/47.0/releasenotes/
