@@ -1240,6 +1240,7 @@ user_pref("security.ssl3.ecdhe_ecdsa_des_ede3_sha",		false);
 user_pref("security.ssl3.ecdhe_rsa_des_ede3_sha",		false);
 user_pref("security.ssl3.rsa_des_ede3_sha",			false);
 user_pref("security.ssl3.rsa_fips_des_ede3_sha",		false);
+user_pref("security.ssl3.deprecated.rsa_des_ede3_sha",		false);
 
 // PREF: Disable ciphers with ECDH (non-ephemeral)
 user_pref("security.ssl3.ecdh_rsa_aes_256_sha",			false);
