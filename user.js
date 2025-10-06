@@ -1153,11 +1153,11 @@ user_pref("security.pki.sha1_enforcement_level",		1);
 // https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3555
 user_pref("security.ssl.treat_unsafe_negotiation_as_broken",	true);
 
-// PREF: Disallow connection to servers not supporting safe renegotiation (disabled)
+// PREF: Disallow connection to servers not supporting safe renegotiation
 // https://wiki.mozilla.org/Security:Renegotiation#security.ssl.require_safe_negotiation
 // https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3555
-// TODO: `security.ssl.require_safe_negotiation` is more secure but makes browsing next to impossible (2012-2014-... - `ssl_error_unsafe_negotiation` errors), so is left disabled
-//user_pref("security.ssl.require_safe_negotiation",		true);
+// https://github.com/pyllyukko/user.js/issues/237
+user_pref("security.ssl.require_safe_negotiation",		true);
 
 // PREF: Disable automatic reporting of TLS connection errors
 // https://support.mozilla.org/en-US/kb/certificate-pinning-reports
