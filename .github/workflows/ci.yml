@@ -14,3 +14,24 @@ jobs:
         run: sudo apt install make node-acorn shellcheck
       - name: Run tests
         run: make tests
+  ssllabs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Firefox
+        run: sudo apt install firefox
+      - name: Create profile directory
+        run: |
+          mkdir -v tmp
+          ln -sv ../user.js tmp/user.js
+          ls -l user.js tmp/user.js
+      - name: Screenshot SSL Labs
+        run: firefox --profile tmp -screenshot https://www.ssllabs.com/ssltest/viewMyClient.html
+      - name: Check profile directory
+        run: ls -l tmp/
+      - name: Archive screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot.png
+          path: ./screenshot.png
