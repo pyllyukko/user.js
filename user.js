@@ -1215,6 +1215,9 @@ user_pref("security.ssl3.ecdh_rsa_aes_128_sha",			false);
 user_pref("security.ssl3.ecdh_ecdsa_aes_128_sha",		false);
 user_pref("security.ssl3.dhe_rsa_camellia_128_sha",		false);
 user_pref("security.ssl3.dhe_rsa_aes_128_sha",			false);
+user_pref("security.ssl3.ecdhe_ecdsa_aes_128_gcm_sha256",	false); // 0xc02b TLSv1.2
+user_pref("security.ssl3.ecdhe_rsa_aes_128_gcm_sha256",		false); // 0xc02f TLSv1.2
+user_pref("security.tls13.aes_128_gcm_sha256",			false); // 0x1301 TLSv1.3
 
 // PREF: Disable RC4
 // https://developer.mozilla.org/en-US/Firefox/Releases/38#Security
