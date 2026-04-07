@@ -371,6 +371,10 @@ user_pref("network.protocol-handler.expose.chrome",		true);
 user_pref("network.protocol-handler.expose.blob",		true);
 user_pref("network.protocol-handler.expose.data",		true);
 
+// PREF: Always block media autoplay
+// https://support.mozilla.org/en-US/kb/block-autoplay
+user_pref("media.autoplay.default",				5);
+
 /******************************************************************************
  * SECTION: Extensions / plugins                                                       *
  ******************************************************************************/

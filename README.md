@@ -227,6 +227,7 @@ Settings that do not belong to other sections or are user specific preferences.
 * Don't reveal build ID
 * Don't use document specified fonts to prevent installed font enumeration (fingerprinting) [ [1](https://github.com/pyllyukko/user.js/issues/395) [2](https://browserleaks.com/fonts) [3](https://github.com/pyllyukko/user.js/issues/120) ]
 * Enable only whitelisted URL protocol handlers [ [1](https://kb.mozillazine.org/Network.protocol-handler.external-default) [2](https://kb.mozillazine.org/Network.protocol-handler.warn-external-default) [3](https://kb.mozillazine.org/Network.protocol-handler.expose.%28protocol%29) [4](https://news.ycombinator.com/item?id=13047883) [5](https://bugzilla.mozilla.org/show_bug.cgi?id=167475) [6](https://github.com/pyllyukko/user.js/pull/285#issuecomment-298124005) ]
+* Always block media autoplay [ [1](https://support.mozilla.org/en-US/kb/block-autoplay) ]
 
 ### Extensions / plugins
 
