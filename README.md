@@ -155,7 +155,7 @@ Verify that policies are effective from [about:policies](https://support.mozilla
 
 There's a whole lot of settings that this modifies and they are divided in the following sections.
 
-Some of the settings in this `user.js` file might seem redundant, as some of them are already set to the same values by default. We chose to explicitely set their values, which ensures these settings are enforced if a future Firefox update changes the default value.
+Some of the settings in this `user.js` file might seem redundant, as some of them are already set to the same values by default. We chose to explicitly set their values, which ensures these settings are enforced if a future Firefox update changes the default value.
 
 <!-- BEGIN SECTION -->
 
